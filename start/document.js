@@ -1,7 +1,14 @@
+import { useEffect,useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
 import Header from './header';
 
 const DocumentResult = ({children}) => {
+    const [result,setResult] = useState()
+    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
+    useEffect(()=>{
+        checkMode===true?setResult("hsl(240, 3%, 11%)"):setResult("hsl(0, 0%, 100%)");
+    },[checkMode])
     return(
         <>
             <Head>
@@ -9,9 +16,7 @@ const DocumentResult = ({children}) => {
                 <link rel="icon" href="/favicon.ico" />
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content="hsl(0, 0%, 100%)" media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content="hsl(240, 3%, 11%)" media="(prefers-color-scheme: dark)" />
-                <meta name="theme-color" content="hsl(0, 0%, 100%)" />
+                <meta name="theme-color" content={result} />
                 <meta name="description" content="Zhenil.kz" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Zhenil" />
