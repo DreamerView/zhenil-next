@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 const Acc = () => {
     return(
@@ -19,7 +20,7 @@ const Acc = () => {
             <Link href="/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon green_temp">
-                <img width={30} height={30} className="main__block_menu_select_block_icon_img" loading="lazy" src="/img/person.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/person.svg" alt="icon"/>
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Для одного человека</h2>
@@ -38,7 +39,7 @@ const Acc = () => {
             <Link href="/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon purple_temp">
-                <img width={30} height={30} className="main__block_menu_select_block_icon_img" loading="lazy" src="/img/group.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/group.svg" alt="icon"/>
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Для несколько людей</h2>
@@ -57,7 +58,7 @@ const Acc = () => {
             <Link href="/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon blue_temp">
-                <img width={30} height={30} className="main__block_menu_select_block_icon_img" loading="lazy" src="/img/help.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/help.svg" alt="icon"/>
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Инфографика</h2>

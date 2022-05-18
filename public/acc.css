@@ -244,8 +244,11 @@ div.main__block_interface_menu_background {
     background-color: var(--green_back);
     margin:0 auto 40px auto;
 }
-img.main__block_interface_menu_logo_icon_img {
+label.main__block_interface_menu_logo_icon {
     position: absolute;
+}
+img.main__block_interface_menu_logo_icon_img {
+    
     width: 46px;
     height:46px;
     margin:44px 44px;

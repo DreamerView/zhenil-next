@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
+import Image from 'next/image';
 
 const InfoAcc = () => {
     const [logo,setLogo] = useState("/img/logo_round.svg");
@@ -67,11 +68,11 @@ const InfoAcc = () => {
                     </div>
                     <div className="main__block_interface_menu_c_info_block">
                         <div className="main__block_interface_menu_c_info_block_avatar">
-                            <label htmlFor="logoPreview">
-                                <img width={46} height={46} loading='lazy' className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
+                            <label className="main__block_interface_menu_logo_icon" htmlFor="logoPreview">
+                                <img width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
                             </label>
                             <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));setReady(true);CheckAvatar(event.target.files[0]);}} />
-                            <img width={135} height={135} loading='lazy' className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
+                            <img width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
                             <p className="sub_content">Выберите фото</p>
                         </div>
                         <div className="main__block_interface_menu_c_info_block_text">
@@ -98,7 +99,7 @@ const InfoAcc = () => {
                 <div className="main__block_interface_menu c-m click">
                     <div className="main__block_interface_menu_c_end">
                         <div className="main__block_interface_menu_background">
-                            <img width={46} height={46} loading='lazy' className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
+                            <img width={46} height={46} className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
                         </div>
                         <p className="sub_content">Добавить пользователя</p>
                     </div>
