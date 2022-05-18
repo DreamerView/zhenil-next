@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import Link from 'next/link'
-import DocumentResult from "../../start/document";
 import Head from "next/head";
 
 const LogoAcc = () => {
@@ -26,7 +25,7 @@ const LogoAcc = () => {
         };
     },[])
     return(
-        <DocumentResult>
+        <>
             <Head>
                 <title>[Этап 1/4] Загрузка логотипа</title>
             </Head>
@@ -60,7 +59,7 @@ const LogoAcc = () => {
                             {!ready ? <button className="main__block_interface_btn_forward">Продолжить</button>: <Link href="/acc/size" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">Продолжить</a></Link>}    
                 </div>
             </div>
-        </DocumentResult>
+        </>
     );
 }
 

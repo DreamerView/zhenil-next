@@ -1,6 +1,5 @@
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
-import DocumentResult from "../../start/document";
 import Head from "next/head";
 
 const InfoAcc = () => {
@@ -46,12 +45,12 @@ const InfoAcc = () => {
         else localStorage.setItem('check_massive',JSON.stringify([info]));
     },[info]);
     return(
-        <DocumentResult>
+        <>
             <Head>
                 <title>[Этап 3/4] Заполнение информации</title>
             </Head>
             <div className="main__nav">
-            <p className="nav"><b className="b-color">Главная  /</b>  <Link href="/"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  Информация</p>
+            <p className="nav"><b className="b_color">Главная  /</b>  <Link href="/"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  Информация</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 3/4] Заполнение информации</h1>
@@ -111,7 +110,7 @@ const InfoAcc = () => {
                             {!ready ? <button className="main__block_interface_btn_forward">Завершить?</button>: <Link href="/acc/result" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">Завершить?</a></Link>}    
                 </div>
             </div>
-        </DocumentResult>
+        </>
     );
 };
 

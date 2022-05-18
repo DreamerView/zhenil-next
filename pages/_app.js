@@ -5,17 +5,21 @@ import "../styles/acc.css";
 import Head from "next/head";
 
 import { useMediaQuery } from 'react-responsive';
+import DocumentResult from "../start/document";
 
 const Preloader = () => {
     const [result,setResult] = useState("#4634bc");
+    const [color,setColor] = useState('')
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
-        checkMode===true?setResult("#7d7aff"):setResult("#4634bc");
+        if (checkMode===true) {setResult("#7d7aff");setColor("hsl(240, 3%, 11%)");}
+        else {setResult("#4634bc");setResult("hsl(0, 0%, 100%)");};
     },[checkMode])
     return(
         <>
             <Head>
                 <title>Загрузка страницы</title>
+                <meta name="theme-color" content={color} />
             </Head>
             <div className="main__preloader">
                 <svg className="main__preloader_pic" xmlns="http://www.w3.org/2000/svg" style={{ margin: "auto" }} width="200" height="200" display="block" preserveAspectRatio="xMidYMid" viewBox="0 0 100 100">
@@ -48,9 +52,9 @@ const MyApp = ({ Component, pageProps }) => {
   }, [])
 
   return(
-    <>
+    <DocumentResult>
     {result ? <Preloader/>:<Component {...pageProps} />}
-    </>
+    </DocumentResult>
   )
 }
 
