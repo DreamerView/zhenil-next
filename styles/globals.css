@@ -566,6 +566,31 @@ svg.main__preloader_pic {
   width: 100px;
   height: 100px;
 }
+div.page_not_found {
+  height:75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.page_not_found_block{
+  width: 256px;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+h1.page_not_found {
+  margin-top:40px;
+  text-align: center;
+  font-size: 30px;
+}
+p.page_not_found {
+  margin-top:20px;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color:var(--sub_content);
+}
 /*  */
 #frame { transform: scale(0.75); }
 

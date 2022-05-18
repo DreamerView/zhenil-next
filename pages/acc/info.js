@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from 'next/image';
 
 const InfoAcc = () => {
-    const [logo,setLogo] = useState("/img/logo_round.svg");
+    const [logo,setLogo] = useState("/img/man.webp");
     const [ready,setReady] = useState(false);
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');

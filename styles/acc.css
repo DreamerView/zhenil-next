@@ -251,6 +251,7 @@ img.main__block_interface_menu_logo_icon_img {
     margin:44px 44px;
     cursor: pointer;
     filter: drop-shadow(5px 5px 20px var(--font-color));
+    opacity: 0.9;
 }
 img.main__block_interface_menu_logo_icon_img_back {
     margin:25px 25px;
