@@ -571,6 +571,11 @@ div.page_not_found {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: basic_animation;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 div.page_not_found_block{
   width: 256px;
@@ -580,7 +585,7 @@ div.page_not_found_block{
   flex-direction: column;
 }
 h1.page_not_found {
-  margin-top:40px;
+  /* margin-top:20px; */
   text-align: center;
   font-size: 30px;
 }
@@ -590,6 +595,18 @@ p.page_not_found {
   line-height: 25px;
   text-align: center;
   color:var(--sub_content);
+}
+a.page_not_found{
+  padding:16px 27px;
+  width: auto;
+  height: auto;
+  background: var(--red_back);
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  margin:20px auto 0 auto;
 }
 /*  */
 #frame { transform: scale(0.75); }
