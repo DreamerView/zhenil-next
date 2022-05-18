@@ -1,4 +1,4 @@
-export default function Error() {
+const Error = () => {
     return(
         <>
             <div className="page_not_found">
@@ -11,3 +11,5 @@ export default function Error() {
         </>
     )
 };
+
+export default Error;

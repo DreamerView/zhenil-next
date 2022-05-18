@@ -55,7 +55,7 @@ const Acc = () => {
             </div>
 
             <div className="main__block_menu_select_block blue_back">
-            <Link href="/acc/logo">
+            <Link href="/acc/logosd">
             <a>
             <div className="main__block_menu_select_block_icon blue_temp">
                 <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/help.svg" alt="icon"/>
