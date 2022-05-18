@@ -251,6 +251,9 @@ p.nav > a {
   .c-m {
       margin: 60px auto 0 auto;
   }
+  div.page_not_found {
+    height: 70vh;
+  }
 }
 @media (min-width:601px) and (max-width:1160px) {
   :root {
@@ -286,6 +289,9 @@ p.nav > a {
   }
   .c-m {
       margin: 30px auto 0 auto;
+  }
+  div.page_not_found {
+    height: 70vh;
   }
 }
 @media (min-width:1px) and (max-width:600px) {
@@ -340,6 +346,9 @@ p.nav > a {
   }
   .c-m {
       margin: 30px auto 0 auto;
+  }
+  div.page_not_found {
+    height: 60vh;
   }
 }
 
@@ -567,7 +576,6 @@ svg.main__preloader_pic {
   height: 100px;
 }
 div.page_not_found {
-  height:75vh;
   display: flex;
   align-items: center;
   justify-content: center;
