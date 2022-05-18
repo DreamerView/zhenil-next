@@ -4,10 +4,10 @@ import Head from 'next/head';
 import Header from './header';
 
 const DocumentResult = ({children}) => {
-    const [result,setResult] = useState()
+    const [result,setResult] = useState({color:'',mode:''})
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
-        checkMode===true?setResult("hsl(240, 3%, 11%)"):setResult("hsl(0, 0%, 100%)");
+        checkMode===true?setResult({color:"hsl(240, 3%, 11%)",mode:'/manifest-night.json'}):setResult({color:"hsl(0, 0%, 100%)",mode:'/manifest.json'});
     },[checkMode])
     return(
         <>
@@ -16,9 +16,9 @@ const DocumentResult = ({children}) => {
                 <link rel="icon" href="/favicon.ico" />
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content={result} />
+                <meta name="theme-color" content={result.color} />
                 <meta name="description" content="Zhenil.kz" />
-                <link rel="manifest" href="/manifest.json" />
+                <link rel="manifest" href={result.mode} />
                 <meta name="apple-mobile-web-app-title" content="Zhenil" />
                 <link rel="apple-touch-icon" href="/apple.png" />
                 <meta name="application-name" content="Zhenil" />
