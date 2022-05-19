@@ -11,9 +11,9 @@ const DocumentResult = ({children}) => {
     },[checkMode])
     return(
         <>
-            <Head>
+            {/* <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-            </Head>
+            </Head> */}
             <Header/>
             <div className="result">{children}</div>
         </>
