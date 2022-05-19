@@ -31,6 +31,11 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps }) => {
+    const [color,setColor] = useState()
+    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
+    useEffect(()=>{
+        checkMode===true?setColor("hsl(240, 3%, 11%)"):setColor("hsl(0, 0%, 100%)");
+    },[checkMode]);
     const [result,setResult] = useState(false);
     useEffect(()=>{
         Router.events.on('routeChangeStart', (url) => {
@@ -52,9 +57,14 @@ const MyApp = ({ Component, pageProps }) => {
   }, [])
 
   return(
-    <DocumentResult>
-    {result ? <Preloader/>:<Component {...pageProps} />}
-    </DocumentResult>
+    <>
+        <Head>
+            <meta name="theme-color" content={color} />
+        </Head>
+        <DocumentResult>
+        {result ? <Preloader/>:<Component {...pageProps} />}
+        </DocumentResult>
+    </>
   )
 }
 
