@@ -9,7 +9,7 @@ const InfoBlock = (result) => {
     const [info,setInfo] = useState('');
     const CheckAvatar = (event) => {
         let reader = new FileReader();
-        reader.onloadend = function () {
+        reader.onloadend = () => {
             let i = new Image;
             i.src = reader.result;
             i.onload = () => {
@@ -36,7 +36,6 @@ const InfoBlock = (result) => {
                 if(s.status) setStatus(s.status);
                 setReady(true);
             }
-            console.log("Result is",result.item.id)
         }
     },[]);
     useEffect(()=>{
