@@ -216,11 +216,6 @@ div.main__block_interface_menu {
     height: auto;
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    animation-name: block_animation;
-    animation-duration: 0.4s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c {
     text-align: center;

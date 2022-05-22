@@ -129,6 +129,72 @@ p {
   }
 }
 
+@keyframes remove_animation {
+  from {
+      transform: translate(0%, 0%);
+      opacity: 1;
+  }
+  to {
+      transform: translate(0%, 2%);
+      opacity: 0.7;
+  }
+}
+@-webkit-keyframes remove_animation {
+  from {
+      -webkit-transform: translate(0%, 0%);
+      opacity: 1;
+  }
+  to {
+      -webkit-transform: translate(0%, 2%);
+      opacity: 0.7;
+  }
+}
+@-moz-keyframes remove_animation {
+  from {
+      -moz-transform: translate(0%, 0%);
+      opacity: 1;
+  }
+  to {
+      -moz-transform: translate(0%, 2%);
+      opacity: 0.7;
+  }
+}
+@-o-keyframes remove_animation {
+  from {
+      -o-transform: translate(0%, 0%);
+      opacity: 1;
+  }
+  to {
+      -o-transform: translate(0%, 2%);
+      opacity: 0.7;
+  }
+}
+@-ms-keyframes remove_animation {
+  from {
+      -ms-transform: translate(0%, 0%);
+      opacity: 1;
+  }
+  to {
+      -ms-transform: translate(0%, 2%);
+      opacity: 0.7;
+  }
+}
+
+.remove_animation {
+    animation-name: remove_animation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.block_animation {
+    animation-name: block_animation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
 p.sub_content {
   color: var(--sub_content);
   margin-top:20px;

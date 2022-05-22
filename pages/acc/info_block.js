@@ -54,7 +54,7 @@ const InfoBlock = (result) => {
         }
     },[info]);
     return(
-        <div className="main__block_interface_menu c-m">
+        <div className={`main__block_interface_menu c-m ${result.action}`}>
                     <div className="main__block_menu_close">
                         <svg onClick={()=>{result.remove(result.item)}} id="close" xmlns="http://www.w3.org/2000/svg" width={26} height={26} viewBox="0 0 26 26">
                             <path id="Контур_24" data-name="Контур 24" d="M0,0H26V26H0Z" fill="none" />
