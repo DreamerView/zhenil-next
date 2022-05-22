@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 
 const InfoBlock = (result) => {
     const [logo,setLogo] = useState("/img/man.webp");
+    const [ready,setReady] = useState(false);
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
@@ -18,7 +19,7 @@ const InfoBlock = (result) => {
                 canvas.width = maxWidth;
                 canvas.height = i.height * scaleSize;
                 const ctx = canvas.getContext('2d');
-                ctx.drawImage(i,0,0,canvas.width,canvas.height)
+                ctx.drawImage(i,0,0,canvas.width,canvas.height);
                 const srcEnc = ctx.canvas.toDataURL("image/webp");
                 setInfo({...info,id:result.item.id,avatar:srcEnc});
             };
@@ -62,7 +63,7 @@ const InfoBlock = (result) => {
                         </svg>
                     </div>
                     <div className="main__block_interface_menu_c">
-                        <h1>Заполнение информации {result.item.name}</h1>
+                        <h1>Заполнение информации</h1>
                     </div>
                     <div className="main__block_interface_menu_c_info_block">
                         <div className="main__block_interface_menu_c_info_block_avatar">
