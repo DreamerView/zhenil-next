@@ -2,7 +2,6 @@ import { useState,useEffect } from 'react';
 
 const InfoBlock = (result) => {
     const [logo,setLogo] = useState("/img/man.webp");
-    const [ready,setReady] = useState(false);
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
@@ -10,7 +9,7 @@ const InfoBlock = (result) => {
     const CheckAvatar = (event) => {
         let reader = new FileReader();
         reader.onloadend = () => {
-            let i = new Image;
+            let i = new Image();
             i.src = reader.result;
             i.onload = () => {
                 const canvas = document.createElement('canvas');
@@ -21,11 +20,11 @@ const InfoBlock = (result) => {
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(i,0,0,canvas.width,canvas.height)
                 const srcEnc = ctx.canvas.toDataURL("image/webp");
-                setInfo({...info,id:result.item.id,avatar:srcEnc})
-            }
+                setInfo({...info,id:result.item.id,avatar:srcEnc});
+            };
         };
         reader.readAsDataURL(event);
-    }
+    };
     useEffect(()=>{
         if(localStorage.getItem('check_massive')) {
             let s = JSON.parse(localStorage.getItem('check_massive'))[result.item.id];
@@ -51,8 +50,8 @@ const InfoBlock = (result) => {
         if(info==='') return;
         else {
             // console.log('check_massive - ',JSON.stringify(info));
-            result.change({info})
-        };
+            result.change({info});
+        }
     },[info]);
     return(
         <div className="main__block_interface_menu c-m">
