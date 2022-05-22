@@ -34,7 +34,6 @@ const InfoBlock = (result) => {
                 if(s.name) setName(s.name);
                 if(s.surname) setSurname(s.surname);
                 if(s.status) setStatus(s.status);
-                setReady(true);
             }
             console.log("Result is",result.item.id)
         }
