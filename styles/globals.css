@@ -147,13 +147,13 @@ p.nav > a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --background-color:hsl(240, 3%, 11%);
-      --block-color: hsl(240, 2%, 18%);
-      --menu-color:hsl(240, 2%, 18%);
-      --menu-border-color:hsl(240, 2%, 18%);
+      --background-color:#151719;
+      --block-color: #101113;
+      --menu-color:#101113;
+      --menu-border-color:#101113;
       --menu-font-color:hsl(241, 100%, 74%);
-      --input_back:hsl(240, 2%, 18%);
-      --nav_block:hsl(240, 3%, 9%);
+      --input_back:#101113;
+      --nav_block:#101113;
       --nav_block_blur:hsla(240, 3%, 9%,0.7);
       --font-color:hsl(0, 0%, 100%);
       --brand-color:hsl(241, 100%, 74%);
@@ -162,7 +162,7 @@ p.nav > a {
       --purple_back:hsl(280, 85%, 65%);
       --blue_back:hsl(210, 100%, 52%);
       --red_back:hsl(349, 100%, 59%);
-      --input_back_text:hsla(240, 33%, 94%,.6);
+      --input_back_text:#818183;
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
@@ -206,6 +206,9 @@ p.nav > a {
   input.header__search_input {
       width: 646px;
   }
+  input.header__search_input:focus {
+    width:780px;
+  }
   div.header__logo {
       order:1;
   }
@@ -235,6 +238,9 @@ p.nav > a {
   }
   input.header__search_input {
       width: 380px;
+  }
+  input.header__search_input:focus {
+      width:520px;
   }
   div.header__logo {
       order:1;
@@ -352,6 +358,10 @@ p.nav > a {
   }
 }
 
+input.header__search_input:focus+div.header__search_menu {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -407,8 +417,8 @@ input,button,input:focus,textarea,textarea:focus,select {
   outline:none;
   border-radius:0;
   -moz-appearance: none; 
--webkit-appearance: none; 
-appearance: none;
+  -webkit-appearance: none; 
+  appearance: none;
   color:var(--font-color);
   font-display: optional;
 }
