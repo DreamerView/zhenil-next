@@ -11,8 +11,10 @@ const InfoAcc = () => {
     const [send,setSend] = useState([{}]);
     useEffect(()=>{
         if(localStorage.getItem('check_massive')) setResults(JSON.parse(localStorage.getItem('check_massive')));
-        
     },[]);
+    useEffect(()=>{
+        results[0]?setReady(true):setReady(false);
+    },[results[0]])
     const AddNewPerson = () => {
         setResults([...results,{id:(results.length-1)+1}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:(results.length-1)+1}]));

@@ -33,7 +33,6 @@ const SizeAcc = () => {
     useEffect(() => {
         if(localStorage.getItem('orient_acc')) {
             setChecked(true);
-            console.log('yes');
         }
         setOrient(localStorage.getItem('orient_acc'));
     }, []);

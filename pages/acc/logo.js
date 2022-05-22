@@ -10,14 +10,23 @@ const LogoAcc = () => {
     const [ready,setReady] = useState(false);
     const CheckLogo = (event) => {
         let reader = new FileReader();
-        let baseString;
-        reader.onloadend = function () {
-            baseString = reader.result;
-            console.log(baseString);
-            localStorage.setItem('logo_acc',baseString);
-            setC({logo:'logo_s',text:'Логотип загружен ✔',div:'alerts_g'});
-        };
         reader.readAsDataURL(event);
+        reader.onloadend = () => {
+            const i = document.createElement('img');
+            i.src = reader.result;
+            i.onload = () => {
+                const canvas = document.createElement('canvas');
+                const maxWidth = 300;
+                const scaleSize = maxWidth / i.width;
+                canvas.width = maxWidth;
+                canvas.height = i.height * scaleSize;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(i,0,0,canvas.width,canvas.height);
+                const srcEnc = ctx.canvas.toDataURL("image/webp");
+                localStorage.setItem('logo_acc',srcEnc);
+                setC({logo:'logo_s',text:'Логотип загружен ✔',div:'alerts_g'});
+            };
+        };
     };
     useEffect(()=>{
         if(localStorage.getItem('logo_acc')) {
@@ -49,7 +58,7 @@ const LogoAcc = () => {
                         </label>
                         <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));CheckLogo(event.target.files[0]);setReady(true)}} />
                        
-                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
+                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
                         
                     </div>
                     <div className="main__block_interface_menu_c_end">

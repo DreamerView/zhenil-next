@@ -26,7 +26,7 @@ const Header = () => {
       <div className="header__action_block">
         <span className="header__action_block_text">EN</span>
         <div className="header__search_menu_pic">
-          <Image width={22} height={22} className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" placeholder="blur" blurDataURL={"/img/top"+result+".svg"} />
+          <Image width={22} height={22} className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@ const Header = () => {
 
       <div className="header__search_menu">
         <div className="header__search_menu_pic" id="search_menu">
-          <Image width={22} height={22} className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" placeholder="blur" blurDataURL={"/img/menu"+result+".svg"} />
+          <Image width={22} height={22} className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
         </div>
         <span className="header__search_menu_text">Menu</span>
       </div>

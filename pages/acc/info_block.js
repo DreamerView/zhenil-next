@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 const InfoBlock = (result) => {
     const [logo,setLogo] = useState("/img/man.webp");
-    const [ready,setReady] = useState(false);
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
@@ -37,14 +36,12 @@ const InfoBlock = (result) => {
                 if(s.name) setName(s.name);
                 if(s.surname) setSurname(s.surname);
                 if(s.status) setStatus(s.status);
-                setReady(true);
             }
         }
     },[]);
     useEffect(()=>{
         if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[result.item.id]) {
             setInfo(JSON.parse(localStorage.getItem('check_massive'))[result.item.id]);
-            console.log(info);
         }
         else {
             setInfo('');
@@ -53,7 +50,6 @@ const InfoBlock = (result) => {
     useEffect(()=>{
         if(info==='') return;
         else {
-            // console.log('check_massive - ',JSON.stringify(info));
             result.change({info});
         }
     },[info]);
@@ -75,8 +71,8 @@ const InfoBlock = (result) => {
                                     <Image width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
                                 </div>
                             </label>
-                            <input className='main__block_interface_menu_logo_icon_img_hide' name="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));setReady(true);CheckAvatar(event.target.files[0]);}} />
-                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
+                            <input className='main__block_interface_menu_logo_icon_img_hide' name="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));CheckAvatar(event.target.files[0]);}} />
+                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
                             <p className="sub_content">Выберите фото</p>
                         </div>
                         <div className="main__block_interface_menu_c_info_block_text">

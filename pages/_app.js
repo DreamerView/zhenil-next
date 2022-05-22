@@ -40,11 +40,9 @@ const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
     useEffect(()=>{
         Router.events.on('routeChangeStart', (url) => {
-            console.log(`Loading: ${url}`);
             setResult(true);
         });
         Router.events.on('routeChangeComplete', (url) => {
-            console.log(`Loading: ${url} completed`);
             setResult(false)
         });
     },[])
