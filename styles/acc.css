@@ -253,6 +253,15 @@ img.main__block_interface_menu_logo_icon_img {
     filter: drop-shadow(5px 5px 20px var(--font-color));
     opacity: 0.9;
 }
+input.main__block_interface_menu_logo_icon_img_hide {
+    margin:44px 0;
+    position: absolute;
+    width: 46px;
+    height:46px;
+    margin:44px 44px;
+    opacity: 0;
+    cursor: pointer;
+}
 img.main__block_interface_menu_logo_icon_img_back {
     margin:25px 25px;
     justify-content: center;

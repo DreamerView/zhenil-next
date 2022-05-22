@@ -215,10 +215,10 @@ p.nav > a {
   div.header__action {
       order:3;
   }
-  .p_m {
+  .p-m {
       margin-top:60px;
   }
-  .c_m {
+  .c-m {
       margin: 60px auto 0 auto;
   }
 }
