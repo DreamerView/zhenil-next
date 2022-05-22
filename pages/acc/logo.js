@@ -2,6 +2,7 @@
 import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
+import Image from "next/image";
 
 const LogoAcc = () => {
     const [logo,setLogo] = useState("/img/logo_round.svg");
@@ -40,12 +41,16 @@ const LogoAcc = () => {
                     <div className="main__block_interface_menu_c">
                         <h1>Загрузка логотипа</h1>
                     </div>
-                    <div className="main__block_interface_menu_c">
+                    <div className="main__block_interface_menu_c_logo">
                         <label htmlFor="logoPreview">
-                            <img width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
+                            <div className="main__block_interface_menu_logo_icon_pic">
+                                <Image width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
+                            </div>
                         </label>
                         <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));CheckLogo(event.target.files[0]);setReady(true)}} />
-                        <img width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
+                       
+                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
+                        
                     </div>
                     <div className="main__block_interface_menu_c_end">
                         <div className={c.div}>

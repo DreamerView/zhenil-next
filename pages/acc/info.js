@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
 import InfoBlock from './info_block';
+import Image from "next/image";
 
 const InfoAcc = () => {
     const [ready,setReady] = useState(false);
@@ -42,7 +43,7 @@ const InfoAcc = () => {
                 <div className="main__block_interface_menu c-m click" onClick={()=>AddNewPerson()}>
                     <div className="main__block_interface_menu_c_end">
                         <div className="main__block_interface_menu_background">
-                            <img width={46} height={46} className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
+                            <Image width={46} height={46} className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
                         </div>
                         <p className="sub_content">Добавить пользователя</p>
                     </div>
