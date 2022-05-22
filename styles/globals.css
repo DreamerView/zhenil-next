@@ -147,13 +147,13 @@ p.nav > a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --background-color:#151719;
-      --block-color: #101113;
-      --menu-color:#101113;
-      --menu-border-color:#101113;
+      --background-color:#18191c;
+      --block-color: #282a2f;
+      --menu-color:#282a2f;
+      --menu-border-color:#282a2f;
       --menu-font-color:hsl(241, 100%, 74%);
-      --input_back:#101113;
-      --nav_block:#101113;
+      --input_back:#282a2f;
+      --nav_block:hsl(220, 9%, 8%);
       --nav_block_blur:hsla(240, 3%, 9%,0.7);
       --font-color:hsl(0, 0%, 100%);
       --brand-color:hsl(241, 100%, 74%);
@@ -162,7 +162,7 @@ p.nav > a {
       --purple_back:hsl(280, 85%, 65%);
       --blue_back:hsl(210, 100%, 52%);
       --red_back:hsl(349, 100%, 59%);
-      --input_back_text:#818183;
+      --input_back_text:hsl(240, 1%, 60%);
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
