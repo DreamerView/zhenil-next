@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Head from "next/head";
 
 const ResultAcc = () => {

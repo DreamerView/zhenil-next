@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -7,7 +8,6 @@ const Acc = () => {
       <>
       <Head>
         <title>Конструктор бейджиков/аккредитации</title>
-        {/* <link rel="stylesheet" type="text/css" href="../../acc.css" /> */}
       </Head>
         <div className="main__nav">
             <p className="nav"><b className="b_color">Главная  /</b>  Конструктор бейджиков</p>
@@ -20,7 +20,7 @@ const Acc = () => {
             <Link href="/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon green_temp">
-                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/person.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/person.svg" alt="icon" priority />
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Для одного человека</h2>
@@ -39,7 +39,7 @@ const Acc = () => {
             <Link href="/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon purple_temp">
-                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/group.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/group.svg" alt="icon" priority/>
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Для несколько людей</h2>
@@ -58,7 +58,7 @@ const Acc = () => {
             <Link href="/acc/logosd">
             <a>
             <div className="main__block_menu_select_block_icon blue_temp">
-                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/help.svg" alt="icon"/>
+                <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/help.svg" alt="icon" priority/>
             </div>
             <div className="main__block_menu_select_main">
                 <h2>Инфографика</h2>

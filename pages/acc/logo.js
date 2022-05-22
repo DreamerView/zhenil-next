@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */
 import {useEffect, useState} from "react";
-import Link from 'next/link'
+import Link from 'next/link';
 import Head from "next/head";
 
 const LogoAcc = () => {
@@ -16,14 +17,14 @@ const LogoAcc = () => {
             setC({logo:'logo_s',text:'Логотип загружен ✔',div:'alerts_g'});
         };
         reader.readAsDataURL(event);
-    }
+    };
     useEffect(()=>{
         if(localStorage.getItem('logo_acc')) {
             setLogo(localStorage.getItem('logo_acc'));
             setReady(true);
             setC({logo:'logo_s',text:'Логотип загружен ✔',div:'alerts_g'});
-        };
-    },[])
+        }
+    },[]);
     return(
         <>
             <Head>

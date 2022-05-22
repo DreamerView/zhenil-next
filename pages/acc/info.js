@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
@@ -6,7 +7,7 @@ import InfoBlock from './info_block';
 const InfoAcc = () => {
     const [ready,setReady] = useState(false);
     const [results,setResults] = useState([]);
-    const [send,setSend] = useState([{}])
+    const [send,setSend] = useState([{}]);
     useEffect(()=>{
         if(localStorage.getItem('check_massive')) setResults(JSON.parse(localStorage.getItem('check_massive')));
         
@@ -14,17 +15,18 @@ const InfoAcc = () => {
     const AddNewPerson = () => {
         setResults([...results,{id:(results.length-1)+1}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:(results.length-1)+1}]));
-    }
+        setReady(true);
+    };
     const RemovePerson = (res) => {
         setResults(results.filter(info=>info.id !== res.id));
         localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== res.id)));
-    }
+    };
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
         s[res.info.id] = res.info;
         setResults(s);
         localStorage.setItem('check_massive',JSON.stringify(s));
-    }
+    };
     return(
         <>
             <Head>

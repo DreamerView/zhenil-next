@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */
 import { useEffect,useState } from "react";
-import "../styles/globals.css"
+import "../styles/globals.css";
 import Router from 'next/router';
 import "../styles/acc.css";
 import Head from "next/head";
@@ -9,12 +10,12 @@ import DocumentResult from "../start/document";
 
 const Preloader = () => {
     const [result,setResult] = useState("#4634bc");
-    const [color,setColor] = useState('')
+    const [color,setColor] = useState('');
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
         if (checkMode===true) {setResult("#7d7aff");setColor("hsl(240, 3%, 11%)");}
-        else {setResult("#4634bc");setResult("hsl(0, 0%, 100%)");};
-    },[checkMode])
+        else {setResult("#4634bc");setResult("hsl(0, 0%, 100%)");}
+    },[checkMode]);
     return(
         <>
             <Head>

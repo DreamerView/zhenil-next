@@ -1,6 +1,5 @@
-import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+/*jshint esversion: 6 */
+import Head from 'next/head';
 import Acc from './acc/index';
 
 const Home = () => {

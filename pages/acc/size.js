@@ -1,21 +1,22 @@
+/*jshint esversion: 6 */
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
 const SizeAcc = () => {
     const [select,setSelect] = useState(false);
-    const [checked,setChecked] = useState('')
+    const [checked,setChecked] = useState('');
     const [result,setResult] = useState('Choose-origin');
     const [ss,setSS] = useState('Choose-origin');
-    const [cc,setCC] = useState(false)
-    const [orient,setOrient] = useState()
+    const [cc,setCC] = useState(false);
+    const [orient,setOrient] = useState();
     const [ready,setReady] = useState(false);
     const [width,setWidth] = useState('Введите ширину');
-    const [height,setHeight] = useState('Введите высоту')
+    const [height,setHeight] = useState('Введите высоту');
     const Check = (e) => {
         localStorage.setItem('orient_acc',e);
         setChecked(true);
-    }
+    };
     const Check1 = (e) => {
         localStorage.setItem('template_acc',e);
         if(e==='ready') {
@@ -25,20 +26,20 @@ const SizeAcc = () => {
             localStorage.removeItem('height_acc');
             setReady(false);
         }
-    }
+    };
     const Check2 = (e) => {
         localStorage.setItem('get_ss_acc',e);
-    }
+    };
     useEffect(() => {
         if(localStorage.getItem('orient_acc')) {
             setChecked(true);
-            console.log('yes')
+            console.log('yes');
         }
         setOrient(localStorage.getItem('orient_acc'));
-    }, [])
+    }, []);
     useEffect(()=>{
         if(localStorage.getItem('template_acc')) {
-            setResult(localStorage.getItem('template_acc'))
+            setResult(localStorage.getItem('template_acc'));
             setCC(false);
         }
         if(localStorage.getItem('get_ss_acc')) {
@@ -52,7 +53,7 @@ const SizeAcc = () => {
             setHeight(localStorage.getItem('height_acc'));
             setReady(true);
         }  
-    },[])
+    },[]);
     return(
     <>
             <Head>

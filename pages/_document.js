@@ -1,6 +1,7 @@
+/*jshint esversion: 6 */
 import { Html, Head, Main, NextScript } from 'next/document';
 
-const Document = () => {
+const DocumentShow = () => {
   return (
     <Html lang="ru">
       <Head>
@@ -27,4 +28,4 @@ const Document = () => {
   )
 }
 
-export default Document;
+export default DocumentShow;
