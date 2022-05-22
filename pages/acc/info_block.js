@@ -71,7 +71,7 @@ const InfoBlock = (result) => {
                             <label className="main__block_interface_menu_logo_icon">
                                 <img width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
                             </label>
-                            <input className='main__block_interface_menu_logo_icon_img_hide' name={"logoPreview"+result.item.id} accept="image/*" type='file' onClick={()=>{console.log(result.item.id)}} onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));setReady(true);CheckAvatar(event.target.files[0]);}} />
+                            <input className='main__block_interface_menu_logo_icon_img_hide' name="logoPreview" accept="image/*" type='file' onClick={()=>{console.log(result.item.id)}} onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));setReady(true);CheckAvatar(event.target.files[0]);}} />
                             <img width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" />
                             <p className="sub_content">Выберите фото</p>
                         </div>
