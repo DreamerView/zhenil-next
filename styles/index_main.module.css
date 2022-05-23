@@ -101,7 +101,7 @@
     div.main__menu_nav {
         background-color: transparent;
         width:100%;
-        border-radius: 14px;
+        height:110px;
         overflow-x: auto;
         overflow-y: hidden;
     }
