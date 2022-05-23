@@ -17,12 +17,12 @@ const Home = () => {
       <Head>
         <title>Okki.kz</title>
       </Head>
-      <div className={styles.main__menu_nav}>
+      <div className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/constructor${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
                 <span className={styles.nav_header}>Конструктор</span>
               </div>
             </a>
@@ -30,7 +30,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/calculate${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/calculate${result}.svg`}/>
                 <span className={styles.nav_header}>Калькулятор</span>
               </div>
             </a>
@@ -38,7 +38,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/work${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/work${result}.svg`}/>
                 <span className={styles.nav_header}>Бизнес</span>
               </div>
             </a>
@@ -46,7 +46,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/education${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/education${result}.svg`}/>
                 <span className={styles.nav_header}>Образование</span>
               </div>
             </a>
@@ -54,7 +54,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/constructor${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
                 <span className={styles.nav_header}>Дизайн</span>
               </div>
             </a>
@@ -62,7 +62,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/constructor${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
                 <span className={styles.nav_header}>Trending</span>
               </div>
             </a>
@@ -70,7 +70,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/constructor${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
                 <span className={styles.nav_header}>Trending</span>
               </div>
             </a>
@@ -78,7 +78,7 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={26} height={26} src={`/icons/constructor${result}.svg`}/>
+                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
                 <span className={styles.nav_header}>Trending</span>
               </div>
             </a>

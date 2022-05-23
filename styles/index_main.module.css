@@ -96,20 +96,19 @@
     }
     div.main__menu_nav_block {
         background-color: var(--nav_block);
-        width:122px;
-        height:92px;
+        width:100px;
+        height:100px;
         border-radius: 10px;
         margin: 0 8px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top:22px;
-        /* justify-content: center; */
+        justify-content: center;
     }
 }
 span.nav_header {
     margin-top:14px;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
 }
