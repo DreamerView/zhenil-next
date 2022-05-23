@@ -16,7 +16,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <Image width={26} height={26} src="/img/test.svg"/>
-                <span className={styles.nav_header}>Trending</span>
+                <span className={styles.nav_header}>Конструктор</span>
               </div>
             </a>
           </Link>
@@ -24,7 +24,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <Image width={26} height={26} src="/img/test.svg"/>
-                <span className={styles.nav_header}>Trending</span>
+                <span className={styles.nav_header}>Калькулятор</span>
               </div>
             </a>
           </Link>
@@ -32,7 +32,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <Image width={26} height={26} src="/img/test.svg"/>
-                <span className={styles.nav_header}>Trending</span>
+                <span className={styles.nav_header}>Бизнес</span>
               </div>
             </a>
           </Link>
@@ -40,7 +40,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <Image width={26} height={26} src="/img/test.svg"/>
-                <span className={styles.nav_header}>Trending</span>
+                <span className={styles.nav_header}>Образование</span>
               </div>
             </a>
           </Link>
@@ -48,7 +48,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <Image width={26} height={26} src="/img/test.svg"/>
-                <span className={styles.nav_header}>Trending</span>
+                <span className={styles.nav_header}>Дизайн</span>
               </div>
             </a>
           </Link>
