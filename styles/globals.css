@@ -222,7 +222,7 @@ p.nav > a {
       --nav_block:hsl(240, 3%, 9%);
       --nav_block_blur:hsla(240, 3%, 9%,0.7);
       --font-color:hsl(0, 0%, 100%);
-      --brand-color:hsl(241, 100%, 74%);
+      --brand-color:#7d7aff;
       --sub_content:hsla(240, 33%, 94%, 0.6);
       --green_back:hsl(129, 67%, 52%);
       --purple_back:hsl(280, 85%, 65%);
@@ -238,14 +238,14 @@ p.nav > a {
   :root {
       --background-color:hsl(0, 0%, 100%);
       --block-color:hsl(220, 13%, 95%);
-      --menu-color:hsl(248, 57%, 59%);
+      --menu-color:#6b5bd2;
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
       --input_back:hsl(0, 0%, 100%);
       --nav_block:hsl(0, 0%, 98%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(0, 0%, 0%);
-      --brand-color:hsl(248, 57%, 47%);
+      --brand-color:#4634bc;
       --sub_content:hsl(213, 5%, 39%);
       --green_back: hsl(135, 59%, 49%);
       --purple_back:hsl(280, 68%, 60%);
