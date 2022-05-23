@@ -232,6 +232,7 @@ p.nav > a {
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
+      --nav_menu_c:#242426;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -255,6 +256,7 @@ p.nav > a {
       --input_border:hsl(195, 13%, 94%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
+      --nav_menu_c:hsl(220, 13%, 95%);
   }
 }
 

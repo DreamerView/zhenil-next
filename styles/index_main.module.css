@@ -14,7 +14,7 @@
         margin:22px 11px 0 11px;
     }
     div.main__menu_nav_block {
-        background-color: var(--background-color);
+        background-color: var(--nav_menu_c);
         width:122px;
         height:114px;
         border-radius: 14px;
@@ -47,7 +47,7 @@
         margin:22px 11px 0 11px;
     }
     div.main__menu_nav_block {
-        background-color: var(--background-color);
+        background-color: var(--nav_menu_c);
         width:122px;
         height:114px;
         border-radius: 14px;
@@ -80,7 +80,7 @@
         margin:22px 11px 0 11px;
     }
     div.main__menu_nav_block {
-        background-color: var(--background-color);
+        background-color: var(--nav_menu_c);
         width:122px;
         height:114px;
         border-radius: 14px;
@@ -110,7 +110,7 @@
         margin:0 8px;
     }
     div.main__menu_nav_block {
-        background-color: var(--nav_block);
+        background-color: var(--nav_menu_c);
         width:90px;
         height:90px;
         border-radius: 14px;
