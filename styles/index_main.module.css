@@ -112,8 +112,8 @@
     }
     div.main__menu_nav_block {
         background-color: var(--nav_menu_c);
-        width:100px;
-        height:100px;
+        width:90px;
+        height:90px;
         border-radius: 14px;
         margin: 0 8px;
         cursor: pointer;
