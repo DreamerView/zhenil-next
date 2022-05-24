@@ -6,7 +6,6 @@ const DocumentShow = () => {
     <Html lang="ru">
       <Head>
       <meta charSet="utf-8" />
-      <meta name="theme-color" content="hsl(240, 3%, 11%)" />
                 <link rel="icon" href="/favicon.ico" />
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <meta name="description" content="Zhenil.kz" />
