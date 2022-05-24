@@ -36,7 +36,7 @@
     div.main__menu_nav {
         display: flex;
         justify-content: center;
-        background-color: var(--nav_block);
+        background-color: #101113;
         margin:0 11px;
         height: 158px;
         width:calc(100%-22px);
@@ -47,7 +47,7 @@
         margin:22px 11px 0 11px;
     }
     div.main__menu_nav_block {
-        background-color: var(--nav_menu_c);
+        background-color: #151719;
         width:122px;
         height:114px;
         border-radius: 14px;
@@ -62,6 +62,7 @@
         margin-top:14px;
         font-size: 14px;
         text-align: center;
+        /* color:#b9babc; */
     }
 }
 
@@ -110,7 +111,7 @@
         margin:0 8px;
     }
     div.main__menu_nav_block {
-        background-color: var(--nav_menu_c);
+        background-color: var(--nav_block);
         width:90px;
         height:90px;
         border-radius: 14px;
