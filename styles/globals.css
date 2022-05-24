@@ -228,6 +228,7 @@ p.nav > a {
       --purple_back:hsl(280, 85%, 65%);
       --blue_back:hsl(210, 100%, 52%);
       --red_back:hsl(349, 100%, 59%);
+      --orange_back:hsl(35, 100%, 50%);
       --input_back_text:hsla(240, 33%, 94%,.6);
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
@@ -238,12 +239,12 @@ p.nav > a {
 @media (prefers-color-scheme: light) {
   :root {
       --background-color:hsl(0, 0%, 100%);
-      --block-color:hsl(220, 13%, 95%);
+      --block-color:hsl(220, 25%, 95%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
       --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(0, 0%, 98%);
+      --nav_block:hsl(220, 23%, 97%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(0, 0%, 0%);
       --brand-color:hsl(248, 57%, 47%);
@@ -252,12 +253,29 @@ p.nav > a {
       --purple_back:hsl(280, 68%, 60%);
       --blue_back: hsl(211, 100%, 50%);
       --red_back:hsl(349, 100%, 59%);
+      --orange_back:hsl(36, 100%, 52%);
       --input_back_text:hsl(206, 7%, 58%);
       --input_border:hsl(195, 13%, 94%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
-      --nav_menu_c:hsl(220, 13%, 95%);
+      --nav_menu_c:hsl(0, 0%, 100%);
   }
+}
+
+.green_background {
+  background-color: var(--green_back);
+}
+.blue_background {
+  background-color: var(--blue_back);
+}
+.red_background {
+  background-color: var(--red_back);
+}
+.purple_background {
+  background-color: var(--purple_back);
+}
+.orange_background {
+  background-color: var(--orange_back);
 }
 
 @media screen and (min-width:1900px) {

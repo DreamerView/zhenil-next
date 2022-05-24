@@ -3,15 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import styles from '../styles/index_main.module.css';
-import { useState,useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 const Home = () => {
-  const [result,setResult] = useState("");
-  const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
-  useEffect(()=>{
-        return checkMode===true?setResult("-night"):setResult("");
-  },[checkMode]);
   return(
     <>
       <Head>
@@ -22,7 +15,9 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
+                <div className={`${styles.main__menu_nav_block_image} green_background`}>
+                  <Image width={24} height={24} src={`/icons/constructor.svg`}/>
+                </div>
                 <span className={styles.nav_header}>Конструктор</span>
               </div>
             </a>
@@ -30,7 +25,9 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/calculate${result}.svg`}/>
+                <div className={`${styles.main__menu_nav_block_image} red_background`}>
+                  <Image width={24} height={24} src={`/icons/calculate.svg`}/>
+                </div>
                 <span className={styles.nav_header}>Калькулятор</span>
               </div>
             </a>
@@ -38,7 +35,9 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/work${result}.svg`}/>
+                <div className={`${styles.main__menu_nav_block_image} blue_background`}>
+                  <Image width={24} height={24} src={`/icons/work.svg`}/>
+                </div>
                 <span className={styles.nav_header}>Бизнес</span>
               </div>
             </a>
@@ -46,7 +45,9 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/education${result}.svg`}/>
+                <div className={`${styles.main__menu_nav_block_image} purple_background`}>
+                  <Image width={24} height={24} src={`/icons/education.svg`}/>
+                </div>
                 <span className={styles.nav_header}>Образование</span>
               </div>
             </a>
@@ -54,32 +55,40 @@ const Home = () => {
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
-                <span className={styles.nav_header}>Дизайн</span>
+                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <Image width={24} height={24} src={`/icons/soon.svg`}/>
+                </div>
+                <span className={styles.nav_header}>В разработке</span>
               </div>
             </a>
           </Link>
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
-                <span className={styles.nav_header}>Trending</span>
+                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <Image width={24} height={24} src={`/icons/soon.svg`}/>
+                </div>
+                <span className={styles.nav_header}>В разработке</span>
               </div>
             </a>
           </Link>
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
-                <span className={styles.nav_header}>Trending</span>
+                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <Image width={24} height={24} src={`/icons/soon.svg`}/>
+                </div>
+                <span className={styles.nav_header}>В разработке</span>
               </div>
             </a>
           </Link>
           <Link href="/acc">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <Image width={30} height={30} src={`/icons/constructor${result}.svg`}/>
-                <span className={styles.nav_header}>Trending</span>
+                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <Image width={24} height={24} src={`/icons/soon.svg`}/>
+                </div>
+                <span className={styles.nav_header}>В разработке</span>
               </div>
             </a>
           </Link>
