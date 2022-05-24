@@ -51,7 +51,7 @@ const DocumentResult = ({children}) => {
                 <link rel="apple-touch-startup-image" sizes="414x896" href="/splash_screens/iPhone_11_Pro_Max__iPhone_XS_Max_landscape.webp" />
                 <link rel="apple-touch-startup-image" sizes="414x896" href="/splash_screens/iPhone_11__iPhone_XR_landscape.webp" />
                 <link rel="apple-touch-startup-image" sizes="414x736" href="/splash_screens/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_landscape.webp" />
-                <link rel="apple-touch-startup-image" sizes="667X375" href="/splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.webp" />
+                <link rel="apple-touch-startup-image" sizes="667x375" href="/splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.webp" />
                 <link rel="apple-touch-startup-image" sizes="320x568" href="/splash_screens/4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.webp" />
                 <link rel="apple-touch-startup-image" sizes="1024x1366" href="/splash_screens/12.9__iPad_Pro_portrait.webp" />
                 <link rel="apple-touch-startup-image" sizes="834x1194" href="/splash_screens/11__iPad_Pro__10.5__iPad_Pro_portrait.webp" />
