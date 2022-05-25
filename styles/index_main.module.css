@@ -29,6 +29,7 @@
         margin-top:8px;
         font-size: 14px;
         text-align: center;
+        font-weight: 500;
     }
 }
 
@@ -63,6 +64,7 @@
         margin-top:8px;
         font-size: 14px;
         text-align: center;
+        font-weight: 500;
     }
 }
 
@@ -96,6 +98,7 @@
         margin-top:8px;
         font-size: 14px;
         text-align: center;
+        font-weight: 500;
     }
 }
 @media (min-width:1px) and (max-width:600px) {
@@ -127,6 +130,7 @@
         margin-top:4px;
         font-size: 12px;
         text-align: center;
+        font-weight: 500;
     }
 }
 div.main__menu_nav_block_image {
