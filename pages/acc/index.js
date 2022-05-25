@@ -10,7 +10,7 @@ const Acc = () => {
         <title>Конструктор бейджиков/аккредитации</title>
       </Head>
         <div className="main__nav">
-            <p className="nav"><b className="b_color">Главная  /</b>  Конструктор бейджиков</p>
+            <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>    Конструктор бейджиков</p>
         </div>
         <div className="main__block">
             <h1>Конструктор бейджиков/аккредитации</h1>

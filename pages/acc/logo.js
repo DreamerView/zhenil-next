@@ -41,7 +41,7 @@ const LogoAcc = () => {
                 <title>[Этап 1/4] Загрузка логотипа</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><b className="b_color">Главная  /</b>  <Link href="/"><a>Конструктор бейджиков /</a></Link>  Логотип</p>
+                <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  Логотип</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 1/4] Загрузка логотипа</h1>

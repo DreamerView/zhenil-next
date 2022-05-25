@@ -59,7 +59,7 @@ const SizeAcc = () => {
                 <title>[Этап 2/4] Выбор ориентации и размер бумаги</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><b className="b_color">Главная  /</b>  <Link href="/"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  Размер</p>
+                <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  Размер</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 2/4] Выбор ориентации и размер бумаги</h1>

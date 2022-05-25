@@ -1,10 +1,14 @@
 /*jshint esversion: 6 */
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const NotFound = () => {
     return(
         <>
+            <Head>
+                <title>Page not found</title>
+            </Head>
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <Image width={256} height={256} src="/img/404.webp" alt="not found" priority />
