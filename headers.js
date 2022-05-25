@@ -1,46 +1,42 @@
 module.exports = [
     {
         key: 'X-DNS-Prefetch-Control',
-        value: 'on',
+        value: 'on'
     },
     {
         key: 'Strict-Transport-Security',
-        value: 'max-age=63072000; includeSubDomains; preload',
+        value: 'max-age=63072000; includeSubDomains; preload'
     },
     {
         key: 'Server',
-        value: 'Apache', // phony server value
+        value: 'Apache' // phony server value
     },
     {
         key: 'X-Content-Type-Options',
-        value: 'nosniff',
+        value: 'nosniff'
     },
     {
         key: 'X-Frame-Options',
-        value: 'sameorigin',
+        value: 'sameorigin'
     },
     {
         key: 'X-XSS-Protection',
-        value: '1; mode=block',
+        value: '1; mode=block'
     },
     {
         key: 'Referrer-Policy',
-        value: 'same-origin',
+        value: 'same-origin'
     },
     {
         key: 'Permissions-Policy',
-        value: 'geolocation=*', // allow specified policies here
+        value: 'geolocation=*'
     },
     {
         key: 'X-Permitted-Cross-Domain-Policies',
-        value: 'none',
+        value: 'none'
     },
     {
         key: 'Feature-Policy',
-        value: "camera 'none'; fullscreen 'self'; microphone 'self'",
-    },
-    {
-        key: 'Expect-CT',
-        value: "enforce, max-age=31536000",
-    }    
-  ];
+        value: "camera 'none'; fullscreen 'self'; microphone 'self'"
+    }
+];
