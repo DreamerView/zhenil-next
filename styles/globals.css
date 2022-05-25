@@ -239,12 +239,12 @@ p.nav > a {
 @media (prefers-color-scheme: light) {
   :root {
       --background-color:hsl(0, 0%, 100%);
-      --block-color:hsl(220, 25%, 95%);
+      --block-color:hsl(250, 27%, 96%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
       --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(220, 23%, 97%);
+      --nav_block:hsl(250, 27%, 96%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(0, 0%, 0%);
       --brand-color:hsl(248, 57%, 47%);
@@ -648,13 +648,18 @@ button.header__search_button {
 div.header__action {
   display:flex;
 }
-img.header__action_avatar {   
+div.header__action_image {
   width: 46px;
   height: 46px;
   border-radius: 13px;
   border:1px solid var(--block-color);
-  cursor:pointer;
   background-color: var(--block-color);
+}
+img.header__action_avatar {   
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  object-fit: cover;
 }
 div.header__action_block {
   width:85px;

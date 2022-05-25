@@ -22,7 +22,9 @@ const Header = () => {
       </Link>
     </div>
     <div className="header__action">
-      <Image width={46} height={46} className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
+      <div className="header__action_image">
+        <Image width={46} height={46} className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
+      </div>
       <div className="header__action_block">
         <span className="header__action_block_text">EN</span>
         <div className="header__search_menu_pic">
