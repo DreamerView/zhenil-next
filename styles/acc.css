@@ -139,7 +139,7 @@ div.main__block {
 div.main__block_menu_select_block {
     height: 314px;
     background-color: var(--block-color);
-    border-radius: 14px;
+    border-radius: 13px;
     cursor: pointer;
     border:1px solid transparent;
     animation-name: block_animation;
@@ -150,17 +150,17 @@ div.main__block_menu_select_block {
 }
 div.green_back:hover {
     background-color: var(--background-color);
-    border-radius: 14px;
+    border-radius: 13px;
     border:1px solid var(--green_back);
 }
 div.purple_back:hover {
     background-color: var(--background-color);
-    border-radius: 14px;
+    border-radius: 13px;
     border:1px solid var(--purple_back);
 }
 div.blue_back:hover {
     background-color: var(--background-color);
-    border-radius: 14px;
+    border-radius: 13px;
     border:1px solid var(--blue_back);
 }
 .green_temp {
@@ -215,7 +215,7 @@ div.main__block_interface_menu {
     align-items: center;
     height: auto;
     border: 1px solid var(--border-color);
-    border-radius: 14px;
+    border-radius: 13px;
 }
 div.main__block_interface_menu_c {
     text-align: center;
@@ -347,7 +347,7 @@ div.main__block_interface_menu_c_book {
     animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_book:hover {
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_book_block {
@@ -358,7 +358,7 @@ div.main__block_interface_menu_c_book_block {
     margin-bottom:10px;
 }
 div.main__block_interface_menu_c_album:hover {
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_album {
@@ -426,7 +426,7 @@ label.main__block_i_l > input + div.choice_land{
     cursor:pointer;
 }
 label.main__block_i_l > input:checked + div.choice_land{
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 select.main__block_interface_menu_c_select {

@@ -417,7 +417,7 @@ p.nav > a {
       width: 100%;
   }
   input.header__search_input:focus {
-      border-radius: 14px;
+      border-radius: 13px;
   }
   input.header__search_input:focus+div.header__search_menu {
       display: none;
@@ -610,7 +610,7 @@ div.header__search_menu {
   padding:0 16px;
   height:46px;
   background-color: var(--menu-color);
-  border-radius: 14px;
+  border-radius: 13px;
   border:1.5px solid var(--menu-border-color);
   cursor: pointer;
   margin-right:16px;
@@ -627,7 +627,7 @@ input.header__search_input {
   height:46px;
   font-size:16px;
   border:1.5px solid var(--input_border);
-  border-radius: 14px;
+  border-radius: 13px;
   color:var(--font-color);
   background: var(--search_icon) no-repeat scroll 11px 11px var(--input_back);
 }
@@ -651,7 +651,7 @@ div.header__action {
 img.header__action_avatar {   
   width: 46px;
   height: 46px;
-  border-radius: 14px;
+  border-radius: 13px;
   border:1px solid var(--block-color);
   cursor:pointer;
   background-color: var(--block-color);
@@ -661,7 +661,7 @@ div.header__action_block {
   height:46px;
   background-color: var(--block-color);
   margin-left:16px;
-  border-radius: 14px;
+  border-radius: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
