@@ -16,7 +16,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} green_background`}>
-                  <Image width={32} height={32} src={`/icons/constructor.svg`}/>
+                  <Image width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>Конструктор</span>
               </div>
@@ -26,7 +26,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
-                  <Image width={32} height={32} src={`/icons/calculate.svg`}/>
+                  <Image width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>Калькулятор</span>
               </div>
@@ -36,7 +36,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
-                  <Image width={32} height={32} src={`/icons/work.svg`}/>
+                  <Image width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>Бизнес</span>
               </div>
@@ -46,7 +46,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
-                  <Image width={32} height={32} src={`/icons/education.svg`}/>
+                  <Image width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>Образование</span>
               </div>
@@ -56,7 +56,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`}/>
+                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>В разработке</span>
               </div>
@@ -66,7 +66,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`}/>
+                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>В разработке</span>
               </div>
@@ -76,7 +76,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`}/>
+                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>В разработке</span>
               </div>
@@ -86,7 +86,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`}/>
+                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>В разработке</span>
               </div>
