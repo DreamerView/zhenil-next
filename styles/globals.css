@@ -239,12 +239,12 @@ p.nav > a {
 @media (prefers-color-scheme: light) {
   :root {
       --background-color:hsl(0, 0%, 100%);
-      --block-color:hsl(250, 27%, 96%);
+      --block-color:hsl(220, 25%, 95%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
       --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(250, 27%, 96%);
+      --nav_block:hsl(240, 24%, 96%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(0, 0%, 0%);
       --brand-color:hsl(248, 57%, 47%);
