@@ -13,13 +13,13 @@ const InfoAcc = () => {
         if(localStorage.getItem('check_massive')) setResults(JSON.parse(localStorage.getItem('check_massive')));
     },[]);
     useEffect(()=>{
-        results[0]?setReady(true):setReady(false);
-    },[results[0]])
+        return results[0]?setReady(true):setReady(false);
+    },[results[0]]);
     const AddNewPerson = () => {
         setResults([...results,{id:(results.length-1)+1}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:(results.length-1)+1}]));
         setReady(true);
-        setAction('block_animation')
+        setAction('block_animation');
     };
     const RemovePerson = (res) => {
         setAction('remove_animation');
@@ -27,7 +27,7 @@ const InfoAcc = () => {
             setResults(results.filter(info=>info.id !== res.id));
             localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== res.id)));
             setAction('');
-        },[200])
+        },[200]);
     };
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));

@@ -12,7 +12,7 @@ const Preloader = () => {
     const [color,setColor] = useState("#4634bc");
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
-        checkMode?setColor("#7d7aff"):setColor("#4634bc");
+        return checkMode?setColor("#7d7aff"):setColor("#4634bc");
     },[checkMode]);
     return(
         <>
@@ -31,11 +31,11 @@ const Preloader = () => {
 const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', (url) => {
+        Router.events.on('routeChangeStart', () => {
             setResult(true);
         });
-        Router.events.on('routeChangeComplete', (url) => {
-            setResult(false)
+        Router.events.on('routeChangeComplete', () => {
+            setResult(false);
         });
     },[])
 

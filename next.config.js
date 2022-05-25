@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 /** @type {import('next').NextConfig} */
 const headers = require('./headers');
 
@@ -11,6 +12,6 @@ const nextConfig = {
       },
     ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
