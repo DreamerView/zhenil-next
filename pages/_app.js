@@ -4,6 +4,8 @@ import "../styles/globals.css";
 import Router from 'next/router';
 import "../styles/acc.css";
 import Head from "next/head";
+import { createStore } from 'redux'
+import { Provider } from 'react-redux';
 
 import { useMediaQuery } from 'react-responsive';
 import DocumentResult from "../start/document";
@@ -45,13 +47,26 @@ const MyApp = ({ Component, pageProps }) => {
                     .then((reg) => console.log('Success: ', reg.scope))
                     .catch((err) => console.log('Failure: ', err));
         }
-  }, [])
+  }, []);
+const defaultState = {act:false};
+
+
+const reducer = (state=defaultState,action) => {
+  switch(action.type) {
+    case "SetAction": return {...state,act:action.set};
+    default: return state;
+  }
+};
+
+const store = createStore(reducer);
 
   return(
     <>
-        <DocumentResult>
-        {result ? <Preloader/>:<Component {...pageProps} />}
-        </DocumentResult>
+        <Provider store={store}>
+            <DocumentResult>
+            {result ? <Preloader/>:<Component {...pageProps} />}
+            </DocumentResult>
+        </Provider>
     </>
   )
 }

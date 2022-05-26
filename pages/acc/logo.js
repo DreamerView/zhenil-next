@@ -3,8 +3,10 @@ import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
 
 const LogoAcc = () => {
+    const dis = useDispatch();
     const [logo,setLogo] = useState("/img/logo_round.svg");
     const [c,setC] = useState({logo:'logo',text:"* Выберите файл и загрузите ваш логотип пожалуйста",div:''});
     const [ready,setReady] = useState(false);
@@ -40,13 +42,33 @@ const LogoAcc = () => {
             <Head>
                 <title>[Этап 1/4] Загрузка логотипа</title>
             </Head>
+            {/* <div className="confirm__back">
+                <div className="confirm__block">
+                    <h3>
+                        Title Here
+                    </h3>
+                    <p class="sm">
+                        Here’s an alert description that uses Auto Layout!
+                    </p>
+                    <div className="confirm__block_action">
+                        <div className="confirm__block_action_2">
+                            <div>
+                                <button>Action</button>
+                            </div>
+                            <div>
+                                <button className="confirm_custom red_background">Action</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  Логотип</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 1/4] Загрузка логотипа</h1>
                 <p className="sub_content">Этап 1/4. Загрузите ваш логотип организации/компаний</p>
-                <div className="main__block_interface_menu c-m block_animation">
+                <div className="main__block_interface_menu c-m block_animation" onClick={()=>{ dis({type:'SetAction',set:{name:'Удаление',content:'Вы действительно хотите удалить данного пользователя?',type:'delete',text:{cancel:'Закрыть',accept_color:'red_background',accept:'Удалить'}}});}}>
                     <div className="main__block_interface_menu_c">
                         <h1>Загрузка логотипа</h1>
                     </div>
