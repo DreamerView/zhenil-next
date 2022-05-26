@@ -135,6 +135,9 @@
     div.main__block_fixed_confirm {
         padding:3px 0 16px 0;
     }
+    div.main__nav {
+        border-radius: 13px;
+    }
 }
 
 div.main__nav {
