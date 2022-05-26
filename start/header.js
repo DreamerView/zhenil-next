@@ -16,7 +16,7 @@ const Header = () => {
       <Link href='/'>
         <a>
       <div className="header__logo_pic">
-        <Image width={126} height={30} className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo" placeholder="blur" blurDataURL={"/img/logo"+result+".webp"} />
+        <Image width={126} height={30} priority className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
       </div>
       </a>
       </Link>
