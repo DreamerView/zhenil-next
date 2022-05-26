@@ -255,7 +255,7 @@ p.nav > a {
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(36, 100%, 52%);
       --input_back_text:hsl(206, 7%, 58%);
-      --input_border:hsl(241, 100%, 77%);
+      --input_border:hsl(195, 13%, 94%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
       --nav_menu_c:hsl(0, 0%, 100%);
@@ -282,7 +282,8 @@ p.nav > a {
   :root {
       --m-1: 30px 150px;
       --m-2: 74px 150px;
-      --n-1: 16px 150px;
+      --n-1: 25px 112.5px;
+      --n-2: 0 37.5px;
       --m-p:40px 20px;
       --p:60px;
       --n-b: var(--border-color);
@@ -327,7 +328,8 @@ p.nav > a {
   :root {
       --m-1: 30px 50px;
       --m-2: 66px 50px;
-      --n-1: 24px 50px;
+      --n-1: 25px 37.5px;
+      --n-2: 0 12.5px;
       --m-p: 40px 20px;
       --p:60px;
       --n-b: var(--border-color);
@@ -364,6 +366,7 @@ p.nav > a {
       --m-1: 30px 32px;
       --m-2: 74px 32px;
       --n-1: 16px 32px;
+      --n-2: 0 16px;
       --m-p: 32px 32px;
       --p:60px;
       --n-b: var(--border-color);

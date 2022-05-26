@@ -30,6 +30,9 @@
     div.main__block_fixed_confirm {
         padding:3px 0 3px 0;
     }
+    div.main__nav {
+        border-radius: 13px;
+    }
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
     div.main__block_menu_select {
@@ -62,6 +65,9 @@
     }
     div.main__block_fixed_confirm {
         padding:3px 0 3px 0;
+    }
+    div.main__nav {
+        border-radius: 13px;
     }
 }
 @media (min-width:601px) and (max-width:1160px) {
@@ -97,6 +103,9 @@
     div.main__block_fixed_confirm {
         padding:3px 0 3px 0;
     }
+    div.main__nav {
+        border-radius: 13px;
+    }
 }
 @media (min-width:1px) and (max-width:600px) {
     div.main__block_menu_select {
@@ -129,6 +138,7 @@
 }
 
 div.main__nav {
+    margin: var(--n-2);
     padding:var(--n-1);
     background-color: var(--nav_block);
 }

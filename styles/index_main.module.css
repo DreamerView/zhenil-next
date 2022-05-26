@@ -104,11 +104,13 @@
 @media (min-width:1px) and (max-width:600px) {
     div.main__menu_nav {
         background-color: transparent;
-        width:100%;
+        width:calc(100%-22px);
         padding:16px 0;
         overflow-x: auto;
         overflow-y: hidden;
         background-color: var(--nav_block);
+        border-radius: 13px;
+        margin: 0 8px;
     }
     div.main__menu_nav_blocks {
         display: flex;
@@ -116,8 +118,8 @@
     }
     div.main__menu_nav_block {
         background-color: var(--nav_menu_c);
-        width:95px;
-        height:95px;
+        width:90px;
+        height:90px;
         border-radius: 13px;
         margin: 0 8px;
         cursor: pointer;
@@ -127,8 +129,8 @@
         justify-content: center;
     }
     span.nav_header {
-        margin-top:8px;
-        font-size: 13px;
+        margin-top:4px;
+        font-size: 12px;
         text-align: center;
         font-weight: 500;
     }
