@@ -25,7 +25,7 @@ const InfoAcc = () => {
         setAction('block_animation');
     };
     const RemovePerson = (res) => {
-        setConfirm({type:"delete",name:"Подтверждение удалении",content:`Вы действительно хотите удалить пользователя ${res.name} ${res.surname}?`});
+        setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя ${res.name} ${res.surname}?`});
         console.log(conf);
         if(conf) {
             setAction('remove_animation');
