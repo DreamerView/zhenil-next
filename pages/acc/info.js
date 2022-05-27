@@ -4,8 +4,11 @@ import Link from 'next/link';
 import Head from "next/head";
 import InfoBlock from './info_block';
 import Image from "next/image";
+import useConfirm from "../conf";
 
 const InfoAcc = () => {
+    const [confirm,setConfirm] = useState(null) 
+    const [conf] = useConfirm(confirm);
     const [ready,setReady] = useState(false);
     const [results,setResults] = useState([]);
     const [action,setAction] = useState('');
@@ -22,12 +25,16 @@ const InfoAcc = () => {
         setAction('block_animation');
     };
     const RemovePerson = (res) => {
-        setAction('remove_animation');
-        setTimeout(()=>{
-            setResults(results.filter(info=>info.id !== res.id));
-            localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== res.id)));
-            setAction('');
-        },[200]);
+        setConfirm({type:"delete",name:"Подтверждение удалении",content:`Вы действительно хотите удалить пользователя ${res.name} ${res.surname}?`});
+        console.log(conf);
+        if(conf) {
+            setAction('remove_animation');
+            setTimeout(()=>{
+                setResults(results.filter(info=>info.id !== res.id));
+                localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== res.id)));
+                setAction('');
+            },[200]);
+        }
     };
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));

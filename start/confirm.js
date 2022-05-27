@@ -1,4 +1,8 @@
+import { useDispatch,useSelector } from "react-redux";
+
 const ConfirmMode = (result) => {
+    const send = useDispatch();
+    const getResult = useSelector(state=>state.confirm)
     return(
         <>
         <div className="confirm__back">
@@ -12,10 +16,10 @@ const ConfirmMode = (result) => {
                     {result.item.type === 'delete'?
                     <div className="confirm__block_action_2">
                         <div>
-                            <button className="confirm_custom">{result.item.text.cancel}</button>
+                            <button onClick={()=>{send({type:"SetConfirm",set:false});send({type:"SetAction",set:false})}} className="confirm_custom">{result.item.text.cancel}</button>
                         </div>
                         <div>
-                            <button className={`confirm_custom_a ${result.item.text.accept_color}`}>{result.item.text.accept}</button>
+                            <button onClick={()=>{send({type:"SetConfirm",set:true});send({type:"SetAction",set:false});}} className={`confirm_custom_a ${result.item.text.accept_color}`}>{result.item.text.accept}</button>
                         </div>
                     </div>:''}
                 </div>

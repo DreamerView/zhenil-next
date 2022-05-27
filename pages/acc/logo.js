@@ -3,10 +3,8 @@ import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
 
 const LogoAcc = () => {
-    const dis = useDispatch();
     const [logo,setLogo] = useState("/img/logo_round.svg");
     const [c,setC] = useState({logo:'logo',text:"* Выберите файл и загрузите ваш логотип пожалуйста",div:''});
     const [ready,setReady] = useState(false);
@@ -68,7 +66,7 @@ const LogoAcc = () => {
             <div className="main__block">
                 <h1>[Этап 1/4] Загрузка логотипа</h1>
                 <p className="sub_content">Этап 1/4. Загрузите ваш логотип организации/компаний</p>
-                <div className="main__block_interface_menu c-m block_animation" onClick={()=>{ dis({type:'SetAction',set:{name:'Удаление',content:'Вы действительно хотите удалить данного пользователя?',type:'delete',text:{cancel:'Закрыть',accept_color:'red_background',accept:'Удалить'}}});}}>
+                <div className="main__block_interface_menu c-m block_animation" onClick={()=>{}}>
                     <div className="main__block_interface_menu_c">
                         <h1>Загрузка логотипа</h1>
                     </div>

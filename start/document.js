@@ -2,17 +2,17 @@
 import ConfirmMode from './confirm';
 import Header from './header';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
 const DocumentResult = ({children}) => {
     const action = useSelector(state=>state.act);
-    console.log(action)
     return(
-        <>
+        <div style={action?{height:"100%",overflow:"hidden"}:{}}>
             {action?<ConfirmMode item={action} key={Date.now}/>:""}
             <Header/>
             <div className="result">{children}</div>
-        </>
+        </div>
     );
 }
 

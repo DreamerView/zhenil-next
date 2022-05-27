@@ -48,12 +48,13 @@ const MyApp = ({ Component, pageProps }) => {
                     .catch((err) => console.log('Failure: ', err));
         }
   }, []);
-const defaultState = {act:false};
+const defaultState = {act:false,confirm:false};
 
 
 const reducer = (state=defaultState,action) => {
   switch(action.type) {
     case "SetAction": return {...state,act:action.set};
+    case "SetConfirm": return {...state,confirm:action.set}
     default: return state;
   }
 };
