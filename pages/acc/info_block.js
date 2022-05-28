@@ -53,10 +53,7 @@ const InfoBlock = (result) => {
         }
     },[numBlock]);
     useEffect(()=>{
-        if(info==='') return;
-        else {
-            result.change({info});
-        }
+        info !==''&&result.change({info});
     },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
