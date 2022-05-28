@@ -10,13 +10,9 @@ const InfoBlock = (result) => {
     const [status,setStatus] = useState('Необзязательное поле');
     const [info,setInfo] = useState('');
     const [numBlock,setNumBlock] = useState('');
-    const [res,setRes] = useState({});
     useEffect(()=>{
         result?setNumBlock(result.item.id):setNumBlock({});
     },[result]);
-    useEffect(()=>{
-        res?setRes(result):setRes('');
-    },[res])
     const CheckAvatar = (event) => {
         let reader = new FileReader();
         reader.readAsDataURL(event);
@@ -56,8 +52,8 @@ const InfoBlock = (result) => {
         }
     },[numBlock]);
     useEffect(()=>{
-        info !==''&&res.change({info});
-    },[info,res]);
+        info !==''&&result.change({info});
+    },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
                     <div className="main__block_menu_close">
