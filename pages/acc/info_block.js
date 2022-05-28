@@ -9,10 +9,14 @@ const InfoBlock = (result) => {
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
     const [info,setInfo] = useState('');
-    const [numBlock,setNumBlock] = useState('');
     useEffect(()=>{
-        return result?setNumBlock(result.item.id):setNumBlock({});
-    },[result]);
+        if(result) {
+            setInfo(result.item);
+        }
+        else {
+            setInfo('');
+        }
+    },[]);
     const CheckAvatar = (event) => {
         let reader = new FileReader();
         reader.readAsDataURL(event);
@@ -33,24 +37,14 @@ const InfoBlock = (result) => {
         };
     };
     useEffect(()=>{
-        if(localStorage.getItem('check_massive')) {
-            let s = JSON.parse(localStorage.getItem('check_massive'))[numBlock];
-            if(s) {
-                if(s.avatar) setLogo(s.avatar);
-                if(s.name) setName(s.name);
-                if(s.surname) setSurname(s.surname);
-                if(s.status) setStatus(s.status);
-            }
+        let s = result.item;
+        if(s) {
+            if(s.avatar) setLogo(s.avatar);
+            if(s.name) setName(s.name);
+            if(s.surname) setSurname(s.surname);
+            if(s.status) setStatus(s.status);
         }
-    },[numBlock]);
-    useEffect(()=>{
-        if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[numBlock]) {
-            setInfo(JSON.parse(localStorage.getItem('check_massive'))[numBlock]);
-        }
-        else {
-            setInfo('');
-        }
-    },[numBlock]);
+    },[]);
     useEffect(()=>{
         info !==''&&result.change({info});
     },[info]);
