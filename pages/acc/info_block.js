@@ -4,7 +4,6 @@ import { useState,useEffect } from 'react';
 import Image from 'next/image';
 
 const InfoBlock = (result) => {
-    
     const [logo,setLogo] = useState("/img/man.webp");
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
@@ -53,7 +52,10 @@ const InfoBlock = (result) => {
         }
     },[numBlock]);
     useEffect(()=>{
-        info !==''&&result.change({info});
+        const GetResult = () => {
+            info !==''&&result.change({info});
+        };
+        GetResult();
     },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
