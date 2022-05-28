@@ -22,8 +22,7 @@ const InfoAcc = () => {
         return results[0]?setReady(true):setReady(false);
     },[results]);
     const AddNewPerson = () => {
-        const setId = (results.length-1)+1;
-        // const setId = Date.now();
+        const setId = Date.now();
         setResults([...results,{id:setId}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:setId}]));
         setReady(true);
@@ -50,8 +49,6 @@ const InfoAcc = () => {
             // console.log(results.map(e=>{if(e.id!==0) e.id=e.id-1;return e}));
         }
     },[conf,con,remove,results]);
-    console.log(Object.keys(results).map(e=>{e}));
-    console.log(results);
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
         s[res.info.id] = res.info;
