@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
-import { useState,useEffect,useMemo } from 'react';
+import { useState,useEffect } from 'react';
 import Image from 'next/image';
 
 const InfoBlock = (result) => {
@@ -51,7 +51,7 @@ const InfoBlock = (result) => {
             setInfo('');
         }
     },[numBlock]);
-    useMemo(()=>{
+    useEffect(()=>{
         const r = result;
         info !==''&&r.change({info});
     },[info]);
