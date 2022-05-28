@@ -11,7 +11,7 @@ const InfoBlock = (result) => {
     const [info,setInfo] = useState('');
     const [numBlock,setNumBlock] = useState('');
     useEffect(()=>{
-        result?setNumBlock(result.item.id):setNumBlock({});
+        return result?setNumBlock(result.item.id):setNumBlock({});
     },[result]);
     const CheckAvatar = (event) => {
         let reader = new FileReader();

@@ -2,7 +2,6 @@
 import ConfirmMode from './confirm';
 import Header from './header';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 
 const DocumentResult = ({children}) => {

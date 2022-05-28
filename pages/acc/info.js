@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 
 const InfoAcc = () => {
     const remove = useDispatch();
-    const [confirm,setConfirm] = useState(null) 
+    const [confirm,setConfirm] = useState(null);
     const [con,setCon] = useState(false);
     const [conf] = useConfirm(confirm);
     const [ready,setReady] = useState(false);
@@ -30,8 +30,8 @@ const InfoAcc = () => {
     const RemovePerson = (res) => {
         let name,surname;
         if(res) {
-            res.name === undefined ? name="": name=" "+res.name;
-            res.surname === undefined ? surname="": surname=" "+res.surname;
+            if(res.name === undefined) name=""; else name=" "+res.name;
+            if(res.surname === undefined) surname=""; else surname=" "+res.surname;
         }
         setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя${name}${surname}?`});
         setCon(res);
@@ -46,7 +46,7 @@ const InfoAcc = () => {
             },[200]);
             remove({type:"SetConfirm",set:false});
         }
-    },[conf,con,remove,results])
+    },[conf,con,remove,results]);
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
         s[res.info.id] = res.info;
