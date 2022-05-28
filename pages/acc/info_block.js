@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useMemo } from 'react';
 import Image from 'next/image';
 
 const InfoBlock = (result) => {
@@ -51,11 +51,9 @@ const InfoBlock = (result) => {
             setInfo('');
         }
     },[numBlock]);
-    const ChangeData = () => {
-        result.change({info})
-    };
-    useEffect(()=>{
-        info !==''&&ChangeData();
+    useMemo(()=>{
+        const r = result;
+        info !==''&&r.change({info});
     },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
