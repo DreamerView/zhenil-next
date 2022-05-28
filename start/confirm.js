@@ -6,7 +6,7 @@ const ConfirmMode = (result) => {
     return(
         <>
         <div className="confirm__back">
-                <div className="confirm__block">
+                <div className="confirm__block basic_animation">
                     <h3>
                         {result.item.name}
                     </h3>

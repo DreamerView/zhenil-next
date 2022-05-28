@@ -30,10 +30,10 @@ const InfoAcc = () => {
     const RemovePerson = (res) => {
         let name,surname;
         if(res) {
-            res.name === undefined ? name="": name=res.name;
-            res.surname === undefined ? surname="": surname=res.surname;
+            res.name === undefined ? name="": name=" "+res.name;
+            res.surname === undefined ? surname="": surname=" "+res.surname;
         }
-        setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя ${name} ${surname}?`});
+        setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя${name}${surname}?`});
         setCon(res);
     };
     useEffect(()=>{
