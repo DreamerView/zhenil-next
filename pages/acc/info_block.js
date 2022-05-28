@@ -10,7 +10,10 @@ const InfoBlock = (result) => {
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
     const [info,setInfo] = useState('');
-    const [numBlock] = useState(result.item.id)
+    const [numBlock,setNumBlock] = useState('');
+    useEffect(()=>{
+        result?setNumBlock(result.item.id):setNumBlock('');
+    },[result]);
     const CheckAvatar = (event) => {
         let reader = new FileReader();
         reader.readAsDataURL(event);
