@@ -51,11 +51,11 @@ const InfoBlock = (result) => {
             setInfo('');
         }
     },[numBlock]);
+    const ChangeData = () => {
+        result.change({info})
+    };
     useEffect(()=>{
-        const GetResult = () => {
-            info !==''&&result.change({info});
-        };
-        GetResult();
+        info !==''&&ChangeData();
     },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
