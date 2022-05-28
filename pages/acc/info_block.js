@@ -39,7 +39,7 @@ const InfoBlock = (result) => {
                 if(s.status) setStatus(s.status);
             }
         }
-    },[result.item.id]);
+    },[result]);
     useEffect(()=>{
         if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[result.item.id]) {
             setInfo(JSON.parse(localStorage.getItem('check_massive'))[result.item.id]);
@@ -47,7 +47,7 @@ const InfoBlock = (result) => {
         else {
             setInfo('');
         }
-    },[result.item.id]);
+    },[result]);
     useEffect(()=>{
         if(info==='') return;
         else {
