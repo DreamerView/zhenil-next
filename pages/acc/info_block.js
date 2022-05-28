@@ -39,7 +39,7 @@ const InfoBlock = (result) => {
                 if(s.status) setStatus(s.status);
             }
         }
-    },[]);
+    },[result.item.id]);
     useEffect(()=>{
         if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[result.item.id]) {
             setInfo(JSON.parse(localStorage.getItem('check_massive'))[result.item.id]);
@@ -47,13 +47,13 @@ const InfoBlock = (result) => {
         else {
             setInfo('');
         }
-    },[]);
+    },[result.item.id]);
     useEffect(()=>{
         if(info==='') return;
         else {
             result.change({info});
         }
-    },[info]);
+    },[info,result]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
                     <div className="main__block_menu_close">
