@@ -46,7 +46,7 @@ const InfoAcc = () => {
             },[200]);
             remove({type:"SetConfirm",set:false});
         }
-    },[conf,con])
+    },[conf,con,remove,results])
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
         s[res.info.id] = res.info;
