@@ -5,9 +5,12 @@ import Head from "next/head";
 import InfoBlock from './info_block';
 import Image from "next/image";
 import useConfirm from "../conf";
+import { useDispatch } from 'react-redux';
 
 const InfoAcc = () => {
+    const remove = useDispatch();
     const [confirm,setConfirm] = useState(null) 
+    const [con,setCon] = useState(false);
     const [conf] = useConfirm(confirm);
     const [ready,setReady] = useState(false);
     const [results,setResults] = useState([]);
@@ -26,16 +29,19 @@ const InfoAcc = () => {
     };
     const RemovePerson = (res) => {
         setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя ${res.name} ${res.surname}?`});
-        console.log(conf);
-        if(conf) {
+        setCon(res);
+    };
+    useEffect(()=>{
+        if(conf===true) {
             setAction('remove_animation');
             setTimeout(()=>{
-                setResults(results.filter(info=>info.id !== res.id));
-                localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== res.id)));
+                setResults(results.filter(info=>info.id !== con.id));
+                localStorage.setItem('check_massive',JSON.stringify(results.filter(info=>info.id !== con.id)));
                 setAction('');
             },[200]);
+            remove({type:"SetConfirm",set:false});
         }
-    };
+    },[conf,con])
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
         s[res.info.id] = res.info;

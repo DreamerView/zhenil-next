@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import Image from 'next/image';
 
 const InfoBlock = (result) => {
+    
     const [logo,setLogo] = useState("/img/man.webp");
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
