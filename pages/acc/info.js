@@ -20,7 +20,7 @@ const InfoAcc = () => {
     },[]);
     useEffect(()=>{
         return results[0]?setReady(true):setReady(false);
-    },[results[0]]);
+    },[results]);
     const AddNewPerson = () => {
         setResults([...results,{id:(results.length-1)+1}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:(results.length-1)+1}]));
