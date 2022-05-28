@@ -9,7 +9,7 @@ const useConfirm = (res) => {
 
     useEffect(() => {
         if(res) dis({type:"SetAction",set:{name:res.name,content:res.content,type:res.type,text:{cancel:'Закрыть',accept_color:'red_background',accept:'Удалить'}}});
-    }, [res]);
+    }, [res,dis]);
 
    return [result];
 };
