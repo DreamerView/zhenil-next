@@ -10,6 +10,7 @@ const InfoBlock = (result) => {
     const [surname,setSurname] = useState('Введите фамилию');
     const [status,setStatus] = useState('Необзязательное поле');
     const [info,setInfo] = useState('');
+    const [numBlock] = useState(result.item.id)
     const CheckAvatar = (event) => {
         let reader = new FileReader();
         reader.readAsDataURL(event);
@@ -31,7 +32,7 @@ const InfoBlock = (result) => {
     };
     useEffect(()=>{
         if(localStorage.getItem('check_massive')) {
-            let s = JSON.parse(localStorage.getItem('check_massive'))[result.item.id];
+            let s = JSON.parse(localStorage.getItem('check_massive'))[numBlock];
             if(s) {
                 if(s.avatar) setLogo(s.avatar);
                 if(s.name) setName(s.name);
@@ -39,21 +40,21 @@ const InfoBlock = (result) => {
                 if(s.status) setStatus(s.status);
             }
         }
-    },[result]);
+    },[numBlock]);
     useEffect(()=>{
-        if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[result.item.id]) {
-            setInfo(JSON.parse(localStorage.getItem('check_massive'))[result.item.id]);
+        if(localStorage.getItem('check_massive')&&JSON.parse(localStorage.getItem('check_massive'))[numBlock]) {
+            setInfo(JSON.parse(localStorage.getItem('check_massive'))[numBlock]);
         }
         else {
             setInfo('');
         }
-    },[result]);
+    },[numBlock]);
     useEffect(()=>{
         if(info==='') return;
         else {
             result.change({info});
         }
-    },[info,result]);
+    },[info]);
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
                     <div className="main__block_menu_close">
