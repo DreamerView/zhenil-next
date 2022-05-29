@@ -12,8 +12,8 @@ const DocumentResult = ({children}) => {
     const url = useSelector(state=>state.urlframe);
     useEffect(()=>{
         if(action) {
-            document.querySelector('html').style.cssText = "overflow-y:hidden;";
-            document.querySelector('body').style.cssText = "overflow-y:hidden;";
+            document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
+            document.querySelector('body').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
         }
         else {
             document.querySelector('html').style.cssText = "";
@@ -22,8 +22,8 @@ const DocumentResult = ({children}) => {
     },[action]);
     useEffect(()=>{
         if(frame) {
-            document.querySelector('html').style.cssText = "overflow-y:hidden;";
-            document.querySelector('body').style.cssText = "overflow-y:hidden;";
+            document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
+            document.querySelector('body').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
         }
         else {
             document.querySelector('html').style.cssText = "";
