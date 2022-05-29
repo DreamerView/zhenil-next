@@ -24,6 +24,7 @@ const LogoAcc = () => {
                 ctx.drawImage(i,0,0,canvas.width,canvas.height);
                 const srcEnc = ctx.canvas.toDataURL("image/webp");
                 localStorage.setItem('logo_acc',srcEnc);
+                setLogo(srcEnc);
                 setC({logo:'logo_s',text:'Логотип загружен ✔',div:'alerts_g'});
             };
         };
@@ -56,7 +57,7 @@ const LogoAcc = () => {
                                 <Image width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
                             </div>
                         </label>
-                        <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{setLogo(URL.createObjectURL(event.target.files[0]));CheckLogo(event.target.files[0]);setReady(true)}} />
+                        <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{CheckLogo(event.target.files[0]);setReady(true)}} />
                        
                             <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
                         
