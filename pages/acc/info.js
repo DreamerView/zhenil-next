@@ -46,12 +46,12 @@ const InfoAcc = () => {
                 setAction('');
             },[200]);
             remove({type:"SetConfirm",set:false});
-            // console.log(results.map(e=>{if(e.id!==0) e.id=e.id-1;return e}));
         }
     },[conf,con,remove,results]);
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));
-        s[res.info.id] = res.info;
+        let i = s.findIndex(x => x.id === res.info.id);
+        s[i] = res.info;
         setResults(s);
         localStorage.setItem('check_massive',JSON.stringify(s));
     };

@@ -37,14 +37,14 @@ const InfoBlock = (result) => {
         };
     };
     useEffect(()=>{
-        let s = result.item;
+        let s = info;
         if(s) {
             if(s.avatar) setLogo(s.avatar);
             if(s.name) setName(s.name);
             if(s.surname) setSurname(s.surname);
             if(s.status) setStatus(s.status);
         }
-    },[]);
+    },[info]);
     useEffect(()=>{
         info !==''&&result.change({info});
     },[info]);
