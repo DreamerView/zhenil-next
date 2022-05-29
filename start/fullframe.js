@@ -1,7 +1,8 @@
+/*jshint esversion: 6 */
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 const FullFrame = (result) => {
-    const send = useDispatch()
+    const send = useDispatch();
     return(
         <div className="fullscreen__result">
             <div className="fullscreen__result_block red_background" onClick={()=>{send({type:"setFullFrame",set:false});send({type:"setUrlFrame",set:false});}}>

@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const ConfirmMode = (result) => {
     const send = useDispatch();
