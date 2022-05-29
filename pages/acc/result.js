@@ -1,8 +1,11 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import Image from "next/image";
 
 const ResultAcc = () => {
+    const send = useDispatch();
     return(
         <>
             <Head>
@@ -14,10 +17,14 @@ const ResultAcc = () => {
             <div className="main__block">
                 <h1>[Этап 1/4] Загрузка логотипа</h1>
                 <p className="sub_content">Этап 1/4. Загрузите ваш логотип организации/компаний</p>
-                <div className="main__block_interface_menu c-m block_animation" onClick={()=>{}}>
+                <div className="main__block_interface_menu c-m block_animation">
                     <div className="main__block_interface_menu_c">
                         <h1>Результаты</h1>
                         <p className="sub_content">Поздравляю! 🎉 Ваш документ готов!</p>
+                        <div className="fullscreen__result_block blue_background" onClick={()=>{send({type:"setFullFrame",set:true});send({type:"setUrlFrame",set:"/convert.html"});}}>
+                            <div className="fullscreen__result_button"><Image src={'/img/fullscreen.svg'} width={22} height={22}/></div>
+                            <p className="small">Смотреть в полноэкранном режиме</p>
+                        </div>
                     </div>
                     <iframe id="frame" title="converter result" src={"/convert.html"}>
                         Ваш браузер не поддерживает плавающие фреймы!
