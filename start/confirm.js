@@ -3,7 +3,6 @@ import { useDispatch,useSelector } from "react-redux";
 
 const ConfirmMode = (result) => {
     const send = useDispatch();
-    const getResult = useSelector(state=>state.confirm);
     return(
         <>
         <div className="confirm__back">
