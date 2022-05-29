@@ -17,7 +17,7 @@ const ResultAcc = () => {
                 <div className="main__block_interface_menu c-m block_animation" onClick={()=>{}}>
                     <div className="main__block_interface_menu_c">
                         <h1>Результаты</h1>
-                        <p className="sub_content">Поздравляю! 🎊 Ваш документ готов!</p>
+                        <p className="sub_content">Поздравляю! 🎉 Ваш документ готов!</p>
                     </div>
                     <iframe id="frame" title="converter result" src={"/convert.html"}>
                         Ваш браузер не поддерживает плавающие фреймы!
