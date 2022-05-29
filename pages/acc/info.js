@@ -61,7 +61,7 @@ const InfoAcc = () => {
                 <title>[Этап 3/4] Заполнение информации</title>
             </Head>
             <div className="main__nav">
-            <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  Информация</p>
+                <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  Информация</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 3/4] Заполнение информации</h1>

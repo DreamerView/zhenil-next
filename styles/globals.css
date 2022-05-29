@@ -802,6 +802,11 @@ button.confirm_custom_a {
   color:white;
 }
 /*  */
-#frame { transform: scale(0.75); }
+#frame { 
+  width:95%;
+  height: 442px;
+  border:0;display:block; 
+  margin:0 auto;
+}
 
 

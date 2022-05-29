@@ -40,26 +40,6 @@ const LogoAcc = () => {
             <Head>
                 <title>[Этап 1/4] Загрузка логотипа</title>
             </Head>
-            {/* <div className="confirm__back">
-                <div className="confirm__block">
-                    <h3>
-                        Title Here
-                    </h3>
-                    <p class="sm">
-                        Here’s an alert description that uses Auto Layout!
-                    </p>
-                    <div className="confirm__block_action">
-                        <div className="confirm__block_action_2">
-                            <div>
-                                <button>Action</button>
-                            </div>
-                            <div>
-                                <button className="confirm_custom red_background">Action</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  Логотип</p>
             </div>
