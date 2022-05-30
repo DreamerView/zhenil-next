@@ -2,8 +2,10 @@
 /*jshint esversion: 9 */
 import { useState,useEffect } from 'react';
 import Image from 'next/image';
+import { useDispatch } from 'react-redux';
 
 const InfoBlock = (result) => {
+    const send = useDispatch();
     const [logo,setLogo] = useState("/img/man.webp");
     const [name,setName] = useState('Введите имя');
     const [surname,setSurname] = useState('Введите фамилию');
@@ -18,22 +20,47 @@ const InfoBlock = (result) => {
         }
     },[]);
     const CheckAvatar = (event) => {
+        const CenterImage = (event) => {
+            const image = document.createElement('img');
+            image.src = event;
+            image.onload = () => {
+                let size;
+                const canvas = document.createElement('canvas');
+                var canvasContext = canvas.getContext('2d');
+                const maximumWidth = 300;
+                canvas.width = maximumWidth;
+                canvas.height = maximumWidth;
+                size=image.width;
+                canvasContext.drawImage(image, 0, -20, size, size,0,0,size, size);
+                const srcC = canvasContext.canvas.toDataURL("image/webp");
+                // setInfo({...info,id:result.item.id,avatar:srcC});
+                // setLogo(srcC);
+            };
+        };
         let reader = new FileReader();
         reader.readAsDataURL(event);
         reader.onloadend = () => {
             const i = document.createElement('img');
+            let result;
             i.src = reader.result;
             i.onload = () => {
                 const canvas = document.createElement('canvas');
-                const maxWidth = 300;
-                const scaleSize = maxWidth / i.width;
-                canvas.width = maxWidth;
-                canvas.height = i.height * scaleSize;
+                // const maxWidth = 300;
+                // const scaleSize = maxWidth / i.width;
+                // canvas.width = maxWidth;
+                // canvas.height = i.height * scaleSize;
+                canvas.width = 300;
+                canvas.height = 300;
                 const ctx = canvas.getContext('2d');
-                ctx.drawImage(i,0,0,canvas.width,canvas.height);
-                const srcEnc = ctx.canvas.toDataURL("image/webp");
-                setInfo({...info,id:result.item.id,avatar:srcEnc});
-                setLogo(srcEnc);
+                ctx.drawImage(i,
+                    (i.width - 300) / 2,
+                    (i.height - 300) / 2 / 2, 300, 300, 0, 0, 300, 300
+                );
+                // ctx.drawImage(i,0,0,canvas.width,canvas.height);
+                const srcRes = ctx.canvas.toDataURL("image/webp");
+                // CenterImage(srcRes);
+                setInfo({...info,avatar:srcRes});
+                setLogo(srcRes);
             };
         };
     };
@@ -69,7 +96,7 @@ const InfoBlock = (result) => {
                             </label>
                             <input className='main__block_interface_menu_logo_icon_img_hide' name="logoPreview" accept="image/*" type='file' onChange={(event)=>{CheckAvatar(event.target.files[0]);}} />
                             <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
-                            <p className="sub_content">Выберите фото</p>
+                            <p onClick={()=>{send({type:"setCropImage",set:"yes"})}} className="sub_content">Выберите фото</p>
                         </div>
                         <div className="main__block_interface_menu_c_info_block_text">
                             <div className="main__block_interface_menu_c_s flex">

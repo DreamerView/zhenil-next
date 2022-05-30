@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 
+
 const ResultAcc = () => {
     const send = useDispatch();
     return(
