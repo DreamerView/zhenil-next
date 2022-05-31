@@ -13,8 +13,8 @@ const Home = () => {
       <div className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks} itemScope itemType="https://schema.org/BreadcrumbList">
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={styles.main__menu_nav_block}>
                   <div className={`${styles.main__menu_nav_block_image} green_background`}>
                     <Image width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
@@ -24,12 +24,12 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="1" />
+          <meta itemProp="position" content="1" />
           <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={styles.main__menu_nav_block}>
                   <div className={`${styles.main__menu_nav_block_image} red_background`}>
                     <Image width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
@@ -39,12 +39,12 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="2" />
+          <meta itemProp="position" content="2" />
           <span> </span>
           
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
                   <Image width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
@@ -54,12 +54,12 @@ const Home = () => {
             </a>
             </Link>
           </div>
-          <meta itemprop="position" content="3" />
+          <meta itemProp="position" content="3" />
           <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
                   <Image width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
@@ -69,12 +69,12 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="4" />
+          <meta itemProp="position" content="4" />
           <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
@@ -84,11 +84,11 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="5" />
+          <meta itemProp="position" content="5" />
           <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
@@ -98,11 +98,11 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="6" />
+          <meta itemProp="position" content="6" />
           <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
@@ -112,11 +112,11 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="7" />
+          <meta itemProp="position" content="7" />
           <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
-              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
@@ -126,7 +126,7 @@ const Home = () => {
               </a>
             </Link>
           </div>
-          <meta itemprop="position" content="8" />
+          <meta itemProp="position" content="8" />
           <span> </span>
         </div>
       </div>
