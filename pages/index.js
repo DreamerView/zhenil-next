@@ -11,87 +11,123 @@ const Home = () => {
         <title>Okki.kz</title>
       </Head>
       <div className={`${styles.main__menu_nav} block_animation`}>
-        <div className={styles.main__menu_nav_blocks}>
-          <Link href="/acc">
-            <a>
-              <div className={styles.main__menu_nav_block}>
-                <div className={`${styles.main__menu_nav_block_image} green_background`}>
-                  <Image width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
+        <div className={styles.main__menu_nav_blocks} itemScope itemType="https://schema.org/BreadcrumbList">
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+                <div className={styles.main__menu_nav_block}>
+                  <div className={`${styles.main__menu_nav_block_image} green_background`}>
+                    <Image width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
+                  </div>
+                  <span className={styles.nav_header} itemProp="name">Конструктор</span>
                 </div>
-                <span className={styles.nav_header}>Конструктор</span>
-              </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
-              <div className={styles.main__menu_nav_block}>
-                <div className={`${styles.main__menu_nav_block_image} red_background`}>
-                  <Image width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="1" />
+          <span> </span>
+
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+                <div className={styles.main__menu_nav_block}>
+                  <div className={`${styles.main__menu_nav_block_image} red_background`}>
+                    <Image width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
+                  </div>
+                  <span className={styles.nav_header} itemProp="name">Калькулятор</span>
                 </div>
-                <span className={styles.nav_header}>Калькулятор</span>
-              </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="2" />
+          <span> </span>
+          
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
                   <Image width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>Бизнес</span>
+                <span className={styles.nav_header} itemProp="name">Бизнес</span>
               </div>
             </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="3" />
+          <span> </span>
+
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
                   <Image width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>Образование</span>
-              </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+                <span className={styles.nav_header} itemProp="name">Образование</span>
+                </div>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="4" />
+          <span> </span>
+
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>В разработке</span>
+                <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="5" />
+          <span> </span>
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>В разработке</span>
+                <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="6" />
+          <span> </span>
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>В разработке</span>
+                <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
-            </a>
-          </Link>
-          <Link href="/acc">
-            <a>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="7" />
+          <span> </span>
+          <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/acc" itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
+              <a itemId="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>В разработке</span>
+                <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </div>
+          <meta itemprop="position" content="8" />
+          <span> </span>
         </div>
       </div>
     </>
