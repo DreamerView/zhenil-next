@@ -41,13 +41,13 @@ const MyApp = ({ Component, pageProps }) => {
         });
     },[])
 
-  useEffect(() => {
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register('/serviceworker.js')
-                    .then((reg) => console.log('Success: ', reg.scope))
-                    .catch((err) => console.log('Failure: ', err));
-        }
-  }, []);
+//   useEffect(() => {
+//         if ("serviceWorker" in navigator) {
+//             navigator.serviceWorker.register('/serviceworker.js')
+//                     .then((reg) => console.log('Success: ', reg.scope))
+//                     .catch((err) => console.log('Failure: ', err));
+//         }
+//   }, []);
 const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false};
 
 
