@@ -23,7 +23,7 @@ const ResultAcc = () => {
                         <h1>Результаты</h1>
                         <p className="sub_content">Поздравляю! 🎉 Ваш документ готов!</p>
                         <div className="fullscreen__result_block blue_background" onClick={()=>{send({type:"setFullFrame",set:true});send({type:"setUrlFrame",set:"/convert.html"});}}>
-                            <div className="fullscreen__result_button"><Image src={'/img/fullscreen.svg'} width={22} height={22}/></div>
+                            <div className="fullscreen__result_button"><Image src={'/img/fullscreen.svg'} width={22} height={22} alt="icon"/></div>
                             <p className="small">Смотреть в полноэкранном режиме</p>
                         </div>
                     </div>
