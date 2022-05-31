@@ -48,7 +48,7 @@ const MyApp = ({ Component, pageProps }) => {
                     .catch((err) => console.log('Failure: ', err));
         }
   }, []);
-const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false};
+const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false};
 
 
 const reducer = (state=defaultState,action) => {
@@ -58,6 +58,7 @@ const reducer = (state=defaultState,action) => {
     case "setFullFrame": return {...state,fullframe:action.set};
     case "setUrlFrame": return {...state,urlframe:action.set};
     case "setCropImage": return {...state,crop:action.set};
+    case "getCropImage": return {...state,getcrop:action.set};
     default: return state;
   }
 };

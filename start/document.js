@@ -36,7 +36,7 @@ const DocumentResult = ({children}) => {
         <div>
             {frame?<FullFrame item={url} key={Date.now()}/>:""}
             {action?<ConfirmMode item={action} key={Date.now}/>:""}
-            {image?<ResizeImage key={Date.now}/>:""}
+            {image?<ResizeImage item={image} key={Date.now}/>:""}
             <Header/>
             <div className="result">{children}</div>
         </div>

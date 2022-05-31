@@ -861,9 +861,43 @@ div.fullscreen__result_button {
 div.main__crop_image {
   width:100vw;
   height: 100vh;
-  background-color: var(--block-color);
+  background-color: var(--nav_block_blur);
+  -webkit-backdrop-filter: blur(4px);
+  -moz-backdrop-filter: blur(4px);
+  -o-backdrop-filter: blur(4px);
+  -ms-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   position: fixed;
   z-index:30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.main__crop_image_block {
+  width:70vw;
+  height: 70vh;
+  background-color: var(--background-color);
+  position: fixed;
+  z-index:30;
+}
+div.main__crop_image_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  bottom:0;
+  position: fixed;
+  margin-bottom:20px;
+}
+button.main__block_button {
+  padding:16px 27px;
+  width: auto;
+  height: auto;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
 }
 
 

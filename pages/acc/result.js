@@ -35,7 +35,7 @@ const ResultAcc = () => {
             <div className="main__block_fixed_confirm">
                 <div className="main__block_interface_menu_c_end flex">
                             <Link href="/acc/info" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">Назад</a></Link>
-                            {<Link href="/" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">Домой</a></Link>}    
+                            <Link href="/" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">Домой</a></Link>
                 </div>
             </div>
         </>

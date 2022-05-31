@@ -323,7 +323,6 @@ button.main__block_interface_btn_forward {
     font-weight: bold;
     font-size: 17px;
     color: white;
-    cursor: pointer;
     opacity:60%;
     cursor: not-allowed;
 }
@@ -497,6 +496,7 @@ div.main__block_fixed_confirm {
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    z-index:10;
 }
 div.main__block_interface_add_block {
     margin: 20px auto 0 auto;
