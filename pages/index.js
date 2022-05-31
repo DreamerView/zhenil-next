@@ -117,8 +117,8 @@ const Home = () => {
                 <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
               </a>
-              <meta itemProp="position" content="8" />
             </Link>
+            <meta itemProp="position" content="8" />
           </div>
         </div>
       </div>
