@@ -23,9 +23,9 @@ const Home = () => {
                 </div>
               </a>
             </Link>
+            <meta itemProp="position" content="1" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="1" />
-          <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -38,9 +38,9 @@ const Home = () => {
                 </div>
               </a>
             </Link>
+            <meta itemProp="position" content="2" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="2" />
-          <span> </span>
           
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -53,9 +53,9 @@ const Home = () => {
               </div>
             </a>
             </Link>
+            <meta itemProp="position" content="3" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="3" />
-          <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -68,9 +68,9 @@ const Home = () => {
                 </div>
               </a>
             </Link>
+            <meta itemProp="position" content="4" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="4" />
-          <span> </span>
 
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -83,9 +83,9 @@ const Home = () => {
               </div>
               </a>
             </Link>
+            <meta itemProp="position" content="5" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="5" />
-          <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -97,9 +97,9 @@ const Home = () => {
               </div>
               </a>
             </Link>
+            <meta itemProp="position" content="6" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="6" />
-          <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -111,9 +111,9 @@ const Home = () => {
               </div>
               </a>
             </Link>
+            <meta itemProp="position" content="7" />
+            <span> </span>
           </div>
-          <meta itemProp="position" content="7" />
-          <span> </span>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
             <Link href="/acc" itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
               <a itemID="/acc" itemType="https://schema.org/Thing" itemScope itemProp="item">
@@ -124,10 +124,10 @@ const Home = () => {
                 <span className={styles.nav_header} itemProp="name">В разработке</span>
               </div>
               </a>
+              <meta itemProp="position" content="8" />
+              <span> </span>
             </Link>
           </div>
-          <meta itemProp="position" content="8" />
-          <span> </span>
         </div>
       </div>
     </>
