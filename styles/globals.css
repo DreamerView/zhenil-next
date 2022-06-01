@@ -782,14 +782,17 @@ div.confirm__block_action {
   display: grid;
 }
 div.confirm__block_action > div {
-  margin-top:16px;
+  margin-top:12px;
+  padding: 4px 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid var(--border-color);
 }
 span.confirm__block_action_row {
   margin-left:8px;
+  font-size:18px;
 }
 div.confirm__block_action_2 {
   margin-top:16px;
