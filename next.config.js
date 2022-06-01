@@ -5,8 +5,8 @@ const headers = require('./headers');
 module.exports = {
   reactStrictMode: true,
   i18n: {
-    locales: ['en-US', 'ru', 'kk'],
-    defaultLocale: 'en-US',
+    locales: ['en', 'ru', 'kk'],
+    defaultLocale: 'en',
   },
   async headers() {
     return [

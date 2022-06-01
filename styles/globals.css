@@ -686,16 +686,19 @@ img.header__action_avatar {
   border-radius: 13px;
   object-fit: cover;
 }
-div.header__action_block {
+select.header__action_block {
   width:85px;
   height:46px;
-  background-color: var(--block-color);
+  background: url(/img/top.svg) no-repeat 75% 50% var(--block-color);
   margin-left:16px;
   border-radius: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-weight: 700;
+  font-size:16px;
+  padding-left:24px;
 }
 span.header__action_block_text {
   font-weight: 700;
