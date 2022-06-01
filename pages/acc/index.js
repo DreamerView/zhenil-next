@@ -7,7 +7,8 @@ const Acc = () => {
     return(
       <>
       <Head>
-        <title>Конструктор бейджиков/аккредитации</title>
+        <title>Конструктор бейджиков/аккредитации | Okki.kz</title>
+        <meta name="description" content="Создавать бейджиков стало теперь еще проще, с помощью нашего конструктора вы можете создавать его просто и в неограниченном количестве." />
       </Head>
         <div className="main__nav">
             <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>    Конструктор бейджиков</p>

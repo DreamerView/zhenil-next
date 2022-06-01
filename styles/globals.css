@@ -781,6 +781,13 @@ div.confirm__block {
 div.confirm__block_action {
   display: grid;
 }
+div.confirm__block_action > div {
+  margin-top: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 div.confirm__block_action_2 {
   margin-top:16px;
   display: grid;

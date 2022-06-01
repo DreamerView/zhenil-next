@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 
 const ConfirmMode = (result) => {
     const send = useDispatch();
@@ -20,6 +21,18 @@ const ConfirmMode = (result) => {
                         </div>
                         <div>
                             <button onClick={()=>{send({type:"SetConfirm",set:true});send({type:"SetAction",set:false});}} className={`confirm_custom_a ${result.item.text.accept_color}`}>{result.item.text.accept}</button>
+                        </div>
+                    </div>:''}
+                    {result.item.type === 'language'?
+                    <div className="confirm__block_action">
+                        <div>
+                            <span className="confirm__block_action_row">🇰🇿 Қазақша</span>
+                        </div>
+                        <div>
+                            <span className="confirm__block_action_row">🇷🇺 Русский</span>
+                        </div>
+                        <div>
+                            <span className="confirm__block_action_row">🇬🇧 English</span>
                         </div>
                     </div>:''}
                 </div>
