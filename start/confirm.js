@@ -26,13 +26,13 @@ const ConfirmMode = (result) => {
                     {result.item.type === 'language'?
                     <div className="confirm__block_action">
                         <div>
-                            <span className="confirm__block_action_row">🇰🇿 Қазақша</span>
+                            <Image width={20} height={15} src="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
                         </div>
                         <div>
-                            <span className="confirm__block_action_row">🇷🇺 Русский</span>
+                            <Image width={20} height={15} src="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
                         </div>
                         <div>
-                            <span className="confirm__block_action_row">🇬🇧 English</span>
+                        <Image width={20} height={15} src="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
                         </div>
                     </div>:''}
                 </div>
