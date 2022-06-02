@@ -1,8 +1,11 @@
 import { useState,useCallback } from 'react';
 import Cropper from 'react-easy-crop';
 import { useDispatch } from 'react-redux';
+import useTranslateText from '../pages/translate';
+import ux from '../translate/ux/action';
 
 const ResizeImage = (result) => {
+    const lang = useTranslateText();
     const send = useDispatch();
     const [position,setPosition] = useState({width:'',height:'',x:'',y:''});
     const [crop, setCrop] = useState({ x: 0, y: 0 })
@@ -41,7 +44,7 @@ const ResizeImage = (result) => {
             />
         </div>
         <div className='main__crop_image_nav'>
-                <button onClick={()=>{SaveResult()}} className="main__block_button green_background">Сохранить</button>
+                <button onClick={()=>{SaveResult()}} className="main__block_button green_background">{ux['save'][lang]}</button>
         </div>
     </div>
     )

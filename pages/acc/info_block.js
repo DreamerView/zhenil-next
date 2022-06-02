@@ -4,14 +4,17 @@ import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import useTranslateText from '../translate';
+import text from "../../translate/acc/info_block_translate";
 
 const InfoBlock = (result) => {
+    const lang = useTranslateText();
     const send = useDispatch();
     const getcrop = useSelector(state=>state.getcrop);
     const [logo,setLogo] = useState("/img/man.webp");
-    const [name,setName] = useState('Введите имя');
-    const [surname,setSurname] = useState('Введите фамилию');
-    const [status,setStatus] = useState('Необзязательное поле');
+    const [name,setName] = useState(text['type_name'][lang]);
+    const [surname,setSurname] = useState(text['type_surname'][lang]);
+    const [status,setStatus] = useState(text['not_need'][lang]);
     const [info,setInfo] = useState('');
     useEffect(()=>{
         if(result) {
@@ -61,7 +64,7 @@ const InfoBlock = (result) => {
                         </svg>
                     </div>
                     <div className="main__block_interface_menu_c">
-                        <h1>Заполнение информации</h1>
+                        <h1>{text['title'][lang]}</h1>
                     </div>
                     <div className="main__block_interface_menu_c_info_block">
                         <div className="main__block_interface_menu_c_info_block_avatar">
@@ -72,26 +75,26 @@ const InfoBlock = (result) => {
                             </label>
                             <input className='main__block_interface_menu_logo_icon_img_hide' name="logoPreview" accept="image/*" type='file' onChange={(event)=>{send({type:"setCropImage",set:{id:result.item.id,image:URL.createObjectURL(event.target.files[0])}});}} />
                             <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
-                            <p onClick={()=>{send({type:"setCropImage",set:"yes"})}} className="sub_content">Выберите фото</p>
+                            <p className="sub_content">{text['choose_image'][lang]}</p>
                         </div>
                         <div className="main__block_interface_menu_c_info_block_text">
                             <div className="main__block_interface_menu_c_s flex">
                                 <input className="main__block_interface_menu_c_s_i" placeholder={name} onChange={(e)=>{setInfo({...info,name:e.target.value})}} type="text" name="" id="" />
-                                <span className="main__block_interface_menu_c_s_t">Имя</span>
+                                <span className="main__block_interface_menu_c_s_t">{text['name'][lang]}</span>
                             </div>
                             <div className="main__block_interface_menu_c_s flex">
                                 <input className="main__block_interface_menu_c_s_i" placeholder={surname} onChange={(e)=>{setInfo({...info,surname:e.target.value})}} type="text" name="" id="" />
-                                <span className="main__block_interface_menu_c_s_t">Фамилия</span>
+                                <span className="main__block_interface_menu_c_s_t">{text['surname'][lang]}</span>
                             </div>
                             <div className="main__block_interface_menu_c_s flex">
                                 <input className="main__block_interface_menu_c_s_i" placeholder={status} onChange={(e)=>{setInfo({...info,status:e.target.value})}} type="text" name="" id="" />
-                                <span className="main__block_interface_menu_c_s_t">Должность</span>
+                                <span className="main__block_interface_menu_c_s_t">{text['status'][lang]}</span>
                             </div>
                         </div>
                     </div>
                     <div className="main__block_interface_menu_c_end">
                         <div className=''>
-                            <span className='logo'>* Выберите фото и заполните все необходимые информации пожалуйста</span>
+                            <span className='logo'>{text['complete'][lang]}</span>
                         </div>
                     </div>
                 </div>

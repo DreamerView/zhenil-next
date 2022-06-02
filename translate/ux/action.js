@@ -4,6 +4,11 @@ export default {
         ru:"Продолжить",
         en:"Continue"
     },
+    save:{
+        kk:"Сақтау",
+        ru:"Сохранить",
+        en:"Save"
+    },
     skip: {
         kk:"Өткізіп жіберу",
         ru:"Пропустить",
@@ -18,5 +23,35 @@ export default {
         kk:"Бастау",
         ru:"Начать",
         en:"Start"
+    },
+    finish: {
+        kk:"Аяқтау?",
+        ru:"Завершить?",
+        en:"Finish?"
+    },
+    fullframe_open: {
+        kk:"Толық экран режимінде қарау",
+        ru:"Смотреть в полноэкранном режиме",
+        en:"Watch in full-screen mode"
+    },
+    fullframe_close: {
+        kk:"Толық экран режімін жабу",
+        ru:"Закрыть полноэкранный режим",
+        en:"Close full-screen mode"
+    },
+    home:{
+        kk:"Үйге",
+        ru:"Домой",
+        en:"Home"
+    },
+    cancel:{
+        kk:"Жабу",
+        ru:"Закрыть",
+        en:"Cancel"
+    },
+    delete: {
+        kk:"Жою",
+        ru:"Удалить",
+        en:"Delete"
     }
 }

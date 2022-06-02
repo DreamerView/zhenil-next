@@ -6,8 +6,10 @@ import InfoBlock from './info_block';
 import Image from "next/image";
 import useConfirm from "../conf";
 import { useDispatch } from 'react-redux';
-import translate from "../../translate/acc/navbar_translate";
 import useTranslateText from '../translate';
+import ux from "../../translate/ux/action";
+import translate from "../../translate/acc/navbar_translate";
+import text from "../../translate/acc/info_translate";
 
 const InfoAcc = () => {
     const lang = useTranslateText();
@@ -37,7 +39,7 @@ const InfoAcc = () => {
             if(res.name === undefined) name=""; else name=" "+res.name;
             if(res.surname === undefined) surname=""; else surname=" "+res.surname;
         }
-        setConfirm({type:"delete",name:"Подтверждение",content:`Вы действительно хотите удалить пользователя${name}${surname}?`});
+        setConfirm({type:"delete",name:text['alert_name'][lang],content:`${text['alert_content'][lang]}${name}${surname}?`,cancel:ux['cancel'][lang],accept_color:"red_background",accept:ux['delete'][lang]});
         setCon(res);
     };
     useEffect(()=>{
@@ -61,28 +63,28 @@ const InfoAcc = () => {
     return(
         <>
             <Head>
-                <title>[Этап 3/4] Заполнение информации</title>
+                <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
             <div className="main__block">
-                <h1>[Этап 3/4] Заполнение информации</h1>
-                <p className="sub_content">Этап 3/4. Заполните все необходимые информации о пользователе</p>
+                <h1>{text['name'][lang]}</h1>
+                <p className="sub_content">{text['content'][lang]}</p>
                 {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} />)}
                 <div className="main__block_interface_menu block_animation c-m click" onClick={()=>AddNewPerson()}>
                     <div className="main__block_interface_menu_c_end">
                         <div className="main__block_interface_menu_background">
                             <Image width={46} height={46} className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
                         </div>
-                        <p className="sub_content">Добавить пользователя</p>
+                        <p className="sub_content">{text['add_user'][lang]}</p>
                     </div>
                 </div>
             </div>
             <div className="main__block_fixed_confirm">
                 <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">Назад</a></Link>
-                            {!ready ? <button className="main__block_interface_btn_forward">Завершить?</button>: <Link href="/acc/result" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">Завершить?</a></Link>}    
+                            <Link href="/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['back'][lang]}</a></Link>
+                            {!ready ? <button className="main__block_interface_btn_forward">{ux['finish'][lang]}</button>: <Link href="/acc/result" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['finish'][lang]}</a></Link>}    
                 </div>
             </div>
         </>

@@ -4,6 +4,11 @@ export default {
         ru:"Конструктор бейджиков/аккредитации",
         en:"Badge/accreditation constructor"
     },
+    seo_description: {
+        kk:"Бейдждерді жасау енді оңайырақ болды, біздің конструктордың көмегімен сіз оны қарапайым және шексіз мөлшерде жасай аласыз.",
+        ru:"Создавать бейджиков стало теперь еще проще, с помощью нашего конструктора вы можете создавать его просто и в неограниченном количестве.",
+        en:"Creating badges has now become even easier, with the help of our constructor, you can create it simply and in unlimited quantities."
+    },
     content: {
         kk:"Мұны істеу үшін қанша адамға қажет болатынын таңдаңыз?",
         ru:"Выберите на сколько людей нужно будет это сделать?",
