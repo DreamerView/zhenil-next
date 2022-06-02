@@ -7,8 +7,7 @@ const ConfirmMode = (result) => {
     const router = useRouter();
     const send = useDispatch();
     const ChangeLanguage = (e) => {
-        router.push(router.asPath, router.asPath, { locale: change });
-        // send({type:"SetConfirm",set:false});send({type:"SetAction",set:false});
+        send({type:"SetAction",set:false});send({type:"SetConfirm",set:e});
     };
     return(
         <>

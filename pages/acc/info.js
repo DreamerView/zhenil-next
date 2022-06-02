@@ -6,8 +6,11 @@ import InfoBlock from './info_block';
 import Image from "next/image";
 import useConfirm from "../conf";
 import { useDispatch } from 'react-redux';
+import translate from "../../translate/acc/navbar_translate";
+import useTranslateText from '../translate';
 
 const InfoAcc = () => {
+    const lang = useTranslateText();
     const remove = useDispatch();
     const [confirm,setConfirm] = useState(null);
     const [con,setCon] = useState(false);
@@ -61,7 +64,7 @@ const InfoAcc = () => {
                 <title>[Этап 3/4] Заполнение информации</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  Информация</p>
+                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 3/4] Заполнение информации</h1>

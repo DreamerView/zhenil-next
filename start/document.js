@@ -1,10 +1,10 @@
 /*jshint esversion: 6 */
-import ConfirmMode from './confirm';
-import FullFrame from './fullframe';
-import ResizeImage from './cropimage';
 import Header from './header';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import ConfirmMode from './confirm';
+import FullFrame from './fullframe';
+import ResizeImage from './cropimage';
 
 
 const DocumentResult = ({children}) => {
@@ -13,7 +13,7 @@ const DocumentResult = ({children}) => {
     const url = useSelector(state=>state.urlframe);
     const image = useSelector(state=>state.crop);
     useEffect(()=>{
-        if(action) {
+        if(action||frame||image) {
             document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
             document.querySelector('body').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
         }
@@ -21,17 +21,7 @@ const DocumentResult = ({children}) => {
             document.querySelector('html').style.cssText = "";
             document.querySelector('body').style.cssText = "";
         }
-    },[action]);
-    useEffect(()=>{
-        if(frame) {
-            document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
-            document.querySelector('body').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
-        }
-        else {
-            document.querySelector('html').style.cssText = "";
-            document.querySelector('body').style.cssText = "";
-        }
-    },[frame]);
+    },[action,frame,image]);
     return(
         <div>
             {frame?<FullFrame item={url} key={Date.now()}/>:""}

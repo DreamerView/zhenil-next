@@ -5,12 +5,12 @@ export default {
         en:"Constructor"
     },
     calculator:{
-        kk:"Калькулятор",
+        kk:"Есептегіш",
         ru:"Калькулятор",
         en:"Calculator"
     },
     business:{
-        kk:"Бизнес",
+        kk:"Кәсіп",
         ru:"Бизнес",
         en:"Business"
     },

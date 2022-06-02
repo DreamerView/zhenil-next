@@ -1,8 +1,8 @@
 export default {
     search: {
-        kk: "Қалағанның бәрін іздеңіз",
-        ru: "Ищите все, что вам нужно",
-        en: "Search everything that you want"
+        kk: "Okki.kz бойынша іздеу",
+        ru: "Поиск по Okki.kz",
+        en: "Search by Okki.kz"
     },
     menu: {
         kk: "Мәзір",

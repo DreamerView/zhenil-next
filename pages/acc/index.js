@@ -2,20 +2,25 @@
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import useTranslateText from "../translate";
+import ux from "../../translate/ux/action";
+import translate from "../../translate/acc/navbar_translate";
+import text from "../../translate/acc/index_translate";
 
 const Acc = () => {
+    const lang = useTranslateText();
     return(
       <>
       <Head>
-        <title>Конструктор бейджиков/аккредитации | Okki.kz</title>
+        <title>{text['name'][lang]} | Okki.kz</title>
         <meta name="description" content="Создавать бейджиков стало теперь еще проще, с помощью нашего конструктора вы можете создавать его просто и в неограниченном количестве." />
       </Head>
         <div className="main__nav">
-            <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>    Конструктор бейджиков</p>
+            <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
         </div>
         <div className="main__block">
-            <h1>Конструктор бейджиков/аккредитации</h1>
-            <p className="sub_content">Выберите на сколько людей нужно будет это сделать?</p>
+            <h1>{text['name'][lang]}</h1>
+            <p className="sub_content">{text['content'][lang]}</p>
             <div className="main__block_menu_select p-m">
             <div className="main__block_menu_select_block green_back">
             <Link href="/acc/logo">
@@ -24,13 +29,13 @@ const Acc = () => {
                 <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/person.svg" alt="icon" priority />
             </div>
             <div className="main__block_menu_select_main">
-                <h2>Для одного человека</h2>
+                <h2>{text['title1'][lang]}</h2>
             </div>
             <div className="main__block_menu_select_main">
-                <p className="main__block_menu_select_main_p">Нужно для одного человека? Не беда, просто используйте наш удобный конструктор и создавайте</p>
+                <p className="main__block_menu_select_main_p">{text['content1'][lang]}</p>
             </div>
             <div className="main__block_menu_select_main">
-                <button className="main__block_menu_select_main_button green_border">Начать</button>
+                <button className="main__block_menu_select_main_button green_border">{ux['start'][lang]}</button>
             </div>
             </a>
             </Link>
@@ -43,13 +48,13 @@ const Acc = () => {
                 <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/group.svg" alt="icon" priority/>
             </div>
             <div className="main__block_menu_select_main">
-                <h2>Для несколько людей</h2>
+                <h2>{text['title2'][lang]}</h2>
             </div>
             <div className="main__block_menu_select_main">
-                <p className="main__block_menu_select_main_p">Нужно для несколько людей? Не беда, просто используйте наш удобный конструктор и создавайте</p>
+                <p className="main__block_menu_select_main_p">{text['content2'][lang]}</p>
             </div>
             <div className="main__block_menu_select_main">
-                <button className="main__block_menu_select_main_button purple_border">Начать</button>
+                <button className="main__block_menu_select_main_button purple_border">{ux['start'][lang]}</button>
             </div>
             </a>
             </Link>
@@ -62,13 +67,13 @@ const Acc = () => {
                 <Image width={30} height={30} className="main__block_menu_select_block_icon_img" src="/img/help.svg" alt="icon" priority/>
             </div>
             <div className="main__block_menu_select_main">
-                <h2>Инфографика</h2>
+                <h2>{text['title3'][lang]}</h2>
             </div>
             <div className="main__block_menu_select_main">
-                <p className="main__block_menu_select_main_p">Хотите подробно узнать как можно использовать конструктор?</p>
+                <p className="main__block_menu_select_main_p">{text['content3'][lang]}</p>
             </div>
             <div className="main__block_menu_select_main">
-                <button className="main__block_menu_select_main_button blue_border">Начать</button>
+                <button className="main__block_menu_select_main_button blue_border">{ux['start'][lang]}</button>
             </div>
             </a>
             </Link>

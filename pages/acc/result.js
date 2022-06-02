@@ -3,17 +3,20 @@ import Head from "next/head";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
+import useTranslateText from "../translate";
+import translate from "../../translate/acc/navbar_translate"
 
 
 const ResultAcc = () => {
     const send = useDispatch();
+    const lang = useTranslateText()
     return(
         <>
             <Head>
                 <title>[Этап 4/4] Результаты</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">Главная  /</b></Link>  <Link href="/acc"><a>Конструктор бейджиков /</a></Link>  <Link href="/acc/logo"><a>Логотип /</a></Link>  <Link href="/acc/size"><a>Размер /</a></Link>  <Link href="/acc/info"><a>Информация /</a></Link>  Результаты</p>
+                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/acc/size"><a>{translate['step3'][lang]} /</a></Link>  <Link href="/acc/info"><a>{translate['step4'][lang]} /</a></Link>  {translate['step5'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>[Этап 1/4] Загрузка логотипа</h1>

@@ -3,12 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import styles from '../styles/index_main.module.css';
-import { useRouter } from "next/router";
+import useTranslateText from "./translate";
 import translate from "../translate/index_translate";
 
 const Home = () => {
-  const router = useRouter();
-  const {locale} = router;
+  const locale = useTranslateText();
   return(
     <>
       <Head>

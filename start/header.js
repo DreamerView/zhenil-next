@@ -3,16 +3,12 @@ import { useState,useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import Image from 'next/image';
-import useConfirm from '../pages/conf';
 import { useRouter } from 'next/router';
 import translate from "../translate/header_translate"
 
 const Header = () => {
-  const [confirm,setConfirm] = useState(null);
   const router = useRouter();
   const {locale} = router;
-  const [con,setCon] = useState(false);
-  const [conf] = useConfirm(confirm);
   const [result,setResult] = useState("");
   const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
   const SetLanguage = (e) => {
