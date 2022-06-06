@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+/*jshint sub:true*/
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";

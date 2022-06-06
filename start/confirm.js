@@ -2,13 +2,11 @@
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const ConfirmMode = (result) => {
     const router = useRouter();
     const send = useDispatch();
-    const ChangeLanguage = (e) => {
-        send({type:"SetAction",set:false});send({type:"SetConfirm",set:e});
-    };
     return(
         <>
         <div className="confirm__back">
@@ -30,14 +28,20 @@ const ConfirmMode = (result) => {
                     </div>:''}
                     {result.item.type === 'language'?
                     <div className="confirm__block_action">
-                        <div onClick={()=>{ChangeLanguage('kk')}}>
-                            <Image width={20} height={15} src="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
+                        <div>
+                            <Link href={router.asPath} locale="kk"><a>
+                                <Image width={20} height={15} src="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
+                            </a></Link>
                         </div>
-                        <div onClick={()=>{ChangeLanguage('ru')}}>
-                            <Image width={20} height={15} src="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
+                        <div>
+                            <Link href={router.asPath} locale="ru"><a>
+                                <Image width={20} height={15} src="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
+                            </a></Link>
                         </div>
-                        <div onClick={()=>{ChangeLanguage('en-US')}}>
-                            <Image width={20} height={15} src="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
+                        <div>
+                            <Link href={router.asPath} locale="en"><a>
+                                <Image width={20} height={15} src="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
+                            </a></Link>
                         </div>
                     </div>:''}
                 </div>

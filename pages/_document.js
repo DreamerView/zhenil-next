@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 const DocumentShow = () => {
   return (
-    <Html lang="ru">
+    <Html>
       <Head>
                 <meta charSet="utf-8" />
                 <link rel="icon" href="/favicon.ico" />

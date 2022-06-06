@@ -11,7 +11,7 @@ import text from "../../translate/acc/result_translate";
 
 const ResultAcc = () => {
     const send = useDispatch();
-    const lang = useTranslateText()
+    const lang = useTranslateText();
     return(
         <>
             <Head>

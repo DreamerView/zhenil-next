@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import { useRouter } from "next/router";
 
 const useTranslateText = () => {

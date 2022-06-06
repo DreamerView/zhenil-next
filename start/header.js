@@ -4,19 +4,21 @@ import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import translate from "../translate/header_translate"
+import translate from "../translate/header_translate";
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
-  const router = useRouter();
-  const {locale} = router;
-  const [result,setResult] = useState("");
-  const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
-  const SetLanguage = (e) => {
-    router.push(router.asPath, router.asPath, { locale: e.target.value });
-  }
-  useEffect(()=>{
+    const send = useDispatch();
+    const router = useRouter();
+    const {locale} = router;
+    const [result,setResult] = useState("");
+    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
+    const SetLanguage = () => {
+        send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
+    };
+    useEffect(()=>{
         return checkMode===true?setResult("-night"):setResult("");
-  },[checkMode]);
+    },[checkMode]);
     return(
         <header>
     <div className="header__logo">
@@ -32,15 +34,12 @@ const Header = () => {
       <div className="header__action_image">
         <Image width={46} height={46} className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
       </div>
-      <select onChange={e=>SetLanguage(e)} defaultValue={locale} className="header__action_block">
-        {/* <span className="header__action_block_text">EN</span>
+      <div onClick={()=>SetLanguage()} className="header__action_block">
+        <span className="header__action_block_text">{locale}</span>
         <div className="header__search_menu_pic">
           <Image width={22} height={22} className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
-        </div> */}
-        <option value="kk">KZ</option>
-        <option value="ru">RU</option>
-        <option value="en">EN</option>
-      </select>
+        </div>
+      </div>
     </div>
     <div className="header__search">
       <input placeholder={translate['search'][locale]} className="header__search_input" type="text" />

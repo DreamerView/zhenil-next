@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+/*jshint sub:true*/
 import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
@@ -42,7 +43,7 @@ const InfoBlock = (result) => {
     };
     useEffect(()=>{
         if(getcrop.id===result.item.id) {CheckAvatar(getcrop.image);}
-    },[getcrop])
+    },[getcrop]);
     useEffect(()=>{
         let s = info;
         if(s) {
