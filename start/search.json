@@ -1,0 +1,30 @@
+[
+    {
+        "title":"Конструктор",
+        "name":"constructor",
+        "image":"/icons/constructor.svg",
+        "image_background":"green_background",
+        "key":"конструктор,құрастырғыш,constructor"
+    },
+    {
+        "title":"Калькулятор",
+        "name":"calculator",
+        "image":"/icons/calculate.svg",
+        "image_background":"red_background",
+        "key":"калькулятор, calculator, есептегіш"
+    },
+    {
+        "title":"Бизнес",
+        "name":"business",
+        "image":"/icons/work.svg",
+        "image_background":"blue_background",
+        "key":"кәсіп, бизнес, business"
+    },
+    {
+        "title":"Бизнес",
+        "name":"education",
+        "image":"/icons/education.svg",
+        "image_background":"purple_background",
+        "key":"білім, образование, education"
+    }
+]

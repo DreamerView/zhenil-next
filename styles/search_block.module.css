@@ -1,0 +1,27 @@
+div.search__block {
+    width:300px;
+    height:58px;
+    background-color: var(--block-color);
+    display: flex;
+    margin:4px 8px 4px 0;
+    border-radius: 13px;
+}
+div.search__block_image {
+    margin:10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.search__block_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+p.smaller {
+    margin-top:4px;
+    font-size: 13px;
+    line-height: 18px;
+}

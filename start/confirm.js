@@ -7,6 +7,9 @@ import Link from "next/link";
 const ConfirmMode = (result) => {
     const router = useRouter();
     const send = useDispatch();
+    const SaveLanguage = (e) => {
+        document.cookie = `NEXT_LOCALE=${e}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    };
     return(
         <>
         <div className="confirm__back">
@@ -28,17 +31,17 @@ const ConfirmMode = (result) => {
                     </div>:''}
                     {result.item.type === 'language'?
                     <div className="confirm__block_action">
-                        <div>
+                        <div onClick={()=>SaveLanguage('kk')}>
                             <Link href={router.asPath} locale="kk"><a>
                                 <Image width={20} height={15} src="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
                             </a></Link>
                         </div>
-                        <div>
+                        <div onClick={()=>SaveLanguage('ru')}>
                             <Link href={router.asPath} locale="ru"><a>
                                 <Image width={20} height={15} src="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
                             </a></Link>
                         </div>
-                        <div>
+                        <div onClick={()=>SaveLanguage('en')}>
                             <Link href={router.asPath} locale="en"><a>
                                 <Image width={20} height={15} src="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
                             </a></Link>
