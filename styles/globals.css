@@ -260,6 +260,8 @@ p.nav > a {
       --nav_menu_c:hsl(240, 3%, 15%);
       --back_contrast:brightness(100%);
       --confirm_block:hsl(240, 2%, 18%);
+      --search_back:hsl(240, 2%, 18%);
+      --search-block: hsl(240, 2%, 28%);
   }
 }
 @media (prefers-color-scheme: light) {
@@ -287,6 +289,8 @@ p.nav > a {
       --nav_menu_c:hsl(0, 0%, 100%);
       --back_contrast:brightness(40%);
       --confirm_block:hsl(0, 0%, 100%);
+      --search_back:hsl(0, 0%, 100%);
+      --search-block: hsl(210, 7%, 95%);
   }
 }
 
@@ -317,6 +321,9 @@ p.nav > a {
       --n-b: var(--border-color);
       --i-s: 0 60px;
       --display: flex;
+  }
+  div.header__search_blocks {
+    width:870px;
   }
   div.main__menu_nav {
     background-color: var(--nav_block);
@@ -364,6 +371,9 @@ p.nav > a {
       --i-s: 0 60px;
       --display: flex;
   }
+  div.header__search_blocks {
+    width:610px;
+  }
   input.header__search_input {
       width: 380px;
   }
@@ -400,6 +410,10 @@ p.nav > a {
       --n-b: var(--border-color);
       --i-s: 0 60px;
       --display: flex;
+  }
+  
+  div.header__search_blocks {
+    width:88vw;
   }
   header {
       grid-template-columns: 50% 50%;
@@ -440,6 +454,9 @@ p.nav > a {
       --n-b: transparent;
       --i-s: 0 24px 0 52px;
       --display: flex;
+  }
+  div.header__search_blocks {
+    width:82vw;
   }
   header {
       grid-template-columns: 50% 50%;
@@ -637,12 +654,16 @@ div.header__search {
 
 div.header__search_blocks {
   position: absolute;
-  display: flex;
-  /* flex-direction: column; */
   z-index:2;
   margin-top:60px;
-  width:700px;
-  flex-wrap: wrap;
+  background-color: var(--search_back);
+  padding:16px;
+  border-radius: 13px;
+  border: 1.5px solid var(--input_border);
+}
+div.header__search_blocks > div {
+  margin-top:8px;
+  display: flex; flex-wrap: wrap;
 }
 
 div.header__search_menu {
@@ -840,6 +861,17 @@ button.confirm_custom_a {
   color:white;
 }
 /*  */
+div.main_hide {
+  width:100vw;
+  height: 82vh;
+  position: absolute;
+  z-index:1;
+  /* -webkit-backdrop-filter: blur(1px);
+  -moz-backdrop-filter: blur(1px);
+  -o-backdrop-filter: blur(1px);
+  -ms-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px); */
+}
 div.fullscreen__result {
   display: flex;
   align-items: center;

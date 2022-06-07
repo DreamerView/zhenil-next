@@ -12,6 +12,7 @@ const DocumentResult = ({children}) => {
     const frame = useSelector(state=>state.fullframe);
     const url = useSelector(state=>state.urlframe);
     const image = useSelector(state=>state.crop);
+    const main = useSelector(state=>state.main);
     useEffect(()=>{
         if(action||frame||image) {
             document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
@@ -28,6 +29,7 @@ const DocumentResult = ({children}) => {
             {action?<ConfirmMode item={action} key={Date.now}/>:""}
             {image?<ResizeImage item={image} key={Date.now}/>:""}
             <Header/>
+            {main?<div className="main_hide"/>:""}
             <div className="result">{children}</div>
         </div>
     );

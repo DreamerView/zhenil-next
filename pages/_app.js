@@ -44,7 +44,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
         if ("serviceWorker" in navigator) navigator.serviceWorker.register('/serviceworker.js');
   }, []);
-const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false};
+const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
 
 
 const reducer = (state=defaultState,action) => {
@@ -55,6 +55,7 @@ const reducer = (state=defaultState,action) => {
     case "setUrlFrame": return {...state,urlframe:action.set};
     case "setCropImage": return {...state,crop:action.set};
     case "getCropImage": return {...state,getcrop:action.set};
+    case "actionMain": return {...state,main:action.set};
     default: return state;
   }
 };

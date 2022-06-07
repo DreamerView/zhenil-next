@@ -1,10 +1,11 @@
 div.search__block {
-    width:300px;
+    width:280px;
     height:58px;
-    background-color: var(--block-color);
+    background-color: var(--search-block);
     display: flex;
     margin:4px 8px 4px 0;
     border-radius: 13px;
+    cursor: pointer;
 }
 div.search__block_image {
     margin:10px;

@@ -16,6 +16,7 @@ const Header = () => {
     const [result,setResult] = useState("");
     const [search,setSearch] = useState([]);
     const [res,setRes] = useState(false);
+    const [timeOut,setTime] = useState(false);
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     const SetLanguage = () => {
         send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
@@ -30,7 +31,18 @@ const Header = () => {
       setRes(s);
       console.log(s);
     };
-
+    useEffect(()=>{
+      if(res===false) {
+        setTimeout(()=>{
+          setTime(false);
+          send({type:"actionMain",set:false});
+        },[100])
+      } else if (res===true) {
+        setTime(true);
+        send({type:"actionMain",set:true});
+      }
+    },[res])
+    console.log(search.length===0)
     return(
       <>
         <header>
@@ -58,10 +70,14 @@ const Header = () => {
     <div className="header__search">
       <>
       <Search accept={RefRes} text={translate['search'][locale]} change={GetResult}/>
-      {res?
+      {timeOut?
       <div className='header__search_blocks'>
-        {search.map((v,i)=>v==[{}]?"":<SearchBlocks item={v} key={i+1}/>)}
-      </div>:""}
+        <p>{search.length===0?"Ничего не найдено":"Результаты поиска"}</p>
+        <div>
+        {search.map((v,i)=><SearchBlocks item={v==[]?"Ничего не найдено":v} key={i+1}/>)}
+        </div>
+      </div>
+      :""}
       </>
       {res?"":
       <div className="header__search_menu">
