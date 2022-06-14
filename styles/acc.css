@@ -146,8 +146,11 @@ div.main__nav {
     background-color: var(--nav_block);
 }
 div.main__block {
+    margin: var(--n-2);
     padding:var(--m-2);
     margin-bottom:100px;
+    background-color: var(--header-color);
+    border-radius: 13px;
 }
 div.main__block_menu_select_block {
     height: 314px;

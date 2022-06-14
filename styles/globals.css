@@ -237,13 +237,15 @@ p.nav > a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --background-color:hsl(240, 3%, 11%);
+      /* --background-color:hsl(240, 3%, 11%); */
+      --background-color:hsl(240, 3%, 9%);
+      --header-color:hsl(240, 3%, 11%);
       --block-color: hsl(240, 2%, 18%);
       --menu-color:hsl(240, 2%, 18%);
       --menu-border-color:hsl(240, 2%, 18%);
       --menu-font-color:hsl(241, 100%, 77%);
       --input_back:hsl(240, 2%, 18%);
-      --nav_block:hsl(240, 3%, 9%);
+      --nav_block:hsl(240, 3%, 11%);
       --nav_block_blur:hsla(240, 3%, 9%,0.7);
       --font-color:hsl(0, 0%, 100%);
       --brand-color:hsl(241, 100%, 74%);
@@ -257,7 +259,7 @@ p.nav > a {
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
-      --nav_menu_c:hsl(240, 3%, 15%);
+      --nav_menu_c:hsl(240, 2%, 18%);
       --back_contrast:brightness(100%);
       --confirm_block:hsl(240, 2%, 18%);
       --search_back:hsl(240, 2%, 18%);
@@ -266,13 +268,14 @@ p.nav > a {
 }
 @media (prefers-color-scheme: light) {
   :root {
-      --background-color:hsl(0, 0%, 100%);
+      --background-color:hsl(210, 7%, 95%);
+      --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(210, 7%, 95%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
       --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(210, 7%, 95%);
+      --nav_block:hsl(0, 0%, 100%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(0, 0%, 0%);
       --brand-color:hsl(248, 57%, 47%);
@@ -286,7 +289,7 @@ p.nav > a {
       --input_border:hsl(195, 13%, 94%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
-      --nav_menu_c:hsl(0, 0%, 100%);
+      --nav_menu_c:hsl(210, 7%, 95%);
       --back_contrast:brightness(40%);
       --confirm_block:hsl(0, 0%, 100%);
       --search_back:hsl(0, 0%, 100%);
@@ -313,9 +316,9 @@ p.nav > a {
 @media screen and (min-width:1900px) {
   :root {
       --m-1: 30px 150px;
-      --m-2: 74px 150px;
+      --m-2: 58px 150px;
       --n-1: 25px 112.5px;
-      --n-2: 0 37.5px;
+      --n-2: 16px 37.5px;
       --m-p:40px 20px;
       --p:60px;
       --n-b: var(--border-color);
@@ -362,9 +365,9 @@ p.nav > a {
 @media screen and (min-width:1161px) and (max-width:1899px) {
   :root {
       --m-1: 30px 50px;
-      --m-2: 66px 50px;
+      --m-2: 50px 50px;
       --n-1: 25px 37.5px;
-      --n-2: 0 12.5px;
+      --n-2: 16px 12.5px;
       --m-p: 40px 20px;
       --p:60px;
       --n-b: var(--border-color);
@@ -402,9 +405,9 @@ p.nav > a {
 @media (min-width:601px) and (max-width:1160px) {
   :root {
       --m-1: 30px 32px;
-      --m-2: 74px 32px;
+      --m-2: 58px 32px;
       --n-1: 16px 32px;
-      --n-2: 0 16px;
+      --n-2: 16px 16px;
       --m-p: 32px 32px;
       --p:60px;
       --n-b: var(--border-color);
@@ -446,9 +449,9 @@ p.nav > a {
 @media (min-width:1px) and (max-width:600px) {
   :root {
       --m-1: 30px 16px;
-      --m-2: 54px 16px;
+      --m-2: 38px 16px;
       --n-1: 16px 16px;
-      --n-2: 0 8px;
+      --n-2: 16px 8px;
       --m-p: 0 32px;
       --p:48px;
       --n-b: transparent;
@@ -611,9 +614,11 @@ span.logo_s {
 
 header {
   padding:var(--m-1);
-  background-color: var(--background-color);
+  background-color: var(--header-color);
   display: var(--display);
   /* border-bottom:1px solid var(--border-color); */
+  margin-bottom: 16px;
+  border-radius: 0 0 13px 13px;
 }
 
 
