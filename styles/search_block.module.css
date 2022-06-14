@@ -1,5 +1,5 @@
 div.search__block {
-    width:280px;
+    /* width:280px; */
     height:58px;
     background-color: var(--search-block);
     display: flex;

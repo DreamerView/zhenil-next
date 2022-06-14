@@ -6,12 +6,9 @@ import Link from "next/link";
 const SearchBlocks = (res) => {
     const router = useRouter();
     const {locale} = router;
-    // console.log(res.item.length)
-    // console.log(res.item.name)
-    console.log(res.item)
     return(
         <>
-            <Link href="/acc"><a>
+            <Link href={res.item.location}><a>
             <div className={`${style.search__block} basic_animation`}>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
                     <Image width={26} height={26} src={res.item.image}/>

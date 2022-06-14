@@ -14,6 +14,7 @@ const Header = () => {
     const router = useRouter();
     const {locale} = router;
     const [result,setResult] = useState("");
+    const [found,setFound] = useState(false);
     const [search,setSearch] = useState([]);
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
@@ -29,7 +30,6 @@ const Header = () => {
     };
     const RefRes = (s) => {
       setRes(s);
-      console.log(s);
     };
     useEffect(()=>{
       if(res===false) {
@@ -38,11 +38,10 @@ const Header = () => {
           send({type:"actionMain",set:false});
         },[100])
       } else if (res===true) {
-        setTime(true);
-        send({type:"actionMain",set:true});
+          setTime(true);
+          send({type:"actionMain",set:true});
       }
     },[res])
-    console.log(search.length===0)
     return(
       <>
         <header>
@@ -72,10 +71,12 @@ const Header = () => {
       <Search accept={RefRes} text={translate['search'][locale]} change={GetResult}/>
       {timeOut?
       <div className='header__search_blocks'>
-        <p>{search.length===0?"Ничего не найдено":"Результаты поиска"}</p>
-        <div>
-        {search.map((v,i)=><SearchBlocks item={v==[]?"Ничего не найдено":v} key={i+1}/>)}
-        </div>
+        {search.length===0?
+          <p>Ничего не найдено</p>:
+        <>
+          <p>Результаты поиска</p>
+          <div>{search.map((v,i)=><SearchBlocks item={v} key={i+1}/>)}</div>
+        </>}
       </div>
       :""}
       </>

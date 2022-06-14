@@ -8,14 +8,10 @@ const Search = (res) => {
           if(search == "") return 0;
           else if(e.key.toLowerCase().includes(search.toLowerCase())) return e;
         }));
-        console.log(SearchResult.filter((e)=>{
-            if(search == "") return 0;
-            else if(e.key.toLowerCase().includes(search.toLowerCase())) return e;
-          }))
       },[search])
       useEffect(()=>{
           focus.current.addEventListener('focus',()=>{
-              res.accept(true)
+            res.accept(true)
           });
           focus.current.addEventListener('blur',()=>{
             res.accept(false)
