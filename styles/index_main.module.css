@@ -110,7 +110,7 @@
         overflow-y: hidden;
         background-color: var(--nav_block);
         border-radius: 13px;
-        margin: 0 8px;
+        margin: 0;
     }
     div.main__menu_nav_blocks {
         display: flex;
