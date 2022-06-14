@@ -1,5 +1,7 @@
+/*jshint esversion: 6 */
 import { useState,useEffect,useRef } from 'react';
 import SearchResult from "../../start/search.json";
+
 const Search = (res) => {
     const focus = useRef();
     const [search,setSearch] = useState('');
@@ -8,15 +10,15 @@ const Search = (res) => {
           if(search == "") return 0;
           else if(e.key.toLowerCase().includes(search.toLowerCase())) return e;
         }));
-      },[search])
+      },[search]);
       useEffect(()=>{
           focus.current.addEventListener('focus',()=>{
-            res.accept(true)
+            res.accept(true);
           });
           focus.current.addEventListener('blur',()=>{
-            res.accept(false)
+            res.accept(false);
         });
-      },[focus])
+      },[focus]);
     return (
         <>
             <input ref={focus} placeholder={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)} type="text" />

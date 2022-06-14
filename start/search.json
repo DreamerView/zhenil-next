@@ -5,7 +5,8 @@
         "image":"/icons/constructor.svg",
         "image_background":"green_background",
         "key":"конструктор,құрастырғыш,constructor",
-        "location":"/acc"
+        "location":"/acc",
+        "type":"category"
     },
     {
         "title":"Калькулятор",
@@ -13,7 +14,8 @@
         "image":"/icons/calculate.svg",
         "image_background":"red_background",
         "key":"калькулятор,calculator,есептегіш",
-        "location":"/calc"
+        "location":"/calc",
+        "type":"category"
     },
     {
         "title":"Бизнес",
@@ -21,7 +23,8 @@
         "image":"/icons/work.svg",
         "image_background":"blue_background",
         "key":"кәсіп,бизнес,business",
-        "location":"/business"
+        "location":"/business",
+        "type":"category"
     },
     {
         "title":"Бизнес",
@@ -29,6 +32,7 @@
         "image":"/icons/education.svg",
         "image_background":"purple_background",
         "key":"білім,образование,education",
-        "location":"/edu"
+        "location":"/edu",
+        "type":"category"
     }
 ]

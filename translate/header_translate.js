@@ -4,6 +4,16 @@ export default {
         ru: "Поиск по Okki.kz",
         en: "Search by Okki.kz"
     },
+    search_not: {
+        kk: "Еш нәрсе табылмады",
+        ru: "Ничего не найдено",
+        en: "Nothing found"
+    },
+    search_found: {
+        kk: "Іздеу нәтижесі",
+        ru: "Результаты поиска",
+        en: "Searching results"
+    },
     menu: {
         kk: "Мәзір",
         ru: "Меню",

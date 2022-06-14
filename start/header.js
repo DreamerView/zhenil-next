@@ -36,12 +36,12 @@ const Header = () => {
         setTimeout(()=>{
           setTime(false);
           send({type:"actionMain",set:false});
-        },[100])
+        },[100]);
       } else if (res===true) {
           setTime(true);
           send({type:"actionMain",set:true});
       }
-    },[res])
+    },[res]);
     return(
       <>
         <header>
@@ -72,9 +72,9 @@ const Header = () => {
       {timeOut?
       <div className='header__search_blocks'>
         {search.length===0?
-          <p>Ничего не найдено</p>:
+          <p>{translate['search_not'][locale]}</p>:
         <>
-          <p>Результаты поиска</p>
+          <p>{translate['search_found'][locale]}</p>
           <div>{search.map((v,i)=><SearchBlocks item={v} key={i+1}/>)}</div>
         </>}
       </div>
