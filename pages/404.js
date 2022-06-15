@@ -2,19 +2,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
+import translate from "../translate/ux/404_translate";
+import { useRouter } from 'next/router';
 
 const NotFound = () => {
+    const router = useRouter();
+    const {locale} = router;
     return(
         <>
             <Head>
-                <title>Page not found</title>
+                <title>{translate['title'][locale]}</title>
             </Head>
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <Image width={256} height={256} src="/img/404.webp" alt="not found" priority />
-                    <h1 className="page_not_found">We are sorry,</h1>
-                    <p className="page_not_found">but the page you were looking for can not be found</p>
-                    <Link href="/" className="page_not_found"><a className="page_not_found">Go home</a></Link>
+                    <h1 className="page_not_found">{translate['name'][locale]}</h1>
+                    <p className="page_not_found">{translate['content'][locale]}</p>
+                    <Link href="/" className="page_not_found"><a className="page_not_found">{translate['button'][locale]}</a></Link>
                 </div>
             </div>
         </>

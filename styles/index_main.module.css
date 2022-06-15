@@ -71,7 +71,7 @@
 @media (min-width:601px) and (max-width:1160px) {
     div.main__menu_nav {
         background-color: var(--nav_block);
-        margin:0 11px;
+        margin:0 12px;
         padding: 22px 0;
         width:calc(100%-22px);
         border-radius: 13px;
