@@ -320,8 +320,9 @@ p.nav > a {
 @media screen and (min-width:1900px) {
   :root {
       --m-1: 30px 150px;
-      --m-2: 58px 150px;
-      --n-1: 25px 112.5px;
+      --m-2: 64px 150px;
+      --m-3: 64px 150px;
+      --n-1: 32px 150px;
       --n-2: 16px 37.5px;
       --m-p:40px 20px;
       --p:60px;
@@ -371,9 +372,10 @@ p.nav > a {
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
   :root {
-      --m-1: 30px 50px;
-      --m-2: 50px 50px;
-      --n-1: 25px 37.5px;
+      --m-1: 30px 64px;
+      --m-2: 64px 64px;
+      --m-3: 64px 64px;
+      --n-1: 32px 64px;
       --n-2: 16px 12.5px;
       --m-p: 40px 20px;
       --p:60px;
@@ -413,6 +415,7 @@ p.nav > a {
   :root {
       --m-1: 30px 32px;
       --m-2: 58px 32px;
+      --m-3: 32px 32px;
       --n-1: 16px 32px;
       --n-2: 16px 12px;
       --m-p: 32px 32px;
@@ -457,6 +460,7 @@ p.nav > a {
   :root {
       --m-1: 30px 16px;
       --m-2: 38px 16px;
+      --m-3: 32px 16px;
       --n-1: 16px 16px;
       --n-2: 16px 0;
       --m-p: 0 32px;
@@ -980,6 +984,12 @@ button.main__block_button {
   font-size: 17px;
   color: white;
   cursor: pointer;
+}
+div.main {
+  padding:var(--m-3);
+  background-color: var(--header-color);
+  border-radius: 13px;
+  margin: 16px 0;
 }
 
 

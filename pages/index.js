@@ -97,7 +97,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="main__block">
+      <div className="main">
           <h1>Популярные сервисы <Image src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
