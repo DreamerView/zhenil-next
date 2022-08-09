@@ -146,7 +146,8 @@ div.main__menu_nav_block_image {
 div.main__index_block_row {
     margin-top:16px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap:16px;
 }
 div.main__index_block_row_b {
     width:160px;
