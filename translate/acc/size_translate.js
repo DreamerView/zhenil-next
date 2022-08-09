@@ -39,6 +39,11 @@ export default {
         ru:"Настраиваемый размер",
         en:"Custom size"
     },
+    ready: {
+        kk:"Дайын өлшемді таңдаңыз",
+        ru:"Выберите готовый размер",
+        en:"Choose a ready-made size"
+    },
     selectable: {
         kk:"Өлшем бірлігін таңдаңыз",
         ru:"Выберите единицу измерения",
@@ -78,5 +83,15 @@ export default {
         kk:"Биіктігін енгізіңіз",
         ru:"Введите высоту",
         en:"Enter the height"
+    },
+    width: {
+        kk:"ені",
+        ru:"ширина",
+        en:"width"
+    },
+    height: {
+        kk:"биіктігі",
+        ru:"высота",
+        en:"height"
     }
 }
