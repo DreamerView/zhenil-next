@@ -11,7 +11,7 @@ const Home = () => {
   return(
     <>
       <Head>
-        <title>Okki - потому что с нами проще!</title>
+        <title>Okki - потому что проще!</title>
       </Head>
       <div className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>
