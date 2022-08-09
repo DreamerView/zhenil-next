@@ -40,7 +40,8 @@
         margin-right:16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;  
+        overflow: hidden;
+        cursor: pointer;
     }
 }
 
@@ -86,7 +87,8 @@
         margin-right:16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;  
+        overflow: hidden;
+        cursor: pointer;
     }
 }
 
@@ -131,7 +133,8 @@
         margin-right:16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;  
+        overflow: hidden;
+        cursor: pointer;  
     }
 }
 @media (min-width:1px) and (max-width:600px) {
@@ -177,7 +180,8 @@
         /* margin-right:16px; */
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;  
+        overflow: hidden;
+        cursor: pointer;
     }
 }
 div.main__menu_nav_block_image {

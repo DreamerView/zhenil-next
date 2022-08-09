@@ -98,20 +98,20 @@ const Home = () => {
         </div>
       </div>
       <div className="main__block">
-          <h1>Популярные сервисы</h1>
+          <h1>Популярные сервисы <Image src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h6>Конструктор бейджиков/аккредитации</h6>
+              <h5>Конструктор бейджиков/аккредитации</h5>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h6>BMI калькулятор</h6>
+              <h5>BMI калькулятор</h5>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h6>Lorem Ipsum</h6>
+              <h5>Lorem Ipsum</h5>
             </div>
           </div>
       </div>
