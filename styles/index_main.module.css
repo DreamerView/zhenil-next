@@ -31,6 +31,14 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__menu_nav_block_image {
+        width:46px;
+        height:46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+    }
 }
 
 @media screen and (min-width:1161px) and (max-width:1899px) {
@@ -66,6 +74,14 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__menu_nav_block_image {
+        width:46px;
+        height:46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+    }
 }
 
 @media (min-width:601px) and (max-width:1160px) {
@@ -100,6 +116,14 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__menu_nav_block_image {
+        width:46px;
+        height:46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+    }
 }
 @media (min-width:1px) and (max-width:600px) {
     div.main__menu_nav {
@@ -115,15 +139,15 @@
     div.main__menu_nav_blocks {
         display: grid;
         /* margin:0 8px; */
-        grid-template-columns: repeat(4,85px);
+        grid-template-columns: repeat(4,80px);
         justify-content: space-around;
         /* align-items: center; */
 
     }
     div.main__menu_nav_block {
         background-color: var(--nav_menu_c);
-        width:85px;
-        height:85px;
+        width:80px;
+        height:80px;
         border-radius: 13px;
         margin: 5px 0px;
         cursor: pointer;
@@ -133,16 +157,16 @@
         justify-content: center;
     }
     span.nav_header {
-        font-size: 11px;
+        font-size: 10px;
         text-align: center;
         font-weight: 700;
     }
-}
-div.main__menu_nav_block_image {
-    width:46px;
-    height:46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 13px;
+    div.main__menu_nav_block_image {
+        width:40px;
+        height:40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 11px;
+    }
 }
