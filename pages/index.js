@@ -103,43 +103,43 @@ const Home = () => {
           <div className={styles.main__index_block_row}>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Конструктор бейджиков/аккредитации</h5>
+              <h6>Конструктор бейджиков/аккредитации</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>BMI калькулятор</h5>
+              <h6>BMI калькулятор</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}></div>
-              <h5>Lorem Ipsum</h5>
+              <h6>Lorem Ipsum</h6>
             </div>
           </div>
       </div>
