@@ -31,6 +31,17 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__index_block_row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    div.main__index_block_row_b {
+        width:160px;
+        margin-right:16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;  
+    }
 }
 
 @media screen and (min-width:1161px) and (max-width:1899px) {
@@ -66,6 +77,17 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__index_block_row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    div.main__index_block_row_b {
+        width:160px;
+        margin-right:16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;  
+    }
 }
 
 @media (min-width:601px) and (max-width:1160px) {
@@ -100,6 +122,17 @@
         text-align: center;
         font-weight: 700;
     }
+    div.main__index_block_row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    div.main__index_block_row_b {
+        width:160px;
+        margin-right:16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;  
+    }
 }
 @media (min-width:1px) and (max-width:600px) {
     div.main__menu_nav {
@@ -126,13 +159,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: center; 
     }
     span.nav_header {
         margin-top:4px;
         font-size: 11px;
         text-align: center;
         font-weight: 700;
+    }
+    div.main__index_block_row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    div.main__index_block_row_b {
+        width:160px;
+        /* margin-right:16px; */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;  
     }
 }
 div.main__menu_nav_block_image {
@@ -142,4 +187,11 @@ div.main__menu_nav_block_image {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
+}
+div.main__index_block {
+    width:160px;
+    height:160px;
+    background-color: var(--nav_menu_c);
+    border-radius: 13px;
+    margin:16px 0 8px 0;
 }

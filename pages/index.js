@@ -25,7 +25,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
@@ -35,7 +35,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
@@ -45,7 +45,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
@@ -55,7 +55,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
@@ -65,7 +65,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
@@ -75,7 +75,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
@@ -85,7 +85,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/acc">
+          <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
@@ -96,6 +96,24 @@ const Home = () => {
             </a>
           </Link>
         </div>
+      </div>
+      <div className="main__block">
+          <h1>Популярные сервисы</h1>
+          <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
+          <div className={styles.main__index_block_row}>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h6>Конструктор бейджиков/аккредитации</h6>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h6>BMI калькулятор</h6>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h6>Lorem Ipsum</h6>
+            </div>
+          </div>
       </div>
     </>
   )
