@@ -18,7 +18,7 @@ const Acc = () => {
         <div className="main__nav">
             <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
         </div>
-        <div className="main__block">
+        <div className="main">
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>
             <div className="main__block_menu_select p-m">

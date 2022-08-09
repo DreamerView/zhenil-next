@@ -69,7 +69,7 @@ const InfoAcc = () => {
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
-            <div className="main__block">
+            <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} />)}
