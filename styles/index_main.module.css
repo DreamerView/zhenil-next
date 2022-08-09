@@ -113,15 +113,17 @@
         margin: 0;
     }
     div.main__menu_nav_blocks {
-        display: flex;
-        margin:0 8px;
+        display: grid;
+        /* margin:0 8px; */
+        grid-template-columns: repeat(4,95px);
+        justify-content: center;
     }
     div.main__menu_nav_block {
-        background-color: var(--nav_menu_c);
+        /* background-color: var(--nav_menu_c); */
         width:95px;
         height:95px;
         border-radius: 13px;
-        margin: 0 8px;
+        /* margin: 0 8px; */
         cursor: pointer;
         display: flex;
         flex-direction: column;
