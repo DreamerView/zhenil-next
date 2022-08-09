@@ -113,6 +113,34 @@ const Home = () => {
               <div className={styles.main__index_block}></div>
               <h5>Lorem Ipsum</h5>
             </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
+            <div className={styles.main__index_block_row_b}>
+              <div className={styles.main__index_block}></div>
+              <h5>Lorem Ipsum</h5>
+            </div>
           </div>
       </div>
     </>

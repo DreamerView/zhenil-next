@@ -31,18 +31,6 @@
         text-align: center;
         font-weight: 700;
     }
-    div.main__index_block_row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    div.main__index_block_row_b {
-        width:160px;
-        margin-right:16px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        cursor: pointer;
-    }
 }
 
 @media screen and (min-width:1161px) and (max-width:1899px) {
@@ -78,18 +66,6 @@
         text-align: center;
         font-weight: 700;
     }
-    div.main__index_block_row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    div.main__index_block_row_b {
-        width:160px;
-        margin-right:16px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        cursor: pointer;
-    }
 }
 
 @media (min-width:601px) and (max-width:1160px) {
@@ -123,18 +99,6 @@
         font-size: 13px;
         text-align: center;
         font-weight: 700;
-    }
-    div.main__index_block_row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    div.main__index_block_row_b {
-        width:160px;
-        margin-right:16px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        cursor: pointer;  
     }
 }
 @media (min-width:1px) and (max-width:600px) {
@@ -170,19 +134,6 @@
         text-align: center;
         font-weight: 700;
     }
-    div.main__index_block_row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    div.main__index_block_row_b {
-        width:160px;
-        /* margin-right:16px; */
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        cursor: pointer;
-    }
 }
 div.main__menu_nav_block_image {
     width:46px;
@@ -191,6 +142,19 @@ div.main__menu_nav_block_image {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
+}
+div.main__index_block_row {
+    margin-top:16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+}
+div.main__index_block_row_b {
+    width:160px;
+    /* margin-right:16px; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
 }
 div.main__index_block {
     width:160px;
