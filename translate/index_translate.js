@@ -19,6 +19,11 @@ export default {
         ru:"Образование",
         en:"Education"
     },
+    health: {
+        kk:"Денсаулық",
+        ru:"Здоровье",
+        en:"Health"
+    },
     soon:{
         kk:"Жасалуда",
         ru:"В разработке",

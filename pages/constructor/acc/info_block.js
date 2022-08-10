@@ -5,8 +5,8 @@ import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import useTranslateText from '../translate';
-import text from "../../translate/acc/info_block_translate";
+import useTranslateText from '../../translate';
+import text from "../../../translate/acc/info_block_translate";
 
 const InfoBlock = (result) => {
     const lang = useTranslateText();

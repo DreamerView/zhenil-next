@@ -3,10 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import useTranslateText from "../translate";
-import translate from "../../translate/acc/navbar_translate";
-import ux from "../../translate/ux/action";
-import text from "../../translate/acc/result_translate";
+import useTranslateText from "../../translate";
+import translate from "../../../translate/acc/navbar_translate";
+import ux from "../../../translate/ux/action";
+import text from "../../../translate/acc/result_translate";
 
 
 const ResultAcc = () => {
@@ -18,7 +18,7 @@ const ResultAcc = () => {
                 <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/acc/size"><a>{translate['step3'][lang]} /</a></Link>  <Link href="/acc/info"><a>{translate['step4'][lang]} /</a></Link>  {translate['step5'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size"><a>{translate['step3'][lang]} /</a></Link>  <Link href="/constructor/acc/info"><a>{translate['step4'][lang]} /</a></Link>  {translate['step5'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>{text['name'][lang]}</h1>
@@ -39,7 +39,7 @@ const ResultAcc = () => {
             </div>
             <div className="main__block_fixed_confirm">
                 <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/acc/info" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['back'][lang]}</a></Link>
+                            <Link href="/constructor/acc/info" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['back'][lang]}</a></Link>
                             <Link href="/" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['home'][lang]}</a></Link>
                 </div>
             </div>

@@ -4,10 +4,10 @@ import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from '../translate';
-import ux from "../../translate/ux/action";
-import translate from "../../translate/acc/navbar_translate";
-import text from "../../translate/acc/logo_translate";
+import useTranslateText from '../../translate';
+import ux from "../../../translate/ux/action";
+import translate from "../../../translate/acc/navbar_translate";
+import text from "../../../translate/acc/logo_translate";
 
 const LogoAcc = () => {
     const lang = useTranslateText();
@@ -48,7 +48,7 @@ const LogoAcc = () => {
                 <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/acc"><a>{translate['step1'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor/acc"><a>{translate['step1'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>{text['name'][lang]}</h1>
@@ -77,8 +77,8 @@ const LogoAcc = () => {
             </div>
             <div className="main__block_fixed_confirm">
                 <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['skip'][lang]}</a></Link>
-                            {!ready ? <button className="main__block_interface_btn_forward">{ux['continue'][lang]}</button>: <Link href="/acc/size" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['continue'][lang]}</a></Link>}    
+                            <Link href="/constructor/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['skip'][lang]}</a></Link>
+                            {!ready ? <button className="main__block_interface_btn_forward">{ux['continue'][lang]}</button>: <Link href="/constructor/acc/size" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['continue'][lang]}</a></Link>}    
                 </div>
             </div>
         </>

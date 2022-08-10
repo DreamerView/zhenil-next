@@ -15,7 +15,7 @@ const Home = () => {
       </Head>
       <div className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>
-          <Link href="/acc">
+          <Link href="/constructor">
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} green_background`}>
@@ -58,10 +58,10 @@ const Home = () => {
           <Link href="/not-found">
             <a>
               <div className={styles.main__menu_nav_block}>
-                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
+                <div className={`${styles.main__menu_nav_block_image} red_background`}>
+                  <Image width={32} height={32} src={`/icons/health.svg`} alt="icon"/>
                 </div>
-                <span className={styles.nav_header}>{translate['soon'][locale]}</span>
+                <span className={styles.nav_header}>{translate['health'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -102,7 +102,9 @@ const Home = () => {
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
             <div className={styles.main__index_block_row_b}>
-              <div className={styles.main__index_block}></div>
+              <div className={styles.main__index_block}>
+                <img className={styles.main__index_block_img} src="/icons/badge.svg"/>
+              </div>
               <h6>Конструктор бейджиков/аккредитации</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
@@ -118,7 +120,9 @@ const Home = () => {
               <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
-              <div className={styles.main__index_block}></div>
+              <div className={styles.main__index_block}>
+                
+              </div>
               <h6>Lorem Ipsum</h6>
             </div>
             <div className={styles.main__index_block_row_b}>
