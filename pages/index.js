@@ -19,7 +19,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} green_background`}>
-                  <Image width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['constructor'][locale]}</span>
               </div>
@@ -29,7 +29,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
-                  <Image width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['calculator'][locale]}</span>
               </div>
@@ -39,7 +39,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
-                  <Image width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['business'][locale]}</span>
               </div>
@@ -49,7 +49,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
-                  <Image width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['education'][locale]}</span>
               </div>
@@ -59,7 +59,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
-                  <Image width={32} height={32} src={`/icons/health.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/health.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['health'][locale]}</span>
               </div>
@@ -69,7 +69,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['soon'][locale]}</span>
               </div>
@@ -79,7 +79,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['soon'][locale]}</span>
               </div>
@@ -89,7 +89,7 @@ const Home = () => {
             <a>
               <div className={styles.main__menu_nav_block}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
-                  <Image width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
+                  <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
                 <span className={styles.nav_header}>{translate['soon'][locale]}</span>
               </div>
@@ -98,12 +98,12 @@ const Home = () => {
         </div>
       </div>
       <div className="main">
-          <h1>Популярные сервисы <Image src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
+          <h1>Популярные сервисы <Image loading="lazy" src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
             <div className={styles.main__index_block_row_b}>
               <div className={styles.main__index_block}>
-                <img className={styles.main__index_block_img} src="/icons/badge.svg"/>
+                <Image loading="lazy" width={160} height={160} className={styles.main__index_block_img} src="/icons/badge.svg"/>
               </div>
               <h6>Конструктор бейджиков/аккредитации</h6>
             </div>

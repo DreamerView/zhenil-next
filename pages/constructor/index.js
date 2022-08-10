@@ -18,14 +18,14 @@ const ConstructorIndex = () => {
                 <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
             </div>
             <div className="main">
-            <h1>Конструкторы <Image src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
+            <h1>Конструкторы <Image loading="lazy" src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
             <p className="sub_content">Все сервисы по категории конструкторы</p>
             <div className={style.main__module_row}>
                 <Link href="/constructor/acc">
                 <a>
                 <div className={`${style.main__module_row_block} block_animation`}>
                     <div className={`${style.main__module_row_block_img}`}>
-                        <Image width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -36,7 +36,7 @@ const ConstructorIndex = () => {
                 </Link>
                 <div className={`${style.main__module_row_block} block_animation`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -45,7 +45,7 @@ const ConstructorIndex = () => {
                 </div>
                 <div className={`${style.main__module_row_block} block_animation`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -54,7 +54,7 @@ const ConstructorIndex = () => {
                 </div>
                 <div className={`${style.main__module_row_block} block_animation`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
