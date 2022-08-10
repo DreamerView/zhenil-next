@@ -11,9 +11,14 @@ div.main__module_row_block {
 div.main__module_row_block_img {
     width:60px;
     height:60px;
-    background-color: var(--nav_menu_c);
+    /* background-color: var(--nav_menu_c); */
     border-radius: 13px;
     margin-right: 16px;
+}
+img.main__module_row_block_pic {
+    width:60px;
+    height:60px;
+    border-radius: 13px;
 }
 div.main__module_row_block_f  {
     display: flex;
