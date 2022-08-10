@@ -158,26 +158,6 @@ div.main__block_menu_select_block {
     border-radius: 13px;
     cursor: pointer;
     border:1px solid transparent;
-    animation-name: block_animation;
-    animation-duration: 0.4s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-div.green_back:hover {
-    background-color: var(--background-color);
-    border-radius: 13px;
-    border:1px solid var(--green_back);
-}
-div.purple_back:hover {
-    background-color: var(--background-color);
-    border-radius: 13px;
-    border:1px solid var(--purple_back);
-}
-div.blue_back:hover {
-    background-color: var(--background-color);
-    border-radius: 13px;
-    border:1px solid var(--blue_back);
 }
 .green_temp {
     background-color: var(--green_back);

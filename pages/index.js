@@ -17,7 +17,7 @@ const Home = () => {
         <div className={styles.main__menu_nav_blocks}>
           <Link href="/constructor">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} green_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/constructor.svg`} alt="icon"/>
                 </div>
@@ -27,7 +27,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/calculate.svg`} alt="icon"/>
                 </div>
@@ -37,7 +37,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/work.svg`} alt="icon"/>
                 </div>
@@ -47,7 +47,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/education.svg`} alt="icon"/>
                 </div>
@@ -57,7 +57,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/health.svg`} alt="icon"/>
                 </div>
@@ -67,7 +67,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
@@ -77,7 +77,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
@@ -87,7 +87,7 @@ const Home = () => {
           </Link>
           <Link href="/not-found">
             <a>
-              <div className={styles.main__menu_nav_block}>
+              <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                   <Image loading="lazy" width={32} height={32} src={`/icons/soon.svg`} alt="icon"/>
                 </div>
@@ -97,51 +97,51 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="main">
+      <div className="main block_animation">
           <h1>Популярные сервисы <Image loading="lazy" src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}>
                 <Image loading="lazy" width={160} height={160} className={styles.main__index_block_img} src="/icons/badge.svg"/>
               </div>
               <h6>Конструктор бейджиков/аккредитации</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>BMI калькулятор</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}>
                 
               </div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>
-            <div className={styles.main__index_block_row_b}>
+            <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>Lorem Ipsum</h6>
             </div>

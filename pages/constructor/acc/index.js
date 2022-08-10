@@ -15,14 +15,14 @@ const Acc = () => {
         <title>{text['name'][lang]} | Okki.kz</title>
         <meta name="description" content={text['seo_description'][lang]} />
       </Head>
-        <div className="main__nav">
+        <div className="main__nav block_animation">
             <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
         </div>
-        <div className="main__block">
+        <div className="main__block block_animation">
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>
             <div className="main__block_menu_select p-m">
-            <div className="main__block_menu_select_block green_back">
+            <div className="main__block_menu_select_block anim_hover">
             <Link href="/constructor/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon green_temp">
@@ -41,7 +41,7 @@ const Acc = () => {
             </Link>
             </div>
 
-            <div className="main__block_menu_select_block purple_back">
+            <div className="main__block_menu_select_block anim_hover">
             <Link href="/constructor/acc/logo">
             <a>
             <div className="main__block_menu_select_block_icon purple_temp">
@@ -60,7 +60,7 @@ const Acc = () => {
             </Link>
             </div>
 
-            <div className="main__block_menu_select_block blue_back">
+            <div className="main__block_menu_select_block anim_hover">
             <Link href="/constructor/acc/logosd">
             <a>
             <div className="main__block_menu_select_block_icon blue_temp">
