@@ -25,7 +25,7 @@ const ConstructorIndex = () => {
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={`${style.main__module_row_block_img}`}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -36,7 +36,7 @@ const ConstructorIndex = () => {
                 </Link>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -45,7 +45,7 @@ const ConstructorIndex = () => {
                 </div>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>
@@ -54,7 +54,7 @@ const ConstructorIndex = () => {
                 </div>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/icons/badge.svg"/>
+                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <h5>Конструктор бейджиков/аккредитации</h5>

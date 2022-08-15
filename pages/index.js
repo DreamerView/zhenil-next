@@ -101,12 +101,16 @@ const Home = () => {
           <h1>Популярные сервисы <Image loading="lazy" src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
           <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
           <div className={styles.main__index_block_row}>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}>
-                <Image loading="lazy" width={160} height={160} className={styles.main__index_block_img} src="/icons/badge.svg"/>
-              </div>
-              <h6>Конструктор бейджиков/аккредитации</h6>
-            </div>
+            <Link href="/constructor/acc">
+              <a>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}>
+                    <Image loading="lazy" width={160} height={160} className={styles.main__index_block_img} src="/services/badge.svg"/>
+                  </div>
+                  <h6>Конструктор бейджиков/аккредитации</h6>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <h6>BMI калькулятор</h6>
