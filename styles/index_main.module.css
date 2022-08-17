@@ -143,6 +143,11 @@ div.main__menu_nav_block_image {
     justify-content: center;
     border-radius: 13px;
 }
+div.main__menu_nav_block_image_pic {
+    width:32px;
+    height:32px;
+    position: relative;
+}
 div.main__index_block_row {
     margin-top:16px;
     display: grid;
@@ -162,6 +167,12 @@ div.main__index_block {
     background-color: var(--nav_menu_c);
     border-radius: 13px;
     margin:16px 0 8px 0;
+}
+div.main__index_block_pic {
+    width:160px;
+    height:160px;
+    position: relative;
+    border-radius: 13px;
 }
 img.main__index_block_img {
     width:160px;

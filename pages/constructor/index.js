@@ -18,17 +18,17 @@ const ConstructorIndex = () => {
                 <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
             </div>
             <div className="main block_animation">
-            <h1>Конструкторы <Image loading="lazy" src={"/icons/fire.webp"} width={22} height={22} alt="emoji"/></h1>
+            <h1 className="flex_text">Конструкторы <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">Все сервисы по категории конструкторы</p>
             <div className={style.main__module_row}>
                 <Link href="/constructor/acc">
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={`${style.main__module_row_block_img}`}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
-                        <h5>Конструктор бейджиков/аккредитации</h5>
+                        <span className="head_1">Конструктор бейджиков/аккредитации</span>
                         <p className={style.main__module_row_block_f_p}>Сервис</p>
                     </div>
                 </div>
@@ -36,28 +36,28 @@ const ConstructorIndex = () => {
                 </Link>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
-                        <h5>Конструктор бейджиков/аккредитации</h5>
+                        <span className="head_1">Конструктор бейджиков/аккредитации</span>
                         <p className={style.main__module_row_block_f_p}>Сервис</p>
                     </div>
                 </div>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
-                        <h5>Конструктор бейджиков/аккредитации</h5>
+                        <span className="head_1">Конструктор бейджиков/аккредитации</span>
                         <p className={style.main__module_row_block_f_p}>Сервис</p>
                     </div>
                 </div>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={style.main__module_row_block_img}>
-                        <Image loading="lazy" width={60} height={60} className={style.main__module_row_block_pic} src="/services/badge.svg"/>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.svg"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
-                        <h5>Конструктор бейджиков/аккредитации</h5>
+                        <span className="head_1">Конструктор бейджиков/аккредитации</span>
                         <p className={style.main__module_row_block_f_p}>Сервис</p>
                     </div>
                 </div>

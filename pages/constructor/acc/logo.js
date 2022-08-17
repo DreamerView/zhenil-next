@@ -41,7 +41,7 @@ const LogoAcc = () => {
             setReady(true);
             setC({logo:'logo_s',text:text['complete'][lang],div:'alerts_g'});
         }
-    },[]);
+    },[lang]);
     return(
         <>
             <Head>
