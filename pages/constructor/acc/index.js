@@ -16,7 +16,7 @@ const Acc = () => {
         <meta name="description" content={text['seo_description'][lang]} />
       </Head>
         <div className="main__nav block_animation">
-            <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>    {translate["step1"][lang]}</p>
+            <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{translate['step0'][lang]} /</a></Link>  {translate["step1"][lang]}</p>
         </div>
         <div className="main__block block_animation">
             <h1>{text['name'][lang]}</h1>

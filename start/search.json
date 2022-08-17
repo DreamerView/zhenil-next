@@ -34,5 +34,14 @@
         "key":"білім,образование,education",
         "location":"/edu",
         "type":"category"
+    },
+    {
+        "title":"Конструктор аккредитации",
+        "name":"acc_const",
+        "image":"/services/badge.svg",
+        "image_background":"purple_background",
+        "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
+        "location":"/constructor/acc",
+        "type":"services"
     }
 ]

@@ -67,7 +67,7 @@ const InfoAcc = () => {
                 <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{translate['step0'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{translate['step1'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>{text['name'][lang]}</h1>

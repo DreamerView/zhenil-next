@@ -4,6 +4,16 @@ export default {
         ru:"Главная",
         en:"Home"
     },
+    step0: {
+        kk:"Құрастырушылар",
+        ru:"Конструкторы",
+        en:"Constructors"
+    },
+    step0_description: {
+        kk:"Құрастырушылар санаты бойынша барлық қызметтер",
+        ru:"Все сервисы по категории конструкторы",
+        en:"All services by category constructors"
+    },
     step1: {
         kk:"Бейджик құрастырушысы",
         ru:"Конструктор бейджиков",

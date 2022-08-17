@@ -11,7 +11,7 @@ const Home = () => {
   return(
     <>
       <Head>
-        <title>Okki - потому что проще!</title>
+        <title>{translate['title'][locale]}</title>
       </Head>
       <div className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>
@@ -114,8 +114,8 @@ const Home = () => {
         </div>
       </div>
       <div className="main block_animation">
-          <h1 className="flex_text">Популярные сервисы <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
-          <p className="sub_content">Топ 5 лучших сервисов по выбору пользователей</p>
+          <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+          <p className="sub_content">{translate['popular_subtext'][locale]}</p>
           <div className={styles.main__index_block_row}>
             <Link href="/constructor/acc">
               <a>

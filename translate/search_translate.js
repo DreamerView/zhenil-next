@@ -1,9 +1,4 @@
 export default {
-    title: {
-        kk:"Okki - Өйткені жеңіл!",
-        ru:"Okki - Потому что просто!",
-        en:"Okki - Because simply!"
-    },
     constructor:{
         kk:"Құрастырғыш",
         ru:"Конструктор",
@@ -29,24 +24,9 @@ export default {
         ru:"Здоровье",
         en:"Health"
     },
-    soon:{
-        kk:"Жасалуда",
-        ru:"В разработке",
-        en:"In developing"
-    },
     acc_const: {
         kk:"Бейджик/аккредитация құрастырушысы",
         ru:"Конструктор бейджиков/аккредитации",
         en:"Badge/accreditation constructor"
     },
-    popular:{
-        kk:"Танымал қызметтер",
-        ru:"Популярные сервисы",
-        en:"Popular services"
-    },
-    popular_subtext: {
-        kk:"Пайдаланушылардың таңдауы бойынша ең жақсы 5 қызметтер",
-        ru:"Топ 5 лучших сервисов по выбору пользователей",
-        en:"Top 5 best services of users' choice"
-    }
-};
+}

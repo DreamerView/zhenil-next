@@ -6,6 +6,8 @@ import "../styles/acc.css";
 import Head from "next/head";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import useTranslateText from "./translate";
+import translate from "../translate/ux/loading_page";
 
 import { useMediaQuery } from 'react-responsive';
 import DocumentResult from "../start/document";
@@ -13,13 +15,14 @@ import DocumentResult from "../start/document";
 const Preloader = () => {
     const [color,setColor] = useState("#4634bc");
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
+    const locale = useTranslateText();
     useEffect(()=>{
         return checkMode?setColor("#7d7aff"):setColor("#4634bc");
     },[checkMode]);
     return(
         <>
             <Head>
-                <title>Загрузка страницы</title>
+                <title>{translate["loading"][locale]}</title>
             </Head>
             <div className="main__preloader">
                 <svg className="main__preloader_pic" xmlns="http://www.w3.org/2000/svg" style={{ margin: "auto" }} width="200" height="200" display="block" preserveAspectRatio="xMidYMid" viewBox="0 0 100 100">
