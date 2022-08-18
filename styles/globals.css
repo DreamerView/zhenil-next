@@ -76,7 +76,6 @@ p.sm {
   -o-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 .anim_hover:hover {
   -o-transform: translate(0%, -8%);

@@ -29,6 +29,11 @@ export default {
         ru:"Здоровье",
         en:"Health"
     },
+    finance: {
+        kk:"Қаржы",
+        ru:"Финансы",
+        en:"Finance"
+    },
     soon:{
         kk:"Жасалуда",
         ru:"В разработке",

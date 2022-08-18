@@ -27,7 +27,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/not-found">
+          <Link href="/calculator">
             <a>
               <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
@@ -39,7 +39,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/not-found">
+          <Link href="/business">
             <a>
               <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} blue_background`}>
@@ -51,7 +51,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/not-found">
+          <Link href="/education">
             <a>
               <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} purple_background`}>
@@ -63,7 +63,7 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/not-found">
+          <Link href="/health">
             <a>
               <div className={`${styles.main__menu_nav_block} anim_hover`}>
                 <div className={`${styles.main__menu_nav_block_image} red_background`}>
@@ -75,15 +75,15 @@ const Home = () => {
               </div>
             </a>
           </Link>
-          <Link href="/not-found">
+          <Link href="/finance">
             <a>
               <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                <div className={`${styles.main__menu_nav_block_image} green_background`}>
                   <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                    <Image loading="lazy" layout="fill" src={`/icons/soon.svg`} alt="icon"/>
+                    <Image loading="lazy" layout="fill" src={`/icons/finance.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['soon'][locale]}</span>
+                <span className={styles.nav_header}>{translate['finance'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -125,7 +125,7 @@ const Home = () => {
                       <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/badge.svg"/>
                     </div>
                   </div>
-                  <span className="head">Конструктор бейджиков/аккредитации</span>
+                  <span className="head">Конструктор бейджиков или аккредитации</span>
                 </div>
               </a>
             </Link>
@@ -135,7 +135,7 @@ const Home = () => {
             </div>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
-              <span className="head">Lorem Ipsum</span>
+              <span className="head">Депозит калькулятор</span>
             </div>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>

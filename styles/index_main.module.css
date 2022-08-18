@@ -156,9 +156,9 @@ div.main__index_block_row {
 }
 div.main__index_block_row_b {
     width:160px;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden; */
     cursor: pointer;
 }
 div.main__index_block {
