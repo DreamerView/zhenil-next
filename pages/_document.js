@@ -18,6 +18,7 @@ const DocumentShow = () => {
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-capacity" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+                <meta name="yandex-verification" content="d9049e564b086579" />
                 <style dangerouslySetInnerHTML={ { __html: `</style>
                   <meta name="theme-color" content="hsl(0, 0%, 100%)" media="(prefers-color-scheme: light)"/>
                   <meta name="theme-color" content="hsl(240, 3%, 11%)" media="(prefers-color-scheme: dark)"/>
