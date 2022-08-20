@@ -43,5 +43,23 @@
         "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
         "location":"/constructor/acc",
         "type":"services"
+    },
+    {
+        "title":"ИМТ калькулятор",
+        "name":"bmi_calc",
+        "image":"/services/badge.svg",
+        "image_background":"purple_background",
+        "key":"дси есептегіш,имт калькулятор (взрослый),bmi calculator (Adult)",
+        "location":"/health/bmi-calculator",
+        "type":"services"
+    },
+    {
+        "title":"Депозитный калькулятор",
+        "name":"deposit_calc",
+        "image":"/services/badge.svg",
+        "image_background":"purple_background",
+        "key":"депозиттік есептегіш,депозитный калькулятор,deposit Calculator",
+        "location":"/finance/deposit",
+        "type":"services"
     }
 ]

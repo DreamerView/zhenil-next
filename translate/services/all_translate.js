@@ -1,4 +1,9 @@
 export default {
+    home: {
+        kk:"Басты бет",
+        ru:"Главная",
+        en:"Home"
+    },
     constructor:{
         kk:"Құрастырғыш",
         ru:"Конструктор",
@@ -24,14 +29,24 @@ export default {
         ru:"Здоровье",
         en:"Health"
     },
+    finance: {
+        kk:"Қаржы",
+        ru:"Финансы",
+        en:"Finance"
+    },
     acc_const: {
-        kk:"Бейджик/аккредитация құрастырушысы",
-        ru:"Конструктор бейджиков/аккредитации",
-        en:"Badge/accreditation constructor"
+        kk:"Бейджик құрастырушысы",
+        ru:"Конструктор бейджиков",
+        en:"Badge constructor"
     },
     bmi_calc: {
         kk:"ДСИ есептегіші (Ересек)",
         ru:"ИМТ калькулятор (Взрослый)",
         en:"BMI сalculator (Adult)"
     },
+    deposit_calc: {
+        kk:"Депозиттік есептегіш",
+        ru:"Депозитный калькулятор",
+        en:"Deposit Calculator"
+    }
 }

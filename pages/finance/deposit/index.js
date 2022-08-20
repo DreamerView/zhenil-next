@@ -1,19 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 import useTranslateText from '../../translate';
-import translate from "../../../translate/calculator/deposit/navbar_translate";
-import text from "../../../translate/calculator/deposit/index_translate";
-import style from "../../../styles/calculator/index.module.css"
+import translate from "../../../translate/finance/deposit/navbar_translate";
+import text from "../../../translate/finance/deposit/index_translate";
+import style from "../../../styles/calculator/index.module.css";
+import nav_translate from "../../../translate/services/all_translate";
 
 const Deposit = () => {
     const lang = useTranslateText();
     return(
         <>
+            <Head>
+                <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
+            </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/calculator">{translate['step0'][lang]}</Link>  /  {translate['step1'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/finance">{nav_translate['finance'][lang]}</Link>  /  {nav_translate['deposit_calc'][lang]}</p>
             </div>
             <div className="main">
-                <h1 className="flex_text">{text["title"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+                <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 <div className={style.main__calc}>
                     

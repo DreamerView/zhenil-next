@@ -5,6 +5,7 @@ import Head from "next/head";
 import styles from '../styles/index_main.module.css';
 import useTranslateText from "./translate";
 import translate from "../translate/index_translate";
+import nav_translate from "../translate/services/all_translate";
 
 const Home = () => {
   const locale = useTranslateText();
@@ -23,7 +24,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/constructor.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['constructor'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['constructor'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -35,7 +36,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/calculate.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['calculator'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['calculator'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -47,7 +48,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/work.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['business'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['business'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -59,7 +60,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/education.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['education'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['education'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -71,7 +72,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/health.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['health'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['health'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -83,7 +84,7 @@ const Home = () => {
                     <Image loading="lazy" layout="fill" src={`/icons/finance.svg`} alt="icon"/>
                   </div>
                 </div>
-                <span className={styles.nav_header}>{translate['finance'][locale]}</span>
+                <span className={styles.nav_header}>{nav_translate['finance'][locale]}</span>
               </div>
             </a>
           </Link>
@@ -125,18 +126,26 @@ const Home = () => {
                       <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/badge.svg"/>
                     </div>
                   </div>
-                  <span className="head">Конструктор бейджиков или аккредитации</span>
+                  <span className="head">{nav_translate['acc_const'][locale]}</span>
                 </div>
               </a>
             </Link>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}></div>
-              <span className="head">BMI калькулятор</span>
-            </div>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}></div>
-              <span className="head">Депозит калькулятор</span>
-            </div>
+            <Link href="/health/bmi-calculator">
+              <a>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}></div>
+                  <span className="head">{nav_translate['bmi_calc'][locale]}</span>
+                </div>
+              </a>
+            </Link>
+            <Link href="/finance/deposit">
+              <a>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}></div>
+                  <span className="head">{nav_translate['deposit_calc'][locale]}</span>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <span className="head">Lorem Ipsum</span>

@@ -7,6 +7,7 @@ import Image from "next/image";
 import useTranslateText from '../../translate';
 import ux from "../../../translate/ux/action";
 import translate from "../../../translate/acc/navbar_translate";
+import nav_translate from "../../../translate/services/all_translate";
 import text from "../../../translate/acc/logo_translate";
 
 const LogoAcc = () => {
@@ -48,7 +49,7 @@ const LogoAcc = () => {
                 <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{translate['step0'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{translate['step1'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{nav_translate['acc_const'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
             </div>
             <div className="main__block">
                 <h1>{text['name'][lang]}</h1>

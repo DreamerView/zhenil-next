@@ -5,6 +5,7 @@ import Image from "next/image";
 import useTranslateText from "../../translate";
 import ux from "../../../translate/ux/action";
 import translate from "../../../translate/acc/navbar_translate";
+import nav_translate from "../../../translate/services/all_translate";
 import text from "../../../translate/acc/index_translate";
 
 const Acc = () => {
@@ -16,7 +17,7 @@ const Acc = () => {
         <meta name="description" content={text['seo_description'][lang]} />
       </Head>
         <div className="main__nav block_animation">
-            <p className="nav"><Link href="/"><b className="b_color">{translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{translate['step0'][lang]} /</a></Link>  {translate["step1"][lang]}</p>
+            <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
         </div>
         <div className="main__block block_animation">
             <h1>{text['name'][lang]}</h1>

@@ -5,9 +5,9 @@ export default {
         en:"Home"
     },
     step0:{
-        kk:"Есептегіш",
-        ru:"Калькулятор",
-        en:"Calculator"
+        kk:"Қаржы",
+        ru:"Финансы",
+        en:"Finance"
     },
     step1:{
         kk:"Депозит",

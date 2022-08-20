@@ -1,5 +1,5 @@
-import translate from "../../translate/search_translate";
-import type_translate from "../../translate/type_translate";
+import translate from "../../translate/services/all_translate";
+import type_translate from "../../translate/services/type_translate";
 import { useRouter } from "next/router";
 import style from '../../styles/search_block.module.css';
 import Image from "next/image";
