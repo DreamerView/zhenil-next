@@ -40,7 +40,7 @@ export default {
         en:"Badge constructor"
     },
     bmi_calc: {
-        kk:"ДСИ есептегіші (Ересек)",
+        kk:"ДСИ есептегіш (Ересек)",
         ru:"ИМТ калькулятор (Взрослый)",
         en:"BMI сalculator (Adult)"
     },

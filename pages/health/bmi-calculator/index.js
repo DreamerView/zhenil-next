@@ -54,13 +54,13 @@ const Health = () => {
                     <div className={style.main__result}>
                         <h1>{translate['results'][lang]}</h1>
                         <p className="sub_content">{translate['male_text'][lang]}</p>
-                        <h1>{show.maleText}</h1>
+                        <h2>{show.maleText}</h2>
                         <p className="sub_content">{translate['age'][lang]}</p>
-                        <h1>{show.age}</h1>
+                        <h2>{show.age}</h2>
                         <p className="sub_content">{translate['bmi_result'][lang]}</p>
-                        <h1>{show.res}</h1>
+                        <h2>{show.res}</h2>
                         <p className="sub_content">{translate['result'][lang]}</p>
-                        <h1 className={`${show.color}_font`}>{show.check}</h1>
+                        <h2 className={`${show.color}_font`}>{show.check}</h2>
 
                     </div>
                     {/*  */}
