@@ -133,7 +133,11 @@ const Home = () => {
             <Link href="/health/bmi-calculator">
               <a>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
-                  <div className={styles.main__index_block}></div>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/bmi.svg"/>
+                    </div>
+                  </div>
                   <span className="head">{nav_translate['bmi_calc'][locale]}</span>
                 </div>
               </a>

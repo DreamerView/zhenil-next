@@ -6,6 +6,7 @@ import translate from "../../translate/acc/navbar_translate";
 import text from "../../translate/acc/index_translate";
 import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
+import type_translate from "../../translate/services/type_translate";
 
 const ConstructorIndex = () => {
     const lang = useTranslateText();
@@ -31,7 +32,7 @@ const ConstructorIndex = () => {
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['deposit_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>Сервис</p>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                     </div>
                 </div>
                 </a>

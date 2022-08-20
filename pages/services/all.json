@@ -47,7 +47,7 @@
     {
         "title":"ИМТ калькулятор",
         "name":"bmi_calc",
-        "image":"/services/badge.svg",
+        "image":"/services/bmi.svg",
         "image_background":"purple_background",
         "key":"дси есептегіш,имт калькулятор (взрослый),bmi calculator (Adult)",
         "location":"/health/bmi-calculator",

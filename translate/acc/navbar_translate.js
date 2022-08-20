@@ -10,9 +10,9 @@ export default {
         en:"Constructors"
     },
     step0_description: {
-        kk:"Құрастырушылар санаты бойынша барлық қызметтер",
-        ru:"Все сервисы по категории конструкторы",
-        en:"All services by category constructors"
+        kk:"Осы санаттағы барлық қызметтер",
+        ru:"Все сервисы по этой категории",
+        en:"All services by this category"
     },
     step1: {
         kk:"Бейджик құрастырушысы",
