@@ -32,15 +32,15 @@ const Deposit = () => {
                         {/* <h2>{text["description"][lang]}</h2> */}
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">Годовая эффективная ставка (%)</p>
-                            <input type="text" className={`${style.main__calculator_module_input} anim_hover`} placeholder="Введите ставку"/>
+                            <input type="text" className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">Сумма депозита</p>
-                            <input type="text" className={`${style.main__calculator_module_input} anim_hover`} placeholder="Введите сумму"/>
+                            <input type="text" className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">Срок депозита</p>
-                            <select className={`${style.main__calculator_module_select} anim_hover`}>
+                            <select className={`${style.main__calculator_module_select}`}>
                                 <option>1 мес.</option>
                                 <option>3 мес.</option>
                                 <option>6 мес.</option>
@@ -50,7 +50,7 @@ const Deposit = () => {
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">Ежемесячное пополнение</p>
-                            <input type="text" className={`${style.main__calculator_module_input} anim_hover`} placeholder="Введите сумму"/>
+                            <input type="text" className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
                         </div>
                     </div>
                     {/*  */}

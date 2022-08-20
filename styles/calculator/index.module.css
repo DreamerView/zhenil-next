@@ -56,7 +56,7 @@ div.main__calculator {
     border: 1px solid var(--border-color);
     border-radius: 13px;
     margin-top:32px;
-    padding:32px auto;
+    padding:16px 0;
 }
 div.main__result {
     display: flex;
@@ -81,7 +81,7 @@ div.main__calculator_module {
     align-items: center;
     margin: 0 auto;
     /* border-bottom: 1px solid var(--border-color); */
-    padding:16px 0;
+    /* padding:16px 0; */
 }
 select.main__calculator_module_select {
     margin-top:16px;
@@ -92,7 +92,7 @@ select.main__calculator_module_select {
     height:45px;
     font-size:16px;
     background: url(/img/top.svg) no-repeat 95% 50% var(--block-color);
-    padding:0 16px;
+    padding:0 32px;
 }
 input.main__calculator_module_input {
     margin-top:16px;

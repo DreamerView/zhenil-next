@@ -91,6 +91,26 @@ p.sm {
   opacity: 0.7;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  -o-appearance: textfield;
+  -ms-appearance: textfield;
+  appearance: none;
+}
+
 @keyframes basic_animation {
   from {
       transform: scale(0.95);
@@ -358,6 +378,21 @@ p.nav > a {
 }
 .orange_background {
   background-color: var(--orange_back);
+}
+.green_font{
+  color: var(--green_back);
+}
+.blue_font {
+  color: var(--blue_back);
+}
+.red_font {
+  color: var(--red_back);
+}
+.purple_font {
+  color: var(--purple_back);
+}
+.orange_font {
+  color: var(--orange_back);
 }
 
 @media screen and (min-width:1900px) {
