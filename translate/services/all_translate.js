@@ -35,14 +35,19 @@ export default {
         en:"Finance"
     },
     acc_const: {
-        kk:"Бейджик құрастырушысы",
-        ru:"Конструктор бейджиков",
-        en:"Badge constructor"
+        kk:"Бейджик Құрастырушысы",
+        ru:"Конструктор Бейджиков",
+        en:"Badge Сonstructor"
     },
     bmi_calc: {
-        kk:"ДСИ есептегіш (Ересек)",
-        ru:"ИМТ калькулятор (Взрослый)",
-        en:"BMI сalculator (Adult)"
+        kk:"ДСИ Есептегіш (Ересек)",
+        ru:"ИМТ Калькулятор (Взрослый)",
+        en:"BMI Сalculator (Adult)"
+    },
+    ideal_weight_calc:{
+        kk:"Мінсіз Салмақ Есептегіші",
+        ru:"Калькулятор Идеального Веса",
+        en:"Ideal Weight Calculator"
     },
     deposit_calc: {
         kk:"Депозиттік есептегіш",

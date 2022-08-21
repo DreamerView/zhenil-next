@@ -54,9 +54,18 @@
         "type":"services"
     },
     {
+        "title":"Калькулятор идеального веса",
+        "name":"ideal_weight_calc",
+        "image":"/services/ideal-weight.svg",
+        "image_background":"purple_background",
+        "key":"мінсіз салмақ есептегіші,калькулятор идеального веса,ideal weight calculator",
+        "location":"/health/ideal-weight",
+        "type":"services"
+    },
+    {
         "title":"Депозитный калькулятор",
         "name":"deposit_calc",
-        "image":"/services/badge.svg",
+        "image":"/services/deposit.svg",
         "image_background":"purple_background",
         "key":"депозиттік есептегіш,депозитный калькулятор,deposit Calculator",
         "location":"/finance/deposit",

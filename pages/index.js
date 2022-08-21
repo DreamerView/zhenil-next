@@ -145,15 +145,27 @@ const Home = () => {
             <Link href="/finance/deposit">
               <a>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
-                  <div className={styles.main__index_block}></div>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/deposit.svg"/>
+                    </div>
+                  </div>
                   <span className="head">{nav_translate['deposit_calc'][locale]}</span>
                 </div>
               </a>
             </Link>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}></div>
-              <span className="head">Lorem Ipsum</span>
-            </div>
+            <Link href="/health/ideal-weight">
+              <a>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image layout="fill" alt="service (Metabolism vector created by pch.vector)" priority className={styles.main__index_block_img} src="/services/ideal-weight.svg"/>
+                    </div>
+                  </div>
+                  <span className="head">{nav_translate['ideal_weight_calc'][locale]}</span>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}>
                 

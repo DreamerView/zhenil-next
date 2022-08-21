@@ -37,6 +37,19 @@ const ConstructorIndex = () => {
                 </div>
                 </a>
                 </Link>
+                <Link href="/health/ideal-weight">
+                <a>
+                <div className={`${style.main__module_row_block} anim_hover`}>
+                    <div className={`${style.main__module_row_block_img}`}>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.svg"/>
+                    </div>
+                    <div className={style.main__module_row_block_f}>
+                        <span className="head_1">{nav_translate['ideal_weight_calc'][lang]}</span>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    </div>
+                </div>
+                </a>
+                </Link>
                 {/*  */}
             </div>
         </div>
