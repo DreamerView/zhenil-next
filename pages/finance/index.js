@@ -28,7 +28,7 @@ const ConstructorIndex = () => {
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div className={`${style.main__module_row_block_img}`}>
-                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.svg"/>
+                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp"/>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['deposit_calc'][lang]}</span>

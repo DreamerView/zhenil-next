@@ -4,6 +4,8 @@ import translate from "../../../translate/health/bmi_calculator/index_translate"
 const setBmiApi = (male,age,m,h) => {
         const lang = setTranslateText();
         let res,check,maleText,color;
+        h = h/100;
+        if(age === '') age=0;
         if(m===0 || h===0) {check = translate['loading'][lang]}
         if(res === undefined) {res = translate['loading'][lang]}
         if(m!=0 && h!=0) {res=Math.round(m/(h*h));};

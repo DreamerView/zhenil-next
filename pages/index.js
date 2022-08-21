@@ -123,7 +123,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/badge.svg"/>
+                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/badge.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['acc_const'][locale]}</span>
@@ -135,7 +135,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/bmi.svg"/>
+                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/bmi.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['bmi_calc'][locale]}</span>
@@ -147,7 +147,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/deposit.svg"/>
+                      <Image layout="fill" alt="service" priority className={styles.main__index_block_img} src="/services/deposit.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['deposit_calc'][locale]}</span>
@@ -159,7 +159,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image layout="fill" alt="service (Metabolism vector created by pch.vector)" priority className={styles.main__index_block_img} src="/services/ideal-weight.svg"/>
+                      <Image layout="fill" alt="service (Metabolism vector created by pch.vector)" priority className={styles.main__index_block_img} src="/services/ideal-weight.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['ideal_weight_calc'][locale]}</span>

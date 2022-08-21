@@ -177,11 +177,11 @@ const SizeAcc = () => {
                         </select>:''}
                         {!result==='ready'||(select||cc)?<>
                             <div className="main__block_interface_menu_c_s flex">
-                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('width_acc',e.target.value);setWidth(e.target.value);}} placeholder={width} type="text" name="" id="" />
+                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('width_acc',e.target.value);setWidth(e.target.value);}} placeholder={width} type="tel" name="" id="" />
                                 <span className="main__block_interface_menu_c_s_t">{text['width'][lang]}</span>
                             </div>
                             <div className="main__block_interface_menu_c_s flex">
-                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('height_acc',e.target.value);setHeight(e.target.value);setReady(true);}} placeholder={height} type="text" name="" id="" />
+                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('height_acc',e.target.value);setHeight(e.target.value);setReady(true);}} placeholder={height} type="tel" name="" id="" />
                                 <span className="main__block_interface_menu_c_s_t">{text['height'][lang]}</span>
                             </div>
                         </>:''}

@@ -53,5 +53,10 @@ export default {
         kk:"Нәтижелерді күтеміз",
         ru:"Ожидаем результатов",
         en:"Waiting results"
+    },
+    enter:{
+        kk:"Мәнді енгізіңіз",
+        ru:"Введите значение",
+        en:"Enter a value"
     }
 }

@@ -10,11 +10,11 @@ import nav_translate from "../../../translate/services/all_translate";
 
 const Health = () => {
     const lang = useTranslateText();
-    const [n1,setN1] = useState(0);
-    const [n2,setN2] = useState(0);
+    const [n1,setN1] = useState('');
+    const [n2,setN2] = useState('');
     const [result,setResult] = useState(0);
     const [check,setCheck] = useState(translate['loading'][lang]);
-    const [age,setAge] = useState(0);
+    const [age,setAge] = useState('');
     const [male,setMale] = useState('other');
     const [show,setShow] = useState({});
     const i1 = useRef();
@@ -27,14 +27,14 @@ const Health = () => {
     },[s]);
     useEffect(()=>{
         setCheck(translate['loading'][lang]);
-        setResult(0);
-        setN1(0);
-        setN2(0);
+        setResult('');
+        setN1('');
+        setN2('');
         i1.current.value='';
         i2.current.value='';
     },[male,age,lang]);
     useEffect(()=>{
-        setAge(0);
+        setAge('');
         i3.current.value='';
     },[male]);
     
@@ -76,15 +76,15 @@ const Health = () => {
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">{translate['age'][lang]}</p>
-                            <input ref={i3} type="number" onChange={(e)=>{setAge(e.target.value)}} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
+                            <input ref={i3} type="tel" pattern="[0-9]*" onChange={(e)=>{setAge((v) => (e.target.validity.valid ? e.target.value : v))}} value={age} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">{translate['m_text'][lang]}</p>
-                            <input ref={i1} type="number" onChange={(e)=>{setN1(e.target.value);}} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
+                            <input ref={i1} type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
                         </div>
                         <div className={style.main__calculator_module}>
                             <p className="sub_content">{translate['h_text'][lang]}</p>
-                            <input ref={i2} type="number" onChange={(e)=>{setN2(e.target.value/100);}} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
+                            <input ref={i2} type="tel" pattern="[0-9]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['enter'][lang]}/>
                         </div>
                     </div>
                     {/*  */}
