@@ -14,6 +14,7 @@ const Acc = () => {
       <>
       <Head>
         <title>{text['name'][lang]} | Okki.kz</title>
+        <meta property="og:title" content={`${text['name'][lang]} | Okki.kz`} />
         <meta name="description" content={text['seo_description'][lang]} />
       </Head>
         <div className="main__nav block_animation">

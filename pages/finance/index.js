@@ -14,6 +14,7 @@ const ConstructorIndex = () => {
         <>
             <Head>
                 <title>{nav_translate['finance'][lang]} | Okki.kz</title>
+                <meta property="og:title" content={`${nav_translate['finance'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
             <div className="main__nav block_animation">

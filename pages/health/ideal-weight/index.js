@@ -31,6 +31,7 @@ const Deposit = () => {
         <>
             <Head>
                 <title>{nav_translate['ideal_weight_calc'][lang]} | Okki.kz</title>
+                <meta property="og:title" content={`${nav_translate['ideal_weight_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/health">{nav_translate['health'][lang]}</Link>  /  {nav_translate['ideal_weight_calc'][lang]}</p>

@@ -13,6 +13,7 @@ const Deposit = () => {
         <>
             <Head>
                 <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
+                <meta property="og:title" content={`${nav_translate['deposit_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/finance">{nav_translate['finance'][lang]}</Link>  /  {nav_translate['deposit_calc'][lang]}</p>

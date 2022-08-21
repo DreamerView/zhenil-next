@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 import { Html, Head, Main, NextScript } from 'next/document';
 
+
 const DocumentShow = () => {
   return (
     <Html>
@@ -8,7 +9,6 @@ const DocumentShow = () => {
                 <meta charSet="utf-8" />
                 <link rel="icon" href="/favicon.ico" />
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
-                <meta name="description" content="Okki - потому что проще!" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Okki.kz" />
                 <link rel="apple-touch-icon" href="/apple.png" />

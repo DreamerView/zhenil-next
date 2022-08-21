@@ -3,11 +3,13 @@ import { useState,useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import translate from "../translate/header_translate";
 import { useDispatch } from 'react-redux';
 import Search from './header_action/search';
 import SearchBlocks from './header_action/searchblocks';
+import text from "../translate/seo_index";
 
 const Header = () => {
     const send = useDispatch();
@@ -44,6 +46,15 @@ const Header = () => {
     },[res]);
     return(
       <>
+      <Head>
+        <meta property="og:title" content={text['title'][locale]} />
+        <meta property="og:site_name" content="Okki.kz" />
+        <meta property="og:description" content={text['desc'][locale]} />
+        <meta name="description" content={text['desc'][locale]} />
+        <meta property="og:image" content="http://localhost:3000/img/seo_image.webp" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="250" />
+      </Head>
         <header>
     <div className="header__logo">
       <Link href='/'>
