@@ -47,9 +47,11 @@ const Header = () => {
     return(
       <>
       <Head>
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={text['title'][locale]} />
         <meta property="og:site_name" content="Okki.kz" />
         <meta property="og:description" content={text['desc'][locale]} />
+        <meta property="og:url" content="https://okki.kz" />
         <meta name="description" content={text['desc'][locale]} />
         <meta property="og:image" content="https://okki.kz/seo_image/twitter.webp" />
         <meta name="twitter:card" content="summary_large_image"/>
