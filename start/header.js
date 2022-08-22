@@ -51,17 +51,25 @@ const Header = () => {
         <meta property="og:site_name" content="Okki.kz" />
         <meta property="og:description" content={text['desc'][locale]} />
         <meta name="description" content={text['desc'][locale]} />
-        <meta property="og:image" content="http://localhost:3000/img/seo_image.webp" />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="250" />
+        <meta property="og:image" content="https://okki.kz/seo_image/twitter.webp" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@okki.kz"/>
+        <meta name="twitter:title" content={text['title'][locale]}/>
+        <meta name="twitter:description" content={text['desc'][locale]}/>
+        <meta name="twitter:image" content="https://okki.kz/seo_image/twitter.webp"/>
+        <link rel="image_src" href="https://okki.kz/seo_image/twitter.web"/>
+        <meta name="author" content="Okki"/>
+        <meta name="publisher" content="Okki"/>
+        <link rel="canonical" href="https://www.okki.kz" />
+        <meta name="robots" content="index,follow"/>
       </Head>
         <header>
     <div className="header__logo">
       <Link href='/'>
-        <a>
+        <a title={text['title'][locale]}>
           <div className='header__logo_p'>
             <div className="header__logo_pic anim_hover">
-              <Image layout='fill' priority className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
+              <Image title={text['title'][locale]} layout='fill' priority className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
             </div>
           </div>
       </a>
@@ -69,13 +77,13 @@ const Header = () => {
     </div>
     <div className="header__action">
       <div className="header__action_image anim_hover">
-        <Image layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
+        <Image title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
       </div>
      
       <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
       <span className="header__action_block_text">{locale}</span>
       <div className="header__search_menu_pic">
-        <Image layout='fill' className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
+        <Image title={`Top`} layout='fill' className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
       </div>
     </div>
     </div>
@@ -96,7 +104,7 @@ const Header = () => {
       {res?"":
       <div className="header__search_menu anim_hover">
         <div className="header__search_menu_pic" id="search_menu">
-          <Image layout='fill' className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
+          <Image title={translate['menu'][locale]} layout='fill' className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
         </div>
         <span className="header__search_menu_text">{translate['menu'][locale]}</span>
       </div>}
