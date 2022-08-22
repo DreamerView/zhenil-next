@@ -9,7 +9,7 @@ sitemap({
   },
   baseUrl: "https://okki.kz",
   pagesDirectory: path.resolve(__dirname,'../pages/'),
-  targetDirectory: path.resolve(__dirname,'../pages/'),
+  targetDirectory: path.resolve(__dirname,'../public/'),
   sitemapFilename: "sitemap.xml",
   ignoredExtensions: ["png", "jpg","map","json","xml","jpeg","icon","svg","webp","css","jsx","js"],
   ignoredPaths:[
