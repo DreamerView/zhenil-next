@@ -12,8 +12,6 @@ const Health = () => {
     const lang = useTranslateText();
     const [n1,setN1] = useState('');
     const [n2,setN2] = useState('');
-    const [result,setResult] = useState(0);
-    const [check,setCheck] = useState(translate['loading'][lang]);
     const [age,setAge] = useState('');
     const [male,setMale] = useState('other');
     const [show,setShow] = useState({});
@@ -26,8 +24,6 @@ const Health = () => {
         console.log(s);
     },[s]);
     useEffect(()=>{
-        setCheck(translate['loading'][lang]);
-        setResult('');
         setN1('');
         setN2('');
         i1.current.value='';

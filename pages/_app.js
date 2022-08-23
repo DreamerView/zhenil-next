@@ -12,6 +12,10 @@ import translate from "../translate/ux/loading_page";
 import { useMediaQuery } from 'react-responsive';
 import DocumentResult from "../start/document";
 
+// export function reportWebVitals(metric) {
+//     console.table(metric)
+// }
+
 const Preloader = () => {
     const [color,setColor] = useState("#4634bc");
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
@@ -44,36 +48,36 @@ const MyApp = ({ Component, pageProps }) => {
         });
     },[])
 
-  useEffect(() => {
-        if ("serviceWorker" in navigator) navigator.serviceWorker.register('/serviceworker.js');
-  }, []);
-const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
+    useEffect(() => {
+            if ("serviceWorker" in navigator) navigator.serviceWorker.register('/serviceworker.js');
+    }, []);
+    const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
 
 
-const reducer = (state=defaultState,action) => {
-  switch(action.type) {
-    case "SetAction": return {...state,act:action.set};
-    case "SetConfirm": return {...state,confirm:action.set};
-    case "setFullFrame": return {...state,fullframe:action.set};
-    case "setUrlFrame": return {...state,urlframe:action.set};
-    case "setCropImage": return {...state,crop:action.set};
-    case "getCropImage": return {...state,getcrop:action.set};
-    case "actionMain": return {...state,main:action.set};
-    default: return state;
-  }
-};
+    const reducer = (state=defaultState,action) => {
+    switch(action.type) {
+        case "SetAction": return {...state,act:action.set};
+        case "SetConfirm": return {...state,confirm:action.set};
+        case "setFullFrame": return {...state,fullframe:action.set};
+        case "setUrlFrame": return {...state,urlframe:action.set};
+        case "setCropImage": return {...state,crop:action.set};
+        case "getCropImage": return {...state,getcrop:action.set};
+        case "actionMain": return {...state,main:action.set};
+        default: return state;
+    }
+    };
 
-const store = createStore(reducer);
+    const store = createStore(reducer);
 
-  return(
-    <>
-        <Provider store={store}>
-            <DocumentResult>
-            {result ? <Preloader/>:<Component {...pageProps} />}
-            </DocumentResult>
-        </Provider>
-    </>
-  )
+    return(
+        <>
+            <Provider store={store}>
+                <DocumentResult>
+                {result ? <Preloader/>:<Component {...pageProps} />}
+                </DocumentResult>
+            </Provider>
+        </>
+    )
 }
 
 export default MyApp

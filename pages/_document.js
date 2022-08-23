@@ -1,13 +1,12 @@
 /*jshint esversion: 6 */
 import { Html, Head, Main, NextScript } from 'next/document';
 
-
 const DocumentShow = () => {
   return (
     <Html>
       <Head>
                 <meta charSet="utf-8" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="https://okki.kz/favicon.ico" type="image/x-icon" />
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Okki.kz" />

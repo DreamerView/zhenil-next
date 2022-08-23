@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
 /*jshint sub:true*/
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useMemo } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -16,15 +16,15 @@ const InfoBlock = (result) => {
     const [name,setName] = useState(text['type_name'][lang]);
     const [surname,setSurname] = useState(text['type_surname'][lang]);
     const [status,setStatus] = useState(text['not_need'][lang]);
-    const [info,setInfo] = useState('');
-    useEffect(()=>{
-        if(result) {
-            setInfo(result.item);
-        }
-        else {
-            setInfo('');
-        }
-    },[]);
+    const [info,setInfo] = useState(result?result.item:'');
+    // useEffect(()=>{
+    //     if(result) {
+    //         setInfo(result.item);
+    //     }
+    //     else {
+    //         setInfo('');
+    //     }
+    // },[]);
     const CheckAvatar = (e) => {
         const i = document.createElement('img');
         i.src = e;
@@ -41,9 +41,7 @@ const InfoBlock = (result) => {
             setLogo(srcEnc);
         };
     };
-    useEffect(()=>{
-        if(getcrop.id===result.item.id) {CheckAvatar(getcrop.image);}
-    },[getcrop]);
+    if(getcrop) {if(getcrop.id===result.item.id) CheckAvatar(getcrop.image)};
     useEffect(()=>{
         let s = info;
         if(s) {
@@ -55,7 +53,7 @@ const InfoBlock = (result) => {
     },[info]);
     useEffect(()=>{
         info !==''&&result.change({info});
-    },[info]);
+    },[info]); // eslint-disable-line react-hooks/exhaustive-deps
     return(
         <div className={`main__block_interface_menu c-m ${result.action}`}>
                     <div className="main__block_menu_close">
