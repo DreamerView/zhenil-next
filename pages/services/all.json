@@ -67,8 +67,17 @@
         "name":"deposit_calc",
         "image":"/services/deposit.webp",
         "image_background":"purple_background",
-        "key":"депозиттік есептегіш,депозитный калькулятор,deposit Calculator",
+        "key":"депозиттік есептегіш,депозитный калькулятор,deposit calculator",
         "location":"/finance/deposit",
+        "type":"services"
+    },
+    {
+        "title":"Калькулятор расчета маржи и наценки",
+        "name":"margin_markup_calc",
+        "image":"/services/deposit.webp",
+        "image_background":"purple_background",
+        "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
+        "location":"/business/margin-markup-calculator",
         "type":"services"
     }
 ]

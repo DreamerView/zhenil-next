@@ -53,5 +53,10 @@ export default {
         kk:"Депозиттік есептегіш",
         ru:"Депозитный калькулятор",
         en:"Deposit Calculator"
+    },
+    margin_markup_calc: {
+        kk:"Маржа мен үстеме бағаны есептеу калькуляторы",
+        ru:"Калькулятор расчета маржи и наценки",
+        en:"Margin and markup calculator"
     }
 }
