@@ -37,56 +37,86 @@ const MarginMarkup = () => {
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/finance">{nav_translate['finance'][lang]}</Link>  /  {nav_translate['deposit_calc'][lang]}</p>
             </div>
             <div className="main">
-                <h1 className="flex_text">{nav_translate["margin_markup_calc"][lang]} <div className="emoji_h1"><Image priority src={"/emoji/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+                <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
                         <h1>Результаты</h1>
-                        <div className={style.module_result_row}>
+                        <div className={(delivery===''&&other===''&&marketing==='')?style.module_result_row:style.module_result_row_block}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/Writing-hand-skin-1.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Себестоимость</p>
-                                    <h2>{n1Total===0?n1:`${n1Total} ~(${n1})`} ₸</h2>
+                                    <h2>{n1Total} ₸</h2>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/Check mark.svg"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Цена</p>
-                                    <h2>{n2} ₸</h2>
+                                    <h2>{n2}₸</h2>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/Smiling face with sunglasses.svg"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji/money_bag.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Чистая прибыль</p>
-                                    <h2>{total} ₸</h2>
+                                    <h2 className={`${total===0?"":total>0?"green_font":"red_font"}`}>{total}₸</h2>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/High voltage.svg"} layout="fill" alt="emoji"/>
+                                    <Image priority src={`${marginPrice===0?"/emoji/bar_chart.webp":marginPrice>0?"/emoji/chart_increasing.webp":"/emoji/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Маржа (Margin)</p>
-                                    <h2>{marginPrice}%</h2>
+                                    <h2 className={`${marginPrice===0?"":marginPrice>0?"green_font":"red_font"}`}>{marginPrice}%</h2>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/High voltage.svg"} layout="fill" alt="emoji"/>
+                                    <Image priority src={`${markUp===0?"/emoji/bar_chart.webp":markUp>0?"/emoji/chart_increasing.webp":"/emoji/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Наценка (Markup)</p>
-                                    <h2>{markUp}%</h2>
+                                    <h2 className={`${markUp===0?"":markUp>0?"green_font":"red_font"}`}>{markUp}%</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 style={(delivery===''&&other===''&&marketing==='')?{display:'none'}:{display:'block'}} className="top_header">Дополнительно</h1>
+                        <div className={style.module_result_row_block}>
+                            <div style={delivery===''?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
+                                <div className={style.module_result_block_pic}>
+                                    <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.module_result_block_desc}>Доставка</p>
+                                    <h2>{delivery}₸</h2>
+                                </div>
+                            </div>
+                            <div style={marketing===''?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
+                                <div className={style.module_result_block_pic}>
+                                    <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.module_result_block_desc}>Реклама и маркетинг</p>
+                                    <h2>{marketing}₸</h2>
+                                </div>
+                            </div>
+                            <div style={other===''?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
+                                <div className={style.module_result_block_pic}>
+                                    <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.module_result_block_desc}>Другое</p>
+                                    <h2>{other}₸</h2>
                                 </div>
                             </div>
                         </div>
@@ -94,29 +124,43 @@ const MarginMarkup = () => {
                     {/*  */}
                     <div className={style.main__calculator}>
                         {/* <h2>{text["description"][lang]}</h2> */}
-                        <div className={style.main__calculator_module}>
-                            <p className="sub_content">Себестоимость</p>
-                            <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
-                        </div>
-                        <div className={style.main__calculator_module}>
-                            <p className="sub_content">Цена</p>
-                            <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                        <div className={style.module_result_row}>
+                            <div className={style.main__calculator_module}>
+                                <div className={style.main__calculator_module_pic}>
+                                    <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.description}>Себестоимость</p>
+                                    <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                </div>
+                            </div>
+                            <div className={style.main__calculator_module}>
+                                <div className={style.main__calculator_module_pic}>
+                                    <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.description}>Цена</p>
+                                    <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                </div>
+                            </div>
                         </div>
                         <h2>Дополнительно</h2>
-                        <div className={style.main__calculator_module}>
-                            <p className="sub_content">Доставка</p>
-                            <p className={`${style.click_event}`} style={delivery!==''?{display:'none'}:{display:'block'}} onClick={()=>{setDelivery(0)}}>+ Добавить пункт доставки</p>
-                            <input style={delivery===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
-                        </div>
-                        <div className={style.main__calculator_module}>
-                            <p className="sub_content">Реклама и маркетинг</p>
-                            <p className={`${style.click_event}`} style={marketing!==''?{display:'none'}:{display:'block'}} onClick={()=>{setMarketing(0)}}>+ Добавить пункт реклама и маркетинг</p>
-                            <input style={marketing===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
-                        </div>
-                        <div className={style.main__calculator_module}>
-                            <p className="sub_content">Другое</p>
-                            <p className={`${style.click_event}`} style={other!==''?{display:'none'}:{display:'block'}} onClick={()=>{setOther(0)}}>+ Добавить пункт</p>
-                            <input style={other===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                        <div className={style.module_result_row}>
+                            <div className={style.main__calculator_module}>
+                                <p className="sub_content">Доставка</p>
+                                <p className={`${style.click_event}`} style={delivery!==''?{display:'none'}:{display:'block'}} onClick={()=>{setDelivery(0)}}>+ Добавить пункт</p>
+                                <input style={delivery===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                            </div>
+                            <div className={style.main__calculator_module}>
+                                <p className="sub_content">Реклама и маркетинг</p>
+                                <p className={`${style.click_event}`} style={marketing!==''?{display:'none'}:{display:'block'}} onClick={()=>{setMarketing(0)}}>+ Добавить пункт</p>
+                                <input style={marketing===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                            </div>
+                            <div className={style.main__calculator_module}>
+                                <p className="sub_content">Другое</p>
+                                <p className={`${style.click_event}`} style={other!==''?{display:'none'}:{display:'block'}} onClick={()=>{setOther(0)}}>+ Добавить пункт</p>
+                                <input style={other===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                            </div>
                         </div>
                     </div>
                     {/*  */}

@@ -363,7 +363,9 @@ p.nav > a {
       --search-block: hsl(210, 7%, 95%);
   }
 }
-
+.top_header {
+  margin-top:32px;
+}
 .green_background {
   background-color: var(--green_back);
 }
