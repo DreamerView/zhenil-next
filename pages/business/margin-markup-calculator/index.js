@@ -124,43 +124,75 @@ const MarginMarkup = () => {
                     {/*  */}
                     <div className={style.main__calculator}>
                         {/* <h2>{text["description"][lang]}</h2> */}
+                        <h2>Калькулятор</h2>
                         <div className={style.module_result_row}>
                             <div className={style.main__calculator_module}>
-                                <div className={style.main__calculator_module_pic}>
-                                    <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                <div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                    </div>
                                 </div>
                                 <div>
-                                    <p className={style.description}>Себестоимость</p>
+                                    <label className={style.description}>Себестоимость</label>
                                     <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
                                 </div>
                             </div>
                             <div className={style.main__calculator_module}>
-                                <div className={style.main__calculator_module_pic}>
-                                    <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                <div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                    </div>
                                 </div>
                                 <div>
-                                    <p className={style.description}>Цена</p>
+                                    <label className={style.description}>Цена</label>
                                     <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
                                 </div>
                             </div>
                         </div>
                         <h2>Дополнительно</h2>
                         <div className={style.module_result_row}>
+                            <p className={`${style.click_event}`} style={delivery!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setDelivery(0)}}>+ Добавить пункт (Доставка)</p>
+                            {delivery===''?"":
                             <div className={style.main__calculator_module}>
-                                <p className="sub_content">Доставка</p>
-                                <p className={`${style.click_event}`} style={delivery!==''?{display:'none'}:{display:'block'}} onClick={()=>{setDelivery(0)}}>+ Добавить пункт</p>
-                                <input style={delivery===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                                <div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className={style.description}>Доставка</label>
+                                    <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                </div>
                             </div>
+                            }
+                            <p className={`${style.click_event}`} style={marketing!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setMarketing(0)}}>+ Добавить пункт (Реклама)</p>
+                            {marketing===''?"":
                             <div className={style.main__calculator_module}>
-                                <p className="sub_content">Реклама и маркетинг</p>
-                                <p className={`${style.click_event}`} style={marketing!==''?{display:'none'}:{display:'block'}} onClick={()=>{setMarketing(0)}}>+ Добавить пункт</p>
-                                <input style={marketing===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                                <div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className={style.description}>Реклама и маркетинг</label>
+                                    <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                </div>
                             </div>
+                            }
+                            <p className={`${style.click_event}`} style={other!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setOther(0)}}>+ Добавить пункт (Другое)</p>
+                            {other===''?"":
                             <div className={style.main__calculator_module}>
-                                <p className="sub_content">Другое</p>
-                                <p className={`${style.click_event}`} style={other!==''?{display:'none'}:{display:'block'}} onClick={()=>{setOther(0)}}>+ Добавить пункт</p>
-                                <input style={other===''?{display:'none'}:{display:'block'}} type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите сумму"/>
+                                <div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className={style.description}>Другое</label>
+                                    <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                </div>
                             </div>
+                            }
                         </div>
                     </div>
                     {/*  */}
