@@ -106,7 +106,7 @@ const MarginMarkup = () => {
                                     <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
-                                    <p className={style.module_result_block_desc}>Реклама и маркетинг</p>
+                                    <p className={style.module_result_block_desc}>Реклама</p>
                                     <h2>{marketing}₸</h2>
                                 </div>
                             </div>
@@ -133,8 +133,7 @@ const MarginMarkup = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={style.description}>Себестоимость</label>
-                                    <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                    <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Себестоимость"/>
                                 </div>
                             </div>
                             <div className={style.main__calculator_module}>
@@ -144,8 +143,7 @@ const MarginMarkup = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={style.description}>Цена</label>
-                                    <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                    <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Цена"/>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +158,7 @@ const MarginMarkup = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={style.description}>Доставка</label>
-                                    <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                    <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Доставка"/>
                                 </div>
                             </div>
                             }
@@ -174,8 +171,7 @@ const MarginMarkup = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={style.description}>Реклама и маркетинг</label>
-                                    <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                    <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Реклама"/>
                                 </div>
                             </div>
                             }
@@ -188,8 +184,7 @@ const MarginMarkup = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={style.description}>Другое</label>
-                                    <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Введите ставку"/>
+                                    <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Другое"/>
                                 </div>
                             </div>
                             }
