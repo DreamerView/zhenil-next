@@ -1080,5 +1080,11 @@ div.main {
   border-radius: 13px;
   margin: 16px 0;
 }
+div.main__nav {
+  margin: var(--n-2);
+  padding:var(--n-1);
+  background-color: var(--nav_block);
+  border-radius: 13px;
+}
 
 

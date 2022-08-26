@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint sub:true*/
+import style from "../../../styles/constructor/acc/index.module.css";
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
@@ -111,43 +112,43 @@ const SizeAcc = () => {
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  {translate['step3'][lang]}</p>
             </div>
-            <div className="main__block">
+            <div className={style.main__block}>
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
-                <div className="main__block_interface_menu c-m block_animation">
-                    <div className="main__block_interface_menu_c">
+                <div className={`${style.main__block_interface_menu} c-m block_animation`}>
+                    <div className={style.main__block_interface_menu_c}>
                         <h1>{text['title'][lang]}</h1>
                     </div>
 
-                    <div className="main__block_interface_menu_c flex" onChange={(event)=>Check(event.target.value)}>
-                        <label className="main__block_i_l">
+                    <div className={`${style.main__block_interface_menu_c} flex`} onChange={(event)=>Check(event.target.value)}>
+                        <label className={style.main__block_i_l}>
                             <input type="radio" name="choice" value="book" id="bookChoice" defaultChecked={'book'===orient} />
-                            <div className="main__block_interface_menu_c_book choice_land">
-                                <div className="main__block_interface_menu_c_book_block"/>
+                            <div className={`${style.main__block_interface_menu_c_book} ${style.choice_land}`}>
+                                <div className={style.main__block_interface_menu_c_book_block}/>
                                 <span>{text['book'][lang]}</span>
                             </div>
                         </label>
                         
-                        <label className="main__block_i_l">
+                        <label className={style.main__block_i_l}>
                             <input type="radio" name="choice" value="album" id="albumChoice" defaultChecked={'album'===orient}  />
-                            <div className="main__block_interface_menu_c_album choice_land">
-                                <div className="main__block_interface_menu_c_album_block"/>
+                            <div className={`${style.main__block_interface_menu_c_album} ${style.choice_land}`}>
+                                <div className={style.main__block_interface_menu_c_album_block}/>
                                 <span>{text['album'][lang]}</span>
                             </div>
                         </label>
                         
                     </div>
-                    <div className="main__block_interface_menu_c">
+                    <div className={style.main__block_interface_menu_c}>
                     <div>
                     {checked?
-                        <select defaultValue={result} onChange={(e)=>{setResult(e.target.value);Check1(e.target.value);setSelect(false);}} className="main__block_interface_menu_c_select" name="" id="">
+                        <select defaultValue={result} onChange={(e)=>{setResult(e.target.value);Check1(e.target.value);setSelect(false);}} className={style.main__block_interface_menu_c_select} name="" id="">
                             <option value="Choose-origin" disabled>{text['template'][lang]}</option>
                             <option value="ready">{text['template_ready'][lang]}</option>
                             <option value="selectable">{text['template_custom'][lang]}</option>
                         </select>:''}
                     </div>
                         {result==='ready' && orient==='book'?
-                        <select defaultValue={ss_ready} onChange={(e)=>{Check3(e.target.value);setReady(true);}} className="main__block_interface_menu_c_select" name="" id="">
+                        <select defaultValue={ss_ready} onChange={(e)=>{Check3(e.target.value);setReady(true);}} className={style.main__block_interface_menu_c_select} name="" id="">
                             <option value="Choose-origin" disabled>{text['ready'][lang]}</option>
                             <option value="6х9">{text['width'][lang]}: 6cm, {text['height'][lang]}: 9cm (6х9 cm)</option>
                             <option value="7,4х10,5">{text['width'][lang]}: 7,4cm, {text['height'][lang]}: 10,5cm (7,4х10,5 cm)</option>
@@ -159,7 +160,7 @@ const SizeAcc = () => {
                             <option value="11,1х12,7">{text['width'][lang]}: 11,1cm, {text['height'][lang]}: 12,7cm (11,1х12,7 cm)</option>
                         </select>:''}
                         {result==='ready' && orient==='album'?
-                        <select defaultValue={ss_ready} onChange={(e)=>{Check3(e.target.value);setReady(true);}} className="main__block_interface_menu_c_select" name="" id="">
+                        <select defaultValue={ss_ready} onChange={(e)=>{Check3(e.target.value);setReady(true);}} className={style.main__block_interface_menu_c_select} name="" id="">
                             <option value="Choose-origin" disabled>{text['ready'][lang]}</option>
                             <option value="9х6">{text['width'][lang]}: 9cm, {text['height'][lang]}: 6cm (9х6 cm)</option>
                             <option value="9х6,5">{text['width'][lang]}: 9cm, {text['height'][lang]}: 6,5cm (9х6,5 cm)</option>
@@ -169,20 +170,20 @@ const SizeAcc = () => {
                             <option value="12х8,5">{text['width'][lang]}: 12cm, {text['height'][lang]}: 8,5cm (12х8,5 cm)</option>
                         </select>:''}
                         {result==='selectable'?
-                        <select defaultValue={ss} onChange={(e)=>{setSelect(true);Check2(e.target.value)}} className="main__block_interface_menu_c_select" name="" id="">
+                        <select defaultValue={ss} onChange={(e)=>{setSelect(true);Check2(e.target.value)}} className={style.main__block_interface_menu_c_select} name="" id="">
                             <option value="Choose-origin" disabled>{text['selectable'][lang]}</option>
                             <option value="sm">{text['selectable_sm'][lang]}</option>
                             <option value="dm">{text['selectable_dm'][lang]}</option>
                             <option value="px">{text['selectable_pix'][lang]}</option>
                         </select>:''}
                         {!result==='ready'||(select||cc)?<>
-                            <div className="main__block_interface_menu_c_s flex">
-                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('width_acc',e.target.value);setWidth(e.target.value);}} placeholder={width} type="tel" name="" id="" />
-                                <span className="main__block_interface_menu_c_s_t">{text['width'][lang]}</span>
+                            <div className={`${style.main__block_interface_menu_c_s} flex`}>
+                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{localStorage.setItem('width_acc',e.target.value);setWidth(e.target.value);}} placeholder={width} type="tel" name="" id="" />
+                                <span className={style.main__block_interface_menu_c_s_t}>{text['width'][lang]}</span>
                             </div>
-                            <div className="main__block_interface_menu_c_s flex">
-                                <input className="main__block_interface_menu_c_s_i" onChange={(e)=>{localStorage.setItem('height_acc',e.target.value);setHeight(e.target.value);setReady(true);}} placeholder={height} type="tel" name="" id="" />
-                                <span className="main__block_interface_menu_c_s_t">{text['height'][lang]}</span>
+                            <div className={`${style.main__block_interface_menu_c_s} flex`}>
+                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{localStorage.setItem('height_acc',e.target.value);setHeight(e.target.value);setReady(true);}} placeholder={height} type="tel" name="" id="" />
+                                <span className={style.main__block_interface_menu_c_s_t}>{text['height'][lang]}</span>
                             </div>
                         </>:''}
 
@@ -190,10 +191,10 @@ const SizeAcc = () => {
                     
                 </div>
             </div>
-            <div className="main__block_fixed_confirm">
-                <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/constructor/acc/logo" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['back'][lang]}</a></Link>
-                            {!ready ? <button className="main__block_interface_btn_forward">{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['continue'][lang]}</a></Link>}    
+            <div className={style.main__block_fixed_confirm}>
+                <div className={`${style.main__block_interface_menu_c_end} flex`}>
+                            <Link href="/constructor/acc/logo" className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</a></Link>}    
                 </div>
             </div>
     </>

@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint sub:true*/
+import style from "../../../styles/constructor/acc/index.module.css";
 import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
@@ -51,35 +52,35 @@ const LogoAcc = () => {
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{nav_translate['acc_const'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
             </div>
-            <div className="main__block">
+            <div className={style.main__block}>
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
-                <div className="main__block_interface_menu c-m block_animation" onClick={()=>{}}>
-                    <div className="main__block_interface_menu_c">
+                <div className={`${style.main__block_interface_menu} c-m block_animation`} onClick={()=>{}}>
+                    <div className={style.main__block_interface_menu_c}>
                         <h1>{text['title'][lang]}</h1>
                     </div>
-                    <div className="main__block_interface_menu_c_logo">
+                    <div className={style.main__block_interface_menu_c_logo}>
                         <label htmlFor="logoPreview">
-                            <div className="main__block_interface_menu_logo_icon_pic">
-                                <Image width={46} height={46} loading="lazy" className="main__block_interface_menu_logo_icon_img" src={"/img/add_a_photo.svg" } alt="icon" />
+                            <div className={style.main__block_interface_menu_logo_icon_pic}>
+                                <Image width={46} height={46} loading="lazy" className={style.main__block_interface_menu_logo_icon_img} src={"/img/add_a_photo.svg" } alt="icon" />
                             </div>
                         </label>
                         <input style={{display:'none'}} name="logoPreview" id="logoPreview" accept="image/*" type='file' onChange={(event)=>{CheckLogo(event.target.files[0]);setReady(true)}} />
                        
-                            <Image width={135} height={135} loading="lazy" className="main__block_interface_menu_logo_img" src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
+                            <Image width={135} height={135} loading="lazy" className={style.main__block_interface_menu_logo_img} src={logo} alt="logo" placeholder="blur" blurDataURL={logo} />
                         
                     </div>
-                    <div className="main__block_interface_menu_c_end">
+                    <div className={style.main__block_interface_menu_c_end}>
                         <div className={c.div}>
                             <span className={c.logo}>{c.text}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="main__block_fixed_confirm">
-                <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/constructor/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['skip'][lang]}</a></Link>
-                            {!ready ? <button className="main__block_interface_btn_forward">{ux['continue'][lang]}</button>: <Link href="/constructor/acc/size" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['continue'][lang]}</a></Link>}    
+            <div className={style.main__block_fixed_confirm}>
+                <div className={`${style.main__block_interface_menu_c_end} flex`}>
+                            <Link href="/constructor/acc/size" className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['skip'][lang]}</a></Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/size" className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</a></Link>}    
                 </div>
             </div>
         </>

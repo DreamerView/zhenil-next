@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint sub:true*/
+import style from "../../../styles/constructor/acc/index.module.css";
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
@@ -70,23 +71,23 @@ const InfoAcc = () => {
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size"><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
-            <div className="main__block">
+            <div className={style.main__block}>
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} />)}
-                <div className="main__block_interface_menu block_animation c-m click" onClick={()=>AddNewPerson()}>
-                    <div className="main__block_interface_menu_c_end">
-                        <div className="main__block_interface_menu_background">
-                            <Image width={46} height={46} className="main__block_interface_menu_logo_icon_img_back" src={"/img/person_add.svg" } alt="icon" />
+                <div className={`${style.main__block_interface_menu} block_animation c-m click`} onClick={()=>AddNewPerson()}>
+                    <div className={style.main__block_interface_menu_c_end}>
+                        <div className={style.main__block_interface_menu_background}>
+                            <Image width={46} height={46} className={style.main__block_interface_menu_logo_icon_img_back} src={"/img/person_add.svg" } alt="icon" />
                         </div>
                         <p className="sub_content">{text['add_user'][lang]}</p>
                     </div>
                 </div>
             </div>
-            <div className="main__block_fixed_confirm">
-                <div className="main__block_interface_menu_c_end flex">
-                            <Link href="/constructor/acc/size" className="main__block_interface_btn_back"><a className="main__block_interface_btn_back">{ux['back'][lang]}</a></Link>
-                            {!ready ? <button className="main__block_interface_btn_forward">{ux['finish'][lang]}</button>: <Link href="/constructor/acc/result" className="main__block_interface_btn_forward"><a className="main__block_interface_btn_forward">{ux['finish'][lang]}</a></Link>}    
+            <div className={style.main__block_fixed_confirm}>
+                <div className={`${style.main__block_interface_menu_c_end} flex`}>
+                            <Link href="/constructor/acc/size" className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</button>: <Link href="/constructor/acc/result" className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</a></Link>}    
                 </div>
             </div>
         </>

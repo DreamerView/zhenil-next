@@ -28,8 +28,10 @@ const ConstructorIndex = () => {
                 <Link href="/health/bmi-calculator">
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div className={`${style.main__module_row_block_img}`}>
-                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/bmi.webp"/>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/bmi.webp"/>
+                        </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['bmi_calc'][lang]}</span>
@@ -41,8 +43,10 @@ const ConstructorIndex = () => {
                 <Link href="/health/ideal-weight">
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div className={`${style.main__module_row_block_img}`}>
-                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.webp"/>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.webp"/>
+                        </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['ideal_weight_calc'][lang]}</span>

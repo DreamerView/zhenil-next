@@ -13,12 +13,13 @@ const SearchBlocks = (res) => {
             <Link href={res.item.location}><a>
             <div className={`${style.search__block} basic_animation`}>
                 {res.item.type==='category'?
+                <div>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
                     <Image width={26} height={26} src={res.item.image}/>
-                </div>:
-                    <div className={`${style.search__block_image_s}`}>
+                </div></div>:
+                    <div><div className={`${style.search__block_image_s}`}>
                         <Image width={38} height={38} className={`${style.search__block_image_i}`} priority src={res.item.image}/>
-                    </div>
+                    </div></div>
                 }
                 <div className={style.search__block_content}>
                     <h5>{translate[res.item.name][locale]}</h5>

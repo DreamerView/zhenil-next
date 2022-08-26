@@ -107,15 +107,10 @@ div.main__calculator_module_pic {
     margin: 0 24px;
 }
 select.main__calculator_module_select {
-    margin-top:16px;
     cursor: pointer;
-    max-width: 421px;
-    width:100%;
-    border-radius: 22.5px;
-    height:45px;
+    width:70%;
     font-size:16px;
     background: url(/img/top.svg) no-repeat 95% 50% var(--block-color);
-    padding:0 32px;
 }
 input.main__calculator_module_input {
     width:95%;

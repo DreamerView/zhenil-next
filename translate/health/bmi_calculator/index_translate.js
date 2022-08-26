@@ -70,9 +70,9 @@ export default {
         en:"Waiting results"
     },
     bmi_result:{
-        kk:"Сіздің дене салмағыңыздың индексі (ДСИ) тең",
-        ru:"Ваш индекс массы тела (ИМТ) равен",
-        en:"Your body mass index (BMI) is"
+        kk:"Сіздің ДСИ тең",
+        ru:"Ваш ИМТ равен",
+        en:"Your BMI is"
     },
     m_text:{
         kk:"Салмағыңыз, кг (кг)",

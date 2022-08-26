@@ -2,7 +2,6 @@
 import { useEffect,useState } from "react";
 import "../styles/globals.css";
 import Router from 'next/router';
-import "../styles/acc.css";
 import Head from "next/head";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';

@@ -28,8 +28,10 @@ const ConstructorIndex = () => {
                 <Link href="/constructor/acc">
                 <a>
                 <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div className={`${style.main__module_row_block_img}`}>
-                        <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp"/>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp"/>
+                        </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['acc_const'][lang]}</span>

@@ -127,41 +127,19 @@
         padding:3px 0 16px 0;
     }
 }
-
-div.main__nav {
-    padding:var(--n-1);
-    background-color: var(--nav_block);
-}
 div.main__block {
+    margin: var(--n-2);
     padding:var(--m-2);
     margin-bottom:100px;
+    background-color: var(--header-color);
+    border-radius: 13px;
 }
 div.main__block_menu_select_block {
     height: 314px;
     background-color: var(--block-color);
-    border-radius: 14px;
+    border-radius: 13px;
     cursor: pointer;
     border:1px solid transparent;
-    animation-name: block_animation;
-    animation-duration: 0.4s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-div.green_back:hover {
-    background-color: var(--background-color);
-    border-radius: 14px;
-    border:1px solid var(--green_back);
-}
-div.purple_back:hover {
-    background-color: var(--background-color);
-    border-radius: 14px;
-    border:1px solid var(--purple_back);
-}
-div.blue_back:hover {
-    background-color: var(--background-color);
-    border-radius: 14px;
-    border:1px solid var(--blue_back);
 }
 .green_temp {
     background-color: var(--green_back);
@@ -215,27 +193,52 @@ div.main__block_interface_menu {
     align-items: center;
     height: auto;
     border: 1px solid var(--border-color);
-    border-radius: 14px;
-    animation-name: block_animation;
-    animation-duration: 0.4s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
+    border-radius: 13px;
 }
 div.main__block_interface_menu_c {
     text-align: center;
     margin: 0 auto var(--p) auto;
+    /* display: flex;
+    justify-content: center; */
+}
+div.main__block_interface_menu_c_logo {
+    text-align: center;
+    margin-bottom: var(--p);
+    display: flex;
+    justify-content: center;
 }
 div.main__block_interface_menu_c_end {
     text-align: center;
 }
-
 img.main__block_interface_menu_logo_img {
     width: 135px;
     height: 135px;
     border-radius: 100%;
     object-fit: cover;
-    border:1px solid var(--block-color);
+}
+div.main__block_interface_menu_logo_icon_pic {
+    position: absolute;
+    width: 46px;
+    height:46px;
+    margin:44px 44px;
+    cursor: pointer;
+    z-index:1;
+}
+img.main__block_interface_menu_logo_icon_img {
+    width: 46px;
+    height:46px;
+    filter: drop-shadow(5px 5px 20px var(--font-color));
+    opacity: 0.9;
+}
+input.main__block_interface_menu_logo_icon_img_hide {
+    margin:44px 0;
+    position: absolute;
+    width: 46px;
+    height:46px;
+    margin:44px 44px;
+    opacity: 0;
+    cursor: pointer;
+    z-index:1;
 }
 div.main__block_interface_menu_background {
     width: 100px;
@@ -243,18 +246,11 @@ div.main__block_interface_menu_background {
     border-radius: 100%;
     background-color: var(--green_back);
     margin:0 auto 40px auto;
-}
-img.main__block_interface_menu_logo_icon_img {
-    position: absolute;
-    width: 46px;
-    height:46px;
-    margin:44px 44px;
-    cursor: pointer;
-    filter: drop-shadow(5px 5px 20px var(--font-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 img.main__block_interface_menu_logo_icon_img_back {
-    margin:25px 25px;
-    justify-content: center;
     width: 46px;
     height:46px;
 }
@@ -292,7 +288,6 @@ button.main__block_interface_btn_forward {
     font-weight: bold;
     font-size: 17px;
     color: white;
-    cursor: pointer;
     opacity:60%;
     cursor: not-allowed;
 }
@@ -329,7 +324,7 @@ div.main__block_interface_menu_c_book {
     animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_book:hover {
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_book_block {
@@ -340,7 +335,7 @@ div.main__block_interface_menu_c_book_block {
     margin-bottom:10px;
 }
 div.main__block_interface_menu_c_album:hover {
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_album {
@@ -408,7 +403,7 @@ label.main__block_i_l > input + div.choice_land{
     cursor:pointer;
 }
 label.main__block_i_l > input:checked + div.choice_land{
-    border-radius: 14px;
+    border-radius: 13px;
     border:1.5px solid var(--green_back);
 }
 select.main__block_interface_menu_c_select {
@@ -419,7 +414,7 @@ select.main__block_interface_menu_c_select {
     margin-bottom: 20px;
     font-size:16px;
     color:var(--font-color);
-    /* background: url(img/top.svg) no-repeat 95% 50% var(--block-color); */
+    background: url(/img/top.svg) no-repeat 95% 50% var(--block-color);
     cursor: pointer;
     animation-name: basic_animation;
     animation-duration: 0.4s;
@@ -457,12 +452,16 @@ div.main__block_fixed_confirm {
     bottom:0;
     border-radius: 20px 20px 0 0;
     -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     animation-name: basic_animation;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    z-index:1;
 }
 div.main__block_interface_add_block {
     margin: 20px auto 0 auto;
