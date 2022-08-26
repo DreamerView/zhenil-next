@@ -5,7 +5,7 @@ import Router from 'next/router';
 import Head from "next/head";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import useTranslateText from "./translate";
+import useTranslateText from "../start/translate";
 import translate from "../translate/ux/loading_page";
 
 import { useMediaQuery } from 'react-responsive';

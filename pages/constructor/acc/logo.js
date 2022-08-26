@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from '../../translate';
+import useTranslateText from "../../../start/translate";
 import ux from "../../../translate/ux/action";
 import translate from "../../../translate/acc/navbar_translate";
 import nav_translate from "../../../translate/services/all_translate";

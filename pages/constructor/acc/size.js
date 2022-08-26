@@ -4,7 +4,7 @@ import style from "../../../styles/constructor/acc/index.module.css";
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import useTranslateText from '../../translate';
+import useTranslateText from "../../../start/translate";
 import translate from "../../../translate/acc/navbar_translate";
 import ux from "../../../translate/ux/action";
 import text from "../../../translate/acc/size_translate";

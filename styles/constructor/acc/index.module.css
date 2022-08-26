@@ -1,13 +1,8 @@
 @media screen and (min-width:1900px) {
     div.main__block_menu_select {
-        display: flex;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     }
-    div.main__block_menu_select_block {
-        width: 700px;
-        margin:0 60px;
-        padding:30px 26px 0 26px;
-    }
+    
     div.main__block_interface_menu {
         width: 1300px;
         padding: 60px 0;
@@ -33,13 +28,7 @@
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
     div.main__block_menu_select {
-        display: flex;
-        justify-content: center;
-    }
-    div.main__block_menu_select_block {
-        width: 600px;
-        margin:0 30px;
-        padding:30px 26px 0 26px;
+        grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     }
     div.main__block_interface_menu {
         width: 1075px;
@@ -66,14 +55,7 @@
 }
 @media (min-width:601px) and (max-width:1160px) {
     div.main__block_menu_select {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        flex-wrap: wrap;
-    }
-    div.main__block_menu_select_block {
-        width: 80%;
-        margin:15px;
-        padding:16px 16px 0 16px;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     }
     div.main__block_interface_menu {
         width: 100%;
@@ -100,8 +82,7 @@
 }
 @media (min-width:1px) and (max-width:600px) {
     div.main__block_menu_select {
-        display: grid;
-        grid-template-columns: 95%;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
     div.main__block_interface_menu {
         width: 90%;
@@ -126,6 +107,16 @@
     div.main__block_fixed_confirm {
         padding:3px 0 16px 0;
     }
+}
+div.main__block_menu_select {
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+}
+div.main__block_menu_select_block {
+    width: 75%;
+    margin: 8px auto;
+    padding:24px 24px 0 24px;
 }
 div.main__block {
     margin: var(--n-2);

@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '../../translate';
+import useTranslateText from '../../../start/translate';
 import text from "../../../translate/health/ideal-weight/index_translate";
 import style from "../../../styles/calculator/index.module.css";
 import nav_text from "../../../translate/services/all_translate";

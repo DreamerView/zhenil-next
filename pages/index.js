@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import styles from '../styles/index_main.module.css';
-import useTranslateText from "./translate";
+import useTranslateText from "../start/translate";
 import translate from "../translate/index_translate";
 import nav_translate from "../translate/services/all_translate";
 

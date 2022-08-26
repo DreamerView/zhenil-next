@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import useTranslateText from "../../translate";
+import useTranslateText from "../../../start/translate";
 import translate from "../../../translate/acc/navbar_translate";
 import ux from "../../../translate/ux/action";
 import nav_translate from "../../../translate/services/all_translate";

@@ -3,7 +3,7 @@ import style from "../../../styles/constructor/acc/index.module.css";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from "../../translate";
+import useTranslateText from "../../../start/translate";
 import ux from "../../../translate/ux/action";
 import nav_translate from "../../../translate/services/all_translate";
 import text from "../../../translate/acc/index_translate";

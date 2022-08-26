@@ -2,7 +2,7 @@
 import { useState,useCallback } from 'react';
 import Cropper from 'react-easy-crop';
 import { useDispatch } from 'react-redux';
-import useTranslateText from '../pages/translate';
+import useTranslateText from './translate';
 import ux from '../translate/ux/action';
 
 const ResizeImage = (result) => {

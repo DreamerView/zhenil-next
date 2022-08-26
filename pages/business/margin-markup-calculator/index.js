@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '../../translate';
+import useTranslateText from '../../../start/translate';
 import translate from "../../../translate/business/margin-markup-calculator/index_translate";
 import text from "../../../translate/finance/deposit/index_translate";
 import style from "../../../styles/calculator/index.module.css";
@@ -189,7 +189,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji/aim1.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setOther((v) => (e.target.validity.valid ? e.target.value : v))}} value={other} className={`${style.main__calculator_module_input}`} placeholder={translate['other'][lang]}/>

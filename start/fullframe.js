@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import useTranslateText from "../pages/translate";
+import useTranslateText from "../start/translate";
 import ux from "../translate/ux/action";
 
 const FullFrame = (result) => {
