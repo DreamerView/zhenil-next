@@ -42,7 +42,7 @@ const MarginMarkup = () => {
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
-                        <h1>Результаты</h1>
+                        <h2>Результаты</h2>
                         <div className={(delivery===''&&other===''&&marketing==='')?style.module_result_row:style.module_result_row_block}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
@@ -90,7 +90,7 @@ const MarginMarkup = () => {
                                 </div>
                             </div>
                         </div>
-                        <h1 style={(delivery===''&&other===''&&marketing==='')?{display:'none'}:{display:'block'}} className="top_header">Дополнительно</h1>
+                        <h2 style={(delivery===''&&other===''&&marketing==='')?{display:'none'}:{display:'block'}} className="top_header">Дополнительно</h2>
                         <div className={style.module_result_row_block}>
                             <div style={delivery===''?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
                                 <div className={style.module_result_block_pic}>

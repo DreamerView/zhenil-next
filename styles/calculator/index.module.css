@@ -89,11 +89,10 @@ div.main__calculator_module {
 }
 
 div.main__calculator_module_pic {
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     position: relative;
     margin: 0 24px;
-    /* background-color: var(--background-color); */
 }
 select.main__calculator_module_select {
     margin-top:16px;
