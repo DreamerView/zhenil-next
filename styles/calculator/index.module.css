@@ -81,7 +81,7 @@ div.main__calculator_m {
     margin: 8px auto;
 }
 div.main__calculator_module {
-    height: 60px;
+    height: 55px;
     display: flex;
     border-radius: 50px;
     align-items: center;
@@ -89,8 +89,8 @@ div.main__calculator_module {
 }
 
 div.main__calculator_module_pic {
-    width:35px;
-    height:35px;
+    width:30px;
+    height:30px;
     position: relative;
     margin: 0 24px;
     /* background-color: var(--background-color); */
@@ -108,7 +108,7 @@ select.main__calculator_module_select {
 }
 input.main__calculator_module_input {
     width:95%;
-    font-size:18px;
+    font-size:16px;
     font-weight: 500;
 }
 p.click_event {
