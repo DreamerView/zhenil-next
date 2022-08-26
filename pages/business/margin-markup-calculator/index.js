@@ -126,24 +126,30 @@ const MarginMarkup = () => {
                         {/* <h2>{text["description"][lang]}</h2> */}
                         <h2>Калькулятор</h2>
                         <div className={style.module_result_row}>
-                            <div className={style.main__calculator_module}>
-                                <div>
-                                    <div className={style.main__calculator_module_pic}>
-                                        <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                            <div className={style.main__calculator_m}>
+                                <p className={style.description}>Себестоимость</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Себестоимость"/>
+                                    <div>
+                                        <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Себестоимость"/>
+                                    </div>
                                 </div>
                             </div>
-                            <div className={style.main__calculator_module}>
-                                <div>
-                                    <div className={style.main__calculator_module_pic}>
-                                        <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                            <div className={style.main__calculator_m}>
+                                <p className={style.description}>Цена</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Цена"/>
+                                    <div>
+                                        <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Цена"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -151,40 +157,49 @@ const MarginMarkup = () => {
                         <div className={style.module_result_row}>
                             <p className={`${style.click_event}`} style={delivery!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setDelivery(0)}}>+ Добавить пункт (Доставка)</p>
                             {delivery===''?"":
-                            <div className={style.main__calculator_module}>
-                                <div>
-                                    <div className={style.main__calculator_module_pic}>
-                                        <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                            <div className={style.main__calculator_m}>
+                            <p className={style.description}>Доставка</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Доставка"/>
+                                    <div>
+                                        <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Доставка"/>
+                                    </div>
                                 </div>
                             </div>
                             }
                             <p className={`${style.click_event}`} style={marketing!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setMarketing(0)}}>+ Добавить пункт (Реклама)</p>
                             {marketing===''?"":
-                            <div className={style.main__calculator_module}>
-                                <div>
-                                    <div className={style.main__calculator_module_pic}>
-                                        <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                            <div className={style.main__calculator_m}>
+                            <p className={style.description}>Реклама</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Реклама"/>
+                                    <div>
+                                        <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Реклама"/>
+                                    </div>
                                 </div>
                             </div>
                             }
                             <p className={`${style.click_event}`} style={other!==''?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setOther(0)}}>+ Добавить пункт (Другое)</p>
                             {other===''?"":
-                            <div className={style.main__calculator_module}>
-                                <div>
-                                    <div className={style.main__calculator_module_pic}>
-                                        <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                            <div className={style.main__calculator_m}>
+                            <p className={style.description}>Другое</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Другое"/>
+                                    <div>
+                                        <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Другое"/>
+                                    </div>
                                 </div>
                             </div>
                             }
