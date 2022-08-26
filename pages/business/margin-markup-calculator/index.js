@@ -20,11 +20,15 @@ const MarginMarkup = () => {
     const [total,setTotal] = useState(0);
     const lang = useTranslateText();
     useEffect(()=>{
-        if(n1!=''&&n2!='') {
-            setN1Total((+n1+Number(delivery===''?0:delivery)+Number(marketing===''?0:marketing)+Number(other===''?0:other)))
+        setN1Total((+n1+Number(delivery===''?0:delivery)+Number(marketing===''?0:marketing)+Number(other===''?0:other)));
+        if(n1Total!=''&&n2!='') {
             setMargin(Math.round((n2-(+n1+Number(delivery===''?0:delivery)+Number(marketing===''?0:marketing)+Number(other===''?0:other)))/n2*100));
             setMarkUp(Math.round((n2-(+n1+Number(delivery===''?0:delivery)+Number(marketing===''?0:marketing)+Number(other===''?0:other)))/n1*100));
             setTotal(n2-(+n1+Number(delivery===''?0:delivery)+Number(marketing===''?0:marketing)+Number(other===''?0:other)));
+        } else {
+            setMargin(0);
+            setMarkUp(0);
+            setTotal(0);
         }
     },[n1,n2,delivery,marketing,other]);
     return(
@@ -134,9 +138,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Себестоимость"/>
-                                    </div>
+                                    <input type="tel" onChange={e=>setN1(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Себестоимость"/>
                                 </div>
                             </div>
                             <div className={style.main__calculator_m}>
@@ -147,9 +149,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Цена"/>
-                                    </div>
+                                    <input type="tel" onChange={e=>setN2(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Цена"/>
                                 </div>
                             </div>
                         </div>
@@ -165,9 +165,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Доставка"/>
-                                    </div>
+                                    <input type="tel" onChange={e=>setDelivery(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Доставка"/>
                                 </div>
                             </div>
                             }
@@ -181,9 +179,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Реклама"/>
-                                    </div>
+                                    <input type="tel" onChange={e=>setMarketing(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Реклама"/>
                                 </div>
                             </div>
                             }
@@ -197,9 +193,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Другое"/>
-                                    </div>
+                                    <input type="tel" onChange={e=>setOther(e.target.value)} className={`${style.main__calculator_module_input}`} placeholder="Другое"/>
                                 </div>
                             </div>
                             }
