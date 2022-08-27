@@ -30,7 +30,7 @@ const ConstructorIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/bmi.webp"/>
+                            <Image alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/bmi.webp" placeholder="blur" blurDataURL="/services/bmi.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
@@ -45,7 +45,7 @@ const ConstructorIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.webp"/>
+                            <Image alt="service" priority layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
