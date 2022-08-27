@@ -50,7 +50,7 @@ const MarginMarkup = () => {
                         <div className={(delivery==='not'&&other==='not'&&marketing==='not')?style.module_result_row:style.module_result_row_block}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/ledger.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['prime_cost'][lang]}</p>
@@ -59,7 +59,7 @@ const MarginMarkup = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['cost'][lang]}</p>
@@ -68,7 +68,7 @@ const MarginMarkup = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/money_bag.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['net_profit'][lang]}</p>
@@ -77,7 +77,7 @@ const MarginMarkup = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={`${marginPrice===0?"/emoji/bar_chart.webp":marginPrice>0?"/emoji/chart_increasing.webp":"/emoji/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
+                                    <Image priority src={`${marginPrice===0?"/emoji-small/bar_chart.webp":marginPrice>0?"/emoji-small/chart_increasing.webp":"/emoji-small/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['margin'][lang]}</p>
@@ -86,7 +86,7 @@ const MarginMarkup = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={`${markUp===0?"/emoji/bar_chart.webp":markUp>0?"/emoji/chart_increasing.webp":"/emoji/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
+                                    <Image priority src={`${markUp===0?"/emoji-small/bar_chart.webp":markUp>0?"/emoji-small/chart_increasing.webp":"/emoji-small/chart_decreasing.webp"}`} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['markup'][lang]}</p>
@@ -98,7 +98,7 @@ const MarginMarkup = () => {
                         <div className={style.module_result_row_block}>
                             <div style={delivery==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/package.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['delivery'][lang]}</p>
@@ -107,7 +107,7 @@ const MarginMarkup = () => {
                             </div>
                             <div style={marketing==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/newspaper.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['ads'][lang]}</p>
@@ -116,7 +116,7 @@ const MarginMarkup = () => {
                             </div>
                             <div style={other==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji/aim.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/aim.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['other'][lang]}</p>
@@ -134,7 +134,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/ledger.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/ledger.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} className={`${style.main__calculator_module_input}`} placeholder={translate['prime_cost'][lang]}/>
@@ -145,7 +145,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/dollar.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['cost'][lang]}/>
@@ -161,7 +161,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/package.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/package.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setDelivery((v) => (e.target.validity.valid ? e.target.value : v))}} value={delivery} className={`${style.main__calculator_module_input}`} placeholder={translate['delivery'][lang]}/>
@@ -175,7 +175,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/newspaper.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/newspaper.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setMarketing((v) => (e.target.validity.valid ? e.target.value : v))}} value={marketing} className={`${style.main__calculator_module_input}`} placeholder={translate['ads'][lang]}/>
@@ -189,7 +189,7 @@ const MarginMarkup = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji/aim1.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/aim.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setOther((v) => (e.target.validity.valid ? e.target.value : v))}} value={other} className={`${style.main__calculator_module_input}`} placeholder={translate['other'][lang]}/>

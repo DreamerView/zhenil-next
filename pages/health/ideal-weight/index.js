@@ -47,7 +47,7 @@ const Deposit = () => {
                         <div className={style.module_result_row}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['male_selected'][lang]}</p>
@@ -56,7 +56,7 @@ const Deposit = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['h_selected'][lang]}</p>
@@ -65,7 +65,7 @@ const Deposit = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_gesturing_ok.webp":"/emoji/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_gesturing_ok.webp":"/emoji-small/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['result'][lang]}</p>
@@ -83,7 +83,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <select onChange={(e)=>{setMale(e.target.value)}} className={`${style.main__calculator_module_select}`}>
@@ -98,7 +98,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>

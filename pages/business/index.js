@@ -21,7 +21,7 @@ const BusinessIndex = () => {
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["business"][lang]}</p>
             </div>
             <div className="main block_animation">
-            <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image priority src={"/emoji/briefcase.webp"} layout="fill" alt="emoji"/></div></h1>
+            <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image priority src={"/emoji-small/briefcase.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
