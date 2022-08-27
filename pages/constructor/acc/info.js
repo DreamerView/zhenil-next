@@ -1,10 +1,11 @@
 /*jshint esversion: 6 */
 /*jshint sub:true*/
+import dynamic from "next/dynamic";
 import style from "../../../styles/constructor/acc/index.module.css";
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
-import InfoBlock from './info_block';
+const InfoBlock = dynamic(()=>import('./info_block'));
 import Image from "next/image";
 import useConfirm from "../../../start/conf";
 import { useDispatch } from 'react-redux';

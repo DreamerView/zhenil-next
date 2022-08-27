@@ -1,14 +1,15 @@
+/*jshint esversion: 6 */
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import useTranslateText from '../../../start/translate';
 import translate from "../../../translate/health/bmi_calculator/index_translate";
-import style from "../../../styles/calculator/index.module.css"
+import style from "../../../styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
 import setBmiApi from './api';
 import nav_translate from "../../../translate/services/all_translate";
 
-const Health = () => {
+const BMICalc = () => {
     const lang = useTranslateText();
     const [n1,setN1] = useState('');
     const [n2,setN2] = useState('');
@@ -53,7 +54,7 @@ const Health = () => {
                         <div className={style.module_result_row}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image loading="lazy" priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['male_text'][lang]}</p>
@@ -62,7 +63,7 @@ const Health = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image loading="lazy" priority src={"/emoji/thought_balloon.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji/thought_balloon.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['age'][lang]}</p>
@@ -71,7 +72,7 @@ const Health = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image loading="lazy" priority src={"/emoji/magnifying_glass_tilted_right_3d.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji/magnifying_glass_tilted_right_3d.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['bmi_result'][lang]}</p>
@@ -80,7 +81,7 @@ const Health = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image loading="lazy" priority src={show.color===undefined?"/emoji/white_question_mark.webp":show.color==='green'?"/emoji/check_mark_button.webp":"/emoji/double_exclamation_mark.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={show.color===undefined?"/emoji/white_question_mark.webp":show.color==='green'?"/emoji/check_mark_button.webp":"/emoji/double_exclamation_mark.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['result'][lang]}</p>
@@ -98,7 +99,7 @@ const Health = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image loading="lazy" priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <select onChange={(e)=>{setMale(e.target.value)}} className={`${style.main__calculator_module_select}`}>
@@ -113,7 +114,7 @@ const Health = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image loading="lazy" priority src={"/emoji/thought_balloon.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji/thought_balloon.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input ref={i3} type="tel" pattern="[0-9]*" onChange={(e)=>{setAge((v) => (e.target.validity.valid ? e.target.value : v))}} value={age} className={`${style.main__calculator_module_input}`} placeholder={translate['age'][lang]} disabled={male==='other'?true:false}/>
@@ -124,7 +125,7 @@ const Health = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image loading="lazy" priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input ref={i2} type="tel" pattern="[0-9]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['h_text'][lang]} disabled={male==='other'?true:false}/>
@@ -135,7 +136,7 @@ const Health = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image loading="lazy" priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_gesturing_ok.webp":"/emoji/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_gesturing_ok.webp":"/emoji/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
                                     <input ref={i1} type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} className={`${style.main__calculator_module_input}`} placeholder={translate['m_text'][lang]} disabled={male==='other'?true:false}/>
@@ -150,4 +151,4 @@ const Health = () => {
     );
 }
 
-export default Health;
+export default BMICalc;

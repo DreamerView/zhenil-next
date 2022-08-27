@@ -16,6 +16,11 @@ div.search__block_image {
     align-items: center;
     justify-content: center;
 }
+div.search__block_pic {
+    width: 26px;
+    height: 26px;
+    position: relative;
+}
 div.search__block_image_s {
     margin:10px;
     width: 38px;

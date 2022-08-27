@@ -1,19 +1,16 @@
 /*jshint esversion: 6 */
-import { useEffect,useState } from "react";
-import "../styles/globals.css";
-import Router from 'next/router';
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import Router from 'next/router';
 import useTranslateText from "../start/translate";
 import translate from "../translate/ux/loading_page";
-
+import { useEffect,useState } from "react";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import DocumentResult from "../start/document";
+import "../styles/globals.css";
+const DocumentResult = dynamic(()=>import("../start/document"));
 
-// export function reportWebVitals(metric) {
-//     console.table(metric)
-// }
 
 const Preloader = () => {
     const [color,setColor] = useState("#4634bc");
@@ -79,4 +76,4 @@ const MyApp = ({ Component, pageProps }) => {
     )
 }
 
-export default MyApp
+export default MyApp;

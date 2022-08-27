@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
 import type_translate from "../../translate/services/type_translate";
 
-const ConstructorIndex = () => {
+const FinanceIndex = () => {
     const lang = useTranslateText();
     return(
         <>
@@ -30,7 +31,7 @@ const ConstructorIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image loading="lazy" priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
+                            <Image priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
@@ -47,4 +48,4 @@ const ConstructorIndex = () => {
     );
 };
 
-export default ConstructorIndex;
+export default FinanceIndex;

@@ -1,10 +1,11 @@
 /*jshint esversion: 6 */
-import Header from './header';
+import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import ConfirmMode from './confirm';
-import FullFrame from './fullframe';
-import ResizeImage from './cropimage';
+const Header = dynamic(()=>import('./header'));
+const ConfirmMode = dynamic(()=>import('./confirm'));
+const FullFrame = dynamic(()=>import('./fullframe'));
+const ResizeImage = dynamic(()=>import('./cropimage'));
 
 
 const DocumentResult = ({children}) => {

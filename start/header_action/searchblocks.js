@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import translate from "../../translate/services/all_translate";
 import type_translate from "../../translate/services/type_translate";
 import { useRouter } from "next/router";
@@ -15,10 +16,12 @@ const SearchBlocks = (res) => {
                 {res.item.type==='category'?
                 <div>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
-                    <Image loading="lazy" priority width={26} height={26} src={res.item.image}/>
+                    <div className={style.search__block_pic}>
+                        <Image priority layout="fill" src={res.item.image}/>
+                    </div>
                 </div></div>:
                     <div><div className={`${style.search__block_image_s}`}>
-                        <Image loading="lazy" priority width={38} height={38} className={`${style.search__block_image_i}`} src={res.item.image}/>
+                        <Image priority layout="fill" className={`${style.search__block_image_i}`} src={res.item.image}/>
                     </div></div>
                 }
                 <div className={style.search__block_content}>

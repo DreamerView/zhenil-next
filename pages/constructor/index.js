@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
@@ -30,7 +31,7 @@ const ConstructorIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image loading="lazy" priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                            <Image priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
