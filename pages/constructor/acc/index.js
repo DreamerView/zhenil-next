@@ -28,7 +28,7 @@ const Acc = () => {
             <Link href="/constructor/acc/logo">
             <a>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/person.svg" alt="icon" priority />
+                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/person.svg" alt="icon" loading="lazy" priority />
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title1'][lang]}</h2>
@@ -47,7 +47,7 @@ const Acc = () => {
             <Link href="/constructor/acc/logo">
             <a>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/group.svg" alt="icon" priority/>
+                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/group.svg" alt="icon" loading="lazy" priority/>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title2'][lang]}</h2>
@@ -66,7 +66,7 @@ const Acc = () => {
             <Link href="/constructor/acc/logosd">
             <a>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/help.svg" alt="icon" priority/>
+                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/help.svg" alt="icon" loading="lazy" priority/>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title3'][lang]}</h2>

@@ -15,10 +15,10 @@ const SearchBlocks = (res) => {
                 {res.item.type==='category'?
                 <div>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
-                    <Image width={26} height={26} src={res.item.image}/>
+                    <Image loading="lazy" priority width={26} height={26} src={res.item.image}/>
                 </div></div>:
                     <div><div className={`${style.search__block_image_s}`}>
-                        <Image width={38} height={38} className={`${style.search__block_image_i}`} priority src={res.item.image}/>
+                        <Image loading="lazy" priority width={38} height={38} className={`${style.search__block_image_i}`} src={res.item.image}/>
                     </div></div>
                 }
                 <div className={style.search__block_content}>

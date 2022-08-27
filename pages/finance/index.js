@@ -30,7 +30,7 @@ const ConstructorIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
+                            <Image loading="lazy" priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>

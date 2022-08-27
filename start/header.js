@@ -70,7 +70,7 @@ const Header = () => {
               <a title={text['title'][locale]}>
                 <div className='header__logo_p'>
                   <div className="header__logo_pic anim_hover">
-                    <Image title={text['title'][locale]} layout='fill' placeholder="blur" blurDataURL={"/img/logo"+result+".webp"} className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
+                    <Image loading="lazy" priority title={text['title'][locale]} layout='fill' placeholder="blur" blurDataURL={"/img/logo"+result+".webp"} className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
                   </div>
                 </div>
             </a>
@@ -78,13 +78,13 @@ const Header = () => {
           </div>
           <div className="header__action">
             <div className="header__action_image anim_hover">
-              <Image title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
+              <Image loading="lazy" priority title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" placeholder="blur" blurDataURL="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" />
             </div>
           
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic">
-              <Image title={`Top`} layout='fill' priority className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
+              <Image loading="lazy" priority title={`Top`} layout='fill' className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
             </div>
           </div>
           </div>
@@ -105,7 +105,7 @@ const Header = () => {
             {res?"":
             <div className="header__search_menu anim_hover">
               <div className="header__search_menu_pic" id="search_menu">
-                <Image title={translate['menu'][locale]} priority layout='fill' className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
+                <Image loading="lazy" priority title={translate['menu'][locale]} layout='fill' className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
               </div>
               <span className="header__search_menu_text">{translate['menu'][locale]}</span>
             </div>}

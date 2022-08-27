@@ -33,17 +33,17 @@ const ConfirmMode = (result) => {
                     <div className="confirm__block_action">
                         <div onClick={()=>SaveLanguage('kk')}>
                             <Link href={router.asPath} locale="kk"><a>
-                                <Image width={20} height={15} src="/language_img/kz.webp" placeholder="blur" blurDataURL="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
+                                <Image loading="lazy" priority width={20} height={15} src="/language_img/kz.webp" placeholder="blur" blurDataURL="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('ru')}>
                             <Link href={router.asPath} locale="ru"><a>
-                                <Image width={20} height={15} src="/language_img/ru.webp" placeholder="blur" blurDataURL="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
+                                <Image loading="lazy" priority width={20} height={15} src="/language_img/ru.webp" placeholder="blur" blurDataURL="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('en')}>
                             <Link href={router.asPath} locale="en"><a>
-                                <Image width={20} height={15} src="/language_img/gb.webp" placeholder="blur" blurDataURL="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
+                                <Image loading="lazy" priority width={20} height={15} src="/language_img/gb.webp" placeholder="blur" blurDataURL="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
                             </a></Link>
                         </div>
                     </div>:''}

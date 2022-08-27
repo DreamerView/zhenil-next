@@ -22,7 +22,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} green_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['constructor'][locale]} priority layout="fill" src={`/icons/constructor.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['constructor'][locale]} layout="fill" src={`/icons/constructor.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['constructor'][locale]}</span>
@@ -37,7 +37,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} red_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['calculator'][locale]} priority layout="fill" src={`/icons/calculate.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['calculator'][locale]} layout="fill" src={`/icons/calculate.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['calculator'][locale]}</span>
@@ -52,7 +52,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} blue_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['business'][locale]} priority layout="fill" src={`/icons/work.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['business'][locale]} layout="fill" src={`/icons/work.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['business'][locale]}</span>
@@ -67,7 +67,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} purple_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['education'][locale]} priority layout="fill" src={`/icons/education.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['education'][locale]} layout="fill" src={`/icons/education.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['education'][locale]}</span>
@@ -82,7 +82,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} red_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['health'][locale]} priority layout="fill" src={`/icons/health.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['health'][locale]} layout="fill" src={`/icons/health.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['health'][locale]}</span>
@@ -97,7 +97,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} green_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['finance'][locale]} priority layout="fill" src={`/icons/finance.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['finance'][locale]} layout="fill" src={`/icons/finance.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{nav_translate['finance'][locale]}</span>
@@ -112,7 +112,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['soon'][locale]} priority layout="fill" src={`/icons/soon.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['soon'][locale]} layout="fill" src={`/icons/soon.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{translate['soon'][locale]}</span>
@@ -127,7 +127,7 @@ const Home = () => {
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image title={translate['soon'][locale]} priority layout="fill" src={`/icons/soon.svg`} alt="icon"/>
+                      <Image loading="lazy" priority title={translate['soon'][locale]} layout="fill" src={`/icons/soon.svg`} alt="icon"/>
                     </div>
                   </div>
                   <span className={styles.nav_header} itemProp="name">{translate['soon'][locale]}</span>
@@ -147,7 +147,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image title={nav_translate['acc_const'][locale]}  layout="fill" alt="service" className={styles.main__index_block_img} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                      <Image loading="lazy" priority title={nav_translate['acc_const'][locale]}  layout="fill" alt="service" className={styles.main__index_block_img} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['acc_const'][locale]}</span>
@@ -159,7 +159,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image title={nav_translate['bmi_calc'][locale]} layout="fill" alt="service" className={styles.main__index_block_img} src="/services/bmi.webp" placeholder="blur" blurDataURL="/services/bmi.webp"/>
+                      <Image loading="lazy" priority title={nav_translate['bmi_calc'][locale]} layout="fill" alt="service" className={styles.main__index_block_img} src="/services/bmi.webp" placeholder="blur" blurDataURL="/services/bmi.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['bmi_calc'][locale]}</span>
@@ -171,7 +171,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image title={nav_translate['deposit_calc'][locale]} layout="fill" alt="service" className={styles.main__index_block_img} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
+                      <Image loading="lazy" priority title={nav_translate['deposit_calc'][locale]} layout="fill" alt="service" className={styles.main__index_block_img} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['deposit_calc'][locale]}</span>
@@ -183,7 +183,7 @@ const Home = () => {
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
                     <div className={styles.main__index_block_pic}>
-                      <Image title={nav_translate['ideal_weight_calc'][locale]} layout="fill" alt="service (Metabolism vector created by pch.vector)" className={styles.main__index_block_img} src="/services/ideal-weight.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
+                      <Image loading="lazy" priority title={nav_translate['ideal_weight_calc'][locale]} layout="fill" alt="service (Metabolism vector created by pch.vector)" className={styles.main__index_block_img} src="/services/ideal-weight.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
                     </div>
                   </div>
                   <span className="head">{nav_translate['ideal_weight_calc'][locale]}</span>
