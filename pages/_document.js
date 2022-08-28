@@ -8,15 +8,16 @@ const DocumentShow = () => {
                 <meta charSet="utf-8" />
                 {/*  */}
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
-                <link rel="apple-touch-icon" sizes="180x180" href="/app_image/apple-touch-icon.png"/>
-                <link rel="icon" type="image/webp" sizes="32x32" href="/app_image/favicon-32x32.webp"/>
-                <link rel="icon" type="image/webp" sizes="194x194" href="/app_image/favicon-194x194.webp"/>
-                <link rel="icon" type="image/webp" sizes="192x192" href="/app_image/android-chrome-192x192.webp"/>
-                <link rel="icon" type="image/webp" sizes="16x16" href="/app_image/favicon-16x16.webp"/>
-                <link rel="mask-icon" href="/app_image/safari-pinned-tab.svg" color="#7d7aff"/>
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+                <link rel="icon" type="image/webp" sizes="32x32" href="/favicon-32x32.webp"/>
+                <link rel="icon" type="image/webp" sizes="194x194" href="/favicon-194x194.webp"/>
+                <link rel="icon" type="image/webp" sizes="192x192" href="/android-chrome-192x192.webp"/>
+                <link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp"/>
+                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7d7aff"/>
                 <meta name="msapplication-TileColor" content="#ffffff"/>
-                <meta name="msapplication-TileImage" content="/app_image/mstile-144x144.webp"/>
+                <meta name="msapplication-TileImage" content="/app_image/mstile-144x144.png"/>
                 {/*  */}
+                <meta http-equiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Okki.kz" />
