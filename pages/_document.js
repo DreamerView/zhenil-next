@@ -17,7 +17,7 @@ const DocumentShow = () => {
                 <meta name="msapplication-TileColor" content="#ffffff"/>
                 <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
                 {/*  */}
-                <meta http-equiv="cleartype" content="on"/>
+                <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Okki.kz" />
