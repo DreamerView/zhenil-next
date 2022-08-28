@@ -6,11 +6,20 @@ const DocumentShow = () => {
     <Html>
       <Head>
                 <meta charSet="utf-8" />
-                <link rel="icon" href="https://okki.kz/favicon.ico" type="image/x-icon" />
+                {/*  */}
+                <link rel="icon" href="/app_image/favicon.ico" type="image/x-icon" /> 
+                <link rel="apple-touch-icon" sizes="180x180" href="/app_image/apple-touch-icon.webp"/>
+                <link rel="icon" type="image/webp" sizes="32x32" href="/app_image/favicon-32x32.webp"/>
+                <link rel="icon" type="image/webp" sizes="194x194" href="/app_image/favicon-194x194.webp"/>
+                <link rel="icon" type="image/webp" sizes="192x192" href="/app_image/android-chrome-192x192.webp"/>
+                <link rel="icon" type="image/webp" sizes="16x16" href="/app_image/favicon-16x16.webp"/>
+                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7d7aff"/>
+                <meta name="msapplication-TileColor" content="#ffffff"/>
+                <meta name="msapplication-TileImage" content="/app_image/mstile-144x144.webp"/>
+                {/*  */}
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="apple-mobile-web-app-title" content="Okki.kz" />
-                <link rel="apple-touch-icon" href="/apple.png" />
                 <meta name="application-name" content="Okki.kz" />
                 <meta name="apple-touch-fullscreen" content="yes" />
                 <meta name="mobile-web-app-capable" content="yes" />
