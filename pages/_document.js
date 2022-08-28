@@ -8,7 +8,7 @@ const DocumentShow = () => {
                 <meta charSet="utf-8" />
                 {/*  */}
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
-                <link rel="apple-touch-icon" sizes="180x180" href="/app_image/apple-touch-icon.webp"/>
+                <link rel="apple-touch-icon" sizes="180x180" href="/app_image/apple-touch-icon.png"/>
                 <link rel="icon" type="image/webp" sizes="32x32" href="/app_image/favicon-32x32.webp"/>
                 <link rel="icon" type="image/webp" sizes="194x194" href="/app_image/favicon-194x194.webp"/>
                 <link rel="icon" type="image/webp" sizes="192x192" href="/app_image/android-chrome-192x192.webp"/>
