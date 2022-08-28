@@ -15,7 +15,7 @@ const DocumentShow = () => {
                 <link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp"/>
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7d7aff"/>
                 <meta name="msapplication-TileColor" content="#ffffff"/>
-                <meta name="msapplication-TileImage" content="/app_image/mstile-144x144.png"/>
+                <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
                 {/*  */}
                 <meta http-equiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
