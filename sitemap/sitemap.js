@@ -21,35 +21,34 @@ sitemap({
   ],
   pagesConfig: {
     "/": {
-      priority: "0.5",
       changefreq: "daily",
     },
     "/constructor": {
-      priority: "0.5",
       changefreq: "daily",
     },
     "/constructor/acc": {
-      priority: "0.5",
       changefreq: "daily",
     },
     "/health": {
-      priority: "1",
       changefreq: "daily",
     },
     "/health/bmi-calculator": {
-      priority: "0.5",
       changefreq: "daily",
     },
     "/health/ideal-weight": {
-      priority: "0.5",
       changefreq: "daily",
     },
     "/finance": {
-      priority: "0.5",
       changefreq: "daily",
     },
+    "/business": {
+      changefreq: "daily",
+    },
+    "/business/margin-markup-calculator": {
+      changefreq: "daily",
+    }
   },
   extraPaths:[
-    '/','/health','/finance','/constructor',"/constructor/acc","/health/bmi-calculator","/health/ideal-weight",
+    '/','/health','/finance','/business','/constructor',"/constructor/acc","/health/bmi-calculator","/health/ideal-weight",'/business/margin-markup-calculator',
   ]
 });

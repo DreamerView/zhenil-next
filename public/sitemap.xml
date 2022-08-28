@@ -8,56 +8,63 @@
 	<url>
 		<loc>https://okki.kz/</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/health</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health" />
-		<priority>1</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/finance</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/finance" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/finance" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/finance" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/constructor</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/constructor" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/constructor" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/constructor" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/constructor/acc</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/constructor/acc" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/constructor/acc" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/constructor/acc" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/health/bmi-calculator</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/bmi-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/bmi-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/bmi-calculator" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 
 	<url>
 		<loc>https://okki.kz/health/ideal-weight</loc>
 		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/ideal-weight" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/ideal-weight" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/ideal-weight" />
-		<priority>0.5</priority>
 		<changefreq>daily</changefreq>
-		<lastmod>2022-08-22</lastmod>
+		<lastmod>2022-08-28</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business/margin-markup-calculator</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business/margin-markup-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business/margin-markup-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business/margin-markup-calculator" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-08-28</lastmod>
 	</url>
 </urlset>
