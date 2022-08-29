@@ -79,5 +79,23 @@
         "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
         "location":"/business/margin-markup-calculator",
         "type":"services"
+    },
+    {
+        "title":"Калькулятор расчета маржи и цены",
+        "name":"margin_cost_calc",
+        "image":"/services/deposit.webp",
+        "image_background":"purple_background",
+        "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
+        "location":"/business/margin-cost-calculator",
+        "type":"services"
+    },
+    {
+        "title":"Калькулятор расчета наценки и себестоимости",
+        "name":"markup_prime_calc",
+        "image":"/services/deposit.webp",
+        "image_background":"purple_background",
+        "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
+        "location":"/business/markup-prime-calculator",
+        "type":"services"
     }
 ]

@@ -20,14 +20,14 @@ export default {
         en:"Net Profit"
     },
     margin:{
-        kk:"Маржа (Margin)",
-        ru:"Маржа (Margin)",
-        en:"Margin"
+        kk:"Маржа (Margin) (%)",
+        ru:"Маржа (Margin) (%)",
+        en:"Margin (%)"
     },
     markup:{
-        kk:"Үстеме (Markup)",
-        ru:"Наценка (Markup)",
-        en:"Markup"
+        kk:"Үстеме (Markup) (%)",
+        ru:"Наценка (Markup) (%)",
+        en:"Markup (%)"
     },
     extra:{
         kk:"Қосымша",

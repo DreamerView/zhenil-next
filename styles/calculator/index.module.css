@@ -106,6 +106,19 @@ div.main__calculator_module_pic {
     position: relative;
     margin: 0 24px;
 }
+div.main__calculator_module_close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:150px;
+    height:55px;
+    cursor: pointer;
+}
+div.main__calculator_module_close_img {
+    width:22.5px;
+    height:22.5px;
+    position: relative;
+}
 select.main__calculator_module_select {
     cursor: pointer;
     width:70%;

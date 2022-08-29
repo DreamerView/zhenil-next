@@ -16,33 +16,34 @@ const MarginMarkup = () => {
     const [delivery,setDelivery] = useState('not');
     const [marketing,setMarketing] = useState('not');
     const [other,setOther] = useState('not');
-    const [markUp,setMarkUp] = useState(0);
-    const [marginPrice,setMargin] = useState(0);
-    const [total,setTotal] = useState(0);
+    const [markUp,setMarkUp] = useState('');
+    const [marginPrice,setMargin] = useState('');
+    const [total,setTotal] = useState('');
     const lang = useTranslateText();
+    useEffect(()=>{
+        setN1(Math.round((1-(marginPrice/100))*n2));
+    },[marginPrice,n2])
     useEffect(()=>{
         setN1Total((+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
         if(n1Total!=''&&n2!='') {
-            setMargin(Math.round((n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)))/n2*100));
-            setMarkUp(Math.round((n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)))/n1*100));
-            setTotal(n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
+            setMarkUp(Math.round((n2-n1Total)/n1*100));
+            setTotal(Math.round(n2-n1Total));
         } else {
-            setMargin(0);
             setMarkUp(0);
             setTotal(0);
         }
-    },[n1,n2,delivery,marketing,other,n1Total]);
+    },[n1,n2,markUp,delivery,marketing,other,n1Total]);
     return(
         <>
             <Head>
-                <title>{nav_translate['margin_markup_calc'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${nav_translate['margin_markup_calc'][lang]} | Okki.kz`} />
+                <title>{nav_translate['markup_prime_calc'][lang]} | Okki.kz</title>
+                <meta property="og:title" content={`${nav_translate['markup_prime_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
                 <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/business">{nav_translate['business'][lang]}</Link>  /  {nav_translate['margin_markup_calc'][lang]}</p>
             </div>
             <div className="main">
-                <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
+                <h1>{nav_translate["markup_prime_calc"][lang]}</h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 <div className={style.main__calc}>
                     
@@ -131,16 +132,16 @@ const MarginMarkup = () => {
                         <h2>{nav_translate['calculator'][lang]}</h2>
                         <div className={style.module_result_row}>
                             <div className={style.main__calculator_m}>
-                                <p className={style.description}>{translate['prime_cost'][lang]}</p>
+                                <p className={style.description}>{translate['margin'][lang]}</p>
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/ledger.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/infinity.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} className={`${style.main__calculator_module_input}`} placeholder={translate['prime_cost'][lang]}/>
-                                    {n1!==''?
-                                    <div className={style.main__calculator_module_close} onClick={()=>{setN1('')}}>
+                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setMargin((v) => (e.target.validity.valid ? e.target.value : v))}} value={marginPrice} className={`${style.main__calculator_module_input}`} placeholder={translate['margin'][lang]}/>
+                                    {marginPrice!==''?
+                                    <div className={style.main__calculator_module_close} onClick={()=>{setMargin('')}}>
                                         <div className={style.main__calculator_module_close_img}>
                                             <Image layout='fill' alt="icon" src="/img/close.svg"/>
                                         </div>

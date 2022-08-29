@@ -19,36 +19,30 @@ sitemap({
     "conf",
     "index"
   ],
-  pagesConfig: {
-    "/": {
-      changefreq: "daily",
-    },
-    "/constructor": {
-      changefreq: "daily",
-    },
-    "/constructor/acc": {
-      changefreq: "daily",
-    },
-    "/health": {
-      changefreq: "daily",
-    },
-    "/health/bmi-calculator": {
-      changefreq: "daily",
-    },
-    "/health/ideal-weight": {
-      changefreq: "daily",
-    },
-    "/finance": {
-      changefreq: "daily",
-    },
-    "/business": {
-      changefreq: "daily",
-    },
-    "/business/margin-markup-calculator": {
-      changefreq: "daily",
-    }
-  },
   extraPaths:[
-    '/','/health','/finance','/business','/constructor',"/constructor/acc","/health/bmi-calculator","/health/ideal-weight",'/business/margin-markup-calculator',
-  ]
+    '/',
+    '/constructor',
+    "/constructor/acc",
+    '/health',
+    "/health/bmi-calculator",
+    "/health/ideal-weight",
+    '/finance',
+    '/business',
+    '/business/margin-markup-calculator',
+    "/business/margin-cost-calculator",
+    "/business/markup-prime-calculator"
+  ],
+  pagesConfig: {
+    "/": { changefreq: "daily",lastmod:new Date().toISOString()},
+    "/constructor": {changefreq: "daily"},
+    "/constructor/acc": {changefreq: "daily"},
+    "/health": {changefreq: "daily"},
+    "/health/bmi-calculator": {changefreq: "daily"},
+    "/health/ideal-weight": {changefreq: "daily"},
+    "/finance": {changefreq: "daily"},
+    "/business": {changefreq: "daily"},
+    "/business/margin-markup-calculator": {changefreq: "daily"},
+    "/business/margin-cost-calculator": {changefreq: "daily"},
+    "/business/markup-prime-calculator": {changefreq: "daily"}
+  }
 });

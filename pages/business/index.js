@@ -41,6 +41,36 @@ const BusinessIndex = () => {
                 </div>
                 </a>
                 </Link>
+                <Link href="/business/margin-cost-calculator">
+                <a>
+                <div className={`${style.main__module_row_block} anim_hover`}>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                        </div>
+                    </div>
+                    <div className={style.main__module_row_block_f}>
+                        <span className="head_1">{nav_translate['margin_cost_calc'][lang]}</span>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    </div>
+                </div>
+                </a>
+                </Link>
+                <Link href="/business/markup-prime-calculator">
+                <a>
+                <div className={`${style.main__module_row_block} anim_hover`}>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                        </div>
+                    </div>
+                    <div className={style.main__module_row_block_f}>
+                        <span className="head_1">{nav_translate['markup_prime_calc'][lang]}</span>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    </div>
+                </div>
+                </a>
+                </Link>
                 {/*  */}
             </div>
         </div>
