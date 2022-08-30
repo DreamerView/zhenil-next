@@ -118,7 +118,7 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(4,24vw);
+        grid-template-columns: repeat(4,24.5vw);
         gap: 8px 0;
     }
     div.main__menu_nav_block {
@@ -135,7 +135,7 @@
     }
     span.nav_header {
         margin-top:10px;
-        font-size: 13px;
+        font-size: 12.5px;
         text-align: center;
         font-weight: 500;
     }
