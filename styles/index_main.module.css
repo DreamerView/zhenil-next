@@ -119,11 +119,11 @@
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(4,24.5vw);
-        gap: 8px 0;
+        gap: 16px 0;
     }
     div.main__menu_nav_block {
         /* background-color: var(--nav_menu_c); */
-        width:100%;
+        width:90%;
         height:100px;
         border-radius: 13px;
         /* margin: 0 8px; */
@@ -135,7 +135,7 @@
     }
     span.nav_header {
         margin-top:10px;
-        font-size: 12.5px;
+        font-size: 12px;
         text-align: center;
         font-weight: 500;
     }
