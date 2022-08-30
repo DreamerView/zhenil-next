@@ -125,7 +125,7 @@ const Home = () => {
             <Link href="/others">
               <a title={translate['others'][locale]} itemID="/others" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                  <div className={`${styles.main__menu_nav_block_image} purple_background`}>
+                  <div className={`${styles.main__menu_nav_block_image} orange_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
                       <Image priority title={translate['others'][locale]} layout="fill" src={`/icons/other.svg`} alt="icon"/>
                     </div>
