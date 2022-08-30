@@ -882,6 +882,12 @@ div.page_not_found_block{
   justify-content: center;
   flex-direction: column;
 }
+div.page_not_found_block_pic{
+  width: 256px;
+  height:256px;
+  position: relative;
+  margin: 0 auto;
+}
 div.page_not_found_block_img{
   width: 200px;
   height:200px;
