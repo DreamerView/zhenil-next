@@ -34,6 +34,16 @@ export default {
         ru:"Финансы",
         en:"Finance"
     },
+    tech:{
+        kk:"Технологиялар",
+        ru:"Технологии",
+        en:"Technologies"
+    },
+    others:{
+        kk:"Басқалар",
+        ru:"Другие",
+        en:"Others"
+    },
     acc_const: {
         kk:"Бейджик Құрастырушысы",
         ru:"Конструктор Бейджиков",

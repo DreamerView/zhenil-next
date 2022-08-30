@@ -34,6 +34,16 @@ export default {
         ru:"Финансы",
         en:"Finance"
     },
+    tech:{
+        kk:"Технологиялар",
+        ru:"Технологии",
+        en:"Technologies"
+    },
+    others:{
+        kk:"Басқалар",
+        ru:"Другие",
+        en:"Others"
+    },
     soon:{
         kk:"Жасалуда",
         ru:"В разработке",

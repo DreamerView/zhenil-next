@@ -876,11 +876,17 @@ div.page_not_found {
   margin:var(--n-2);
 }
 div.page_not_found_block{
-  width: 256px;
+  width: 276px;
   height:auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+div.page_not_found_block_img{
+  width: 200px;
+  height:200px;
+  position: relative;
+  margin: 0 auto 24px auto;
 }
 h1.page_not_found {
   /* margin-top:20px; */

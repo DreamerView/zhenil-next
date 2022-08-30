@@ -107,30 +107,30 @@ const Home = () => {
             <meta itemProp="position" content="6" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/not-found">
-              <a title={translate['soon'][locale]} itemID="/not-found" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/technology">
+              <a title={translate['tech'][locale]} itemID="/technology" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                  <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <div className={`${styles.main__menu_nav_block_image} blue_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image priority title={translate['soon'][locale]} layout="fill" src={`/icons/soon.svg`} alt="icon"/>
+                      <Image priority title={translate['tech'][locale]} layout="fill" src={`/icons/tech.svg`} alt="icon"/>
                     </div>
                   </div>
-                  <span className={styles.nav_header} itemProp="name">{translate['soon'][locale]}</span>
+                  <span className={styles.nav_header} itemProp="name">{translate['tech'][locale]}</span>
                 </div>
               </a>
             </Link>
             <meta itemProp="position" content="7" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/not-found">
-              <a title={translate['soon'][locale]} itemID="/not-found" itemType="https://schema.org/Thing" itemScope itemProp="item">
+            <Link href="/others">
+              <a title={translate['others'][locale]} itemID="/others" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                  <div className={`${styles.main__menu_nav_block_image} orange_background`}>
+                  <div className={`${styles.main__menu_nav_block_image} purple_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
-                      <Image priority title={translate['soon'][locale]} layout="fill" src={`/icons/soon.svg`} alt="icon"/>
+                      <Image priority title={translate['others'][locale]} layout="fill" src={`/icons/other.svg`} alt="icon"/>
                     </div>
                   </div>
-                  <span className={styles.nav_header} itemProp="name">{translate['soon'][locale]}</span>
+                  <span className={styles.nav_header} itemProp="name">{translate['others'][locale]}</span>
                 </div>
               </a>
             </Link>
