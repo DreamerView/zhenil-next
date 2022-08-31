@@ -4,11 +4,13 @@
 }
 
 div.emoji_h1 {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   position: relative;
   margin-left:8px;
 }
+
+
 
 .flex_text {
   display: flex;
@@ -304,7 +306,9 @@ p.nav > a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-      /* --background-color:hsl(240, 3%, 11%); */
+      --top-icon:url(../public/img/top-night.svg);
+      --menu-icon:url(../public/img/menu-night.svg);
+      --logo:url(../public/img/logo-night.webp);
       --background-color:hsl(240, 3%, 7%);
       --header-color:hsl(240, 3%, 11%);
       --block-color: hsl(240, 2%, 18%);
@@ -335,6 +339,9 @@ p.nav > a {
 }
 @media (prefers-color-scheme: light) {
   :root {
+      --top-icon:url(../public/img/top.svg);
+      --menu-icon:url(../public/img/menu.svg);
+      --logo:url(../public/img/logo.webp);
       --background-color:hsl(210, 7%, 95%);
       --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(210, 7%, 95%);
@@ -730,6 +737,8 @@ div.header__logo_pic {
   position: relative;
   width: 105px;
   height: 30px;
+  background-image:var(--logo);
+  background-size: 105px 30px;
 }
 
 img.header__logo_img {
@@ -743,6 +752,16 @@ div.header__search_menu_pic {
   position: relative;
   width: 22px;
   height: 22px;
+  background-image:var(--top-icon);
+  background-size: 22px 22px;
+}
+
+div.header__search_menu_pic1 {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-image:var(--menu-icon);
+  background-size: 22px 22px;
 }
 
 img.header__search_menu_img {

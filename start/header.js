@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
 import { useState,useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -16,17 +15,12 @@ const Header = () => {
     const send = useDispatch();
     const router = useRouter();
     const {locale} = router;
-    const [result,setResult] = useState("");
     const [search,setSearch] = useState([]);
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
-    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     const SetLanguage = () => {
         send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     };
-    useEffect(()=>{
-        return checkMode===true?setResult("-night"):setResult("");
-    },[checkMode]);
     const GetResult = (e) => {
       setSearch(e);
     };
@@ -70,9 +64,7 @@ const Header = () => {
             <Link href='/'>
               <a title={text['title'][locale]}>
                 <div className='header__logo_p'>
-                  <div className="header__logo_pic anim_hover">
-                    <Image priority title={text['title'][locale]} layout='fill' placeholder="blur" blurDataURL={"/img/logo"+result+".webp"} className="header__logo_img" src={"/img/logo"+result+".webp"} alt="Logo"  />
-                  </div>
+                  <div className="header__logo_pic anim_hover"></div>
                 </div>
             </a>
             </Link>
@@ -84,9 +76,7 @@ const Header = () => {
           
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
-            <div className="header__search_menu_pic">
-              <Image priority title={`Top`} layout='fill' className="header__search_menu_img" src={"/img/top"+result+".svg"} alt="icon" />
-            </div>
+            <div className="header__search_menu_pic"></div>
           </div>
           </div>
           <div className="header__search">
@@ -105,9 +95,7 @@ const Header = () => {
             </>
             {res?"":
             <div className="header__search_menu anim_hover">
-              <div className="header__search_menu_pic" id="search_menu">
-                <Image priority title={translate['menu'][locale]} layout='fill' className="header__search_menu_img" src={"/img/menu"+result+".svg"} alt="icon" />
-              </div>
+              <div className="header__search_menu_pic1" id="search_menu"></div>
               <span className="header__search_menu_text">{translate['menu'][locale]}</span>
             </div>}
           </div>

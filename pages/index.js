@@ -141,7 +141,7 @@ const Home = () => {
         </div>
       </div>
       <div className="main block_animation">
-          <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Apple emoji (Used for informational purposes only)`} priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+          <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
           <p className="sub_content">{translate['popular_subtext'][locale]}</p>
           <div className={styles.main__index_block_row}>
             <Link href="/constructor/acc">
