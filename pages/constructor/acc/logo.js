@@ -7,9 +7,9 @@ import Head from "next/head";
 import Image from "next/image";
 import useTranslateText from "../../../start/translate";
 import ux from "../../../translate/ux/action";
-import translate from "../../../translate/acc/navbar_translate";
+import translate from "../../../translate/constructor/acc/navbar_translate";
 import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/acc/logo_translate";
+import text from "../../../translate/constructor/acc/logo_translate";
 
 const LogoAcc = () => {
     const lang = useTranslateText();

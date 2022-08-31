@@ -6,19 +6,21 @@ import Image from "next/image";
 import useTranslateText from "../../../start/translate";
 import ux from "../../../translate/ux/action";
 import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/acc/index_translate";
+import text from "../../../translate/constructor/acc/index_translate";
+import seo from "../../../translate/constructor/acc/index_seo";
 
 const Acc = () => {
     const lang = useTranslateText();
     return(
       <>
       <Head>
-        <title>{text['name'][lang]} | Okki.kz</title>
-        <meta property="og:title" content={`${text['name'][lang]} | Okki.kz`} />
-        <meta name="description" content={text['seo_description'][lang]} />
+        <title>{seo['title'][lang]}</title>
+        <meta property="og:title" content={`${seo['title'][lang]}`} />
+        <meta name="description" content={seo['description'][lang]} />
+        <meta name="keywords" content={seo['keywords'][lang]} />
       </Head>
         <div className={`main__nav block_animation`}>
-            <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
+            <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
         </div>
         <div className={`${style.main__block} block_animation`}>
             <h1>{text['name'][lang]}</h1>
@@ -26,9 +28,11 @@ const Acc = () => {
             <div className={`${style.main__block_menu_select} p-m`}>
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
             <Link href="/constructor/acc/logo">
-            <a>
+            <a title={text['title1'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/person.svg" alt="icon" priority />
+                <div className={style.main__block_menu_select_block_i}>
+                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
+                </div>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title1'][lang]}</h2>
@@ -45,9 +49,11 @@ const Acc = () => {
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
             <Link href="/constructor/acc/logo">
-            <a>
+            <a title={text['title2'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/group.svg" alt="icon" priority/>
+                <div className={style.main__block_menu_select_block_i}>
+                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
+                </div>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title2'][lang]}</h2>
@@ -64,9 +70,11 @@ const Acc = () => {
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
             <Link href="/constructor/acc/logosd">
-            <a>
+            <a title={text['title3'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
-                <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} src="/img/help.svg" alt="icon" priority/>
+                <div className={style.main__block_menu_select_block_i}>
+                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
+                </div>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <h2>{text['title3'][lang]}</h2>

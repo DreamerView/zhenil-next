@@ -158,6 +158,11 @@ div.main__block_menu_select_block_icon {
     height:46px;
     border-radius: 100%;
 }
+div.main__block_menu_select_block_i {
+    width:30px;
+    height:30px;
+    position: relative;
+}
 img.main__block_menu_select_block_icon_img {
     width:30px;
     height:30px;

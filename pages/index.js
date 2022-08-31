@@ -6,13 +6,15 @@ import styles from '../styles/index_main.module.css';
 import useTranslateText from "../start/translate";
 import translate from "../translate/index_translate";
 import nav_translate from "../translate/services/all_translate";
+import seo from "../translate/seo_index";
 
 const Home = () => {
   const locale = useTranslateText();
   return(
     <>
       <Head>
-        <title>{translate['title'][locale]}</title>
+        <title>{seo['title'][locale]}</title>
+        <meta name="keywords" content={seo['keywords'][locale]} />
       </Head>
       <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>

@@ -11,9 +11,9 @@ import useConfirm from "../../../start/conf";
 import { useDispatch } from 'react-redux';
 import useTranslateText from '../../../start/translate';
 import ux from "../../../translate/ux/action";
-import translate from "../../../translate/acc/navbar_translate";
+import translate from "../../../translate/constructor/acc/navbar_translate";
 import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/acc/info_translate";
+import text from "../../../translate/constructor/acc/info_translate";
 
 const InfoAcc = () => {
     const lang = useTranslateText();
