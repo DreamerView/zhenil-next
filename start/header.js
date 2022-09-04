@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useRouter } from 'next/router';
 import translate from "../translate/header_translate";
 import text from "../translate/seo_index";
@@ -41,6 +42,8 @@ const Header = () => {
     return(
       <>
         <Head>
+          <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
+     crossorigin="anonymous"/>
           <meta property="og:type" content="website" />
           <meta property="og:title" content={text['title'][locale]} />
           <meta property="og:site_name" content="Okki.kz" />

@@ -137,8 +137,6 @@
         margin: 0;
     }
     div.main__menu_nav_blocks {
-        
-        /* margin:0 8px; */
         display: grid;
         align-items: center;
         justify-content: center;
@@ -147,7 +145,6 @@
         margin:4px 0;
     }
     div.main__menu_nav_block {
-        /* background-color: var(--nav_menu_c); */
         width:90%;
         height:100px;
         border-radius: 13px;
