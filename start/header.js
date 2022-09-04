@@ -42,8 +42,10 @@ const Header = () => {
     return(
       <>
         <Head>
-          <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
-     crossorigin="anonymous"/>
+          <Script id="Adsense-id"
+                  async="true"
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
+                  strategy="beforeInteractive"/>
           <meta property="og:type" content="website" />
           <meta property="og:title" content={text['title'][locale]} />
           <meta property="og:site_name" content="Okki.kz" />
