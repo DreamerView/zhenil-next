@@ -46,9 +46,8 @@ const Header = () => {
                   async="true"
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
                   strategy="beforeInteractive"/>
-          <meta name="author" content="Okki"/>
-          <meta name="publisher" content="Okki"/>
-          <link rel="canonical" href="https://www.okki.kz" />
+          <meta name="author" content={process.env.authorName}/>
+          <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
         </Head>
         <header>

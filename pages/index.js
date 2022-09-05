@@ -16,18 +16,18 @@ const Home = () => {
         <title>{seo['title'][locale]}</title>
         <meta name="keywords" content={seo['keywords'][locale]} />
         <meta name="description" content={seo['desc'][locale]} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={seo['title'][locale]} />
-        <meta property="og:site_name" content="Okki.kz" />
+        <meta property="og:site_name" content={process.env.siteName} />
         <meta property="og:description" content={seo['desc'][locale]} />
         <meta name="twitter:title" content={seo['title'][locale]}/>
         <meta name="twitter:description" content={seo['desc'][locale]}/>
-        <meta property="og:url" content="https://okki.kz" />
+        <meta property="og:url" content={process.env.hostName} />
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:site" content="@okki.kz"/>
-        <meta property="og:image" content="https://okki.kz/seo_image/twitter.webp" />
-        <meta name="twitter:image" content="https://okki.kz/seo_image/twitter.webp"/>
-        <link rel="image_src" href="https://okki.kz/seo_image/twitter.webp"/>
+        <meta name="twitter:site" content={"@"+process.env.siteName}/>
+        <meta property="og:image" content={process.env.hostName+"/seo_image/twitter.webp"} />
+        <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
+        <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
       <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>

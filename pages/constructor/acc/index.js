@@ -15,9 +15,20 @@ const Acc = () => {
       <>
       <Head>
         <title>{seo['title'][lang]}</title>
-        <meta property="og:title" content={`${seo['title'][lang]}`} />
-        <meta name="description" content={seo['description'][lang]} />
         <meta name="keywords" content={seo['keywords'][lang]} />
+        <meta name="description" content={seo['description'][lang]} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={seo['title'][lang]} />
+        <meta property="og:site_name" content={process.env.authorName} />
+        <meta property="og:description" content={seo['description'][lang]} />
+        <meta name="twitter:title" content={seo['title'][lang]}/>
+        <meta name="twitter:description" content={seo['description'][lang]}/>
+        <meta property="og:url" content={process.env.hostName} />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content={"@"+process.env.siteName}/>
+        <meta property="og:image" content={process.env.hostName+"/seo_image/twitter.webp"} />
+        <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
+        <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
         <div className={`main__nav block_animation`}>
             <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
