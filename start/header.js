@@ -46,19 +46,6 @@ const Header = () => {
                   async="true"
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
                   strategy="beforeInteractive"/>
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content={text['title'][locale]} />
-          <meta property="og:site_name" content="Okki.kz" />
-          <meta property="og:description" content={text['desc'][locale]} />
-          <meta property="og:url" content="https://okki.kz" />
-          <meta name="description" content={text['desc'][locale]} />
-          <meta property="og:image" content="https://okki.kz/seo_image/twitter.webp" />
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta name="twitter:site" content="@okki.kz"/>
-          <meta name="twitter:title" content={text['title'][locale]}/>
-          <meta name="twitter:description" content={text['desc'][locale]}/>
-          <meta name="twitter:image" content="https://okki.kz/seo_image/twitter.webp"/>
-          <link rel="image_src" href="https://okki.kz/seo_image/twitter.web"/>
           <meta name="author" content="Okki"/>
           <meta name="publisher" content="Okki"/>
           <link rel="canonical" href="https://www.okki.kz" />
