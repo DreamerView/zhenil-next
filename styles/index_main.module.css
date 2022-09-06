@@ -75,8 +75,8 @@
         font-weight: 700;
     }
     div.main__menu_nav_block_image {
-        width:52px;
-        height:52px;
+        width:46px;
+        height:46px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,11 +159,11 @@
         margin-top:10px;
         font-size: 12px;
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
     }
     div.main__menu_nav_block_image {
-        width:48px;
-        height:48px;
+        width:52px;
+        height:52px;
         display: flex;
         align-items: center;
         justify-content: center;
