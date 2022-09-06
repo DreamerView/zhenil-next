@@ -140,8 +140,8 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(4,24vw);
-        gap: 12px 0px;
+        grid-template-columns: repeat(4,24.5vw);
+        gap: 24px 0px;
         margin:4px 0;
     }
     div.main__menu_nav_block {
