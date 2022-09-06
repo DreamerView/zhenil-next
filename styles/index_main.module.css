@@ -157,7 +157,7 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13px;
+        font-size: 12.5px;
         text-align: center;
         font-weight: 500;
     }
@@ -167,7 +167,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 18px;
+        border-radius: 13px;
     }
 }
 div.main__menu_nav_block_image_pic {
