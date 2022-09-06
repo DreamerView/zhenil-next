@@ -159,11 +159,11 @@
         margin-top:10px;
         font-size: 12px;
         text-align: center;
-        font-weight: 700;
+        font-weight: 600;
     }
     div.main__menu_nav_block_image {
-        width:52px;
-        height:52px;
+        width:48px;
+        height:48px;
         display: flex;
         align-items: center;
         justify-content: center;

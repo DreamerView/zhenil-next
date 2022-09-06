@@ -33,17 +33,17 @@ const ConfirmMode = (result) => {
                     <div className="confirm__block_action">
                         <div onClick={()=>SaveLanguage('kk')}>
                             <Link href={router.asPath} locale="kk"><a>
-                                <Image loading="lazy" width={20} height={15} src="/language_img/kz.webp"/><span className="confirm__block_action_row">Қазақша</span>
+                                <span className="confirm__block_action_row">Қазақша - 🇰🇿</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('ru')}>
                             <Link href={router.asPath} locale="ru"><a>
-                                <Image loading="lazy" width={20} height={15} src="/language_img/ru.webp"/><span className="confirm__block_action_row">Русский</span>
+                                <span className="confirm__block_action_row">Русский - 🇷🇺</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('en')}>
                             <Link href={router.asPath} locale="en"><a>
-                                <Image loading="lazy" width={20} height={15} src="/language_img/gb.webp"/><span className="confirm__block_action_row">English</span>
+                                <span className="confirm__block_action_row">English - 🇬🇧</span>
                             </a></Link>
                         </div>
                     </div>:''}
