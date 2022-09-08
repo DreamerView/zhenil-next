@@ -1,11 +1,11 @@
 const sharp = require('sharp');
 const path = require('path');
-const testFolder = path.resolve(__dirname,'../public/emoji/');
+const testFolder = path.resolve(__dirname,'../public/services/convert');
 const fs = require('fs');
 
 fs.readdir(testFolder, (err, files) => {
     files.forEach(file => {
-        sharp(path.resolve(__dirname,'../public/emoji/'+file)).toFormat('webp').resize({width:120,height:120}).webp({ quality: 100 }).toFile(path.resolve(__dirname,'../public/emoji-small/'+path.parse(file).name+'.webp'));
+        sharp(path.resolve(__dirname,'../public/services/convert/'+file)).toFormat('webp').webp({ quality: 70 }).toFile(path.resolve(__dirname,'../public/services/'+path.parse(file).name+'.webp'));
     });
 });
 

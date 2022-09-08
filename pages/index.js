@@ -205,12 +205,18 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}>
-                
-              </div>
-              <span className="head">Lorem Ipsum</span>
-            </div>
+            <Link href="/business/margin-markup-calculator">
+              <a title={nav_translate['margin_markup_calc'][locale]}>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image priority title={nav_translate['margin_markup_calc'][locale]} layout="fill" alt="service (Metabolism vector created by pch.vector)" className={styles.main__index_block_img} src="/services/margin-markup.webp" placeholder="blur" blurDataURL="/services/margin-markup.webp"/>
+                    </div>
+                  </div>
+                  <span className="head">{nav_translate['margin_markup_calc'][locale]}</span>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <span className="head">Lorem Ipsum</span>

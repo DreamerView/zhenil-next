@@ -44,41 +44,11 @@ const BusinessIndex = () => {
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
                         <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['margin_markup_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                            <Image title={nav_translate['margin_markup_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/margin-markup.webp" placeholder="blur" blurDataURL="/services/margin-markup.webp"/>
                         </div>
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['margin_markup_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
-                <Link href="/business/margin-cost-calculator">
-                <a title={nav_translate['margin_cost_calc'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['margin_cost_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
-                        </div>
-                    </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['margin_cost_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
-                <Link href="/business/markup-prime-calculator">
-                <a title={nav_translate['markup_prime_calc'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['markup_prime_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
-                        </div>
-                    </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['markup_prime_calc'][lang]}</span>
                         <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                     </div>
                 </div>
