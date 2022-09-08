@@ -1117,5 +1117,13 @@ div.main__nav {
   background-color: var(--nav_block);
   border-radius: 13px;
 }
+.blur_background {
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -ms-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  
+}
 
 

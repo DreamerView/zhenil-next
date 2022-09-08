@@ -42,10 +42,10 @@ const Header = () => {
     return(
       <>
         <Head>
-          <Script id="Adsense-id"
+          {/* <Script id="Adsense-id"
                   async="true"
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
-                  strategy="beforeInteractive"/>
+                  strategy="beforeInteractive"/> */}
           <meta name="author" content={process.env.authorName}/>
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>

@@ -21,7 +21,7 @@ const Search = (res) => {
       },[focus]);
     return (
         <>
-            <input ref={focus} placeholder={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)} type="text" />
+            <input ref={focus} placeholder={res.text} title={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)} type="text" />
         </>
     )
 };

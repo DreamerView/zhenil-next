@@ -1,9 +1,4 @@
 export default {
-    title: {
-        kk:"Okki - Өйткені жеңіл! 5 минут ішінде өз өміріңізді жеңілдетіңіз.",
-        ru:"Okki - Потому что просто! Упростите свою жизнь за 5 минут.",
-        en:"Okki - Because simply! Simplify your life in 5 minutes."
-    },
     constructor:{
         kk:"Құрастырғыш",
         ru:"Конструктор",
