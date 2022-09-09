@@ -20,8 +20,8 @@ const SizeAcc = () => {
     const [cc,setCC] = useState(false);
     const [orient,setOrient] = useState();
     const [ready,setReady] = useState(false);
-    const [width,setWidth] = useState(text['enter_width'][lang]);
-    const [height,setHeight] = useState(text['enter_height'][lang]);
+    const [width,setWidth] = useState('');
+    const [height,setHeight] = useState('');
     const Check = (e) => {
         localStorage.setItem('orient_acc',e);
         setChecked(true);
@@ -101,9 +101,12 @@ const SizeAcc = () => {
         if(localStorage.getItem('height_acc')) {
             setHeight(localStorage.getItem('height_acc'));
             setReady(true);
-        }  
+        }
     },[]);
-    console.log(orient);
+    useEffect(()=>{
+        (width==='')?"":localStorage.setItem('width_acc',width.replace(/,/g, "."));
+        (height==='')?"":localStorage.setItem('height_acc',height.replace(/,/g, "."));
+    },[width,height])
     return(
     <>
             <Head>
@@ -178,11 +181,11 @@ const SizeAcc = () => {
                         </select>:''}
                         {!result==='ready'||(select||cc)?<>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{localStorage.setItem('width_acc',e.target.value);setWidth(e.target.value);}} placeholder={width} type="tel" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{setWidth((v) => (e.target.validity.valid ? e.target.value : v))}} placeholder={text['enter_width'][lang]} value={width} type="tel" pattern="[0-9,.]*" name="" id="" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['width'][lang]}</span>
                             </div>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{localStorage.setItem('height_acc',e.target.value);setHeight(e.target.value);setReady(true);}} placeholder={height} type="tel" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} onChange={(e)=>{setHeight((v) => (e.target.validity.valid ? e.target.value : v));setReady(true);}} placeholder={text['enter_height'][lang]} value={height} type="tel" pattern="[0-9,.]*" name="" id="" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['height'][lang]}</span>
                             </div>
                         </>:''}

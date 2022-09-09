@@ -29,12 +29,12 @@ const ResultAcc = () => {
                     <div className={style.main__block_interface_menu_c}>
                         <h1>{text['title'][lang]}</h1>
                         <p className="sub_content">{text['desc'][lang]}</p>
-                        <div className={`fullscreen__result_block blue_background`} onClick={()=>{send({type:"setFullFrame",set:true});send({type:"setUrlFrame",set:"/convert.html"});}}>
+                        <div className={`fullscreen__result_block blue_background`} onClick={()=>{send({type:"setFullFrame",set:true});send({type:"setUrlFrame",set:"/service-app/badge-constructor/convert.html"});}}>
                             <div className={`fullscreen__result_button`}><Image src={'/img/fullscreen.svg'} width={22} height={22} alt="icon"/></div>
                             <p className={`small`}>{ux['fullframe_open'][lang]}</p>
                         </div>
                     </div>
-                    <iframe id="frame" title="converter result" src={"/convert.html"}>
+                    <iframe id="frame" title="converter result" src={"/service-app/badge-constructor/convert.html"}>
                         Your browser does not support floating frames!
                     </iframe>
                 </div>

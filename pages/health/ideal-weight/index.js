@@ -102,7 +102,7 @@ const IdealWeight = () => {
                                             <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>
                                     {n1!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setN1('')}}>
                                         <div className={style.main__calculator_module_close_img}>

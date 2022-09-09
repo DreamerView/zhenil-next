@@ -16,8 +16,8 @@ const DocumentResult = ({children}) => {
     const main = useSelector(state=>state.main);
     useEffect(()=>{
         if(action||frame||image) {
-            document.querySelector('html').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
-            document.querySelector('body').style.cssText = "margin: 0;height: 100%;overflow: hidden;";
+            document.querySelector('html').style.cssText = "overflow: hidden;";
+            document.querySelector('body').style.cssText = "overflow: hidden;";
         }
         else {
             document.querySelector('html').style.cssText = "";

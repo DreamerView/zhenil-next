@@ -71,15 +71,15 @@ const InfoBlock = (result) => {
                         </div>
                         <div className={style.main__block_interface_menu_c_info_block_text}>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={name} onChange={(e)=>{setInfo({...info,name:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_name'][lang]} value={info.name} onChange={(e)=>{setInfo({...info,name:e.target.value})}} type="text" name="" id="" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['name'][lang]}</span>
                             </div>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={surname} onChange={(e)=>{setInfo({...info,surname:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_surname'][lang]} value={info.surname} onChange={(e)=>{setInfo({...info,surname:e.target.value})}} type="text" name="" id="" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['surname'][lang]}</span>
                             </div>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={status} onChange={(e)=>{setInfo({...info,status:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['not_need'][lang]} value={info.status} onChange={(e)=>{setInfo({...info,status:e.target.value})}} type="text" name="" id="" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['status'][lang]}</span>
                             </div>
                         </div>

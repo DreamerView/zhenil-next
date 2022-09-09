@@ -139,7 +139,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji-small/infinity.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setMargin((v) => (e.target.validity.valid ? e.target.value : v))}} value={marginPrice} className={`${style.main__calculator_module_input}`} placeholder={translate['margin'][lang]}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setMargin((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={marginPrice} className={`${style.main__calculator_module_input}`} placeholder={translate['margin'][lang]}/>
                                     {marginPrice!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setMargin('')}}>
                                         <div className={style.main__calculator_module_close_img}>
@@ -156,7 +156,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['cost'][lang]}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['cost'][lang]}/>
                                     {n2!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setN2('')}}>
                                         <div className={style.main__calculator_module_close_img}>
@@ -178,7 +178,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji-small/package.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setDelivery((v) => (e.target.validity.valid ? e.target.value : v))}} value={delivery} className={`${style.main__calculator_module_input}`} placeholder={translate['delivery'][lang]}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setDelivery((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={delivery} className={`${style.main__calculator_module_input}`} placeholder={translate['delivery'][lang]}/>
                                     {delivery!=='not'?
                                     delivery!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setDelivery('')}}>
@@ -205,7 +205,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji-small/newspaper.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setMarketing((v) => (e.target.validity.valid ? e.target.value : v))}} value={marketing} className={`${style.main__calculator_module_input}`} placeholder={translate['ads'][lang]}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setMarketing((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={marketing} className={`${style.main__calculator_module_input}`} placeholder={translate['ads'][lang]}/>
                                     {marketing!=='not'?
                                     marketing!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setMarketing('')}}>
@@ -232,7 +232,7 @@ const MarginMarkup = () => {
                                             <Image priority src={"/emoji-small/aim.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*" onChange={(e)=>{setOther((v) => (e.target.validity.valid ? e.target.value : v))}} value={other} className={`${style.main__calculator_module_input}`} placeholder={translate['other'][lang]}/>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setOther((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={other} className={`${style.main__calculator_module_input}`} placeholder={translate['other'][lang]}/>
                                     {other!=='not'?
                                     other!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setOther('')}}>
