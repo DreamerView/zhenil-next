@@ -370,11 +370,20 @@ p.nav > a {
       --search-block: hsl(210, 7%, 95%);
   }
 }
+.sup {
+  font-size:12px;
+  vertical-align: 2px;
+  font-weight: 300;
+  color:var(--sub_content)
+}
 .top_header {
   margin-top:32px;
 }
 .green_background {
   background-color: var(--green_back);
+}
+.block_background {
+  background-color: var(--block-color);
 }
 .blue_background {
   background-color: var(--blue_back);

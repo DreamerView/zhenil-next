@@ -180,3 +180,15 @@ i.show {
     margin-bottom: 16px;
     text-align: center;
 }
+div.nav__block_menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+div.nav__block_menu > a {
+    margin:32px 16px 0 0;
+    padding:12px 20px;
+    font-size:16px;
+    border-radius: 200px;
+    cursor: pointer;
+    display: block;
+}

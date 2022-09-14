@@ -19,6 +19,8 @@ const MarginMarkup = () => {
     const [markUp,setMarkUp] = useState(0);
     const [marginPrice,setMargin] = useState(0);
     const [total,setTotal] = useState(0);
+    const [nds,setNDS] = useState('not');
+    const [nds_total,setNDSTotal] = useState();
     const lang = useTranslateText();
     useEffect(()=>{
         setN1Total((+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
@@ -26,12 +28,15 @@ const MarginMarkup = () => {
             setMargin(Math.round((n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)))/n2*100));
             setMarkUp(Math.round((n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)))/n1*100));
             setTotal(n2-(+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
+            setNDSTotal(+n2+(Number(n2*Number(nds==='not'?0:nds))/100));
         } else {
             setMargin(0);
             setMarkUp(0);
             setTotal(0);
+            setNDSTotal(0);
         }
-    },[n1,n2,delivery,marketing,other,n1Total]);
+    },[n1,n2,delivery,marketing,other,n1Total,nds]);
+    console.log(nds_total);
     return(
         <>
             <Head>
@@ -39,16 +44,33 @@ const MarginMarkup = () => {
                 <meta property="og:title" content={`${nav_translate['margin_markup_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/business">{nav_translate['business'][lang]}</Link>  /  {nav_translate['margin_markup_calc'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/business">{nav_translate['business'][lang]}</Link>  /  {translate['margin_markup_calc'][lang]}</p>
             </div>
             <div className="main">
                 <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
-                <p className="sub_content">{text["description"][lang]}</p>
+                <p className="sub_content">{translate['content'][lang]}</p>
+                <div className={style.nav__block_menu}>
+                    <Link href="./margin-markup-calculator">
+                        <a className='red_background'>
+                            {translate['margin_markup_calc'][lang]}
+                        </a>
+                    </Link>
+                    <Link href="./margin-cost-calculator">
+                        <a className='block_background'>
+                            {translate['margin_cost_calc'][lang]}
+                        </a>
+                    </Link>
+                    <Link href="./markup-prime-calculator">
+                        <a className='block_background'>
+                            {translate['markup_prime_calc'][lang]}
+                        </a>
+                    </Link>
+                </div>
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
                         <h2>{translate['results'][lang]}</h2>
-                        <div className={(delivery==='not'&&other==='not'&&marketing==='not')?style.module_result_row:style.module_result_row_block}>
+                        <div className={(delivery==='not'&&other==='not'&&marketing==='not'&&nds==='not')?style.module_result_row:style.module_result_row_block}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji-small/ledger.webp"} layout="fill" alt="emoji"/>
@@ -95,8 +117,17 @@ const MarginMarkup = () => {
                                 </div>
                             </div>
                         </div>
-                        <h2 style={(delivery==='not'&&other==='not'&&marketing==='not')?{display:'none'}:{display:'block'}} className="top_header">{translate['extra'][lang]}</h2>
+                        <h2 style={(delivery==='not'&&other==='not'&&marketing==='not'&&nds==='not')?{display:'none'}:{display:'block'}} className="top_header">{translate['extra'][lang]}</h2>
                         <div className={style.module_result_row_block}>
+                            <div style={nds==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
+                                <div className={style.module_result_block_pic}>
+                                    <Image priority src={"/emoji-small/spiral_notepad.webp"} layout="fill" alt="emoji"/>
+                                </div>
+                                <div>
+                                    <p className={style.module_result_block_desc}>{translate['with_nds'][lang]}</p>
+                                    <h3>{nds_total} <span className='sup'>({nds}%)</span> ₸</h3>
+                                </div>
+                            </div>
                             <div style={delivery==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji-small/package.webp"} layout="fill" alt="emoji"/>
@@ -167,6 +198,33 @@ const MarginMarkup = () => {
                         </div>
                         <h2>{translate['extra'][lang]}</h2>
                         <div className={style.module_result_row}>
+                        <p className={`${style.click_event}`} style={nds!=='not'?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setNDS('')}}>+ {translate['ad'][lang]} ({translate['nds'][lang]})</p>
+                            {nds==='not'?"":
+                            <div className={`${style.main__calculator_m} ${nds=='close'?'remove_animation':'block_animation'}`}>
+                            <p className={style.description}>{translate['nds'][lang]}</p>
+                                <div className={style.main__calculator_module}>
+                                    <div>
+                                        <div className={style.main__calculator_module_pic}>
+                                            <Image priority src={"/emoji-small/spiral_notepad.webp"} layout="fill" alt="emoji"/>
+                                        </div>
+                                    </div>
+                                    <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setNDS((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={nds} className={`${style.main__calculator_module_input}`} placeholder={translate['nds'][lang]}/>
+                                    {nds!=='not'?
+                                    nds!==''?
+                                    <div className={style.main__calculator_module_close} onClick={()=>{setNDS('')}}>
+                                        <div className={style.main__calculator_module_close_img}>
+                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                        </div>
+                                    </div>:
+                                    <div className={style.main__calculator_module_close} onClick={()=>{setNDS('close');setTimeout(()=>setNDS('not'),[200])}}>
+                                        <div className={style.main__calculator_module_close_img}>
+                                            <Image layout='fill' alt="icon" src="/img/delete.svg"/>
+                                        </div>
+                                    </div>
+                                    :""}
+                                </div>
+                            </div>
+                            }
                             <p className={`${style.click_event}`} style={delivery!=='not'?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setDelivery('')}}>+ {translate['ad'][lang]} ({translate['delivery'][lang]})</p>
                             {delivery==='not'?"":
                             <div className={`${style.main__calculator_m} ${delivery==='close'?'remove_animation':'block_animation'}`}>
@@ -194,6 +252,7 @@ const MarginMarkup = () => {
                                 </div>
                             </div>
                             }
+                            
                             <p className={`${style.click_event}`} style={marketing!=='not'?{display:'none'}:{display:'block',textAlign:'center'}} onClick={()=>{setMarketing('')}}>+ {translate['ad'][lang]} ({translate['ads'][lang]})</p>
                             {marketing==='not'?"":
                             <div className={`${style.main__calculator_m} ${marketing==='close'?'remove_animation':'block_animation'}`}>

@@ -1,4 +1,24 @@
 export default {
+    margin_markup_calc: {
+        kk:"Маржа мен үстеме бағаны есептеу",
+        ru:"Калькулятор расчета маржи и наценки",
+        en:"Margin and markup calculator"
+    },
+    margin_cost_calc: {
+        kk:"Маржа мен бағаны есептеу",
+        ru:"Калькулятор расчета маржи и цены",
+        en:"Margin and price calculator"
+    },
+    markup_prime_calc: {
+        kk:"Үстеме бағаны мен өзіндік құныны есептеу",
+        ru:"Калькулятор расчета наценки и себестоимости",
+        en:"Markup and prime cost calculator"
+    },
+    content:{
+        kk:"Бірнеше рет басу арқылы тауарлардың немесе қызметтердің кірісін, құнын және маржасын есептеңіз.",
+        ru:"Рассчитайте прибыль, себестоимость и маржинальность товаров или услуг в несколько кликов.",
+        en:"Calculate the profit, cost and marginality of goods or services in a few clicks."
+    },
     results:{
         kk:"Нәтижелері",
         ru:"Результаты",
@@ -43,6 +63,16 @@ export default {
         kk:"Жарнама",
         ru:"Реклама",
         en:"Advertisement"
+    },
+    nds:{
+        kk:"НДС",
+        ru:"НДС",
+        en:"VAT"
+    },
+    with_nds:{
+        kk:"НДС-пен бірге",
+        ru:"С НДС",
+        en:"With VAT"
     },
     other:{
         kk:"Басқа",

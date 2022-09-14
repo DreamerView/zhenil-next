@@ -68,15 +68,5 @@ export default {
         kk:"Маржа мен үстеме бағаны есептеу калькуляторы",
         ru:"Калькулятор расчета маржи и наценки",
         en:"Margin and markup calculator"
-    },
-    margin_cost_calc: {
-        kk:"Маржа мен бағаны есептеу калькуляторы",
-        ru:"Калькулятор расчета маржи и цены",
-        en:"Margin and price calculator"
-    },
-    markup_prime_calc: {
-        kk:"Үстеме бағаны мен өзіндік құныны есептеу калькуляторы",
-        ru:"Калькулятор расчета наценки и себестоимости",
-        en:"Markup and prime cost calculator"
     }
 }
