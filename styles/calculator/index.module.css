@@ -186,9 +186,10 @@ div.nav__block_menu {
 }
 div.nav__block_menu > a {
     margin:32px 16px 0 0;
-    padding:12px 20px;
+    padding:12px 24px;
     font-size:16px;
     border-radius: 200px;
     cursor: pointer;
     display: block;
+    text-align: center;
 }

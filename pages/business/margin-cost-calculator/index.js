@@ -54,7 +54,7 @@ const MarginMarkup = () => {
                         </a>
                     </Link>
                     <Link href="./margin-cost-calculator">
-                        <a className='red_background'>
+                        <a className='red_background white_font'>
                             {translate['margin_cost_calc'][lang]}
                         </a>
                     </Link>

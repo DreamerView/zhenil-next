@@ -309,7 +309,7 @@ p.nav > a {
       --top-icon:url(../public/img/top-night.svg);
       --menu-icon:url(../public/img/menu-night.svg);
       --logo:url(../public/img/logo-night.webp);
-      --background-color:hsl(240, 3%, 7%);
+      --background-color:hsla(0, 0%, 0%,0.92);
       --header-color:hsl(240, 3%, 11%);
       --block-color: hsl(240, 2%, 18%);
       --menu-color:hsl(240, 2%, 18%);
@@ -342,9 +342,9 @@ p.nav > a {
       --top-icon:url(../public/img/top.svg);
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
-      --background-color:hsl(210, 7%, 95%);
+      --background-color:hsla(0, 0%, 96%, 0.5);
       --header-color:hsl(0, 0%, 100%);
-      --block-color:hsl(210, 7%, 95%);
+      --block-color:hsl(210, 7%, 96%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
@@ -363,7 +363,7 @@ p.nav > a {
       --input_border:hsl(195, 13%, 94%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
-      --nav_menu_c:hsl(210, 7%, 95%);
+      --nav_menu_c:hsl(240, 24%, 98%);
       --back_contrast:brightness(40%);
       --confirm_block:hsl(0, 0%, 100%);
       --search_back:hsl(0, 0%, 100%);
@@ -411,6 +411,9 @@ p.nav > a {
 }
 .orange_font {
   color: var(--orange_back);
+}
+.white_font {
+  color: hsl(0, 0%, 100%);
 }
 
 @media screen and (min-width:1900px) {

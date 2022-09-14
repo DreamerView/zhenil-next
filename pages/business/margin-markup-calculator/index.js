@@ -51,7 +51,7 @@ const MarginMarkup = () => {
                 <p className="sub_content">{translate['content'][lang]}</p>
                 <div className={style.nav__block_menu}>
                     <Link href="./margin-markup-calculator">
-                        <a className='red_background'>
+                        <a className='red_background white_font'>
                             {translate['margin_markup_calc'][lang]}
                         </a>
                     </Link>

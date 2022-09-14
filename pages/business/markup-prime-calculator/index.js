@@ -61,7 +61,7 @@ const MarginMarkup = () => {
                         </a>
                     </Link>
                     <Link href="./markup-prime-calculator">
-                        <a className='red_background'>
+                        <a className='red_background white_font'>
                             {translate['markup_prime_calc'][lang]}
                         </a>
                     </Link>
