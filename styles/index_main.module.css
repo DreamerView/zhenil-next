@@ -206,4 +206,27 @@ img.main__index_block_img {
     height:160px;
     border-radius: 13px;
 }
+/* New design */
+div.search {
+    width:1000px;
+    height: 52px;
+    background-color: var(--block-color);
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+}
+div.search__menu {
+    width: 200px;
+    height: 52px;
+    background-color: var(--background-color);
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+div.search__input {
+    margin-left:32px;
+}
 
