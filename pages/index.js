@@ -239,17 +239,6 @@ const Home = () => {
             </div>
           </div>
       </div>
-      <div className="main">
-        <h1>Search for listings</h1>
-        <div className={styles.search}>
-          <div className={styles.search__menu}>
-            All Categories
-          </div>
-          <div className={styles.search__input}>
-            <input type="text" placeholder="Ex.Macbook Pro 16..."/>
-          </div>
-        </div>
-      </div>
     </>
   )
 };
