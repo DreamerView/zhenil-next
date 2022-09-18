@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { useRouter } from 'next/router';
 import translate from "../translate/header_translate";
 import text from "../translate/seo_index";
@@ -33,7 +33,7 @@ const Header = () => {
         setTimeout(()=>{
           setTime(false);
           send({type:"actionMain",set:false});
-        },[100]);
+        },[150]);
       } else if (res===true) {
           setTime(true);
           send({type:"actionMain",set:true});
