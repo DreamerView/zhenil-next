@@ -168,11 +168,11 @@
         justify-content: center; 
     }
     span.nav_header {
-        margin-top:16px;
-        font-size: 12px;
+        margin-top:12px;
+        font-size: 12.5px;
         line-height:16px;
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
     }
     div.main__menu_nav_block_image {
         /* width:54px;
