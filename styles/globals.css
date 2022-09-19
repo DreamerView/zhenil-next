@@ -379,6 +379,12 @@ p.nav > a {
 .top_header {
   margin-top:32px;
 }
+.grey_background {
+  background-color: var(--sub_content);
+}
+.brand_background {
+  background-color: var(--brand-color);
+}
 .green_background {
   background-color: var(--green_back);
 }

@@ -50,7 +50,7 @@ const Home = () => {
             <Link href="/calculator">
               <a title={nav_translate['calculator'][locale]} itemID="/calculator" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                  <div className={`${styles.main__menu_nav_block_image} red_background`}>
+                  <div className={`${styles.main__menu_nav_block_image} grey_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
                       <Image priority title={translate['calculator'][locale]} layout="fill" src={`/icons/calculate.svg`} alt="icon"/>
                     </div>
@@ -125,7 +125,7 @@ const Home = () => {
             <Link href="/technology">
               <a title={translate['tech'][locale]} itemID="/technology" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                  <div className={`${styles.main__menu_nav_block_image} blue_background`}>
+                  <div className={`${styles.main__menu_nav_block_image} brand_background`}>
                     <div className={`${styles.main__menu_nav_block_image_pic}`}>
                       <Image priority title={translate['tech'][locale]} layout="fill" src={`/icons/tech.svg`} alt="icon"/>
                     </div>
