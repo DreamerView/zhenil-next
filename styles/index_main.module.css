@@ -14,8 +14,8 @@
         margin:0 11px;
     }
     div.main__menu_nav_block {
-        width:110px;
-        height:110px;
+        width:115px;
+        height:115px;
         border-radius: 13px;
         margin: 0 11px;
         cursor: pointer;
@@ -26,9 +26,9 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13px;
+        font-size: 13.5px;
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
     }
     div.main__menu_nav_block_image {
         width:58px;
@@ -61,8 +61,8 @@
         margin:0 11px;
     }
     div.main__menu_nav_block {
-        width:110px;
-        height:110px;
+        width:115px;
+        height:115px;
         border-radius: 13px;
         margin: 0 11px;
         cursor: pointer;
@@ -73,9 +73,9 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13px;
+        font-size: 13.5px;
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
     }
     div.main__menu_nav_block_image {
         width:58px;
@@ -119,9 +119,9 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13px;
+        font-size: 13.5px;
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
     }
     div.main__menu_nav_block_image {
         width:58px;
