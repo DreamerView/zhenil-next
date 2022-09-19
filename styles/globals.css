@@ -318,7 +318,7 @@ p.nav > a {
       --input_back:hsl(240, 2%, 18%);
       --nav_block:hsl(240, 3%, 11%);
       --nav_block_blur:hsla(240, 3%, 9%,0.7);
-      --font-color:hsl(0, 0%, 100%);
+      --font-color:hsl(240, 20%, 99%);
       --brand-color:hsl(241, 100%, 74%);
       --sub_content:hsla(240, 33%, 94%, 0.6);
       --green_back:hsl(129, 67%, 52%);
@@ -342,16 +342,16 @@ p.nav > a {
       --top-icon:url(../public/img/top.svg);
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
-      --background-color:hsla(0, 0%, 96%, 0.7);
-      --header-color:hsl(0, 0%, 100%);
+      --background-color:hsl(210, 10%, 96%);
+      --header-color:hsl(240, 20%, 99%);
       --block-color:hsl(210, 7%, 96%);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
-      --menu-font-color:hsl(0, 0%, 100%);
-      --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(0, 0%, 100%);
+      --menu-font-color:hsl(240, 20%, 99%);
+      --input_back:hsl(240, 20%, 99%);
+      --nav_block:hsl(240, 20%, 99%);
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
-      --font-color:hsl(0, 0%, 0%);
+      --font-color:hsl(225, 15%, 16%);
       --brand-color:hsl(248, 57%, 47%);
       --sub_content:hsl(213, 5%, 39%);
       --green_back: hsl(135, 59%, 49%);
@@ -365,8 +365,8 @@ p.nav > a {
       --search_icon: url(../public/img/search.svg);
       --nav_menu_c:hsl(240, 24%, 98%);
       --back_contrast:brightness(40%);
-      --confirm_block:hsl(0, 0%, 100%);
-      --search_back:hsl(0, 0%, 100%);
+      --confirm_block:hsl(240, 20%, 99%);
+      --search_back:hsl(240, 20%, 99%);
       --search-block: hsl(210, 7%, 95%);
   }
 }
@@ -413,7 +413,7 @@ p.nav > a {
   color: var(--orange_back);
 }
 .white_font {
-  color: hsl(0, 0%, 100%);
+  color: hsl(240, 20%, 99%);
 }
 
 @media screen and (min-width:1900px) {
