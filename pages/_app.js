@@ -50,10 +50,18 @@ const MyApp = ({ Component, pageProps }) => {
             setResult(false);
         });
     },[])
-
     useEffect(() => {
-            if ("serviceWorker" in navigator) navigator.serviceWorker.register('/serviceworker.js');
-    }, []);
+        if("serviceWorker" in navigator) {
+           navigator.serviceWorker.register("/serviceworker.js").then(
+              function (registration) {
+                console.log("Service Worker registration successful with scope: ", registration.scope);
+              },
+              function (err) {
+                console.log("Service Worker registration failed: ", err);
+              }
+            );
+        }
+    }, [])
     const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
 
 
