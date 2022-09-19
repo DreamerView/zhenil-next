@@ -177,13 +177,13 @@
     div.main__menu_nav_block_image {
         /* width:54px;
         height:54px; */
-        width:58px;
-        height:58px;
+        width:60px;
+        height:60px;
         display: flex;
         align-items: center;
         justify-content: center;
         /* border-radius: 19px; */
-        border-radius: 22px;
+        border-radius: 20px;
     }
     div.main__menu_nav_block_image_pic {
         width:36px;
