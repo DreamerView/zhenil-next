@@ -22,7 +22,6 @@ const BMICalc = () => {
     const s = setBmiApi(male,age,n1,n2);
     useEffect(()=>{
         setShow(JSON.parse(s));
-        console.log(s);
     },[s]);
     useEffect(()=>{
         setN1('');

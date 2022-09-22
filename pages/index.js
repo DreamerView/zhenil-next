@@ -10,6 +10,15 @@ import seo from "../translate/seo_index";
 
 const Home = () => {
   const locale = useTranslateText();
+  // var myDate = "24-09-2021";
+  // myDate = myDate.split("-");
+  // var newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
+  // const convert = (604800*1000)*40;
+  // const result = newDate.getTime()+convert;
+  // console.log('Convert: '+convert);
+  // console.log('New Date: '+newDate.getTime());
+  // console.log(result);
+
   return(
     <>
       <Head>

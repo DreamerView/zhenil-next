@@ -1,5 +1,7 @@
 @media screen and (min-width:1900px) {
     div.main__calc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     div.main__calculator {
@@ -16,6 +18,8 @@
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
     div.main__calc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     div.main__calculator {
@@ -32,6 +36,8 @@
 }
 @media (min-width:601px) and (max-width:1160px) {
     div.main__calc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     div.main__calculator {
@@ -48,17 +54,24 @@
 }
 @media (min-width:1px) and (max-width:600px) {
     div.main__calc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     div.main__calculator {
         width: 100%;
-        order:1;
+        -webkit-box-ordinal-group:2;
+            -ms-flex-order:1;
+                order:1;
         border: 1px solid;
     }
     div.main__result {
         width: 100%;
-        order:2;
+        -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+                order:2;
     }
     div.main__calculator_m {
         width:87.5%;
@@ -66,20 +79,38 @@
     }
 }
 div.main__calculator {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border: 1px solid var(--border-color);
     border-radius: 13px;
     margin-top:32px;
     padding-bottom:48px;
 }
 div.main__result {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border: 1px solid var(--border-color);
     border-radius: 13px;
     margin-top:32px;
@@ -94,9 +125,13 @@ div.main__calculator > h2 {
 }
 div.main__calculator_module {
     height: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-radius: 50px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--block-color);
 }
 
@@ -107,9 +142,15 @@ div.main__calculator_module_pic {
     margin: 0 24px;
 }
 div.main__calculator_module_close {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width:150px;
     height:55px;
     cursor: pointer;
@@ -138,6 +179,7 @@ p.click_event {
 div.module_result_row {
     width:100%;
     margin-top:32px;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
@@ -146,6 +188,7 @@ div.module_result_row {
 div.module_result_row_block {
     width:100%;
     margin-top:32px;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
@@ -156,8 +199,12 @@ div.module_result_block {
     height:70px;
     background-color: var(--block-color);
     border-radius: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 auto;
 }
 div.module_result_block_pic {
@@ -181,8 +228,11 @@ i.show {
     text-align: center;
 }
 div.nav__block_menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 div.nav__block_menu > a {
     margin:32px 16px 0 0;
