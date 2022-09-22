@@ -18,7 +18,7 @@
     "react-dom": "18.1.0",
     "react-easy-crop": "^4.5.0",
     "react-redux": "^8.0.2",
-    "react-responsive": "^9.0.0-beta.8",
+    "react-responsive": "^9.0.0",
     "redux": "^4.2.0",
     "sharp": "^0.30.7"
   },
