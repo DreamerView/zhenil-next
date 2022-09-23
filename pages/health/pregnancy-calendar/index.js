@@ -1,16 +1,15 @@
+import { useState,useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState,useEffect } from "react";
 import nav_text from "../../../translate/services/all_translate";
-import useTranslateText from '../../../start/translate';
+import setTranslateText from '../../../start/translate';
 import style from "../../../styles/health/index.module.css";
 
-const pregnancyCalendar = ()=>{
-    const lang = useTranslateText();
+const PregnancyCalendar = ()=>{
+    const lang = setTranslateText();
     const [date,setDate] = useState(0);
     const [result,setResult] = useState({date:'Ожидаем',month:'результатов',year:''});
     const [ownWeek,setWeek] = useState('0');
-    const [month,setMonth] = useState('');
     const [timePregrant,setTimePregnant] = useState('0');
     console.log(date);
     useEffect(()=>{
@@ -61,8 +60,6 @@ const pregnancyCalendar = ()=>{
             else setTimePregnant('Неизвестно');
         }
     },[date])
-    useEffect(()=>{
-    },[result])
     return(
         <>
             <div className="main__nav">
@@ -77,7 +74,7 @@ const pregnancyCalendar = ()=>{
                 <div className={style.calendar_row}>
                     <div className={style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" src="/emoji-small/breast_feeding.webp"/>
+                            <Image priority layout="fill" alt="emoji" src="/emoji-small/breast_feeding.webp"/>
                         </div>
                         <div>
                             <p>Вероятная дата рождения</p>
@@ -86,7 +83,7 @@ const pregnancyCalendar = ()=>{
                     </div>
                     <div className={style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" src="/emoji-small/calendar.webp"/>
+                            <Image priority layout="fill" alt="emoji" src="/emoji-small/calendar.webp"/>
                         </div>
                         <div>
                             <p>Неделя</p>
@@ -95,7 +92,7 @@ const pregnancyCalendar = ()=>{
                     </div>
                     <div className={style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" src="/emoji-small/hourglass_not_done.webp"/>
+                            <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
                         </div>
                         <div>
                             <p>Течение беременности</p>
@@ -107,4 +104,4 @@ const pregnancyCalendar = ()=>{
         </>
     )
 }
-export default pregnancyCalendar;
+export default PregnancyCalendar;
