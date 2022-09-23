@@ -1,0 +1,43 @@
+h1.header {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom:32px;
+}
+.headers {
+    text-align: center;
+}
+div.date_block {
+    display: flex;
+    justify-content: center;
+    margin-top:32px;
+}
+input.date {
+    border:1.5px solid var(--input_border);
+    border-radius: 13px;
+    font-size:20px;
+    padding:16px 64px;
+    background-color: var(--input_back);
+}
+div.calendar_row {
+    display: grid;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap:16px;
+    margin:64px 0;
+}
+div.calendar_block {
+    width:100%;
+    height:80px;
+    background-color: var(--block-color);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+}
+div.calendar_block_emoji {
+    width:48px;
+    height:48px;
+    position: relative;
+    margin: 0 16px;
+}
