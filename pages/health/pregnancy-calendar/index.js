@@ -16,18 +16,18 @@ const PregnancyCalendar = ()=>{
         // var myDate = "24-09-2021";
         if(date!==0) {
             let MonthNumber;
-            let d = Date.now();
+            let today = Date.now();
             let myDate = date;
             myDate = myDate.toString().split("-");
-            let newDate = new Date( myDate[0], myDate[1], myDate[2]);
+            let newDate = new Date( myDate[0], myDate[1]-1, myDate[2]);
             const convert = (604800*1000)*40;
             const results = newDate.getTime()+convert;
             console.log('Convert: '+convert);
             console.log('New Date: '+newDate.getTime());
             console.log(results);
             let calendar = new Date(results);
-            let solve = (d-newDate.getTime())/(604800*1000);
-            console.log("s "+d+' d '+newDate.getTime());
+            let solve = (today-newDate.getTime())/(604800*1000);
+            console.log("Today: "+today+' Previous: '+newDate.getTime());
             switch(calendar.getMonth()) {
                 case 1: MonthNumber ='января'; break;
                 case 2: MonthNumber ='февраля'; break;
@@ -42,22 +42,25 @@ const PregnancyCalendar = ()=>{
                 case 11: MonthNumber ='ноября'; break;
                 case 12: MonthNumber ='декабря'; break;
             }
+            console.log('Month: '+calendar.getMonth());
             setResult({date:calendar.getDate(),month:MonthNumber,year:calendar.getFullYear()});
-            setWeek(solve.toFixed(0)<=0?'Неизвестно':solve.toFixed(0));
+            setWeek(solve.toFixed(0)<=0?'Неизвестно':solve.toFixed(1));
             let week = solve.toFixed(0);
-            
-            if(week>=1 && week<=4) setTimePregnant('1-4 неделя');
-            else if(week>=5 && week<=8) setTimePregnant('5-8 неделя');
-            else if(week>=9 && week<=12) setTimePregnant('9-12 неделя');
-            else if(week>=13 && week<=16) setTimePregnant('13-16 неделя');
-            else if(week>=17 && week<=20) setTimePregnant('17-20 неделя');
-            else if(week>=21 && week<=24) setTimePregnant('21-24 неделя');
-            else if(week>=25 && week<=28) setTimePregnant('25-28 неделя');
-            else if(week>=29 && week<=32) setTimePregnant('29-32 неделя');
-            else if(week>=33 && week<=36) setTimePregnant('33-36 неделя');
-            else if(week>=37 && week<=40) setTimePregnant('37-40 неделя');
-            else if(week>=40) setTimePregnant('Больше 40 недель');
-            else setTimePregnant('Неизвестно');
+
+            switch(true) {
+                case (week>=1 && week<=4): setTimePregnant('1-4 неделя'); break;
+                case (week>=5 && week<=8): setTimePregnant('5-8 неделя'); break;
+                case (week>=9 && week<=12): setTimePregnant('9-12 неделя'); break;
+                case (week>=13 && week<=16): setTimePregnant('13-16 неделя'); break;
+                case (week>=17 && week<=20): setTimePregnant('17-20 неделя'); break;
+                case (week>=21 && week<=24): setTimePregnant('21-24 неделя'); break;
+                case (week>=25 && week<=28): setTimePregnant('25-28 неделя'); break;
+                case (week>=29 && week<=32): setTimePregnant('29-32 неделя'); break;
+                case (week>=33 && week<=36): setTimePregnant('33-36 неделя'); break;
+                case (week>=37 && week<=40): setTimePregnant('37-40 неделя'); break;
+                case (week>=40): setTimePregnant('Больше 40 недель'); break;
+                default: setTimePregnant('Неизвестно'); break;    
+            }
         }
     },[date])
     return(
@@ -69,7 +72,7 @@ const PregnancyCalendar = ()=>{
                 <h1 className={style.header}>Календарь беременности</h1>
                 <p className={`${style.headers} sub_content`}>Укажите 1-й день последнего периода месячных</p>
                 <div className={style.date_block}>
-                    <input type='date' onChange={e=>setDate(e.target.value)} className={style.date}/>
+                    <input type="date" placeholder="дд.мм.гггг" onChange={e=>setDate(e.target.value)} className={style.date} required/>
                 </div>
                 <div className={style.calendar_row}>
                     <div className={style.calendar_block}>

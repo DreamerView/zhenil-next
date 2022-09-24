@@ -10,6 +10,21 @@ div.emoji_h1 {
   margin-left:8px;
 }
 
+input[type="date"]::before {
+	color: var(--input_back_text);
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: var(--font-color);
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 
 
 .flex_text {
