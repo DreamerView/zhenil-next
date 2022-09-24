@@ -1,5 +1,6 @@
 h1.header {
     font-size: 30px;
+    line-height: 46px;
     text-align: center;
     margin-bottom:32px;
 }
@@ -15,6 +16,7 @@ input.date {
     border:1.5px solid var(--input_border);
     border-radius: 13px;
     font-size:20px;
+    width:180px;
     padding:16px 64px;
     background-color: var(--input_back);
 }
