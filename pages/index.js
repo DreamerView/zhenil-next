@@ -226,10 +226,18 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}></div>
-              <span className="head">Lorem Ipsum</span>
-            </div>
+            <Link href="/health/pregnancy-calendar">
+              <a title={nav_translate['pregnancy_calendar'][locale]}>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image priority title={nav_translate['pregnancy_calendar'][locale]} layout="fill" alt="service (Metabolism vector created by pch.vector)" className={styles.main__index_block_img} src="/services/pregnancy-calendar.webp" placeholder="blur" blurDataURL="/services/pregnancy-calendar.webp"/>
+                    </div>
+                  </div>
+                  <span className="head">{nav_translate['pregnancy_calendar'][locale]}</span>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <span className="head">Lorem Ipsum</span>

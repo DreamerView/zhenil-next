@@ -68,5 +68,10 @@ export default {
         kk:"Маржа мен үстеме бағаны есептеу калькуляторы",
         ru:"Калькулятор расчета маржи и наценки",
         en:"Margin and markup calculator"
+    },
+    pregnancy_calendar: {
+        kk:"Жүктілік күнтізбесі",
+        ru:"Календарь беременности",
+        en:"Pregnancy calendar"
     }
 }

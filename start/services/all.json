@@ -79,5 +79,14 @@
         "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
         "location":"/business/margin-markup-calculator",
         "type":"services"
+    },
+    {
+        "title":"Календарь беременности",
+        "name":"pregnancy_calendar",
+        "image":"/services/pregnancy-calendar.webp",
+        "image_background":"purple_background",
+        "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
+        "location":"/health/pregnancy-calendar",
+        "type":"services"
     }
 ]

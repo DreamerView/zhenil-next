@@ -69,6 +69,21 @@ const HealthIndex = () => {
                 </div>
                 </a>
                 </Link>
+                <Link href="/health/pregnancy-calendar">
+                <a title={nav_translate['pregnancy_calendar'][lang]}>
+                <div className={`${style.main__module_row_block} anim_hover`}>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image title={nav_translate['pregnancy_calendar'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/pregnancy-calendar.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
+                        </div>
+                    </div>
+                    <div className={style.main__module_row_block_f}>
+                        <span className="head_1">{nav_translate['pregnancy_calendar'][lang]}</span>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    </div>
+                </div>
+                </a>
+                </Link>
                 {/*  */}
             </div>
         </div>

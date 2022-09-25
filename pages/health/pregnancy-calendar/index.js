@@ -162,6 +162,13 @@ const PregnancyCalendar = ()=>{
                                 </div>
                                 :""
                                 }
+                                {result.number===40?
+                                <div className={`${style.calendar__block_row} green_background white_font`}>
+                                    <p>Поздравляем</p>
+                                    <h4>Проект Okki.kz поздравляет вас с рождением ребенка на свет!</h4>
+                                </div>
+                                :""
+                                }
                                 {(result.number>=4 && result.number<=16)?
                                 <div className={`${style.calendar__block_row} orange_background white_font`}>
                                     <p>Будьте бдительны</p>
