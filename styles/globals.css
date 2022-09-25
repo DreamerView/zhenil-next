@@ -12,7 +12,8 @@ div.emoji_h1 {
 
 input[type="date"]::before {
 	color: var(--input_back_text);
-	content: attr(placeholder)
+	content: attr(placeholder);
+  width:300px;
 }
 input[type="date"] {
 	color: transparent
@@ -23,7 +24,8 @@ input[type="date"]:valid {
 }
 input[type="date"]:focus::before,
 input[type="date"]:valid::before {
-	content: "" !important
+	content: "" !important;
+  width:0;
 }
 
 
@@ -104,12 +106,6 @@ p.sm {
   -o-transition: 0.2s;
   transition: 0.2s;
   opacity: 0.7
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
