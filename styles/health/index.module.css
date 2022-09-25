@@ -43,6 +43,7 @@ input.date {
     width:180px;
     padding:16px 64px;
     background-color: var(--input_back);
+    text-align: center;
 }
 div.calendar_row {
     display: grid;
