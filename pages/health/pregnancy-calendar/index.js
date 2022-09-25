@@ -107,7 +107,7 @@ const PregnancyCalendar = ()=>{
                 <h1 className={style.header}>Календарь беременности</h1>
                 <p className={`${style.headers} sub_content`}>Укажите 1-й день последнего периода месячных</p>
                 <div className={style.date_block}>
-                    <input type="date" placeholder="дд.мм.гггг" onChange={e=>setDate(e.target.value)} className={style.date} required/>
+                    <input type="date" placeholder="Введите дату" onChange={e=>setDate(e.target.value)} className={style.date} required/>
                 </div>
                 <div className={style.calendar_row}>
                     <div className={style.calendar_block}>
