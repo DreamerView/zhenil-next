@@ -12,6 +12,7 @@ const PregnancyCalendar = ()=>{
     const [ownWeek,setWeek] = useState('0');
     const [timePregrant,setTimePregnant] = useState('0');
     const [weeks,setWeeks] = useState([{}]);
+    const [full,setFull] = useState('not');
     console.log(date);
     const getMonthName = (e) => {
         let MonthNumber;
@@ -139,39 +140,44 @@ const PregnancyCalendar = ()=>{
                         </div>
                     </div>
                 </div>
-                {weeks.map(result=> result == [{}]?"":
-                    <div className={`${style.calendar__planner}`}>
-                        <div className={`${style.calendar__day}`}>
-                            <div className={`${result.alert==='red'?'red_background white_font':''}`}>
-                                <h1>{result.number}</h1>
-                                <p>неделя</p>
+                <div className={full==='not'?style.not__full:''}>
+                    {weeks.map(result=> result == [{}]?"":
+                        <div className={`${style.calendar__planner}`} key={result.number}>
+                            <div className={`${style.calendar__day}`}>
+                                <div className={`${result.alert==='red'?'red_background white_font':''}`}>
+                                    <h1>{result.number}</h1>
+                                    <p>неделя</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className={style.calendar__block}>
-                            <div className={`${style.calendar__block_row} ${result.alert==='red'?'red_background white_font':'block_background'}`}>
-                                <p>Дни недели беременности</p>
-                                <h4>C {result.resultWeekStart} по {result.resultWeekEnd}</h4>
-                            </div>
-                            {result.alert==='red'?
-                            <div className={`${style.calendar__block_row} blue_background white_font`}>
-                                <p>Осторожно!!!</p>
-                                <h4>Срок повышенной вероятности к выкидышу</h4>
-                            </div>
-                            :""
-                            }
-                            {(result.number>=4 && result.number<=16)?
-                            <div className={`${style.calendar__block_row} orange_background white_font`}>
-                                <p>Будьте бдительны</p>
-                                <h4>Период возможного выкидыша</h4>
-                            </div>
-                            :""
-                            }
-                            {/* <div className={`${style.calendar__block_row} block_background`}>
+                            <div className={style.calendar__block}>
+                                <div className={`${style.calendar__block_row} ${result.alert==='red'?'red_background white_font':'block_background'}`}>
+                                    <p>Дни недели беременности</p>
+                                    <h4>C {result.resultWeekStart} по {result.resultWeekEnd}</h4>
+                                </div>
+                                {result.alert==='red'?
+                                <div className={`${style.calendar__block_row} blue_background white_font`}>
+                                    <p>Осторожно!!!</p>
+                                    <h4>Срок повышенной вероятности к выкидышу</h4>
+                                </div>
+                                :""
+                                }
+                                {(result.number>=4 && result.number<=16)?
+                                <div className={`${style.calendar__block_row} orange_background white_font`}>
+                                    <p>Будьте бдительны</p>
+                                    <h4>Период возможного выкидыша</h4>
+                                </div>
+                                :""
+                                }
+                                {/* <div className={`${style.calendar__block_row} block_background`}>
 
-                            </div> */}
+                                </div> */}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
+                <div className={style.check__full}>
+                    <button className={style.button__full} onClick={()=>{full==='not'?setFull('full'):setFull('not')}}>{full==='not'?'Посмотреть полностью':'Свернуть'}</button>
+                </div>
             </div>
         </>
     )

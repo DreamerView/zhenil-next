@@ -5,12 +5,12 @@
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
     div.calendar__planner {
-        width: 70%;
+        width: 80%;
     }
 }
 @media (min-width:601px) and (max-width:1160px) {
     div.calendar__planner {
-        width: 70%;
+        width: 100%;
     }
 }
 @media (min-width:1px) and (max-width:600px) {
@@ -65,7 +65,7 @@ div.calendar_block_emoji {
 }
 div.calendar__planner {
     display: flex;
-    margin:0 auto
+    margin:0 auto;
 }
 div.calendar__day {
     border-right:1.5px solid var(--block-color);
@@ -90,7 +90,9 @@ div.calendar__day > div > p {
 }
 div.calendar__block {
     margin-left:16px;
-    width:80%
+    width:100%;
+    border-bottom: 1.5px solid var(--block-color);
+    margin-bottom:16px;
 }
 div.calendar__block_row {
     border-radius: 13px;
@@ -99,4 +101,22 @@ div.calendar__block_row {
     flex-direction: column;
     justify-content: center;
     padding:16px 32px;
+}
+div.not__full {
+    height:300px;
+    overflow: hidden;
+}
+div.check__full {
+    width:100;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button.button__full {
+    cursor: pointer;
+    font-size: 16px;
+    padding:16px;
+    border-radius: 13px;
+    background-color: var(--block-color);
 }
