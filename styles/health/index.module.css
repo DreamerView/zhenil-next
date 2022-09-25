@@ -40,7 +40,7 @@ input.date {
     border:1.5px solid var(--input_border);
     border-radius: 13px;
     font-size:20px;
-    width:180px;
+    width:300px;
     padding:16px 32px;
     background-color: var(--input_back);
     text-align: center;
