@@ -194,10 +194,27 @@ input[type=number] {
       opacity: 0;
   }
 }
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']:focus {
+  outline: none;
+}
+
+/*  To remove cross sign */
+input[type="date"]::-webkit-clear-button {
     display: none;
-    -webkit-appearance: none;
+}
+
+input[type="date"]::-ms-clear {
+    display: none;
+}
+
+/* To remove Spin Arrows */
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* To remove Drop down Arrow */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;  
 }
 
 .remove_animation {
