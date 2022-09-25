@@ -140,6 +140,7 @@ const PregnancyCalendar = ()=>{
                 </div>
                 {date!==0?
                 <>
+                <h1 className={style.head}>Все дни недели беременности</h1>
                 <div className={full==='not'?style.not__full:''}>
                     {weeks.map(result=> result == [{}]?"":
                         <div className={`${style.calendar__planner}`} key={result.number}>

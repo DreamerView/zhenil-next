@@ -24,6 +24,10 @@ h1.header {
     text-align: center;
     margin-bottom:32px
 }
+.head {
+    text-align: center;
+    margin:64px 0;
+}
 .headers {
     text-align: center
 }
@@ -35,7 +39,7 @@ div.date_block {
 input.date {
     border:1.5px solid var(--input_border);
     border-radius: 13px;
-    font-size:20px;
+    font-size:18px;
     width:180px;
     padding:16px 64px;
     background-color: var(--input_back)
