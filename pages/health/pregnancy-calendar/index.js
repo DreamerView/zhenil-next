@@ -13,7 +13,6 @@ const PregnancyCalendar = ()=>{
     const [timePregrant,setTimePregnant] = useState('0');
     const [weeks,setWeeks] = useState([{}]);
     const [full,setFull] = useState('not');
-    console.log(date);
     const getMonthName = (e) => {
         let MonthNumber;
         switch((e+1)) {
@@ -40,13 +39,8 @@ const PregnancyCalendar = ()=>{
             let newDate = new Date( myDate[0], myDate[1]-1, myDate[2]);
             const convert = (604800*1000)*40;
             const results = newDate.getTime()+convert;
-            console.log('Convert: '+convert);
-            console.log('New Date: '+newDate.getTime());
-            console.log(results);
             let calendar = new Date(results);
             let solve = parseInt((today-newDate.getTime())/(604800*1000));
-            console.log("Today: "+today+' Previous: '+newDate.getTime());
-            console.log('Month: '+calendar.getMonth());
             setResult({date:calendar.getDate(),month:getMonthName(calendar.getMonth()),year:calendar.getFullYear()});
             setWeek(solve<=0?'Неизвестно':solve);
             let week = solve;
@@ -87,21 +81,18 @@ const PregnancyCalendar = ()=>{
                 let day = new Date( myDate[0], myDate[1]-1, myDate[2]);
                 let days = day.getTime()+(604800*1000*i);
                 let c = new Date(days);
-                console.table(i+" e: "+days+' d:'+c.getDate()+' '+c.getMonth());
-                console.log(findDays(i, days));
                 w.push(findDays(i,days));
             }
             setWeeks(w);
         }
     },[date])
-    // console.log(weeks);
     // useEffect(()=>{
     //     setDate('2021-09-24')
     // },[])
     return(
         <>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health">{nav_text['health'][lang]}</Link>  /  {nav_text['ideal_weight_calc'][lang]}</p>
+                <p className="nav"><Link href="/"><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health">{nav_text['health'][lang]}</Link>  /  {nav_text['pregnancy_calendar'][lang]}</p>
             </div>
             <div className="main">
                 <h1 className={style.header}>Календарь беременности</h1>
