@@ -194,6 +194,10 @@ input[type=number] {
       opacity: 0;
   }
 }
+input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+   display: none;
+ }
 
 .remove_animation {
     -webkit-animation-name: remove_animation;
