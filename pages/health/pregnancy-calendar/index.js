@@ -33,7 +33,6 @@ const PregnancyCalendar = ()=>{
         return MonthNumber;
     };
     useEffect(()=>{
-        // var myDate = "24-09-2021";
         if(date!==0) {
             let today = Date.now();
             let myDate = date;
@@ -93,7 +92,6 @@ const PregnancyCalendar = ()=>{
                 w.push(findDays(i,days));
             }
             setWeeks(w);
-            // console.log(findDays('2022-09-12'));
         }
     },[date])
     // console.log(weeks);
@@ -140,6 +138,8 @@ const PregnancyCalendar = ()=>{
                         </div>
                     </div>
                 </div>
+                {date!==0?
+                <>
                 <div className={full==='not'?style.not__full:''}>
                     {weeks.map(result=> result == [{}]?"":
                         <div className={`${style.calendar__planner}`} key={result.number}>
@@ -178,6 +178,8 @@ const PregnancyCalendar = ()=>{
                 <div className={style.check__full}>
                     <button className={style.button__full} onClick={()=>{full==='not'?setFull('full'):setFull('not')}}>{full==='not'?'Посмотреть полностью':'Свернуть'}</button>
                 </div>
+                </>
+                :""}
             </div>
         </>
     )
