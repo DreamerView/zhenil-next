@@ -39,10 +39,11 @@ div.date_block {
 input.date {
     border:1.5px solid var(--input_border);
     border-radius: 13px;
-    font-size:18px;
+    font-size:20px;
     width:180px;
     padding:16px 64px;
-    background-color: var(--input_back)
+    background-color: var(--input_back);
+    -webkit-appearance: none;
 }
 div.calendar_row {
     display: grid;
