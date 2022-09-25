@@ -1,16 +1,36 @@
+@media screen and (min-width:1900px) {
+    div.calendar__planner {
+        width: 60%;
+    }
+}
+@media screen and (min-width:1161px) and (max-width:1899px) {
+    div.calendar__planner {
+        width: 70%;
+    }
+}
+@media (min-width:601px) and (max-width:1160px) {
+    div.calendar__planner {
+        width: 70%;
+    }
+}
+@media (min-width:1px) and (max-width:600px) {
+    div.calendar__planner {
+        width: 100%;
+    }
+}
 h1.header {
     font-size: 30px;
     line-height: 46px;
     text-align: center;
-    margin-bottom:32px;
+    margin-bottom:32px
 }
 .headers {
-    text-align: center;
+    text-align: center
 }
 div.date_block {
     display: flex;
     justify-content: center;
-    margin-top:32px;
+    margin-top:32px
 }
 input.date {
     border:1.5px solid var(--input_border);
@@ -18,7 +38,7 @@ input.date {
     font-size:20px;
     width:180px;
     padding:16px 64px;
-    background-color: var(--input_back);
+    background-color: var(--input_back)
 }
 div.calendar_row {
     display: grid;
@@ -35,11 +55,48 @@ div.calendar_block {
     border-radius: 13px;
     display: flex;
     align-items: center;
-    margin:0 auto;
+    margin:0 auto
 }
 div.calendar_block_emoji {
     width:48px;
     height:48px;
     position: relative;
-    margin: 0 16px;
+    margin: 0 16px
+}
+div.calendar__planner {
+    display: flex;
+    margin:0 auto
+}
+div.calendar__day {
+    border-right:1.5px solid var(--block-color);
+    padding-right: 16px;
+}
+div.calendar__day >div {
+    width:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 13px;
+}
+div.calendar__day> div > h1 {
+    font-size: 32px;
+    text-align: center
+}
+div.calendar__day > div > p {
+    font-size: 14px;
+    text-align: center
+}
+div.calendar__block {
+    margin-left:16px;
+    width:80%
+}
+div.calendar__block_row {
+    border-radius: 13px;
+    margin-bottom:32px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:16px 32px;
 }

@@ -11,11 +11,29 @@ const PregnancyCalendar = ()=>{
     const [result,setResult] = useState({date:'Ожидаем',month:'результатов',year:''});
     const [ownWeek,setWeek] = useState('0');
     const [timePregrant,setTimePregnant] = useState('0');
+    const [weeks,setWeeks] = useState([{}]);
     console.log(date);
+    const getMonthName = (e) => {
+        let MonthNumber;
+        switch((e+1)) {
+            case 1: MonthNumber ='января'; break;
+            case 2: MonthNumber ='февраля'; break;
+            case 3: MonthNumber ='марта'; break;
+            case 4: MonthNumber ='апреля'; break;
+            case 5: MonthNumber ='мая'; break;
+            case 6: MonthNumber ='июня'; break;
+            case 7: MonthNumber ='июля'; break;
+            case 8: MonthNumber ='августа'; break;
+            case 9: MonthNumber ='сентября'; break;
+            case 10: MonthNumber ='октября'; break;
+            case 11: MonthNumber ='ноября'; break;
+            case 12: MonthNumber ='декабря'; break;
+        }
+        return MonthNumber;
+    };
     useEffect(()=>{
         // var myDate = "24-09-2021";
         if(date!==0) {
-            let MonthNumber;
             let today = Date.now();
             let myDate = date;
             myDate = myDate.toString().split("-");
@@ -26,26 +44,12 @@ const PregnancyCalendar = ()=>{
             console.log('New Date: '+newDate.getTime());
             console.log(results);
             let calendar = new Date(results);
-            let solve = (today-newDate.getTime())/(604800*1000);
+            let solve = parseInt((today-newDate.getTime())/(604800*1000));
             console.log("Today: "+today+' Previous: '+newDate.getTime());
-            switch(calendar.getMonth()) {
-                case 1: MonthNumber ='января'; break;
-                case 2: MonthNumber ='февраля'; break;
-                case 3: MonthNumber ='марта'; break;
-                case 4: MonthNumber ='апреля'; break;
-                case 5: MonthNumber ='мая'; break;
-                case 6: MonthNumber ='июня'; break;
-                case 7: MonthNumber ='июля'; break;
-                case 8: MonthNumber ='августа'; break;
-                case 9: MonthNumber ='сентября'; break;
-                case 10: MonthNumber ='октября'; break;
-                case 11: MonthNumber ='ноября'; break;
-                case 12: MonthNumber ='декабря'; break;
-            }
             console.log('Month: '+calendar.getMonth());
-            setResult({date:calendar.getDate(),month:MonthNumber,year:calendar.getFullYear()});
-            setWeek(solve.toFixed(0)<=0?'Неизвестно':solve.toFixed(1));
-            let week = solve.toFixed(0);
+            setResult({date:calendar.getDate(),month:getMonthName(calendar.getMonth()),year:calendar.getFullYear()});
+            setWeek(solve<=0?'Неизвестно':solve);
+            let week = solve;
 
             switch(true) {
                 case (week>=1 && week<=4): setTimePregnant('1-4 неделя'); break;
@@ -63,6 +67,38 @@ const PregnancyCalendar = ()=>{
             }
         }
     },[date])
+    useEffect(()=>{
+        if(date!==0) {
+            const findDays = (num,e) => {
+                let number = num;
+                let alert = (num===4||num===8||num===12||num===16)?'red':'default';
+                let weekStart = e;
+                let weekEnd = e+(86400*1000*6);
+                let weekStartDay = new Date(weekStart);
+                let weekEndDay = new Date(weekEnd);
+                let resultWeekStart = weekStartDay.getDate()+' '+getMonthName(weekStartDay.getMonth())+' '+weekStartDay.getFullYear();
+                let resultWeekEnd = weekEndDay.getDate()+' '+getMonthName(weekEndDay.getMonth())+' '+weekEndDay.getFullYear();
+                return {number,weekStart,weekEnd,resultWeekStart,resultWeekEnd,alert}
+            }
+            var w = [];
+            for(let i=0;i<=42;i++) {
+                let myDate = date;
+                myDate = myDate.toString().split("-");
+                let day = new Date( myDate[0], myDate[1]-1, myDate[2]);
+                let days = day.getTime()+(604800*1000*i);
+                let c = new Date(days);
+                console.table(i+" e: "+days+' d:'+c.getDate()+' '+c.getMonth());
+                console.log(findDays(i, days));
+                w.push(findDays(i,days));
+            }
+            setWeeks(w);
+            // console.log(findDays('2022-09-12'));
+        }
+    },[date])
+    // console.log(weeks);
+    // useEffect(()=>{
+    //     setDate('2021-09-24')
+    // },[])
     return(
         <>
             <div className="main__nav">
@@ -103,6 +139,39 @@ const PregnancyCalendar = ()=>{
                         </div>
                     </div>
                 </div>
+                {weeks.map(result=> result == [{}]?"":
+                    <div className={`${style.calendar__planner}`}>
+                        <div className={`${style.calendar__day}`}>
+                            <div className={`${result.alert==='red'?'red_background white_font':''}`}>
+                                <h1>{result.number}</h1>
+                                <p>неделя</p>
+                            </div>
+                        </div>
+                        <div className={style.calendar__block}>
+                            <div className={`${style.calendar__block_row} ${result.alert==='red'?'red_background white_font':'block_background'}`}>
+                                <p>Дни недели беременности</p>
+                                <h4>C {result.resultWeekStart} по {result.resultWeekEnd}</h4>
+                            </div>
+                            {result.alert==='red'?
+                            <div className={`${style.calendar__block_row} blue_background white_font`}>
+                                <p>Осторожно!!!</p>
+                                <h4>Срок повышенной вероятности к выкидышу</h4>
+                            </div>
+                            :""
+                            }
+                            {(result.number>=4 && result.number<=16)?
+                            <div className={`${style.calendar__block_row} orange_background white_font`}>
+                                <p>Будьте бдительны</p>
+                                <h4>Период возможного выкидыша</h4>
+                            </div>
+                            :""
+                            }
+                            {/* <div className={`${style.calendar__block_row} block_background`}>
+
+                            </div> */}
+                        </div>
+                    </div>
+                )}
             </div>
         </>
     )
