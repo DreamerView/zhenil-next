@@ -32,14 +32,14 @@ const HealthIndex = () => {
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
             <div className="main__nav block_animation">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["health"][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["health"][lang]}</p>
             </div>
             <div className="main block_animation">
             <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
-                <Link href="/health/bmi-calculator">
+                <Link href="/health/bmi-calculator" prefetch={false}>
                 <a title={nav_translate['bmi_calc'][lang]}>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
@@ -54,7 +54,7 @@ const HealthIndex = () => {
                 </div>
                 </a>
                 </Link>
-                <Link href="/health/ideal-weight">
+                <Link href="/health/ideal-weight" prefetch={false}>
                 <a title={nav_translate['ideal_weight_calc'][lang]}>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
@@ -69,7 +69,7 @@ const HealthIndex = () => {
                 </div>
                 </a>
                 </Link>
-                <Link href="/health/pregnancy-calendar">
+                <Link href="/health/pregnancy-calendar" prefetch={false}>
                 <a title={nav_translate['pregnancy_calendar'][lang]}>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>
@@ -79,6 +79,21 @@ const HealthIndex = () => {
                     </div>
                     <div className={style.main__module_row_block_f}>
                         <span className="head_1">{nav_translate['pregnancy_calendar'][lang]}</span>
+                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    </div>
+                </div>
+                </a>
+                </Link>
+                <Link href="/health/index-of-the-smoking-person" prefetch={false}>
+                <a title={nav_translate['index_of_the_smoking_person'][lang]}>
+                <div className={`${style.main__module_row_block} anim_hover`}>
+                    <div>
+                        <div className={`${style.main__module_row_block_img}`}>
+                            <Image title={nav_translate['index_of_the_smoking_person'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/index-of-the-smoking-person.webp" placeholder="blur" blurDataURL="/services/index-of-the-smoking-person.webp"/>
+                        </div>
+                    </div>
+                    <div className={style.main__module_row_block_f}>
+                        <span className="head_1">{nav_translate['index_of_the_smoking_person'][lang]}</span>
                         <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                     </div>
                 </div>

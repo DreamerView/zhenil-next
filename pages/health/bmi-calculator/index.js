@@ -40,7 +40,7 @@ const BMICalc = () => {
                 <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/health">{nav_translate['health'][lang]}</Link>  /  {nav_translate['bmi_calc'][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_translate['health'][lang]}</Link>  /  {nav_translate['bmi_calc'][lang]}</p>
             </div>
             <div className="main">
                 <h1>{translate['step1'][lang]}</h1>

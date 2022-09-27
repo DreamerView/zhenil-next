@@ -73,5 +73,10 @@ export default {
         kk:"Жүктілік күнтізбесі",
         ru:"Календарь беременности",
         en:"Pregnancy calendar"
+    },
+    index_of_the_smoking_person: {
+        kk:"Темекі шегетін адамның индексі",
+        ru:"Индекс курящего человека",
+        en:"Index of the smoking person"
     }
 }

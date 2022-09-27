@@ -7,9 +7,20 @@ import useTranslateText from "../start/translate";
 import translate from "../translate/index_translate";
 import nav_translate from "../translate/services/all_translate";
 import seo from "../translate/seo_index";
+import { useState } from "react";
+
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`http://localhost:8000/select?table=constructor_translate`);
+//   const data = await res.json()
+
+//   // Pass data to the page via props
+//   return { props: { data } }
+// }
 
 const Home = () => {
   const locale = useTranslateText();
+  const [text,setText] = useState([{}]);
   // var myDate = "24-09-2021";
   // myDate = myDate.split("-");
   // var newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
@@ -18,7 +29,6 @@ const Home = () => {
   // console.log('Convert: '+convert);
   // console.log('New Date: '+newDate.getTime());
   // console.log(result);
-
   return(
     <>
       <Head>
@@ -41,7 +51,7 @@ const Home = () => {
       <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
         <div className={styles.main__menu_nav_blocks}>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/constructor">
+            <Link href="/constructor" prefetch={false}>
               <a title={nav_translate['constructor'][locale]} itemID="/constructor" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} green_background`}>
@@ -56,7 +66,7 @@ const Home = () => {
             <meta itemProp="position" content="1" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/calculator">
+            <Link href="/calculator" prefetch={false}>
               <a title={nav_translate['calculator'][locale]} itemID="/calculator" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} grey_background`}>
@@ -71,7 +81,7 @@ const Home = () => {
             <meta itemProp="position" content="2" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/business">
+            <Link href="/business" prefetch={false}>
               <a title={nav_translate['business'][locale]} itemID="/business" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} blue_background`}>
@@ -86,7 +96,7 @@ const Home = () => {
             <meta itemProp="position" content="3" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/education">
+            <Link href="/education" prefetch={false}>
               <a title={translate['education'][locale]} itemID="/education" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} purple_background`}>
@@ -101,7 +111,7 @@ const Home = () => {
             <meta itemProp="position" content="4" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/health">
+            <Link href="/health" prefetch={false}>
               <a title={translate['health'][locale]} itemID="/health" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} red_background`}>
@@ -116,7 +126,7 @@ const Home = () => {
             <meta itemProp="position" content="5" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/finance">
+            <Link href="/finance" prefetch={false}>
               <a title={translate['finance'][locale]} itemID="/finance" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} green_background`}>
@@ -131,7 +141,7 @@ const Home = () => {
             <meta itemProp="position" content="6" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/technology">
+            <Link href="/technology" prefetch={false}>
               <a title={translate['tech'][locale]} itemID="/technology" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} brand_background`}>
@@ -146,7 +156,7 @@ const Home = () => {
             <meta itemProp="position" content="7" />
           </div>
           <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link href="/others">
+            <Link href="/others" prefetch={false}>
               <a title={translate['others'][locale]} itemID="/others" itemType="https://schema.org/Thing" itemScope itemProp="item">
                 <div className={`${styles.main__menu_nav_block} anim_hover`}>
                   <div className={`${styles.main__menu_nav_block_image} orange_background`}>
@@ -166,7 +176,7 @@ const Home = () => {
           <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
           <p className="sub_content">{translate['popular_subtext'][locale]}</p>
           <div className={styles.main__index_block_row}>
-            <Link href="/constructor/acc">
+            <Link href="/constructor/acc" prefetch={false}>
               <a title={nav_translate['acc_const'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -178,7 +188,7 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <Link href="/health/bmi-calculator">
+            <Link href="/health/bmi-calculator" prefetch={false}>
               <a title={nav_translate['bmi_calc'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -190,7 +200,7 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <Link  href="/finance/deposit">
+            <Link  href="/finance/deposit" prefetch={false}>
               <a title={nav_translate['deposit_calc'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -202,7 +212,7 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <Link href="/health/ideal-weight">
+            <Link href="/health/ideal-weight" prefetch={false}>
               <a title={nav_translate['ideal_weight_calc'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -214,7 +224,7 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <Link href="/business/margin-markup-calculator">
+            <Link href="/business/margin-markup-calculator" prefetch={false}>
               <a title={nav_translate['margin_markup_calc'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -226,7 +236,7 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <Link href="/health/pregnancy-calendar">
+            <Link href="/health/pregnancy-calendar" prefetch={false}>
               <a title={nav_translate['pregnancy_calendar'][locale]}>
                 <div className={`${styles.main__index_block_row_b} anim_hover`}>
                   <div className={styles.main__index_block}>
@@ -238,10 +248,18 @@ const Home = () => {
                 </div>
               </a>
             </Link>
-            <div className={`${styles.main__index_block_row_b} anim_hover`}>
-              <div className={styles.main__index_block}></div>
-              <span className="head">Lorem Ipsum</span>
-            </div>
+            <Link href="/health/index-of-the-smoking-person" prefetch={false}>
+              <a title={nav_translate['index_of_the_smoking_person'][locale]}>
+                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                  <div className={styles.main__index_block}>
+                    <div className={styles.main__index_block_pic}>
+                      <Image priority title={nav_translate['index_of_the_smoking_person'][locale]} layout="fill" alt="service (Metabolism vector created by pch.vector)" className={styles.main__index_block_img} src="/services/index-of-the-smoking-person.webp" placeholder="blur" blurDataURL="/services/index-of-the-smoking-person.webp"/>
+                    </div>
+                  </div>
+                  <span className="head">{nav_translate['index_of_the_smoking_person'][locale]}</span>
+                </div>
+              </a>
+            </Link>
             <div className={`${styles.main__index_block_row_b} anim_hover`}>
               <div className={styles.main__index_block}></div>
               <span className="head">Lorem Ipsum</span>

@@ -11,7 +11,7 @@ const SearchBlocks = (res) => {
     const {locale} = router;
     return(
         <>
-            <Link href={res.item.location}><a>
+            <Link href={res.item.location} prefetch={false}><a>
             <div className={`${style.search__block} basic_animation`}>
                 {res.item.type==='category'?
                 <div>

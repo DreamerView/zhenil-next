@@ -113,7 +113,7 @@ const SizeAcc = () => {
                 <title>{text['name'][lang]}</title>
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc"><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo"><a>{translate['step2'][lang]} /</a></Link>  {translate['step3'][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc" prefetch={false}><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo" prefetch={false}><a>{translate['step2'][lang]} /</a></Link>  {translate['step3'][lang]}</p>
             </div>
             <div className={style.main__block}>
                 <h1>{text['name'][lang]}</h1>
@@ -196,8 +196,8 @@ const SizeAcc = () => {
             </div>
             <div className={style.main__block_fixed_confirm}>
                 <div className={`${style.main__block_interface_menu_c_end} flex`}>
-                            <Link href="/constructor/acc/logo" className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
-                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</a></Link>}    
+                            <Link href="/constructor/acc/logo" prefetch={false} className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</a></Link>}    
                 </div>
             </div>
     </>

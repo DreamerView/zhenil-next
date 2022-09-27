@@ -88,5 +88,14 @@
         "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
         "location":"/health/pregnancy-calendar",
         "type":"services"
+    },
+    {
+        "title":"Индекс курящего человека",
+        "name":"index_of_the_smoking_person",
+        "image":"/services/index-of-the-smoking-person.webp",
+        "image_background":"purple_background",
+        "key":"темекі шегетін адамның индексі,индекс курящего человека,index of the smoking person",
+        "location":"/health/index-of-the-smoking-person",
+        "type":"services"
     }
 ]

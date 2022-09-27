@@ -1,11 +1,20 @@
 const sharp = require('sharp');
 const path = require('path');
-const testFolder = path.resolve(__dirname,'../public/services/convert');
+const src = '../public/services/convert/';
+const saveTo = '../public/services/';
+const pathInfo = path.resolve(__dirname,src);
 const fs = require('fs');
 
-fs.readdir(testFolder, (err, files) => {
+//emoji
+// fs.readdir(testFolder, (err, files) => {
+//     files.forEach(file => {
+//         sharp(path.resolve(__dirname,src+file)).toFormat('webp').webp({ quality: 100 }).resize({width:120,height:120}).toFile(path.resolve(__dirname,saveTo+path.parse(file).name+'.webp'));
+//     });
+// });
+//app icon
+fs.readdir(pathInfo, (err, files) => {
     files.forEach(file => {
-        sharp(path.resolve(__dirname,'../public/services/convert/'+file)).toFormat('webp').webp({ quality: 100 }).resize({width:800,height:800}).toFile(path.resolve(__dirname,'../public/services/'+path.parse(file).name+'.webp'));
+        sharp(path.resolve(__dirname,src+file)).toFormat('webp').webp({ quality: 100 }).resize({width:800,height:800}).toFile(path.resolve(__dirname,saveTo+path.parse(file).name+'.webp'));
     });
 });
 

@@ -6,10 +6,16 @@
     }
     div.main__calculator {
         width: 50%;
-        margin-left:32px;
+        margin-right:32px;
+        -webkit-box-ordinal-group:2;
+            -ms-flex-order:1;
+                order:1;
     }
     div.main__result {
         width: 50%;
+        -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+                order:2;
     }
     div.main__calculator_m {
         width:87.5%;
@@ -24,10 +30,16 @@
     }
     div.main__calculator {
         width: 50%;
-        margin-left:32px;
+        margin-right:32px;
+        -webkit-box-ordinal-group:2;
+            -ms-flex-order:1;
+                order:1;
     }
     div.main__result {
         width: 50%;
+        -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+                order:2;
     }
     div.main__calculator_m {
         width:75%;
@@ -42,10 +54,16 @@
     }
     div.main__calculator {
         width: 50%;
-        margin-left:32px;
+        margin-right:32px;
+        -webkit-box-ordinal-group:2;
+            -ms-flex-order:1;
+                order:1;
     }
     div.main__result {
         width: 50%;
+        -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+                order:2;
     }
     div.main__calculator_m {
         width:75%;

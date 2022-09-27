@@ -31,14 +31,14 @@ const Acc = () => {
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
         <div className={`main__nav block_animation`}>
-            <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor"><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
+            <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
         </div>
         <div className={`${style.main__block} block_animation`}>
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>
             <div className={`${style.main__block_menu_select} p-m`}>
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logo">
+            <Link href="/constructor/acc/logo" prefetch={false}>
             <a title={text['title1'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
@@ -59,7 +59,7 @@ const Acc = () => {
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logo">
+            <Link href="/constructor/acc/logo" prefetch={false}>
             <a title={text['title2'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
@@ -80,7 +80,7 @@ const Acc = () => {
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logosd">
+            <Link href="/constructor/acc/logosd" prefetch={false}>
             <a title={text['title3'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>

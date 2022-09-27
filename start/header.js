@@ -4,7 +4,6 @@ import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-// import Script from 'next/script';
 import { useRouter } from 'next/router';
 import translate from "../translate/header_translate";
 import text from "../translate/seo_index";
@@ -52,7 +51,7 @@ const Header = () => {
         </Head>
         <header>
           <div className="header__logo">
-            <Link href='/'>
+            <Link href='/' prefetch={false}>
               <a title={text['title'][locale]}>
                 <div className='header__logo_p'>
                   <div className="header__logo_pic anim_hover"></div>

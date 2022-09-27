@@ -19,7 +19,7 @@ const BusinessIndex = () => {
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
             <div className="main__nav block_animation">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["tech"][lang]}</p>
+                <p className="nav"><Link prefetch={false} href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["tech"][lang]}</p>
             </div>
             <div className="page_not_found">
                 <div className="page_not_found_block">
@@ -28,7 +28,7 @@ const BusinessIndex = () => {
                     </div>
                     <h1 className="page_not_found">{nav_translate['tech'][lang]}</h1>
                     <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link href="/" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
+                    <Link prefetch={false} href="/" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
                 </div>
             </div>
       </>

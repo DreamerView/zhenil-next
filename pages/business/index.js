@@ -32,14 +32,14 @@ const BusinessIndex = () => {
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
             <div className="main__nav block_animation">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["business"][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["business"][lang]}</p>
             </div>
             <div className="main block_animation">
             <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image title={'Microsoft briefcase emoji (Used for informational purposes only)'} priority src={"/emoji-small/briefcase.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
-                <Link href="/business/margin-markup-calculator">
+                <Link href="/business/margin-markup-calculator" prefetch={false}>
                 <a title={nav_translate['margin_markup_calc'][lang]}>
                 <div className={`${style.main__module_row_block} anim_hover`}>
                     <div>

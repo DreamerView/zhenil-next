@@ -42,23 +42,23 @@ const MarginMarkup = () => {
                 <meta property="og:title" content={`${translate['margin_cost_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/business">{nav_translate['business'][lang]}</Link>  /  {translate['margin_cost_calc'][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/business" prefetch={false}>{nav_translate['business'][lang]}</Link>  /  {translate['margin_cost_calc'][lang]}</p>
             </div>
             <div className="main">
                 <h1>{translate["margin_cost_calc"][lang]}</h1>
                 <p className="sub_content">{translate['content'][lang]}</p>
                 <div className={style.nav__block_menu}>
-                    <Link href="./margin-markup-calculator">
+                    <Link href="./margin-markup-calculator" prefetch={false}>
                         <a className='block_background'>
                             {translate['margin_markup_calc'][lang]}
                         </a>
                     </Link>
-                    <Link href="./margin-cost-calculator">
+                    <Link href="./margin-cost-calculator" prefetch={false}>
                         <a className='red_background white_font'>
                             {translate['margin_cost_calc'][lang]}
                         </a>
                     </Link>
-                    <Link href="./markup-prime-calculator">
+                    <Link href="./markup-prime-calculator" prefetch={false}>
                         <a className='block_background'>
                             {translate['markup_prime_calc'][lang]}
                         </a>

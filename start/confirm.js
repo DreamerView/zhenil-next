@@ -32,17 +32,17 @@ const ConfirmMode = (result) => {
                     {result.item.type === 'language'?
                     <div className="confirm__block_action">
                         <div onClick={()=>SaveLanguage('kk')}>
-                            <Link href={router.asPath} locale="kk"><a>
+                            <Link prefetch={false} href={router.asPath} locale="kk"><a>
                                 <span className="confirm__block_action_row">Қазақша 🇰🇿</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('ru')}>
-                            <Link href={router.asPath} locale="ru"><a>
+                            <Link prefetch={false} href={router.asPath} locale="ru"><a>
                                 <span className="confirm__block_action_row">Русский 🇷🇺</span>
                             </a></Link>
                         </div>
                         <div onClick={()=>SaveLanguage('en')}>
-                            <Link href={router.asPath} locale="en"><a>
+                            <Link prefetch={false} href={router.asPath} locale="en"><a>
                                 <span className="confirm__block_action_row">English 🇬🇧</span>
                             </a></Link>
                         </div>

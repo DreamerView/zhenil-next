@@ -21,8 +21,8 @@ const IdealWeight = () => {
             case 'female': setMaleText(text.female[lang]);break;
             case 'other': setMaleText(text.other[lang]);break;
         }
-        if(male==='male') return n1!='0'&&n1!=''?setResult(Math.round((n1-100)*1.15)):setResult(text.loading[lang]);
-        else if(male==='female') return n1!='0'&&n1!=''?setResult(Math.round((n1-110)*1.15)):setResult(text.loading[lang]);
+        if(male==='male') return n1!='0'&&n1!=''?setResult(Math.round((n1-100))):setResult(text.loading[lang]);
+        else if(male==='female') return n1!='0'&&n1!=''?setResult(Math.round((n1-110))):setResult(text.loading[lang]);
         else return setResult(text.loading[lang]);
     },[n1,male,lang]);
     useEffect(()=>{
@@ -35,7 +35,7 @@ const IdealWeight = () => {
                 <meta property="og:title" content={`${nav_text['ideal_weight_calc'][lang]} | Okki.kz`} />
             </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health">{nav_text['health'][lang]}</Link>  /  {nav_text['ideal_weight_calc'][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_text['health'][lang]}</Link>  /  {nav_text['ideal_weight_calc'][lang]}</p>
             </div>
             <div className="main">
                 <h1>{nav_text['ideal_weight_calc'][lang]}</h1>

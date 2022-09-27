@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 import nav_text from "../../../translate/services/all_translate";
 import setTranslateText from '../../../start/translate';
 import style from "../../../styles/health/index.module.css";
@@ -91,11 +92,15 @@ const PregnancyCalendar = ()=>{
     // },[])
     return(
         <>
+            <Head>
+                <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
+                <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
+            </Head>
             <div className="main__nav">
-                <p className="nav"><Link href="/"><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health">{nav_text['health'][lang]}</Link>  /  {nav_text['pregnancy_calendar'][lang]}</p>
+                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_text['health'][lang]}</Link>  /  {nav_text['pregnancy_calendar'][lang]}</p>
             </div>
             <div className="main">
-                <h1 className={style.header}>Календарь беременности</h1>
+                <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>Укажите 1-й день последнего периода месячных</p>
                 <div className={style.date_block}>
                     <input type="date" placeholder="Введите дату"  onChange={e=>setDate(e.target.value)} className={style.date} required/>
