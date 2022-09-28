@@ -19,7 +19,7 @@ const Deposit = () => {
             setResult((num*exp)/20);
         };
         let s = result.toFixed(0);
-        if(s>=1&&s<=9) setAlert({text:'Нормально',color:'green_font'});
+        if(s>=0&&s<=9) setAlert({text:'Нормально',color:'green_font'});
         //Развития хронической обструктивной болезни легких
         else if (s>=10) setAlert({text:'Развития болезни ХОБЛ',color:'red_font'});
         else setAlert({text:'Неизвестно',color:''});
