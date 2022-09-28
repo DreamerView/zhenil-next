@@ -17,9 +17,12 @@ const Deposit = () => {
     useEffect(()=>{
         if(num !=='' && exp !=='') {
             setResult((num*exp)/20);
-        };
+        }
+        else {
+            setResult(0);
+        }
         let s = result.toFixed(0);
-        if(s>=0&&s<=9) setAlert({text:'Нормально',color:'green_font'});
+        if(s>=1&&s<=9) setAlert({text:'Нормально',color:'green_font'});
         //Развития хронической обструктивной болезни легких
         else if (s>=10) setAlert({text:'Развития болезни ХОБЛ',color:'red_font'});
         else setAlert({text:'Неизвестно',color:''});
@@ -84,6 +87,12 @@ const Deposit = () => {
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setNum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder="Введите данные" className={`${style.main__calculator_module_input}`} value={num}/>
+                                    {num!==''?
+                                    <div className={style.main__calculator_module_close} onClick={()=>{setNum('')}}>
+                                        <div className={style.main__calculator_module_close_img}>
+                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                        </div>
+                                    </div>:""}
                                 </div>
                             </div>
                             <div className={style.main__calculator_m}>
@@ -95,6 +104,12 @@ const Deposit = () => {
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setExp((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder="Введите данные" className={`${style.main__calculator_module_input}`} value={exp}/>
+                                    {exp!==''?
+                                    <div className={style.main__calculator_module_close} onClick={()=>{setExp('')}}>
+                                        <div className={style.main__calculator_module_close_img}>
+                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                        </div>
+                                    </div>:""}
                                 </div>
                             </div>
                         </div>
