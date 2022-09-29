@@ -5,7 +5,7 @@ div.search__block {
     display: -ms-flexbox;
     display: flex;
     margin:4px 8px 4px 0;
-    border-radius: 13px;
+    border-radius: 24px;
     cursor: pointer;
 }
 div.search__block_image {

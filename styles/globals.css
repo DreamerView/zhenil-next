@@ -250,7 +250,7 @@ p.nav {
 }
 
 p.nav > a {
-  opacity: 0.5
+  color:var(--sub_content)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -556,7 +556,7 @@ p.nav > a {
       width: 100%;
   }
   input.header__search_input:focus {
-      border-radius: 13px;
+      border-radius: 24px;
   }
   input.header__search_input:focus+div.header__search_menu {
       display: none;
@@ -732,7 +732,7 @@ header {
   background-color: var(--header-color);
   display: var(--display);
   margin-bottom: 16px;
-  border-radius: 0 0 13px 13px
+  border-radius: 0 0 19px 19px
 }
 
 
@@ -799,7 +799,7 @@ div.header__search_blocks {
   margin-top:60px;
   background-color: var(--search_back);
   padding:16px;
-  border-radius: 13px;
+  border-radius: 24px;
   border: 1.5px solid var(--input_border)
 }
 div.header__search_blocks > div {
@@ -822,7 +822,7 @@ div.header__search_menu {
   padding:0 16px;
   height:46px;
   background-color: var(--menu-color);
-  border-radius: 13px;
+  border-radius: 24px;
   border:1.5px solid var(--menu-border-color);
   cursor: pointer;
   margin-right:16px
@@ -842,7 +842,7 @@ input.header__search_input {
   height:46px;
   font-size:16px;
   border:1.5px solid var(--input_border);
-  border-radius: 13px;
+  border-radius: 24px;
   color:var(--font-color);
   background: var(--search_icon) no-repeat scroll 11px 11px var(--input_back)
 }
@@ -886,7 +886,7 @@ div.header__action {
 div.header__action_image {
   width: 46px;
   height: 46px;
-  border-radius: 13px;
+  border-radius: 24px;
   border:1px solid var(--block-color);
   background-color: var(--block-color);
   position: relative
@@ -894,7 +894,7 @@ div.header__action_image {
 img.header__action_avatar {   
   width: 46px;
   height: 46px;
-  border-radius: 13px;
+  border-radius: 24px;
   -o-object-fit: cover;
      object-fit: cover
 }
@@ -902,7 +902,7 @@ div.header__action_block {
   width:85px;
   height:46px;
   margin-left:16px;
-  border-radius: 13px;
+  border-radius: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -962,7 +962,7 @@ div.page_not_found {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   background-color: var(--header-color);
-  border-radius: 13px;
+  border-radius: 24px;
   margin:var(--n-2)
 }
 div.page_not_found_block{
@@ -1038,7 +1038,7 @@ div.confirm__block {
   width:244px;
   height: auto;
   background-color: var(--confirm_block);
-  border-radius: 13px;
+  border-radius: 24px;
   padding:20px;
   text-align: center
 }
@@ -1164,7 +1164,7 @@ div.fullscreen__result_button {
   border:0;display:block; 
   margin:0 auto;
   background-color: var(--nav_block);
-  border-radius: 13px;
+  border-radius: 24px;
   -webkit-transform: scale(0.95);
       -ms-transform: scale(0.95);
           transform: scale(0.95)
@@ -1174,7 +1174,7 @@ div.fullscreen__result_button {
   height: 85vh;
   border:0;display:block; 
   margin:0 auto;
-  border-radius: 13px;
+  border-radius: 24px;
   -webkit-transform: scale(0.95);
       -ms-transform: scale(0.95);
           transform: scale(0.95);
@@ -1235,14 +1235,14 @@ button.main__block_button {
 div.main {
   padding:var(--m-3);
   background-color: var(--header-color);
-  border-radius: 13px;
+  border-radius: 24px;
   margin: 16px 0
 }
 div.main__nav {
   margin: var(--n-2);
   padding:var(--n-1);
   background-color: var(--nav_block);
-  border-radius: 13px
+  border-radius: 19px;
 }
 .blur_background {
   -webkit-backdrop-filter: blur(10px);

@@ -72,7 +72,7 @@ const InfoAcc = () => {
             <div className="main__nav">
                 <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc" prefetch={false}><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo" prefetch={false}><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size" prefetch={false}><a>{translate['step3'][lang]} /</a></Link>  {translate['step4'][lang]}</p>
             </div>
-            <div className={style.main__block}>
+            <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} />)}

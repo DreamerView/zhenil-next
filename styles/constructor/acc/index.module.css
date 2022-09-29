@@ -125,12 +125,12 @@ div.main__block {
     padding:var(--m-2);
     margin-bottom:100px;
     background-color: var(--header-color);
-    border-radius: 13px;
+    border-radius: 24px;;
 }
 div.main__block_menu_select_block {
     height: 314px;
     background-color: var(--block-color);
-    border-radius: 13px;
+    border-radius: 24px;;
     cursor: pointer;
     border:1px solid transparent;
 }
@@ -199,7 +199,7 @@ div.main__block_interface_menu {
             align-items: center;
     height: auto;
     border: 1px solid var(--border-color);
-    border-radius: 13px;
+    border-radius: 24px;;
 }
 div.main__block_interface_menu_c {
     text-align: center;
@@ -358,7 +358,7 @@ div.main__block_interface_menu_c_book {
             animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_book:hover {
-    border-radius: 13px;
+    border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_book_block {
@@ -369,7 +369,7 @@ div.main__block_interface_menu_c_book_block {
     margin-bottom:10px;
 }
 div.main__block_interface_menu_c_album:hover {
-    border-radius: 13px;
+    border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_album {
@@ -472,7 +472,7 @@ label.main__block_i_l > input + div.choice_land{
     cursor:pointer;
 }
 label.main__block_i_l > input:checked + div.choice_land{
-    border-radius: 13px;
+    border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 select.main__block_interface_menu_c_select {

@@ -33,7 +33,7 @@ const Acc = () => {
         <div className={`main__nav block_animation`}>
             <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
         </div>
-        <div className={`${style.main__block} block_animation`}>
+        <div className={`main block_animation`}>
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>
             <div className={`${style.main__block_menu_select} p-m`}>

@@ -38,7 +38,7 @@ div.date_block {
 }
 input.date {
     border:1.5px solid var(--input_border);
-    border-radius: 13px;
+    border-radius: 24px;
     font-size:20px;
     width:300px;
     padding:16px 32px;
@@ -57,7 +57,7 @@ div.calendar_block {
     width:100%;
     height:80px;
     background-color: var(--block-color);
-    border-radius: 13px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     margin:0 auto
@@ -83,7 +83,7 @@ div.calendar__day >div {
     align-items: center;
     justify-content: center;
     padding: 8px;
-    border-radius: 13px;
+    border-radius: 24px;
 }
 div.calendar__day> div > h1 {
     font-size: 32px;
@@ -100,7 +100,7 @@ div.calendar__block {
     margin-bottom:16px;
 }
 div.calendar__block_row {
-    border-radius: 13px;
+    border-radius: 24px;
     margin-bottom:32px;
     display:flex;
     flex-direction: column;
@@ -122,6 +122,6 @@ button.button__full {
     cursor: pointer;
     font-size: 16px;
     padding:16px;
-    border-radius: 13px;
+    border-radius: 24px;
     background-color: var(--block-color);
 }
