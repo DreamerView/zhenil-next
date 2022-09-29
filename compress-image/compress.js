@@ -1,7 +1,7 @@
 const sharp = require('sharp');
 const path = require('path');
-const src = '../public/services/convert/';
-const saveTo = '../public/services/';
+const src = '../public/emoji/';
+const saveTo = '../public/emoji-small/';
 const pathInfo = path.resolve(__dirname,src);
 const fs = require('fs');
 
@@ -14,7 +14,7 @@ const fs = require('fs');
 //app icon
 fs.readdir(pathInfo, (err, files) => {
     files.forEach(file => {
-        sharp(path.resolve(__dirname,src+file)).toFormat('webp').webp({ quality: 100 }).resize({width:800,height:800}).toFile(path.resolve(__dirname,saveTo+path.parse(file).name+'.webp'));
+        sharp(path.resolve(__dirname,src+file)).toFormat('webp').webp({ quality: 100 }).resize({width:200,height:200}).toFile(path.resolve(__dirname,saveTo+path.parse(file).name+'.webp'));
     });
 });
 
