@@ -225,6 +225,18 @@ div.module_result_block {
             align-items: center;
     margin: 0 auto;
 }
+div.module_result_block_without_back {
+    width:87.5%;
+    height:70px;
+    border-radius: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+}
 div.module_result_block_pic {
     width:40px;
     height:40px;

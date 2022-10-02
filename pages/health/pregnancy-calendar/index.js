@@ -1,37 +1,38 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import nav_text from "../../../translate/services/all_translate";
 import setTranslateText from '../../../start/translate';
 import style from "../../../styles/health/index.module.css";
+import text from "../../../translate/health/pregnancy-calendar/index_translate";
 
 const PregnancyCalendar = ()=>{
     const lang = setTranslateText();
     const [date,setDate] = useState(0);
-    const [result,setResult] = useState({date:'Ожидаем',month:'результатов',year:''});
+    const [result,setResult] = useState({date:text.waiting[lang],month:'',year:''});
     const [ownWeek,setWeek] = useState('0');
     const [timePregrant,setTimePregnant] = useState('0');
     const [weeks,setWeeks] = useState([{}]);
     const [full,setFull] = useState('not');
-    const getMonthName = (e) => {
+    const getMonthName = useCallback((e) => {
         let MonthNumber;
         switch((e+1)) {
-            case 1: MonthNumber ='января'; break;
-            case 2: MonthNumber ='февраля'; break;
-            case 3: MonthNumber ='марта'; break;
-            case 4: MonthNumber ='апреля'; break;
-            case 5: MonthNumber ='мая'; break;
-            case 6: MonthNumber ='июня'; break;
-            case 7: MonthNumber ='июля'; break;
-            case 8: MonthNumber ='августа'; break;
-            case 9: MonthNumber ='сентября'; break;
-            case 10: MonthNumber ='октября'; break;
-            case 11: MonthNumber ='ноября'; break;
-            case 12: MonthNumber ='декабря'; break;
+            case 1: MonthNumber =text.jan[lang]; break;
+            case 2: MonthNumber =text.feb[lang]; break;
+            case 3: MonthNumber =text.march[lang]; break;
+            case 4: MonthNumber =text.april[lang]; break;
+            case 5: MonthNumber =text.may[lang]; break;
+            case 6: MonthNumber =text.june[lang]; break;
+            case 7: MonthNumber =text.july[lang]; break;
+            case 8: MonthNumber =text.aug[lang]; break;
+            case 9: MonthNumber =text.sep[lang]; break;
+            case 10: MonthNumber =text.oct[lang]; break;
+            case 11: MonthNumber =text.nov[lang]; break;
+            case 12: MonthNumber =text.dec[lang]; break;
         }
         return MonthNumber;
-    };
+    },[lang]);
     useEffect(()=>{
         if(date!==0) {
             let today = Date.now();
@@ -43,25 +44,25 @@ const PregnancyCalendar = ()=>{
             let calendar = new Date(results);
             let solve = parseInt((today-newDate.getTime())/(604800*1000));
             setResult({date:calendar.getDate(),month:getMonthName(calendar.getMonth()),year:calendar.getFullYear()});
-            setWeek(solve<=0?'Неизвестно':solve);
+            setWeek(solve<=0?text.unknown[lang]:solve);
             let week = solve;
 
             switch(true) {
-                case (week>=1 && week<=4): setTimePregnant('1-4 неделя'); break;
-                case (week>=5 && week<=8): setTimePregnant('5-8 неделя'); break;
-                case (week>=9 && week<=12): setTimePregnant('9-12 неделя'); break;
-                case (week>=13 && week<=16): setTimePregnant('13-16 неделя'); break;
-                case (week>=17 && week<=20): setTimePregnant('17-20 неделя'); break;
-                case (week>=21 && week<=24): setTimePregnant('21-24 неделя'); break;
-                case (week>=25 && week<=28): setTimePregnant('25-28 неделя'); break;
-                case (week>=29 && week<=32): setTimePregnant('29-32 неделя'); break;
-                case (week>=33 && week<=36): setTimePregnant('33-36 неделя'); break;
-                case (week>=37 && week<=40): setTimePregnant('37-40 неделя'); break;
-                case (week>=40): setTimePregnant('Больше 40 недель'); break;
-                default: setTimePregnant('Неизвестно'); break;    
+                case (week>=1 && week<=4): setTimePregnant(`1-4 ${text.result2[lang]}`); break;
+                case (week>=5 && week<=8): setTimePregnant(`5-8 ${text.result2[lang]}`); break;
+                case (week>=9 && week<=12): setTimePregnant(`9-12 ${text.result2[lang]}`); break;
+                case (week>=13 && week<=16): setTimePregnant(`13-16 ${text.result2[lang]}`); break;
+                case (week>=17 && week<=20): setTimePregnant(`17-20 ${text.result2[lang]}`); break;
+                case (week>=21 && week<=24): setTimePregnant(`21-24 ${text.result2[lang]}`); break;
+                case (week>=25 && week<=28): setTimePregnant(`25-28 ${text.result2[lang]}`); break;
+                case (week>=29 && week<=32): setTimePregnant(`29-32 ${text.result2[lang]}`); break;
+                case (week>=33 && week<=36): setTimePregnant(`33-36 ${text.result2[lang]}`); break;
+                case (week>=37 && week<=40): setTimePregnant(`37-40 ${text.result2[lang]}`); break;
+                case (week>=40): setTimePregnant(text.week40[lang]); break;
+                default: setTimePregnant(text.unknown[lang]); break;    
             }
         }
-    },[date])
+    },[date,getMonthName,lang])
     useEffect(()=>{
         if(date!==0) {
             const findDays = (num,e) => {
@@ -86,7 +87,7 @@ const PregnancyCalendar = ()=>{
             }
             setWeeks(w);
         }
-    },[date])
+    },[date,getMonthName])
     // useEffect(()=>{
     //     setDate('2021-09-24')
     // },[])
@@ -101,9 +102,9 @@ const PregnancyCalendar = ()=>{
             </div>
             <div className="main">
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
-                <p className={`${style.headers} sub_content`}>Укажите 1-й день последнего периода месячных</p>
+                <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>
-                    <input type="date" placeholder="Введите дату"  onChange={e=>setDate(e.target.value)} className={style.date} required/>
+                    <input type="date" placeholder={text['enter_date'][lang]}  onChange={e=>setDate(e.target.value)} className={style.date} required/>
                 </div>
                 <div className={style.calendar_row}>
                     <div className={style.calendar_block}>
@@ -111,7 +112,7 @@ const PregnancyCalendar = ()=>{
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/breast_feeding.webp"/>
                         </div>
                         <div>
-                            <p>Вероятная дата рождения</p>
+                            <p>{text['result1'][lang]}</p>
                             <h4>{result.date} {result.month} {result.year}</h4>
                         </div>
                     </div>
@@ -120,7 +121,7 @@ const PregnancyCalendar = ()=>{
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/calendar.webp"/>
                         </div>
                         <div>
-                            <p>Неделя</p>
+                            <p>{text['result2'][lang]}</p>
                             <h4>{ownWeek}</h4>
                         </div>
                     </div>
@@ -129,46 +130,46 @@ const PregnancyCalendar = ()=>{
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
                         </div>
                         <div>
-                            <p>Течение беременности</p>
+                            <p>{text['result3'][lang]}</p>
                             <h4>{timePregrant}</h4>
                         </div>
                     </div>
                 </div>
                 {date!==0?
                 <>
-                <h1 className={style.head}>Все дни недели беременности</h1>
+                <h1 className={style.head}>{text['all_week'][lang]}</h1>
                 <div className={full==='not'?style.not__full:''}>
                     {weeks.map(result=> result == [{}]?"":
                         <div className={`${style.calendar__planner}`} key={result.number}>
                             <div className={`${style.calendar__day}`}>
                                 <div className={`${result.alert==='red'?'red_background white_font':''}`}>
                                     <h1>{result.number}</h1>
-                                    <p>неделя</p>
+                                    <p>{text['result2'][lang]}</p>
                                 </div>
                             </div>
                             <div className={style.calendar__block}>
                                 <div className={`${style.calendar__block_row} ${result.alert==='red'?'red_background white_font':'block_background'}`}>
-                                    <p>Дни недели беременности</p>
-                                    <h4>C {result.resultWeekStart} по {result.resultWeekEnd}</h4>
+                                    <p>{text.days_pregnancy[lang]}</p>
+                                    <h4>{text['from'][lang]} {result.resultWeekStart} {text['by'][lang]} {result.resultWeekEnd}</h4>
                                 </div>
                                 {result.alert==='red'?
                                 <div className={`${style.calendar__block_row} blue_background white_font`}>
-                                    <p>Осторожно!!!</p>
-                                    <h4>Срок повышенной вероятности к выкидышу</h4>
+                                    <p>{text['warn'][lang]}</p>
+                                    <h4>{text['warn_text'][lang]}</h4>
                                 </div>
                                 :""
                                 }
                                 {result.number===40?
                                 <div className={`${style.calendar__block_row} green_background white_font`}>
-                                    <p>Поздравляем</p>
-                                    <h4>Проект Okki.kz поздравляет вас с рождением ребенка на свет!</h4>
+                                    <p>{text['congrat'][lang]}</p>
+                                    <h4>{text['congrat_text'][lang]}</h4>
                                 </div>
                                 :""
                                 }
                                 {(result.number>=4 && result.number<=16)?
                                 <div className={`${style.calendar__block_row} orange_background white_font`}>
-                                    <p>Будьте бдительны</p>
-                                    <h4>Период возможного выкидыша</h4>
+                                    <p>{text['care'][lang]}</p>
+                                    <h4>{text['care_text'][lang]}</h4>
                                 </div>
                                 :""
                                 }

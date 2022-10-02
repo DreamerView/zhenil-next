@@ -30,10 +30,13 @@ sitemap({
     '/business',
     '/business/margin-markup-calculator',
     "/business/margin-cost-calculator",
-    "/business/markup-prime-calculator"
+    "/business/markup-prime-calculator",
+    "/health/pregnancy-calendar",
+    "/health/ind-of-the-smoking-person",
+    "/health/rh-factor-in-family-planning"
   ],
   pagesConfig: {
-    "/": { changefreq: "daily",lastmod:new Date().toISOString()},
+    "/": { changefreq: "daily"},
     "/constructor": {changefreq: "daily"},
     "/constructor/acc": {changefreq: "daily"},
     "/health": {changefreq: "daily"},
@@ -43,6 +46,9 @@ sitemap({
     "/business": {changefreq: "daily"},
     "/business/margin-markup-calculator": {changefreq: "daily"},
     "/business/margin-cost-calculator": {changefreq: "daily"},
-    "/business/markup-prime-calculator": {changefreq: "daily"}
+    "/business/markup-prime-calculator": {changefreq: "daily"},
+    "/health/pregnancy-calendar": {changefreq: "daily"},
+    "/health/ind-of-the-smoking-person": {changefreq: "daily"},
+    "/health/rh-factor-in-family-planning": {changefreq: "daily"}
   }
 });
