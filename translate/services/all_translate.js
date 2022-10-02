@@ -78,5 +78,10 @@ export default {
         kk:"Темекі шегетін адамның индексі",
         ru:"Индекс курящего человека",
         en:"Index of the smoking person"
+    },
+    rh_factor_in_family_planning: {
+        kk:"Отбасын жоспарлау кезіндегі Rh факторы",
+        ru:"Резус фактор при планировании семьи",
+        en:"Rh factor in family planning"
     }
 }

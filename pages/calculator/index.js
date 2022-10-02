@@ -3,11 +3,12 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import useTranslateText from "../../start/translate";
-import soon from "../../translate/seo_index";
 import text from "../../translate/constructor/acc/index_translate";
-// import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
-// import type_translate from "../../translate/services/type_translate";
+import translate from "../../translate/constructor/acc/navbar_translate";
+import style from "../../styles/constructor/index.module.css";
+import AllService from '../../start/services/all.json';
+import type_translate from "../../translate/services/type_translate";
 
 const BusinessIndex = () => {
     const lang = useTranslateText();
@@ -21,16 +22,31 @@ const BusinessIndex = () => {
             <div className="main__nav block_animation">
                 <p className="nav"><Link prefetch={false} href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["calculator"][lang]}</p>
             </div>
-            <div className="page_not_found">
-                <div className="page_not_found_block">
-                    <div className="page_not_found_block_img">
-                        <Image priority layout="fill" src="/emoji/cowboy_hat_face.webp" alt="not found" />
+            <div className="main block_animation">
+            <h1 className="flex_text">{nav_translate['calculator'][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+            <p className="sub_content">{translate["step0_description"][lang]}</p>
+            <div className={style.main__module_row}>
+                {/*  */}
+                {AllService.filter(e=>{return e.main === 'calculator'}).map((e,index)=>
+                    <Link href={e.location} prefetch={false} key={index+1}>
+                    <a title={nav_translate[e.name][lang]}>
+                    <div className={`${style.main__module_row_block} anim_hover`}>
+                        <div>
+                            <div className={`${style.main__module_row_block_img}`}>
+                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image} placeholder="blur" blurDataURL={e.image}/>
+                            </div>
+                        </div>
+                        <div className={style.main__module_row_block_f}>
+                            <span className="head_1">{nav_translate[e.name][lang]}</span>
+                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                        </div>
                     </div>
-                    <h1 className="page_not_found">{nav_translate['calculator'][lang]}</h1>
-                    <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link prefetch={false} href="/" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
-                </div>
+                    </a>
+                    </Link>
+                    )}
+                {/*  */}
             </div>
+        </div>
       </>
     );
 };

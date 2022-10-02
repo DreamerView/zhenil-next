@@ -1,18 +1,26 @@
+.head {
+    text-align: center;
+    margin:32px 0 8px 0;
+}
+.headers {
+    text-align: center
+}
 div.comparitive__block {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top:32px;
 }
 div.comparitive__block_row {
-    width:250px;
-    height:250px;
+    width:300px;
+    height:300px;
     border-radius:24px;
     background-color: var(--block-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 16px 64px;
+    margin:32px 0 16px 0;
 }
 div.comparitive__block_row_image {
     width:120px;
@@ -42,3 +50,28 @@ select.comparitive__block_row_select {
     color:hsl(0, 0%, 100%);
     font-weight:normal;
 } */
+/*  */
+div.compare_row {
+    display: grid;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap:16px;
+    margin:48px 0;
+}
+div.compare_block {
+    width:100%;
+    height:80px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    margin:0 auto
+}
+div.compare_block_emoji {
+    width:48px;
+    height:48px;
+    position: relative;
+    margin: 0 16px;
+    background-color: var(--block-color);
+    border-radius: 24px;
+}

@@ -334,28 +334,34 @@ p.nav > a {
   background-color: var(--sub_content)
 }
 .brand_background {
-  background-color: var(--brand_back)
+  background-color: var(--brand_back);
+  color: hsl(0, 0%, 100%)
 }
 .green_background {
-  background-color: var(--green_back)
+  background-color: var(--green_back);
+  color: hsl(0, 0%, 100%)
 }
 .block_background {
-  background-color: var(--block-color)
+  background-color: var(--block-color);
 }
 .blue_background {
-  background-color: var(--blue_back)
+  background-color: var(--blue_back);
+  color: hsl(0, 0%, 100%)
 }
 .red_background {
-  background-color: var(--red_back)
+  background-color: var(--red_back);
+  color: hsl(0, 0%, 100%)
 }
 .purple_background {
-  background-color: var(--purple_back)
+  background-color: var(--purple_back);
+  color: hsl(0, 0%, 100%)
 }
 .orange_background {
-  background-color: var(--orange_back)
+  background-color: var(--orange_back);
+  color: hsl(0, 0%, 100%)
 }
 .green_font{
-  color: var(--green_back)
+  color: var(--green_back);
 }
 .blue_font {
   color: var(--blue_back)

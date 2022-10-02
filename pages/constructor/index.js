@@ -8,6 +8,7 @@ import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
 import type_translate from "../../translate/services/type_translate";
 import seo from "../../translate/constructor/index_seo";
+import AllService from '../../start/services/all.json';
 
 const ConstructorIndex = () => {
     const lang = useTranslateText();
@@ -38,21 +39,23 @@ const ConstructorIndex = () => {
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
-                <Link href="/constructor/acc" prefetch={false}>
-                <a title={nav_translate['acc_const'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['acc_const'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/badge.webp" placeholder="blur" blurDataURL="/services/badge.webp"/>
+                {AllService.filter(e=>{return e.category === 'constructor'}).map((e,index)=>
+                    <Link href={e.location} prefetch={false} key={index+1}>
+                    <a title={nav_translate[e.name][lang]}>
+                    <div className={`${style.main__module_row_block} anim_hover`}>
+                        <div>
+                            <div className={`${style.main__module_row_block_img}`}>
+                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image} placeholder="blur" blurDataURL={e.image}/>
+                            </div>
+                        </div>
+                        <div className={style.main__module_row_block_f}>
+                            <span className="head_1">{nav_translate[e.name][lang]}</span>
+                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                         </div>
                     </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['acc_const'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
+                    </a>
+                    </Link>
+                    )}
                 {/*  */}
             </div>
         </div>

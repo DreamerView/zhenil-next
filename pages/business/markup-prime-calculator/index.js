@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 import useTranslateText from '../../../start/translate';
 import translate from "../../../translate/business/margin-markup-calculator/index_translate";
-import text from "../../../translate/finance/deposit/index_translate";
 import style from "../../../styles/calculator/index.module.css";
 import nav_translate from "../../../translate/services/all_translate";
 import { useEffect, useState } from 'react';

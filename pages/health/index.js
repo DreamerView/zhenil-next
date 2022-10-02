@@ -4,11 +4,11 @@ import Head from "next/head";
 import Link from "next/link";
 import useTranslateText from "../../start/translate";
 import translate from "../../translate/constructor/acc/navbar_translate";
-import text from "../../translate/constructor/acc/index_translate";
 import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
 import type_translate from "../../translate/services/type_translate";
 import seo from "../../translate/health/index_seo";
+import AllService from '../../start/services/all.json';
 
 const HealthIndex = () => {
     const lang = useTranslateText();
@@ -38,67 +38,25 @@ const HealthIndex = () => {
             <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
+
                 {/*  */}
-                <Link href="/health/bmi-calculator" prefetch={false}>
-                <a title={nav_translate['bmi_calc'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['bmi_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/bmi.webp" placeholder="blur" blurDataURL="/services/bmi.webp"/>
+                {AllService.filter(e=>{return e.category === 'health'}).map((e,index)=>
+                    <Link href={e.location} prefetch={false} key={index+1}>
+                    <a title={nav_translate[e.name][lang]}>
+                    <div className={`${style.main__module_row_block} anim_hover`}>
+                        <div>
+                            <div className={`${style.main__module_row_block_img}`}>
+                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image} placeholder="blur" blurDataURL={e.image}/>
+                            </div>
+                        </div>
+                        <div className={style.main__module_row_block_f}>
+                            <span className="head_1">{nav_translate[e.name][lang]}</span>
+                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                         </div>
                     </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['bmi_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
-                <Link href="/health/ideal-weight" prefetch={false}>
-                <a title={nav_translate['ideal_weight_calc'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['ideal_weight_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/ideal-weight.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
-                        </div>
-                    </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['ideal_weight_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
-                <Link href="/health/pregnancy-calendar" prefetch={false}>
-                <a title={nav_translate['pregnancy_calendar'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['pregnancy_calendar'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/pregnancy-calendar.webp" placeholder="blur" blurDataURL="/services/ideal-weight.webp"/>
-                        </div>
-                    </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['pregnancy_calendar'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
-                <Link href="/health/index-of-the-smoking-person" prefetch={false}>
-                <a title={nav_translate['index_of_the_smoking_person'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['index_of_the_smoking_person'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/index-of-the-smoking-person.webp" placeholder="blur" blurDataURL="/services/index-of-the-smoking-person.webp"/>
-                        </div>
-                    </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['index_of_the_smoking_person'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
+                    </a>
+                    </Link>
+                    )}
                 {/*  */}
             </div>
         </div>

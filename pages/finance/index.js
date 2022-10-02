@@ -4,11 +4,11 @@ import Head from "next/head";
 import Link from "next/link";
 import useTranslateText from "../../start/translate";
 import translate from "../../translate/constructor/acc/navbar_translate";
-import text from "../../translate/constructor/acc/index_translate";
 import style from "../../styles/constructor/index.module.css";
 import nav_translate from "../../translate/services/all_translate";
 import type_translate from "../../translate/services/type_translate";
 import seo from "../../translate/finance/index_seo";
+import AllService from '../../start/services/all.json';
 
 const FinanceIndex = () => {
     const lang = useTranslateText();
@@ -39,21 +39,23 @@ const FinanceIndex = () => {
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
-                <Link href="/finance/deposit" prefetch={false}>
-                <a title={nav_translate['deposit_calc'][lang]}>
-                <div className={`${style.main__module_row_block} anim_hover`}>
-                    <div>
-                        <div className={`${style.main__module_row_block_img}`}>
-                            <Image title={nav_translate['deposit_calc'][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src="/services/deposit.webp" placeholder="blur" blurDataURL="/services/deposit.webp"/>
+                {AllService.filter(e=>{return e.category === 'finance'}).map((e,index)=>
+                    <Link href={e.location} prefetch={false} key={index+1}>
+                    <a title={nav_translate[e.name][lang]}>
+                    <div className={`${style.main__module_row_block} anim_hover`}>
+                        <div>
+                            <div className={`${style.main__module_row_block_img}`}>
+                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image} placeholder="blur" blurDataURL={e.image}/>
+                            </div>
+                        </div>
+                        <div className={style.main__module_row_block_f}>
+                            <span className="head_1">{nav_translate[e.name][lang]}</span>
+                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                         </div>
                     </div>
-                    <div className={style.main__module_row_block_f}>
-                        <span className="head_1">{nav_translate['deposit_calc'][lang]}</span>
-                        <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                    </div>
-                </div>
-                </a>
-                </Link>
+                    </a>
+                    </Link>
+                    )}
                 {/*  */}
             </div>
         </div>

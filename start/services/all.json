@@ -14,7 +14,7 @@
         "image":"/icons/calculate.svg",
         "image_background":"red_background",
         "key":"калькулятор,calculator,есептегіш",
-        "location":"/calc",
+        "location":"/calculator",
         "type":"category"
     },
     {
@@ -27,12 +27,48 @@
         "type":"category"
     },
     {
-        "title":"Бизнес",
+        "title":"Образование",
         "name":"education",
         "image":"/icons/education.svg",
         "image_background":"purple_background",
         "key":"білім,образование,education",
-        "location":"/edu",
+        "location":"/education",
+        "type":"category"
+    },
+    {
+        "title":"Здоровье",
+        "name":"health",
+        "image":"/icons/health.svg",
+        "image_background":"red_background",
+        "key":"денсаулық,здоровье,health",
+        "location":"/health",
+        "type":"category"
+    },
+    {
+        "title":"Финансы",
+        "name":"finance",
+        "image":"/icons/finance.svg",
+        "image_background":"green_background",
+        "key":"қаржы,финансы,finance",
+        "location":"/finance",
+        "type":"category"
+    },
+    {
+        "title":"Технологии",
+        "name":"tech",
+        "image":"/icons/tech.svg",
+        "image_background":"brand_background",
+        "key":"технологиялар,технологии,technology",
+        "location":"/technology",
+        "type":"category"
+    },
+    {
+        "title":"Другие",
+        "name":"others",
+        "image":"/icons/other.svg",
+        "image_background":"orange_background",
+        "key":"басқа,другие,others",
+        "location":"/others",
         "type":"category"
     },
     {
@@ -42,7 +78,8 @@
         "image_background":"purple_background",
         "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
         "location":"/constructor/acc",
-        "type":"services"
+        "type":"services",
+        "category":"constructor"
     },
     {
         "title":"ИМТ калькулятор",
@@ -51,7 +88,9 @@
         "image_background":"purple_background",
         "key":"дси есептегіш,имт калькулятор (взрослый),bmi calculator (Adult)",
         "location":"/health/bmi-calculator",
-        "type":"services"
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
     },
     {
         "title":"Калькулятор идеального веса",
@@ -60,7 +99,9 @@
         "image_background":"purple_background",
         "key":"мінсіз салмақ есептегіші,калькулятор идеального веса,ideal weight calculator",
         "location":"/health/ideal-weight",
-        "type":"services"
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
     },
     {
         "title":"Депозитный калькулятор",
@@ -69,7 +110,9 @@
         "image_background":"purple_background",
         "key":"депозиттік есептегіш,депозитный калькулятор,deposit calculator",
         "location":"/finance/deposit",
-        "type":"services"
+        "type":"services",
+        "main":"calculator",
+        "category":"finance"
     },
     {
         "title":"Калькулятор расчета маржи и наценки",
@@ -78,7 +121,9 @@
         "image_background":"purple_background",
         "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
         "location":"/business/margin-markup-calculator",
-        "type":"services"
+        "type":"services",
+        "main":"calculator",
+        "category":"business"
     },
     {
         "title":"Календарь беременности",
@@ -87,7 +132,8 @@
         "image_background":"purple_background",
         "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
         "location":"/health/pregnancy-calendar",
-        "type":"services"
+        "type":"services",
+        "category":"health"
     },
     {
         "title":"Индекс курящего человека",
@@ -96,6 +142,18 @@
         "image_background":"purple_background",
         "key":"темекі шегетін адамның индексі,индекс курящего человека,index of the smoking person",
         "location":"/health/index-of-the-smoking-person",
-        "type":"services"
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
+    },
+    {
+        "title":"Резус фактор при планировании семьи",
+        "name":"rh_factor_in_family_planning",
+        "image":"/services/rh-factor-in-family-planning.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/health/rh-factor-in-family-planning",
+        "type":"services",
+        "category":"health"
     }
 ]
