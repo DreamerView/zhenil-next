@@ -8,12 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "sitemap": "node ./sitemap/sitemap.js",
-    "compress": "node ./compress-image/compress.js",
-    "database": "node ./database/index.js"
+    "compress": "node ./compress-image/compress.js"
   },
   "dependencies": {
-    "express": "^4.18.1",
-    "knex": "^2.3.0",
     "next": "12.1.6",
     "next-redux-wrapper": "^7.0.5",
     "nextjs-sitemap-generator": "^1.3.1",
@@ -23,12 +20,10 @@
     "react-redux": "^8.0.2",
     "react-responsive": "^9.0.0",
     "redux": "^4.2.0",
-    "sharp": "^0.30.7",
-    "sqlite3": "^5.1.1"
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6",
-    "nodemon": "^2.0.20"
+    "eslint-config-next": "12.1.6"
   }
 }

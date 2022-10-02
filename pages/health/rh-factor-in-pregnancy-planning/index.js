@@ -33,7 +33,7 @@ const RhFactorInPregnancyPlanning = () => {
             case manRh==='IV'&&womanRh==='III':setResult('66% вероятность конфликта');break;
             case manRh==='IV'&&womanRh==='IV':setResult('нет');break;
         }
-    })
+    },[manRh,womanRh,manSymbol,womanSymbol])
     return(
         <>
             <div className="main">
