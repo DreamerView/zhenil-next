@@ -3,10 +3,12 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import useTranslateText from "../start/translate";
 import seo from "../translate/seo_index";
+import AllService from '../start/services/all.json';
 const IndexMenu = dynamic(()=>import('./index_menu'));
 const IndexContent = dynamic(()=>import('./index_content'));
 
-const Home = () => {
+
+const Home = ({locales}) => {
   const locale = useTranslateText();
   return(
     <>
@@ -27,8 +29,8 @@ const Home = () => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      <IndexMenu lang={locale}/>
-      <IndexContent lang={locale}/>
+      <IndexMenu lang={locale} service={AllService}/>
+      <IndexContent lang={locale} service={AllService}/>
     </>
   )
 };

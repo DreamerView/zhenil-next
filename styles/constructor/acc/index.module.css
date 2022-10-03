@@ -1,3 +1,10 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 100 version
+*/
+
 @media screen and (min-width:1900px) {
     div.main__block_menu_select {
         grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -113,6 +120,8 @@ div.main__block_menu_select {
     display: grid;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
 }
 div.main__block_menu_select_block {
@@ -125,12 +134,16 @@ div.main__block {
     padding:var(--m-2);
     margin-bottom:100px;
     background-color: var(--header-color);
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
 }
 div.main__block_menu_select_block {
     height: 314px;
     background-color: var(--block-color);
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
     cursor: pointer;
     border:1px solid transparent;
 }
@@ -155,16 +168,24 @@ div.main__block_menu_select_block {
 div.main__block_menu_select_block_icon {
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
+               -moz-box-align: center;
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
     width:46px;
     height:46px;
-    border-radius: 100%;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
 }
 div.main__block_menu_select_block_i {
     width:30px;
@@ -179,7 +200,9 @@ div.main__block_menu_select_main {
     margin-top:30px;
 }
 button.main__block_menu_select_main_button {
-    border-radius: 21px;
+    -webkit-border-radius: 21px;
+       -moz-border-radius: 21px;
+            border-radius: 21px;
     font-size:14px;
     font-weight: 700;
     width: 124px;
@@ -196,10 +219,14 @@ p.main__block_menu_select_main_p {
 div.main__block_interface_menu {
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
+               -moz-box-align: center;
             align-items: center;
     height: auto;
     border: 1px solid var(--border-color);
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
 }
 div.main__block_interface_menu_c {
     text-align: center;
@@ -210,9 +237,13 @@ div.main__block_interface_menu_c_logo {
     margin-bottom: var(--p);
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
 }
 div.main__block_interface_menu_c_end {
@@ -221,7 +252,9 @@ div.main__block_interface_menu_c_end {
 img.main__block_interface_menu_logo_img {
     width: 135px;
     height: 135px;
-    border-radius: 100%;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
     -o-object-fit: cover;
        object-fit: cover;
 }
@@ -253,17 +286,25 @@ input.main__block_interface_menu_logo_icon_img_hide {
 div.main__block_interface_menu_background {
     width: 100px;
     height: 100px;
-    border-radius: 100%;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
     background-color: var(--green_back);
     margin:0 auto 40px auto;
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
+               -moz-box-align: center;
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
 }
 img.main__block_interface_menu_logo_icon_img_back {
@@ -275,7 +316,9 @@ a.main__block_interface_btn_back {
     display: block;
     width: auto;
     height: auto;
-    border-radius: 30px;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
     font-weight: bold;
     font-size: 17px;
     color: white;
@@ -287,7 +330,9 @@ a.main__block_interface_btn_back_red {
     padding:16px 27px;
     width: auto;
     height: auto;
-    border-radius: 30px;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
     border: 1px solid var(--red_back);
     font-weight: bold;
     font-size: 16px;
@@ -299,7 +344,9 @@ button.main__block_interface_btn_forward {
     width: auto;
     height: auto;
     background: var(--green_back);
-    border-radius: 30px;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
     font-weight: bold;
     font-size: 17px;
     color: white;
@@ -312,98 +359,156 @@ a.main__block_interface_btn_forward {
     width: auto;
     height: auto;
     background: var(--green_back);
-    border-radius: 30px;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
     font-weight: bold;
     font-size: 17px;
     color: white;
     cursor: pointer;
     text-decoration: none;
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_book {
     height:200px;
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
+            -webkit-flex-direction: column;
+               -moz-box-orient: vertical;
+               -moz-box-direction: normal;
             flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
+               -moz-box-align: center;
             align-items: center;
     cursor: pointer;
     border:1.5px solid transparent;
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_book:hover {
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_book_block {
     width: 85px;
     height: 130px;
-    border-radius: 9px;
+    -webkit-border-radius: 9px;
+       -moz-border-radius: 9px;
+            border-radius: 9px;
     background: var(--block-color);
     margin-bottom:10px;
 }
 div.main__block_interface_menu_c_album:hover {
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 div.main__block_interface_menu_c_album {
     height:200px;
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
+            -webkit-flex-direction: column;
+               -moz-box-orient: vertical;
+               -moz-box-direction: normal;
             flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
+               -moz-box-align: center;
             align-items: center;
     cursor: pointer;
     border:1.5px solid transparent;
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_album_block {
     width: 130px;
     height: 85px;
-    border-radius: 9px;
+    -webkit-border-radius: 9px;
+       -moz-border-radius: 9px;
+            border-radius: 9px;
     background: var(--block-color);
     margin-bottom:23px;
 }
@@ -415,19 +520,31 @@ span.main__block_interface_menu_cmain__block_interface_menu_c_book_block_text {
 div.main__block_interface_menu_c_s {
     margin-bottom: 20px;
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
 }
 span.main__block_interface_menu_c_s_t {
     -webkit-box-ordinal-group:2;
         -ms-flex-order:1;
+            -webkit-order:1;
+               -moz-box-ordinal-group:2;
             order:1;
     font-weight: normal;
     font-size: 16px;
@@ -437,10 +554,14 @@ span.main__block_interface_menu_c_s_t {
 input.main__block_interface_menu_c_s_i {
     -webkit-box-ordinal-group:3;
         -ms-flex-order:2;
+            -webkit-order:2;
+               -moz-box-ordinal-group:3;
             order:2;
     width: 287px;
     height: 45px;
-    border-radius: 22.5px;
+    -webkit-border-radius: 22.5px;
+       -moz-border-radius: 22.5px;
+            border-radius: 22.5px;
     text-align: center;
     font-size:16px;
     color:var(--font-color);
@@ -458,6 +579,9 @@ input.main__block_interface_menu_c_s_i:-ms-input-placeholder {
 input.main__block_interface_menu_c_s_i::-ms-input-placeholder {
     color:var(--input_back_text)
 }
+input.main__block_interface_menu_c_s_i:-moz-placeholder {
+    color:var(--input_back_text)
+}
 input.main__block_interface_menu_c_s_i::placeholder {
     color:var(--input_back_text)
 }
@@ -472,40 +596,59 @@ label.main__block_i_l > input + div.choice_land{
     cursor:pointer;
 }
 label.main__block_i_l > input:checked + div.choice_land{
-    border-radius: 24px;;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;;
     border:1.5px solid var(--green_back);
 }
 select.main__block_interface_menu_c_select {
     max-width: 421px;
     width: 100%;
     height: 45px;
-    border-radius: 22.5px;
+    -webkit-border-radius: 22.5px;
+       -moz-border-radius: 22.5px;
+            border-radius: 22.5px;
     margin-bottom: 20px;
     font-size:16px;
     color:var(--font-color);
     background: url(/img/top.svg) no-repeat 95% 50% var(--block-color);
     cursor: pointer;
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
 }
 div.main__block_interface_menu_c_info_block {
     margin-bottom:var(--p);
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
 }
 div.main__block_interface_menu_c_info_block_avatar {
     text-align: center;
@@ -514,9 +657,13 @@ div.main__block_interface_menu_c_info_block_avatar {
 div.main__block_menu_close {
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
+            -webkit-justify-content: flex-end;
+               -moz-box-pack: end;
             justify-content: flex-end;
     padding: 0 var(--m-p) 0;
 }
@@ -528,30 +675,46 @@ div.main__block_menu_close > svg {
 div.main__block_fixed_confirm {
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
             justify-content: center;
     width:100%;
     height:80px;
     background-color: var(--nav_block_blur);
     position: fixed;
     bottom:0;
-    border-radius: 20px 20px 0 0;
+    -webkit-border-radius: 20px 20px 0 0;
+       -moz-border-radius: 20px 20px 0 0;
+            border-radius: 20px 20px 0 0;
     -webkit-backdrop-filter: blur(10px);
     -moz-backdrop-filter: blur(10px);
     -o-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     -webkit-animation-name: basic_animation;
-            animation-name: basic_animation;
+            -moz-animation-name: basic_animation;
+              -o-animation-name: basic_animation;
+         animation-name: basic_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+            -moz-animation-duration: 0.4s;
+              -o-animation-duration: 0.4s;
+         animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+              -o-animation-iteration-count: 1;
+         animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+            -moz-animation-timing-function: ease-in-out;
+              -o-animation-timing-function: ease-in-out;
+         animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+              -o-animation-fill-mode: forwards;
+         animation-fill-mode: forwards;
     z-index:1;
 }
 div.main__block_interface_add_block {

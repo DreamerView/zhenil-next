@@ -38,6 +38,10 @@ const Header = () => {
           send({type:"actionMain",set:true});
       }
     },[res]);
+    useEffect(()=>{
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Security-Policy', "script-src 'self' 'unsafe-eval';object-src 'none';base-uri 'none';connect-src 'self';img-src 'self';manifest-src 'self';");
+    },[])
     return(
       <>
         <Head>
@@ -48,6 +52,7 @@ const Header = () => {
           <meta name="author" content={process.env.authorName}/>
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
+          <meta httpEquiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';object-src 'none';base-uri 'none';connect-src 'self';img-src 'self';manifest-src 'self';" />
         </Head>
         <header>
           <div className="header__logo">

@@ -45,7 +45,7 @@ const BusinessIndex = () => {
                     <div className={`${style.main__module_row_block} anim_hover`}>
                         <div>
                             <div className={`${style.main__module_row_block_img}`}>
-                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image} placeholder="blur" blurDataURL={e.image}/>
+                                <Image title={nav_translate[e.name][lang]} priority alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image}/>
                             </div>
                         </div>
                         <div className={style.main__module_row_block_f}>

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import Header from './header';
+const Header = dynamic(()=>import('./header'));
 const ConfirmMode = dynamic(()=>import('./confirm'));
 const FullFrame = dynamic(()=>import('./fullframe'));
 const ResizeImage = dynamic(()=>import('./cropimage'));

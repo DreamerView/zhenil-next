@@ -3,7 +3,7 @@ import Link from "next/link";
 import translate from "../translate/index_translate";
 import nav_translate from "../translate/services/all_translate";
 import styles from '../styles/index_main.module.css';
-import AllService from '../start/services/all.json';
+import service from '../start/services/all.json';
 
 const IndexMenu = (s) => {
     const locale = s.lang;
@@ -11,7 +11,7 @@ const IndexMenu = (s) => {
         <>
             <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
             <div className={styles.main__menu_nav_blocks}>
-            {AllService.filter(e=>{return e.type === 'category'}).map((e,index)=>
+            {service.filter(e=>{return e.type === 'category'}).map((e,index)=>
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
                 <Link href={e.location} prefetch={false}>
                 <a title={nav_translate[e.name][locale]} itemID={e.location} itemType="https://schema.org/Thing" itemScope itemProp="item">

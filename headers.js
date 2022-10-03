@@ -9,7 +9,7 @@ module.exports = [
     },
     {
         key: 'Server',
-        value: 'Apache' // phony server value
+        value: 'Nginx' // phony server value
     },
     {
         key: 'X-Content-Type-Options',
@@ -38,5 +38,5 @@ module.exports = [
     {
         key: 'Feature-Policy',
         value: "camera 'none'; fullscreen 'self'; microphone 'self'"
-    }
+    },
 ];
