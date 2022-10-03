@@ -2,11 +2,9 @@
 /** @type {import('next').NextConfig} */
 const headers = require('./headers');
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
 
-module.exports = withBundleAnalyzer({
+
+module.exports = {
   env: {
     authorName:"Okki.kz",
     siteName: 'okki.kz',
@@ -25,4 +23,4 @@ module.exports = withBundleAnalyzer({
       },
     ];
   }
-});
+};
