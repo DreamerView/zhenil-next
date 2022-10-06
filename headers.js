@@ -41,6 +41,6 @@ module.exports = [
     },
     {
         key:"Content-Security-Policy",
-        value:"script-src 'self'; connect-src 'self';base-uri 'self';form-action 'self';object-src 'self';"
+        value:"script-src 'self'  'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o='; connect-src 'self';base-uri 'self';form-action 'self';object-src 'self';"
     }
 ];
