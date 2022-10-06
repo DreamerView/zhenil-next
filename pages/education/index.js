@@ -2,13 +2,11 @@
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import useTranslateText from "../../start/translate";
-import translate from "../../translate/constructor/acc/navbar_translate";
-import soon from "../../translate/seo_index";
-import text from "../../translate/constructor/acc/index_translate";
-// import style from "../../styles/constructor/index.module.css";
-import nav_translate from "../../translate/services/all_translate";
-// import type_translate from "../../translate/services/type_translate";
+import useTranslateText from "/start/translate";
+import soon from "/translate/seo_index";
+import text from "/translate/constructor/acc/index_translate";
+import nav_translate from "/translate/services/all_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const BusinessIndex = () => {
     const lang = useTranslateText();
@@ -19,9 +17,7 @@ const BusinessIndex = () => {
                 <meta property="og:title" content={`${nav_translate['education'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
-            <div className="main__nav block_animation">
-                <p className="nav"><Link prefetch={false} href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["education"][lang]}</p>
-            </div>
+            <NavbarApp to={[{key:'education',path:'last'}]}/>
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <div className="page_not_found_block_img">

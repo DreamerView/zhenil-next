@@ -1,8 +1,8 @@
 /*jshint esversion: 6 */
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import useTranslateText from "../start/translate";
-import ux from "../translate/ux/action";
+import useTranslateText from "/start/translate";
+import ux from "/translate/ux/action";
 
 const FullFrame = (result) => {
     const lang = useTranslateText();

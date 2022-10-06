@@ -2,11 +2,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '../../../start/translate';
-import translate from "../../../translate/business/margin-markup-calculator/index_translate";
-import style from "../../../styles/calculator/index.module.css";
-import nav_translate from "../../../translate/services/all_translate";
+import useTranslateText from '/start/translate';
+import translate from "/translate/business/margin-markup-calculator/index_translate";
+import style from "/styles/calculator/index.module.css";
+import nav_translate from "/translate/services/all_translate";
 import { useEffect, useState } from 'react';
+import NavbarApp from '/pages/navbar_app/nav';
 
 const MarginMarkup = () => {
     const [n1,setN1] = useState('');
@@ -41,24 +42,22 @@ const MarginMarkup = () => {
                 <title>{nav_translate['margin_markup_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['margin_markup_calc'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link prefetch={false} href="/"><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link prefetch={false} href="/business">{nav_translate['business'][lang]}</Link>  /  {translate['margin_markup_calc'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:"business",location:"/business"},{text:nav_translate['margin_markup_calc'][lang],path:'last'}]}/>
+            <div className="main block_animation">
                 <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
                 <p className="sub_content">{translate['content'][lang]}</p>
                 <div className={style.nav__block_menu}>
-                    <Link prefetch={false} href="./margin-markup-calculator">
+                    <Link prefetch={false} href="/business/margin-markup-calculator">
                         <a className='red_background white_font'>
                             {translate['margin_markup_calc'][lang]}
                         </a>
                     </Link>
-                    <Link prefetch={false} href="./margin-cost-calculator">
+                    <Link prefetch={false} href="/business/margin-cost-calculator">
                         <a className='block_background'>
                             {translate['margin_cost_calc'][lang]}
                         </a>
                     </Link>
-                    <Link prefetch={false} href="./markup-prime-calculator">
+                    <Link prefetch={false} href="/business/markup-prime-calculator">
                         <a className='block_background'>
                             {translate['markup_prime_calc'][lang]}
                         </a>

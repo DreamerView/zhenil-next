@@ -1,13 +1,13 @@
 /*jshint esversion: 6 */
-import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
-import useTranslateText from '../../../start/translate';
-import translate from "../../../translate/health/bmi_calculator/index_translate";
-import style from "../../../styles/calculator/index.module.css";
+import useTranslateText from '/start/translate';
+import translate from "/translate/health/bmi_calculator/index_translate";
+import style from "/styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
-import setBmiApi from './api';
-import nav_translate from "../../../translate/services/all_translate";
+import setBmiApi from '/pages/health/bmi-calculator/api';
+import NavbarApp from '/pages/navbar_app/nav';
+
 
 const BMICalc = () => {
     const lang = useTranslateText();
@@ -39,13 +39,12 @@ const BMICalc = () => {
                 <title>{translate['step1'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_translate['health'][lang]}</Link>  /  {nav_translate['bmi_calc'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:'health',location:'/health',path:''},{key:'bmi_calc',path:'last'}]}/>
+            <div className="main block_animation">
                 <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p>
                 {/* New added */}
+                {}
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
@@ -91,7 +90,7 @@ const BMICalc = () => {
                     </div>
                     {/*  */}
                     <div className={style.main__calculator}>
-                        <h2>{nav_translate['calculator'][lang]}</h2>
+                        <h2>{translate['calc'][lang]}</h2>
                         <div className={style.module_result_row}>
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{translate['male_choose'][lang]}</p>

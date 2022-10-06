@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import { useState,useEffect,useRef } from 'react';
-import SearchResult from "./../services/all.json";
+import SearchResult from "/start/services/all.json";
 
 const Search = (res) => {
     const focus = useRef();

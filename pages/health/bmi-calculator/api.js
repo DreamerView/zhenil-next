@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
-import setTranslateText from '../../../start/translate';
-import translate from "../../../translate/health/bmi_calculator/index_translate";
+import setTranslateText from '/start/translate';
+import translate from "/translate/health/bmi_calculator/index_translate";
 
 const setBmiApi = (male,age,m,h) => {
         const lang = setTranslateText();

@@ -2,8 +2,8 @@
 import { useState,useCallback } from 'react';
 import Cropper from 'react-easy-crop';
 import { useDispatch } from 'react-redux';
-import useTranslateText from './translate';
-import ux from '../translate/ux/action';
+import useTranslateText from '/start/translate';
+import ux from '/translate/ux/action';
 
 const ResizeImage = (result) => {
     const lang = useTranslateText();

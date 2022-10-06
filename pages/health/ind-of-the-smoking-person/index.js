@@ -1,12 +1,12 @@
 /*jshint esversion: 6 */
-import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
 import {useState,useEffect} from 'react';
-import useTranslateText from '../../../start/translate';
-import style from "../../../styles/calculator/index.module.css";
-import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/health/index-of-the-smoking-person/index_translate";
+import useTranslateText from '/start/translate';
+import style from "/styles/calculator/index.module.css";
+import nav_translate from "/translate/services/all_translate";
+import text from "/translate/health/index-of-the-smoking-person/index_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const Deposit = () => {
     const lang = useTranslateText();
@@ -33,10 +33,8 @@ const Deposit = () => {
                 <title>{nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_translate['health'][lang]}</Link>  /  {nav_translate['index_of_the_smoking_person'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:'health',location:'/health'},{key:'index_of_the_smoking_person',path:'last'}]}/>
+            <div className="main block_animation">
                 <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {/* New added */}

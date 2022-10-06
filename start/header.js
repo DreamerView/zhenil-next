@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import translate from "../translate/header_translate";
-import text from "../translate/seo_index";
+import translate from "/translate/header_translate";
+import text from "/translate/seo_index";
 import { useDispatch } from 'react-redux';
-const Search = dynamic(()=>import('./header_action/search'));
-const SearchBlocks = dynamic(()=>import('./header_action/searchblocks'));
+import Search from "/start/header_action/search";
+const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Header = () => {
+    const production = process.env.NODE_ENV === 'production';
     const send = useDispatch();
     const router = useRouter();
     const {locale} = router;
@@ -38,10 +39,6 @@ const Header = () => {
           send({type:"actionMain",set:true});
       }
     },[res]);
-    useEffect(()=>{
-      const myHeaders = new Headers();
-      myHeaders.append('Content-Security-Policy', "script-src 'self' 'unsafe-eval';object-src 'none';base-uri 'none';connect-src 'self';img-src 'self';manifest-src 'self';");
-    },[])
     return(
       <>
         <Head>
@@ -52,7 +49,12 @@ const Header = () => {
           <meta name="author" content={process.env.authorName}/>
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
-          <meta httpEquiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';object-src 'none';base-uri 'none';connect-src 'self';img-src 'self';manifest-src 'self';" />
+          {production?
+          <>
+            <meta httpEquiv="Content-Type-Option" content="nosniff" />
+            <meta httpEquiv="Content-Security-Policy" content="script-src 'self'; connect-src 'self'; img-src 'self';base-uri 'self';form-action 'self';object-src 'self';" />
+          </>
+          :""}
         </Head>
         <header>
           <div className="header__logo">
@@ -89,10 +91,15 @@ const Header = () => {
             :""}
             </>
             {res?"":
-            <div className="header__search_menu anim_hover">
-              <div className="header__search_menu_pic1" id="search_menu"></div>
-              <span className="header__search_menu_text">{translate['menu'][locale]}</span>
-            </div>}
+            <Link href="/" prefetch={false}>
+              <a title={text['title'][locale]}>
+                <div className="header__search_menu anim_hover">
+                  <div className="header__search_menu_pic1" id="search_menu"></div>
+                  <span className="header__search_menu_text">{translate['menu'][locale]}</span>
+                </div>
+              </a>
+            </Link>
+            }
           </div>
         </header>
       </>

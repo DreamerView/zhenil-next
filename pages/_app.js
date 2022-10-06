@@ -2,14 +2,14 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router from 'next/router';
-import useTranslateText from "../start/translate";
-import translate from "../translate/ux/loading_page";
+import useTranslateText from "/start/translate";
+import translate from "/translate/ux/loading_page";
 import { useEffect,useState } from "react";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import "../styles/globals.css";
-const DocumentResult = dynamic(()=>import("../start/document"));
+import "/styles/globals.css";
+const DocumentResult = dynamic(()=>import("/start/document"));
 
 
 const Preloader = () => {

@@ -2,13 +2,14 @@
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import useTranslateText from "../../start/translate";
-import translate from "../../translate/constructor/acc/navbar_translate";
-import style from "../../styles/constructor/index.module.css";
-import nav_translate from "../../translate/services/all_translate";
-import type_translate from "../../translate/services/type_translate";
-import seo from "../../translate/constructor/index_seo";
-import AllService from '../../start/services/all.json';
+import useTranslateText from "/start/translate";
+import translate from "/translate/constructor/acc/navbar_translate";
+import style from "/styles/constructor/index.module.css";
+import nav_translate from "/translate/services/all_translate";
+import type_translate from "/translate/services/type_translate";
+import seo from "/translate/constructor/index_seo";
+import AllService from '/start/services/all.json';
+import NavbarApp from '/pages/navbar_app/nav';
 
 const ConstructorIndex = () => {
     const lang = useTranslateText();
@@ -31,9 +32,7 @@ const ConstructorIndex = () => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <div className="main__nav block_animation">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>    {nav_translate["constructor"][lang]}</p>
-            </div>
+            <NavbarApp to={[{key:'constructor',path:'last'}]}/>
             <div className="main block_animation">
             <h1 className="flex_text">{translate["step0"][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>

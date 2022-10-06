@@ -1,14 +1,14 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import useTranslateText from "../start/translate";
-import seo from "../translate/seo_index";
-import AllService from '../start/services/all.json';
-const IndexMenu = dynamic(()=>import('./index_menu'));
-const IndexContent = dynamic(()=>import('./index_content'));
+import useTranslateText from "/start/translate";
+import seo from "/translate/seo_index";
+import AllService from '/start/services/all.json';
+const IndexMenu = dynamic(()=>import('/pages/index_menu'));
+const IndexContent = dynamic(()=>import('/pages/index_content'));
 
 
-const Home = ({locales}) => {
+const Home = () => {
   const locale = useTranslateText();
   return(
     <>

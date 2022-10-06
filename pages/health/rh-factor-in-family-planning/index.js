@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import {useState,useEffect} from 'react';
-import style from "../../../styles/health/rh-factor-in-pregnancy-planning/index.module.css";
-import setTranslateText from '../../../start/translate';
-import nav_text from "../../../translate/services/all_translate";
-import text from "../../../translate/health/rh-factor-in-family-planning/index_translate";
+import style from "/styles/health/rh-factor-in-pregnancy-planning/index.module.css";
+import setTranslateText from '/start/translate';
+import nav_text from "/translate/services/all_translate";
+import text from "/translate/health/rh-factor-in-family-planning/index_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const RhFactorInPregnancyPlanning = () => {
     const lang = setTranslateText();
@@ -47,10 +47,8 @@ const RhFactorInPregnancyPlanning = () => {
                 <title>{nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_text['health'][lang]}</Link>  /  {nav_text['rh_factor_in_family_planning'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:'health',location:"/health"},{key:"rh_factor_in_family_planning",path:'last'}]}/>
+            <div className="main block_animation">
                 <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 <div>

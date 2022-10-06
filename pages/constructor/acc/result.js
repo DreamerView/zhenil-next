@@ -1,14 +1,14 @@
 /*jshint esversion: 6 */
-import style from "../../../styles/constructor/acc/index.module.css";
+import style from "/styles/constructor/acc/index.module.css";
 import Head from "next/head";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import useTranslateText from "../../../start/translate";
-import translate from "../../../translate/constructor/acc/navbar_translate";
-import ux from "../../../translate/ux/action";
-import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/constructor/acc/result_translate";
+import useTranslateText from "/start/translate";
+import translate from "/translate/constructor/acc/navbar_translate";
+import ux from "/translate/ux/action";
+import text from "/translate/constructor/acc/result_translate";
+import NavbarApp from "/pages/navbar_app/nav";
 
 
 const ResultAcc = () => {
@@ -19,9 +19,7 @@ const ResultAcc = () => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc" prefetch={false}><a>{nav_translate['acc_const'][lang]} /</a></Link>  <Link href="/constructor/acc/logo" prefetch={false}><a>{translate['step2'][lang]} /</a></Link>  <Link href="/constructor/acc/size" prefetch={false}><a>{translate['step3'][lang]} /</a></Link>  <Link href="/constructor/acc/info" prefetch={false}><a>{translate['step4'][lang]} /</a></Link>  {translate['step5'][lang]}</p>
-            </div>
+            <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],location:'/constructor/acc/size'},{text:translate['step4'][lang],location:'/constructor/acc/info'},{text:translate['step5'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>

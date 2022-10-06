@@ -1,15 +1,15 @@
 /*jshint esversion: 6 */
 /*jshint sub:true*/
-import style from "../../../styles/constructor/acc/index.module.css";
+import style from "/styles/constructor/acc/index.module.css";
 import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from "../../../start/translate";
-import ux from "../../../translate/ux/action";
-import translate from "../../../translate/constructor/acc/navbar_translate";
-import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/constructor/acc/logo_translate";
+import useTranslateText from "/start/translate";
+import ux from "/translate/ux/action";
+import translate from "/translate/constructor/acc/navbar_translate";
+import text from "/translate/constructor/acc/logo_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const LogoAcc = () => {
     const lang = useTranslateText();
@@ -49,9 +49,7 @@ const LogoAcc = () => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a>{nav_translate['constructor'][lang]} /</a></Link>  <Link href="/constructor/acc" prefetch={false}><a>{nav_translate['acc_const'][lang]} /</a></Link>  {translate['step2'][lang]}</p>
-            </div>
+            <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>

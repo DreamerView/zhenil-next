@@ -1,13 +1,13 @@
 /*jshint esversion: 6 */
-import style from "../../../styles/constructor/acc/index.module.css";
+import style from "/styles/constructor/acc/index.module.css";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from "../../../start/translate";
-import ux from "../../../translate/ux/action";
-import nav_translate from "../../../translate/services/all_translate";
-import text from "../../../translate/constructor/acc/index_translate";
-import seo from "../../../translate/constructor/acc/index_seo";
+import useTranslateText from "/start/translate";
+import ux from "/translate/ux/action";
+import text from "/translate/constructor/acc/index_translate";
+import seo from "/translate/constructor/acc/index_seo";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const Acc = () => {
     const lang = useTranslateText();
@@ -30,9 +30,7 @@ const Acc = () => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-        <div className={`main__nav block_animation`}>
-            <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/constructor" prefetch={false}><a title={nav_translate['constructor'][lang]}>{nav_translate['constructor'][lang]} /</a></Link>  {nav_translate["acc_const"][lang]}</p>
-        </div>
+        <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',path:'last'}]}/>
         <div className={`main block_animation`}>
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>

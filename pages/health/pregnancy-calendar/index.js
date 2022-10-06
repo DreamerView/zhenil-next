@@ -1,11 +1,11 @@
 import { useState,useEffect,useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import nav_text from "../../../translate/services/all_translate";
-import setTranslateText from '../../../start/translate';
-import style from "../../../styles/health/index.module.css";
-import text from "../../../translate/health/pregnancy-calendar/index_translate";
+import nav_text from "/translate/services/all_translate";
+import setTranslateText from '/start/translate';
+import style from "/styles/health/index.module.css";
+import text from "/translate/health/pregnancy-calendar/index_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const PregnancyCalendar = ()=>{
     const lang = setTranslateText();
@@ -97,10 +97,8 @@ const PregnancyCalendar = ()=>{
                 <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_text['home'][lang]}  /</b></Link>  <Link href="/health" prefetch={false}>{nav_text['health'][lang]}</Link>  /  {nav_text['pregnancy_calendar'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:'health',location:'/health'},{key:"pregnancy_calendar",path:'last'}]}/>
+            <div className="main block_animation">
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>

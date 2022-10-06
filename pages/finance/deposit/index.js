@@ -1,11 +1,11 @@
 /*jshint esversion: 6 */
-import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '../../../start/translate';
-import text from "../../../translate/finance/deposit/index_translate";
-import style from "../../../styles/calculator/index.module.css";
-import nav_translate from "../../../translate/services/all_translate";
+import useTranslateText from '/start/translate';
+import text from "/translate/finance/deposit/index_translate";
+import style from "/styles/calculator/index.module.css";
+import nav_translate from "/translate/services/all_translate";
+import NavbarApp from '/pages/navbar_app/nav';
 
 const Deposit = () => {
     const lang = useTranslateText();
@@ -15,10 +15,8 @@ const Deposit = () => {
                 <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['deposit_calc'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main__nav">
-                <p className="nav"><Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  <Link href="/finance" prefetch={false}>{nav_translate['finance'][lang]}</Link>  /  {nav_translate['deposit_calc'][lang]}</p>
-            </div>
-            <div className="main">
+            <NavbarApp to={[{key:'finance',location:'/finance'},{key:'deposit_calc',path:'last'}]}/>
+            <div className="main block_animation">
                 <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 {/* New added */}

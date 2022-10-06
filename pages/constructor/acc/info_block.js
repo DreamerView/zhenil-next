@@ -1,13 +1,13 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
 /*jshint sub:true*/
-import style from "../../../styles/constructor/acc/index.module.css";
+import style from "/styles/constructor/acc/index.module.css";
 import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import useTranslateText from '../../../start/translate';
-import text from "../../../translate/constructor/acc/info_block_translate";
+import useTranslateText from '/start/translate';
+import text from "/translate/constructor/acc/info_block_translate";
 
 const InfoBlock = (result) => {
     const lang = useTranslateText();

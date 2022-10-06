@@ -1,8 +1,6 @@
 /*jshint esversion: 8 */
 /** @type {import('next').NextConfig} */
-const headers = require('./headers');
-
-
+const headers = require('/headers');
 
 module.exports = {
   env: {
