@@ -52,7 +52,7 @@ const Header = () => {
           {production?
           <>
             <meta httpEquiv="Content-Type-Option" content="nosniff" />
-            <meta httpEquiv="Content-Security-Policy" content="script-src 'self'; connect-src 'self'; img-src 'self';base-uri 'self';form-action 'self';object-src 'self';" />
+            <meta httpEquiv="Content-Security-Policy" content="script-src 'self'; connect-src 'self';base-uri 'self';form-action 'self';object-src 'self';" />
           </>
           :""}
         </Head>

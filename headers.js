@@ -41,6 +41,6 @@ module.exports = [
     },
     {
         key:"Content-Security-Policy",
-        value:"script-src 'self'; connect-src 'self'; img-src 'self';base-uri 'self';form-action 'self';object-src 'self';"
+        value:"script-src 'self'; connect-src 'self';base-uri 'self';form-action 'self';object-src 'self';"
     }
 ];
