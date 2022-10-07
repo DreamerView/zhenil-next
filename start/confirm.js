@@ -2,6 +2,7 @@
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { memo } from "react";
 
 const ConfirmMode = (result) => {
     const router = useRouter();
@@ -51,4 +52,4 @@ const ConfirmMode = (result) => {
             </>
     );
 };
-export default ConfirmMode;
+export default memo(ConfirmMode);

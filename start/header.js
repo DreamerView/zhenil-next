@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import { useState,useEffect } from 'react';
+import { useState,useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -17,6 +17,7 @@ const Header = () => {
     const router = useRouter();
     const {locale} = router;
     const [search,setSearch] = useState([]);
+    const [list,setList] = useState('')
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
     const SetLanguage = () => {
@@ -24,6 +25,9 @@ const Header = () => {
     };
     const GetResult = (e) => {
       setSearch(e);
+    };
+    const GetList = (e) => {
+      setList(e);
     };
     const RefRes = (s) => {
       setRes(s);
@@ -77,20 +81,7 @@ const Header = () => {
           </div>
           </div>
           <div className="header__search">
-            <>
-            <Search accept={RefRes} text={translate['search'][locale]} change={GetResult}/>
-            {timeOut?
-            <div className='header__search_blocks'>
-              {search.length===0?
-                <p>{translate['search_not'][locale]}</p>:
-              <>
-                <p>{translate['search_found'][locale]}</p>
-                <div>{search.map((v,i)=><SearchBlocks item={v} key={i+1}/>)}</div>
-              </>}
-            </div>
-            :""}
-            </>
-            {res?"":
+          {res?"":
             <Link href="/" prefetch={false}>
               <a title={text['title'][locale]}>
                 <div className="header__search_menu anim_hover">
@@ -100,6 +91,20 @@ const Header = () => {
               </a>
             </Link>
             }
+            <>
+            <Search accept={RefRes} text={translate['search'][locale]} list={list} change={GetResult}/>
+            {timeOut?
+            <div className='header__search_blocks'>
+              {search.length===0?
+                <p>{translate['search_not'][locale]}</p>:
+              <>
+                <p>{translate['search_found'][locale]}</p>
+                <div>{search.map((v,i)=><SearchBlocks item={v} key={i+1} send={GetList}/>)}</div>
+              </>}
+            </div>
+            :""}
+            </>
+            
           </div>
         </header>
       </>

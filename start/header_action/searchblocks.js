@@ -5,14 +5,15 @@ import { useRouter } from "next/router";
 import style from '/styles/search_block.module.css';
 import Image from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 
 const SearchBlocks = (res) => {
     const router = useRouter();
     const {locale} = router;
     return(
         <>
-            <Link href={res.item.location} prefetch={false}><a>
-            <div className={`${style.search__block} basic_animation`}>
+            <Link href={res.item.location} prefetch={false} ><a>
+            <div className={`${style.search__block} basic_animation`} onClick={()=>res.send(translate[res.item.name][locale])}>
                 {res.item.type==='category'?
                 <div>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
@@ -33,4 +34,4 @@ const SearchBlocks = (res) => {
         </>
     )
 };
-export default SearchBlocks;
+export default memo(SearchBlocks);

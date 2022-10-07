@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import useTranslateText from "/start/translate";
 import ux from "/translate/ux/action";
+import { memo } from "react";
 
 const FullFrame = (result) => {
     const lang = useTranslateText();
@@ -20,4 +21,4 @@ const FullFrame = (result) => {
     )
 };
 
-export default FullFrame;
+export default memo(FullFrame);

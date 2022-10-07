@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import { useState,useCallback } from 'react';
+import { useState,useCallback,memo } from 'react';
 import Cropper from 'react-easy-crop';
 import { useDispatch } from 'react-redux';
 import useTranslateText from '/start/translate';
@@ -50,4 +50,4 @@ const ResizeImage = (result) => {
     </div>
     )
 };
-export default ResizeImage;
+export default memo(ResizeImage);

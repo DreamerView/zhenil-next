@@ -1,4 +1,4 @@
-import React from "react";
+import React,{memo} from "react";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import useTranslateText from "/start/translate";
@@ -29,4 +29,4 @@ const NavbarApp = ({to}) => {
     )
 }
 
-export default NavbarApp;
+export default memo(NavbarApp);
