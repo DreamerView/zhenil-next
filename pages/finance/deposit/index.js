@@ -6,7 +6,7 @@ import text from "/translate/finance/deposit/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
-import {useState,useEffect,useCallback} from 'react';
+import {useState,useCallback,useMemo} from 'react';
 
 const Deposit = () => {
     const lang = useTranslateText();
@@ -36,56 +36,56 @@ const Deposit = () => {
         }
         return MonthNumber;
     },[lang]);
-    useEffect(()=>{
-        if(bet!==0 && term!=='not' && sum!==0) {
-            let b;
-            const daysInMonth = (e) => {
-                const date = Date.now();
-                let s=0;
-                for(let i=1;i<=e;i++) {
-                    let c = date+((2629743*1000)*i)
-                    let m = new Date(c).getMonth();
-                    let y = new Date(c).getFullYear();
-                    s+=new Date(y,m+1,0).getDate()
+    useMemo(()=>{
+            if(bet!==0 && term!=='not' && sum!==0) {
+                console.log('Finished')
+                let b;
+                const daysInMonth = (e) => {
+                    const date = Date.now();
+                    let s=0;
+                    for(let i=1;i<=e;i++) {
+                        let c = date+((2629743*1000)*i)
+                        let m = new Date(c).getMonth();
+                        let y = new Date(c).getFullYear();
+                        s+=new Date(y,m+1,0).getDate()
+                    }
+                    return s;
                 }
-                return s;
-            }
-            switch(true) {
-                case term === 1: b=daysInMonth(1);break;
-                case term === 3: b=daysInMonth(3);break;
-                case term === 6: b=daysInMonth(6);break;
-                case term === 9: b=daysInMonth(9);break;
-                case term === 12: b = daysInMonth(12); break;
-                default: b=1;
-            }
-            const NewResult = (e,check) => {
-                let w=[];
-                const date = Date.now();
-                for(let i=1;i<=e;i++) {
-                    let c = date+((2629743*1000)*i)
-                    let m = new Date(c).getMonth();
-                    let y = new Date(c).getFullYear();
-                    let s=getMonthName(m)+" "+new Date(y,m+1,0).getFullYear();
-
-                    let p = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
-                    let o = check===1?Number(sum)+Number(p):Number((Number(every)*Number(i-1))+Number(sum))+Number(p);
-                    w.push({percent:p,own:o,index:s});
+                switch(true) {
+                    case term === 1: b=daysInMonth(1);break;
+                    case term === 3: b=daysInMonth(3);break;
+                    case term === 6: b=daysInMonth(6);break;
+                    case term === 9: b=daysInMonth(9);break;
+                    case term === 12: b = daysInMonth(12); break;
+                    default: b=1;
                 }
-                setResult(w);
-            }
-            if(every===0||every===""||term===1) {
-                setOwn(Number(sum));
-                setPercent(((Number(own)*Number(bet)*Number(Number(b)/365))/100).toFixed(0));
-                NewResult(term,1)
-            }
-            else {
-                setOwn(Number((Number(every)*Number(term-1))+Number(sum)));
-                setPercent((((Number(own))*Number(bet/2)*(Number(b)/365))/100).toFixed(0));
-                NewResult(term,0)
-            }
-            setTotal(Number(percent)+Number(own));
-        }
-    },[bet,term,sum,percent,every,own])
+                const NewResult = (e,check) => {
+                    let w=[];
+                    const date = Date.now();
+                    for(let i=1;i<=e;i++) {
+                        let c = date+((2629743*1000)*i)
+                        let m = new Date(c).getMonth();
+                        let y = new Date(c).getFullYear();
+                        let s=getMonthName(m)+" "+new Date(y,m+1,0).getFullYear();
+                        let p = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
+                        let o = check===1?Number(sum)+Number(p):Number((Number(every)*Number(i-1))+Number(sum))+Number(p);
+                        w.push({percent:p,own:o,index:s});
+                    }
+                    setResult(w);
+                }
+                if(every===0||every===""||term===1) {
+                    setOwn(Number(sum));
+                    setPercent(((Number(own)*Number(bet)*Number(Number(b)/365))/100).toFixed(0));
+                    NewResult(term,1)
+                }
+                else {
+                    setOwn(Number((Number(every)*Number(term-1))+Number(sum)));
+                    setPercent((((Number(own))*Number(bet/2)*(Number(b)/365))/100).toFixed(0));
+                    NewResult(term,0)
+                }
+                setTotal(Number(percent)+Number(own));
+            } 
+    },[bet,term,sum,percent,every,own,getMonthName])
     return(
         <>
             <Head>
@@ -166,7 +166,7 @@ const Deposit = () => {
                                         </div>
                                     </div>
                                     <select onChange={e=>setTerm(Number(e.target.value))} className={`${style.main__calculator_module_select}`}>
-                                        <option value="not">Выберите</option>
+                                        <option value="not">Выберите срок</option>
                                         <option value="1">1 мес.</option>
                                         <option value="3">3 мес.</option>
                                         <option value="6">6 мес.</option>
@@ -208,12 +208,14 @@ const Deposit = () => {
                         </div>
                     </div>
                     {result.map((e,index)=> e == [{}]?"":
-                        index%2===0?
+                    <div key={index+1}>
+                        {index%2===0?
                         <div className={`${style.calc__table_content} block_background`}>
                         <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
                         </div>:<div className={style.calc__table_content}>
                         <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
-                        </div>
+                        </div>}
+                    </div>
                     )}
                 </div></>:""}
             </div>

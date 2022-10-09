@@ -88,9 +88,6 @@ const PregnancyCalendar = ()=>{
             setWeeks(w);
         }
     },[date,getMonthName])
-    // useEffect(()=>{
-    //     setDate('2021-09-24')
-    // },[])
     return(
         <>
             <Head>
@@ -137,8 +134,8 @@ const PregnancyCalendar = ()=>{
                 <>
                 <h1 className={style.head}>{text['all_week'][lang]}</h1>
                 <div className={full==='not'?style.not__full:''}>
-                    {weeks.map(result=> result == [{}]?"":
-                        <div className={`${style.calendar__planner}`} key={result.number}>
+                    {weeks.map((result,index)=> result == [{}]?"":
+                        <div className={`${style.calendar__planner}`} key={index+1}>
                             <div className={`${style.calendar__day}`}>
                                 <div className={`${result.alert==='red'?'red_background white_font':''}`}>
                                     <h1>{result.number}</h1>
@@ -171,9 +168,6 @@ const PregnancyCalendar = ()=>{
                                 </div>
                                 :""
                                 }
-                                {/* <div className={`${style.calendar__block_row} block_background`}>
-
-                                </div> */}
                             </div>
                         </div>
                     )}
