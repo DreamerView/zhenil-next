@@ -86,7 +86,6 @@ const Deposit = () => {
             setTotal(Number(percent)+Number(own));
         }
     },[bet,term,sum,percent,every,own])
-    console.log(result);
     return(
         <>
             <Head>

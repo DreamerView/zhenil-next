@@ -362,13 +362,12 @@ div.calc__table {
     margin-top:32px;
     width:100%;
     border-radius: 32px;
-    border: 1px solid var(--border-color);
 }
 div.calc__table_header {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     height: 80px;
-    margin:16px 16px;
+    margin:16px 0;
 }
 div.calc__table_header>div {
     display: flex;
@@ -382,7 +381,7 @@ div.calc__table_content {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     height: 80px;
-    margin:16px 16px;
+    margin:16px 0;
     border-radius: 24px;
 }
 div.calc__table_content>div {
