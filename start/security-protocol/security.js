@@ -16,7 +16,7 @@ export default function SecurityPro() {
         },
         {
             name:"Content-Security-Policy",
-            content:"script-src 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';"
+            content:"script-src 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';"
         },
         {
             name:"Frame-Options",
