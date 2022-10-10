@@ -10,6 +10,7 @@ import text from "/translate/seo_index";
 import { useDispatch } from 'react-redux';
 import Search from "/start/header_action/search";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
+import SecurityPro from '/start/security-protocol/security';
 
 const Header = () => {
     const production = process.env.NODE_ENV === 'production';
@@ -54,10 +55,9 @@ const Header = () => {
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
           {production?
-          <>
-            <meta httpEquiv="Content-Type-Option" content="nosniff" />
-            <meta httpEquiv="Content-Security-Policy" content="script-src 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self' 'unsafe-inline'; connect-src 'self';base-uri 'self';form-action 'self';object-src 'self';" />
-          </>
+            SecurityPro().map((e,index)=>
+              <meta httpEquiv={e.name} content={e.content} key={index+1} />
+            )
           :""}
         </Head>
         <header>
