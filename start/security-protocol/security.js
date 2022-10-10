@@ -14,17 +14,9 @@ export default function SecurityPro() {
             name:"Content-Type-Option",
             content:"nosniff"
         },
-        // {
-        //     name:"Content-Security-Policy",
-        //     content:"script-src 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';"
-        // },
-        // {
-        //     name:"Content-Security-Policy",
-        //     content:"default-src http:;connect-src http:;font-src http:;frame-src http:;img-src http: data:;media-src http:;object-src http:;script-src 'unsafe-inline' 'unsafe-eval' http:;style-src 'unsafe-inline' http:;"
-        // },
         {
             name:"Content-Security-Policy",
-            content:"default-src https:;connect-src https:;font-src https:;frame-src https:;img-src https: data:;media-src https:;object-src https:;script-src 'unsafe-inline' 'unsafe-eval' https:;style-src 'unsafe-inline' https:;"
+            content:"script-src 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';"
         },
         {
             name:"Frame-Options",
