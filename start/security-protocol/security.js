@@ -16,7 +16,7 @@ export default function SecurityPro() {
         },
         {
             name:"Content-Security-Policy",
-            content:"script-src 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self'  'unsafe-inline'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';"
+            content:"script-src 'report-sample' 'nonce-EDNnf0233nceIOfn39afjuepcxb324ss23239h3sdfa' 'sha256-4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=' 'self'  'unsafe-inline' 'unsafe-eval'; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval'; script-src-attr 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';  style-src 'self' 'report-sample' 'unsafe-inline'; style-src-elem 'self' 'report-sample' 'unsafe-inline'; style-src-attr 'self' 'report-sample' 'unsafe-inline';default-src 'self' 'unsafe-inline';"
         },
         {
             name:"Frame-Options",
