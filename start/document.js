@@ -7,7 +7,6 @@ const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 
-
 const DocumentResult = ({children}) => {
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);

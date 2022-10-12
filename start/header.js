@@ -10,10 +10,11 @@ import text from "/translate/seo_index";
 import { useDispatch } from 'react-redux';
 import Search from "/start/header_action/search";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
-import SecurityPro from '/start/security-protocol/security';
 
 const Header = () => {
-    const production = process.env.NODE_ENV === 'production';
+    useEffect(()=>{
+        sessionStorage.setItem('p-key',process.env.private);
+    },[])
     const send = useDispatch();
     const router = useRouter();
     const {locale} = router;
@@ -54,11 +55,6 @@ const Header = () => {
           <meta name="author" content={process.env.authorName}/>
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
-          {production?
-            SecurityPro().map((e,index)=>
-              <meta httpEquiv={e.name} content={e.content} key={index+1} />
-            )
-          :""}
         </Head>
         <header>
           <div className="header__logo">

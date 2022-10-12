@@ -60,7 +60,7 @@ const DocumentShow = () => {
       </Head>
       <body>
         <Main />
-        <NextScript />
+        <NextScript nonce={process.env.private} />
       </body>
     </Html>
   )

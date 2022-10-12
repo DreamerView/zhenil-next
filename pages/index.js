@@ -6,23 +6,6 @@ import seo from "/translate/seo_index";
 import AllService from '/start/services/all.json';
 const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
-import SecurityPro from "/start/security-protocol/security";
-
-export async function getServerSideProps({ req, res }) {
-  const production = process.env.NODE_ENV === 'production';
-  if(production) {
-  SecurityPro().map(e=>
-    res.setHeader(
-      e.name,
-      e.content
-    )
-  ) }
-
-  return {
-    props: {},
-  }
-
-}
 
 const Home = () => {
   const locale = useTranslateText();
