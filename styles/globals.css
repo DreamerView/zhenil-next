@@ -1266,13 +1266,23 @@ div.main__nav {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
   }
   div#globalLoader > div {
     position: relative;
     background-image: var(--logo);
-    background-size:150px 42.86px;
-    width:150px;
-    height:42.86px;
+    background-size:200px 57.14px;
+    width:200px;
+    height:57.14px;
     z-index: 9000;
   } 
+  div#globalLoader > svg {
+    position: relative;
+    z-index: 9000;
+  }
+  svg.main__preloader_loading {
+    margin-top:32px;
+    width:75px;
+    height:75px
+  }
 }

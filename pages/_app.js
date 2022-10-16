@@ -42,6 +42,11 @@ const Preloader = () => {
 
 const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
+    const [color,setColor] = useState("#4634bc");
+    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
+    useEffect(()=>{
+        return checkMode?setColor("#7d7aff"):setColor("#4634bc");
+    },[checkMode]);
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => {
             setResult(true);
@@ -56,7 +61,7 @@ const MyApp = ({ Component, pageProps }) => {
           if (loader)
             setTimeout(()=>{
                 loader.remove();
-            },[1000]);
+            },[1500]);
         }
       }, []);
     useEffect(() => {
@@ -91,7 +96,9 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
-            <div id="globalLoader"><div/></div>
+            <div id="globalLoader"><div/><svg className="main__preloader_loading" xmlns="http://www.w3.org/2000/svg" width="200" height="200" display="block" preserveAspectRatio="xMidYMid" viewBox="0 0 100 100">
+                    <path fill={color} d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"><animateTransform attributeName="transform" dur="1s" keyTimes="0;1" repeatCount="indefinite" type="rotate" values="0 50 51;360 50 51"/></path>
+                </svg></div>
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}
