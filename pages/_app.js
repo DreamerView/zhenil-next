@@ -42,7 +42,6 @@ const Preloader = () => {
 
 const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
-    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => {
             setResult(true);
@@ -92,7 +91,7 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
-            <div id="globalLoader"><img src={"/img/logo.webp"} alt={'logo'} loading="lazy"/></div>
+            <div id="globalLoader"><div/></div>
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}
