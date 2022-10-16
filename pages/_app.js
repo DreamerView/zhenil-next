@@ -56,7 +56,7 @@ const MyApp = ({ Component, pageProps }) => {
           if (loader)
             setTimeout(()=>{
                     loader.remove();
-            },[500]);
+            },[750]);
         }
       }, []);
     useEffect(() => {
