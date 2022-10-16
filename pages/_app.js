@@ -42,6 +42,7 @@ const Preloader = () => {
 
 const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
+    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => {
             setResult(true);
@@ -50,6 +51,15 @@ const MyApp = ({ Component, pageProps }) => {
             setResult(false);
         });
     },[])
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const loader = document.getElementById('globalLoader');
+          if (loader)
+            setTimeout(()=>{
+                    loader.remove();
+            },[1000]);
+        }
+      }, []);
     useEffect(() => {
         if("serviceWorker" in navigator) {
            navigator.serviceWorker.register("/serviceworker.js").then(
@@ -82,6 +92,7 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
+            <div id="globalLoader"><img src={"/img/logo.webp"} alt={'logo'} loading="lazy"/></div>
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}
