@@ -59,7 +59,7 @@ const secure = production?[
     },
     {
         key:"Content-Security-Policy",
-        value:"script-src 'report-sample' 'self' 'strict-dynamic' 'nonce-"+key_pass+"' 'unsafe-inline'; script-src-elem 'self'  'nonce-"+key_pass+"'; script-src-attr 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';  style-src 'self' 'report-sample'; style-src-elem  'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; default-src 'self';media-src 'self';frame-ancestors 'self';upgrade-insecure-requests;"
+        value:"script-src 'report-sample' 'self' 'strict-dynamic' 'nonce-"+key_pass+"'; script-src-elem 'self'  'nonce-"+key_pass+"'; script-src-attr 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';  style-src 'self' 'report-sample'; style-src-elem  'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; default-src 'self';media-src 'self';frame-ancestors 'self';upgrade-insecure-requests;"
     }
     ]:[{}];
 
