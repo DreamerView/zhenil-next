@@ -54,9 +54,7 @@ const MyApp = ({ Component, pageProps }) => {
         if (typeof window !== 'undefined') {
           const loader = document.getElementById('globalLoader');
           if (loader)
-            setTimeout(()=>{
-                    loader.remove();
-            },[750]);
+            loader.remove();
         }
       }, []);
     useEffect(() => {
