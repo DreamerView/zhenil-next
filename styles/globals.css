@@ -1270,9 +1270,9 @@ div.main__nav {
   div#globalLoader > div {
     position: relative;
     background-image: var(--logo);
-    background-size:200px 57.4px;
-    width:200px;
-    height:57.4px;
+    background-size:150px 42.86px;
+    width:150px;
+    height:42.86px;
     z-index: 9000;
   } 
 }
