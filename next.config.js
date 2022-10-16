@@ -8,6 +8,31 @@ const production = process.env.NODE_ENV === 'production';
 
 const src = 'https://cdnjs.cloudflare.com';
 
+const ContentSecurityPolicy = `
+    script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
+    script-src-elem 'self' 'nonce-${key_pass}'; 
+    script-src-attr 'self';
+    style-src 'self' 'report-sample' 'unsafe-inline'; 
+    style-src-elem  'self'  'unsafe-inline'; 
+    style-src-attr 'self' 'unsafe-inline'; 
+    connect-src 'self';
+    base-uri 'none';
+    form-action 'self';
+    object-src 'none'; 
+    child-src 'none';
+    frame-src 'self';
+    img-src 'self' data: blob:;
+    manifest-src 'self';
+    prefetch-src 'self';
+    worker-src 'self';
+    font-src 'self';  
+    default-src 'self';
+    media-src 'self';
+    frame-ancestors 'self';
+    upgrade-insecure-requests;
+    report-uri https://okki.kz/constructor;
+`;
+
 const secure = production?[
       {
         key: 'X-DNS-Prefetch-Control',
@@ -16,10 +41,6 @@ const secure = production?[
     {
         key: 'Strict-Transport-Security',
         value: 'max-age=63072000; includeSubDomains; preload'
-    },
-    {
-        key: 'Server',
-        value: 'Nginx' // phony server value
     },
     {
         key: 'X-Content-Type-Options',
@@ -59,9 +80,12 @@ const secure = production?[
     },
     {
         key:"Content-Security-Policy",
-        value:"script-src 'report-sample' 'self' 'strict-dynamic' 'nonce-"+key_pass+"'; script-src-elem 'self'  'nonce-"+key_pass+"'; script-src-attr 'self'; connect-src 'self';base-uri 'none';form-action 'self';object-src 'none'; child-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';font-src 'self';  style-src 'self' 'report-sample'; style-src-elem  'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; default-src 'self';media-src 'self';frame-ancestors 'self';upgrade-insecure-requests;"
+        value:ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
     }
-    ]:[{}];
+    ]:[{
+      key: 'Permissions-Policy',
+      value: 'camera=(), microphone=(), geolocation=()'
+  }];
 
 module.exports = {
   poweredByHeader: false,
