@@ -12,7 +12,7 @@ const ContentSecurityPolicy = `
     script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
     script-src-elem 'self' 'nonce-${key_pass}'; 
     script-src-attr 'self';
-    style-src 'self' 'report-sample' 'unsafe-inline'; 
+    style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
     connect-src 'self';
@@ -56,7 +56,7 @@ const secure = production?[
     },
     {
         key: 'Referrer-Policy',
-        value: 'origin-when-cross-origin'
+        value: 'strict-origin-when-cross-origin'
     },
     {
         key: 'Permissions-Policy',
