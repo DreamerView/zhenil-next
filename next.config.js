@@ -8,6 +8,8 @@ const production = process.env.NODE_ENV === 'production';
 
 const src = 'https://cdnjs.cloudflare.com';
 
+let build_id;
+
 const ContentSecurityPolicy = `
     script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
     script-src-elem 'self' 'nonce-${key_pass}'; 
@@ -107,5 +109,19 @@ module.exports = {
         headers: secure
       },
     ];
-  }
+  },
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|png|webp|ico)',
+        locale: false,
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, must-revalidate',
+          }
+        ],
+      },
+    ]
+  },
 };
