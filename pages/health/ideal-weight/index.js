@@ -59,7 +59,7 @@ const IdealWeight = () => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['h_selected'][lang]}</p>
-                                    <h2>{n1text}</h2>
+                                    <h3>{n1text}</h3>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>

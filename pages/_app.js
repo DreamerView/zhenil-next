@@ -76,15 +76,15 @@ const MyApp = ({ Component, pageProps }) => {
     //             console.log("Service Worker registration failed: ", err);
     //           }
     //         ):"";
-    //         production?
-    //         navigator.serviceWorker.register("/cache-sw.js").then(
-    //             function (registration) {
-    //               console.log("Cache installed: ", registration.scope);
-    //             },
-    //             function (err) {
-    //               console.log("Service Worker registration failed: ", err);
-    //             }
-    //           ):"";
+    //         // production?
+    //         // navigator.serviceWorker.register("/cache-sw.js").then(
+    //         //     function (registration) {
+    //         //       console.log("Cache installed: ", registration.scope);
+    //         //     },
+    //         //     function (err) {
+    //         //       console.log("Service Worker registration failed: ", err);
+    //         //     }
+    //         //   ):"";
     //     }
     // }, [production])
     const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
@@ -107,9 +107,7 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
-            <div id="globalLoader"><div/><svg className="main__preloader_loading" xmlns="http://www.w3.org/2000/svg" width="200" height="200" display="block" preserveAspectRatio="xMidYMid" viewBox="0 0 100 100">
-                    <path fill={color} d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"><animateTransform attributeName="transform" dur="1s" keyTimes="0;1" repeatCount="indefinite" type="rotate" values="0 50 51;360 50 51"/></path>
-                </svg></div>
+            <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>Welcome to Okki.kz!</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}

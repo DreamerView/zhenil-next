@@ -65,7 +65,7 @@ const BMICalc = () => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['age'][lang]}</p>
-                                    <h2>{show.age}</h2>
+                                    <h3>{show.age}</h3>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
