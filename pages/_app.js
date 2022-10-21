@@ -41,6 +41,7 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps }) => {
+    const production = process.env.NODE_ENV === 'production';
     const [result,setResult] = useState(false);
     const [color,setColor] = useState("#4634bc");
     const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
@@ -66,6 +67,7 @@ const MyApp = ({ Component, pageProps }) => {
       }, []);
     useEffect(() => {
         if("serviceWorker" in navigator) {
+            production?
            navigator.serviceWorker.register("/serviceworker.js").then(
               function (registration) {
                 console.log("Service Worker registration successful with scope: ", registration.scope);
@@ -73,9 +75,18 @@ const MyApp = ({ Component, pageProps }) => {
               function (err) {
                 console.log("Service Worker registration failed: ", err);
               }
-            );
+            ):"";
+            production?
+            navigator.serviceWorker.register("/cache-sw.js").then(
+                function (registration) {
+                  console.log("Cache installed: ", registration.scope);
+                },
+                function (err) {
+                  console.log("Service Worker registration failed: ", err);
+                }
+              ):"";
         }
-    }, [])
+    }, [production])
     const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
 
 
