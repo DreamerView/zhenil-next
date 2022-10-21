@@ -65,28 +65,28 @@ const MyApp = ({ Component, pageProps }) => {
             },[1500]);
         }
       }, []);
-    useEffect(() => {
-        if("serviceWorker" in navigator) {
-            production?
-           navigator.serviceWorker.register("/serviceworker.js").then(
-              function (registration) {
-                console.log("Service Worker registration successful with scope: ", registration.scope);
-              },
-              function (err) {
-                console.log("Service Worker registration failed: ", err);
-              }
-            ):"";
-            production?
-            navigator.serviceWorker.register("/cache-sw.js").then(
-                function (registration) {
-                  console.log("Cache installed: ", registration.scope);
-                },
-                function (err) {
-                  console.log("Service Worker registration failed: ", err);
-                }
-              ):"";
-        }
-    }, [production])
+    // useEffect(() => {
+    //     if("serviceWorker" in navigator) {
+    //         production?
+    //        navigator.serviceWorker.register("/serviceworker.js").then(
+    //           function (registration) {
+    //             console.log("Service Worker registration successful with scope: ", registration.scope);
+    //           },
+    //           function (err) {
+    //             console.log("Service Worker registration failed: ", err);
+    //           }
+    //         ):"";
+    //         production?
+    //         navigator.serviceWorker.register("/cache-sw.js").then(
+    //             function (registration) {
+    //               console.log("Cache installed: ", registration.scope);
+    //             },
+    //             function (err) {
+    //               console.log("Service Worker registration failed: ", err);
+    //             }
+    //           ):"";
+    //     }
+    // }, [production])
     const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
 
 

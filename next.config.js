@@ -9,6 +9,10 @@ const production = process.env.NODE_ENV === 'production';
 const src = 'https://cdnjs.cloudflare.com';
 
 let build_id;
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development'
+})
 
 const ContentSecurityPolicy = `
     script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
@@ -89,7 +93,7 @@ const secure = production?[
       value: 'camera=(), microphone=(), geolocation=()'
   }];
 
-module.exports = {
+module.exports = withPWA({
   poweredByHeader: false,
   env: {
     authorName:"Okki.kz",
@@ -110,18 +114,18 @@ module.exports = {
       },
     ];
   },
-  async headers() {
-    return [
-      {
-        source: '/:all*(svg|jpg|png|webp|ico)',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=604800, must-revalidate',
-          }
-        ],
-      },
-    ]
-  },
-};
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/:all*(svg|jpg|png|webp|ico)',
+  //       locale: false,
+  //       headers: [
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'public, max-age=604800, must-revalidate',
+  //         }
+  //       ],
+  //     },
+  //   ]
+  // },
+});
