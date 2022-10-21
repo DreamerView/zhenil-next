@@ -1400,3 +1400,6 @@ div.main__nav {
     }
   }
 }
+div.header_preloader > p {
+  display: none;
+}
