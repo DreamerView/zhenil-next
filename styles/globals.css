@@ -1400,6 +1400,8 @@ div.main__nav {
     }
   }
 }
-div.header_preloader > p {
-  display: none;
+@media all and (display-mode: standalone) {
+  div.header_preloader > p {
+    display: none;
+  }
 }
