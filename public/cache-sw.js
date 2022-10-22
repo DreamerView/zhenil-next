@@ -5,9 +5,14 @@ const cacheList = [
     "/android-chrome-192x192.png"
 ]
 
-self.addEventListener('install', async ()=>{
-    const cache = await caches.open(cacheName)
-    await cache.addAll(cacheList)
+self.addEventListener('install', e=>{
+    e.waitUntil(
+        (async () => {
+          const cache = await caches.open(cacheName);
+          await cache.addAll(cacheList);
+        })()
+      );
+    self.skipWaiting();
 });
 self.addEventListener('activate',async ()=>{
     const cacheNames = await caches.keys()
@@ -19,12 +24,24 @@ self.addEventListener('fetch',e=>{
     const {request} = e
     
     const url = new URL(request.url)
-    if(url === location) {
-        e.respondWith(cacheAll(request))
-    } else {
-        if(request.destination !== 'script') e.respondWith(dynamicCacheAll(request))
+    // if(url === location) {
+    //     e.respondWith(cacheAll(request))
+    // } else {
+    //     if(request.destination !== 'script') e.respondWith(dynamicCacheAll(request))
+    // }
+    // if(request.destination !== 'script') console.log(request);
+    if(request.destination !== 'script' && request.destination !== 'document') {
+        // caches.open(dynamicCache).then((cache)=>{
+        //     cache.add(url)
+        // })
+        e.waitUntil(
+            (async () => {
+              const cache = await caches.open(dynamicCache);
+              await cache.add(url);
+            })()
+          );
+        self.skipWaiting();
     }
-    console.log(e)
 });
 
 async function cacheAll (req) {
