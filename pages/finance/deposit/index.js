@@ -76,7 +76,7 @@ const Deposit = () => {
                         let m = new Date(c).getMonth();
                         let y = new Date(c).getFullYear();
                         let s=getMonthName(m)+" "+new Date(y,m+1,0).getFullYear();
-                        let r = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i,true))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
+                        let r = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i,true))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i,true))/365))/100).toFixed(0);
                         let p = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
                         let o = check===1?Number(sum)+Number(p):Number((Number(every)*Number(i-1))+Number(sum))+Number(p);
                         w.push({percent:p,own:o,index:s,result:r});
@@ -221,9 +221,9 @@ const Deposit = () => {
                     <div key={index+1}>
                         {index%2===0?
                         <div className={`${style.calc__table_content} block_background`}>
-                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸ <span className='green_font smaller'> (+ {e.result} ₸)</span></h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
+                        <div><h4>{e.index}</h4></div><div><h4>{e.result} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
                         </div>:<div className={style.calc__table_content}>
-                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸ <span className='green_font smaller'> (+ {e.result} ₸)</span></h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
+                        <div><h4>{e.index}</h4></div><div><h4>{e.result} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
                         </div>}
                     </div>
                     )}
