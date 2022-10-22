@@ -10,10 +10,10 @@ import {useState,useCallback,useMemo} from 'react';
 
 const Deposit = () => {
     const lang = useTranslateText();
-    const [bet,setBet] = useState(0);
-    const [sum,setSum] = useState(0);
+    const [bet,setBet] = useState('');
+    const [sum,setSum] = useState('');
     const [term,setTerm] = useState('not');
-    const [every,setEvery] = useState(0);
+    const [every,setEvery] = useState('');
     const [percent,setPercent] = useState(0);
     const [own,setOwn] = useState(0);
     const [total,setTotal] = useState(0);
@@ -37,17 +37,26 @@ const Deposit = () => {
         return MonthNumber;
     },[lang]);
     useMemo(()=>{
-            if(bet!==0 && term!=='not' && sum!==0) {
-                console.log('Finished')
+            if(bet!=='' && term!=='not' && sum!=='') {
                 let b;
-                const daysInMonth = (e) => {
+                const daysInMonth = (e,check) => {
                     const date = Date.now();
                     let s=0;
-                    for(let i=1;i<=e;i++) {
-                        let c = date+((2629743*1000)*i)
-                        let m = new Date(c).getMonth();
-                        let y = new Date(c).getFullYear();
-                        s+=new Date(y,m+1,0).getDate()
+                    if(check) {
+                        for(let i=1;i<=e;i++) {
+                            let c = date+((2629743*1000)*i)
+                            let m = new Date(c).getMonth();
+                            let y = new Date(c).getFullYear();
+                            s=new Date(y,m+1,0).getDate()
+                        }
+                    }
+                    else {
+                        for(let i=1;i<=e;i++) {
+                            let c = date+((2629743*1000)*i)
+                            let m = new Date(c).getMonth();
+                            let y = new Date(c).getFullYear();
+                            s+=new Date(y,m+1,0).getDate()
+                        }
                     }
                     return s;
                 }
@@ -67,13 +76,14 @@ const Deposit = () => {
                         let m = new Date(c).getMonth();
                         let y = new Date(c).getFullYear();
                         let s=getMonthName(m)+" "+new Date(y,m+1,0).getFullYear();
+                        let r = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i,true))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
                         let p = check===1?((Number(own)*Number(bet)*Number(Number(daysInMonth(i))/365))/100).toFixed(0):(((Number(own))*Number(bet/2)*(Number(daysInMonth(i))/365))/100).toFixed(0);
                         let o = check===1?Number(sum)+Number(p):Number((Number(every)*Number(i-1))+Number(sum))+Number(p);
-                        w.push({percent:p,own:o,index:s});
+                        w.push({percent:p,own:o,index:s,result:r});
                     }
                     setResult(w);
                 }
-                if(every===0||every===""||term===1) {
+                if(every===''||every===""||term===1) {
                     setOwn(Number(sum));
                     setPercent(((Number(own)*Number(bet)*Number(Number(b)/365))/100).toFixed(0));
                     NewResult(term,1)
@@ -107,7 +117,7 @@ const Deposit = () => {
                                     <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
                                 </div>
                                 <div>
-                                    <p className={style.module_result_block_desc}>За {term} месяцев я накоплю</p>
+                                    <p className={style.module_result_block_desc}>За {term==='not'?'':term} месяцев я накоплю</p>
                                     <h3>{total}</h3>
                                 </div>
                             </div>
@@ -143,7 +153,7 @@ const Deposit = () => {
                                             <Image priority src={"/emoji-small/bar_chart.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*"  placeholder="Годовая эффективная ставка (%)" className={`${style.main__calculator_module_input}`} onChange={e=>setBet(e.target.value)}/>
+                                    <input type="tel" pattern="[0-9]*"  placeholder="Годовая эффективная ставка (%)" className={`${style.main__calculator_module_input}`} onChange={(e)=>{setBet((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={bet}/>
                                 </div>
                             </div>
                             <div className={style.main__calculator_m}>
@@ -154,7 +164,7 @@ const Deposit = () => {
                                             <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" pattern="[0-9]*"  placeholder="Сумма депозита" className={`${style.main__calculator_module_input}`} onChange={e=>setSum(e.target.value)}/>
+                                    <input type="tel" pattern="[0-9]*"  placeholder="Сумма депозита" className={`${style.main__calculator_module_input}`} onChange={(e)=>{setSum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={sum} />
                                 </div>
                             </div>
                             <div className={style.main__calculator_m}>
@@ -183,7 +193,7 @@ const Deposit = () => {
                                             <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input type="tel" onChange={e=>setEvery(e.target.value)} pattern="[0-9]*"  placeholder="Ежемесячное пополнение" className={`${style.main__calculator_module_input}`}/>
+                                    <input type="tel" onChange={(e)=>{setEvery((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={every} pattern="[0-9]*"  placeholder="Ежемесячное пополнение" className={`${style.main__calculator_module_input}`}/>
                                 </div>
                             </div>
                         </div>
@@ -211,9 +221,9 @@ const Deposit = () => {
                     <div key={index+1}>
                         {index%2===0?
                         <div className={`${style.calc__table_content} block_background`}>
-                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
+                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸ <span className='green_font smaller'> (+ {e.result} ₸)</span></h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
                         </div>:<div className={style.calc__table_content}>
-                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸</h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
+                        <div><h4>{e.index}</h4></div><div><h4>{e.percent} ₸ <span className='green_font smaller'> (+ {e.result} ₸)</span></h4></div><div><h4 className='green_font'>{e.own} ₸</h4></div>
                         </div>}
                     </div>
                     )}

@@ -81,7 +81,7 @@ p.small {
   font-size: 14px;
   line-height: 20px
 }
-p.smaller {
+.smaller {
   font-size: 13px;
   line-height: 18px
 }
