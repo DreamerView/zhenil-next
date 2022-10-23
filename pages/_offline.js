@@ -1,7 +1,7 @@
 const OfflinePage = () =>{
     return(
         <>
-        <h1>You are offline</h1>
+        <h1>You are offline!</h1>
         </>
     )
 }
