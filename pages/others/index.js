@@ -22,7 +22,7 @@ const BusinessIndex = () => {
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <div className="page_not_found_block_img">
-                        <Image priority layout="fill" src="/emoji/cowboy_hat_face.webp" alt="not found" />
+                        <Image layout="fill" src="/emoji/cowboy_hat_face.webp" alt="not found" />
                     </div>
                     <h1 className="page_not_found">{nav_translate['others'][lang]}</h1>
                     <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>

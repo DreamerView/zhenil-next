@@ -17,7 +17,7 @@ const NotFound = () => {
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <div className="page_not_found_block_pic">
-                        <Image priority layout='fill' src="/img/404.webp" alt="not found" />
+                        <Image layout='fill' src="/img/404.webp" alt="not found" />
                     </div>
                     <h1 className="page_not_found">{translate['name'][locale]}</h1>
                     <p className="page_not_found">{translate['content'][locale]}</p>

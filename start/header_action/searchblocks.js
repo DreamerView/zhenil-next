@@ -22,7 +22,7 @@ const SearchBlocks = (res) => {
                     </div>
                 </div></div>:
                     <div><div className={`${style.search__block_image_s}`}>
-                        <Image priority layout="fill" className={`${style.search__block_image_i}`} src={res.item.image}/>
+                        <Image layout="fill" className={`${style.search__block_image_i}`} src={res.item.image}/>
                     </div></div>
                 }
                 <div className={style.search__block_content}>
