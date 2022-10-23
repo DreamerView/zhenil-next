@@ -15,6 +15,8 @@ const DocumentShow = () => {
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7d7aff"/>
                 <meta name="msapplication-TileColor" content="#ffffff"/>
                 <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+                <meta name="ah-verification" content="3c09cf5c49c8" />
+                
                 {/*  */}
                 <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
@@ -56,6 +58,7 @@ const DocumentShow = () => {
                   <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/splash_screens/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_portrait.webp"/>
                   <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.webp"/>
                   <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/splash_screens/4__iPhone_SE__iPod_touch_5th_generation_and_later_portrait.webp"/>
+                  
                 <style>`} }></style>
       </Head>
       <body>

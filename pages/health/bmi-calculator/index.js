@@ -7,6 +7,8 @@ import style from "/styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import NavbarApp from '/pages/navbar_app/nav';
+// import dynamic from 'next/dynamic';
+// const AdsContent = dynamic(()=>import("/start/ads/index"),{ssr:false})
 
 
 const BMICalc = () => {
@@ -33,6 +35,14 @@ const BMICalc = () => {
         setAge('');
         i3.current.value='';
     },[male]);
+    // useEffect(() => {
+    //     var ads = document.getElementsByClassName("adsbygoogle").length;
+    //     for (var i = 0; i < ads; i++) {
+    //       try {
+    //         (adsbygoogle = window.adsbygoogle || []).push({});
+    //       } catch (e) { }
+    //     }
+    // }, []);
     return(
         <>
             <Head>
@@ -162,6 +172,8 @@ const BMICalc = () => {
                     </div>
                     {/*  */}
                 </div>
+                {/* <ins className="adsbygoogle" style={{display: 'block'}} data-ad-client="ca-pub-5806636427537486" data-ad-slot={7444555459} data-ad-format="auto" data-full-width-responsive="true" /> */}
+                {/* <AdsContent/> */}
             </div>
         </>
     );

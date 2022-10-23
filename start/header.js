@@ -4,7 +4,6 @@ import { useState,useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import Script from 'next/script';
 import { useRouter } from 'next/router';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
@@ -52,12 +51,6 @@ const Header = () => {
           <meta name="author" content={process.env.authorName}/>
           <meta name="publisher" content={process.env.authorName}/>
           <meta name="robots" content="index,follow"/>
-          <Script id="Adsense-id"
-                  async="true"
-                  nonce={process.env.private}
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5806636427537486"
-                  crossOrigin="anonymous"
-                  />
         </Head>
         <header>
           <div className="header__logo">
