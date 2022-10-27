@@ -44,22 +44,22 @@ const Deposit = () => {
                     let s=0;
                     if(check) {
                         for(let i=1;i<=e;i++) {
-                            let c = date+((2629743*1000)*i)
+                            let c = date+((2629743*1000)*i);
                             let m = new Date(c).getMonth();
                             let y = new Date(c).getFullYear();
-                            s=new Date(y,m+1,0).getDate()
+                            s=new Date(y,m+1,0).getDate();
                         }
                     }
                     else {
                         for(let i=1;i<=e;i++) {
-                            let c = date+((2629743*1000)*i)
+                            let c = date+((2629743*1000)*i);
                             let m = new Date(c).getMonth();
                             let y = new Date(c).getFullYear();
-                            s+=new Date(y,m+1,0).getDate()
+                            s+=new Date(y,m+1,0).getDate();
                         }
                     }
                     return s;
-                }
+                };
                 switch(true) {
                     case term === 1: b=daysInMonth(1);break;
                     case term === 3: b=daysInMonth(3);break;
@@ -72,7 +72,7 @@ const Deposit = () => {
                     let w=[];
                     const date = Date.now();
                     for(let i=1;i<=e;i++) {
-                        let c = date+((2629743*1000)*i)
+                        let c = date+((2629743*1000)*i);
                         let m = new Date(c).getMonth();
                         let y = new Date(c).getFullYear();
                         let s=getMonthName(m)+" "+new Date(y,m+1,0).getFullYear();
@@ -82,20 +82,20 @@ const Deposit = () => {
                         w.push({percent:p,own:o,index:s,result:r});
                     }
                     setResult(w);
-                }
+                };
                 if(every===''||every===""||term===1) {
                     setOwn(Number(sum));
                     setPercent(((Number(own)*Number(bet)*Number(Number(b)/365))/100).toFixed(0));
-                    NewResult(term,1)
+                    NewResult(term,1);
                 }
                 else {
                     setOwn(Number((Number(every)*Number(term-1))+Number(sum)));
                     setPercent((((Number(own))*Number(bet/2)*(Number(b)/365))/100).toFixed(0));
-                    NewResult(term,0)
+                    NewResult(term,0);
                 }
                 setTotal(Number(percent)+Number(own));
             } 
-    },[bet,term,sum,percent,every,own,getMonthName])
+    },[bet,term,sum,percent,every,own,getMonthName]);
     return(
         <>
             <Head>

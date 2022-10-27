@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Head from "next/head";
 import Image from "next/image";
 import {useState,useEffect} from 'react';
@@ -14,7 +15,7 @@ const RhFactorInPregnancyPlanning = () => {
     const [result,setResult] = useState({con:'',child:'',color:'block'});
     const [manSymbol,setManSymbol] = useState('+');
     const [womanSymbol,setWomanSymbol] = useState('+');
-    const [symbol,setSymbol] = useState({child:'',con:'',color:'block'})
+    const [symbol,setSymbol] = useState({child:'',con:'',color:'block'});
     useEffect(()=>{
         switch(true) {
             case manSymbol==='+'&&womanSymbol==='+': setSymbol({child:'+',con:text.no[lang],color:'block'});break;
@@ -40,7 +41,7 @@ const RhFactorInPregnancyPlanning = () => {
             case manRh===`IV`&&womanRh===`III`:setResult({con:'66% '+text.conflict_txt[lang],child:`I ${text.or[lang]} III ${text.or[lang]} IV`,color:'orange'});break;
             case manRh===`IV`&&womanRh===`IV`:setResult({con:text.no[lang],child:`II ${text.or[lang]} III ${text.or[lang]} IV`,color:'block'});break;
         }
-    },[manRh,womanRh,manSymbol,womanSymbol,lang])
+    },[manRh,womanRh,manSymbol,womanSymbol,lang]);
     return(
         <>
             <Head>

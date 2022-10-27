@@ -16,7 +16,7 @@ const SizeAcc = () => {
     const [checked,setChecked] = useState('');
     const [result,setResult] = useState('Choose-origin');
     const [ss,setSS] = useState('Choose-origin');
-    const [ss_ready,setSSReady] = useState('Choose-origin')
+    const [ss_ready,setSSReady] = useState('Choose-origin');
     const [cc,setCC] = useState(false);
     const [orient,setOrient] = useState();
     const [ready,setReady] = useState(false);
@@ -34,8 +34,8 @@ const SizeAcc = () => {
             localStorage.removeItem('get_ss_acc');
             localStorage.removeItem('width_acc');
             localStorage.removeItem('height_acc');
-            setWidth(text['enter_width'][lang]);
-            setHeight(text['enter_height'][lang]);
+            setWidth("");
+            setHeight("");
             setReady(false);
             setSS('Choose-origin');
         }
@@ -82,7 +82,7 @@ const SizeAcc = () => {
                 setOrient('book');
             }
         }
-    },[width,height,result])
+    },[width,height,result]);
     useEffect(()=>{
         if(localStorage.getItem('template_acc')) {
             setResult(localStorage.getItem('template_acc'));
@@ -104,9 +104,9 @@ const SizeAcc = () => {
         }
     },[]);
     useEffect(()=>{
-        (width==='')?"":localStorage.setItem('width_acc',width.replace(/,/g, "."));
-        (height==='')?"":localStorage.setItem('height_acc',height.replace(/,/g, "."));
-    },[width,height])
+        if(width!=='') localStorage.setItem('width_acc',width.replace(/,/g, "."));
+        if(height!=='') localStorage.setItem('height_acc',height.replace(/,/g, "."));
+    },[width,height]);
     return(
     <>
             <Head>

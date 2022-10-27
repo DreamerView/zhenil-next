@@ -14,10 +14,7 @@ const InfoBlock = (result) => {
     const send = useDispatch();
     const getcrop = useSelector(state=>state.getcrop);
     const [logo,setLogo] = useState("/img/man.webp");
-    const [name,setName] = useState(text['type_name'][lang]);
-    const [surname,setSurname] = useState(text['type_surname'][lang]);
-    const [status,setStatus] = useState(text['not_need'][lang]);
-    const [info,setInfo] = useState(result?result.item:'');
+    const [info,setInfo] = useState(result?result.item:{});
     const CheckAvatar = (e) => {
         const i = document.createElement('img');
         i.src = e;
@@ -34,18 +31,9 @@ const InfoBlock = (result) => {
             setLogo(srcEnc);
         };
     };
-    if(getcrop) {if(getcrop.id===result.item.id) CheckAvatar(getcrop.image)};
+    if(getcrop) {if(getcrop.id===result.item.id) CheckAvatar(getcrop.image);}
     useEffect(()=>{
-        let s = info;
-        if(s) {
-            if(s.avatar) setLogo(s.avatar);
-            if(s.name) setName(s.name);
-            if(s.surname) setSurname(s.surname);
-            if(s.status) setStatus(s.status);
-        }
-    },[info]);
-    useEffect(()=>{
-        info !==''&&result.change({info});
+        return info !==''&&result.change({info});
     },[info]); // eslint-disable-line react-hooks/exhaustive-deps
     return(
         <div className={`${style.main__block_interface_menu} c-m ${result.action}`}>
@@ -71,15 +59,15 @@ const InfoBlock = (result) => {
                         </div>
                         <div className={style.main__block_interface_menu_c_info_block_text}>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_name'][lang]} value={info?info.name:''} onChange={(e)=>{setInfo({...info,name:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_name'][lang]} value={info?info.name||'':""} onChange={(e)=>{setInfo({...info,name:e.target.value})}} type="text" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['name'][lang]}</span>
                             </div>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_surname'][lang]} value={info?info.surname:""} onChange={(e)=>{setInfo({...info,surname:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['type_surname'][lang]} value={info?info.surname||"":""} onChange={(e)=>{setInfo({...info,surname:e.target.value})}} type="text" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['surname'][lang]}</span>
                             </div>
                             <div className={`${style.main__block_interface_menu_c_s} flex`}>
-                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['not_need'][lang]} value={info?info.status:""} onChange={(e)=>{setInfo({...info,status:e.target.value})}} type="text" name="" id="" />
+                                <input className={style.main__block_interface_menu_c_s_i} placeholder={text['not_need'][lang]} value={info?info.status||"":""} onChange={(e)=>{setInfo({...info,status:e.target.value})}} type="text" />
                                 <span className={style.main__block_interface_menu_c_s_t}>{text['status'][lang]}</span>
                             </div>
                         </div>

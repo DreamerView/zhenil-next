@@ -23,8 +23,8 @@ const Preloader = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setTimer(true);
-        },[500])
-    },[])
+        },[500]);
+    },[]);
     return(
         <>
             <Head>
@@ -41,13 +41,9 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps }) => {
-    const production = process.env.NODE_ENV === 'production';
+    // const production = process.env.NODE_ENV === 'production';
+    const locale = useTranslateText();
     const [result,setResult] = useState(false);
-    const [color,setColor] = useState("#4634bc");
-    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
-    useEffect(()=>{
-        return checkMode?setColor("#7d7aff"):setColor("#4634bc");
-    },[checkMode]);
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => {
             setResult(true);
@@ -107,7 +103,7 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
-            <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>Welcome to Okki.kz!</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
+            <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}

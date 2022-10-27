@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import { useState,useEffect,useCallback } from "react";
 import Image from "next/image";
 import Head from "next/head";
@@ -62,7 +63,7 @@ const PregnancyCalendar = ()=>{
                 default: setTimePregnant(text.unknown[lang]); break;    
             }
         }
-    },[date,getMonthName,lang])
+    },[date,getMonthName,lang]);
     useEffect(()=>{
         if(date!==0) {
             const findDays = (num,e) => {
@@ -74,20 +75,19 @@ const PregnancyCalendar = ()=>{
                 let weekEndDay = new Date(weekEnd);
                 let resultWeekStart = weekStartDay.getDate()+' '+getMonthName(weekStartDay.getMonth())+' '+weekStartDay.getFullYear();
                 let resultWeekEnd = weekEndDay.getDate()+' '+getMonthName(weekEndDay.getMonth())+' '+weekEndDay.getFullYear();
-                return {number,weekStart,weekEnd,resultWeekStart,resultWeekEnd,alert}
-            }
+                return {number,weekStart,weekEnd,resultWeekStart,resultWeekEnd,alert};
+            };
             var w = [];
             for(let i=0;i<=42;i++) {
                 let myDate = date;
                 myDate = myDate.toString().split("-");
                 let day = new Date( myDate[0], myDate[1]-1, myDate[2]);
                 let days = day.getTime()+(604800*1000*i);
-                let c = new Date(days);
                 w.push(findDays(i,days));
             }
             setWeeks(w);
         }
-    },[date,getMonthName])
+    },[date,getMonthName]);
     return(
         <>
             <Head>

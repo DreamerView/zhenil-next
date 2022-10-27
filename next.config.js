@@ -23,7 +23,7 @@ const ContentSecurityPolicy = `
     style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
-    connect-src 'self';
+    connect-src 'self' https://cdnjs.cloudflare.com;
     base-uri 'none';
     form-action 'self';
     object-src 'none'; 

@@ -8,30 +8,30 @@ import { useRouter } from 'next/router';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
 import { useDispatch } from 'react-redux';
-import Search from "/start/header_action/search";
+const Search =  dynamic(()=>import("/start/header_action/search"),{ssr:false});
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Header = () => {
     useEffect(()=>{
         sessionStorage.setItem('p-key',process.env.private);
-    },[])
+    },[]);
     const send = useDispatch();
     const router = useRouter();
     const {locale} = router;
     const [search,setSearch] = useState([]);
-    const [list,setList] = useState('')
+    const [list,setList] = useState('');
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
     const SetLanguage = () => {
         send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     };
-    const GetResult = (e) => {
+    const GetResult = e => {
       setSearch(e);
     };
-    const GetList = (e) => {
+    const GetList = e => {
       setList(e);
     };
-    const RefRes = (s) => {
+    const RefRes = s => {
       setRes(s);
     };
     useEffect(()=>{

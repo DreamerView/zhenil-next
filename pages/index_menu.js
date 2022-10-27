@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Image from "next/image";
 import Link from "next/link";
 import translate from "/translate/index_translate";
