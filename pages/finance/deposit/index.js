@@ -102,8 +102,8 @@ const Deposit = () => {
                 <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['deposit_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'finance',location:'/finance'},{key:'deposit_calc',path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/finance"}} choice="alone"/>
                 <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 {/* New added */}

@@ -32,8 +32,8 @@ const HealthIndex = () => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp to={[{key:'health',path:'last'}]}/>
             <div className="main block_animation">
+            <NavbarApp to={{href:"/"}} choice="alone"/>
             <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>

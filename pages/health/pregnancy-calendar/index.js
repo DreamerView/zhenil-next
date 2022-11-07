@@ -16,6 +16,19 @@ const PregnancyCalendar = ()=>{
     const [timePregrant,setTimePregnant] = useState('0');
     const [weeks,setWeeks] = useState([{}]);
     const [full,setFull] = useState('not');
+    const [trimest,setTrimerster] = useState(0);
+    const [getDays,setDays] = useState(0);
+    // Начало анимации
+    const [anim,setAnim] = useState(false);
+    useEffect(()=>{
+        let timer;
+        if(anim!==false) timer = setTimeout(()=>setAnim(false),[2000]);
+        return () => clearTimeout(timer);
+    },[anim]);
+    useEffect(()=>{
+        if(date!==0) setAnim('date');
+    },[date]);
+    // Завершение анимации
     const getMonthName = useCallback((e) => {
         let MonthNumber;
         switch((e+1)) {
@@ -62,6 +75,12 @@ const PregnancyCalendar = ()=>{
                 case (week>=40): setTimePregnant(text.week40[lang]); break;
                 default: setTimePregnant(text.unknown[lang]); break;    
             }
+            switch(true) {
+                case(week>=1 && week<=13): setTrimerster(1);break;
+                case(week>=14 && week<=26): setTrimerster(2);break;
+                case(week>=27 && week<=42): setTrimerster(3);break;
+                default: setTrimerster(text.unknown[lang]);
+            }
         }
     },[date,getMonthName,lang]);
     useEffect(()=>{
@@ -75,7 +94,9 @@ const PregnancyCalendar = ()=>{
                 let weekEndDay = new Date(weekEnd);
                 let resultWeekStart = weekStartDay.getDate()+' '+getMonthName(weekStartDay.getMonth())+' '+weekStartDay.getFullYear();
                 let resultWeekEnd = weekEndDay.getDate()+' '+getMonthName(weekEndDay.getMonth())+' '+weekEndDay.getFullYear();
-                return {number,weekStart,weekEnd,resultWeekStart,resultWeekEnd,alert};
+                let daysWeekStart = weekStartDay.getDate()+' '+getMonthName(weekStartDay.getMonth());
+                let daysWeekEnd = weekEndDay.getDate()+' '+getMonthName(weekEndDay.getMonth());
+                return {number,weekStart,weekEnd,resultWeekStart,resultWeekEnd,alert,daysWeekStart,daysWeekEnd};
             };
             var w = [];
             for(let i=0;i<=42;i++) {
@@ -86,6 +107,7 @@ const PregnancyCalendar = ()=>{
                 w.push(findDays(i,days));
             }
             setWeeks(w);
+            setDays(w[40])
         }
     },[date,getMonthName]);
     return(
@@ -94,39 +116,57 @@ const PregnancyCalendar = ()=>{
                 <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'health',location:'/health'},{key:"pregnancy_calendar",path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/health"}} choice="alone"/>
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>
                     <input type="date" placeholder={text['enter_date'][lang]}  onChange={e=>setDate(e.target.value)} className={style.date} required/>
                 </div>
                 <div className={style.calendar_row}>
-                    <div className={style.calendar_block}>
+                    <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/breast_feeding.webp"/>
                         </div>
-                        <div>
+                        <div className={style.calendar_block_l}>
                             <p>{text['result1'][lang]}</p>
                             <h4>{result.date} {result.month} {result.year}</h4>
                         </div>
                     </div>
-                    <div className={style.calendar_block}>
+                    <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
+                        <div className={style.calendar_block_emoji}>
+                            <Image priority layout="fill" alt="emoji" src="/emoji-small/baby.webp"/>
+                        </div>
+                        <div className={style.calendar_block_l}>
+                            <p>{text['result5'][lang]}</p>
+                            <h4>{getDays!==0?" "+getDays.daysWeekStart+" ~ "+getDays.daysWeekEnd:text.unknown[lang]}</h4>
+                        </div>
+                    </div>
+                    <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/calendar.webp"/>
                         </div>
-                        <div>
+                        <div className={style.calendar_block_l}>
                             <p>{text['result2'][lang]}</p>
                             <h4>{ownWeek}</h4>
                         </div>
                     </div>
-                    <div className={style.calendar_block}>
+                    <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
                             <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
                         </div>
-                        <div>
+                        <div className={style.calendar_block_l}>
                             <p>{text['result3'][lang]}</p>
                             <h4>{timePregrant}</h4>
+                        </div>
+                    </div>
+                    <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
+                        <div className={style.calendar_block_emoji}>
+                            <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
+                        </div>
+                        <div className={style.calendar_block_l}>
+                            <p>{text['result4'][lang]}</p>
+                            <h4>{trimest}</h4>
                         </div>
                     </div>
                 </div>

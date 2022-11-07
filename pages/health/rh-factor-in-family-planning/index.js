@@ -48,8 +48,8 @@ const RhFactorInPregnancyPlanning = () => {
                 <title>{nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'health',location:"/health"},{key:"rh_factor_in_family_planning",path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/health"}} choice="alone"/>
                 <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 <div>

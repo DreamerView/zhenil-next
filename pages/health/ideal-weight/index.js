@@ -15,6 +15,24 @@ const IdealWeight = () => {
     const [n1,setN1] = useState('');
     const [n1text,setN1text] = useState('');
     const [result,setResult] = useState(0);
+    // Начало анимации
+    const [anim1,setAnim1] = useState(false);
+    const [anim2,setAnim2] = useState(false);
+    const [anim3,setAnim3] = useState(false);
+    useEffect(()=>{
+        let timer;
+        if(anim1!==false) timer = setTimeout(()=>setAnim1(false),[2000]);
+        if(anim2!==false) timer = setTimeout(()=>setAnim2(false),[2000]);
+        if(anim3!==false) timer = setTimeout(()=>setAnim3(false),[2000]);
+        return () => clearTimeout(timer);
+    },[anim1,anim2,anim3]);
+    useEffect(()=>{
+        if(male!=='other') setAnim1('male');
+        if(n1!=='') setAnim2('n1');
+        if(result!==0) setAnim3('result');
+    },[male,n1,result]);
+    // Завершение анимации
+    
     useEffect(()=>{
         switch(male) {
             case 'male': setMaleText(text.male[lang]);break;
@@ -34,8 +52,8 @@ const IdealWeight = () => {
                 <title>{nav_text['ideal_weight_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['ideal_weight_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'health',location:'/health'},{key:'ideal_weight_calc',path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/health"}} choice="alone"/>
                 <h1>{nav_text['ideal_weight_calc'][lang]}</h1>
                 <p className="sub_content">{text['desc'][lang]}</p>
                 {/* New added */}
@@ -44,29 +62,29 @@ const IdealWeight = () => {
                     <div className={style.main__result}>
                         <h2>{text['results'][lang]}</h2>
                         <div className={style.module_result_row}>
-                            <div className={style.module_result_block}>
+                            <div className={anim1==='male'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['male_selected'][lang]}</p>
                                     <h3>{maleText}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={anim2==='n1'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['h_selected'][lang]}</p>
                                     <h3>{n1text}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={anim3==='result'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_gesturing_ok.webp":"/emoji-small/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result'][lang]}</p>
                                     <h3>{result}</h3>
                                 </div>
@@ -78,14 +96,14 @@ const IdealWeight = () => {
                         <h2>{nav_text['calculator'][lang]}</h2>
                         <div className={style.module_result_row}>
                             <div className={style.main__calculator_m}>
-                                <p className={style.description}></p>
+                                <p className={style.description}>{text['male_selected'][lang]}</p>
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
                                             <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                         </div>
                                     </div>
-                                    <select onChange={(e)=>{setMale(e.target.value)}} className={`${style.main__calculator_module_select}`}>
+                                    <select onChange={(e)=>{setMale(e.target.value);setN1('');}} className={`${style.main__calculator_module_select}`}>
                                         <option value="other">{text['other'][lang]}</option>
                                         <option value="male">{text['male'][lang]}</option>
                                         <option value="female">{text['female'][lang]}</option>

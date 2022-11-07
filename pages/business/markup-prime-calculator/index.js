@@ -43,8 +43,8 @@ const MarginMarkup = () => {
                 <title>{translate['markup_prime_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${translate['markup_prime_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'business',location:'/business'},{text:translate['markup_prime_calc'][lang],path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/business"}} choice="alone"/>
                 <h1>{translate["markup_prime_calc"][lang]}</h1>
                 <p className="sub_content">{translate['content'][lang]}</p>
                 <div className={style.nav__block_menu}>

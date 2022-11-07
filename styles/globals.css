@@ -255,6 +255,7 @@ p.nav > a {
 
 @media (prefers-color-scheme: dark) {
   :root {
+      --back-img:url(../public/img/back-night.svg);
       --top-icon:url(../public/img/top-night.svg);
       --menu-icon:url(../public/img/menu-night.svg);
       --logo:url(../public/img/logo-night.webp);
@@ -290,6 +291,7 @@ p.nav > a {
 }
 @media (prefers-color-scheme: light) {
   :root {
+      --back-img:url(../public/img/back-light.svg);
       --top-icon:url(../public/img/top.svg);
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
@@ -440,7 +442,7 @@ p.nav > a {
   :root {
       --m-1: 30px 64px;
       --m-2: 64px 64px;
-      --m-3: 64px 64px;
+      --m-3: 48px 64px;
       --n-1: 24px 64px;
       --n-2: 16px 12.5px;
       --m-p: 40px 20px;
@@ -1406,6 +1408,30 @@ div.main__nav {
   }
 }
 
+div.main_back {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  cursor: pointer;
+  width:300px;
+}
+
+div.main_back_button {
+  width:40px;
+  height:40px;
+  border-radius: 100%;
+  background-color: var(--block-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:16px;
+}
+div.main_back_button_i {
+  width:20px;
+  height:20px;
+  background-image:var(--back-img);
+  background-size: 20px 20px;
+}
 /* img.ads_responsive {
   width:75%;
 } */

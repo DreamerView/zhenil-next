@@ -11,8 +11,10 @@
     "compress": "node ./compress-image/compress.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "express": "^4.18.2",
     "next": "12.1.6",
     "next-pwa": "^5.6.0",
     "next-redux-wrapper": "^7.0.5",
@@ -24,6 +26,8 @@
     "react-responsive": "^9.0.0",
     "redux": "^4.2.0",
     "sharp": "^0.30.7",
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3",
     "style-loader": "^3.3.1",
     "uuid": "^9.0.0"
   },

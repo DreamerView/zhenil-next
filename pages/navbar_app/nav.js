@@ -2,13 +2,15 @@
 import React,{memo} from "react";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
+import ux from "/translate/ux/action";
 import useTranslateText from "/start/translate";
 
-const NavbarApp = ({to}) => {
+const NavbarApp = ({to,choice}) => {
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
     return(
-        
+        <>
+        {choice!=='alone'?
         <div className="main__nav block_animation">
             <p className="nav">
             <Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  
@@ -26,7 +28,18 @@ const NavbarApp = ({to}) => {
                 )
             :''}
             </p>
-        </div>
+        </div>:<Link href={to.href} prefetch={false}>
+                <a>
+                <div className='main_back anim_hover'>
+                <div className='main_back_button'>
+                    <div className='main_back_button_i'></div>
+                </div>
+                <p>{ux['back'][lang]}</p>
+                </div>
+                </a>
+                </Link>
+        }
+        </>
     )
 }
 

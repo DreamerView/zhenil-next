@@ -32,8 +32,8 @@ const ConstructorIndex = () => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp to={[{key:'constructor',path:'last'}]}/>
             <div className="main block_animation">
+            <NavbarApp to={{href:"/"}} choice="alone"/>
             <h1 className="flex_text">{translate["step0"][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>

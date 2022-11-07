@@ -13,6 +13,7 @@ import NavbarApp from '/pages/navbar_app/nav';
 
 const BMICalc = () => {
     const lang = useTranslateText();
+    const [anim,setAnim] = useState(false);
     const [n1,setN1] = useState('');
     const [n2,setN2] = useState('');
     const [age,setAge] = useState('');
@@ -23,7 +24,15 @@ const BMICalc = () => {
     const i3 = useRef();
     const s = setBmiApi(male,age,n1,n2);
     useEffect(()=>{
+        if(anim===true) {
+            setTimeout(()=>{
+                setAnim(false);
+            },[1500])
+        }
+    },[anim]);
+    useEffect(()=>{
         setShow(JSON.parse(s));
+        setAnim(true);
     },[s]);
     useEffect(()=>{
         setN1('');
@@ -43,14 +52,15 @@ const BMICalc = () => {
     //       } catch (e) { }
     //     }
     // }, []);
+    console.log(JSON.parse(s));
     return(
         <>
             <Head>
                 <title>{translate['step1'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'health',location:'/health',path:''},{key:'bmi_calc',path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/health"}} choice="alone"/>
                 <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p>
                 {/* New added */}
@@ -60,38 +70,38 @@ const BMICalc = () => {
                     <div className={style.main__result}>
                         <h2>{translate['results'][lang]}</h2>
                         <div className={style.module_result_row}>
-                            <div className={style.module_result_block}>
+                            <div className={male==='other'?style.module_result_block:anim===true?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['male_text'][lang]}</p>
                                     <h3>{show.maleText}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={age===0?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji/thought_balloon.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['age'][lang]}</p>
                                     <h3>{show.age}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={show.res_status!=='res'?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji/magnifying_glass_tilted_right_3d.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['bmi_result'][lang]}</p>
                                     <h3>{show.res}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={show.check_status!=='check'?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={show.color===undefined?"/emoji/white_question_mark.webp":show.color==='green'?"/emoji/check_mark_button.webp":"/emoji/double_exclamation_mark.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['result'][lang]}</p>
                                     <h3 className={`${show.color}_font`}>{show.check}</h3>
                                 </div>

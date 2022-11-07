@@ -14,6 +14,23 @@ const Deposit = () => {
     const [exp,setExp] = useState('');
     const [result,setResult] = useState(0);
     const [alert,setAlert] = useState({text:'',color:''});
+    // Начало анимации
+    const [anim1,setAnim1] = useState(false);
+    const [anim2,setAnim2] = useState(false);
+    const [anim3,setAnim3] = useState(false);
+    useEffect(()=>{
+        let timer;
+        if(anim1!==false) timer = setTimeout(()=>setAnim1(false),[2000]);
+        if(anim2!==false) timer = setTimeout(()=>setAnim2(false),[2000]);
+        if(anim3!==false) timer = setTimeout(()=>setAnim3(false),[2000]);
+        return () => clearTimeout(timer);
+    },[anim1,anim2,anim3]);
+    useEffect(()=>{
+        if(exp!=='') setAnim1('exp');
+        if(result!==0) setAnim2('result');
+        if(alert.text!==text.unknown[lang]) setAnim3('alert');
+    },[exp,result,alert,lang]);
+    // Завершение анимации
     useEffect(()=>{
         if(num !=='' && exp !=='') {
             setResult((num*exp)/20);
@@ -22,10 +39,16 @@ const Deposit = () => {
             setResult(0);
         }
         let s = result.toFixed(0);
-        if(s>=1&&s<=9) setAlert({text:text.normal[lang],color:'green_font'});
+        if(s>=1&&s<=9) {
+            setAlert({text:text.normal[lang],color:'green_font'});
+        }
         //Развития хронической обструктивной болезни легких
-        else if (s>=10) setAlert({text:text.copd[lang],color:'red_font'});
-        else setAlert({text:text.unknown[lang],color:''});
+        else if (s>=10) {
+            setAlert({text:text.copd[lang],color:'red_font'});
+        }
+        else {
+            setAlert({text:text.unknown[lang],color:''});
+        }
     },[num,exp,result,lang]);
     return(
         <>
@@ -33,8 +56,8 @@ const Deposit = () => {
                 <title>{nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:'health',location:'/health'},{key:'index_of_the_smoking_person',path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/health"}} choice="alone"/>
                 <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {/* New added */}
@@ -43,29 +66,29 @@ const Deposit = () => {
                     <div className={style.main__result}>
                         <h2>{text['result'][lang]}</h2>
                         <div className={style.module_result_row}>
-                            <div className={style.module_result_block}>
+                            <div className={anim1==='exp'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji-small/calendar.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result1'][lang]}</p>
                                     <h3>{exp===''?0:exp}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={anim2==='result'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji-small/bookmark.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result2'][lang]}</p>
                                     <h3>{result}</h3>
                                 </div>
                             </div>
-                            <div className={style.module_result_block}>
+                            <div className={anim3==='alert'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
                                     <Image priority src={"/emoji-small/microscope.webp"} layout="fill" alt="emoji"/>
                                 </div>
-                                <div>
+                                <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['res'][lang]}</p>
                                     <h3 className={alert?alert.color:''}>{alert?alert.text:''}</h3>
                                 </div>

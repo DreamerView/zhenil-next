@@ -24,6 +24,16 @@ export default {
         ru:"Течение беременности",
         en:"The course of pregnancy"
     },
+    result4:{
+        kk:"Триместр",
+        ru:"Триместр",
+        en:"Trimester"
+    },
+    result5:{
+        kk:"Ықтимал туған күндері",
+        ru:"Вероятные даты рождении",
+        en:"Probably dates of birth"
+    },
     jan:{
         kk:"қаңтар",
         ru:"января",

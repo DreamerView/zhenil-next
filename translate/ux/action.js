@@ -53,5 +53,10 @@ export default {
         kk:"Жою",
         ru:"Удалить",
         en:"Delete"
+    },
+    back: {
+        kk:"Артқа қайту",
+        ru:"Вернуться назад",
+        en:"Return back"
     }
 }

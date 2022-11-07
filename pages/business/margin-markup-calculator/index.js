@@ -42,8 +42,8 @@ const MarginMarkup = () => {
                 <title>{nav_translate['margin_markup_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['margin_markup_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={[{key:"business",location:"/business"},{text:nav_translate['margin_markup_calc'][lang],path:'last'}]}/>
             <div className="main block_animation">
+                <NavbarApp to={{href:"/business"}} choice="alone"/>
                 <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
                 <p className="sub_content">{translate['content'][lang]}</p>
                 <div className={style.nav__block_menu}>

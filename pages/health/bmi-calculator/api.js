@@ -4,7 +4,9 @@ import translate from "/translate/health/bmi_calculator/index_translate";
 
 const setBmiApi = (male,age,m,h) => {
         const lang = setTranslateText();
-        let res,check,maleText,color;
+        let res,check,maleText,color,maleStatus,check_status,res_status;
+        check_status="check";
+        res_status="res";
         h = h/100;
         if(age === '') age=0;
         if(m===0 || h===0) {check = translate.loading[lang];}
@@ -119,7 +121,12 @@ const setBmiApi = (male,age,m,h) => {
             case 'female': maleText = translate.male_result_female[lang];break;
             case 'other': maleText = translate.male_result_other[lang];break;
         }
-        let obj = JSON.stringify({res,check,age,maleText,color});
+        switch(male) {
+            case 'male': maleStatus = 'male';break;
+            case 'female': maleStatus = 'female';break;
+            case 'other': maleStatus = 'other';break;
+        }
+        let obj = JSON.stringify({res,check,age,maleText,color,maleStatus,check_status,res_status});
         return obj;
 };
 
