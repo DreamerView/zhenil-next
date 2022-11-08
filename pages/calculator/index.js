@@ -20,8 +20,8 @@ const BusinessIndex = () => {
                 <meta property="og:title" content={`${nav_translate['calculator'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
-            <div className="main block_animation">
             <NavbarApp to={{href:"/"}} choice="alone"/>
+            <div className="main_app block_animation">
             <h1 className="flex_text">{nav_translate['calculator'][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>

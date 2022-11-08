@@ -59,8 +59,8 @@ const BMICalc = () => {
                 <title>{translate['step1'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main block_animation">
-                <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <div className="main_app block_animation">
                 <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p>
                 {/* New added */}

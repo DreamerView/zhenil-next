@@ -32,8 +32,8 @@ const FinanceIndex = () => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <div className="main block_animation">
             <NavbarApp to={{href:"/"}} choice="alone"/>
+            <div className="main_app block_animation">
             <h1 className="flex_text">{nav_translate["finance"][lang]} <div className="emoji_h1"><Image title={'Microsoft money bag emoji (Used for informational purposes only)'} priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>

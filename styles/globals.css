@@ -382,6 +382,9 @@ p.nav > a {
       --m-1: 30px 150px;
       --m-2: 64px 150px;
       --m-3: 64px 150px;
+      --m-4: 16px 150px 48px 150px;
+      --s-1: 64px 150px 32px 150px;
+      --s-2: 32px 150px;
       --n-1: 32px 150px;
       --n-2: 16px 37.5px;
       --m-p:40px 20px;
@@ -443,6 +446,9 @@ p.nav > a {
       --m-1: 30px 64px;
       --m-2: 64px 64px;
       --m-3: 48px 64px;
+      --m-4: 16px 64px 48px 64px;
+      --s-1: 32px 64px;
+      --s-2: 16px 64px;
       --n-1: 24px 64px;
       --n-2: 16px 12.5px;
       --m-p: 40px 20px;
@@ -490,6 +496,9 @@ p.nav > a {
       --m-1: 30px 32px;
       --m-2: 58px 32px;
       --m-3: 32px 32px;
+      --m-4: 16px 32px 48px 32px;
+      --s-1: 32px 32px;
+      --s-2: 16px 32px;
       --n-1: 16px 32px;
       --n-2: 16px 12px;
       --m-p: 32px 32px;
@@ -539,6 +548,9 @@ p.nav > a {
       --m-1: 30px 16px;
       --m-2: 38px 16px;
       --m-3: 32px 16px;
+      --m-4: 16px 16px 48px 16px;
+      --s-1: 16px 16px;
+      --s-2: 16px 16px;
       --n-1: 16px 16px;
       --n-2: 16px 0;
       --m-p: 0 32px;
@@ -687,6 +699,13 @@ a {
   text-decoration: none;
   display: block;
   color:var(--font-color)
+}
+
+a:link {
+  -moz-tap-highlight-color:transparent;
+  -ms-tap-highlight-color:transparent;
+  -o-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color:transparent;
 }
 
 b.b_color {
@@ -1243,6 +1262,11 @@ div.main {
   border-radius: 24px;
   margin: 16px 0
 }
+div.main_app {
+  padding:var(--m-4);
+  background-color: var(--header-color);
+  border-radius: 0 0 24px 24px;
+}
 div.main__nav {
   margin: var(--n-2);
   padding:var(--n-1);
@@ -1408,12 +1432,28 @@ div.main__nav {
   }
 }
 
-div.main_back {
+div.main_back_fixed {
+  top:0;
+  position:fixed;
   display: flex;
   align-items: center;
   margin-bottom: 32px;
   cursor: pointer;
-  width:300px;
+  width:100%;
+  background-color: var(--header-color);
+  z-index:999;
+  padding:var(--s-2);
+}
+
+div.main_back {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 32px; */
+  cursor: pointer;
+  width:100%;
+  background-color: var(--header-color);
+  border-radius: 24px 24px 0 0;
+  padding:var(--s-1);
 }
 
 div.main_back_button {

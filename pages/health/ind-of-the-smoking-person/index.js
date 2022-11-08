@@ -56,8 +56,8 @@ const Deposit = () => {
                 <title>{nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main block_animation">
-                <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <div className="main_app block_animation">
                 <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} layout="fill" alt="emoji"/></div></h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {/* New added */}

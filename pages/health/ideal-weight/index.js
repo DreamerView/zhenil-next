@@ -52,8 +52,8 @@ const IdealWeight = () => {
                 <title>{nav_text['ideal_weight_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['ideal_weight_calc'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main block_animation">
-                <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <div className="main_app block_animation">
                 <h1>{nav_text['ideal_weight_calc'][lang]}</h1>
                 <p className="sub_content">{text['desc'][lang]}</p>
                 {/* New added */}

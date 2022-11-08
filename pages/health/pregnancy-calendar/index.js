@@ -116,8 +116,8 @@ const PregnancyCalendar = ()=>{
                 <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
             </Head>
-            <div className="main block_animation">
-                <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <div className="main_app block_animation">
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>

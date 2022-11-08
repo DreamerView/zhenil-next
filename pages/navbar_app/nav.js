@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import React,{memo} from "react";
+import React,{memo,useEffect,useState,useRef} from "react";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import ux from "/translate/ux/action";
@@ -8,6 +8,27 @@ import useTranslateText from "/start/translate";
 const NavbarApp = ({to,choice}) => {
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
+    const [scrollResult,setScrollResult] = useState('');
+    const s = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if(choice==='alone'){
+                const header = s.current;
+                const sticky = header.offsetTop;
+                if (window.pageYOffset > sticky) {
+                    setScrollResult('_fixed')
+                } else {
+                    setScrollResult('')
+                }
+            }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [s,choice]);
     return(
         <>
         {choice!=='alone'?
@@ -30,7 +51,7 @@ const NavbarApp = ({to,choice}) => {
             </p>
         </div>:<Link href={to.href} prefetch={false}>
                 <a>
-                <div className='main_back anim_hover'>
+                <div className={`main_back${scrollResult}`} ref={s}>
                 <div className='main_back_button'>
                     <div className='main_back_button_i'></div>
                 </div>
