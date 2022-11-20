@@ -21,11 +21,13 @@ const QR = () => {
             if (devices && devices.length) {
                 setCamera({id:devices[0].id,name:devices[0].label});
                 setHide(true);
-                // let s="";
-                // if(width<=768) {
-                //     s={};
-                // }
-                html5QrCode.start({ facingMode: "environment" }, {fps:30,qrbox: { width: 350, height: 350 }},
+                let s="";
+                if(width<=768) {
+                    s={ facingMode: "environment" };
+                } else {
+                    s=devices[0].id;
+                }
+                html5QrCode.start(s, {fps:10,qrbox: { width: 200, height: 200 }},
                     (decodedText, decodedResult) => {
                         console.log(`Code matched = ${decodedText}`, decodedResult);
                         setResQR({text:decodedText,content:decodedResult});
@@ -75,7 +77,7 @@ const QR = () => {
                 </div>
             </div>}
             <div className={style.qr}>
-                <div id="reader" width="250" height="250"/>
+                <div id="reader"/>
             </div>
         </div>
         {qr===true?
