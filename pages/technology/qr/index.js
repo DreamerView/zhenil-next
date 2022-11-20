@@ -27,7 +27,7 @@ const QR = () => {
                 } else {
                     s=devices[0].id;
                 }
-                html5QrCode.start(s, {fps:10,qrbox: { width: 200, height: 200 }},
+                html5QrCode.start(s, {fps:60,qrbox: { width: 200, height: 200 }},
                     (decodedText, decodedResult) => {
                         console.log(`Code matched = ${decodedText}`, decodedResult);
                         setResQR({text:decodedText,content:decodedResult});
