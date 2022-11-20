@@ -29,6 +29,10 @@ const Deposit = () => {
         if(exp!=='') setAnim1('exp');
         if(result!==0) setAnim2('result');
         if(alert.text!==text.unknown[lang]) setAnim3('alert');
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[exp,result,alert,lang]);
     // Завершение анимации
     useEffect(()=>{
@@ -48,6 +52,10 @@ const Deposit = () => {
         }
         else {
             setAlert({text:text.unknown[lang],color:''});
+        }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
         }
     },[num,exp,result,lang]);
     return(

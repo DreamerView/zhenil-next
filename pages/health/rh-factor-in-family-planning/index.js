@@ -41,6 +41,10 @@ const RhFactorInPregnancyPlanning = () => {
             case manRh===`IV`&&womanRh===`III`:setResult({con:'66% '+text.conflict_txt[lang],child:`I ${text.or[lang]} III ${text.or[lang]} IV`,color:'orange'});break;
             case manRh===`IV`&&womanRh===`IV`:setResult({con:text.no[lang],child:`II ${text.or[lang]} III ${text.or[lang]} IV`,color:'block'});break;
         }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[manRh,womanRh,manSymbol,womanSymbol,lang]);
     return(
         <>

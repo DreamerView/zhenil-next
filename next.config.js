@@ -23,7 +23,7 @@ const ContentSecurityPolicy = `
     style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
-    connect-src 'self' https://cdnjs.cloudflare.com;
+    connect-src 'self' https://cdnjs.cloudflare.com http://app.okki.kz ws://app.okki.kz;
     base-uri 'none';
     form-action 'self';
     object-src 'none'; 
@@ -68,7 +68,7 @@ const secure = production?[
     },
     {
         key: 'Permissions-Policy',
-        value: 'camera=(), microphone=(), geolocation=()'
+        value: 'microphone=(), geolocation=()'
     },
     {
         key: 'X-Permitted-Cross-Domain-Policies',
@@ -92,7 +92,7 @@ const secure = production?[
     }
     ]:[{
       key: 'Permissions-Policy',
-      value: 'camera=(), microphone=(), geolocation=()'
+      value: 'microphone=(), geolocation=()'
   }];
 
 module.exports = withPWA({

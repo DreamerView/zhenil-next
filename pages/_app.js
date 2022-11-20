@@ -21,9 +21,10 @@ const Preloader = () => {
         return checkMode?setColor("#7d7aff"):setColor("#4634bc");
     },[checkMode]);
     useEffect(()=>{
-        setTimeout(()=>{
+        const timer = setTimeout(()=>{
             setTimer(true);
         },[500]);
+        return ()=>clearTimeout(timer);
     },[]);
     return(
         <>
@@ -51,39 +52,30 @@ const MyApp = ({ Component, pageProps }) => {
         Router.events.on('routeChangeComplete', () => {
             setResult(false);
         });
+        return()=>console.clear()
     },[])
     useEffect(() => {
         if (typeof window !== 'undefined') {
-          const loader = document.getElementById('globalLoader');
-          if (loader)
-            setTimeout(()=>{
-                loader.remove();
-            },[1500]);
+            let timer;
+            const loader = document.getElementById('globalLoader');
+            if (loader)
+                timer = setTimeout(()=>{
+                    loader.remove();
+                },[1500]);
+            return ()=>clearTimeout(timer);
+        
         }
       }, []);
-    // useEffect(() => {
-    //     if("serviceWorker" in navigator) {
-    //         production?
-    //        navigator.serviceWorker.register("/serviceworker.js").then(
-    //           function (registration) {
-    //             console.log("Service Worker registration successful with scope: ", registration.scope);
-    //           },
-    //           function (err) {
-    //             console.log("Service Worker registration failed: ", err);
-    //           }
-    //         ):"";
-    //         // production?
-    //         // navigator.serviceWorker.register("/cache-sw.js").then(
-    //         //     function (registration) {
-    //         //       console.log("Cache installed: ", registration.scope);
-    //         //     },
-    //         //     function (err) {
-    //         //       console.log("Service Worker registration failed: ", err);
-    //         //     }
-    //         //   ):"";
-    //     }
-    // }, [production])
-    const defaultState = {act:false,confirm:false,fullframe:false,urlframe:false,crop:false,getcrop:false,main:false};
+    const defaultState = {
+        act:false,
+        confirm:false,
+        fullframe:false,
+        urlframe:false,
+        crop:false,
+        getcrop:false,
+        main:false,
+        hideReq:false
+    };
 
 
     const reducer = (state=defaultState,action) => {
@@ -95,6 +87,7 @@ const MyApp = ({ Component, pageProps }) => {
         case "setCropImage": return {...state,crop:action.set};
         case "getCropImage": return {...state,getcrop:action.set};
         case "actionMain": return {...state,main:action.set};
+        case "hideRequest": return {...state,hideReq:action.set};
         default: return state;
     }
     };

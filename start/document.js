@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 const Header = dynamic(()=>import('/start/header'),{ssr:false});
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
@@ -13,6 +14,7 @@ const DocumentResult = ({children}) => {
     const url = useSelector(state=>state.urlframe);
     const image = useSelector(state=>state.crop);
     const main = useSelector(state=>state.main);
+    const hide = useSelector(state=>state.hideReq);
     useEffect(()=>{
         if(action||frame||image) {
             document.querySelector('html').style.cssText = "overflow: hidden;";
@@ -28,7 +30,7 @@ const DocumentResult = ({children}) => {
             {frame?<FullFrame item={url} key={Date.now()}/>:""}
             {action?<ConfirmMode item={action} key={Date.now}/>:""}
             {image?<ResizeImage item={image} key={Date.now}/>:""}
-            <Header/>
+            {hide?"":<Header/>}
             {main?<div className="main_hide"/>:""}
             <div className="result">{children}</div>
         </div>

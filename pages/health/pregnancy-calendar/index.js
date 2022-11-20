@@ -82,6 +82,10 @@ const PregnancyCalendar = ()=>{
                 default: setTrimerster(text.unknown[lang]);
             }
         }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[date,getMonthName,lang]);
     useEffect(()=>{
         if(date!==0) {
@@ -108,6 +112,10 @@ const PregnancyCalendar = ()=>{
             }
             setWeeks(w);
             setDays(w[40])
+        }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
         }
     },[date,getMonthName]);
     return(

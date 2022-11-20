@@ -24,6 +24,10 @@ const MarginMarkup = () => {
     const lang = useTranslateText();
     useEffect(()=>{
         setN1(Math.round((1-(marginPrice/100))*n2));
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[marginPrice,n2]);
     useEffect(()=>{
         setN1Total((+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
@@ -35,6 +39,10 @@ const MarginMarkup = () => {
             setMarkUp(0);
             setTotal(0);
             setNDSTotal(+n2+(Number(n2*Number(nds==='not'?0:nds))/100));
+        }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
         }
     },[n1,n2,markUp,delivery,marketing,other,n1Total,nds]);
     return(

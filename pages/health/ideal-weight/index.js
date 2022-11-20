@@ -30,6 +30,10 @@ const IdealWeight = () => {
         if(male!=='other') setAnim1('male');
         if(n1!=='') setAnim2('n1');
         if(result!==0) setAnim3('result');
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[male,n1,result]);
     // Завершение анимации
     

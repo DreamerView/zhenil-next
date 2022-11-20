@@ -15,6 +15,8 @@ const Quizy = () => {
     //     })
     // },[socket])
     return(
+        <>
+        {/* <NavbarApp to={{href:"/"}} choice="alone"/> */}
         <div className="main block_animation">
             <h1 className="flex_text">Okki Quizy</h1>
             <p className="sub_content">Welcome to Okki Quizy</p>
@@ -29,6 +31,7 @@ const Quizy = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 export default Quizy;

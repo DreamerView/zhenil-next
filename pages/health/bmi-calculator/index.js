@@ -29,20 +29,36 @@ const BMICalc = () => {
                 setAnim(false);
             },[1500])
         }
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[anim]);
     useEffect(()=>{
         setShow(JSON.parse(s));
         setAnim(true);
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[s]);
     useEffect(()=>{
         setN1('');
         setN2('');
         i1.current.value='';
         i2.current.value='';
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[male,age,lang]);
     useEffect(()=>{
         setAge('');
         i3.current.value='';
+        return () =>{ 
+            console.log("Result saved!");
+            console.clear();
+        }
     },[male]);
     // useEffect(() => {
     //     var ads = document.getElementsByClassName("adsbygoogle").length;
@@ -52,7 +68,6 @@ const BMICalc = () => {
     //       } catch (e) { }
     //     }
     // }, []);
-    console.log(JSON.parse(s));
     return(
         <>
             <Head>

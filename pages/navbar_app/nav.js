@@ -9,13 +9,11 @@ const NavbarApp = ({to,choice}) => {
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
     const [scrollResult,setScrollResult] = useState('');
-    const s = useRef(null);
     useEffect(() => {
         const handleScroll = () => {
             if(choice==='alone'){
-                const header = s.current;
-                const sticky = header.offsetTop;
-                if (window.pageYOffset > sticky) {
+                const scrolled = window.pageYOffset;
+                if (scrolled > 100) {
                     setScrollResult('_fixed')
                 } else {
                     setScrollResult('')
@@ -28,7 +26,7 @@ const NavbarApp = ({to,choice}) => {
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-      }, [s,choice]);
+      }, [choice]);
     return(
         <>
         {choice!=='alone'?
@@ -51,7 +49,7 @@ const NavbarApp = ({to,choice}) => {
             </p>
         </div>:<Link href={to.href} prefetch={false}>
                 <a>
-                <div className={`main_back${scrollResult}`} ref={s}>
+                <div className={`main_back${scrollResult}`}>
                 <div className='main_back_button'>
                     <div className='main_back_button_i'></div>
                 </div>
