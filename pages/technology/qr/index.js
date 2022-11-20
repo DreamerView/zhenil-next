@@ -8,6 +8,7 @@ const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 const QR = () => {
     const [hide,setHide] = useState(false);
     const [html5QrCode] = useState(typeof window !== "undefined"?new Html5Qrcode(/* element id */ "reader"):"");
+    const [width,setWidth] = useState(typeof window !== "undefined"?document.body.clientWidth:"")
     const [camera,setCamera] = useState({id:null,name:null});
     const [resQR,setResQR] = useState({text:null,content:null});
     const [qr,setQR] = useState(false);
@@ -20,7 +21,11 @@ const QR = () => {
             if (devices && devices.length) {
                 setCamera({id:devices[0].id,name:devices[0].label});
                 setHide(true);
-                html5QrCode.start(devices[0].id, {fps:30,qrbox: { width: 350, height: 350 }},
+                // let s="";
+                // if(width<=768) {
+                //     s={};
+                // }
+                html5QrCode.start({ facingMode: "environment" }, {fps:30,qrbox: { width: 350, height: 350 }},
                     (decodedText, decodedResult) => {
                         console.log(`Code matched = ${decodedText}`, decodedResult);
                         setResQR({text:decodedText,content:decodedResult});
@@ -48,7 +53,7 @@ const QR = () => {
         <>
         <NavbarApp to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
-            <h1 className="flex_text">Okki QR</h1>
+            <h1 className="flex_text" onClick={()=>checkDevice()}>Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":
             <div className={style.qr_row}>
