@@ -90,9 +90,17 @@ const QR = () => {
         if(str<=count) return text;
         else return text.substring(0, count)+"...";
     }
+    const isValidHttpUrl = (string) => {
+        try {
+          const url = new URL(string);
+          return url.protocol === 'http:' || url.protocol === 'https:';
+        } catch (err) {
+          return false;
+        }
+      }
     return(
         <>
-        <NavbarApp to={{href:"/technology"}} choice="alone"/>
+        <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
             <h1 className="flex_text" onClick={()=>checkDevice()}>Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
@@ -130,6 +138,9 @@ const QR = () => {
             <div className={`${style.modal} block_animation`}>
                 <h1 className="text_center">Результат</h1>
                 <div className={style.modal_row}><p>{TextUI(resQR.text,30)}</p></div>
+                {isValidHttpUrl(resQR.text)===true?
+                <a className={`${style.modal_button} green_background`} target="_blank" href={resQR.text}>Посетить сайт</a>:""
+                }
                 <div onClick={()=>{resumeQR()}} className={`${style.modal_button} red_background`}>Закрыть</div>
             </div>
         </div>:""

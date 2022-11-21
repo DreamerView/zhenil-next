@@ -71,7 +71,7 @@ div.modal_row {
     align-items: center;
     justify-content: center;
 }
-div.modal_button {
+.modal_button {
     width:300px;
     height:60px;
     color:white;
