@@ -7,40 +7,45 @@ const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 
 const QR = () => {
     const [hide,setHide] = useState(false);
-    const [html5QrCode] = useState(typeof window !== "undefined"?new Html5Qrcode(/* element id */ "reader"):"");
-    const [width,setWidth] = useState(typeof window !== "undefined"?document.body.clientWidth:"")
-    const [camera,setCamera] = useState({id:null,name:null});
+    const [html5QrCode] = useState(typeof window !== "undefined"?new Html5Qrcode("reader"):null);
+    const [width,setWidth] = useState(null)
+    const [camera,setCamera] = useState("environment");
     const [resQR,setResQR] = useState({text:null,content:null});
     const [qr,setQR] = useState(false);
     const resumeQR = ()=> {
         html5QrCode.resume();
         setQR(false);
     };
-    const startQR = ()=> {
+    useEffect(()=>{
+        setWidth(document.body.clientWidth);
+    },[])
+    const startQR = (mode)=> {
         Html5Qrcode.getCameras().then(devices => {
             if (devices && devices.length) {
-                setCamera({id:devices[0].id,name:devices[0].label});
+                // setCamera({id:devices[0].id,name:devices[0].label});
                 setHide(true);
                 let s="";
                 if(width<=768) {
-                    s={ facingMode: "environment" };
+                    s={ facingMode: mode };
                 } else {
                     s=devices[0].id;
                 }
-                html5QrCode.start(s, {fps:60,qrbox: { width: 200, height: 200 }},
-                    (decodedText, decodedResult) => {
-                        console.log(`Code matched = ${decodedText}`, decodedResult);
-                        setResQR({text:decodedText,content:decodedResult});
-                        if(decodedText) {
-                            html5QrCode.pause();
-                            setQR(true);
-                        }    
-                    },
-                    (errorMessage) => {
-                        // parse error, ignore it.
-                    }).catch((err) => {
-                        console.log("New error: "+err)
+                if(html5QrCode!==null) {
+                    html5QrCode.start(s, {fps:10,qrbox: { width: 200, height: 200 }},
+                        (decodedText, decodedResult) => {
+                            console.log(`Code matched = ${decodedText}`, decodedResult);
+                            setResQR({text:decodedText,content:decodedResult});
+                            if(decodedText) {
+                                html5QrCode.pause();
+                                setQR(true);
+                            }    
+                        },
+                        (errorMessage) => {
+                            // parse error, ignore it.
+                        }).catch((err) => {
+                            console.log("New error: "+err)
                     });
+                }
             }
           }).catch(err => {
             console.log("New error: "+err)
@@ -79,6 +84,12 @@ const QR = () => {
             <div className={style.qr}>
                 <div id="reader"/>
             </div>
+            {width!==null&&width<=768?
+            camera!=="environment"?
+                <div onClick={()=>{startQR('environment');setCamera("environment");}}>ENV</div>
+            :
+                <div onClick={()=>{startQR('user');setCamera("user");}}>User</div>
+            :""}
         </div>
         {qr===true?
         <div className={style.modal_block}>
