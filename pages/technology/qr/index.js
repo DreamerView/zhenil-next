@@ -64,7 +64,7 @@ const QR = () => {
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":
             <div className={style.qr_row}>
-                <div onClick={()=>startQR()}>
+                <div onClick={()=>startQR(width<=768?"environment":"")}>
                     <div className={style.qr_image}>
                         <div className={style.qr_pic}>
                             <LazyImage src={"/img/add_a_photo.svg"}/>
