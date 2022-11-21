@@ -25,7 +25,7 @@ const BusinessIndex = () => {
                     </div>
                     <h1 className="page_not_found">{nav_translate['tech'][lang]}</h1>
                     <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link prefetch={false} href="/" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
+                    <Link prefetch={false} href="/technology/qr" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
                 </div>
             </div>
       </>

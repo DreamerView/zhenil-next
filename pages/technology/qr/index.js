@@ -7,7 +7,7 @@ const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 
 const QR = () => {
     const [hide,setHide] = useState(false);
-    const [html5QrCode] = useState(typeof window !== "undefined"?new Html5Qrcode("reader"):null);
+    const [html5QrCode,setHtml5QrCode] = useState(null);
     const [width,setWidth] = useState(null)
     const [camera,setCamera] = useState("environment");
     const [resQR,setResQR] = useState({text:null,content:null});
@@ -18,8 +18,9 @@ const QR = () => {
     };
     useEffect(()=>{
         setWidth(document.body.clientWidth);
+        setHtml5QrCode(new Html5Qrcode("reader"));
     },[])
-    const changeQR = (mode)=> {
+    const changeQR = ()=> {
         html5QrCode.stop();
         Html5Qrcode.getCameras().then(devices => {
             if (devices && devices.length) {
