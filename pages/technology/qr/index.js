@@ -19,6 +19,39 @@ const QR = () => {
     useEffect(()=>{
         setWidth(document.body.clientWidth);
     },[])
+    const changeQR = (mode)=> {
+        html5QrCode.stop();
+        Html5Qrcode.getCameras().then(devices => {
+            if (devices && devices.length) {
+                // setCamera({id:devices[0].id,name:devices[0].label});
+                setHide(true);
+                let s="";
+                if(width<=768) {
+                    s={ facingMode: mode };
+                } else {
+                    s=devices[0].id;
+                }
+                if(html5QrCode!==null) {
+                    html5QrCode.start(s, {fps:10,qrbox: { width: 200, height: 200 }},
+                        (decodedText, decodedResult) => {
+                            console.log(`Code matched = ${decodedText}`, decodedResult);
+                            setResQR({text:decodedText,content:decodedResult});
+                            if(decodedText) {
+                                html5QrCode.pause();
+                                setQR(true);
+                            }    
+                        },
+                        (errorMessage) => {
+                            // parse error, ignore it.
+                        }).catch((err) => {
+                            console.log("New error: "+err)
+                    });
+                }
+            }
+          }).catch(err => {
+            console.log("New error: "+err)
+          });
+    }
     const startQR = (mode)=> {
         Html5Qrcode.getCameras().then(devices => {
             if (devices && devices.length) {
@@ -86,9 +119,9 @@ const QR = () => {
             </div>
             {width!==null&&width<=768?
             camera!=="environment"?
-                <div onClick={()=>{startQR('environment');setCamera("environment");}}>ENV</div>
+                <div onClick={()=>{changeQR('environment');setCamera("environment");}}>ENV</div>
             :
-                <div onClick={()=>{startQR('user');setCamera("user");}}>User</div>
+                <div onClick={()=>{changeQR('user');setCamera("user");}}>User</div>
             :""}
         </div>
         {qr===true?
