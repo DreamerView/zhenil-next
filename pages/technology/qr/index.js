@@ -139,7 +139,7 @@ const QR = () => {
                 <h1 className="text_center">Результат</h1>
                 <div className={style.modal_row}><p>{TextUI(resQR.text,30)}</p></div>
                 {isValidHttpUrl(resQR.text)===true?
-                <a className={`${style.modal_button} green_background`} target="_blank" href={resQR.text}>Посетить сайт</a>:""
+                <a className={`${style.modal_button} green_background`} target="_blank" rel="noopener noreferrer" href={resQR.text}>Посетить сайт</a>:""
                 }
                 <div onClick={()=>{resumeQR()}} className={`${style.modal_button} red_background`}>Закрыть</div>
             </div>
