@@ -94,7 +94,10 @@ const Deposit = () => {
                     NewResult(term,0);
                 }
                 setTotal(Number(percent)+Number(own));
-            } 
+            }
+            return () => {
+                return 0;
+            }
     },[bet,term,sum,percent,every,own,getMonthName]);
     return(
         <>

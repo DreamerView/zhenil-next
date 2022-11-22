@@ -19,6 +19,9 @@ const QR = () => {
     useEffect(()=>{
         setWidth(document.body.clientWidth);
         setHtml5QrCode(new Html5Qrcode("reader"));
+        return ()=>{
+            return 0;
+        };
     },[])
     const changeQR = ()=> {
         html5QrCode.stop();
@@ -33,7 +36,7 @@ const QR = () => {
                     s=devices[0].id;
                 }
                 if(html5QrCode!==null) {
-                    html5QrCode.start(s, {fps:10,qrbox: { width: 200, height: 200 }},
+                    html5QrCode.start(s, {fps:60,qrbox: { width: 200, height: 200 }},
                         (decodedText, decodedResult) => {
                             console.log(`Code matched = ${decodedText}`, decodedResult);
                             setResQR({text:decodedText,content:decodedResult});

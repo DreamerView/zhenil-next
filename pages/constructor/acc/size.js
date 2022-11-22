@@ -71,6 +71,9 @@ const SizeAcc = () => {
             setChecked(true);
             setOrient(localStorage.getItem('orient_acc'));
         }
+        return () => {
+            return 0;
+        };
     }, []);
     useEffect(()=>{
         if(result==="selectable") {
@@ -82,6 +85,9 @@ const SizeAcc = () => {
                 setOrient('book');
             }
         }
+        return () => {
+            return 0;
+        };
     },[width,height,result]);
     useEffect(()=>{
         if(localStorage.getItem('template_acc')) {
@@ -102,10 +108,16 @@ const SizeAcc = () => {
             setHeight(localStorage.getItem('height_acc'));
             setReady(true);
         }
+        return () => {
+            return 0;
+        };
     },[]);
     useEffect(()=>{
         if(width!=='') localStorage.setItem('width_acc',width.replace(/,/g, "."));
         if(height!=='') localStorage.setItem('height_acc',height.replace(/,/g, "."));
+        return () => {
+            return 0;
+        };
     },[width,height]);
     return(
     <>

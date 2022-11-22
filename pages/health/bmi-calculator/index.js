@@ -30,8 +30,7 @@ const BMICalc = () => {
             },[1500])
         }
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[anim]);
     useEffect(()=>{
@@ -56,8 +55,7 @@ const BMICalc = () => {
         setAge('');
         i3.current.value='';
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[male]);
     // useEffect(() => {

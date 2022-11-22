@@ -12,9 +12,6 @@ const Search =  dynamic(()=>import("/start/header_action/search"),{ssr:false});
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Header = () => {
-    useEffect(()=>{
-        sessionStorage.setItem('p-key',process.env.private);
-    },[]);
     const send = useDispatch();
     const router = useRouter();
     const {locale} = router;
@@ -23,20 +20,21 @@ const Header = () => {
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
     const SetLanguage = () => {
-        send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
+        return send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     };
     const GetResult = e => {
-      setSearch(e);
+      return setSearch(e);
     };
     const GetList = e => {
-      setList(e);
+      return setList(e);
     };
     const RefRes = s => {
-      setRes(s);
+      return setRes(s);
     };
     useEffect(()=>{
+      let timer;
       if(res===false) {
-        setTimeout(()=>{
+        timer = setTimeout(()=>{
           setTime(false);
           send({type:"actionMain",set:false});
         },[150]);
@@ -44,6 +42,10 @@ const Header = () => {
           setTime(true);
           send({type:"actionMain",set:true});
       }
+      return () => {
+        clearInterval(timer);
+        return 0;
+      };
     },[res]);
     return(
       <>

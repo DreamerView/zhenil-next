@@ -10,19 +10,25 @@ const Search = (res) => {
           if(search === '') return 0;
           else if(e.key.toLowerCase().includes(search.toLowerCase())) return e;
         }));
+        return () => {
+          return 0;
+        };
       },[search]);
       useEffect(()=>{
           focus.current.addEventListener('focus',()=>{
-            res.accept(true);
+            return res.accept(true);
           });
           focus.current.addEventListener('blur',()=>{
-            res.accept(false);
-        });
+            return res.accept(false);
+          });
+          return () => {
+            return 0;
+          };
       },[focus]);
       
       useEffect(()=>{
         focus.current.value = res.list;
-        setSearch(res.list);
+        return setSearch(res.list);
       },[res.list]);
     return (
         <>

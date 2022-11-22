@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import React,{memo,useEffect,useState,useRef} from "react";
+import React,{memo,useEffect,useState} from "react";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import ux from "/translate/ux/action";

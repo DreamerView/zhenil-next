@@ -30,32 +30,20 @@ const Deposit = () => {
         if(result!==0) setAnim2('result');
         if(alert.text!==text.unknown[lang]) setAnim3('alert');
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[exp,result,alert,lang]);
     // Завершение анимации
     useEffect(()=>{
-        if(num !=='' && exp !=='') {
-            setResult((num*exp)/20);
-        }
-        else {
-            setResult(0);
-        }
+        num !=='' && exp !==''?setResult((num*exp)/20):setResult(0);
         let s = result.toFixed(0);
-        if(s>=1&&s<=9) {
-            setAlert({text:text.normal[lang],color:'green_font'});
-        }
-        //Развития хронической обструктивной болезни легких
-        else if (s>=10) {
-            setAlert({text:text.copd[lang],color:'red_font'});
-        }
-        else {
-            setAlert({text:text.unknown[lang],color:''});
+        switch(true) {
+            case s>=1&&s<=9: setAlert({text:text.normal[lang],color:'green_font'});break;
+            case s>=10: setAlert({text:text.copd[lang],color:'red_font'});break;
+            default: setAlert({text:text.unknown[lang],color:''});
         }
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[num,exp,result,lang]);
     return(

@@ -52,7 +52,7 @@ const MyApp = ({ Component, pageProps }) => {
         Router.events.on('routeChangeComplete', () => {
             setResult(false);
         });
-        return()=>console.clear()
+        return()=>{return 0;};
     },[])
     useEffect(() => {
         if (typeof window !== 'undefined') {

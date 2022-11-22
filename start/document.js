@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 const Header = dynamic(()=>import('/start/header'),{ssr:false});
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
@@ -24,6 +23,9 @@ const DocumentResult = ({children}) => {
             document.querySelector('html').style.cssText = "";
             document.querySelector('body').style.cssText = "";
         }
+        return () =>{
+            return 0;
+        };
     },[action,frame,image]);
     return(
         <div>

@@ -27,6 +27,9 @@ const PregnancyCalendar = ()=>{
     },[anim]);
     useEffect(()=>{
         if(date!==0) setAnim('date');
+        return ()=>{
+            return 0;
+        }
     },[date]);
     // Завершение анимации
     const getMonthName = useCallback((e) => {
@@ -83,8 +86,7 @@ const PregnancyCalendar = ()=>{
             }
         }
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[date,getMonthName,lang]);
     useEffect(()=>{
@@ -114,8 +116,7 @@ const PregnancyCalendar = ()=>{
             setDays(w[40])
         }
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
+            return 0;
         }
     },[date,getMonthName]);
     return(
