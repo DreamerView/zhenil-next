@@ -46,6 +46,14 @@ const Header = () => {
         clearInterval(timer);
       };
     },[res]);
+    useEffect(()=>{
+        let box = document.querySelector('header');
+        let height = box.clientHeight;
+        send({type:"setHeaderHeight",set:height});
+        return () => {
+          return 0;
+        };
+    })
     return(
       <>
         <Head>

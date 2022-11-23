@@ -69,7 +69,8 @@ const MyApp = ({ Component, pageProps }) => {
         crop:false,
         getcrop:false,
         main:false,
-        hideReq:false
+        hideReq:false,
+        headerHeight:0
     };
 
 
@@ -83,6 +84,7 @@ const MyApp = ({ Component, pageProps }) => {
         case "getCropImage": return {...state,getcrop:action.set};
         case "actionMain": return {...state,main:action.set};
         case "hideRequest": return {...state,hideReq:action.set};
+        case "setHeaderHeight": return {...state,headerHeight:action.set};
         default: return state;
     }
     };

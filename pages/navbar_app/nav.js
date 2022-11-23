@@ -4,8 +4,10 @@ import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import ux from "/translate/ux/action";
 import useTranslateText from "/start/translate";
+import { useSelector } from "react-redux";
 
 const NavbarApp = ({to,choice}) => {
+    const headerHeight= useSelector(state=>state.headerHeight);
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
     const [scrollResult,setScrollResult] = useState('');
@@ -13,7 +15,7 @@ const NavbarApp = ({to,choice}) => {
         const handleScroll = () => {
             if(choice==='alone'){
                 const scrolled = window.pageYOffset;
-                if (scrolled > 100) {
+                if (scrolled > headerHeight) {
                     setScrollResult('_fixed')
                 } else {
                     setScrollResult('')
@@ -26,7 +28,7 @@ const NavbarApp = ({to,choice}) => {
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-      }, [choice]);
+      }, [choice,headerHeight]);
     return(
         <>
         {choice!=='alone'?
