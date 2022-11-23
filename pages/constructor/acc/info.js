@@ -25,7 +25,7 @@ const InfoAcc = () => {
     const [results,setResults] = useState([]);
     const [action,setAction] = useState('');
     useEffect(()=>{
-        if(localStorage.getItem('check_massive')) setResults(JSON.parse(localStorage.getItem('check_massive')));
+        if(localStorage.getItem('check_massive')) return setResults(JSON.parse(localStorage.getItem('check_massive')));
     },[]);
     useEffect(()=>{
         return results[0]?setReady(true):setReady(false);
@@ -56,6 +56,9 @@ const InfoAcc = () => {
             },[200]);
             remove({type:"SetConfirm",set:false});
         }
+        return () => {
+            return 0;
+        };
     },[conf,con,remove,results]);
     const SaveResult = (res) => {
         let s = JSON.parse(localStorage.getItem('check_massive'));

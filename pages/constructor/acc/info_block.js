@@ -15,6 +15,9 @@ const InfoBlock = (result) => {
     const getcrop = useSelector(state=>state.getcrop);
     const [logo,setLogo] = useState("/img/man.webp");
     const [info,setInfo] = useState(result?result.item:{});
+    useEffect(()=>{
+        return result.item.avatar?setLogo(result.item.avatar):setLogo("/img/man.webp");
+    },[result])
     const CheckAvatar = (e) => {
         const i = document.createElement('img');
         i.src = e;

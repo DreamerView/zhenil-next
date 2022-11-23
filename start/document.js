@@ -15,14 +15,7 @@ const DocumentResult = ({children}) => {
     const main = useSelector(state=>state.main);
     const hide = useSelector(state=>state.hideReq);
     useEffect(()=>{
-        if(action||frame||image) {
-            document.querySelector('html').style.cssText = "overflow: hidden;";
-            document.querySelector('body').style.cssText = "overflow: hidden;";
-        }
-        else {
-            document.querySelector('html').style.cssText = "";
-            document.querySelector('body').style.cssText = "";
-        }
+        action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
             return 0;
         };

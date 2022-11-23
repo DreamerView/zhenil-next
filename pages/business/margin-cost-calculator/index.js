@@ -35,9 +35,8 @@ const MarginMarkup = () => {
             setNDSTotal(0);
         }
         return () =>{ 
-            console.log("Result saved!");
-            console.clear();
-        }
+            return 0;
+        };
     },[n1,n2,markUp,delivery,marketing,other,n1Total,nds]);
     return(
         <>

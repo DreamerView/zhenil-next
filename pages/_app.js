@@ -42,16 +42,11 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps }) => {
-    // const production = process.env.NODE_ENV === 'production';
     const locale = useTranslateText();
     const [result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', () => {
-            setResult(true);
-        });
-        Router.events.on('routeChangeComplete', () => {
-            setResult(false);
-        });
+        Router.events.on('routeChangeStart', () => setResult(true));
+        Router.events.on('routeChangeComplete', () => setResult(false));
         return()=>{return 0;};
     },[])
     useEffect(() => {

@@ -7,7 +7,7 @@ const useConfirm = (res) => {
     const result = useSelector(state=>state.confirm);
 
     useEffect(() => {
-        if(res) return dis({type:"SetAction",set:{name:res.name,content:res.content,type:res.type,text:{cancel:res.cancel,accept_color:res.accept_color,accept:res.accept}}});
+        if(res) dis({type:"SetAction",set:{name:res.name,content:res.content,type:res.type,text:{cancel:res.cancel,accept_color:res.accept_color,accept:res.accept}}});
         return () => {
             return 0;
         };

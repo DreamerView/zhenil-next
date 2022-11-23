@@ -44,7 +44,6 @@ const Header = () => {
       }
       return () => {
         clearInterval(timer);
-        return 0;
       };
     },[res]);
     return(
