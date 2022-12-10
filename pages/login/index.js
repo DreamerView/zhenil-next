@@ -8,6 +8,7 @@ const AesEncryption = require('aes-encryption')
 const LoginForm = () => {
     const send = useDispatch();
     const [wait,setWait] = useState(false);
+    const [passValue,setPassValue] = useState('password');
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -70,7 +71,14 @@ const LoginForm = () => {
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>
                         <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
-                        <input type="password"  name="password" className={`${style.login_input} ${style.key}`} placeholder="Password" required/>
+                        <div className={style.password}>
+                            <div className={style.password__show_row}>
+                                <div className={style.password__show}>
+                                    <img onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                                </div>
+                            </div>
+                            <input type={passValue}  name="password" className={`${style.login_input} ${style.key}`} placeholder="Password" required/>
+                        </div>
                         <p className={style.text_center}>Forgot password?</p>
                         <button type="submit" className={style.login_button}>{wait===true?<img src="/img/button-preloader.svg"/>:"Login"}</button>
                     </div>

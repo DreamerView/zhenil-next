@@ -60,3 +60,17 @@ button.login_button {
     cursor: pointer;
     color:white;
 }
+div.password {
+    position: relative;;
+}
+div.password__show_row {
+    position: absolute;
+    bottom:0;
+    right:0;
+    margin:13px 24px
+}
+div.password__show {
+    position: relative;
+    width:24px;
+    height:24px;
+}
