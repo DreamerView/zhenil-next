@@ -67,7 +67,13 @@ const LoginForm = () => {
             <NavbarApp to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center}>Welcome back!</h1>
+                <h1 className={style.head_center} onClick={()=>send({
+                        type:"setNotification",
+                        set:{
+                            title:"Support Service Okki.kz",
+                            content:"User email or password is not correct!"
+                        }
+                    })}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>
