@@ -718,7 +718,7 @@ a {
   color:var(--font-color)
 }
 
-a:link {
+a:link,button,select,a,img,div,svg,input,span {
   -moz-tap-highlight-color:transparent;
   -ms-tap-highlight-color:transparent;
   -o-tap-highlight-color:transparent;
