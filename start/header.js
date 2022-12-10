@@ -72,9 +72,13 @@ const Header = () => {
             </Link>
           </div>
           <div className="header__action">
-            <div className="header__action_image anim_hover">
-              <Image title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" />
-            </div>
+            <Link href="/login">
+              <a>
+                <div className="header__action_image anim_hover">
+                  <Image title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" />
+                </div>
+              </a>
+            </Link>
           
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
