@@ -44,7 +44,7 @@ const Acc = () => {
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
-                <h2>{text['title1'][lang]}</h2>
+                <h2>{text['title1'][lang]} </h2>
             </div>
             <div className={style.main__block_menu_select_main}>
                 <p className={style.main__block_menu_select_main_p}>{text['content1'][lang]}</p>
