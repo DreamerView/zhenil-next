@@ -51,6 +51,13 @@ input.login_input {
     border-radius: 100px;
     margin-top:24px;
 }
+input.password_input {
+    padding:12px 64px;
+    width:195px;
+    background-color: var(--block-color);
+    border-radius: 100px;
+    margin-top:24px;
+}
 button.login_button {
     margin-top:24px;
     width:320px;
@@ -67,7 +74,8 @@ div.password__show_row {
     position: absolute;
     bottom:0;
     right:0;
-    margin:13px 24px
+    margin:13px 24px;
+    cursor: pointer;
 }
 div.password__show {
     position: relative;

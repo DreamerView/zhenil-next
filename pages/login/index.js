@@ -4,6 +4,7 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
 import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption')
+import Image from "next/image";
 
 const LoginForm = () => {
     const send = useDispatch();
@@ -74,10 +75,10 @@ const LoginForm = () => {
                         <div className={style.password}>
                             <div className={style.password__show_row}>
                                 <div className={style.password__show}>
-                                    <img onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                                    <Image layout="fill" alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                 </div>
                             </div>
-                            <input type={passValue}  name="password" className={`${style.login_input} ${style.key}`} placeholder="Password" required/>
+                            <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
                         <p className={style.text_center}>Forgot password?</p>
                         <button type="submit" className={style.login_button}>{wait===true?<img src="/img/button-preloader.svg"/>:"Login"}</button>
