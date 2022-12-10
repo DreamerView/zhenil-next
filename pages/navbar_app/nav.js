@@ -15,7 +15,7 @@ const NavbarApp = ({to,choice}) => {
         const handleScroll = () => {
             if(choice==='alone'){
                 const scrolled = window.pageYOffset;
-                if (scrolled >= headerHeight) {
+                if (scrolled >= headerHeight+150) {
                     setScrollResult('_fixed')
                 } else {
                     setScrollResult('')
