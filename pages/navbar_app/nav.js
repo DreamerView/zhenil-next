@@ -15,7 +15,7 @@ const NavbarApp = ({to,choice}) => {
         const handleScroll = () => {
             if(choice==='alone'){
                 const scrolled = window.pageYOffset;
-                if (scrolled > headerHeight+150) {
+                if (scrolled >= headerHeight) {
                     setScrollResult('_fixed')
                 } else {
                     setScrollResult('')
@@ -49,16 +49,29 @@ const NavbarApp = ({to,choice}) => {
                 )
             :''}
             </p>
-        </div>:<Link href={to.href} prefetch={false}>
+        </div>:
+        
+            scrollResult==="_fixed"?
+            <Link href={to.href} prefetch={false}>
                 <a>
-                <div className={`main_back${scrollResult}`}>
-                <div className='main_back_button'>
-                    <div className='main_back_button_i'></div>
-                </div>
-                <p>{ux['back'][lang]}</p>
-                </div>
+                    <div className={`main_back_fixed`}>
+                        <div className='main_back_button'>
+                            <div className='main_back_button_i'/>
+                        </div>
+                        <p>{ux['back'][lang]}</p>
+                    </div>
                 </a>
-                </Link>
+            </Link>:<Link href={to.href} prefetch={false}>
+                <a>
+                    <div className={`main_back`}>
+                        <div className='main_back_button'>
+                            <div className='main_back_button_i'/>
+                        </div>
+                        <p>{ux['back'][lang]}</p>
+                    </div>
+                </a>
+            </Link>
+
         }
         </>
     )

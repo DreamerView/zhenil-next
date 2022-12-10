@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import {useState} from "react";
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
@@ -8,18 +8,6 @@ const AesEncryption = require('aes-encryption')
 const LoginForm = () => {
     const send = useDispatch();
     const [wait,setWait] = useState(false);
-    const [alert,setAlert] = useState("");
-    // useEffect(()=>{
-    //     const aes = new AesEncryption()
-    //     aes.setSecretKey(process.env.aesKey)
-    //     // Note: secretKey must be 64 length of only valid HEX characters, 0-9, A, B, C, D, E and F
-
-    //     const encrypted = aes.encrypt('temirkhan.onyx@gmail.com')
-    //     const decrypted = aes.decrypt(encrypted)
-
-    //     console.log('encrypted >>>>>>', encrypted)
-    //     console.log('decrypted >>>>>>', decrypted)
-    // },[])
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
