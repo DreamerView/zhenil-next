@@ -7,6 +7,7 @@ const key_pass = "4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=";
 const production = process.env.NODE_ENV === 'production';
 
 const src = 'https://cdnjs.cloudflare.com';
+const backend = production?"https://app.okki.kz":"http://localhost:3001";
 
 let build_id;
 const withPWA = require('next-pwa')({
@@ -23,7 +24,7 @@ const ContentSecurityPolicy = `
     style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
-    connect-src 'self' https://cdnjs.cloudflare.com http://app.okki.kz ws://app.okki.kz;
+    connect-src 'self' https://cdnjs.cloudflare.com https://app.okki.kz wss://app.okki.kz http://localhost:3001;
     base-uri 'none';
     form-action 'self';
     object-src 'none'; 
@@ -101,7 +102,9 @@ module.exports = withPWA({
     authorName:"Okki.kz",
     siteName: 'okki.kz',
     hostName: 'https://okki.kz',
-    private: key_pass
+    private: key_pass,
+    backend:backend,
+    aesKey:"fd9b84f326e766ea7676c239f48e31b14ea01e9b0124290834637d520818d815"
   },
   reactStrictMode: true,
   i18n: {

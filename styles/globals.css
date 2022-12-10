@@ -274,6 +274,7 @@ p.nav > a {
       --background-color:hsla(0, 0%, 0%,0.92);
       --header-color:hsl(240, 3%, 11%);
       --block-color: hsl(240, 2%, 18%);
+      --block-color_transparent: hsla(0, 0%, 20%, 0.5);
       --menu-color:hsl(240, 2%, 18%);
       --menu-border-color:hsl(240, 2%, 18%);
       --menu-font-color:hsl(241, 100%, 77%);
@@ -297,7 +298,9 @@ p.nav > a {
       --confirm_block:hsl(240, 2%, 18%);
       --search_back:hsl(240, 2%, 18%);
       --search-block: hsl(240, 2%, 28%);
-      --brand_back:hsl(241, 100%, 74%)
+      --brand_back:hsl(241, 100%, 74%);
+      --email_img: url(../public/img/email-night.svg);
+      --key_img: url(../public/img/key-night.svg)
   }
 }
 @media (prefers-color-scheme: light) {
@@ -310,6 +313,7 @@ p.nav > a {
       --background-color:hsl(210, 10%, 96%);
       --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(220, 14%, 95%);
+      --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
       --menu-font-color:hsl(0, 0%, 100%);
@@ -333,7 +337,9 @@ p.nav > a {
       --confirm_block:hsl(0, 0%, 100%);
       --search_back:hsl(0, 0%, 100%);
       --search-block: hsl(210, 7%, 95%);
-      --brand_back:hsl(248, 57%, 59%)
+      --brand_back:hsl(248, 57%, 59%);
+      --email_img: url(../public/img/email-light.svg);
+      --key_img: url(../public/img/key-light.svg)
   }
 }
 .sup {
@@ -1486,3 +1492,76 @@ div.main_back_button_i {
 /* img.ads_responsive {
   width:75%;
 } */
+div.notification__back {
+  position: relative;
+  width:100%;
+  height:100%;
+  z-index:1
+}
+@media screen and (min-width:1900px) {
+  div.notification__block {
+    bottom:0;
+    right:0;
+    width: 375px;
+    height: 76px;
+    margin:32px;
+    padding:0 16px;
+  }
+}
+@media screen and (min-width:601px) and (max-width:1899px) {
+  div.notification__block {
+    bottom:0;
+    right:0;
+    width: 375px;
+    height: 76px;
+    margin:32px;
+    padding:0 16px;
+  }
+}
+@media (min-width:1px) and (max-width:600px) {
+  div.notification__block {
+    bottom:0;
+    width: 85%;
+    padding:16px;
+    margin: 16px auto;
+  }
+  div.notification__back {
+    display: flex;
+    justify-content: center;
+  }
+}
+div.notification__block {
+  z-index:999;
+  position: fixed;
+  display: flex;
+  background: var(--block-color_transparent);
+  backdrop-filter: blur(40px);  
+  border-radius: 16px;
+}
+div.notification__block_1 {
+  display: flex;
+  align-items: center;
+  width:93%;
+  height: 100%;
+}
+div.notification__block_1_img_row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:50px;
+  height:50px;
+  background-color: var(--header-color);
+  border-radius: 100%;
+  margin-right:16px;
+}
+div.notification__block_1_img {
+  position: relative;
+  width:45px;
+  height: 45px;
+}
+div.notification__block_2 {
+  width:7%;
+  background: url(../public/img/close.svg) no-repeat scroll 0px 14px  transparent;
+  cursor: pointer;
+}

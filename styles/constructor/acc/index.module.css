@@ -156,15 +156,7 @@ div.main__block_menu_select_block {
 .blue_temp {
     background-color: var(--blue_back);
 }
-.green_border {
-    border:1px solid var(--green_back);
-}
-.purple_border {
-    border:1px solid var(--purple_back);
-}
-.blue_border {
-    border:1px solid var(--blue_back);
-}
+
 div.main__block_menu_select_block_icon {
     display: -webkit-box;
     display: -ms-flexbox;

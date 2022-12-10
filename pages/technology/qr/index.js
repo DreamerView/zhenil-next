@@ -5,7 +5,15 @@ import style from "/styles/technology/qr/index.module.css";
 import dynamic from "next/dynamic";
 const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 
-const QR = () => {
+export async function getServerSideProps({params}) {
+    const res = await fetch(`http://localhost:3001/database-select`)
+    const data = await res.json()
+    return {
+        props: {data}
+    };
+}
+
+const QR = ({data}) => {
     const [hide,setHide] = useState(false);
     const [html5QrCode,setHtml5QrCode] = useState(null);
     const [width,setWidth] = useState(null)
@@ -105,7 +113,12 @@ const QR = () => {
         <>
         <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
-            <h1 className="flex_text" onClick={()=>checkDevice()}>Okki QR</h1>
+            {data.map((e,index)=><h1 key={index}>{e.name} {e.surname}</h1>)}
+            <form method="POST" action="http://localhost:3001/login">
+                <input type="text" name="uid" placeholder="Enter value"/>
+                <input type="submit" value="Send"/>
+            </form>
+            <h1 className="flex_text">Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":
             <div className={style.qr_row}>

@@ -16,7 +16,7 @@ const Quizy = ({getId}) => {
         question:"Кто такой Даниель?",
         answer:['Lorem Ipsum is simply dummy text of the printing and typesetting industry.','абобус','Okki','Okki']
     }]);
-    const [socket] = useState(io("http://app.okki.kz/ws", {
+    const [socket] = useState(io("https://app.okki.kz/ws", {
         transports: ['websocket'],
         query: {
           "c": getId

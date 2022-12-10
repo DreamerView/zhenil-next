@@ -70,7 +70,8 @@ const MyApp = ({ Component, pageProps }) => {
         getcrop:false,
         main:false,
         hideReq:false,
-        headerHeight:0
+        headerHeight:0,
+        notification:false
     };
 
 
@@ -85,6 +86,7 @@ const MyApp = ({ Component, pageProps }) => {
         case "actionMain": return {...state,main:action.set};
         case "hideRequest": return {...state,hideReq:action.set};
         case "setHeaderHeight": return {...state,headerHeight:action.set};
+        case "setNotification": return {...state,notification:action.set};
         default: return state;
     }
     };
