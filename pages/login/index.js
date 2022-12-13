@@ -6,9 +6,11 @@ import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption')
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/router'
 
 const LoginForm = () => {
     const send = useDispatch();
+    const router = useRouter()
     const [wait,setWait] = useState(false);
     const [passValue,setPassValue] = useState('password');
     const Notification = ({user,content,title,image}) => {
@@ -53,6 +55,7 @@ const LoginForm = () => {
                 localStorage.setItem("AccessToken",accessToken)
                 Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
                 setTimeout(()=>setWait(false),[1000]);
+                setTimeout(()=>router.push("/"),[2000])
             } catch(e) {
                 
             }
