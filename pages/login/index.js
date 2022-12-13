@@ -5,11 +5,23 @@ import style from "/styles/login/index.module.css";
 import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption')
 import Image from "next/image";
+import Link from "next/link";
 
 const LoginForm = () => {
     const send = useDispatch();
     const [wait,setWait] = useState(false);
     const [passValue,setPassValue] = useState('password');
+    const Notification = ({user,content,title,image}) => {
+        send({
+            type:"setNotification",
+            set:{
+                user:user,
+                title:title,
+                content:content,
+                image:image
+            }
+        });
+    }
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -17,7 +29,6 @@ const LoginForm = () => {
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(e.target[0].value);
             const password = aes.encrypt(e.target[1].value);
-            console.log(e);
             setWait(true);
             try {
                 const requestOptions = {
@@ -29,29 +40,19 @@ const LoginForm = () => {
                 };
                 const login = await fetch(process.env.backend+"/login", requestOptions)
                 if (login.status ===404) {
-                    send({
-                        type:"setNotification",
-                        set:{
-                            title:"Support Service Okki.kz",
-                            content:"User email or password is not correct!"
-                        }
-                    });
+                    Notification({user:"admin",content:"User email or password is not correct!"})
+                    setTimeout(()=>setWait(false),[1000]);
+                } else if(login.status ===500) {
+                    Notification({user:"admin",content:"Something going wrong"})
                     setTimeout(()=>setWait(false),[1000]);
                 }
                 const result = await login.json();
-                localStorage.setItem("AccessToken",result)
-                send({
-                    type:"setNotification",
-                    set:{
-                        title:"Support Service Okki.kz",
-                        content:"Welcome to the system!"
-                    }
-                });
+                const accessToken = aes.decrypt(result.accessToken)
+                const nameUser = aes.decrypt(result.name);
+                const surnameUser = aes.decrypt(result.surname)
+                localStorage.setItem("AccessToken",accessToken)
+                Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
                 setTimeout(()=>setWait(false),[1000]);
-                console.log(result);
-                console.log(email,password)
-                
-                // console.log(login.status);
             } catch(e) {
                 
             }
@@ -67,13 +68,7 @@ const LoginForm = () => {
             <NavbarApp to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center} onClick={()=>send({
-                        type:"setNotification",
-                        set:{
-                            title:"Support Service Okki.kz",
-                            content:"User email or password is not correct!"
-                        }
-                    })}>Welcome back!</h1>
+                <h1 className={style.head_center} onClick={()=>Notification({user:"admin",content:'Not found'})}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>
@@ -86,12 +81,11 @@ const LoginForm = () => {
                             </div>
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
-                        <p className={style.text_center}>Forgot password?</p>
-                        <button type="submit" className={style.login_button}>{wait===true?<img src="/img/button-preloader.svg"/>:"Login"}</button>
+                        <Link href="/login/forget"><a className={style.text_center}>Forgot password?</a></Link>
+                        <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image layout="fill" alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
                     </div>
                 </form>
             </div>
-            <div className={style.notification}></div>
         </div>
       </>
     );

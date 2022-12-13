@@ -3,6 +3,7 @@ import Image from "next/image";
 const Notification = () => {
     const send = useDispatch();
     const notification = useSelector(state=>state.notification);
+    const status = notification.user;
     return(
         <>
             <div className="notification__back">
@@ -10,11 +11,12 @@ const Notification = () => {
                     <div className="notification__block_1">
                         <div className="notification__block_1_img_row">
                             <div className="notification__block_1_img">
-                                <Image layout="fill" alt="notification logo" src="/img/support.webp"/>
+                            {/* /img/support.webp */}
+                                <Image layout="fill" alt="notification logo" src={status==='admin'?`/img/support.webp`:notification.image}/>
                             </div>
                         </div>
                         <div className="notification__block_1_row">
-                            <h3>{notification.title}</h3>
+                            <h3>{status==='admin'?`Support Service Okki.kz`:notification.title}</h3>
                             <p className="small">{notification.content}</p>
                         </div>
                     </div>

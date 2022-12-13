@@ -65,10 +65,10 @@ const NavbarApp = ({to,choice}) => {
             <Link href={to.href} prefetch={false}>
                 <a>
                     <div className={`main_back`}>
-                        <div className='main_back_button'>
+                        <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
                             <div className='main_back_button_i'/>
                         </div>
-                        <p>{ux['back'][lang]}</p>
+                        <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
                     </div>
                 </a>
             </Link>

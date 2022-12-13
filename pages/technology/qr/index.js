@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 
 export async function getServerSideProps({params}) {
-    const res = await fetch(`http://localhost:3001/database-select`)
+    const res = await fetch(`http://${process.env.backend}/database-select`)
     const data = await res.json()
     return {
         props: {data}

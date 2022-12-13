@@ -100,6 +100,9 @@ p.sm {
 .click {
   cursor: pointer
 }
+.opacity_zero {
+  opacity: 0;
+}
 .anim_hover {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -1564,4 +1567,9 @@ div.notification__block_2 {
   width:7%;
   background: url(../public/img/close.svg) no-repeat scroll 0px 14px  transparent;
   cursor: pointer;
+}
+div.button__preloader {
+  position:relative;
+  width: auto;
+  height:50px;
 }
