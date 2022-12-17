@@ -36,7 +36,9 @@ const LoginForm = () => {
                 const requestOptions = {
                     method: 'POST',
                     headers: {
-                        "Content-Type": "application/json"
+                        "WWW-Authenticate": process.env.authHeader,
+                        "Accept":"application/json; charset=utf-8",
+                        "Content-Type": "application/json; charset=utf-8"
                     },
                     body: JSON.stringify({email:email,password:password})
                 };
@@ -49,10 +51,11 @@ const LoginForm = () => {
                     setTimeout(()=>setWait(false),[1000]);
                 }
                 const result = await login.json();
-                const accessToken = aes.decrypt(result.accessToken)
+                const accessToken = aes.decrypt(result.accessToken);
                 const nameUser = aes.decrypt(result.name);
                 const surnameUser = aes.decrypt(result.surname)
-                localStorage.setItem("AccessToken",accessToken)
+                // localStorage.setItem("AccessToken",accessToken)
+                document.cookie=`accessToken=${accessToken};path=/`;
                 Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
                 setTimeout(()=>setWait(false),[1000]);
                 setTimeout(()=>router.push("/"),[2000])
@@ -71,7 +74,7 @@ const LoginForm = () => {
             <NavbarApp to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center} onClick={()=>Notification({user:"admin",content:'Not found'})}>Welcome back!</h1>
+                <h1 className={style.head_center} onClick={()=>router.push("/signup")}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>

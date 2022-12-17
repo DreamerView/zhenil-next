@@ -4,16 +4,50 @@ import NavbarApp from "/pages/navbar_app/nav";
 import style from "/styles/technology/qr/index.module.css";
 import dynamic from "next/dynamic";
 const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
+import jsonFetchReq from "/start/ServerJsonFetchReq";
 
-export async function getServerSideProps() {
-    const res = await fetch(process.env.backend+"/database-select")
-    const data = await res.json()
-    return {
-        props: {data}
+export async function getServerSideProps(context) {
+    const getCookie = (cookieName) => {
+        let cookies = {};
+        context.req.headers.cookie.split(';').forEach(function(el) {
+          let [key,value] = el.split('=');
+          cookies[key.trim()] = value;
+        })
+        return cookies[cookieName];
     };
+    const cookieCheck = getCookie("accessToken");
+    if(cookieCheck!==undefined) {
+        const data = await jsonFetchReq({
+            method:"GET",
+            path:"/database-select",
+            cookie:context.req.headers.cookie,
+            server:context
+        });
+        if(data==='redirect') {
+            return {
+                redirect: {
+                    permanent: false,
+                    destination: "/login",
+                },
+                props: {}
+            }; 
+        } else {
+            return {
+                props: {data}
+            };
+        }
+    } else {
+        return {
+            props: {}
+        }
+    }
 }
 
 const QR = ({data}) => {
+    // if(typeof document !== "undefined") {
+    //     const result_1 = jsonFetchReq({method:"GET",path:"/database-select",cookie:document.cookie})
+    //     console.log(result_1);
+    // }
     const [hide,setHide] = useState(false);
     const [html5QrCode,setHtml5QrCode] = useState(null);
     const [width,setWidth] = useState(null)
@@ -113,11 +147,7 @@ const QR = ({data}) => {
         <>
         <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
-            {data.map((e,index)=><h1 key={index}>{e.name} {e.surname}</h1>)}
-            <form method="POST" action="http://localhost:3001/login">
-                <input type="text" name="uid" placeholder="Enter value"/>
-                <input type="submit" value="Send"/>
-            </form>
+            {data!==undefined?data.map((e,index)=><h1 key={index}>{e.name} {e.surname}</h1>):""}
             <h1 className="flex_text">Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":

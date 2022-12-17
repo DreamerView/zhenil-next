@@ -1,7 +1,7 @@
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
 import { useDispatch } from 'react-redux';
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useCallback } from 'react';
 const AesEncryption = require('aes-encryption');
 
 
@@ -11,20 +11,25 @@ const FotgetPassword = () => {
     const [change,setChange] = useState(false);
     const [OTP, setOTP] = useState(new Array(4).fill(""));
     const [OtpContinue,setOtpContinue] = useState(false);
-    useEffect(()=>{
-        const res = OTP.join("");
-        if(res.length===4) checkOTP(res);
-        else setOtpContinue(false);
-        return () => {
-            return false;
-        }
-    },[OTP])
-    const checkOTP = async(res) => {
+    const Notification = useCallback(({user,content,title,image}) => {
+        send({
+            type:"setNotification",
+            set:{
+                user:user,
+                title:title,
+                content:content,
+                image:image
+            }
+        });
+    },[send]);
+    const checkOTP = useCallback(async(res) => {
         const email = localStorage.getItem("email");
         const requestOptions = {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                "WWW-Authenticate": process.env.authHeader,
+                "Accept":"application/json; charset=utf-8",
+                "Content-Type": "application/json; charset=utf-8"
             },
             body: JSON.stringify({otp:res,email:email})
         };
@@ -39,18 +44,15 @@ const FotgetPassword = () => {
                 setTimeout(()=>setWait(false),[1000]);
                 setOtpContinue(true);
             }
-    }
-    const Notification = ({user,content,title,image}) => {
-        send({
-            type:"setNotification",
-            set:{
-                user:user,
-                title:title,
-                content:content,
-                image:image
-            }
-        });
-    }
+    },[Notification]);
+    useEffect(()=>{
+        const res = OTP.join("");
+        if(res.length===4) checkOTP(res);
+        else setOtpContinue(false);
+        return () => {
+            return false;
+        }
+    },[OTP,checkOTP])
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -62,7 +64,9 @@ const FotgetPassword = () => {
                 const requestOptions = {
                     method: 'POST',
                     headers: {
-                        "Content-Type": "application/json"
+                        "WWW-Authenticate": process.env.authHeader,
+                        "Accept":"application/json; charset=utf-8",
+                        "Content-Type": "application/json; charset=utf-8"
                     },
                     body: JSON.stringify({email:email})
                 };
