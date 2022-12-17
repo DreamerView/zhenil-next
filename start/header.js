@@ -53,7 +53,7 @@ const Header = () => {
         return () => {
           return 0;
         };
-    })
+    });
     return(
       <>
         <Head>

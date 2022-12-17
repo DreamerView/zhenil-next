@@ -1,16 +1,18 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 import {useState} from "react";
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
 import { useDispatch } from "react-redux";
-const AesEncryption = require('aes-encryption')
+const AesEncryption = require('aes-encryption');
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 const LoginForm = () => {
     const send = useDispatch();
-    const router = useRouter()
+    const router = useRouter();
     const [wait,setWait] = useState(false);
     const [passValue,setPassValue] = useState('password');
     const Notification = ({user,content,title,image}) => {
@@ -23,7 +25,7 @@ const LoginForm = () => {
                 image:image
             }
         });
-    }
+    };
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -42,28 +44,28 @@ const LoginForm = () => {
                     },
                     body: JSON.stringify({email:email,password:password})
                 };
-                const login = await fetch(process.env.backend+"/login", requestOptions)
+                const login = await fetch(process.env.backend+"/login", requestOptions);
                 if (login.status ===404) {
-                    Notification({user:"admin",content:"User email or password is not correct!"})
+                    Notification({user:"admin",content:"User email or password is not correct!"});
                     setTimeout(()=>setWait(false),[1000]);
                 } else if(login.status ===500) {
-                    Notification({user:"admin",content:"Something going wrong"})
+                    Notification({user:"admin",content:"Something going wrong"});
                     setTimeout(()=>setWait(false),[1000]);
                 }
                 const result = await login.json();
                 const accessToken = aes.decrypt(result.accessToken);
                 const nameUser = aes.decrypt(result.name);
-                const surnameUser = aes.decrypt(result.surname)
+                const surnameUser = aes.decrypt(result.surname);
                 // localStorage.setItem("AccessToken",accessToken)
                 document.cookie=`accessToken=${accessToken};path=/`;
                 Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
                 setTimeout(()=>setWait(false),[1000]);
-                setTimeout(()=>router.push("/"),[2000])
+                setTimeout(()=>router.push("/"),[2000]);
             } catch(e) {
-                
+                console.log(e);
             }
         }
-    }
+    };
     return(
         <>
             <Head>

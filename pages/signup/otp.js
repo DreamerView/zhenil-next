@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
@@ -36,8 +37,8 @@ const SignUp = () => {
         else setOtpContinue(prev=>prev=false);
         return () => {
             return false;
-        }
-    },[OTP,checkOTP])
+        };
+    },[OTP,checkOTP]);
     useEffect(()=>{
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
@@ -50,8 +51,8 @@ const SignUp = () => {
         if(emailUser&&otpUser) setName(prev=>prev=emailUser);
         return () => {
             return false;
-        }
-    },[router])
+        };
+    },[router]);
     const OTPChange = (element,index) => {
         if (isNaN(element.value)) return false;
 
@@ -66,10 +67,10 @@ const SignUp = () => {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const OTPDectrypt = aes.decrypt(otpUser);
-        const verified = "verified-"+OTPDectrypt
+        const verified = "verified-"+OTPDectrypt;
         const verifiedOTP = aes.encrypt(verified);
         localStorage.setItem("RegistrationOTPVerified",verifiedOTP);
-        router.push("/signup/password")
+        router.push("/signup/password");
     };
     return(
         <>

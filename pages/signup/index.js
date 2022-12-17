@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
@@ -12,8 +13,8 @@ const SignUp = () => {
         if(nameUser) setName(prev=>prev=nameUser);
         return () =>{
             return false;
-        }
-    },[])
+        };
+    },[]);
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationName",e);

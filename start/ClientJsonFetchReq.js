@@ -1,5 +1,7 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 const AesEncryption = require('aes-encryption');
 
 const jsonFetchReq = async({method,body,path,cookie}) =>{
@@ -11,7 +13,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
         cookie.split(';').forEach(function(el) {
           let [key,value] = el.split('=');
           cookies[key.trim()] = value;
-        })
+        });
         return cookies[cookieName];
     };
     const deleteCookie = (name) => {
@@ -89,15 +91,15 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                         };
                     }
                     const send = await fetch(process.env.backend+path, sendReqOpt);
-                    const res = await send.json()
+                    const res = await send.json();
                     return res;
                 }
             }
         }
         else {
-            const result = await login.json()
-            return result
+            const result = await login.json();
+            return result;
         }
     }
-}
+};
 export default jsonFetchReq;

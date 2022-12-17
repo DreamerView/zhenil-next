@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
 import { useDispatch } from 'react-redux';
@@ -35,7 +37,7 @@ const FotgetPassword = () => {
         };
         const login = await fetch(process.env.backend+"/reset-password-otp", requestOptions);
         if(login.status ===500) {
-            Notification({user:"admin",content:"Something going wrong"})
+            Notification({user:"admin",content:"Something going wrong"});
             setTimeout(()=>setWait(false),[1000]);
             setOtpContinue(false);
         }
@@ -51,8 +53,8 @@ const FotgetPassword = () => {
         else setOtpContinue(false);
         return () => {
             return false;
-        }
-    },[OTP,checkOTP])
+        };
+    },[OTP,checkOTP]);
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -70,12 +72,12 @@ const FotgetPassword = () => {
                     },
                     body: JSON.stringify({email:email})
                 };
-                const login = await fetch(process.env.backend+"/forget", requestOptions)
+                const login = await fetch(process.env.backend+"/forget", requestOptions);
                 if (login.status ===404) {
-                    Notification({user:"admin",content:"User email not found"})
+                    Notification({user:"admin",content:"User email not found"});
                     setTimeout(()=>setWait(false),[1000]);
                 } else if(login.status ===500) {
-                    Notification({user:"admin",content:"Something going wrong"})
+                    Notification({user:"admin",content:"Something going wrong"});
                     setTimeout(()=>setWait(false),[1000]);
                 }
                 const result = await login.json();
@@ -86,10 +88,10 @@ const FotgetPassword = () => {
                     localStorage.setItem("email",email);
                 }
             } catch(e) {
-                
+                console.log(e);
             }
         }
-    }
+    };
     const OTPChange = (element,index) => {
         if (isNaN(element.value)) return false;
 

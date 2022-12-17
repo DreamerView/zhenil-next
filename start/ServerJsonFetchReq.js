@@ -1,5 +1,7 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 
-const AesEncryption = require('aes-encryption')
+const AesEncryption = require('aes-encryption');
 
 const ServerJsonFetchReq = async({method,body,path,cookie,server}) =>{
     const aes = new AesEncryption();
@@ -9,12 +11,12 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server}) =>{
         cookie.split(';').forEach(function(el) {
           let [key,value] = el.split('=');
           cookies[key.trim()] = value;
-        })
+        });
         return cookies[cookieName];
     };
     const userAccessToken = getCookie("accessToken");
     if(userAccessToken!==undefined) {
-        const accessToken = aes.encrypt(userAccessToken)
+        const accessToken = aes.encrypt(userAccessToken);
         let requestOptions;
         if(method==="POST") {
             requestOptions = {
@@ -58,7 +60,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server}) =>{
                 const result = await send.json();
                 if(result.accessToken!==undefined) {
                     const response = aes.decrypt(result.accessToken);
-                    server.res.setHeader('set-cookie', ['accessToken='+response+";path=/"])
+                    server.res.setHeader('set-cookie', ['accessToken='+response+";path=/"]);
                     console.log("token updated, new token is "+response);
                     let sendReqOpt;
                     if(method==="POST") {
@@ -84,15 +86,15 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server}) =>{
                         };
                     }
                     const send = await fetch(process.env.backend+path, sendReqOpt);
-                    const res = await send.json()
+                    const res = await send.json();
                     return res;
                     // window.location.reload();
                 }
             }
         } else {
-            const result = await login.json()
-            return result
+            const result = await login.json();
+            return result;
         }
     }
-}
+};
 export default ServerJsonFetchReq;

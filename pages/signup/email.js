@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/login/index.module.css";
@@ -16,12 +18,12 @@ const SignUp = () => {
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
         if(!nameUser) router.push('/signup');
-        else if(!surnameUser) router.push('/signup/surname')
+        else if(!surnameUser) router.push('/signup/surname');
         const emailUser = localStorage.getItem("RegistrationEmail");
         if(emailUser) setName(prev=>prev=emailUser);
         return () =>{
             return false;
-        }
+        };
     },[router]);
     const Notification = ({user,content,title,image}) => {
         send({
@@ -33,7 +35,7 @@ const SignUp = () => {
                 image:image
             }
         });
-    }
+    };
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationEmail",e);
@@ -54,17 +56,16 @@ const SignUp = () => {
                     },
                     body: JSON.stringify({email:email})
                 };
-                const login = await fetch(process.env.backend+"/verify-email", requestOptions)
+                const login = await fetch(process.env.backend+"/verify-email", requestOptions);
                 if (login.status ===404) {
-                    Notification({user:"admin",content:"User email has!"})
-                    setChange(prev=>prev=false)
+                    Notification({user:"admin",content:"User email has!"});
+                    setChange(prev=>prev=false);
                     setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 } else if(login.status ===500) {
-                    Notification({user:"admin",content:"Something going wrong"})
+                    Notification({user:"admin",content:"Something going wrong"});
                     setTimeout(()=>setWait(prev=>prev=false),[1000]);
-                    setChange(prev=>prev=false)
+                    setChange(prev=>prev=false);
                 }
-                const result = await login.json();
                 Notification({user:"admin",content:"Email free"});
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 setChange(prev=>prev=true);
@@ -88,20 +89,20 @@ const SignUp = () => {
                 },
                 body: JSON.stringify({email:email})
             };
-            const login = await fetch(process.env.backend+"/verify-email-otp", requestOptions)
+            const login = await fetch(process.env.backend+"/verify-email-otp", requestOptions);
             if (login.status ===404) {
-                Notification({user:"admin",content:"User email not found"})
-                setChange(prev=>prev=false)
+                Notification({user:"admin",content:"User email not found"});
+                setChange(prev=>prev=false);
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
             } else if(login.status ===500) {
-                Notification({user:"admin",content:"Something going wrong"})
+                Notification({user:"admin",content:"Something going wrong"});
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
-                setChange(prev=>prev=false)
+                setChange(prev=>prev=false);
             }
             const result = await login.json();
             if(result.success===true) {
                 const otpKey = result.otp;
-                localStorage.setItem("RegistrationOTP",otpKey)
+                localStorage.setItem("RegistrationOTP",otpKey);
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 console.log(otpKey);
                 setChange(prev=>prev=true);
@@ -110,7 +111,7 @@ const SignUp = () => {
         } catch(e) {
             console.log(e);
         }
-    }
+    };
     return(
         <>
             <Head>
