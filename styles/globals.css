@@ -971,7 +971,7 @@ div.header__action_login_button {
   padding:0 24px;
   height: 46px;
   border-radius: 24px;
-  background-color: var(--brand-color);
+  background-color: var(--brand_back);
   cursor: pointer;
   position: relative;
   color:#ffffff;
