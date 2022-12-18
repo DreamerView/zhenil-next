@@ -360,8 +360,8 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--block-color) inset;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-box-shadow: 0 1px 0 0 #26a69a, inset 0 0 0px 9999px var(--block-color);
-  box-shadow: 0 1px 0 0 #26a69a, inset 0 0 0px 9999px var(--block-color)
+  -webkit-box-shadow: 0 1px 0 0 var(--brand-color), inset 0 0 0px 9999px var(--block-color);
+  box-shadow: 0 1px 0 0 var(--brand-color), inset 0 0 0px 9999px var(--block-color)
 }
 .sup {
   font-size:12px;

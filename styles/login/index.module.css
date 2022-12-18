@@ -43,9 +43,11 @@ div.login_row {
 }
 .email {
     background: var(--email_img) no-repeat scroll 24px 14px var(--input_back);
+    z-index:5;
 }
 .key {
     background: var(--key_img) no-repeat scroll 24px 14px var(--input_back);
+    z-index:5;
 }
 input.login_input {
     padding:12px 24px 12px 64px;
