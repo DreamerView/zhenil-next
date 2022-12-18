@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Search from "/start/header_action/search";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
@@ -14,11 +14,13 @@ const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 const Header = () => {
     const send = useDispatch();
     const router = useRouter();
+    const auth = useSelector(state=>state.auth);
     const {locale} = router;
     const [search,setSearch] = useState([]);
     const [list,setList] = useState('');
     const [res,setRes] = useState(false);
     const [timeOut,setTime] = useState(false);
+    const [login,setLogin] = useState(false);
     const SetLanguage = () => {
         return send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     };
@@ -31,6 +33,23 @@ const Header = () => {
     const RefRes = s => {
       return setRes(s);
     };
+    useEffect(()=>{
+      const getCookie = (cookieName) => {
+        let cookies = {};
+        document.cookie.split(';').forEach((el)=> {
+          let [key,value] = el.split('=');
+          cookies[key.trim()] = value;
+        });
+        return cookies[cookieName];
+      };
+      const cookie = getCookie("accessToken");
+      if(cookie!==undefined) setLogin(true);
+      else setLogin(prev=>prev=false);
+      if(auth) setLogin(prev=>prev=auth);
+      return () =>{
+        return false;
+      }
+    },[auth])
     useEffect(()=>{
       let timer;
       if(res===false) {
@@ -51,7 +70,7 @@ const Header = () => {
         let height = box.clientHeight;
         send({type:"setHeaderHeight",set:height});
         return () => {
-          return 0;
+          return false;
         };
     });
     return(
@@ -72,7 +91,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="header__action">
-            <UserIndex item={{login:false}}/>
+            <UserIndex item={{login:login}}/>
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>

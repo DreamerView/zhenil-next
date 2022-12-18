@@ -71,7 +71,8 @@ const MyApp = ({ Component, pageProps }) => {
         main:false,
         hideReq:false,
         headerHeight:0,
-        notification:false
+        notification:false,
+        auth:false
     };
 
 
@@ -87,6 +88,7 @@ const MyApp = ({ Component, pageProps }) => {
         case "hideRequest": return {...state,hideReq:action.set};
         case "setHeaderHeight": return {...state,headerHeight:action.set};
         case "setNotification": return {...state,notification:action.set};
+        case "setAuth": return {...state,auth:action.set};
         default: return state;
     }
     };

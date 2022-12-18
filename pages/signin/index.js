@@ -56,11 +56,17 @@ const LoginForm = () => {
                 const accessToken = aes.decrypt(result.accessToken);
                 const nameUser = aes.decrypt(result.name);
                 const surnameUser = aes.decrypt(result.surname);
-                // localStorage.setItem("AccessToken",accessToken)
-                document.cookie=`accessToken=${accessToken};path=/`;
+                const today = new Date();
+                const expire = new Date();
+                expire.setTime(today.getTime() + 3600000*24*14);
+                document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                 Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
                 setTimeout(()=>setWait(false),[1000]);
                 setTimeout(()=>router.push("/"),[2000]);
+                send({
+                    type:"setAuth",
+                    set:true
+                });
             } catch(e) {
                 console.log(e);
             }

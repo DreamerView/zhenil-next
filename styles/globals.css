@@ -631,7 +631,7 @@ select:-webkit-autofill:focus {
       display: none
   }
   div.header__logo {
-      width:50%
+      width:30%
   }
   div.header__search {
       padding-top:30px;
@@ -639,7 +639,7 @@ select:-webkit-autofill:focus {
   }
 
   div.header__action {
-      width: 50%;
+      width: 70%;
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end
