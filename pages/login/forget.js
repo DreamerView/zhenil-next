@@ -87,8 +87,8 @@ const FotgetPassword = () => {
                     setChange(true);
                     localStorage.setItem("email",email);
                 }
-            } catch(e) {
-                console.log(e);
+            } catch {
+                
             }
         }
     };
