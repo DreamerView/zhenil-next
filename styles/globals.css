@@ -973,7 +973,8 @@ div.header__action_login_button {
   border-radius: 24px;
   background-color: var(--brand-color);
   cursor: pointer;
-  position: relative
+  position: relative;
+  color:#ffffff;
 }
 img.header__action_avatar {   
   width: 46px;
