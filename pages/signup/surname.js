@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
-import style from "/styles/login/index.module.css";
+import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 

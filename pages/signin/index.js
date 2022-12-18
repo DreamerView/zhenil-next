@@ -3,7 +3,7 @@
 import {useState} from "react";
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
-import style from "/styles/login/index.module.css";
+import style from "/styles/signin/index.module.css";
 import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption');
 import Image from "next/image";
@@ -44,7 +44,7 @@ const LoginForm = () => {
                     },
                     body: JSON.stringify({email:email,password:password})
                 };
-                const login = await fetch(process.env.backend+"/login", requestOptions);
+                const login = await fetch(process.env.backend+"/signin", requestOptions);
                 if (login.status ===404) {
                     Notification({user:"admin",content:"User email or password is not correct!"});
                     setTimeout(()=>setWait(false),[1000]);
@@ -89,7 +89,7 @@ const LoginForm = () => {
                             </div>
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
-                        <Link href="/login/forget"><a className={style.text_center}>Forgot password?</a></Link>
+                        <Link href="/signin/forget"><a className={style.text_center}>Forgot password?</a></Link>
                         <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image layout="fill" alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
                     </div>
                 </form>

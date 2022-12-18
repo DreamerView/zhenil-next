@@ -58,5 +58,10 @@ export default {
         kk:"Артқа қайту",
         ru:"Вернуться назад",
         en:"Return back"
+    },
+    login: {
+        kk:"Кіру",
+        ru:"Войти",
+        en:"Sign in"
     }
 }

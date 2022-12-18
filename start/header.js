@@ -2,14 +2,14 @@
 import dynamic from 'next/dynamic';
 import { useState,useEffect} from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
 import { useDispatch } from 'react-redux';
-const Search =  dynamic(()=>import("/start/header_action/search"),{ssr:false});
+import Search from "/start/header_action/search";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
+const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 
 const Header = () => {
     const send = useDispatch();
@@ -72,14 +72,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="header__action">
-            <Link href="/login">
-              <a>
-                <div className="header__action_image anim_hover">
-                  <Image title={`Avatar`} layout='fill' className="header__action_avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp" alt="avatar" />
-                </div>
-              </a>
-            </Link>
-          
+            <UserIndex item={{login:false}}/>
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>

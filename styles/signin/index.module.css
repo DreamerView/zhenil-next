@@ -15,14 +15,14 @@
   }
   @media (min-width:1px) and (max-width:600px) {
     div.login_form {
-        width:100%;
+        width:80%;
     }
   }
 div.login_form {
     border: 0.5px solid var(--border-color);
     border-radius: 24px;
     margin: 0 auto;
-    padding:64px 0;
+    padding:64px 32px;
 }
 .head_center {
     text-align: center;
@@ -49,6 +49,7 @@ div.login_row {
     background: var(--key_img) no-repeat scroll 24px 14px var(--input_back);
     z-index:5;
 }
+
 input.login_input {
     padding:12px 24px 12px 64px;
     width:233px;

@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
 import NavbarApp from '/pages/navbar_app/nav';
-import style from "/styles/login/index.module.css";
+import style from "/styles/signin/index.module.css";
 import { useDispatch } from 'react-redux';
 import { useState,useEffect,useCallback } from 'react';
 const AesEncryption = require('aes-encryption');
@@ -103,7 +103,7 @@ const FotgetPassword = () => {
     };
     return (
         <>
-            <NavbarApp to={{href:"/login"}} choice="alone"/>
+            <NavbarApp to={{href:"/signin"}} choice="alone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     {change===false?
@@ -124,7 +124,7 @@ const FotgetPassword = () => {
                                     return(
                                         <input
                                             className={style.otp_keys}
-                                            type="text"
+                                            type="tel"
                                             name="otp"
                                             maxLength="1"
                                             key={index}
