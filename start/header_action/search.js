@@ -28,7 +28,7 @@ const Search = (res) => {
       
       useEffect(()=>{
         focus.current.value = res.list;
-        return setSearch(res.list);
+        return setSearch((prev)=>prev=res.list);
       },[res.list]);
     return (
         <>

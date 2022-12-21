@@ -1,0 +1,97 @@
+@media screen and (min-width:1900px) {
+    div.user__main {
+        width:75%;
+    }
+    div.user__main_row {
+        width:50%;
+    }
+}
+  @media screen and (min-width:1161px) and (max-width:1899px) {
+    div.user__main{
+        width:75%;
+    }
+    div.user__main_row {
+        width:55%;
+    }
+}
+  @media (min-width:601px) and (max-width:1160px) {
+    div.user__main {
+        width:90%;
+    }
+    div.user__main_row {
+        width:80%;
+    }
+  }
+  @media (min-width:1px) and (max-width:600px) {
+    div.user__main {
+        width:85%;
+    }
+    .need_center {
+        margin-top:16px;
+        text-align: center;
+    }
+    div.user__main_row {
+        width:100%;
+    }
+}
+.text_center {
+    text-align: center;
+    /* margin:0 auto; */
+}
+div.user__main {
+    border-radius: 24px;
+    border:1px solid var(--border-color);
+    padding:64px 24px;
+    margin:0 auto;
+}
+div.user__main_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0 auto;
+}
+div.user__main_portfolio {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom:24px;
+    /* flex-direction: column; */
+}
+div.user__main_portfolio_avatar {
+    position: relative;
+    width:100px;
+    height:100px;
+    border-radius: 100%;
+    background-color: var(--block-color);
+    margin:0 12px;
+}
+div.user__main_portfolio_row {
+    margin:0 12px;
+}
+p.portfolio_sub {
+    margin-top:8px;
+    color:var(--sub_content)
+}
+div.user__main_action {
+    margin-top:24px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+button.button_follow {
+    padding:10px 24px;
+    background-color: var(--blue_back);
+    border-radius: 24px;
+    cursor: pointer;
+    margin: 0 8px;
+    color:hsl(0, 0%, 100%);
+}
+button.button_more {
+    padding:10px 24px;
+    background-color: var(--block-color);
+    border-radius: 24px;
+    cursor: pointer;
+    margin: 0 8px;
+}

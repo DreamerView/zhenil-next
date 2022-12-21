@@ -5,7 +5,7 @@ import Router from 'next/router';
 import useTranslateText from "/start/translate";
 import translate from "/translate/ux/loading_page";
 import { useEffect,useState } from "react";
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import "/styles/globals.css";
@@ -22,7 +22,7 @@ const Preloader = () => {
     },[checkMode]);
     useEffect(()=>{
         const timer = setTimeout(()=>{
-            setTimer(true);
+            setTimer((prev)=>prev=true);
         },[500]);
         return ()=>clearTimeout(timer);
     },[]);
@@ -45,8 +45,8 @@ const MyApp = ({ Component, pageProps }) => {
     const locale = useTranslateText();
     const [result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', () => setResult(true));
-        Router.events.on('routeChangeComplete', () => setResult(false));
+        Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true));
+        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false));
         return()=>{return 0;};
     },[])
     useEffect(() => {

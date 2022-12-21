@@ -25,13 +25,13 @@ const Header = () => {
         return send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     };
     const GetResult = e => {
-      return setSearch(e);
+      return setSearch((prev)=>prev=e);
     };
     const GetList = e => {
-      return setList(e);
+      return setList((prev)=>prev=e);
     };
     const RefRes = s => {
-      return setRes(s);
+      return setRes((prev)=>prev=s);
     };
     useEffect(()=>{
       const getCookie = (cookieName) => {
@@ -43,9 +43,9 @@ const Header = () => {
         return cookies[cookieName];
       };
       const cookie = getCookie("accessToken");
-      if(cookie!==undefined) setLogin(true);
-      else setLogin(prev=>prev=false);
-      if(auth) setLogin(prev=>prev=auth);
+      if(cookie!==undefined) setLogin((prev)=>prev=true);
+      else setLogin((prev)=>prev=false);
+      if(auth) setLogin((prev)=>prev=auth);
       return () =>{
         return false;
       }
@@ -54,11 +54,11 @@ const Header = () => {
       let timer;
       if(res===false) {
         timer = setTimeout(()=>{
-          setTime(false);
+          setTime((prev)=>prev=false);
           send({type:"actionMain",set:false});
         },[150]);
       } else if (res===true) {
-          setTime(true);
+          setTime((prev)=>prev=true);
           send({type:"actionMain",set:true});
       }
       return () => {

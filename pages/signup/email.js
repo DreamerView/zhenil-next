@@ -7,6 +7,30 @@ import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 const AesEncryption = require('aes-encryption');
 import { useDispatch } from "react-redux";
+import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+
+export async function getServerSideProps(context) {
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    if(data.result==='redirect') {
+        return {
+            props: {}
+        }; 
+    } else {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/',
+            },
+            props: {}
+        }; 
+    }
+};
 
 const SignUp = () => {
     const send = useDispatch();
@@ -38,7 +62,6 @@ const SignUp = () => {
     };
     const actionState = (e) => {
         setName(prev=>prev=e);
-        localStorage.setItem("RegistrationEmail",e);
     };
     const handleEmail = async() => {
         if(wait===false) {
@@ -69,7 +92,7 @@ const SignUp = () => {
                 Notification({user:"admin",content:"Email free"});
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 setChange(prev=>prev=true);
-                
+                sendOTP();
             } catch(e) {
                 console.log(e);
             }
@@ -106,6 +129,7 @@ const SignUp = () => {
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 console.log(otpKey);
                 setChange(prev=>prev=true);
+                localStorage.setItem("RegistrationEmail",name);
                 router.push("/signup/otp");
             }
         } catch(e) {
@@ -126,7 +150,7 @@ const SignUp = () => {
                     <p className={style.text_center}>For example, <b className="green_font">andrey.alekseev@okki.kz</b></p>
                         <div className={style.login_row}>
                             <input type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder="My name is" required />
-                            <button type="button" onClick={()=>change===false?handleEmail():sendOTP()} className={`${change===false?style.login_button:style.next_button+" block_animation"}`}>{change===false?"Check":"Next"}</button>
+                            <button type="button" onClick={()=>change===false?handleEmail():""} className={style.login_button}>Check</button>
                         </div>
                 </div>
             </div>

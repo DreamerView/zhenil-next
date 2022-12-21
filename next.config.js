@@ -8,7 +8,7 @@ const production = process.env.NODE_ENV === 'production';
 
 const src = 'https://cdnjs.cloudflare.com';
 const backend = production?"https://app.okki.kz":"http://localhost:3001";
-
+const images = production?"app.okki.kz":"localhost";
 let build_id;
 const withPWA = require('next-pwa')({
   dest: 'public',
@@ -97,6 +97,9 @@ const secure = production?[
   }];
 
 module.exports = withPWA({
+  images: {
+    domains: [images],
+  },
   poweredByHeader: false,
   env: {
     authorName:"Okki.kz",

@@ -26,7 +26,7 @@ const BMICalc = () => {
     useEffect(()=>{
         if(anim===true) {
             setTimeout(()=>{
-                setAnim(false);
+                setAnim((prev)=>prev=false);
             },[1500])
         }
         return () =>{ 
@@ -34,16 +34,16 @@ const BMICalc = () => {
         }
     },[anim]);
     useEffect(()=>{
-        setShow(JSON.parse(s));
-        setAnim(true);
+        setShow((prev)=>prev=JSON.parse(s));
+        setAnim((prev)=>prev=true);
         return () =>{ 
             console.log("Result saved!");
             console.clear();
         }
     },[s]);
     useEffect(()=>{
-        setN1('');
-        setN2('');
+        setN1((prev)=>prev='');
+        setN2((prev)=>prev='');
         i1.current.value='';
         i2.current.value='';
         return () =>{ 
@@ -52,7 +52,7 @@ const BMICalc = () => {
         }
     },[male,age,lang]);
     useEffect(()=>{
-        setAge('');
+        setAge((prev)=>prev='');
         i3.current.value='';
         return () =>{ 
             return 0;

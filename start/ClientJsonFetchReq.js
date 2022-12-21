@@ -1,11 +1,9 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
 
-import { useRouter } from 'next/router';
 const AesEncryption = require('aes-encryption');
 
 const jsonFetchReq = async({method,body,path,cookie}) =>{
-    const router = useRouter();
     const aes = new AesEncryption();
     aes.setSecretKey(process.env.aesKey);
     const getCookie = (cookieName) => {
@@ -60,7 +58,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
             if(send.status === 409) {
                 console.log("It's conflict!");
                 deleteCookie('accessToken');
-                router.push("/login");
+                window.location.href="/signin";
             } else {
                 const result = await send.json();
                 if(result.accessToken!==undefined) {

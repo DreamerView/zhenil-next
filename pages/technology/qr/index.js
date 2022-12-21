@@ -7,43 +7,29 @@ const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 import jsonFetchReq from "/start/ServerJsonFetchReq";
 
 export async function getServerSideProps(context) {
-    const getCookie = (cookieName) => {
-        let cookies = {};
-        context.req.headers.cookie.split(';').forEach(function(el) {
-          let [key,value] = el.split('=');
-          cookies[key.trim()] = value;
-        })
-        return cookies[cookieName];
-    };
-    const cookieCheck = getCookie("accessToken");
-    if(cookieCheck!==undefined) {
-        const data = await jsonFetchReq({
-            method:"GET",
-            path:"/database-select",
-            cookie:context.req.headers.cookie,
-            server:context
-        });
-        if(data==='redirect') {
-            return {
-                redirect: {
-                    permanent: false,
-                    destination: "/login",
-                },
-                props: {}
-            }; 
-        } else {
-            return {
-                props: {data}
-            };
-        }
+    const data = await jsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context
+    });
+    if(data.result==='redirect') {
+        return {
+            redirect: {
+                permanent: false,
+                destination: data.location,
+            },
+            props: {}
+        }; 
     } else {
         return {
-            props: {}
-        }
+            props: {data}
+        };
     }
-}
+};
 
 const QR = ({data}) => {
+    console.log(data);
     // if(typeof document !== "undefined") {
     //     const result_1 = jsonFetchReq({method:"GET",path:"/database-select",cookie:document.cookie})
     //     console.log(result_1);
@@ -147,7 +133,7 @@ const QR = ({data}) => {
         <>
         <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
-            {data!==undefined?data.map((e,index)=><h1 key={index}>{e.name} {e.surname}</h1>):""}
+            {data!==undefined?<h1>{data.name} {data.surname}</h1>:""}
             <h1 className="flex_text">Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":

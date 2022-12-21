@@ -9,13 +9,37 @@ const AesEncryption = require('aes-encryption');
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+
+export async function getServerSideProps(context) {
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    if(data.result==='redirect') {
+        return {
+            props: {}
+        }; 
+    } else {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/',
+            },
+            props: {}
+        }; 
+    }
+};
 
 const LoginForm = () => {
     const send = useDispatch();
     const router = useRouter();
     const [wait,setWait] = useState(false);
     const [passValue,setPassValue] = useState('password');
-    const Notification = ({user,content,title,image}) => {
+    const setNotification = ({user,content,title,image}) => {
         send({
             type:"setNotification",
             set:{
@@ -35,38 +59,44 @@ const LoginForm = () => {
             const password = aes.encrypt(e.target[1].value);
             setWait(true);
             try {
-                const requestOptions = {
-                    method: 'POST',
-                    headers: {
-                        "WWW-Authenticate": process.env.authHeader,
-                        "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
-                    },
-                    body: JSON.stringify({email:email,password:password})
-                };
-                const login = await fetch(process.env.backend+"/signin", requestOptions);
-                if (login.status ===404) {
-                    Notification({user:"admin",content:"User email or password is not correct!"});
+                if (typeof window !== 'undefined') {
+                    const hostname = window.location.hostname;
+                    const requestOptions = {
+                        method: 'POST',
+                        headers: {
+                            "WWW-Authenticate": process.env.authHeader,
+                            "Proxy-Authenticate":"sdadasdsa",
+                            "Accept":"application/json; charset=utf-8",
+                            "Content-Type": "application/json; charset=utf-8"
+                        },
+                        body: JSON.stringify({email:email,password:password})
+                    };
+                    console.log(hostname)
+                    const login = await fetch(process.env.backend+"/signin", requestOptions);
+                    if (login.status ===404) {
+                        setNotification({user:"admin",content:"User email or password is not correct!"});
+                        setTimeout(()=>setWait(false),[1000]);
+                    } else if(login.status ===500) {
+                        setNotification({user:"admin",content:"Something going wrong"});
+                        setTimeout(()=>setWait(false),[1000]);
+                    }
+                    const result = await login.json();
+                    const accessToken = aes.decrypt(result.accessToken);
+                    const nameUser = aes.decrypt(result.name);
+                    const surnameUser = aes.decrypt(result.surname);
+                    const avatarUser = aes.decrypt(result.avatar);
+                    const today = new Date();
+                    const expire = new Date();
+                    expire.setTime(today.getTime() + 3600000*24*14);
+                    document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
+                    setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
                     setTimeout(()=>setWait(false),[1000]);
-                } else if(login.status ===500) {
-                    Notification({user:"admin",content:"Something going wrong"});
-                    setTimeout(()=>setWait(false),[1000]);
+                    setTimeout(()=>router.push("/"),[2000]);
+                    send({
+                        type:"setAuth",
+                        set:true
+                    });
                 }
-                const result = await login.json();
-                const accessToken = aes.decrypt(result.accessToken);
-                const nameUser = aes.decrypt(result.name);
-                const surnameUser = aes.decrypt(result.surname);
-                const today = new Date();
-                const expire = new Date();
-                expire.setTime(today.getTime() + 3600000*24*14);
-                document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
-                Notification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:"/img/support.webp"});
-                setTimeout(()=>setWait(false),[1000]);
-                setTimeout(()=>router.push("/"),[2000]);
-                send({
-                    type:"setAuth",
-                    set:true
-                });
             } catch(e) {
                 console.log(e);
             }

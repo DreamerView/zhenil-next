@@ -6,6 +6,30 @@ import {useState,useEffect,useCallback} from 'react';
 import { useRouter } from "next/router";
 import { useDispatch } from 'react-redux';
 const AesEncryption = require('aes-encryption');
+import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+
+export async function getServerSideProps(context) {
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    if(data.result==='redirect') {
+        return {
+            props: {}
+        }; 
+    } else {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/',
+            },
+            props: {}
+        }; 
+    }
+};
 
 const SignUp = () => {
     const send = useDispatch();
