@@ -18,12 +18,29 @@ const UserInterface = () => {
                             <p className={`${style.portfolio_sub} ${style.need_center}`}>@temirkhanrustemov</p>
                         </div>
                     </div>
-                    <p>Founder @okki.kz</p>
+                    <div className={style.user__main_info}>
+                        <div className={`${style.user__main_info_block} anim_hover`}>
+                            <h3>0</h3>
+                            <p className={style.small_text}>Posts</p>
+                        </div>
+                        <div className={`${style.user__main_info_block} anim_hover`}>
+                            <h3>1m</h3>
+                            <p className={style.small_text}>Followers</p>
+                        </div>
+                        <div className={`${style.user__main_info_block} anim_hover`}>
+                            <h3>10</h3>
+                            <p className={style.small_text}>Following</p>
+                        </div>
+                    </div>
+                    {/* <p>Founder @okki.kz</p> */}
                     <div className={style.user__main_action}>
-                        <button className={`${style.button_follow} anim_hover`}>Follow</button>
-                        <button className={`${style.button_more} anim_hover`}>Contact</button>
+                        <button className={`${style.button_follow} anim_hover`}>Подписаться</button>
+                        <button className={`${style.button_more} anim_hover`}>Подробнее</button>
                     </div>
                 </div>
+            </div>
+            <div className={style.user__main}>
+                
             </div>
         </div>
     </>
