@@ -99,7 +99,7 @@ const Header = () => {
           </div>
           <div className="header__search">
           {res?"":
-            <Link href="/" prefetch={false}>
+            <Link href="/user" prefetch={false}>
               <a title={text['title'][locale]}>
                 <div className="header__search_menu anim_hover">
                   <div className="header__search_menu_pic1" id="search_menu"></div>
