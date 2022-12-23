@@ -21,7 +21,7 @@ const UserIndex = (result) => {
     console.log(res.avatar)
     return(<>
     {login===true?
-    <Link href={`/u/${JSON.stringify(res) !== '{}'?aes.decrypt(res.login):""}`} prefetch={false}>
+    <Link href={`/user`} prefetch={false}>
               <a>
                 <div className="header__action_image anim_hover">
                   <Image title={`Avatar`} layout='fill' className="header__action_avatar" src={JSON.stringify(res) !== '{}'?aes.decrypt(res?.avatar):"/img/preloader-night.svg"} alt="avatar" />

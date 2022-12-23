@@ -9,6 +9,14 @@ import styles from '/styles/index_main.module.css';
 const IndexContent = ({lang,service}) => {
   const locale = lang!==undefined?lang:'en';
   const serv = service!==undefined?service:[{}];
+  const historyAction = (service) => {
+    const history = JSON.parse(localStorage.getItem('historyAction'));
+    const action = history?history:[];
+    const checkExp = [...action,{name:service,time:Date.now()}];
+    const key = 'name';
+    const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
+    localStorage.setItem('historyAction',JSON.stringify(historyResult))
+};
     return(
         <>
         <div className="main block_animation">
@@ -18,7 +26,7 @@ const IndexContent = ({lang,service}) => {
             {serv?
             serv.filter(e=>{return e.type === 'services'}).map((e,index)=>
             <Link href={e.location} prefetch={false} key={index+1}>
-            <a title={nav_translate[e.name][locale]}>
+            <a onClick={()=>historyAction(e.name)} title={nav_translate[e.name][locale]}>
               <div className={`${styles.main__index_block_row_b} anim_hover`}>
                 <div className={styles.main__index_block}>
                   <div className={styles.main__index_block_pic}>

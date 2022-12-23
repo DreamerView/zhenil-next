@@ -13,6 +13,14 @@ import NavbarApp from '/pages/navbar_app/nav';
 
 const FinanceIndex = () => {
     const lang = useTranslateText();
+    const historyAction = (service) => {
+        const history = JSON.parse(localStorage.getItem('historyAction'));
+        const action = history?history:[];
+        const checkExp = [...action,{name:service,time:Date.now()}];
+        const key = 'name';
+        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
+        localStorage.setItem('historyAction',JSON.stringify(historyResult))
+    };
     return(
         <>
             <Head>
@@ -40,7 +48,7 @@ const FinanceIndex = () => {
                 {/*  */}
                 {AllService.filter(e=>{return e.category === 'finance'}).map((e,index)=>
                     <Link href={e.location} prefetch={false} key={index+1}>
-                    <a title={nav_translate[e.name][lang]}>
+                    <a onClick={()=>historyAction(e.name)} title={nav_translate[e.name][lang]}>
                     <div className={`${style.main__module_row_block} anim_hover`}>
                         <div>
                             <div className={`${style.main__module_row_block_img}`}>

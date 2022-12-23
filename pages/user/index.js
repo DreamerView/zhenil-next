@@ -2,18 +2,10 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
+import HistoryUser from './history';
 
 
 const UserInterface = () => {
-    // const [history,setHistory] = useState()
-    const historyAction = () => {
-        const history = JSON.parse(localStorage.getItem('historyAction'));
-        const action = history?history:[];
-        const checkExp = [...action,{name:'asdasd',time:Date.now()}];
-        const key = 'name';
-        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        localStorage.setItem('historyAction',JSON.stringify(historyResult))
-    };
     return(
     <>
         <NavbarApp to={{href:"/"}} choice="alone"/>
@@ -42,7 +34,7 @@ const UserInterface = () => {
                         </div>
                         </a>
                         </Link>
-                        <div onClick={()=>historyAction()} className={`${style.main__block_user} anim_hover`}>
+                        <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} orange_background`}>
                                 <div className={style.main__block_user_image_row}>
                                     <Image layout='fill' alt="icon" src="/img/favourite.svg"/>
@@ -67,6 +59,9 @@ const UserInterface = () => {
                             <p>Выйти</p>
                         </div>
                     </div>
+                </div>
+                <div className={style.main__user_action}>
+                    <HistoryUser/>
                 </div>
             </div>
         </div>
