@@ -6,11 +6,11 @@ import { useMediaQuery } from 'react-responsive';
 
 
 const UserInterface = () => {
-    const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:600px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' })
     return(
     <>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
-        <div className="main_app block_animation">
+        <div className="main_app">
             <div className={style.user__main}>
                 {isTabletOrMobile?"":<HeaderUser/>}
                 <HistoryUser/>

@@ -34,12 +34,12 @@ const HistoryUser = () => {
         }
     }, [])
     const ConvertTime = (unix_timestamp) => {
-        var date = new Date(unix_timestamp);
-        var day = date.getDate();
-        var month = date.getMonth();
-        var year = date.getFullYear();
-        var hours = date.getHours().length===1?"0"+date.getHours():date.getHours();
-        var minutes = date.getMinutes().length===1?"0"+date.getMinutes():date.getMinutes();
+        const date = new Date(unix_timestamp);
+        const day = String(date.getDate()).length===1?"0"+date.getDate():date.getDate();
+        const month = String(date.getMonth()+1).length===1?"0"+date.getMonth()+1:date.getMonth()+1;
+        const year = date.getFullYear();
+        const hours = String(date.getHours()).length===1?"0"+date.getHours():date.getHours();
+        const minutes = String(date.getMinutes()).length===1?"0"+date.getMinutes():date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
     }
     return(
@@ -54,7 +54,7 @@ const HistoryUser = () => {
                                 <div className={style.main__user_action_prev_row_block}>
                                     <Image layout='fill' className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
                                 </div>
-                                <span>{result?.title?.split(' ').slice(0,2).join(" ")}</span>
+                                <span><b>{result?.title?.split(' ').slice(0,2).join(" ")}</b></span>
                                 <p className={style.main__user_action_prev_row_block_text}>{ConvertTime(result.time)}</p>
                             </div>
                         </a>

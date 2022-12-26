@@ -9,7 +9,7 @@ const HeaderUser = () => {
                             <Image layout='fill' alt="avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp"/>
                         </div>
                         <div className={style.user__main_portfolio_row}>
-                            <h1 className={style.need_center}>Temirkhan Rustemov</h1>
+                            <h3 className={style.need_center}>Temirkhan Rustemov</h3>
                             <p className={`${style.portfolio_sub} ${style.need_center}`}>@temirkhanrustemov</p>
                         </div>
                     </div>
@@ -26,6 +26,8 @@ const HeaderUser = () => {
                         </div>
                         </a>
                         </Link>
+                        <Link href="/user/favourite" prefetch={false}>
+                        <a>
                         <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} orange_background`}>
                                 <div className={style.main__block_user_image_row}>
@@ -34,6 +36,8 @@ const HeaderUser = () => {
                             </div>
                             <p>Избранные</p>
                         </div>
+                        </a>
+                        </Link>
                         <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} grey_background`}>
                                 <div className={style.main__block_user_image_row}>

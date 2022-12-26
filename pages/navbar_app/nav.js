@@ -5,8 +5,9 @@ import nav_translate from "/translate/services/all_translate";
 import ux from "/translate/ux/action";
 import useTranslateText from "/start/translate";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
-const NavbarApp = ({to,choice}) => {
+const NavbarApp = ({to,choice,with_save,save_name}) => {
     const headerHeight= useSelector(state=>state.headerHeight);
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
@@ -26,6 +27,14 @@ const NavbarApp = ({to,choice}) => {
           window.removeEventListener('scroll', handleScroll);
         };
       }, [choice,headerHeight]);
+      const favouriteAction = (service) => {
+        const history = JSON.parse(localStorage.getItem('favouriteAction'));
+        const action = history?history:[];
+        const checkExp = [...action,{name:service,time:Date.now()}];
+        const key = 'name';
+        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
+        localStorage.setItem('favouriteAction',JSON.stringify(historyResult))
+    };
     return(
         <>
         {choice!=='alone'?
@@ -47,6 +56,7 @@ const NavbarApp = ({to,choice}) => {
             :''}
             </p>
         </div>:
+        with_save==="yes"?
         <>
             {scrollResult==="_fixed"?
             <Link href={to.href} prefetch={false}>
@@ -59,16 +69,50 @@ const NavbarApp = ({to,choice}) => {
                     </div>
                 </a>
             </Link>:""}
+            <div className={`main_back_block`}>
+                <Link href={to.href} prefetch={false}>
+                    <a>
+                        <div className={`main_back_with_action anim_hover`}>
+                            <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                                <div className='main_back_button_i'/>
+                            </div>
+                            <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+                        </div>
+                    </a>
+                </Link>
+                <div className="main_back_action">
+                    <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
+                        <div className="main_back_action_block_row orange_background">
+                            <div className="main_back_action_block_img">
+                                <Image src="/img/star_outline.svg" layout="fill" alt="icon" />
+                            </div>
+                        </div>
+                        <p className="hide_when_need">Добавить в Избранные</p>
+                    </div>
+                </div>
+            </div>
+        </>:<>
+            {scrollResult==="_fixed"?
             <Link href={to.href} prefetch={false}>
                 <a>
-                    <div className={`main_back`}>
-                        <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                    <div className={`main_back_fixed`}>
+                        <div className='main_back_button'>
                             <div className='main_back_button_i'/>
                         </div>
-                        <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+                        <p>{ux['back'][lang]}</p>
                     </div>
                 </a>
-            </Link>
+            </Link>:""}
+                <Link href={to.href} prefetch={false}>
+                    <a>
+                        <div className={`main_back`}>
+                            <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                                <div className='main_back_button_i'/>
+                            </div>
+                            <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+                        </div>
+                    </a>
+                </Link>
         </>
         }
         </>
