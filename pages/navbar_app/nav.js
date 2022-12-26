@@ -59,16 +59,28 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
         with_save==="yes"?
         <>
             {scrollResult==="_fixed"?
-            <Link href={to.href} prefetch={false}>
-                <a>
-                    <div className={`main_back_fixed`}>
-                        <div className='main_back_button'>
-                            <div className='main_back_button_i'/>
+            <div className={`main_back_block_fixed`}>
+                <Link href={to.href} prefetch={false}>
+                    <a>
+                        <div className={`main_back_with_action anim_hover`}>
+                            <div className='main_back_button'>
+                                <div className='main_back_button_i'/>
+                            </div>
+                            <p>{ux['back'][lang]}</p>
                         </div>
-                        <p>{ux['back'][lang]}</p>
+                    </a>
+                </Link>
+                <div className="main_back_action">
+                    <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
+                        <div className="main_back_action_block_row orange_background">
+                            <div className="main_back_action_block_img">
+                                <Image src="/img/star_outline.svg" layout="fill" alt="icon" />
+                            </div>
+                        </div>
+                        <p className="hide_when_need">Добавить в Избранные</p>
                     </div>
-                </a>
-            </Link>:""}
+                </div>
+            </div>:""}
             <div className={`main_back_block`}>
                 <Link href={to.href} prefetch={false}>
                     <a>
