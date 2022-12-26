@@ -11,7 +11,7 @@ import Image from 'next/image';
 const UserInterface = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     const [prev,setPrev] = useState([{}]);
-    const [timeStamp,setTimeStamp] = useState('');
+    const [sortItem,setSortItem] = useState('all');
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('favouriteAction'));
         const action = history?history:[];
@@ -37,7 +37,7 @@ const UserInterface = () => {
         return () => {
             return false;
         }
-    }, [])
+    }, [sortItem])
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+date.getDate():date.getDate();
@@ -56,6 +56,20 @@ const UserInterface = () => {
                 <div className={style.main__user_action}>
                     <h1>Избранные</h1>
                     <p className='sub_content'>Список понравившихся сервисов</p>
+                    <div className={style.sort_item}>Сортировать по 
+                        <select onChange={e=>setSortItem(e.target.value)} className={style.sort}>
+                            <option value="all">Все</option>
+                            <option value="time">Времени</option>
+                            <option value="category">Категориям</option>
+                        </select>
+                        {sortItem!=="all"?
+                        sortItem==="time"?
+                        <select className={style.sort}>
+                            <option>Возрастанию</option>
+                            <option>Убыванию</option>
+                        </select>:""
+                        :""}
+                    </div>
                         <div className={style.main__user_action_prev}>
                             {prev.map((result,index)=>{return JSON.stringify(result)!=="{}"?
                             <Link href={result.location}>
