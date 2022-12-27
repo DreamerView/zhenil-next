@@ -6,7 +6,7 @@ import Header from "/start/header";
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
-const Notification = dynamic(()=>import('/start/notification'),{ssr:false});
+const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 
 const DocumentResult = ({children}) => {
     const action = useSelector(state=>state.act);
@@ -19,12 +19,12 @@ const DocumentResult = ({children}) => {
     useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
-            return 0;
+            return false;
         };
     },[action,frame,image]);
     return(
         <div>
-            {notification?<Notification/>:""}
+            {notification?<NotificationModule/>:""}
             {frame?<FullFrame item={url} key={Date.now()}/>:""}
             {action?<ConfirmMode item={action} key={Date.now}/>:""}
             {image?<ResizeImage item={image} key={Date.now}/>:""}

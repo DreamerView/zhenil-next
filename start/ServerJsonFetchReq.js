@@ -62,7 +62,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                 if(send.status === 409) {
                     console.log("It's conflict!");
                     server.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
-                    return {result:'redirect',location:"/signin"};;
+                    return {result:'redirect',location:"/signin"};
                 } else {
                     const result = await send.json();
                     if(result.accessToken!==undefined) {

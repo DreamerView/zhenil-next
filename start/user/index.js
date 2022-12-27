@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 import Link from "next/link";
 import Image from "next/image";
 import ux from "/translate/ux/action";
@@ -16,7 +18,7 @@ const UserIndex = (result) => {
       if(login===true) ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie}).then(e=>setRes(prev=>prev=e));
       return () => {
         return false;
-      }
+      };
     }, [login,ClientJsonFetchReq]);
     return(<>
     {login===true?

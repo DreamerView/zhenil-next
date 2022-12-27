@@ -48,8 +48,8 @@ const Header = () => {
       if(auth) setLogin((prev)=>prev=auth);
       return () =>{
         return false;
-      }
-    },[auth])
+      };
+    },[auth]);
     useEffect(()=>{
       let timer;
       if(res===false) {
