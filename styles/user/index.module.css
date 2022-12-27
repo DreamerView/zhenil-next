@@ -229,13 +229,18 @@ img.main__user_action_prev_row_block_img {
     list-style: 20px;
     color:var(--sub_content)
 }
+div.main__sort_menu {
+    display: flex;
+    flex-wrap: wrap;
+}
 div.sort_item {
     margin-top:16px;
+    margin-right:16px;
 }
 select.sort {
     /* width:100px; */
     border-radius: 24px;
-    padding:12px 40px 12px 24px;
+    padding:8px 30px 8px 18px;
     margin-left:8px;
     cursor: pointer;
     background: url(/img/top.svg) no-repeat 95% 50% var(--block-color)

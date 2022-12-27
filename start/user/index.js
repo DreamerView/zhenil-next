@@ -18,7 +18,6 @@ const UserIndex = (result) => {
         return false;
       }
     }, [login,ClientJsonFetchReq]);
-    console.log(res.avatar)
     return(<>
     {login===true?
     <Link href={`/user`} prefetch={false}>

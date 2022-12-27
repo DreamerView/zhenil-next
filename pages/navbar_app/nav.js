@@ -6,8 +6,10 @@ import ux from "/translate/ux/action";
 import useTranslateText from "/start/translate";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import { useRouter } from 'next/router';
 
 const NavbarApp = ({to,choice,with_save,save_name}) => {
+    const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
     const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
@@ -60,16 +62,12 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
         <>
             {scrollResult==="_fixed"?
             <div className={`main_back_block_fixed`}>
-                <Link href={to.href} prefetch={false}>
-                    <a>
-                        <div className={`main_back_with_action anim_hover`}>
-                            <div className='main_back_button'>
-                                <div className='main_back_button_i'/>
-                            </div>
-                            <p>{ux['back'][lang]}</p>
-                        </div>
-                    </a>
-                </Link>
+                <div onClick={()=>router.back()} className={`main_back_with_action anim_hover`}>
+                    <div className='main_back_button'>
+                        <div className='main_back_button_i'/>
+                    </div>
+                    <p>{ux['back'][lang]}</p>
+                </div>    
                 <div className="main_back_action">
                     <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
                         <div className="main_back_action_block_row orange_background">
@@ -82,16 +80,12 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
                 </div>
             </div>:""}
             <div className={`main_back_block`}>
-                <Link href={to.href} prefetch={false}>
-                    <a>
-                        <div className={`main_back_with_action anim_hover`}>
-                            <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
-                                <div className='main_back_button_i'/>
-                            </div>
-                            <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
-                        </div>
-                    </a>
-                </Link>
+                <div onClick={()=>router.back()} className={`main_back_with_action anim_hover`}>
+                    <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                        <div className='main_back_button_i'/>
+                    </div>
+                    <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+                </div>
                 <div className="main_back_action">
                     <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
                         <div className="main_back_action_block_row orange_background">
@@ -105,26 +99,19 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
             </div>
         </>:<>
             {scrollResult==="_fixed"?
-            <Link href={to.href} prefetch={false}>
-                <a>
-                    <div className={`main_back_fixed`}>
-                        <div className='main_back_button'>
-                            <div className='main_back_button_i'/>
-                        </div>
-                        <p>{ux['back'][lang]}</p>
+                <div onClick={()=>router.back()} className={`main_back_fixed`}>
+                    <div className='main_back_button'>
+                        <div className='main_back_button_i'/>
                     </div>
-                </a>
-            </Link>:""}
-                <Link href={to.href} prefetch={false}>
-                    <a>
-                        <div className={`main_back`}>
-                            <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
-                                <div className='main_back_button_i'/>
-                            </div>
-                            <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
-                        </div>
-                    </a>
-                </Link>
+                    <p>{ux['back'][lang]}</p>
+                </div>
+            :""}
+                <div onClick={()=>router.back()} className={`main_back`}>
+                    <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                        <div className='main_back_button_i'/>
+                    </div>
+                    <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+                </div>
         </>
         }
         </>

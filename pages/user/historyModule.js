@@ -6,8 +6,9 @@ import Link from 'next/link';
 
 const HistoryUser = () => {
     const [prev,setPrev] = useState([{}]);
-    const [sortItem,setSortItem] = useState('all');
-    const [sortItemRes,setSortItemRes] = useState('');
+    const [sortItem,setSortItem] = useState('new');
+    const [sortItemRes,setSortItemRes] = useState('all');
+    const response = SearchResult;
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('historyAction'));
         const action = history?history:[];
@@ -22,16 +23,18 @@ const HistoryUser = () => {
                 a1.map(itm => ({
                     ...a2.find((item) => (item.name === itm.name) && item),
                     ...itm
-                }));
+            }));
+            const filterCategory = (result, resp) => {
+                return result.filter(res => res.category.includes(resp));
+            };
             const history = JSON.parse(localStorage.getItem('historyAction'));
             let action = history?history:[{}];
-            if(sortItem==="all") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>b.time-a.time):[{}];
-            else if (sortItem==="time") {
-                if(sortItemRes==="min") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>a.time-b.time):[{}];
-                else action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>b.time-a.time):[{}];
-            }
-            const response = SearchResult;
-            const result = mergeByTime(action,response);
+            if(sortItem==="new") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>b.time-a.time):[{}];
+            else if (sortItem==="old") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>a.time-b.time):[{}];
+            let result;
+            const res = mergeByTime(action,response);;
+            if(sortItemRes==='all') result = res;
+            else result = filterCategory(res,sortItemRes);
             setPrev(pre=>pre=result);
         }
         return () => {
@@ -51,25 +54,25 @@ const HistoryUser = () => {
         <div className={style.main__user_action}>
             <h1>Недавние</h1>
             <p className='sub_content'>Список недавних зашедших сервисов</p>
-            <div className={style.sort_item}>Сортировать по 
-                        <select onChange={e=>setSortItem(e.target.value)} className={style.sort}>
-                            <option value="all">Все</option>
-                            <option value="time">Времени</option>
-                            <option value="category">Категориям</option>
-                        </select>
-                        {sortItem!=="all"?
-                        sortItem==="time"?
-                        <select onChange={e=>setSortItemRes(e.target.value)} className={style.sort}>
-                            <option value="max">Новые</option>
-                            <option value="min">Старые</option>
-                        </select>:""
-                        :""}
-                    </div>
+            <div className={style.main__sort_menu}>
+                <div className={style.sort_item}>Сортировать по 
+                    <select onChange={e=>setSortItem(e.target.value)} className={style.sort}>
+                        <option value="new">Новинки</option>
+                        <option value="old">Старые</option>
+                    </select>
+                </div>
+                <div className={style.sort_item}>Категория 
+                    <select onChange={e=>setSortItemRes(e.target.value)} className={style.sort}>
+                        <option value="all">Все</option>
+                        {response.filter(res=>res.type==='category').map((result,index)=>{return <option id={index+1} key={index} value={result.name}>{result.title}</option>})}
+                    </select>
+                </div>
+            </div>
                 <div className={style.main__user_action_prev}>
                     {prev.map((result,index)=>{return JSON.stringify(result)!=="{}"?
-                    <Link href={result.location}>
+                    <Link key={index} href={result.location}>
                         <a onClick={()=>historyAction(result.name)}>
-                            <div key={index} className={`${style.main__user_action_prev_row} anim_hover`}>
+                            <div className={`${style.main__user_action_prev_row} anim_hover`}>
                                 <div className={style.main__user_action_prev_row_block}>
                                     <Image layout='fill' className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
                                 </div>
