@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 9 */
 import { useEffect,useState } from 'react';
 import SearchResult from "/start/services/all.json";
 import style from "/styles/user/index.module.css";
@@ -15,7 +17,7 @@ const HistoryUser = () => {
         const checkExp = [...action,{name:service,time:Date.now()}];
         const key = 'name';
         const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        localStorage.setItem('historyAction',JSON.stringify(historyResult))
+        localStorage.setItem('historyAction',JSON.stringify(historyResult));
     };
     useEffect(() => {
         if(typeof window !== "undefined") {
@@ -32,15 +34,15 @@ const HistoryUser = () => {
             if(sortItem==="new") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>b.time-a.time):[{}];
             else if (sortItem==="old") action=JSON.stringify(action)!=="[{}]"?action.sort((a,b)=>a.time-b.time):[{}];
             let result;
-            const res = mergeByTime(action,response);;
+            const res = mergeByTime(action,response);
             if(sortItemRes==='all') result = res;
             else result = filterCategory(res,sortItemRes);
             setPrev(pre=>pre=result);
         }
         return () => {
             return false;
-        }
-    }, [sortItem,sortItemRes])
+        };
+    }, [sortItem,sortItemRes]);
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+date.getDate():date.getDate();
@@ -49,7 +51,7 @@ const HistoryUser = () => {
         const hours = String(date.getHours()).length===1?"0"+date.getHours():date.getHours();
         const minutes = String(date.getMinutes()).length===1?"0"+date.getMinutes():date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
-    }
+    };
     return(
         <div className={style.main__user_action}>
             <h1>Недавние</h1>

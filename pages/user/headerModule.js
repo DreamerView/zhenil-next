@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import style from "/styles/user/index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';

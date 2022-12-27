@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import HistoryUser from './historyModule';
@@ -6,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 const UserInterface = () => {
-    const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     return(
     <>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
