@@ -56,13 +56,13 @@ const HistoryUser = () => {
             <p className='sub_content'>Список недавних зашедших сервисов</p>
             <div className={style.main__sort_menu}>
                 <div className={style.sort_item}>Сортировать по 
-                    <select onChange={e=>setSortItem(e.target.value)} className={style.sort}>
+                    <select onChange={e=>setSortItem(prev=>prev=e.target.value)} className={style.sort}>
                         <option value="new">Новинки</option>
                         <option value="old">Старые</option>
                     </select>
                 </div>
                 <div className={style.sort_item}>Категория 
-                    <select onChange={e=>setSortItemRes(e.target.value)} className={style.sort}>
+                    <select onChange={e=>setSortItemRes(prev=>prev=e.target.value)} className={style.sort}>
                         <option value="all">Все</option>
                         {response.filter(res=>res.type==='category').map((result,index)=>{return <option id={index+1} key={index} value={result.name}>{result.title}</option>})}
                     </select>
