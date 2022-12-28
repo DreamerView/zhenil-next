@@ -5,8 +5,12 @@ import SearchResult from "/start/services/all.json";
 import style from "/styles/user/index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
+import useTranslateText from "/start/translate";
+import ux from "/translate/user/index_translate";
+import services from "/translate/services/all_translate";
 
 const HistoryUser = () => {
+    const lang = useTranslateText();
     const [prev,setPrev] = useState([{}]);
     const [sortItem,setSortItem] = useState('new');
     const [sortItemRes,setSortItemRes] = useState('all');
@@ -54,19 +58,19 @@ const HistoryUser = () => {
     };
     return(
         <div className={style.main__user_action}>
-            <h1>Недавние</h1>
-            <p className='sub_content'>Список недавних зашедших сервисов</p>
+            <h1>{ux['recent'][lang]}</h1>
+            <p className='sub_content'>{ux['recent_text'][lang]}</p>
             <div className={style.main__sort_menu}>
-                <div className={style.sort_item}>Сортировать по 
-                    <select onChange={e=>setSortItem(prev=>prev=e.target.value)} className={style.sort}>
-                        <option value="new">Новинки</option>
-                        <option value="old">Старые</option>
+                <div className={style.sort_item}>{ux['sort_by'][lang]} 
+                    <select onChange={e=>setSortItem(prev=>prev=e.target.value)} className={`${style.sort} anim_hover`}>
+                        <option value="new">{ux['new_sort'][lang]}</option>
+                        <option value="old">{ux['old_sort'][lang]}</option>
                     </select>
                 </div>
-                <div className={style.sort_item}>Категория 
-                    <select onChange={e=>setSortItemRes(prev=>prev=e.target.value)} className={style.sort}>
-                        <option value="all">Все</option>
-                        {response.filter(res=>res.type==='category').map((result,index)=>{return <option id={index+1} key={index} value={result.name}>{result.title}</option>})}
+                <div className={style.sort_item}>{ux['category'][lang]} 
+                    <select onChange={e=>setSortItemRes(prev=>prev=e.target.value)} className={`${style.sort} anim_hover`}>
+                        <option value="all">{ux['all'][lang]}</option>
+                        {response.filter(res=>res.type==='category').map((result,index)=>{return <option id={index+1} key={index} value={result.name}>{services[result.name][lang]}</option>})}
                     </select>
                 </div>
             </div>
@@ -78,7 +82,7 @@ const HistoryUser = () => {
                                 <div className={style.main__user_action_prev_row_block}>
                                     <Image layout='fill' className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
                                 </div>
-                                <span><b>{result?.title?.split(' ').slice(0,2).join(" ")}</b></span>
+                                <span><b>{services[result.name][lang].split(' ').slice(0,2).join(" ")}</b></span>
                                 <p className={style.main__user_action_prev_row_block_text}>{ConvertTime(result.time)}</p>
                             </div>
                         </a>
