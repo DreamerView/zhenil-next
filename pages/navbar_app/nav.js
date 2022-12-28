@@ -70,9 +70,9 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
                 </div>    
                 <div className="main_back_action">
                     <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
-                        <div className="main_back_action_block_row orange_background">
+                        <div className="main_back_action_block_row red_background">
                             <div className="main_back_action_block_img">
-                                <Image src="/img/star_outline.svg" layout="fill" alt="icon" />
+                                <Image src="/img/heart.svg" layout="fill" alt="icon" />
                             </div>
                         </div>
                         <p className="hide_when_need">Добавить в Избранные</p>
@@ -88,9 +88,9 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
                 </div>
                 <div className="main_back_action">
                     <div className="main_back_action_block anim_hover" onClick={()=>favouriteAction(save_name)}>
-                        <div className="main_back_action_block_row orange_background">
+                        <div className="main_back_action_block_row red_background">
                             <div className="main_back_action_block_img">
-                                <Image src="/img/star_outline.svg" layout="fill" alt="icon" />
+                                <Image src="/img/heart.svg" layout="fill" alt="icon" />
                             </div>
                         </div>
                         <p className="hide_when_need">Добавить в Избранные</p>

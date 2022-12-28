@@ -34,9 +34,9 @@ const HeaderUser = () => {
                         <Link href="/user/favourite" prefetch={false}>
                         <a>
                         <div className={`${style.main__block_user} anim_hover`}>
-                            <div className={`${style.main__block_user_image} orange_background`}>
+                            <div className={`${style.main__block_user_image} red_background`}>
                                 <div className={style.main__block_user_image_row}>
-                                    <Image layout='fill' alt="icon" src="/img/favourite.svg"/>
+                                    <Image layout='fill' alt="icon" src="/img/heart.svg"/>
                                 </div>
                             </div>
                             <p>{translate['favorites'][lang]}</p>
@@ -52,7 +52,7 @@ const HeaderUser = () => {
                             <p>{translate['settings'][lang]}</p>
                         </div>
                         <div className={`${style.main__block_user} anim_hover`}>
-                            <div className={`${style.main__block_user_image} red_background`}>
+                            <div className={`${style.main__block_user_image} orange_background`}>
                                 <div className={style.main__block_user_image_row}>
                                     <Image layout='fill' alt="icon" src="/img/logout.svg"/>
                                 </div>
