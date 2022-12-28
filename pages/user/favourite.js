@@ -11,6 +11,7 @@ import Image from 'next/image';
 import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
+import Head from 'next/head';
 
 
 const UserInterface = () => {
@@ -63,6 +64,9 @@ const UserInterface = () => {
     };
     return(
     <>
+        <Head>
+                <title>{ux['favorites'][lang]} | Okki.kz</title>
+        </Head>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">
             <div className={style.user__main}>
