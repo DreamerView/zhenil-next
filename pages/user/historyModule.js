@@ -46,7 +46,7 @@ const HistoryUser = () => {
         return () => {
             return false;
         };
-    }, [sortItem,sortItemRes]);
+    }, [sortItem,sortItemRes,response]);
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+date.getDate():date.getDate();
