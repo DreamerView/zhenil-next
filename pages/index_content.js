@@ -15,9 +15,9 @@ const IndexContent = ({lang,service}) => {
     const checkExp = [...action,{name:service,time:Date.now()}];
     const key = 'name';
     const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-    localStorage.setItem('historyAction',JSON.stringify(historyResult))
-};
-    return(
+    return localStorage.setItem('historyAction',JSON.stringify(historyResult))
+  };
+  return(
         <>
         <div className="main block_animation">
           <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} layout="fill" alt="emoji"/></div></h1>
@@ -41,6 +41,6 @@ const IndexContent = ({lang,service}) => {
           </div>
       </div>
         </>
-    )
+  )
 };
 export default IndexContent;

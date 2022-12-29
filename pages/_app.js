@@ -46,15 +46,15 @@ const MyApp = ({ Component, pageProps }) => {
     const [result,setResult] = useState(false);
     useEffect(()=>{
         const ResultChange = (result) => {
-            return setResult((prev)=>prev=result)
-        }
+            return setResult((prev)=>prev=result);
+        };
         Router.events.on('routeChangeStart', () => ResultChange(true));
         Router.events.on('routeChangeComplete', () => ResultChange(false));
         return()=>{
             Router.events.off('routeChangeStart', () => ResultChange(true));
             Router.events.off('routeChangeComplete', () => ResultChange(false));
         };
-    },[])
+    },[]);
     useEffect(() => {
         if (typeof window !== 'undefined') {
             let timer;
