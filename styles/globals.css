@@ -35,6 +35,12 @@ input[type="date"]:valid::before {
   width:0
 }
 
+/*  */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    content: url(../public/emoji-small/calendar.webp);
+}
+
 
 .flex_text {
   display: -webkit-box;
