@@ -41,6 +41,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     content: url(../public/emoji-small/calendar.webp);
     cursor: pointer;
 }
+input[type="date"]::-moz-calendar-picker-indicator {
+  content: url(../public/emoji-small/calendar.webp);
+  cursor: pointer;
+}
+input[type="date"]::-ms-calendar-picker-indicator {
+  content: url(../public/emoji-small/calendar.webp);
+  cursor: pointer;
+}
+input[type="date"]::-o-calendar-picker-indicator {
+  content: url(../public/emoji-small/calendar.webp);
+  cursor: pointer;
+}
+input[type="date"]::-khtml-calendar-picker-indicator {
+  content: url(../public/emoji-small/calendar.webp);
+  cursor: pointer;
+}
 
 
 .flex_text {
