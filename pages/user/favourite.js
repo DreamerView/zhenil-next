@@ -27,17 +27,18 @@ const UserInterface = () => {
         const checkExp = [...action,{name:service,time:Date.now()}];
         const key = 'name';
         const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        localStorage.setItem('favouriteAction',JSON.stringify(historyResult));
+        return localStorage.setItem('favouriteAction',JSON.stringify(historyResult));
     };
     useEffect(() => {
         if(typeof window !== "undefined") {
-            const mergeByTime = (a1, a2) =>
-                a1.map(itm => ({
+            const mergeByTime = (a1, a2) =>{
+                return a1.map(itm => ({
                     ...a2.find((item) => (item.name === itm.name) && item),
                     ...itm
-            }));
+                    
+            }))};
             const filterCategory = (result, resp) => {
-                return result.filter(res => res.category.includes(resp));
+                return JSON.stringify(result)!=='[{}]'?result.filter(res => res.category.includes(resp)):[{}];
             };
             const history = JSON.parse(localStorage.getItem('favouriteAction'));
             let action = history?history:[{}];
