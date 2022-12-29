@@ -45,9 +45,15 @@ const MyApp = ({ Component, pageProps }) => {
     const locale = useTranslateText();
     const [result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true));
-        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false));
-        return()=>{return 0;};
+        const ResultChange = (result) => {
+            return setResult((prev)=>prev=result)
+        }
+        Router.events.on('routeChangeStart', () => ResultChange(true));
+        Router.events.on('routeChangeComplete', () => ResultChange(false));
+        return()=>{
+            Router.events.off('routeChangeStart', () => ResultChange(true));
+            Router.events.off('routeChangeComplete', () => ResultChange(false));
+        };
     },[])
     useEffect(() => {
         if (typeof window !== 'undefined') {
