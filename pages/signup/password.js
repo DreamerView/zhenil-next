@@ -80,7 +80,7 @@ const SignUp = () => {
                             <div className={style.password}>
                                 <div className={style.password__show_row}>
                                     <div className={style.password__show}>
-                                        <Image layout="fill" alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                                        <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                     </div>
                                 </div>
                                 <input type={passValue} value={name} onChange={(e)=>actionState(e.target.value)} name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>

@@ -120,12 +120,12 @@ const LoginForm = () => {
                         <div className={style.password}>
                             <div className={style.password__show_row}>
                                 <div className={style.password__show}>
-                                    <Image layout="fill" alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                                    <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                 </div>
                             </div>
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
-                        <Link href="/signin/forget"><a className={style.text_center}>Forgot password?</a></Link>
+                        <Link href="/signin/forget" className={style.text_center}>Forgot password?</Link>
                         <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image layout="fill" alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
                     </div>
                 </form>

@@ -22,11 +22,11 @@ const BusinessIndex = () => {
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <div className="page_not_found_block_img">
-                        <Image layout="fill" src="/emoji/cowboy_hat_face.webp" alt="not found" />
+                        <Image priority width={200} height={200} src="/emoji/cowboy_hat_face.webp" alt="not found" />
                     </div>
                     <h1 className="page_not_found">{nav_translate['others'][lang]}</h1>
                     <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link prefetch={false} href="/" className="page_not_found"><a className="page_not_found">{soon['soon3'][lang]}</a></Link>
+                    <Link prefetch={false} href="/" className="page_not_found">{soon['soon3'][lang]}</Link>
                 </div>
             </div>
       </>

@@ -34,17 +34,16 @@ const BusinessIndex = () => {
             </Head>
             <NavbarApp to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
-            <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image title={'Microsoft briefcase emoji (Used for informational purposes only)'} priority src={"/emoji-small/briefcase.webp"} layout="fill" alt="emoji"/></div></h1>
+            <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image title={'Microsoft briefcase emoji (Used for informational purposes only)'} priority src={"/emoji-small/briefcase.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
                 {/*  */}
                 {AllService.filter(e=>{return e.category === 'business'}).map((e,index)=>
-                    <Link href={e.location} prefetch={false} key={index+1}>
-                    <a title={nav_translate[e.name][lang]}>
+                    <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
                     <div className={`${style.main__module_row_block} anim_hover`}>
                         <div>
                             <div className={`${style.main__module_row_block_img}`}>
-                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" layout="fill" className={style.main__module_row_block_pic} src={e.image}/>
+                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image}/>
                             </div>
                         </div>
                         <div className={style.main__module_row_block_f}>
@@ -52,7 +51,6 @@ const BusinessIndex = () => {
                             <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
                         </div>
                     </div>
-                    </a>
                     </Link>
                     )}
                 {/*  */}

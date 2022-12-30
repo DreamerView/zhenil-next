@@ -82,12 +82,10 @@ const Header = () => {
         </Head>
         <header>
           <div className="header__logo">
-            <Link href='/' prefetch={false}>
-              <a title={text['title'][locale]}>
+            <Link title={text['title'][locale]} href='/' prefetch={false}>
                 <div className='header__logo_p'>
                   <div className="header__logo_pic anim_hover"></div>
                 </div>
-            </a>
             </Link>
           </div>
           <div className="header__action">
@@ -99,13 +97,11 @@ const Header = () => {
           </div>
           <div className="header__search">
           {res?"":
-            <Link href="/user" prefetch={false}>
-              <a title={text['title'][locale]}>
+            <Link title={text['title'][locale]} href="/user" prefetch={false}>
                 <div className="header__search_menu anim_hover">
                   <div className="header__search_menu_pic1" id="search_menu"></div>
                   <span className="header__search_menu_text">{translate['menu'][locale]}</span>
                 </div>
-              </a>
             </Link>
             }
             <>

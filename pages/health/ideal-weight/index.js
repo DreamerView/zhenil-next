@@ -67,7 +67,7 @@ const IdealWeight = () => {
                         <div className={style.module_result_row}>
                             <div className={anim1==='male'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['male_selected'][lang]}</p>
@@ -76,7 +76,7 @@ const IdealWeight = () => {
                             </div>
                             <div className={anim2==='n1'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['h_selected'][lang]}</p>
@@ -85,7 +85,7 @@ const IdealWeight = () => {
                             </div>
                             <div className={anim3==='result'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_gesturing_ok.webp":"/emoji-small/woman_gesturing_ok.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_gesturing_ok.webp":"/emoji-small/woman_gesturing_ok.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result'][lang]}</p>
@@ -103,7 +103,7 @@ const IdealWeight = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} width={40} height={40} alt="emoji"/>
                                         </div>
                                     </div>
                                     <select onChange={(e)=>{setMale(e.target.value);setN1('');}} className={`${style.main__calculator_module_select}`}>
@@ -118,14 +118,14 @@ const IdealWeight = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} width={40} height={40} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>
                                     {n1!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setN1('')}}>
                                         <div className={style.main__calculator_module_close_img}>
-                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                            <Image width={22.5} height={22.5} alt="icon" src="/img/close.svg"/>
                                         </div>
                                     </div>:""}
                                 </div>

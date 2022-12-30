@@ -206,8 +206,8 @@ const SizeAcc = () => {
             </div>
             <div className={style.main__block_fixed_confirm}>
                 <div className={`${style.main__block_interface_menu_c_end} flex`}>
-                            <Link href="/constructor/acc/logo" prefetch={false} className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
-                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</a></Link>}    
+                            <Link href="/constructor/acc/logo" prefetch={false} className={style.main__block_interface_btn_back}>{ux['back'][lang]}</Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</Link>}    
                 </div>
             </div>
     </>

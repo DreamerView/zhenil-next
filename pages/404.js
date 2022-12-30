@@ -21,7 +21,7 @@ const NotFound = () => {
                     </div>
                     <h1 className="page_not_found">{translate['name'][locale]}</h1>
                     <p className="page_not_found">{translate['content'][locale]}</p>
-                    <Link prefetch={false} href="/" className="page_not_found"><a className="page_not_found">{translate['button'][locale]}</a></Link>
+                    <Link prefetch={false} href="/" className="page_not_found">{translate['button'][locale]}</Link>
                 </div>
             </div>
         </>

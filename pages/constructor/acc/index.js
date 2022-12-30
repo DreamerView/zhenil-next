@@ -36,11 +36,10 @@ const Acc = () => {
             <p className="sub_content">{text['content'][lang]}</p>
             <div className={`${style.main__block_menu_select} p-m`}>
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logo" prefetch={false}>
-            <a title={text['title1'][lang]}>
+            <Link title={text['title1'][lang]} href="/constructor/acc/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
@@ -52,16 +51,14 @@ const Acc = () => {
             <div className={style.main__block_menu_select_main}>
                 <button className={`${style.main__block_menu_select_main_button} ${style.green_border}`}>{ux['start'][lang]}</button>
             </div>
-            </a>
             </Link>
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logo" prefetch={false}>
-            <a title={text['title2'][lang]}>
+            <Link title={text['title2'][lang]} href="/constructor/acc/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
@@ -73,16 +70,14 @@ const Acc = () => {
             <div className={style.main__block_menu_select_main}>
                 <button className={`${style.main__block_menu_select_main_button} ${style.purple_border}`}>{ux['start'][lang]}</button>
             </div>
-            </a>
             </Link>
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
             <Link href="/constructor/acc/logosd" prefetch={false}>
-            <a title={text['title3'][lang]}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image layout="fill" className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
@@ -94,7 +89,6 @@ const Acc = () => {
             <div className={style.main__block_menu_select_main}>
                 <button className={`${style.main__block_menu_select_main_button} ${style.blue_border}`}>{ux['start'][lang]}</button>
             </div>
-            </a>
             </Link>
             </div>
 

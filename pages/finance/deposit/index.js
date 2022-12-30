@@ -107,7 +107,7 @@ const Deposit = () => {
             </Head>
             <NavbarApp to={{href:"/finance"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} layout="fill" alt="emoji"/></div></h1>
+                <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
                 <p className="sub_content">{text["description"][lang]}</p>
                 {/* New added */}
                 <div className={style.main__calc}>
@@ -117,7 +117,7 @@ const Deposit = () => {
                         <div className={style.module_result_row}>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/money_bag.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>За {term==='not'?'':term} месяцев я накоплю</p>
@@ -126,7 +126,7 @@ const Deposit = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/dollar.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Собственные средства</p>
@@ -135,7 +135,7 @@ const Deposit = () => {
                             </div>
                             <div className={style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/money_bag.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>Начисленные проценты</p>
@@ -153,7 +153,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/bar_chart.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/bar_chart.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*"  placeholder="Годовая эффективная ставка (%)" className={`${style.main__calculator_module_input}`} onChange={(e)=>{setBet((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={bet}/>
@@ -164,7 +164,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/dollar.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/dollar.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9]*"  placeholder="Сумма депозита" className={`${style.main__calculator_module_input}`} onChange={(e)=>{setSum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={sum} />
@@ -175,7 +175,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/aim.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/aim.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <select onChange={e=>setTerm(Number(e.target.value))} className={`${style.main__calculator_module_select}`}>
@@ -193,7 +193,7 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/money_bag.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/money_bag.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" onChange={(e)=>{setEvery((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={every} pattern="[0-9]*"  placeholder="Ежемесячное пополнение" className={`${style.main__calculator_module_input}`}/>

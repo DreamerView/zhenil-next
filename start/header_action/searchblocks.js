@@ -12,17 +12,17 @@ const SearchBlocks = (res) => {
     const {locale} = router;
     return(
         <>
-            <Link href={res.item.location} prefetch={false} ><a>
+            <Link href={res.item.location} prefetch={false} >
             <div className={`${style.search__block} basic_animation`} onClick={()=>res.send(translate[res.item.name][locale])}>
                 {res.item.type==='category'?
                 <div>
                 <div className={`${style.search__block_image} ${res.item.image_background}`}>
                     <div className={style.search__block_pic}>
-                        <Image priority layout="fill" src={res.item.image}/>
+                        <Image priority width={26} height={26} alt="category" src={res.item.image}/>
                     </div>
                 </div></div>:
                     <div><div className={`${style.search__block_image_s}`}>
-                        <Image layout="fill" className={`${style.search__block_image_i}`} src={res.item.image}/>
+                        <Image priority width={38} height={38} alt="application" className={`${style.search__block_image_i}`} src={res.item.image}/>
                     </div></div>
                 }
                 <div className={style.search__block_content}>
@@ -30,7 +30,7 @@ const SearchBlocks = (res) => {
                     <p className={style.smaller}>{type_translate[res.item.type][locale]}</p>
                 </div>
             </div>
-            </a></Link>
+            </Link>
         </>
     )
 };

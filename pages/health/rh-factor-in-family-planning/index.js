@@ -60,7 +60,7 @@ const RhFactorInPregnancyPlanning = () => {
                         <div className={style.comparitive__block_row}>
                             <h1>{text['father'][lang]}</h1>
                             <div className={style.comparitive__block_row_image}>
-                                <Image src="/emoji-small/man_raising_hand.webp" layout="fill" alt="emoji"/>
+                                <Image src="/emoji-small/man_raising_hand.webp" width={120} height={120} alt="emoji"/>
                             </div>
                             <div className={style.comparitive__block_row_flex}>
                                 <h1>Rh</h1>
@@ -79,7 +79,7 @@ const RhFactorInPregnancyPlanning = () => {
                         <div className={style.comparitive__block_row}>
                             <h1>{text['mother'][lang]}</h1>
                             <div className={style.comparitive__block_row_image}>
-                                <Image src="/emoji-small/woman_raising_hand.webp" layout="fill" alt="emoji"/>
+                                <Image src="/emoji-small/woman_raising_hand.webp" width={120} height={120} alt="emoji"/>
                             </div>
                             <div className={style.comparitive__block_row_flex}>
                                 <h1>Rh</h1>
@@ -102,7 +102,7 @@ const RhFactorInPregnancyPlanning = () => {
                 <div className={style.compare_row}>
                     <div className={`${style.compare_block} ${symbol.color}_background`}>
                         <div className={style.compare_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/dna.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/dna.webp"/>
                         </div>
                         <div>
                             <p>{text['con'][lang]} - {text['rh'][lang]}</p>
@@ -111,7 +111,7 @@ const RhFactorInPregnancyPlanning = () => {
                     </div>
                     <div className={`${style.compare_block} ${result.color}_background`}>
                         <div className={style.compare_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/drop_of_blood.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/drop_of_blood.webp"/>
                         </div>
                         <div>
                             <p>{text['con'][lang]} - {text['gb'][lang]}</p>
@@ -120,7 +120,7 @@ const RhFactorInPregnancyPlanning = () => {
                     </div>
                     <div className={`${style.compare_block} block_background`}>
                         <div className={style.compare_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/baby.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/baby.webp"/>
                         </div>
                         <div>
                             <p>{text['group_blood_child'][lang]}</p>

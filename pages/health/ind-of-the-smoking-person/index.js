@@ -54,7 +54,7 @@ const Deposit = () => {
             </Head>
             <NavbarApp to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} layout="fill" alt="emoji"/></div></h1>
+                <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} width={26} height={26} alt="emoji"/></div></h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {/* New added */}
                 <div className={style.main__calc}>
@@ -64,7 +64,7 @@ const Deposit = () => {
                         <div className={style.module_result_row}>
                             <div className={anim1==='exp'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/calendar.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/calendar.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result1'][lang]}</p>
@@ -73,7 +73,7 @@ const Deposit = () => {
                             </div>
                             <div className={anim2==='result'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/bookmark.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/bookmark.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result2'][lang]}</p>
@@ -82,7 +82,7 @@ const Deposit = () => {
                             </div>
                             <div className={anim3==='alert'?style.module_result_block_loader:style.module_result_block}>
                                 <div className={style.module_result_block_pic}>
-                                    <Image priority src={"/emoji-small/microscope.webp"} layout="fill" alt="emoji"/>
+                                    <Image priority src={"/emoji-small/microscope.webp"} width={40} height={40} alt="emoji"/>
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['res'][lang]}</p>
@@ -100,14 +100,14 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/cigarette.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/cigarette.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setNum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder={text['enter_value'][lang]} className={`${style.main__calculator_module_input}`} value={num}/>
                                     {num!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setNum('')}}>
                                         <div className={style.main__calculator_module_close_img}>
-                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                            <Image width={22.5} height={22.5} alt="icon" src="/img/close.svg"/>
                                         </div>
                                     </div>:""}
                                 </div>
@@ -117,14 +117,14 @@ const Deposit = () => {
                                 <div className={style.main__calculator_module}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/calendar.webp"} layout="fill" alt="emoji"/>
+                                            <Image priority src={"/emoji-small/calendar.webp"} width={35} height={35} alt="emoji"/>
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setExp((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder={text['enter_value'][lang]} className={`${style.main__calculator_module_input}`} value={exp}/>
                                     {exp!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setExp('')}}>
                                         <div className={style.main__calculator_module_close_img}>
-                                            <Image layout='fill' alt="icon" src="/img/close.svg"/>
+                                            <Image width={22.5} height={22.5} alt="icon" src="/img/close.svg"/>
                                         </div>
                                     </div>:""}
                                 </div>

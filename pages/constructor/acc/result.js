@@ -39,8 +39,8 @@ const ResultAcc = () => {
             </div>
             <div className={style.main__block_fixed_confirm}>
                 <div className={`${style.main__block_interface_menu_c_end} flex`}>
-                            <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
-                            <Link href="/" prefetch={false} className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['home'][lang]}</a></Link>
+                            <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_back}>{ux['back'][lang]}</Link>
+                            <Link href="/" prefetch={false} className={style.main__block_interface_btn_forward}>{ux['home'][lang]}</Link>
                 </div>
             </div>
         </>

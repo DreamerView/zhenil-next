@@ -88,8 +88,8 @@ const InfoAcc = () => {
             </div>
             <div className={style.main__block_fixed_confirm}>
                 <div className={`${style.main__block_interface_menu_c_end} flex`}>
-                            <Link href="/constructor/acc/size" prefetch={false} className={style.main__block_interface_btn_back}><a className={style.main__block_interface_btn_back}>{ux['back'][lang]}</a></Link>
-                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</button>: <Link href="/constructor/acc/result" prefetch={false} className={style.main__block_interface_btn_forward}><a className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</a></Link>}    
+                            <Link href="/constructor/acc/size" prefetch={false} className={style.main__block_interface_btn_back}>{ux['back'][lang]}</Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</button>: <Link href="/constructor/acc/result" prefetch={false} className={style.main__block_interface_btn_forward}>{ux['finish'][lang]}</Link>}    
                 </div>
             </div>
         </>

@@ -135,7 +135,7 @@ const PregnancyCalendar = ()=>{
                 <div className={style.calendar_row}>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/breast_feeding.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/breast_feeding.webp"/>
                         </div>
                         <div className={style.calendar_block_l}>
                             <p>{text['result1'][lang]}</p>
@@ -144,7 +144,7 @@ const PregnancyCalendar = ()=>{
                     </div>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/baby.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/baby.webp"/>
                         </div>
                         <div className={style.calendar_block_l}>
                             <p>{text['result5'][lang]}</p>
@@ -153,7 +153,7 @@ const PregnancyCalendar = ()=>{
                     </div>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/calendar.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/calendar.webp"/>
                         </div>
                         <div className={style.calendar_block_l}>
                             <p>{text['result2'][lang]}</p>
@@ -162,7 +162,7 @@ const PregnancyCalendar = ()=>{
                     </div>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
                         </div>
                         <div className={style.calendar_block_l}>
                             <p>{text['result3'][lang]}</p>
@@ -171,7 +171,7 @@ const PregnancyCalendar = ()=>{
                     </div>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
                         <div className={style.calendar_block_emoji}>
-                            <Image priority layout="fill" alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
+                            <Image priority width={48} height={48} alt="emoji" src="/emoji-small/hourglass_not_done.webp"/>
                         </div>
                         <div className={style.calendar_block_l}>
                             <p>{text['result4'][lang]}</p>

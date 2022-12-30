@@ -3,7 +3,6 @@
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import SearchResult from "/start/services/all.json";
-import HeaderUser from './headerModule';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect,useState } from 'react';
 import Link from 'next/link';
@@ -12,15 +11,23 @@ import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
+import HeaderUser from './headerModule';
 
 
 const UserInterface = () => {
+    const [lazy,setLazy] = useState(false);
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     const [prev,setPrev] = useState([{}]);
     const [sortItem,setSortItem] = useState('new');
     const [sortItemRes,setSortItemRes] = useState('all');
     const response = SearchResult;
+    useEffect(()=>{
+        setLazy((lazy)=>lazy=true);
+        return()=>{
+            return false;
+        }
+    },[]);
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('favouriteAction'));
         const action = history?history:[];
@@ -71,7 +78,7 @@ const UserInterface = () => {
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">
             <div className={style.user__main}>
-                {isTabletOrMobile?"":<HeaderUser/>}
+                {lazy===true&&isTabletOrMobile?"":<HeaderUser/>}
                 <div className={style.main__user_action}>
                     <h1>{ux['favorites'][lang]}</h1>
                     <p className='sub_content'>{ux['favorites_text'][lang]}</p>
@@ -91,16 +98,14 @@ const UserInterface = () => {
                     </div>
                         <div className={style.main__user_action_prev}>
                             {prev.map((result,index)=>{return JSON.stringify(result)!=="{}"?
-                            <Link key={index} href={result.location}>
-                                <a onClick={()=>historyAction(result.name)}>
+                            <Link onClick={()=>historyAction(result.name)} key={index} href={result.location}>
                                     <div className={`${style.main__user_action_prev_row} anim_hover`}>
                                         <div className={style.main__user_action_prev_row_block}>
-                                            <Image layout='fill' className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
+                                            <Image width={90} height={90} className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
                                         </div>
                                         <span><b>{services[result.name][lang].split(' ').slice(0,2).join(" ")}</b></span>
                                         <p className={style.main__user_action_prev_row_block_text}>{ConvertTime(result.time)}</p>
                                     </div>
-                                </a>
                             </Link>:""
                                 }
                             )}
