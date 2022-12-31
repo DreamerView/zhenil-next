@@ -28,7 +28,7 @@ const IndexContent = ({lang,service}) => {
               <div className={`${styles.main__index_block_row_b} anim_hover`}>
                 <div className={styles.main__index_block}>
                   <div className={styles.main__index_block_pic}>
-                    <Image loading='lazy' title={nav_translate[e.name][locale]} alt={`Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>`} width={160} height={160} className={styles.main__index_block_img} src={e.image}/>
+                    <Image priority title={nav_translate[e.name][locale]} alt={`Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>`} width={160} height={160} className={styles.main__index_block_img} src={e.image}/>
                   </div>
                 </div>
                 <span className="head">{nav_translate[e.name][locale]}</span>
