@@ -23,8 +23,8 @@ const UserIndex = (result) => {
     return(<>
     {login===true?
     <Link href={`/user`} prefetch={false}>
-                <div className="header__action_image anim_hover">
-                  <Image title={`Avatar`} width={46} height={46} className="header__action_avatar" src={JSON.stringify(res) !== '{}'?aes.decrypt(res?.avatar):"/img/preloader-night.svg"} alt="avatar" />
+                <div className={`header__action_image anim_hover ${JSON.stringify(res) === '{}'&&" skeleton"}`}>
+                  <Image title={`Avatar`} width={46} height={46} className={"header__action_avatar"} src={JSON.stringify(res) !== '{}'&&aes.decrypt(res?.avatar)} alt="avatar" />
                 </div>
             </Link>:<Link href="/signin" prefetch={false}><div className="header__action_login_button anim_hover">{ux['login'][lang]}</div></Link>
     }

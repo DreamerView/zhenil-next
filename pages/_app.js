@@ -103,7 +103,7 @@ const MyApp = ({ Component, pageProps }) => {
 
     return(
         <>
-            <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
+            {/* <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div> */}
             <Provider store={store}>
                 <DocumentResult>
                 {result ? <Preloader/>:<Component {...pageProps} />}
