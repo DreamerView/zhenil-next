@@ -4,14 +4,7 @@
 }
 
 img {
-  display: none;
   color: transparent;
-}
-
-
-img[src] {
- display: block;
- color: transparent;
 }
 
 
