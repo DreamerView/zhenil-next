@@ -25,7 +25,7 @@ const HeaderUser = () => {
         return () =>{
             return false;
         };
-    },[])
+    },[]);
     const logOut = () => {
         document.cookie = 'accessToken' + '=;Max-Age=0;path=/';
         window.location.href="/";
@@ -38,8 +38,8 @@ const HeaderUser = () => {
                             {data!==null&&<Image priority width={80} height={80} alt="avatar" src={data.avatar}/>}
                         </div>
                         <div className={style.user__main_portfolio_row}>
-                            {data!==null?<h3 className={style.need_center}>{data.name} {data.surname}</h3>:<div className={`${style.header_text_preloader_1} skeleton`}/>}
-                            {data!==null?<p className={`${style.portfolio_sub} ${style.need_center}`}>@{data.login}</p>:<div className={`${style.header_text_preloader_2} skeleton`}/>}
+                            <div className={`${style.header_text_preloader_1} ${data===null&&"skeleton"}`}><h3 className={style.need_center}>{data!==null&&data.name+" "+data.surname}</h3></div>
+                            <div className={`${style.header_text_preloader_2} ${data===null&&"skeleton"}`}><p className={`${style.portfolio_sub} ${style.need_center}`}>{data!==null&&"@"+data.login}</p></div>
                         </div>
                     </div>
                     <div className={`${style.main__block_user_row}`}>
