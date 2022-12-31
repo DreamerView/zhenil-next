@@ -24,6 +24,9 @@
         padding:64px 24px;
         border:1px solid var(--border-color);
     }
+    div.no_center {
+        width:300px;
+    }
     div.user__main_row {
         width:30%;
     }
@@ -46,6 +49,9 @@
     }
     div.user__main_row {
         width:30%;
+    }
+    div.no_center {
+        width:100%;
     }
     div.main__block_user_row {
         width:100%;
@@ -79,6 +85,9 @@
         margin-top:16px;
         text-align: center;
     }
+    div.no_center {
+        width:100%;
+    }
     div.user__main_row {
         width:100%;
     }
@@ -109,7 +118,6 @@ div.user__main_row {
 div.user__main_portfolio {
     width:100%;
     /* display: flex; */
-    justify-content: center;
     align-items: center;
     margin-bottom:24px;
     /* flex-direction: column; */

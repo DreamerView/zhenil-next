@@ -17,7 +17,7 @@ const HeaderUser = () => {
         const result = async() => {
             const res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});
             if(res!==undefined) {
-                const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname)}
+                const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname),login:aes.decrypt(res.login)}
                 return setData(prev=>prev=response);
             }
         };
@@ -32,6 +32,7 @@ const HeaderUser = () => {
     };
     return(
         <div className={style.user__main_row}>
+            <div className={style.no_center}>
                     {data!==null &&
                     <div className={style.user__main_portfolio}>
                         <div className={style.user__main_portfolio_avatar}>
@@ -39,7 +40,7 @@ const HeaderUser = () => {
                         </div>
                         <div className={style.user__main_portfolio_row}>
                             <h3 className={style.need_center}>{data.name} {data.surname}</h3>
-                            <p className={`${style.portfolio_sub} ${style.need_center}`}>@temirkhanrustemov</p>
+                            <p className={`${style.portfolio_sub} ${style.need_center}`}>@{data.login}</p>
                         </div>
                     </div>}
                     <div className={`${style.main__block_user_row}`}>
@@ -81,6 +82,7 @@ const HeaderUser = () => {
                         </div>
                     </div>
                 </div>
+            </div>
     );
 };
 export default HeaderUser; 
