@@ -3,13 +3,6 @@
   padding:0
 }
 
-img {
-  border: none;
-  outline: none;
-  border-image: none;
-}
-
-
 .disable {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
