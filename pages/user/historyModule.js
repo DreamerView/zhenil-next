@@ -79,7 +79,7 @@ const HistoryUser = () => {
                     {prev.map((result,index)=>{return JSON.stringify(result)!=="{}"?
                     <Link onClick={()=>historyAction(result.name)} key={index} href={result.location}>
                             <div className={`${style.main__user_action_prev_row} anim_hover`}>
-                                <div className={style.main__user_action_prev_row_block}>
+                                <div className={`${style.main__user_action_prev_row_block}`}>
                                     <Image priority width={90} height={90} className={style.main__user_action_prev_row_block_img} alt="services" src={result.image}/>
                                 </div>
                                 <span><b>{services[result.name][lang].split(' ').slice(0,2).join(" ")}</b></span>

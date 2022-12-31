@@ -12,6 +12,7 @@
     }
     div.user__main_portfolio {
         display: flex;
+        height: 80px;
     }
     div.main__user_action {
         width:60%;
@@ -39,6 +40,7 @@
     }
     div.user__main_portfolio {
         display: flex;
+        height: 80px;
     }
 }
   @media (min-width:751px) and (max-width:1160px) {
@@ -70,6 +72,12 @@
         margin-top:16px;
         text-align: center;
     }
+    div.header_text_preloader_1 {
+        margin-top:16px;
+    }
+    div.header_text_preloader_2 {
+        margin: 0 auto;
+    }
   }
   @media (min-width:1px) and (max-width:750px) {
     div.user__main {
@@ -97,6 +105,28 @@
     div.main__user_action {
         width:100%;
     }
+    div.header_text_preloader_1 {
+        margin-top:24px;
+    }
+    div.header_text_preloader_1 {
+        margin-top:16px;
+    }
+    div.header_text_preloader_2 {
+        margin: 0 auto;
+    }
+}
+div.header_text_preloader_1 {
+    width:150px;
+    height:20px;
+    border-radius: 24px;
+    background-color: var(--block-color);
+}
+div.header_text_preloader_2 {
+    width:120px;
+    height:16px;
+    border-radius: 24px;
+    background-color: var(--block-color);
+    margin-top:8px;
 }
 .text_center {
     text-align: center;

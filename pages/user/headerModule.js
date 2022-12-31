@@ -4,14 +4,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useTranslateText from "/start/translate";
 import translate from "/translate/user/index_translate";
+import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+import { useEffect,useState } from "react";
 const AesEncryption = require('aes-encryption');
 
-
-const HeaderUser = (item) => {
-    const result = item.item!==null?item.item:null;
+const HeaderUser = () => {
     const lang = useTranslateText();
-    const aes = new AesEncryption();
-    aes.setSecretKey(process.env.aesKey);
+    const [data,setData] = useState(null);
+    useEffect(()=>{
+        const aes = new AesEncryption();
+        aes.setSecretKey(process.env.aesKey);
+        const result = async() => {
+            const res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});
+            if(res!==undefined) {
+                const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname),login:aes.decrypt(res.login)}
+                return setData(prev=>prev=response);
+            }
+        };
+        result();
+        return () =>{
+            return false;
+        };
+    },[])
     const logOut = () => {
         document.cookie = 'accessToken' + '=;Max-Age=0;path=/';
         window.location.href="/";
@@ -19,16 +33,15 @@ const HeaderUser = (item) => {
     return(
         <div className={style.user__main_row}>
             <div className={style.no_center}>
-                    {result!==false &&
                     <div className={style.user__main_portfolio}>
-                        <div className={style.user__main_portfolio_avatar}>
-                            <Image priority width={80} height={80} alt="avatar" src={aes.decrypt(result.avatar)}/>
+                        <div className={`${style.user__main_portfolio_avatar} ${data===null&&"skeleton"}`}>
+                            {data!==null&&<Image priority width={80} height={80} alt="avatar" src={data.avatar}/>}
                         </div>
                         <div className={style.user__main_portfolio_row}>
-                            <h3 className={style.need_center}>{aes.decrypt(result.name)} {aes.decrypt(result.surname)}</h3>
-                            <p className={`${style.portfolio_sub} ${style.need_center}`}>@{aes.decrypt(result.login)}</p>
+                            {data!==null?<h3 className={style.need_center}>{data.name} {data.surname}</h3>:<div className={`${style.header_text_preloader_1} skeleton`}/>}
+                            {data!==null?<p className={`${style.portfolio_sub} ${style.need_center}`}>@{data.login}</p>:<div className={`${style.header_text_preloader_2} skeleton`}/>}
                         </div>
-                    </div>}
+                    </div>
                     <div className={`${style.main__block_user_row}`}>
                         <Link href="/user/history" prefetch={false}>
                         <div className={`${style.main__block_user} anim_hover`}>

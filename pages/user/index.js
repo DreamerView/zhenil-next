@@ -9,28 +9,9 @@ import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
 import HeaderUser from './headerModule';
 import HistoryUser from './historyModule';
-import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
-export async function getServerSideProps(context) {
-    const data = await ServerJsonFetchReq({
-        method:"GET",
-        path:"/get-data",
-        cookie:context.req.headers.cookie,
-        server:context
-    });
-    if(data.result==='redirect') {
-        return {
-            redirect: {permanent: false,destination: data.location,},
-            props: {}
-        }; 
-    } else {
-        return {
-            props: {data}
-        };
-    }
-};
 
-const UserInterface = ({data}) => {
+const UserInterface = () => {
     const [lazy,setLazy] = useState(false);
     const lang  = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
@@ -48,7 +29,7 @@ const UserInterface = ({data}) => {
         <NavbarApp to={{href:"/"}} choice="alone"/>
         <div className="main_app block_animation">
             <div className={style.user__main}>
-                {data!==undefined&&<HeaderUser item={data}/>}
+                <HeaderUser/>
                 {lazy===true&&!isTabletOrMobile&&<HistoryUser/>}
             </div>
         </div>
