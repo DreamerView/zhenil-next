@@ -71,7 +71,6 @@ const LoginForm = () => {
                         },
                         body: JSON.stringify({email:email,password:password})
                     };
-                    console.log(hostname)
                     const login = await fetch(process.env.backend+"/signin", requestOptions);
                     if (login.status ===404) {
                         setNotification({user:"admin",content:"User email or password is not correct!"});
@@ -126,7 +125,7 @@ const LoginForm = () => {
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
                         <Link href="/signin/forget" className={style.text_center}>Forgot password?</Link>
-                        <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image layout="fill" alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
+                        <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
                     </div>
                 </form>
             </div>

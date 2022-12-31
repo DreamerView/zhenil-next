@@ -14,7 +14,7 @@ const setNotification = () => {
                         <div className="notification__block_1_img_row">
                             <div className="notification__block_1_img">
                             {/* /img/support.webp */}
-                                <Image layout="fill" alt="notification logo" src={status==='admin'?`/img/support.webp`:notification.image}/>
+                                <Image width={45} height={45} alt="notification logo" src={status==='admin'?`/img/support.webp`:notification.image}/>
                             </div>
                         </div>
                         <div className="notification__block_1_row">
