@@ -4,8 +4,9 @@
 }
 
 img {
-  color: transparent;
-  border:0 none;
+  border: none;
+  outline: none;
+  border-image: none;
 }
 
 
