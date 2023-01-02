@@ -10,8 +10,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import { getCsrfToken, getProviders, useSession, signIn,getSession } from "next-auth/react";
 
 export async function getServerSideProps(context) {
+    const session = await getSession(context);
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -19,11 +21,14 @@ export async function getServerSideProps(context) {
         server:context,
         auth:"yes"
     });
-    if(data.result==='redirect') {
+    const ReturnTo = async() => {
         return {
-            props: {}
+            props: {
+                providers: await getProviders(context),
+            }
         }; 
-    } else {
+    };
+    const ReturnBack = async() => {
         return {
             redirect: {
                 permanent: false,
@@ -31,10 +36,22 @@ export async function getServerSideProps(context) {
             },
             props: {}
         }; 
-    }
+    };
+    const SocialNetwork = async() => {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin/auth',
+            },
+            props: {}
+        }; 
+    };
+    if(session!==null) return SocialNetwork();
+    if(data.result==='redirect') return ReturnTo();
+    else return ReturnBack();
 };
 
-const LoginForm = () => {
+const LoginForm = ({providers}) => {
     const send = useDispatch();
     const router = useRouter();
     const [wait,setWait] = useState(false);
@@ -101,6 +118,10 @@ const LoginForm = () => {
             }
         }
     };
+    const SignInWithSN = (name,client) =>{
+        localStorage.setItem('signInClient',client);
+        signIn(name)
+    };
     return(
         <>
             <Head>
@@ -113,6 +134,17 @@ const LoginForm = () => {
             <div className={style.login_form}>
                 <h1 className={style.head_center} onClick={()=>router.push("/signup")}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
+                <div>
+                    {providers!==null  && Object.values(providers).map((provider) => {
+                        return (
+                        <div key={provider.name}>
+                            <button onClick={() => SignInWithSN(provider.id,provider.name)}>
+                            Sign in with {provider.name}
+                            </button>
+                        </div>
+                        );
+                    })}
+                </div>
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>
                         <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />

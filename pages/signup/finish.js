@@ -79,7 +79,7 @@ const SignUp = () => {
                 "Accept":"application/json; charset=utf-8",
                 "Content-Type": "application/json; charset=utf-8"
             },
-            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser)})
+            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki")})
         };
         const login = await fetch(process.env.backend+"/register-id", requestOptions);
         const result = await login.json();

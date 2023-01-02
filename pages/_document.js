@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import { Html, Head, Main, NextScript } from 'next/document';
 
-const DocumentShow = () => {
+const Document = () => {
   return (
     <Html>
       <Head>
@@ -16,7 +16,7 @@ const DocumentShow = () => {
                 <meta name="msapplication-TileColor" content="#ffffff"/>
                 <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
                 <meta name="ah-verification" content="3c09cf5c49c8" />
-                
+      
                 {/*  */}
                 <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
@@ -69,4 +69,4 @@ const DocumentShow = () => {
   )
 }
 
-export default DocumentShow;
+export default Document;

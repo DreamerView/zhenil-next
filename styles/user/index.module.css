@@ -175,6 +175,9 @@ div.user__main_portfolio_avatar {
     background-color: var(--block-color);
     margin:0 8px;
 }
+img.user__main_portfolio_avatar_image {
+    border-radius: 100%;
+}
 div.user__main_portfolio_row {
     margin:0 8px;
 }

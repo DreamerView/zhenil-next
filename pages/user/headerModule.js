@@ -35,7 +35,7 @@ const HeaderUser = () => {
             <div className={style.no_center}>
                     <div className={style.user__main_portfolio}>
                         <div className={`${style.user__main_portfolio_avatar} ${data===null&&"skeleton"}`}>
-                            {data!==null&&<Image priority width={80} height={80} alt="avatar" src={data.avatar}/>}
+                            {data!==null&&<Image className={style.user__main_portfolio_avatar_image} priority width={80} height={80} alt="avatar" src={data.avatar}/>}
                         </div>
                         <div className={style.user__main_portfolio_row}>
                             <div className={`${style.header_text_preloader_1} ${data===null&&"skeleton"}`}><h3 className={style.need_center}>{data!==null&&data.name+" "+data.surname}</h3></div>

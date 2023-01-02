@@ -98,7 +98,7 @@ const secure = production?[
 
 module.exports = withPWA({
   images: {
-    domains: [images],
+    domains: [images,'lh3.googleusercontent.com'],
   },
   poweredByHeader: false,
   env: {

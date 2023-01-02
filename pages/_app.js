@@ -8,6 +8,7 @@ import { useEffect,useState } from "react";
 import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
+import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
@@ -41,7 +42,7 @@ const Preloader = () => {
     )
 };
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, session }) => {
     const locale = useTranslateText();
     const [result,setResult] = useState(false);
     useEffect(()=>{
@@ -104,11 +105,13 @@ const MyApp = ({ Component, pageProps }) => {
     return(
         <>
             <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
-            <Provider store={store}>
-                <DocumentResult>
-                {result ? <Preloader/>:<Component {...pageProps} />}
-                </DocumentResult>
-            </Provider>
+            <SessionProvider session={session}>
+                <Provider store={store}>
+                    <DocumentResult>
+                    {result ? <Preloader/>:<Component {...pageProps} />}
+                    </DocumentResult>
+                </Provider>
+            </SessionProvider>
         </>
     )
 }
