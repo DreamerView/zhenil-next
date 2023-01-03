@@ -27,7 +27,7 @@ const UserInterface = () => {
                 <title>{ux['recent'][lang]} | Okki.kz</title>
         </Head>
         <NavbarApp to={{href:"/"}} choice="alone"/>
-        <div className="main_app block_animation">
+        <div className="main_app">
             <div className={style.user__main}>
                 <HeaderUser/>
                 {lazy===true&&!isTabletOrMobile&&<HistoryUser/>}
