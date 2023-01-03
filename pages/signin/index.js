@@ -163,8 +163,8 @@ const LoginForm = ({providers,data}) => {
                     expire.setTime(today.getTime() + 3600000*24*14);
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
-                    setTimeout(()=>setWait(false),[1000]);
-                    setTimeout(()=>router.push("/"),[2000]);
+                    setWait(false);
+                    router.push("/");
                     send({
                         type:"setAuth",
                         set:true
@@ -177,11 +177,12 @@ const LoginForm = ({providers,data}) => {
         }
     },[router,send,data,setNotification,wait]);
     useEffect(()=>{
-        if(data) handlerSocialNetwork();
+        if(data!==undefined) handlerSocialNetwork();
         return () => {
             return false;
         };
-    },[handlerSocialNetwork,data])
+    },[data]);
+    console.log(data)
     return(
         <>
             <Head>
