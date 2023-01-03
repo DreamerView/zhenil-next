@@ -164,12 +164,11 @@ const LoginForm = ({providers,data}) => {
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
                     setWait(false);
-                    router.push("/");
                     send({
                         type:"setAuth",
                         set:true
                     });
-                    signOut()
+                    signOut({callbackUrl: '/'})
                 }
             } catch(e) {
                 console.log(e);
