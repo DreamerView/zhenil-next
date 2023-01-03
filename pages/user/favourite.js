@@ -63,11 +63,11 @@ const UserInterface = () => {
     }, [sortItem,sortItemRes,response]);
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
-        const day = String(date.getDate()).length===1?"0"+date.getDate():date.getDate();
-        const month = String(date.getMonth()+1).length===1?"0"+date.getMonth()+1:date.getMonth()+1;
+        const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();
+        const month = String(date.getMonth()+1).length===1?"0"+String(date.getMonth()+1):String(date.getMonth()+1);
         const year = date.getFullYear();
-        const hours = String(date.getHours()).length===1?"0"+date.getHours():date.getHours();
-        const minutes = String(date.getMinutes()).length===1?"0"+date.getMinutes():date.getMinutes();
+        const hours = String(date.getHours()).length===1?"0"+String(date.getHours()):date.getHours();
+        const minutes = String(date.getMinutes()).length===1?"0"+String(date.getMinutes()):date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
     };
     return(

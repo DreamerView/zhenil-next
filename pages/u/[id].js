@@ -8,13 +8,13 @@ const UserInterface = () => {
         <NavbarApp to={{href:"/"}} choice="alone"/>
         <div className="main_app block_animation">
             <div className={style.user__main}>
-                <div className={style.user__main_row}>
-                    <div className={style.user__main_portfolio}>
+                <div className={style.user__main_row_block}>
+                    <div className={style.user__main_portfolio_block}>
                         <div className={style.user__main_portfolio_avatar}>
-                            <Image layout='fill' alt="avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp"/>
+                            <Image className={style.user__main_portfolio_avatar_image} priority width={80} height={80} alt="avatar" src="/img/3600ABB7-7824-467A-BB26-6E86CDD1EC91.webp"/>
                         </div>
                         <div className={style.user__main_portfolio_row}>
-                            <h1 className={style.need_center}>Temirkhan Rustemov</h1>
+                            <h3 className={style.need_center}>Temirkhan Rustemov</h3>
                             <p className={`${style.portfolio_sub} ${style.need_center}`}>@temirkhanrustemov</p>
                         </div>
                     </div>
@@ -38,9 +38,6 @@ const UserInterface = () => {
                         <button className={`${style.button_more} anim_hover`}>Подробнее</button>
                     </div>
                 </div>
-            </div>
-            <div className={style.user__main}>
-                
             </div>
         </div>
     </>
