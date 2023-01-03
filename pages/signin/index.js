@@ -181,7 +181,7 @@ const LoginForm = ({providers,data}) => {
         return () => {
             return false;
         };
-    },[data]);
+    },[data,handlerSocialNetwork]);
     console.log(data)
     return(
         <>

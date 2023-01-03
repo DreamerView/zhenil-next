@@ -7,21 +7,13 @@ import translate from "/translate/user/index_translate";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useEffect,useState } from "react";
 const AesEncryption = require('aes-encryption');
+import { useSelector } from "react-redux";
 
 const HeaderUser = () => {
     const lang = useTranslateText();
     const [data,setData] = useState(null);
     useEffect(()=>{
-        const aes = new AesEncryption();
-        aes.setSecretKey(process.env.aesKey);
-        const result = async() => {
-            const res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});
-            if(res!==undefined) {
-                const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname),login:aes.decrypt(res.login)}
-                return setData(prev=>prev=response);
-            }
-        };
-        result();
+        if(typeof window !== "undefined") setData(prev=>prev=JSON.parse(localStorage.getItem('loginParams')));
         return () =>{
             return false;
         };
