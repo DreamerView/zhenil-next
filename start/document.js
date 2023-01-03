@@ -9,6 +9,12 @@ const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 
 const DocumentResult = ({children}) => {
+    useEffect(()=>{
+        console.log("This is just test");
+        return () => {
+            return false;
+        };
+    },[]);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);
     const url = useSelector(state=>state.urlframe);
