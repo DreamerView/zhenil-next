@@ -123,7 +123,7 @@ const LoginForm = ({providers,data}) => {
         signIn(name)
     };
     const handlerSocialNetwork = useCallback(async() =>{
-        if(localStorage.getItem('signInClient')!==null) {
+        if(wait===false && localStorage.getItem('signInClient')!==null) {
             const result = data;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
@@ -163,6 +163,7 @@ const LoginForm = ({providers,data}) => {
                     expire.setTime(today.getTime() + 3600000*24*14);
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
+                    setTimeout(()=>setWait(false),[1000]);
                     setTimeout(()=>router.push("/"),[2000]);
                     send({
                         type:"setAuth",
