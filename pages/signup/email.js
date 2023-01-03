@@ -68,6 +68,7 @@ const SignUp = () => {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(name);
+            const client = aes.encrypt('okki');
             // setWait(true);
             try {
                 const requestOptions = {
@@ -77,7 +78,7 @@ const SignUp = () => {
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
-                    body: JSON.stringify({email:email})
+                    body: JSON.stringify({email:email,client:client})
                 };
                 const login = await fetch(process.env.backend+"/verify-email", requestOptions);
                 if (login.status ===404) {
@@ -102,6 +103,7 @@ const SignUp = () => {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const email = aes.encrypt(name);
+        const client = aes.encrypt('okki');
         try {
             const requestOptions = {
                 method: 'POST',
@@ -110,7 +112,7 @@ const SignUp = () => {
                     "Accept":"application/json; charset=utf-8",
                     "Content-Type": "application/json; charset=utf-8"
                 },
-                body: JSON.stringify({email:email})
+                body: JSON.stringify({email:email,client:client})
             };
             const login = await fetch(process.env.backend+"/verify-email-otp", requestOptions);
             if (login.status ===404) {
