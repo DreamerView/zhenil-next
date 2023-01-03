@@ -1714,6 +1714,11 @@ div.notification__block_1_img {
   width:45px;
   height: 45px;
 }
+img.notification__block_1_img_pic {
+  border-radius: 100%;
+  width:45px;
+  height: 45px;
+}
 div.notification__block_2 {
   width:7%;
   background: url(../public/img/close.svg) no-repeat scroll 0px 14px  transparent;
