@@ -181,7 +181,9 @@ const LoginForm = ({providers,data}) => {
             return false;
         };
     },[data,handlerSocialNetwork]);
-    console.log(data)
+    useEffect(()=>{
+        send({type:"hideRequest",set:true});
+    },[send])
     return(
         <>
             <Head>
@@ -197,9 +199,10 @@ const LoginForm = ({providers,data}) => {
                 <div>
                     {providers!==null&&providers!==undefined  && Object.values(providers).map((provider) => {
                         return (
-                        <div key={provider.name}>
-                            <button onClick={() => SignInWithSN(provider.id,provider.name)}>
-                            Sign in with {provider.name}
+                        <div className={style.login_sn} key={provider.name}>
+                            <button className={`${style.login_sn_row} anim_hover`} onClick={() => SignInWithSN(provider.id,provider.name)}>
+                                <div className={style.login_sn_row_img_row}>
+                                <Image className={style.login_sn_row_img} width={20} height={20} src={`/social-network/${provider.name}.webp`}/></div>Sign in with {provider.name}
                             </button>
                         </div>
                         );

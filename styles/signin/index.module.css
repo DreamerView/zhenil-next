@@ -1,28 +1,101 @@
 @media screen and (min-width:1900px) {
     div.login_form {
         width:75%;
+        padding:64px 32px;
+        border: 0.5px solid var(--border-color);
+    }
+    input.login_input {
+        width:233px;
+    }
+    input.password_input {
+        width:193px;
+    }
+    button.login_button {
+        width:320px;
+    }
+    div.password__show_row {
+        margin:10px 24px;
+    }
+    div.login_sn {
+        width:320px;
     }
   }
   @media screen and (min-width:1161px) and (max-width:1899px) {
     div.login_form {
         width:75%;
+        padding:64px 32px;
+        border: 0.5px solid var(--border-color);
+    }
+    input.login_input {
+        width:233px;
+    }
+    input.password_input {
+        width:193px;
+    }
+    button.login_button {
+        width:320px;
+    }
+    div.password__show_row {
+        margin:10px 24px;
+    }
+    div.login_sn {
+        width:320px;
     }
   }
   @media (min-width:601px) and (max-width:1160px) {
     div.login_form {
         width:90%;
+        padding:64px 32px;
+        border: 0.5px solid var(--border-color);
+    }
+    input.login_input {
+        width:233px;
+    }
+    input.password_input {
+        width:193px;
+    }
+    button.login_button {
+        width:320px;
+    }
+    div.password__show_row {
+        margin:10px 24px;
+    }
+    div.login_sn {
+        width:320px;
     }
   }
   @media (min-width:1px) and (max-width:600px) {
     div.login_form {
-        width:80%;
+        width:100%;
+        padding:64px 0;
+    }
+    input.login_input {
+        width:90%;
+        box-sizing: border-box;
+    }
+    input.password_input {
+        width:90%;
+        box-sizing: border-box;
+    }
+    div.password {
+        width:100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    button.login_button {
+        width: 90%;
+    }
+    div.password__show_row {
+        margin:10px 40px;
+    }
+    div.login_sn {
+        width:90%;
     }
   }
 div.login_form {
-    border: 0.5px solid var(--border-color);
     border-radius: 24px;
     margin: 0 auto;
-    padding:64px 32px;
 }
 .head_center {
     text-align: center;
@@ -42,34 +115,31 @@ div.login_row {
     align-items: center;
 }
 .email {
-    background: var(--email_img) no-repeat scroll 24px 14px var(--input_back);
+    background: var(--email_img) no-repeat scroll 24px 12px var(--input_back);
     z-index:5;
 }
 .key {
-    background: var(--key_img) no-repeat scroll 24px 14px var(--input_back);
+    background: var(--key_img) no-repeat scroll 24px 12px var(--input_back);
     z-index:5;
 }
 
 input.login_input {
-    padding:12px 24px 12px 64px;
-    width:233px;
+    padding:10px 24px 10px 64px;
     background-color: var(--block-color);
-    border-radius: 100px;
-    margin-top:24px;
+    border-radius: 18px;
+    margin-top:16px;
 }
 input.password_input {
-    padding:12px 64px;
-    width:195px;
+    padding:10px 64px;
     background-color: var(--block-color);
-    border-radius: 100px;
+    border-radius: 18px;
     margin-top:24px;
 }
 button.login_button {
     margin-top:24px;
-    width:320px;
-    height:50px;
+    height:46px;
     background-color: var(--brand-color);
-    border-radius: 24px;
+    border-radius: 18px;
     cursor: pointer;
     color:white;
 }
@@ -87,14 +157,14 @@ button.disable {
     cursor: not-allowed;
 }
 div.password {
-    position: relative;;
+    position: relative;
 }
 div.password__show_row {
     position: absolute;
     bottom:0;
     right:0;
-    margin:13px 24px;
     cursor: pointer;
+    z-index:20;
 }
 div.password__show {
     position: relative;
@@ -114,4 +184,32 @@ div.otp {
     margin:24px 0;
     display: flex;
     justify-content: center;
+}
+div.login_sn {
+    margin: 24px auto;
+}
+button.login_sn_row {
+    width:100%;
+    height: 48px;
+    /* background-color: var(--block-color); */
+    border:1.5px solid var(--border-color);
+    border-radius: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.login_sn_row_img_row {
+    width:26px;
+    height:26px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    border-radius: 24px;
+}
+img.login_sn_row_img {
+    width: 20px;
+    height: 20px;
 }
