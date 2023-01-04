@@ -24,8 +24,8 @@ const UserInterface = () => {
         }
     },[]);
     useEffect(()=>{
-        send({type:"hideRequest",set:true});
-    },[send]);
+        send({type:"hideRequest",set:isTabletOrMobile?true:false});
+    },[send,isTabletOrMobile]);
     return(
     <>
         <Head>
