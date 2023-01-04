@@ -105,6 +105,9 @@ div.login_form {
     color: var(--sub_content);
     margin-top:20px
 }
+.sub {
+    color: var(--sub_content); 
+}
 a.text_center:hover {
     color:var(--brand-color);
 }
@@ -133,7 +136,7 @@ input.password_input {
     padding:10px 64px;
     background-color: var(--block-color);
     border-radius: 24px;
-    margin-top:24px;
+    /* margin-top:24px; */
 }
 button.login_button {
     margin-top:24px;
@@ -212,4 +215,24 @@ div.login_sn_row_img_row {
 img.login_sn_row_img {
     width: 22px;
     height: 22px;
+}
+div.signin_auth_form {
+    width:300px;
+    display: flex;
+    align-items: center;
+    margin: 32px auto;
+}
+div.signin_auth_form_image {
+    width:70px;
+    height:70px;
+    border:1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+img.signin_auth_form_pic {
+    width:60px;
+    height: auto;
 }
