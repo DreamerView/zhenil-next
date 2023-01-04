@@ -190,7 +190,7 @@ div.login_sn {
 }
 button.login_sn_row {
     width:100%;
-    height: 48px;
+    height: 50px;
     /* background-color: var(--block-color); */
     border:1.5px solid var(--border-color);
     border-radius: 18px;
@@ -200,8 +200,8 @@ button.login_sn_row {
     align-items: center;
 }
 div.login_sn_row_img_row {
-    width:26px;
-    height:26px;
+    width:32px;
+    height:32px;
     background-color: #fff;
     display: flex;
     align-items: center;
