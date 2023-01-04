@@ -49,13 +49,6 @@ const SignUp = () => {
             return false;
         };
     },[router]);
-    useEffect(()=>{
-        let loader=true
-        loader===true&&send({type:"hideRequest",set:true});
-        return() =>{
-            loader=false;
-        }
-    },[send]);
     const Notification = ({user,content,title,image}) => {
         send({
             type:"setNotification",

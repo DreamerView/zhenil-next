@@ -4,7 +4,6 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
@@ -34,7 +33,6 @@ export async function getServerSideProps(context) {
 const SignUp = () => {
     const [name,setName] = useState("");
     const router = useRouter();
-    const send = useDispatch();
     useEffect(()=>{
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
@@ -61,13 +59,6 @@ const SignUp = () => {
             return false;
         };
     },[router]);
-    useEffect(()=>{
-        let loader=true
-        loader===true&&send({type:"hideRequest",set:true});
-        return() =>{
-            loader=false;
-        }
-    },[send]);
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationName",e);

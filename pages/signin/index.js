@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
-import { getCsrfToken, getProviders, useSession, signIn,getSession,signOut } from "next-auth/react";
+import { getProviders, signIn,getSession,signOut } from "next-auth/react";
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -39,10 +39,6 @@ export async function getServerSideProps(context) {
     };
     const SocialNetwork = async() => {
         return {
-            // redirect: {
-            //     permanent: false,
-            //     destination: '/signin/auth',
-            // },
             props: {data:session}
         }; 
     };
@@ -228,13 +224,13 @@ const LoginForm = ({providers,data}) => {
             return false;
         };
     },[data,handlerSocialNetwork]);
-    useEffect(()=>{
-        let loader=true
-        loader===true&&send({type:"hideRequest",set:true});
-        return() =>{
-            loader=false;
-        }
-    },[send]);
+    // useEffect(()=>{
+    //     let loader=true
+    //     loader===true&&send({type:"hideRequest",set:true});
+    //     return() =>{
+    //         loader=false;
+    //     }
+    // },[send]);
     return(
         <>
             <Head>

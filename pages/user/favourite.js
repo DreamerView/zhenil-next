@@ -12,11 +12,9 @@ import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
-import { useDispatch } from 'react-redux';
 
 
 const UserInterface = () => {
-    const send = useDispatch();
     const [lazy,setLazy] = useState(false);
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
@@ -63,13 +61,6 @@ const UserInterface = () => {
             return false;
         };
     }, [sortItem,sortItemRes,response]);
-    useEffect(()=>{
-        let loader=true;
-        loader===true&&send({type:"hideRequest",set:isTabletOrMobile?true:false});
-        return () => {
-            loader=false;
-        }
-    },[send,isTabletOrMobile]);
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();

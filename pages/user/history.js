@@ -8,11 +8,9 @@ import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
 import HeaderUser from '/pages/user/headerModule';
 import HistoryUser from '/pages/user/historyModule';
-import { useDispatch } from 'react-redux';
 
 
 const UserInterface = () => {
-    const send = useDispatch();
     const [lazy,setLazy] = useState(false);
     const lang  = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
@@ -22,13 +20,6 @@ const UserInterface = () => {
             return false;
         }
     },[]);
-    useEffect(()=>{
-        let loader=true;
-        loader===true&&send({type:"hideRequest",set:isTabletOrMobile?true:false});
-        return () => {
-            loader=false;
-        }
-    },[send,isTabletOrMobile]);
     return(
     <>
         <Head>
