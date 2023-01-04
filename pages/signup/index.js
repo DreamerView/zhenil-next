@@ -5,6 +5,7 @@ import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
     const data = await ServerJsonFetchReq({
@@ -30,6 +31,7 @@ export async function getServerSideProps(context) {
 };
 
 const SignUp = () => {
+    const send = useDispatch();
     const [name,setName] = useState("");
     const router = useRouter();
     useEffect(()=>{
@@ -39,6 +41,13 @@ const SignUp = () => {
             return false;
         };
     },[]);
+    useEffect(()=>{
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
+    },[send]);
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationName",e);

@@ -77,6 +77,13 @@ const SignUp = () => {
             return false;
         };
     },[router]);
+    useEffect(()=>{
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
+    },[send]);
     const OTPChange = (element,index) => {
         if (isNaN(element.value)) return false;
 

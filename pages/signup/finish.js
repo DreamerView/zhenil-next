@@ -61,6 +61,13 @@ const SignUp = () => {
             return false;
         };
     },[router]);
+    useEffect(()=>{
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
+    },[send]);
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationName",e);

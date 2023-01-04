@@ -78,6 +78,13 @@ const FotgetPassword = () => {
             return false;
         };
     },[OTP,checkOTP]);
+    useEffect(()=>{
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
+    },[send]);
     const handlerLogin = async(e) =>{
         e.preventDefault();
         if(wait===false) {

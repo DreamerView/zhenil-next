@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
     const data = await ServerJsonFetchReq({
@@ -32,6 +33,7 @@ export async function getServerSideProps(context) {
 };
 
 const SignUp = () => {
+    const send = useDispatch();
     const [name,setName] = useState("");
     const [passValue,setPassValue] = useState('password');
     const router = useRouter();
@@ -60,6 +62,13 @@ const SignUp = () => {
             return false;
         };
     },[router]);
+    useEffect(()=>{
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
+    },[send]);
     const actionState = (e) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationPassword",e);

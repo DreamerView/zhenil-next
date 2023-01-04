@@ -229,7 +229,11 @@ const LoginForm = ({providers,data}) => {
         };
     },[data,handlerSocialNetwork]);
     useEffect(()=>{
-        send({type:"hideRequest",set:true});
+        let loader=true
+        loader===true&&send({type:"hideRequest",set:true});
+        return() =>{
+            loader=false;
+        }
     },[send]);
     return(
         <>
@@ -261,7 +265,11 @@ const LoginForm = ({providers,data}) => {
                 <form onSubmit={(e) => handlerEmail(e)}>
                     <div className={style.login_row}>
                         <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
-                        <button type="submit" className={`${style.login_button} anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
+                        <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
+                    </div>
+                    <div className={style.flex}>
+                    <p className={style.sub}>У вас ещё нет аккаунта?</p>
+                    <Link href="/signup" className={`${style.next_button} brand_background anim_hover`}>Зарегистрироваться</Link>
                     </div>
                 </form></>:
                 <form onSubmit={(e) => handlerLogin(e)}>
