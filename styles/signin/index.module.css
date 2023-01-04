@@ -156,7 +156,6 @@ button.login_button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:8px;
     font-size:14px;
 }
 button.disable {
@@ -246,4 +245,5 @@ div.flex {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 16px;
 }
