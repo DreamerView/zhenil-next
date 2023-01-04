@@ -208,10 +208,11 @@ const LoginForm = ({providers,data}) => {
                         );
                     })}
                 </div>
+                <p className="text_center">или через электронную почту:</p>
                 <form onSubmit={(e) => handlerLogin(e)}>
                     <div className={style.login_row}>
                         <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
-                        <div className={style.password}>
+                        {/* <div className={style.password}>
                             <div className={style.password__show_row}>
                                 <div className={style.password__show}>
                                     <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
@@ -219,8 +220,8 @@ const LoginForm = ({providers,data}) => {
                             </div>
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
-                        <Link href="/signin/forget" className={style.text_center}>Forgot password?</Link>
-                        <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Login"}</button>
+                        <Link href="/signin/forget" className={style.text_center}>Forgot password?</Link> */}
+                        <button type="submit" className={style.login_button}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
                     </div>
                 </form>
             </div>
