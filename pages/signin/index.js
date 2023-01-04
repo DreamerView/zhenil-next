@@ -266,7 +266,7 @@ const LoginForm = ({providers,data}) => {
                 </form></>:
                 <form onSubmit={(e) => handlerLogin(e)}>
                     {/* <p>{verified.name+" "+verified.surname+" "+verified.avatar}</p> */}
-                    <input type="email" name="email" value={verified.email} required />
+                    <input type="hidden" name="email" value={verified.email} required />
                     <div className={style.signin_auth_form}>
                         <div className={style.signin_auth_form_image}>
                             <Image width={50} height={50} className={style.signin_auth_form_pic} src={verified.avatar} alt="avatar" />
