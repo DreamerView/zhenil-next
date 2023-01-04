@@ -249,6 +249,13 @@ const LoginForm = ({providers,data}) => {
                 <p className={style.text_center}>Please enter your log in details below</p>
                 {verified===false?
                 <>
+                <form onSubmit={(e) => handlerEmail(e)}>
+                    <div className={style.login_row}>
+                        <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
+                        <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
+                    </div>
+                </form>
+                <p className="text_center">или через электронную почту:</p>
                 <div>
                     {providers!==null&&providers!==undefined  && Object.values(providers).map((provider) => {
                         return (
@@ -261,17 +268,11 @@ const LoginForm = ({providers,data}) => {
                         );
                     })}
                 </div>
-                <p className="text_center">или через электронную почту:</p>
-                <form onSubmit={(e) => handlerEmail(e)}>
-                    <div className={style.login_row}>
-                        <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
-                        <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
-                    </div>
-                    <div className={style.flex}>
+                <div className={style.flex}>
                     <p className={style.sub}>У вас ещё нет аккаунта?</p>
                     <Link href="/signup" className={`${style.next_button} brand_background anim_hover`}>Зарегистрироваться</Link>
                     </div>
-                </form></>:
+                </>:
                 <form onSubmit={(e) => handlerLogin(e)}>
                     {/* <p>{verified.name+" "+verified.surname+" "+verified.avatar}</p> */}
                     <input type="hidden" name="email" value={verified.email} required />
