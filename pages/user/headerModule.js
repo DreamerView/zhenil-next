@@ -4,10 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useTranslateText from "/start/translate";
 import translate from "/translate/user/index_translate";
-import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+// import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useEffect,useState } from "react";
 const AesEncryption = require('aes-encryption');
-import { useSelector } from "react-redux";
 
 const HeaderUser = () => {
     const lang = useTranslateText();

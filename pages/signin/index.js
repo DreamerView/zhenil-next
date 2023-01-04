@@ -221,7 +221,7 @@ const LoginForm = ({providers,data}) => {
                 console.log(e);
             }
         }
-    },[router,send,data,setNotification,wait]);
+    },[send,data,setNotification,wait]);
     useEffect(()=>{
         if(data!==undefined) handlerSocialNetwork();
         return () => {

@@ -7,8 +7,8 @@ import Head from 'next/head';
 import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
-import HeaderUser from './headerModule';
-import HistoryUser from './historyModule';
+import HeaderUser from '/pages/user/headerModule';
+import HistoryUser from '/pages/user/historyModule';
 import { useDispatch } from 'react-redux';
 
 
@@ -24,7 +24,11 @@ const UserInterface = () => {
         }
     },[]);
     useEffect(()=>{
-        send({type:"hideRequest",set:isTabletOrMobile?true:false});
+        let loader=true;
+        loader===true&&send({type:"hideRequest",set:isTabletOrMobile?true:false});
+        return () => {
+            loader=false;
+        }
     },[send,isTabletOrMobile]);
     return(
     <>
