@@ -255,7 +255,7 @@ const LoginForm = ({providers,data}) => {
                         <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
                     </div>
                 </form>
-                <p className="text_center">или через электронную почту:</p>
+                <p className="text_center">Другие способы входа</p>
                 <div>
                     {providers!==null&&providers!==undefined  && Object.values(providers).map((provider) => {
                         return (
