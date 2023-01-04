@@ -251,7 +251,7 @@ const LoginForm = ({providers,data}) => {
                         <div className={style.login_sn} key={provider.name}>
                             <button className={`${style.login_sn_row} anim_hover`} onClick={() => SignInWithSN(provider.id,provider.name)}>
                                 <div className={style.login_sn_row_img_row}>
-                                <Image className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/${provider.name}.webp`}/></div>Sign in with {provider.name}
+                                <Image priority className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/${provider.name}.webp`}/></div>Sign in with {provider.name}
                             </button>
                         </div>
                         );
@@ -269,7 +269,7 @@ const LoginForm = ({providers,data}) => {
                     <input type="hidden" name="email" value={verified.email} required />
                     <div className={style.signin_auth_form}>
                         <div className={style.signin_auth_form_image}>
-                            <Image width={50} height={50} className={style.signin_auth_form_pic} src={verified.avatar} alt="avatar" />
+                            <Image priority width={50} height={50} className={style.signin_auth_form_pic} src={verified.avatar} alt="avatar" />
                         </div>
                         <div>
                             <h3>{verified.name+" "+verified.surname}</h3>
@@ -280,7 +280,7 @@ const LoginForm = ({providers,data}) => {
                         <div className={style.password}>
                             <div className={style.password__show_row}>
                                 <div className={style.password__show}>
-                                    <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                                    <Image priority width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                 </div>
                             </div>
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
