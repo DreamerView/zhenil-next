@@ -339,10 +339,9 @@ p.nav > a {
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
       --back:hsl(210, 10%, 96%);
-      /* --background-color:hsl(210, 10%, 96%); */
       --background-color:hsl(220, 9%, 94%);
       --header-color:hsl(0, 0%, 100%);
-      --block-color:hsl(220, 14%, 95%);
+      --block-color:hsl(216, 20%, 95%);
       --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
@@ -352,14 +351,14 @@ p.nav > a {
       --nav_block_blur:hsla(0, 0%, 98%,0.7);
       --font-color:hsl(225, 15%, 16%);
       --brand-color:hsl(248, 57%, 47%);
-      --sub_content:#777E90;
+      --sub_content:hsl(223, 10%, 52%);
       --green_back: hsl(135, 59%, 49%);
       --purple_back:hsl(280, 68%, 60%);
       --blue_back: hsl(211, 100%, 50%);
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(36, 100%, 52%);
-      --input_back_text:#777e90;
-      --input_border:#E6E8EC;
+      --input_back_text:#757575;
+      --input_border:rgba(0, 0, 0, 0.12);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
       --nav_menu_c:hsl(240, 24%, 98%);
@@ -971,7 +970,7 @@ input.header__search_input {
   padding:var(--i-s);
   height:46px;
   font-size:16px;
-  border:1.5px solid var(--input_border);
+  border:1px solid var(--input_border);
   border-radius: 24px;
   color:var(--font-color);
   background: var(--search_icon) no-repeat scroll 11px 11px var(--block-color)
