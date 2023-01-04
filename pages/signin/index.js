@@ -230,7 +230,7 @@ const LoginForm = ({providers,data}) => {
     },[data,handlerSocialNetwork]);
     useEffect(()=>{
         send({type:"hideRequest",set:true});
-    },[send])
+    },[send]);
     return(
         <>
             <Head>
