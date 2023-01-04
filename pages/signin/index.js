@@ -154,7 +154,7 @@ const LoginForm = ({providers,data}) => {
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
                     setTimeout(()=>setWait(false),[1000]);
-                    setTimeout(()=>router.push("/"),[2000]);
+                    setTimeout(()=>window.location.href="/",[2000]);
                     send({
                         type:"setAuth",
                         set:true
