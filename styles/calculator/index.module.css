@@ -211,6 +211,7 @@ div.main__calculator_module {
                -moz-box-align: center;
             align-items: center;
     background-color: var(--block-color);
+    border:1.5px solid var(--input_border);
 }
 
 div.main__calculator_module_pic {

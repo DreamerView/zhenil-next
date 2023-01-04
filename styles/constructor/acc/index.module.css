@@ -442,6 +442,7 @@ div.main__block_interface_menu_c_book_block {
             border-radius: 9px;
     background: var(--block-color);
     margin-bottom:10px;
+    border:1.5px solid var(--input_border);
 }
 div.main__block_interface_menu_c_album:hover {
     -webkit-border-radius: 24px;
@@ -504,6 +505,7 @@ div.main__block_interface_menu_c_album_block {
             border-radius: 9px;
     background: var(--block-color);
     margin-bottom:23px;
+    border:1.5px solid var(--input_border);
 }
 span.main__block_interface_menu_cmain__block_interface_menu_c_book_block_text {
     font-weight: normal;
@@ -559,6 +561,7 @@ input.main__block_interface_menu_c_s_i {
     font-size:16px;
     color:var(--font-color);
     background-color: var(--block-color);
+    border:1.5px solid var(--input_border);
 }
 input.main__block_interface_menu_c_s_i::-webkit-input-placeholder {
     color:var(--input_back_text)
@@ -626,6 +629,7 @@ select.main__block_interface_menu_c_select {
             -moz-animation-fill-mode: forwards;
               -o-animation-fill-mode: forwards;
          animation-fill-mode: forwards;
+         border:1.5px solid var(--input_border);
 }
 div.main__block_interface_menu_c_info_block {
     margin-bottom:var(--p);
