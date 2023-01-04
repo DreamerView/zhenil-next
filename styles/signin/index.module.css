@@ -107,6 +107,7 @@ div.login_form {
 }
 .sub {
     color: var(--sub_content); 
+    font-size:14px;
 }
 a.text_center:hover {
     color:var(--brand-color);
