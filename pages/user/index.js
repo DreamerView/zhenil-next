@@ -9,6 +9,7 @@ import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
 import HeaderUser from '/pages/user/headerModule';
 import HistoryUser from '/pages/user/historyModule';
+const platform = require('platform');
 
 
 const UserInterface = () => {
@@ -29,6 +30,7 @@ const UserInterface = () => {
         <NavbarApp to={{href:"/"}} choice="alone"/>
         <div className="main_app">
             <div className={style.user__main}>
+                <p>{platform.name+" "+platform.version+" "+platform.product+" "+platform.manufacturer+" "+platform.layout+" "+platform.os+" "+platform.description}</p>
                 <HeaderUser/>
                 {lazy&&!isTabletOrMobile&&<HistoryUser/>}
             </div>
