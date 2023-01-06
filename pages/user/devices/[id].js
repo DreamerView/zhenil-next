@@ -10,6 +10,7 @@ import ux from "/translate/user/index_translate";
 import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps({params}) {
     const id = params.id;
@@ -19,6 +20,7 @@ export async function getServerSideProps({params}) {
 }
 
 const UserInterface = ({getId}) => {
+    const router = useRouter();
     const [lazy,setLazy] = useState(false);
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
@@ -72,6 +74,10 @@ const UserInterface = ({getId}) => {
         }
         return color;
     };
+    const signoutDevice = async() => {
+        const send = await ClientJsonFetchReq({method:"POST",path:'/signout-device',cookie:document.cookie,body:{clientId:getId}});
+        if(send.accept===true) return router.push("/user/device");
+    }
     return(
     <>
         <Head>
@@ -110,7 +116,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>
