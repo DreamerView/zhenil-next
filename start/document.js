@@ -14,7 +14,6 @@ import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const router = useRouter();
-    console.log(router);
     const [lazy,setLazy] = useState(false);
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     const mobileHeader = ['/user','/user/history','/user/favourite','/user/devices','/user/devices/[id]'];
