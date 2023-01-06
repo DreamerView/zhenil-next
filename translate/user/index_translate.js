@@ -39,6 +39,11 @@ export default {
         ru:"Настройки",
         en:"Settings"
     },
+    devices: {
+        kk:"Құрылғылар",
+        ru:"Устройства",
+        en:"Devices"
+    },
     logout:{
         kk:"Шығу",
         ru:"Выйти",

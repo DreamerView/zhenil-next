@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import { getProviders, signIn,getSession,signOut } from "next-auth/react";
+const platform = require('platform');
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -48,6 +49,7 @@ export async function getServerSideProps(context) {
 };
 
 const LoginForm = ({providers,data}) => {
+    console.log(data);
     const send = useDispatch();
     const router = useRouter();
     const [wait,setWait] = useState(false);
@@ -64,6 +66,74 @@ const LoginForm = ({providers,data}) => {
             }
         });
     },[send]);
+    const handlerSocialNetwork = useCallback(async(session) =>{
+        if(wait===false&&localStorage.getItem('signInClient')!==null&&session!==undefined) {
+            console.log("started")
+            const result = session;
+            const aes = new AesEncryption();
+            aes.setSecretKey(process.env.aesKey);
+            const email = aes.encrypt(result.user.email);
+            const name = aes.encrypt(result.user.name);
+            const image = aes.encrypt(result.user.image);
+            const client = aes.encrypt(localStorage.getItem('signInClient'));
+            const checkVar = (result) =>{
+                if(result===null) return null;
+                else if(result===undefined) return null;
+                else return result;
+            };
+            const clienInfo = aes.encrypt(JSON.stringify({name:checkVar(platform.name),version:checkVar(platform.version),product:checkVar(platform.product),manufacturer:checkVar(platform.manufacturer),layout:checkVar(platform.layout),os:checkVar(platform.os)}));
+            setWait(true);
+            try {
+                if (typeof window !== 'undefined') {
+                    const hostname = window.location.hostname;
+                    const requestOptions = {
+                        method: 'POST',
+                        headers: {
+                            "WWW-Authenticate": process.env.authHeader,
+                            "Proxy-Authenticate":"sdadasdsa",
+                            "Accept":"application/json; charset=utf-8",
+                            "Content-Type": "application/json; charset=utf-8"
+                        },
+                        body: JSON.stringify({email:email,name:name,image:image,client:client,clientInfo:clienInfo})
+                    };
+                    const login = await fetch(process.env.backend+"/signin-with-socialnetwork", requestOptions);
+                    if (login.status ===404) {
+                        setNotification({user:"admin",content:"User email or password is not correct!"});
+                        setTimeout(()=>setWait(false),[1000]);
+                    } else if(login.status ===500) {
+                        setNotification({user:"admin",content:"Something going wrong"});
+                        setTimeout(()=>setWait(false),[1000]);
+                    }
+                    const result = await login.json();
+                    const accessToken = aes.decrypt(result.accessToken);
+                    const nameUser = aes.decrypt(result.name);
+                    const surnameUser = aes.decrypt(result.surname);
+                    const avatarUser = aes.decrypt(result.avatar);
+                    const today = new Date();
+                    const expire = new Date();
+                    expire.setTime(today.getTime() + 3600000*24*14);
+                    document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
+                    setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
+                    setWait(false);
+                    send({
+                        type:"setAuth",
+                        set:true
+                    });
+                    signOut({callbackUrl: '/'})
+                }
+            } catch(e) {
+                console.log(e);
+            }
+        }
+    },[send,setNotification,wait]);
+    useEffect(()=>{
+        let lazy = true;
+        if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
+        return () => {
+            lazy=false;
+            return false;
+        };
+    },[]);
     const handlerEmail = async(e) =>{
         e.preventDefault();
         if(wait===false) {
@@ -117,6 +187,12 @@ const LoginForm = ({providers,data}) => {
             const email = aes.encrypt(e.target[0].value);
             const password = aes.encrypt(e.target[1].value);
             const client = aes.encrypt("okki");
+            const checkVar = (result) =>{
+                if(result===null) return null;
+                else if(result===undefined) return null;
+                else return result;
+            };
+            const clienInfo = aes.encrypt(JSON.stringify({name:checkVar(platform.name),version:checkVar(platform.version),product:checkVar(platform.product),manufacturer:checkVar(platform.manufacturer),layout:checkVar(platform.layout),os:checkVar(platform.os)}));
             setWait(true);
             try {
                 if (typeof window !== 'undefined') {
@@ -129,7 +205,7 @@ const LoginForm = ({providers,data}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
-                        body: JSON.stringify({email:email,password:password,client:client})
+                        body: JSON.stringify({email:email,password:password,client:client,clientInfo:clienInfo})
                     };
                     const login = await fetch(process.env.backend+"/signin", requestOptions);
                     if (login.status ===404) {
@@ -165,72 +241,6 @@ const LoginForm = ({providers,data}) => {
         localStorage.setItem('signInClient',client);
         signIn(name)
     };
-    const handlerSocialNetwork = useCallback(async() =>{
-        if(wait===false && localStorage.getItem('signInClient')!==null) {
-            const result = data;
-            const aes = new AesEncryption();
-            aes.setSecretKey(process.env.aesKey);
-            const email = aes.encrypt(result.user.email);
-            const name = aes.encrypt(result.user.name);
-            const image = aes.encrypt(result.user.image);
-            const client = aes.encrypt(localStorage.getItem('signInClient'));
-            setWait(true);
-            try {
-                if (typeof window !== 'undefined') {
-                    const hostname = window.location.hostname;
-                    const requestOptions = {
-                        method: 'POST',
-                        headers: {
-                            "WWW-Authenticate": process.env.authHeader,
-                            "Proxy-Authenticate":"sdadasdsa",
-                            "Accept":"application/json; charset=utf-8",
-                            "Content-Type": "application/json; charset=utf-8"
-                        },
-                        body: JSON.stringify({email:email,name:name,image:image,client:client})
-                    };
-                    const login = await fetch(process.env.backend+"/signin-with-socialnetwork", requestOptions);
-                    if (login.status ===404) {
-                        setNotification({user:"admin",content:"User email or password is not correct!"});
-                        setTimeout(()=>setWait(false),[1000]);
-                    } else if(login.status ===500) {
-                        setNotification({user:"admin",content:"Something going wrong"});
-                        setTimeout(()=>setWait(false),[1000]);
-                    }
-                    const result = await login.json();
-                    const accessToken = aes.decrypt(result.accessToken);
-                    const nameUser = aes.decrypt(result.name);
-                    const surnameUser = aes.decrypt(result.surname);
-                    const avatarUser = aes.decrypt(result.avatar);
-                    const today = new Date();
-                    const expire = new Date();
-                    expire.setTime(today.getTime() + 3600000*24*14);
-                    document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
-                    setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
-                    setWait(false);
-                    send({
-                        type:"setAuth",
-                        set:true
-                    });
-                    signOut({callbackUrl: '/'})
-                }
-            } catch(e) {
-                console.log(e);
-            }
-        }
-    },[send,data,setNotification,wait]);
-    useEffect(()=>{
-        if(data!==undefined) handlerSocialNetwork();
-        return () => {
-            return false;
-        };
-    },[data,handlerSocialNetwork]);
-    // useEffect(()=>{
-    //     let loader=true
-    //     loader===true&&send({type:"hideRequest",set:true});
-    //     return() =>{
-    //         loader=false;
-    //     }
-    // },[send]);
     return(
         <>
             <Head>
@@ -291,7 +301,7 @@ const LoginForm = ({providers,data}) => {
                             <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
                         </div>
                         <Link href="/signin/forget" className={style.text_center}>Forgot password?</Link>
-                        <button type="submit" className={`${style.login_button} anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
+                        <button type="submit" className={`${style.login_button} anim_hover`}>{wait===true?<div className="button__preloader"><Image priority width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
                     </div>
                 </form>}
             </div>

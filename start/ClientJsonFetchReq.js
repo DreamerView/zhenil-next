@@ -50,7 +50,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 headers: {
                     "WWW-Authenticate": process.env.authHeader,
                     "Accept":"application/json; charset=utf-8",
-                    "Content-Type": "application/json; charset=utf-8"
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Authorization": `Bearer ${accessToken}`
                 },
                 body: JSON.stringify({token:accessToken})
             };
@@ -93,6 +94,10 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     return res;
                 }
             }
+        } else if(login.status===409) {
+            console.log("It's conflict!");
+            deleteCookie('accessToken');
+            window.location.href="/signin";
         }
         else {
             const result = await login.json();

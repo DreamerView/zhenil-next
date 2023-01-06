@@ -100,7 +100,12 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         // window.location.reload();
                     }
                 }
-            } else {
+            } else if(login.status === 409) {
+                console.log("It's conflict!");
+                server.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
+                return {result:'redirect',location:"/signin"};
+            } 
+            else {
                 const result = await login.json();
                 return result;
             }

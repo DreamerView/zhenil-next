@@ -14,12 +14,12 @@ import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const router = useRouter();
+    console.log(router);
     const [lazy,setLazy] = useState(false);
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    const mobileHeader = ['/user','/user/history','/user/favourite'];
+    const mobileHeader = ['/user','/user/history','/user/favourite','/user/devices','/user/devices/[id]'];
     const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
     const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
-    console.log(headerHide);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);
     const url = useSelector(state=>state.urlframe);
@@ -29,6 +29,17 @@ const DocumentResult = ({children}) => {
     const hide = useSelector(state=>state.hideReq);
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                let lat = position.coords.latitude;
+                let long = position.coords.longitude;
+            
+                console.log(lat.toFixed(2));
+                console.log(longText.innerText = long.toFixed(2));
+              });
+        } else {
+            alert('It seems like Geolocation, which is required for this page, is not enabled in your browser. Please use a browser which supports it.');
+        }
         return () =>{
             return false;
         }

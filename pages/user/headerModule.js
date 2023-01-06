@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useTranslateText from "/start/translate";
 import translate from "/translate/user/index_translate";
-// import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useEffect,useState } from "react";
-const AesEncryption = require('aes-encryption');
+
 
 const HeaderUser = () => {
     const lang = useTranslateText();
@@ -17,9 +17,12 @@ const HeaderUser = () => {
             return false;
         };
     },[]);
-    const logOut = () => {
-        document.cookie = 'accessToken' + '=;Max-Age=0;path=/';
-        window.location.href="/";
+    const logOut = async() => {
+        const send = await ClientJsonFetchReq({method:"GET",path:'/signout',cookie:document.cookie})
+            if(send.accept===true) {
+                document.cookie = 'accessToken' + '=;Max-Age=0;path=/';
+                window.location.href="/";
+            }
     };
     return(
         <div className={style.user__main_row}>
@@ -52,6 +55,16 @@ const HeaderUser = () => {
                                 </div>
                             </div>
                             <p>{translate['favorites'][lang]}</p>
+                        </div>
+                        </Link>
+                        <Link href="/user/device" prefetch={false}>
+                        <div className={`${style.main__block_user} anim_hover`}>
+                            <div className={`${style.main__block_user_image} green_background`}>
+                                <div className={style.main__block_user_image_row}>
+                                    <Image priority width={24} height={24} alt="icon" src="/img/devices.svg"/>
+                                </div>
+                            </div>
+                            <p>{translate['devices'][lang]}</p>
                         </div>
                         </Link>
                         <div className={`${style.main__block_user} anim_hover`}>

@@ -6,6 +6,8 @@ import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+const platform = require('platform');
+import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
     const data = await ServerJsonFetchReq({
@@ -33,6 +35,7 @@ export async function getServerSideProps(context) {
 const SignUp = () => {
     const [name,setName] = useState("");
     const router = useRouter();
+    const send = useDispatch();
     useEffect(()=>{
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
@@ -70,6 +73,12 @@ const SignUp = () => {
         const surnameUser = localStorage.getItem("RegistrationSurname");
         const emailUser = localStorage.getItem("RegistrationEmail");
         const passwordUser = localStorage.getItem("RegistrationPassword");
+        const checkVar = (result) =>{
+            if(result===null) return null;
+            else if(result===undefined) return null;
+            else return result;
+        };
+        const clienInfo = JSON.stringify({name:checkVar(platform.name),version:checkVar(platform.version),product:checkVar(platform.product),manufacturer:checkVar(platform.manufacturer),layout:checkVar(platform.layout),os:checkVar(platform.os)});
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -77,7 +86,7 @@ const SignUp = () => {
                 "Accept":"application/json; charset=utf-8",
                 "Content-Type": "application/json; charset=utf-8"
             },
-            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki")})
+            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki"),clientInfo:aes.encrypt(clienInfo)})
         };
         const login = await fetch(process.env.backend+"/register-id", requestOptions);
         const result = await login.json();
