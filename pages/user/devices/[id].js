@@ -56,7 +56,7 @@ const UserInterface = ({getId}) => {
             case "chrome":color="orange_background";break;
             case "safari":color="blue_background";break;
             case "firefox":color="red_background";break;
-            case "microsoft edge":color="brand_background";break;
+            case "microsoftedge":color="brand_background";break;
             case "opera":color="red_background";break;
             default: color="brand_background";break;
         }
@@ -68,7 +68,7 @@ const UserInterface = ({getId}) => {
             case "chrome":color="/platforms/chrome.svg";break;
             case "safari":color="/platforms/safari.svg";break;
             case "firefox":color="/platforms/firefox.svg";break;
-            case "microsoft edge":color="/platforms/microsoft edge.svg";break;
+            case "microsoftedge":color="/platforms/microsoftedge.svg";break;
             case "opera":color="/platforms/opera.svg";break;
             default: color="/img/devices.svg";break;
         }
@@ -93,8 +93,8 @@ const UserInterface = ({getId}) => {
                     {prev!==null&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
-                            <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase())}`}>
-                                <Image src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase())} width={40} height={40} alt="icon" />
+                            <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}>
+                                <Image src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} width={40} height={40} alt="icon" />
                             </div>
                         </div>
                         <div className={style.standalone_device_block_2}>

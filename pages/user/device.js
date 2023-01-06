@@ -64,7 +64,7 @@ const UserInterface = () => {
             case "chrome":color="orange_background";break;
             case "safari":color="blue_background";break;
             case "firefox":color="red_background";break;
-            case "microsoft edge":color="brand_background";break;
+            case "microsoftedge":color="brand_background";break;
             case "opera":color="red_background";break;
             default: color="brand_background";break;
         }
@@ -76,7 +76,7 @@ const UserInterface = () => {
             case "chrome":color="/platforms/chrome.svg";break;
             case "safari":color="/platforms/safari.svg";break;
             case "firefox":color="/platforms/firefox.svg";break;
-            case "microsoft edge":color="/platforms/microsoft edge.svg";break;
+            case "microsoftedge":color="/platforms/microsoftedge.svg";break;
             case "opera":color="/platforms/opera.svg";break;
             default: color="/img/devices.svg";break;
         }
@@ -97,7 +97,7 @@ const UserInterface = () => {
                     <div className={style.devices_row_main}>
                             {prev!==null&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>
-                                    <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase())}`}><Image width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase())} alt="device"/></div>
+                                    <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} alt="device"/></div>
                                     <div className={style.devices_row_block}>
                                         <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                         {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}
@@ -111,7 +111,7 @@ const UserInterface = () => {
                             {prev!==null&&prev.result.filter(e=>e.clientId!==prev.clientId).map((e,index)=>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                     <div key={index} className={style.devices_row}>
-                                        <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?colorChanger(Math.floor(Math.random() * 6)):brandChanger(JSON.parse(e.clientInfo).name.toLowerCase())}`}><Image alt="icon" width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase())}/></div>
+                                        <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?colorChanger(Math.floor(Math.random() * 6)):brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image alt="icon" width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}/></div>
                                         <div className={style.devices_row_block}>
                                             <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                             {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}
