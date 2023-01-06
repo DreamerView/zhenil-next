@@ -133,7 +133,7 @@ const LoginForm = ({providers,data}) => {
             lazy=false;
             return false;
         };
-    },[]);
+    },[data,handlerSocialNetwork]);
     const handlerEmail = async(e) =>{
         e.preventDefault();
         if(wait===false) {

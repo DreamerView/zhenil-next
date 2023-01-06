@@ -87,7 +87,7 @@ const UserInterface = () => {
                     <div className={style.devices_row_main}>
                             {prev!==null&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>
-                                    <div className={`${style.devices_row_image} blue_background`}><Image width={30} height={30} src="/img/devices.svg"/></div>
+                                    <div className={`${style.devices_row_image} blue_background`}><Image width={30} height={30} src="/img/devices.svg" alt="device"/></div>
                                     <div className={style.devices_row_block}>
                                         <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                         {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}
@@ -101,7 +101,7 @@ const UserInterface = () => {
                             {prev!==null&&prev.result.filter(e=>e.clientId!==prev.clientId).map((e,index)=>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                     <div key={index} className={style.devices_row}>
-                                        <div className={`${style.devices_row_image} ${colorChanger(Math.floor(Math.random() * 6))}`}><Image width={30} height={30} src="/img/devices.svg"/></div>
+                                        <div className={`${style.devices_row_image} ${colorChanger(Math.floor(Math.random() * 6))}`}><Image alt="icon" width={30} height={30} src="/img/devices.svg"/></div>
                                         <div className={style.devices_row_block}>
                                             <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                             {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}

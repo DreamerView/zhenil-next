@@ -88,11 +88,11 @@ const UserInterface = ({getId}) => {
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Выбран клиент</p>
-                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map(e=>
-                    <div className={style.standalone_device}>
+                    {prev!==null&&prev.result.filter((e,index)=>e.clientId===getId).map(e=>
+                    <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
                             <div className={style.standalone_device_block_1_image}>
-                                <Image src="/img/devices.svg" width={40} height={40} />
+                                <Image src="/img/devices.svg" width={40} height={40} alt="icon" />
                             </div>
                         </div>
                         <div className={style.standalone_device_block_2}>
@@ -110,7 +110,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map(()=><div className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>
