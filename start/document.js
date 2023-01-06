@@ -25,7 +25,6 @@ const DocumentResult = ({children}) => {
     const image = useSelector(state=>state.crop);
     const main = useSelector(state=>state.main);
     const notification = useSelector(state=>state.notification);
-    const hide = useSelector(state=>state.hideReq);
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
         if (navigator.geolocation) {
