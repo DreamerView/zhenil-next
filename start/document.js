@@ -16,7 +16,7 @@ const DocumentResult = ({children}) => {
     const router = useRouter();
     const [lazy,setLazy] = useState(false);
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    const mobileHeader = ['/user','/user/history','/user/favourite','/user/devices','/user/devices/[id]'];
+    const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
     const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
     const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
     const action = useSelector(state=>state.act);

@@ -83,7 +83,7 @@ const UserInterface = () => {
                 {lazy===true&&isTabletOrMobile?"":<HeaderUser/>}
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
-                    <p className='sub_content'>Текущий сеанс {prev!==null&&prev.ip}</p>
+                    <p className='sub_content'>Текущий сеанс</p>
                     <div className={style.devices_row_main}>
                             {prev!==null&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>

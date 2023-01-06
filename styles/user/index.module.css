@@ -44,6 +44,11 @@
     div.standalone_device_block_2 {
         width: 75%;
     }
+    div.standalone_device_block_1_image {
+        width:64px;
+        height:64px;
+        border-radius: 24px;
+    }
 }
   @media screen and (min-width:1161px) and (max-width:1899px) {
     div.user__main{
@@ -93,6 +98,11 @@
     }
     div.standalone_device_block_2 {
         width: 80%;
+    }
+    div.standalone_device_block_1_image {
+        width:64px;
+        height:64px;
+        border-radius: 24px;
     }
 }
   @media (min-width:751px) and (max-width:1160px) {
@@ -152,6 +162,11 @@
     div.standalone_device_block_2 {
         width: 75%;
     }
+    div.standalone_device_block_1_image {
+        width:64px;
+        height:64px;
+        border-radius: 24px;
+    }
   }
   @media (min-width:1px) and (max-width:750px) {
     div.user__main {
@@ -208,6 +223,11 @@
     }
     div.standalone_device_block_2 {
         width: 100%;
+    }
+    div.standalone_device_block_1_image {
+        width:84px;
+        height:84px;
+        border-radius: 30px;
     }
 }
 .need_center1 {
@@ -447,10 +467,7 @@ div.standalone_device_block_2 {
     /* background-color: aliceblue; */
 }
 div.standalone_device_block_1_image {
-    width:64px;
-    height:64px;
     background-color: var(--blue_back);
-    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -472,4 +489,5 @@ div.session_signout {
     border-radius: 16px;
     margin:16px auto;
     cursor: pointer;
+    color:hsl(0, 0%, 100%);
 }
