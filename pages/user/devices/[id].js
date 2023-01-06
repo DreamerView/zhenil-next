@@ -2,14 +2,11 @@
 /*jshint esversion: 9 */
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
-import SearchResult from "/start/services/all.json";
 import { useMediaQuery } from 'react-responsive';
 import { useEffect,useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
-import services from "/translate/services/all_translate";
 import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
@@ -26,23 +23,12 @@ const UserInterface = ({getId}) => {
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     const [prev,setPrev] = useState(null);
-    const [sortItem,setSortItem] = useState('new');
-    const [sortItemRes,setSortItemRes] = useState('all');
-    const response = SearchResult;
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
         return()=>{
             return false;
         }
     },[]);
-    const historyAction = (service) => {
-        const history = JSON.parse(localStorage.getItem('favouriteAction'));
-        const action = history?history:[];
-        const checkExp = [...action,{name:service,time:Date.now()}];
-        const key = 'name';
-        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        return localStorage.setItem('favouriteAction',JSON.stringify(historyResult));
-    };
     useEffect(() => {
         const startScript = async() =>{
             const send = await ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie});
@@ -53,7 +39,6 @@ const UserInterface = ({getId}) => {
             return false;
         };
     }, []);
-    // prev!==null&&prev.map(e=>console.log(e));
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();
@@ -63,19 +48,30 @@ const UserInterface = ({getId}) => {
         const minutes = String(date.getMinutes()).length===1?"0"+String(date.getMinutes()):date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
     };
-    const colorChanger = (event) => {
+    const brandChanger = (event) => {
         let color;
         switch(event) {
-            case 0:color="grey_background";break;
-            case 1:color="brand_background";break;
-            case 2:color="green_background";break;
-            case 3:color="red_background";break;
-            case 4:color="purple_background";break;
-            case 5:color="orange_background";break;
+            case "chrome":color="orange_background";break;
+            case "safari":color="blue_background";break;
+            case "firefox":color="red_background";break;
+            case "microsoft edge":color="brand_background";break;
+            case "opera":color="red_background";break;
             default: color="brand_background";break;
         }
         return color;
-    }
+    };
+    const brandCheker = (event) => {
+        let color;
+        switch(event) {
+            case "chrome":color="/platforms/chrome.svg";break;
+            case "safari":color="/platforms/safari.svg";break;
+            case "firefox":color="/platforms/firefox.svg";break;
+            case "microsoft edge":color="/platforms/microsoft edge.svg";break;
+            case "opera":color="/platforms/opera.svg";break;
+            default: color="/img/devices.svg";break;
+        }
+        return color;
+    };
     return(
     <>
         <Head>
@@ -91,8 +87,8 @@ const UserInterface = ({getId}) => {
                     {prev!==null&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
-                            <div className={style.standalone_device_block_1_image}>
-                                <Image src="/img/devices.svg" width={40} height={40} alt="icon" />
+                            <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase())}`}>
+                                <Image src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase())} width={40} height={40} alt="icon" />
                             </div>
                         </div>
                         <div className={style.standalone_device_block_2}>
@@ -107,6 +103,10 @@ const UserInterface = ({getId}) => {
                             <div className={style.standalone_device_block_row}>
                             <p className={style.subber}>Операционная система</p>
                             <h4>{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
+                            </div>
+                            <div className={style.standalone_device_block_row}>
+                            <p className={style.subber}>Активность</p>
+                            <h4>{ConvertTime(JSON.parse(e.getTime))}</h4>
                             </div>
                         </div>
                     </div>)}

@@ -1,8 +1,9 @@
 @media screen and (min-width:1900px) {
     div.user__main {
         width:1500px;
-        padding:64px 24px;
+        padding:64px 120px;
         border:1px solid var(--border-color);
+        box-sizing: border-box;
     }
     div.user__main_portf {
         width:1500px;
@@ -27,8 +28,9 @@
         justify-content: center;
     }
     div.main__user_action {
-        width:60%;
-        padding:0 36px;
+        width:100%;
+        padding-left: 36px;
+        box-sizing: border-box;
     }
     div.header_text_preloader_1 {
         width:180px;
@@ -52,9 +54,10 @@
 }
   @media screen and (min-width:1161px) and (max-width:1899px) {
     div.user__main{
-        width:95%;
-        padding:64px 24px;
+        width:100%;
+        padding:64px 48px;
         border:1px solid var(--border-color);
+        box-sizing: border-box;
     }
     div.user__main_portf {
         width:95%;
@@ -72,8 +75,9 @@
         width:300px;
     }
     div.main__user_action {
-        width:60%;
-        padding:0 36px;
+        width:100%;
+        padding-left:36px;
+        box-sizing: border-box;
     }
     div.user__main_portfolio {
         display: flex;
@@ -107,9 +111,10 @@
 }
   @media (min-width:751px) and (max-width:1160px) {
     div.user__main {
-        width:95%;
-        padding:64px 24px;
+        width:100%;
+        padding:64px 32px;
         border:1px solid var(--border-color);
+        box-sizing: border-box;
     }
     div.user__main_portf {
         width:95%;
@@ -139,8 +144,9 @@
         justify-content: center;
     }
     div.main__user_action {
-        width:60%;
-        padding:0 36px;
+        width:100%;
+        padding-left:36px;
+        box-sizing: border-box;
     }
     .need_center {
         margin-top:16px;
@@ -170,7 +176,8 @@
   }
   @media (min-width:1px) and (max-width:750px) {
     div.user__main {
-        width:95%;
+        box-sizing: border-box;
+        width:100%;
     }
     div.user__main_portf {
         padding: 36px 0;
@@ -467,7 +474,6 @@ div.standalone_device_block_2 {
     /* background-color: aliceblue; */
 }
 div.standalone_device_block_1_image {
-    background-color: var(--blue_back);
     display: flex;
     align-items: center;
     justify-content: center;
