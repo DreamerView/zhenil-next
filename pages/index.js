@@ -7,7 +7,7 @@ import AllService from '/start/services/all.json';
 const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
 
-const Home = ({ip}) => {
+const Home = () => {
   const locale = useTranslateText();
   return(
     <>
@@ -29,15 +29,9 @@ const Home = ({ip}) => {
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
       <IndexMenu lang={locale} service={AllService}/>
-      <p>{ip!==undefined&&JSON.stringify(ip)}</p>
       <IndexContent lang={locale} service={AllService}/>
     </>
   )
 };
 
 export default Home;
-
-export async function getServerSideProps({req})  {
-  const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
-  return { props:{ip:ip} };
-}

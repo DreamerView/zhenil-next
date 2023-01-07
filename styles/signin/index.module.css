@@ -243,6 +243,7 @@ div.signin_auth_form_image {
 img.signin_auth_form_pic {
     width:60px;
     height: auto;
+    border-radius: 100%;
 }
 div.flex {
     margin-top:32px;

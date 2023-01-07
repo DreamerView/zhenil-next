@@ -20,7 +20,7 @@ const UserInterface = () => {
             setLazy((lazy)=>lazy=false);
         }
     },[]);
-    const titleHead = `{ux['recent'][lang]} | Okki.kz`;
+    const titleHead = `${ux['recent'][lang]} | Okki.kz`;
     return(
     <>
         <Head>

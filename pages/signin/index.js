@@ -258,7 +258,21 @@ const LoginForm = ({providers,data,ip}) => {
             <div className={style.login_form}>
                 <h1 className={style.head_center} onClick={()=>router.push("/signup")}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
-                {verified===false?
+                {data!==undefined&&data!==null?
+                <>
+                <div className={style.signin_auth_form}>
+                        <div className={style.signin_auth_form_image}>
+                            <Image priority width={50} height={50} className={style.signin_auth_form_pic} src={data.user.image} alt="avatar" />
+                        </div>
+                        <div>
+                            <h3>{data.user.name}</h3>
+                            <p className={style.sub}>{data.user.email}</p>
+                        </div>
+                    </div>
+                    <div className={style.login_row}>
+                        <div className="lds-ripple"><div></div><div></div></div>
+                </div></>:
+                verified===false?
                 <>
                 <form onSubmit={(e) => handlerEmail(e)}>
                     <div className={style.login_row}>
