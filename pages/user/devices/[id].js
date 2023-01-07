@@ -90,7 +90,7 @@ const UserInterface = ({getId}) => {
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Выбран клиент</p>
-                    {prev!==null&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
+                    {prev!==null&&prev!==undefined&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
                             <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}>
@@ -116,7 +116,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>

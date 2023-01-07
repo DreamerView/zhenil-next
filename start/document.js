@@ -49,6 +49,7 @@ const DocumentResult = ({children}) => {
         };
     },[action,frame,image]);
     useEffect(()=>{
+        let lazy = true;
         const result = async() => {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
@@ -58,9 +59,9 @@ const DocumentResult = ({children}) => {
                 return localStorage.setItem('loginParams',JSON.stringify(response));
             } else return localStorage.setItem('loginParams',null);
         };
-        result();
+        lazy===true&&typeof Window !== 'undefined'&&result();
         return () =>{
-            return false;
+            lazy=false;
         };
     },[]);
     return(

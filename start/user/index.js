@@ -9,7 +9,7 @@ import { useState,useEffect } from "react";
 const AesEncryption = require('aes-encryption');
 
 const UserIndex = (result) => {
-    const [res,setRes] = useState({});
+    const [res,setRes] = useState(null);
     const lang = useTranslateText();
     const {login} = result.item;
     const aes = new AesEncryption();
@@ -24,7 +24,7 @@ const UserIndex = (result) => {
     {login===true?
     <Link href={`/user`} prefetch={false}>
                 <div className={`header__action_image anim_hover ${JSON.stringify(res) === '{}'&&" skeleton"}`}>
-                  {JSON.stringify(res) !== '{}'&&<Image title={`Avatar`} width={46} height={46} className={"header__action_avatar"} src={JSON.stringify(res) !== '{}'&&aes.decrypt(res?.avatar)} alt="avatar" />}
+                  {res !== null&&res!==undefined&&<Image title={`Avatar`} width={46} height={46} className={"header__action_avatar"} src={res !== null&&aes.decrypt(res.avatar)} alt="avatar" />}
                 </div>
             </Link>:<Link href="/signin" prefetch={false}><div className="header__action_login_button anim_hover">{ux['login'][lang]}</div></Link>
     }
