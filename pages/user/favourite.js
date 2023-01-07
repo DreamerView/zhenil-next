@@ -70,10 +70,11 @@ const UserInterface = () => {
         const minutes = String(date.getMinutes()).length===1?"0"+String(date.getMinutes()):date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
     };
+    const titleHead = `${ux['favorites'][lang]} | Okki.kz`;
     return(
     <>
         <Head>
-                <title>{ux['favorites'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
         </Head>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">

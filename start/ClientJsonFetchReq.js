@@ -59,8 +59,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
                 if(send.status === 409) {
                     console.log("It's conflict!");
-                    // deleteCookie('accessToken');
-                    // window.location.href="/signin";
+                    deleteCookie('accessToken');
+                    return setTimeout(()=>window.location.href="/signin",[500]);
                 } else {
                     const result = await send.json();
                     if(result.accessToken!==undefined) {
@@ -97,8 +97,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 }
             } else if(login.status===409) {
                 console.log("It's conflict!");
-                // deleteCookie('accessToken');
-                // window.location.href="/signin";
+                deleteCookie('accessToken');
+                return setTimeout(()=>window.location.href="/signin",[500]);
             }
             else {
                 const result = await login.json();

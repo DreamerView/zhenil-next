@@ -480,7 +480,9 @@ div.standalone_device_block_1_image {
     margin:16px auto;
 }
 div.standalone_device_block_row {
-    width:200px;
+    max-width:240px;
+    width:100%;
+    min-width: 50px;
     display:block;
 }
 div.session_signout {

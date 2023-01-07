@@ -30,7 +30,7 @@ const UserInterface = () => {
             const send = await ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie});
             setPrev(prev=>prev=send);
         };
-        startScript();
+        if(typeof Window !== 'undefined') startScript();
         return () => {
             return false;
         };
@@ -82,10 +82,11 @@ const UserInterface = () => {
         }
         return color;
     };
+    const titleHead = `${ux['devices'][lang]} | Okki.kz`;
     return(
     <>
         <Head>
-                <title>{ux['devices'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
         </Head>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">

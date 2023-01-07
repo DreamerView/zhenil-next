@@ -20,10 +20,11 @@ const UserInterface = () => {
             return false;
         }
     },[]);
+    const titleHead = `${ux['recent'][lang]} | Okki.kz`;
     return(
     <>
         <Head>
-                <title>{ux['recent'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
         </Head>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">

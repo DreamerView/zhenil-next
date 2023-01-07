@@ -78,10 +78,11 @@ const UserInterface = ({getId}) => {
         const send = await ClientJsonFetchReq({method:"POST",path:'/signout-device',cookie:document.cookie,body:{clientId:getId}});
         if(send.accept===true) return router.push("/user/device");
     }
+    const titleHead = `${ux['devices'][lang]} | Okki.kz`;
     return(
     <>
         <Head>
-                <title>{ux['devices'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
         </Head>
         <NavbarApp to={{href:"/user"}} choice="alone"/>
         <div className="main_app">
@@ -103,6 +104,14 @@ const UserInterface = ({getId}) => {
                             <h4>{JSON.parse(e.clientInfo).name+" v."+JSON.parse(e.clientInfo).version}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
+                            <p className={style.subber}>IP-адрес</p>
+                            <h4>{JSON.parse(e.ipInfo).ip!==null&&JSON.parse(e.ipInfo).ip!==undefined&&JSON.parse(e.ipInfo).ip}</h4>
+                            </div>
+                            <div className={style.standalone_device_block_row}>
+                            <p className={style.subber}>Геопозиция</p>
+                            <h4>{JSON.parse(e.ipInfo).cityName!==null&&JSON.parse(e.ipInfo).cityName!==undefined&&JSON.parse(e.ipInfo).cityName}, {JSON.parse(e.ipInfo).countryName!==null&&JSON.parse(e.ipInfo).countryName!==undefined&&JSON.parse(e.ipInfo).countryName}</h4>
+                            </div>
+                            <div className={style.standalone_device_block_row}>
                             <p className={style.subber}>{ux['devices'][lang]}</p>
                             <h4>{JSON.parse(e.clientInfo).product!==null?JSON.parse(e.clientInfo).product:"Неизвестно"}</h4>
                             </div>
@@ -116,7 +125,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {prev!==null&&prev!==undefined&&getId!==undefined&&getId!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>

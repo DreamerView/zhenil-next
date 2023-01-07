@@ -22,10 +22,12 @@ export async function getServerSideProps(context) {
         server:context,
         auth:"yes"
     });
+    const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
     const ReturnTo = async() => {
         return {
             props: {
                 providers: await getProviders(context),
+                ip:ip,
             }
         }; 
     };
@@ -40,7 +42,7 @@ export async function getServerSideProps(context) {
     };
     const SocialNetwork = async() => {
         return {
-            props: {data:session}
+            props: {data:session,ip:ip}
         }; 
     };
     if(session!==null) return SocialNetwork();
@@ -48,7 +50,8 @@ export async function getServerSideProps(context) {
     else return ReturnBack();
 };
 
-const LoginForm = ({providers,data}) => {
+const LoginForm = ({providers,data,ip}) => {
+    const getIp = ip!==null||ip!==undefined?ip:"::1";
     console.log(data);
     const send = useDispatch();
     const router = useRouter();
@@ -76,6 +79,7 @@ const LoginForm = ({providers,data}) => {
             const name = aes.encrypt(result.user.name);
             const image = aes.encrypt(result.user.image);
             const client = aes.encrypt(localStorage.getItem('signInClient'));
+            const ipSend = aes.encrypt(getIp);
             const checkVar = (result) =>{
                 if(result===null) return null;
                 else if(result===undefined) return null;
@@ -94,7 +98,7 @@ const LoginForm = ({providers,data}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
-                        body: JSON.stringify({email:email,name:name,image:image,client:client,clientInfo:clienInfo})
+                        body: JSON.stringify({email:email,name:name,image:image,client:client,clientInfo:clienInfo,getIp:ipSend})
                     };
                     const login = await fetch(process.env.backend+"/signin-with-socialnetwork", requestOptions);
                     if (login.status ===404) {
@@ -187,6 +191,7 @@ const LoginForm = ({providers,data}) => {
             const email = aes.encrypt(e.target[0].value);
             const password = aes.encrypt(e.target[1].value);
             const client = aes.encrypt("okki");
+            const ipSend = aes.encrypt(getIp);
             const checkVar = (result) =>{
                 if(result===null) return null;
                 else if(result===undefined) return null;
@@ -205,7 +210,7 @@ const LoginForm = ({providers,data}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
-                        body: JSON.stringify({email:email,password:password,client:client,clientInfo:clienInfo})
+                        body: JSON.stringify({email:email,password:password,client:client,clientInfo:clienInfo,getIp:ipSend})
                     };
                     const login = await fetch(process.env.backend+"/signin", requestOptions);
                     if (login.status ===404) {
