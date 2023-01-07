@@ -125,7 +125,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev!==undefined&&getId!==undefined&&getId!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>
