@@ -4,7 +4,7 @@
 const AesEncryption = require('aes-encryption');
 
 const jsonFetchReq = async({method,body,path,cookie}) =>{
-    if(typeof Window !== 'undefined') {
+    // if(typeof Window !== 'undefined') {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const getCookie = (cookieName) => {
@@ -110,6 +110,6 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 return result;
             }
         }
-    }
+    // }
 };
 export default jsonFetchReq;
