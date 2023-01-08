@@ -28,6 +28,7 @@ const UserInterface = () => {
     useEffect(() => {
         const startScript = async() =>{
             const send = await ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie});
+            alert(send);
             setPrev(prev=>prev=send);
         };
         if(typeof Window !== 'undefined') startScript();
