@@ -20,7 +20,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
         const originReq = urlReq+reqUrl;
         const userAccessToken = getCookie("accessToken");
         const userClientId = getCookie("clientId");
-        if(userAccessToken!==undefined) {
+        if(userAccessToken!==undefined&&userAccessToken!==null&&userClientId!==undefined&&userClientId!==null) {
             const accessToken = aes.encrypt(userAccessToken);
             const clientId = aes.encrypt(userClientId);
             let requestOptions;
