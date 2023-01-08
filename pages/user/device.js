@@ -16,7 +16,7 @@ import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 export async function getServerSideProps(context) {
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-data",
+        path:"/get-devices",
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
@@ -31,30 +31,22 @@ export async function getServerSideProps(context) {
         }; 
     } else {
         return {
-            props: {}
+            props: {data:data}
         }; 
     }
 };
 
-const UserInterface = () => {
+const UserInterface = ({data}) => {
     const [lazy,setLazy] = useState(false);
     const router = useRouter();
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    const [prev,setPrev] = useState('check');
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
         return()=>{
             return false;
         }
     },[]);
-    useEffect(() => {
-        ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie}).then(e=>setPrev(prev=>prev=e));
-        return () => {
-            return false;
-        };
-    }, []);
-    // prev!==null&&prev.map(e=>console.log(e));
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();
@@ -115,7 +107,7 @@ const UserInterface = () => {
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Текущий сеанс</p>
                     <div className={style.devices_row_main}>
-                            {prev!=="check"&&prev!==undefined&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
+                            {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId===data.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>
                                     <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} alt="device"/></div>
                                     <div className={style.devices_row_block}>
@@ -129,7 +121,7 @@ const UserInterface = () => {
                     </div>
                     <p className={style.subber}>Активные сеансы</p>
                     <div className={style.devices_row_main}>
-                            {prev!=="check"&&prev!==undefined&&prev.result.filter(e=>e.clientId!==prev.clientId).map((e,index)=>
+                            {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId!==data.clientId).map((e,index)=>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                     <div key={index} className={style.devices_row}>
                                         <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?colorChanger(Math.floor(Math.random() * 6)):brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image alt="icon" width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}/></div>

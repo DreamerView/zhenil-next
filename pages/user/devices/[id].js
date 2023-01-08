@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
     const id = context.params.id;
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-data",
+        path:"/get-devices",
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
@@ -32,12 +32,12 @@ export async function getServerSideProps(context) {
         }; 
     } else {
         return {
-            props: { getId: id}
+            props: { getId: id,data:data}
         }; 
     }
 };
 
-const UserInterface = ({getId}) => {
+const UserInterface = ({getId,data}) => {
     const router = useRouter();
     const [lazy,setLazy] = useState(false);
     const lang = useTranslateText();
@@ -105,7 +105,7 @@ const UserInterface = ({getId}) => {
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Выбран клиент</p>
-                    {prev!==null&&prev!==undefined&&getId!==undefined&&getId!==null&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
+                    {data!==null&&data!==undefined&&getId!==undefined&&getId!==null&&data.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
                             <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}>
@@ -139,7 +139,7 @@ const UserInterface = ({getId}) => {
                             </div>
                         </div>
                     </div>)}
-                    {prev!==null&&prev!==undefined&&getId!==undefined&&getId!==null&&prev.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
+                    {data!==null&&data!==undefined&&data!==undefined&&data!==null&&data.result.filter(e=>e.clientId===getId).map((e,index)=><div onClick={()=>signoutDevice()} key={index} className={`${style.session_signout} anim_hover`}>Завершить сеанс</div>)}
                 </div>
             </div>
         </div>
