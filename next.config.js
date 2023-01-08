@@ -110,7 +110,7 @@ module.exports = withPWA({
     aesKey:"fd9b84f326e766ea7676c239f48e31b14ea01e9b0124290834637d520818d815",
     authHeader: "ff0989d59ef16505f30f2da7dd36dc61be936a9a81df67bf4c035cf95c5fd21e46b40ce6ba7d88c86ae4f82539096b925e9f9dac7738db83b4e8bcee70cc5d94"
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   i18n: {
     locales: ['en', 'ru', 'kk'],
     defaultLocale: 'en'
