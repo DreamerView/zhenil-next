@@ -64,6 +64,7 @@ const UserInterface = ({getId,data}) => {
             case "chrome":color="orange_background";break;
             case "safari":color="blue_background";break;
             case "firefox":color="red_background";break;
+            case "firefoxforios":color="red_background";break;
             case "microsoftedge":color="brand_background";break;
             case "opera":color="red_background";break;
             default: color="brand_background";break;
@@ -76,6 +77,7 @@ const UserInterface = ({getId,data}) => {
             case "chrome":color="/platforms/chrome.svg";break;
             case "safari":color="/platforms/safari.svg";break;
             case "firefox":color="/platforms/firefox.svg";break;
+            case "firefoxforios":color="/platforms/firefox.svg";break;
             case "microsoftedge":color="/platforms/microsoftedge.svg";break;
             case "opera":color="/platforms/opera.svg";break;
             default: color="/img/devices.svg";break;
