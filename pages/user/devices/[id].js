@@ -32,10 +32,7 @@ const UserInterface = ({getId}) => {
         }
     },[]);
     useEffect(() => {
-        const startScript = async() =>{
-            const send = await ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie});
-            setPrev(prev=>prev=send);
-        };
+        ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie}).then(send=>setPrev(prev=>prev=send));
         startScript();
         return () => {
             return false;
