@@ -19,8 +19,10 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
         const urlReq = reqUrl==='localhost:3000'?"http://":"https://";
         const originReq = urlReq+reqUrl;
         const userAccessToken = getCookie("accessToken");
+        const userClientId = getCookie("clientId");
         if(userAccessToken!==undefined) {
             const accessToken = aes.encrypt(userAccessToken);
+            const clientId = aes.encrypt(userClientId);
             let requestOptions;
             if(method==="POST") {
                 requestOptions = {
@@ -56,12 +58,13 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
-                    body: JSON.stringify({token:accessToken})
+                    body: JSON.stringify({clientId:accessToken})
                 };
                 const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
                 if(send.status === 409) {
                     console.log("It's conflict!");
                     server.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
+                    server.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/"]);
                     return {result:'redirect',location:"/signin"};
                 } else {
                     const result = await send.json();
@@ -102,6 +105,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                 }
             } else if(login.status === 409) {
                 console.log("It's conflict!");
+                server.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/"]);
                 server.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
                 return {result:'redirect',location:"/signin"};
             } 

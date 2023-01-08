@@ -52,7 +52,6 @@ export async function getServerSideProps(context) {
 
 const LoginForm = ({providers,data,ip}) => {
     const getIp = ip!==null||ip!==undefined?ip:"::1";
-    console.log(data);
     const send = useDispatch();
     const router = useRouter();
     const [wait,setWait] = useState(false);
@@ -71,7 +70,6 @@ const LoginForm = ({providers,data,ip}) => {
     },[send]);
     const handlerSocialNetwork = useCallback(async(session) =>{
         if(wait===false&&localStorage.getItem('signInClient')!==null&&session!==undefined) {
-            console.log("started")
             const result = session;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
@@ -113,10 +111,12 @@ const LoginForm = ({providers,data,ip}) => {
                     const nameUser = aes.decrypt(result.name);
                     const surnameUser = aes.decrypt(result.surname);
                     const avatarUser = aes.decrypt(result.avatar);
+                    const clientId = aes.decrypt(result.clientId);
                     const today = new Date();
                     const expire = new Date();
                     expire.setTime(today.getTime() + 3600000*24*14);
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
+                    document.cookie=`clientId=${clientId};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
                     setWait(false);
                     send({
@@ -225,10 +225,12 @@ const LoginForm = ({providers,data,ip}) => {
                     const nameUser = aes.decrypt(result.name);
                     const surnameUser = aes.decrypt(result.surname);
                     const avatarUser = aes.decrypt(result.avatar);
+                    const clientId = aes.decrypt(result.clientId);
                     const today = new Date();
                     const expire = new Date();
                     expire.setTime(today.getTime() + 3600000*24*14);
                     document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
+                    document.cookie=`clientId=${clientId};path=/;secure;expires=${expire.toGMTString()}`;
                     setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
                     setTimeout(()=>setWait(false),[1000]);
                     setTimeout(()=>window.location.href="/",[2000]);

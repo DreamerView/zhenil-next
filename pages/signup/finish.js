@@ -95,10 +95,12 @@ const SignUp = () => {
         }
         if(result.success === true) {
             const accessToken = aes.decrypt(result.accessToken);
+            const clientId = aes.decrypt(result.clientId);
             const today = new Date();
             const expire = new Date();
             expire.setTime(today.getTime() + 3600000*24*14);
             document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
+            document.cookie=`clientId=${clientId};path=/;secure;expires=${expire.toGMTString()}`;
             send({
                 type:"setAuth",
                 set:true

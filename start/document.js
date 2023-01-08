@@ -26,21 +26,7 @@ const DocumentResult = ({children}) => {
     const main = useSelector(state=>state.main);
     const notification = useSelector(state=>state.notification);
     useEffect(()=>{
-        setLazy((lazy)=>lazy=true);
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                let lat = position.coords.latitude;
-                let long = position.coords.longitude;
-            
-                console.log(lat.toFixed(2));
-                console.log(longText.innerText = long.toFixed(2));
-              });
-        } else {
-            alert('It seems like Geolocation, which is required for this page, is not enabled in your browser. Please use a browser which supports it.');
-        }
-        return () =>{
-            return false;
-        }
+        typeof Window !== 'undefined'&&setLazy(true);
     },[])
     useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";

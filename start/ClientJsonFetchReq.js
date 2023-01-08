@@ -19,8 +19,10 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
             document.cookie = name + '=;Max-Age=0;path=/';
         };
         const userAccessToken = getCookie("accessToken");
+        const userClientId = getCookie("clientId");
         if(userAccessToken!==undefined) {
             const accessToken = aes.encrypt(userAccessToken);
+            const clientId = aes.encrypt(userClientId);
             let requestOptions;
             if(method==="POST") {
                 requestOptions = {
@@ -51,16 +53,17 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     headers: {
                         "WWW-Authenticate": process.env.authHeader,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8",
-                        "Authorization": `Bearer ${accessToken}`
+                        "Content-Type": "application/json; charset=utf-8"
                     },
-                    body: JSON.stringify({token:accessToken})
+                    body: JSON.stringify({clientId:clientId})
                 };
                 const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
                 if(send.status === 409) {
                     console.log("It's conflict!");
-                    deleteCookie('accessToken');
-                    return setTimeout(()=>window.location.href="/signin",[500]);
+                    // deleteCookie('accessToken');
+                    // deleteCookie('clientId');
+                    setTimeout(()=>window.location.href="/signin",[100000]);
+                    return undefined
                 } else {
                     const result = await send.json();
                     if(result.accessToken!==undefined) {
@@ -97,8 +100,10 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 }
             } else if(login.status===409) {
                 console.log("It's conflict!");
-                deleteCookie('accessToken');
-                return setTimeout(()=>window.location.href="/signin",[500]);
+                // deleteCookie('accessToken');
+                // deleteCookie('clientId');
+                setTimeout(()=>window.location.href="/signin",[100000]);
+                return undefined;
             }
             else {
                 const result = await login.json();

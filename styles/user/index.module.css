@@ -236,6 +236,9 @@
         height:84px;
         border-radius: 30px;
     }
+    div.devices_row_main {
+        justify-content: center;
+    }
 }
 .need_center1 {
     margin-top:16px;
@@ -413,21 +416,19 @@ select.sort {
 }
 div.devices_row_main {
     margin:24px 0;
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
+    /* width:100%; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
     gap:16px;
 }
 div.devices {
-    max-width: 320px;
-    width:100%;
-    min-width: 50px;
     background-color: var(--block-color);
     border-radius: 16px;
     cursor: pointer;
+    display: flex;
+    padding:12px;
 }
 div.devices_row {
-    padding:12px;
     display: flex;
 }
 div.devices_row_image {

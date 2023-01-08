@@ -20,8 +20,9 @@ const UserIndex = (result) => {
         return false;
       };
     }, [login,ClientJsonFetchReq]);
+    console.log(res);
     return(<>
-    {login===true?
+    {login===true&&res!==undefined?
     <Link href={`/user`} prefetch={false}>
                 <div className={`header__action_image anim_hover ${JSON.stringify(res) === '{}'&&" skeleton"}`}>
                   {res !== null&&res!==undefined&&<Image title={`Avatar`} width={46} height={46} className={"header__action_avatar"} src={res !== null&&aes.decrypt(res.avatar)} alt="avatar" />}
