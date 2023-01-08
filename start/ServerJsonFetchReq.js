@@ -70,10 +70,12 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                     const result = await send.json();
                     if(result.accessToken!==undefined) {
                         const response = aes.decrypt(result.accessToken);
+                        const getClientId = aes.decrypt(result.clientId);
                         const today = new Date();
                         const expire = new Date();
                         expire.setTime(today.getTime() + 3600000*24*14);
                         server.res.setHeader('set-cookie', ["accessToken="+response+";path=/;secure;expires="+expire.toGMTString()+""]);
+                        server.res.setHeader('set-cookie', ["clientId="+getClientId+";path=/;secure;expires="+expire.toGMTString()+""]);
                         console.log("token updated, new token is "+response);
                         let sendReqOpt;
                         if(method==="POST") {
