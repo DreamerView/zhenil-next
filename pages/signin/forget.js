@@ -126,7 +126,7 @@ const FotgetPassword = () => {
     };
     return (
         <>
-            <NavbarApp to={{href:"/signin"}} choice="alone"/>
+            <NavbarApp to={{href:"/signin"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     {change===false?

@@ -103,7 +103,7 @@ const SignUp = () => {
                 <meta property="og:title" content={`Okki ID`} />
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
-            <NavbarApp to={{href:"/signup/email"}} choice="alone"/>
+            <NavbarApp to={{href:"/signup/email"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     <h1 className={style.head_center}>Verify your email</h1>

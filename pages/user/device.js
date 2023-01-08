@@ -88,7 +88,7 @@ const UserInterface = () => {
         <Head>
                 <title>{titleHead}</title>
         </Head>
-        <NavbarApp to={{href:"/user"}} choice="alone"/>
+        <NavbarApp to={{href:"/user"}} choice="alone" mode="standalone"/>
         <div className="main_app">
             <div className={style.user__main}>
                 {lazy===true&&isTabletOrMobile?"":<HeaderUser/>}

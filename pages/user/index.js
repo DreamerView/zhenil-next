@@ -26,7 +26,7 @@ const UserInterface = () => {
         <Head>
                 <title>{titleHead}</title>
         </Head>
-        <NavbarApp to={{href:"/"}} choice="alone"/>
+        <NavbarApp to={{href:"/"}} choice="alone" mode="standalone"/>
         <div className="main_app">
             <div className={style.user__main}>
                 <HeaderUser/>
