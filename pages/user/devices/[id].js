@@ -33,7 +33,6 @@ const UserInterface = ({getId}) => {
     },[]);
     useEffect(() => {
         ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie}).then(send=>setPrev(prev=>prev=send));
-        startScript();
         return () => {
             return false;
         };
