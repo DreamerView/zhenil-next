@@ -20,7 +20,6 @@ const UserIndex = (result) => {
         return false;
       };
     }, [login,ClientJsonFetchReq]);
-    console.log(res);
     return(<>
     {login===true&&res!==undefined?
     <Link href={`/user`} prefetch={false}>

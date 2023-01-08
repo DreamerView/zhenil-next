@@ -68,7 +68,10 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     const result = await send.json();
                     if(result.accessToken!==undefined) {
                         const response = aes.decrypt(result.accessToken);
-                        document.cookie = 'accessToken='+response+";path=/";
+                        const today = new Date();
+                        const expire = new Date();
+                        expire.setTime(today.getTime() + 3600000*24*14);
+                        document.cookie=`accessToken=${response};path=/;secure;expires=${expire.toGMTString()}`;
                         console.log("token updated, new token is "+response);
                         let sendReqOpt;
                         if(method==="POST") {
