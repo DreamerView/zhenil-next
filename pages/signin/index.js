@@ -255,7 +255,7 @@ const LoginForm = ({providers,data,ip}) => {
                 <meta property="og:title" content={`Okki ID`} />
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
-            <NavbarApp to={{href:"/"}} choice="alone"/>
+            <NavbarApp to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
                 <h1 className={style.head_center} onClick={()=>router.push("/signup")}>Welcome back!</h1>

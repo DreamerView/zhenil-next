@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
-const NavbarApp = ({to,choice,with_save,save_name}) => {
+const NavbarApp = ({to,choice,with_save,save_name,mode}) => {
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
     const lang = useTranslateText();
@@ -58,6 +58,22 @@ const NavbarApp = ({to,choice,with_save,save_name}) => {
             :''}
             </p>
         </div>:
+        mode==='standalone'?<>
+        {scrollResult==="_fixed"?
+            <div onClick={()=>router.back()} className={`main_back_fixed_1`}>
+                <div className='main_back_button'>
+                    <div className='main_back_button_i'/>
+                </div>
+                <p>{ux['back'][lang]}</p>
+            </div>
+        :""}
+            <div onClick={()=>router.back()} className={`main_back_1`}>
+                <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
+                    <div className='main_back_button_i'/>
+                </div>
+                <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
+            </div>
+    </>:
         with_save==="yes"?
         <>
             {scrollResult==="_fixed"?
