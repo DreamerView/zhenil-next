@@ -129,7 +129,7 @@ const LoginForm = ({providers,data,ip}) => {
                 console.log(e);
             }
         }
-    },[send,setNotification,wait]);
+    },[send,setNotification,wait,getIp]);
     useEffect(()=>{
         let lazy = true;
         if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
