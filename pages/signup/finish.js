@@ -10,6 +10,7 @@ const platform = require('platform');
 import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
+    const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -19,7 +20,7 @@ export async function getServerSideProps(context) {
     });
     if(data.result==='redirect') {
         return {
-            props: {}
+            props: {ip:ip}
         }; 
     } else {
         return {
@@ -32,7 +33,8 @@ export async function getServerSideProps(context) {
     }
 };
 
-const SignUp = () => {
+const SignUp = ({ip}) => {
+    const getIp = ip;
     const [name,setName] = useState("");
     const router = useRouter();
     const send = useDispatch();
@@ -86,7 +88,7 @@ const SignUp = () => {
                 "Accept":"application/json; charset=utf-8",
                 "Content-Type": "application/json; charset=utf-8"
             },
-            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki"),clientInfo:aes.encrypt(clienInfo)})
+            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki"),clientInfo:aes.encrypt(clienInfo),getIp:aes.encrypt(getIp)})
         };
         const login = await fetch(process.env.backend+"/register-id", requestOptions);
         const result = await login.json();

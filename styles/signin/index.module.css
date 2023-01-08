@@ -1,101 +1,45 @@
 @media screen and (min-width:1900px) {
     div.login_form {
-        width:75%;
         padding:64px 32px;
         border: 0.5px solid var(--border-color);
     }
-    input.login_input {
-        width:233px;
-    }
-    input.password_input {
-        width:193px;
-    }
-    button.login_button {
-        width:320px;
-    }
     div.password__show_row {
         margin:10px 24px;
-    }
-    div.login_sn {
-        width:320px;
     }
   }
   @media screen and (min-width:1161px) and (max-width:1899px) {
     div.login_form {
-        width:75%;
         padding:64px 32px;
         border: 0.5px solid var(--border-color);
     }
-    input.login_input {
-        width:233px;
-    }
-    input.password_input {
-        width:193px;
-    }
-    button.login_button {
-        width:320px;
-    }
     div.password__show_row {
         margin:10px 24px;
-    }
-    div.login_sn {
-        width:320px;
     }
   }
   @media (min-width:601px) and (max-width:1160px) {
     div.login_form {
-        width:90%;
         padding:64px 32px;
         border: 0.5px solid var(--border-color);
-    }
-    input.login_input {
-        width:233px;
-    }
-    input.password_input {
-        width:193px;
-    }
-    button.login_button {
-        width:320px;
     }
     div.password__show_row {
         margin:10px 24px;
     }
-    div.login_sn {
-        width:320px;
-    }
   }
   @media (min-width:1px) and (max-width:600px) {
     div.login_form {
-        width:100%;
         padding:64px 0;
-    }
-    input.login_input {
-        width:90%;
-        box-sizing: border-box;
-    }
-    input.password_input {
-        width:90%;
-        box-sizing: border-box;
-    }
-    div.password {
-        width:100%;
-        display: flex;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-    button.login_button {
-        width: 90%;
     }
     div.password__show_row {
         margin:10px 40px;
     }
-    div.login_sn {
-        width:90%;
-    }
   }
 div.login_form {
+    max-width: 1050px;
+    width: 100%;
+    min-width: 50px;
     border-radius: 24px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 .head_center {
     text-align: center;
@@ -128,6 +72,11 @@ div.login_row {
 }
 
 input.login_input {
+    margin-top:16px;
+    max-width: 350px;
+    width:100%;
+    min-width: 50px;
+    box-sizing: border-box;
     padding:10px 24px 10px 64px;
     background-color: var(--block-color);
     border-radius: 24px;
@@ -135,6 +84,10 @@ input.login_input {
     /* margin-top:16px; */
 }
 input.password_input {
+    max-width: 350px;
+    width:100%;
+    min-width: 50px;
+    box-sizing: border-box;
     padding:10px 64px;
     background-color: var(--block-color);
     border-radius: 24px;
@@ -142,6 +95,9 @@ input.password_input {
     /* margin-top:24px; */
 }
 .login_button {
+    max-width: 350px;
+    width: 100%;
+    min-width: 50px;
     margin-top:24px;
     height:46px;
     background-color: var(--brand-color);
@@ -168,6 +124,10 @@ button.disable {
     cursor: not-allowed;
 }
 div.password {
+    max-width: 350px;
+    width:100%;
+    min-width: 50px;
+    margin-top:16px;
     position: relative;
 }
 div.password__show_row {
@@ -200,9 +160,12 @@ div.login_sn {
     margin: 24px auto;
 }
 button.login_sn_row {
+    margin: 24px auto;
+    max-width: 350px;
     width:100%;
+    min-width: 50px;
     height: 48px;
-    /* background-color: var(--block-color); */
+    box-sizing: border-box;
     border:1.4px solid var(--border-color);
     border-radius: 24px;
     cursor: pointer;

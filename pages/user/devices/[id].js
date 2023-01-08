@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
@@ -8,7 +9,7 @@ import Image from 'next/image';
 import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
+const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
@@ -42,19 +43,12 @@ const UserInterface = ({getId,data}) => {
     const [lazy,setLazy] = useState(false);
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    const [prev,setPrev] = useState(null);
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
         return()=>{
             return false;
         }
     },[]);
-    useEffect(() => {
-        ClientJsonFetchReq({method:"GET",path:'/get-devices',cookie:document.cookie}).then(send=>setPrev(prev=>prev=send));
-        return () => {
-            return false;
-        };
-    }, []);
     const ConvertTime = (unix_timestamp) => {
         const date = new Date(unix_timestamp);
         const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();

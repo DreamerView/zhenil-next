@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import SearchResult from "/start/services/all.json";
@@ -11,7 +12,7 @@ import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
+const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
 export async function getServerSideProps(context) {

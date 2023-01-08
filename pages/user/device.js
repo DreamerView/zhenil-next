@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
@@ -8,8 +9,7 @@ import Image from 'next/image';
 import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
-import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 

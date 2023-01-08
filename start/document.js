@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import { useEffect,useState } from 'react';
-import Header from "/start/header";
+const Header = dynamic(()=>import("/start/header"),{ssr:false});
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
@@ -36,12 +36,6 @@ const DocumentResult = ({children}) => {
         }
     },[router,isTabletOrMobile])
     useEffect(()=>{
-        typeof Window !== 'undefined'&&setLazy(true);
-        return () => {
-            return false;
-        }
-    },[])
-    useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
             return false;
@@ -69,7 +63,7 @@ const DocumentResult = ({children}) => {
             {frame&&<FullFrame item={url} key={Date.now()}/>}
             {action&&<ConfirmMode item={action} key={Date.now}/>}
             {image&&<ResizeImage item={image} key={Date.now}/>}
-            {lazy&&header===true&&<Header/>}
+            {header===true&&<Header/>}
             {main&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>
