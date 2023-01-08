@@ -30,7 +30,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                     headers: {
                         "WWW-Authenticate": process.env.authHeader,
                         "Origin":originReq,
-                        "Authorization": `Bearer ${accessToken}`,
+                        "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
@@ -42,7 +42,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                     headers: {
                         "WWW-Authenticate": process.env.authHeader,
                         "Origin":originReq,
-                        "Authorization": `Bearer ${accessToken}`,
+                        "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
@@ -58,7 +58,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
-                    body: JSON.stringify({clientId:accessToken})
+                    body: JSON.stringify({accessToken:accessToken,clientId:clientId})
                 };
                 const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
                 if(send.status === 409) {
@@ -84,7 +84,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                 headers: {
                                     "WWW-Authenticate": process.env.authHeader,
                                     "Origin":originReq,
-                                    "Authorization": `Bearer ${aes.encrypt(response)}`,
+                                    "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },
@@ -96,7 +96,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                 headers: {
                                     "WWW-Authenticate": process.env.authHeader,
                                     "Origin":originReq,
-                                    "Authorization": `Bearer ${aes.encrypt(response)}`,
+                                    "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },

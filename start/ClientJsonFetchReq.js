@@ -4,7 +4,7 @@
 const AesEncryption = require('aes-encryption');
 
 const jsonFetchReq = async({method,body,path,cookie}) =>{
-    // if(typeof Window !== 'undefined') {
+    if(typeof Window !== 'undefined') {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const getCookie = (cookieName) => {
@@ -29,7 +29,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     method: 'POST',
                     headers: {
                         "WWW-Authenticate": process.env.authHeader,
-                        "Authorization": `Bearer ${accessToken}`,
+                        "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
@@ -40,7 +40,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     method: 'GET',
                     headers: {
                         "WWW-Authenticate": process.env.authHeader,
-                        "Authorization": `Bearer ${accessToken}`,
+                        "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
@@ -81,7 +81,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                                 method: 'POST',
                                 headers: {
                                     "WWW-Authenticate": process.env.authHeader,
-                                    "Authorization": `Bearer ${aes.encrypt(response)}`,
+                                    "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },
@@ -92,7 +92,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                                 method: 'GET',
                                 headers: {
                                     "WWW-Authenticate": process.env.authHeader,
-                                    "Authorization": `Bearer ${aes.encrypt(response)}`,
+                                    "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },
@@ -115,6 +115,6 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 return result;
             }
         }
-    // }
+    }
 };
 export default jsonFetchReq;
