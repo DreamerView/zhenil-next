@@ -31,7 +31,7 @@ const UserInterface = () => {
             alert(send);
             setPrev(prev=>prev=send);
         };
-        if(typeof Window !== 'undefined') startScript();
+        startScript();
         return () => {
             return false;
         };
