@@ -91,7 +91,7 @@ const UserInterface = ({getId}) => {
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Выбран клиент</p>
-                    {JSON.stringify(prev)}
+                    {/* {JSON.stringify(prev)} */}
                     {prev!==null&&prev!==undefined&&getId!==undefined&&getId!==null&&prev.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>

@@ -91,7 +91,7 @@ const UserInterface = () => {
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Текущий сеанс</p>
-                    {JSON.stringify(prev)}
+                    {/* {JSON.stringify(prev)} */}
                     <div className={style.devices_row_main}>
                             {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>
@@ -99,7 +99,7 @@ const UserInterface = () => {
                                     <div className={style.devices_row_block}>
                                         <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                         {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}
-                                        <p className={style.sub}>{ConvertTime(JSON.parse(e.getTime))}</p>
+                                        <p className={style.sub}>{JSON.parse(e.ipInfo).cityName!==null&&JSON.parse(e.ipInfo).cityName!==undefined&&JSON.parse(e.ipInfo).cityName}, {JSON.parse(e.ipInfo).countryName!==null&&JSON.parse(e.ipInfo).countryName!==undefined&&JSON.parse(e.ipInfo).countryName} {ConvertTime(JSON.parse(e.getTime))}</p>
                                     </div>
                                 </div>
                             </div>)}
@@ -113,7 +113,7 @@ const UserInterface = () => {
                                         <div className={style.devices_row_block}>
                                             <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                                             {/* <p className={style.subber}>{JSON.parse(e.clientInfo).name+" "+JSON.parse(e.clientInfo).version}</p> */}
-                                            <p className={style.sub}>{ConvertTime(JSON.parse(e.getTime))}</p>
+                                            <p className={style.sub}>{JSON.parse(e.ipInfo).cityName!==null&&JSON.parse(e.ipInfo).cityName!==undefined&&JSON.parse(e.ipInfo).cityName}, {JSON.parse(e.ipInfo).countryName!==null&&JSON.parse(e.ipInfo).countryName!==undefined&&JSON.parse(e.ipInfo).countryName} {ConvertTime(JSON.parse(e.getTime))}</p>
                                         </div>
                                     </div>
                                 </div>
