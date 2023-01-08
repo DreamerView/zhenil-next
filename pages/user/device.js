@@ -18,7 +18,7 @@ const UserInterface = () => {
     const router = useRouter();
     const lang = useTranslateText();
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    const [prev,setPrev] = useState(null);
+    const [prev,setPrev] = useState('check');
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
         return()=>{
@@ -93,7 +93,7 @@ const UserInterface = () => {
                     <p className='sub_content'>Текущий сеанс</p>
                     {JSON.stringify(prev)}
                     <div className={style.devices_row_main}>
-                            {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
+                            {prev!=="check"&&prev!==undefined&&prev.result.filter(e=>e.clientId===prev.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices_row}`}>
                                     <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} alt="device"/></div>
                                     <div className={style.devices_row_block}>
@@ -106,7 +106,7 @@ const UserInterface = () => {
                     </div>
                     <p className={style.subber}>Активные сеансы</p>
                     <div className={style.devices_row_main}>
-                            {prev!==null&&prev!==undefined&&prev.result.filter(e=>e.clientId!==prev.clientId).map((e,index)=>
+                            {prev!=="check"&&prev!==undefined&&prev.result.filter(e=>e.clientId!==prev.clientId).map((e,index)=>
                                 <div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
                                     <div key={index} className={style.devices_row}>
                                         <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?colorChanger(Math.floor(Math.random() * 6)):brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image alt="icon" width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}/></div>
