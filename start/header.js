@@ -97,7 +97,7 @@ const Header = () => {
           </div>
           <div className="header__search">
           {res?"":
-            <Link title={text['title'][locale]} href="/user" prefetch={false}>
+            <Link title={text['title'][locale]} href="/" prefetch={false}>
                 <div className="header__search_menu anim_hover">
                   <div className="header__search_menu_pic1" id="search_menu"></div>
                   <span className="header__search_menu_text">{translate['menu'][locale]}</span>

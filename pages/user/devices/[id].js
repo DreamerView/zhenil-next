@@ -11,13 +11,31 @@ import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
+import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
-export async function getServerSideProps({params}) {
-    const id = params.id;
-    return {
-        props: { getId: id},
-    };
-}
+export async function getServerSideProps(context) {
+    const id = context.params.id;
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    if(data.result==='redirect') {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin',
+            },
+            props: {}
+        }; 
+    } else {
+        return {
+            props: { getId: id}
+        }; 
+    }
+};
 
 const UserInterface = ({getId}) => {
     const router = useRouter();

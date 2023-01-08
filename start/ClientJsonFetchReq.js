@@ -62,7 +62,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     console.log("It's conflict!");
                     deleteCookie('accessToken');
                     deleteCookie('clientId');
-                    setTimeout(()=>window.location.href="/signin",[250]);
+                    window.location.href="/signin";
                     return undefined
                 } else {
                     const result = await send.json();
@@ -107,7 +107,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 console.log("It's conflict!");
                 deleteCookie('accessToken');
                 deleteCookie('clientId');
-                setTimeout(()=>window.location.href="/signin",[250]);
+                window.location.href="/signin";
                 return undefined;
             }
             else {

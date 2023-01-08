@@ -12,7 +12,30 @@ import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
+import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
+export async function getServerSideProps(context) {
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-data",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    if(data.result==='redirect') {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin',
+            },
+            props: {}
+        }; 
+    } else {
+        return {
+            props: {}
+        }; 
+    }
+};
 
 const UserInterface = () => {
     const [lazy,setLazy] = useState(false);
