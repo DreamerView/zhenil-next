@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) => {
     });
     if(data.result==='redirect') {
         return {
-            props: {}
+            props: {ip:ip}
         }; 
     } 
     return {

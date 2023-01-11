@@ -257,7 +257,7 @@ const LoginForm = ({providers,data,ip}) => {
             <NavbarApp to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center} onClick={()=>router.push("/signup")}>Welcome back!</h1>
+                <h1 className={style.head_center}>Welcome back!</h1>
                 <p className={style.text_center}>Please enter your log in details below</p>
                 {data!==undefined&&data!==null?
                 <>
