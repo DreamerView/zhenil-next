@@ -31,11 +31,11 @@ export async function getServerSideProps(context) {
             },
             props: {}
         }; 
-    } else {
-        return {
-            props: { getId: id,data:data}
-        }; 
-    }
+    } 
+    return {
+        props: { getId: id,data:data}
+    }; 
+    
 };
 
 const UserInterface = ({getId,data}) => {

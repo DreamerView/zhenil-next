@@ -20,17 +20,15 @@ export async function getServerSideProps(context) {
     });
     if(data.result==='redirect') {
         return {
-            props: {ip:ip}
-        }; 
-    } else {
-        return {
-            redirect: {
-                permanent: false,
-                destination: '/',
-            },
             props: {}
         }; 
-    }
+    } 
+    return {
+        redirect: {
+            permanent: false,
+            destination: '/',
+        }
+    }; 
 };
 
 const SignUp = ({ip}) => {

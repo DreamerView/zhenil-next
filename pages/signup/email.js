@@ -21,15 +21,13 @@ export async function getServerSideProps(context) {
         return {
             props: {}
         }; 
-    } else {
-        return {
-            redirect: {
-                permanent: false,
-                destination: '/',
-            },
-            props: {}
-        }; 
-    }
+    } 
+    return {
+        redirect: {
+            permanent: false,
+            destination: '/',
+        }
+    }; 
 };
 
 const SignUp = () => {

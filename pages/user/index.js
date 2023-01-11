@@ -25,14 +25,12 @@ export async function getServerSideProps(context) {
             redirect: {
                 permanent: false,
                 destination: '/signin',
-            },
-            props: {}
-        }; 
-    } else {
-        return {
-            props: {}
+            }
         }; 
     }
+    return {
+        props: {}
+    }; 
 };
 
 

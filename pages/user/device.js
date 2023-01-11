@@ -29,11 +29,11 @@ export async function getServerSideProps(context) {
             },
             props: {}
         }; 
-    } else {
-        return {
-            props: {data:data}
-        }; 
-    }
+    } 
+    return {
+        props: {data:data}
+    }; 
+    
 };
 
 const UserInterface = ({data}) => {

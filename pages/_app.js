@@ -11,7 +11,6 @@ import { useMediaQuery } from 'react-responsive';
 import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
-import ErrorBoundary from '/start/ErrorBoundary'
 
 
 const Preloader = () => {
@@ -108,7 +107,6 @@ const MyApp = ({ Component, pageProps, session }) => {
     return(
         <>
             <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
-            <ErrorBoundary>
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <DocumentResult>
@@ -116,7 +114,6 @@ const MyApp = ({ Component, pageProps, session }) => {
                     </DocumentResult>
                 </Provider>
             </SessionProvider>
-            </ErrorBoundary>
         </>
     )
 }

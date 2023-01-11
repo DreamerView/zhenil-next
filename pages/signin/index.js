@@ -36,8 +36,7 @@ export async function getServerSideProps(context) {
             redirect: {
                 permanent: false,
                 destination: '/',
-            },
-            props: {}
+            }
         }; 
     };
     const SocialNetwork = async() => {
@@ -47,7 +46,7 @@ export async function getServerSideProps(context) {
     };
     if(session!==null) return SocialNetwork();
     if(data.result==='redirect') return ReturnTo();
-    else return ReturnBack();
+    return ReturnBack();
 };
 
 const LoginForm = ({providers,data,ip}) => {
