@@ -1,14 +1,16 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import useTranslateText from "/start/translate";
 import seo from "/translate/seo_index";
 import AllService from '/start/services/all.json';
 const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
 
-const Home = () => {
-  const locale = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+  return {props:{locale:locale}};
+};
+
+const Home = ({locale}) => {
   return(
     <>
       <Head>

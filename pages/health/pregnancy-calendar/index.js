@@ -3,13 +3,15 @@ import { useState,useEffect,useCallback } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import nav_text from "/translate/services/all_translate";
-import setTranslateText from '/start/translate';
 import style from "/styles/health/index.module.css";
 import text from "/translate/health/pregnancy-calendar/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const PregnancyCalendar = ()=>{
-    const lang = setTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const PregnancyCalendar = ({lang})=>{
     const [date,setDate] = useState(0);
     const [result,setResult] = useState({date:text.waiting[lang],month:'',year:''});
     const [ownWeek,setWeek] = useState('0');
@@ -125,7 +127,7 @@ const PregnancyCalendar = ()=>{
                 <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>

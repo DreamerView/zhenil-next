@@ -10,6 +10,7 @@ const platform = require('platform');
 import { useDispatch } from "react-redux";
 
 export const getServerSideProps = async (context) => {
+    const lang = context.locale;
     const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
     const data = await ServerJsonFetchReq({
         method:"GET",
@@ -20,7 +21,7 @@ export const getServerSideProps = async (context) => {
     });
     if(data.result==='redirect') {
         return {
-            props: {ip:ip}
+            props: {ip:ip,lang:lang}
         }; 
     } 
     return {
@@ -31,7 +32,7 @@ export const getServerSideProps = async (context) => {
     }; 
 };
 
-const SignUp = ({ip}) => {
+const SignUp = ({ip,lang}) => {
     const getIp = ip;
     const [name,setName] = useState("");
     const router = useRouter();
@@ -121,7 +122,7 @@ const SignUp = ({ip}) => {
                 <meta property="og:title" content={`Okki ID`} />
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
-            <NavbarApp to={{href:"/signin"}} choice="alone" mode="standalone"/>
+            <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     <h1 className={style.head_center} onClick={()=>createAcc()}>Creating your account!</h1>

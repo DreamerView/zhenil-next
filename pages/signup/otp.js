@@ -9,6 +9,7 @@ const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
 export const getServerSideProps = async (context) => {
+    const lang = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -18,7 +19,7 @@ export const getServerSideProps = async (context) => {
     });
     if(data.result==='redirect') {
         return {
-            props: {}
+            props: {lang:lang}
         }; 
     } 
     return {
@@ -29,7 +30,7 @@ export const getServerSideProps = async (context) => {
     }; 
 };
 
-const SignUp = () => {
+const SignUp = ({lang}) => {
     const send = useDispatch();
     const [name,setName] = useState("");
     const router = useRouter();
@@ -101,7 +102,7 @@ const SignUp = () => {
                 <meta property="og:title" content={`Okki ID`} />
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
-            <NavbarApp to={{href:"/signup/email"}} choice="alone" mode="standalone"/>
+            <NavbarApp lang={lang} to={{href:"/signup/email"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     <h1 className={style.head_center}>Verify your email</h1>

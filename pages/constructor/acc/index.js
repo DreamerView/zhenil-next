@@ -3,14 +3,16 @@ import style from "/styles/constructor/acc/index.module.css";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from "/start/translate";
 import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/index_translate";
 import seo from "/translate/constructor/acc/index_seo";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const Acc = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const Acc = ({lang}) => {
     return(
       <>
       <Head>
@@ -30,7 +32,7 @@ const Acc = () => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-        <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',path:'last'}]}/>
+        <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',path:'last'}]}/>
         <div className={`main block_animation`}>
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>

@@ -8,10 +8,11 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
-const NavbarApp = ({to,choice,with_save,save_name,mode}) => {
+
+const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
-    const lang = useTranslateText();
+    // const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
     const [scrollResult,setScrollResult] = useState('');
     useEffect(() => {

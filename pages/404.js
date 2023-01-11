@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
 import translate from "/translate/ux/404_translate";
-import { useRouter } from 'next/router';
 
-const NotFound = () => {
-    const router = useRouter();
-    const {locale} = router;
+export const getStaticProps = async ({locale}) => {
+    return {props:{locale:locale}};
+};
+
+const NotFound = ({locale}) => {
     return(
         <>
             <Head>

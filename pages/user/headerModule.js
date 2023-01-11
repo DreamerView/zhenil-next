@@ -2,14 +2,12 @@
 import style from "/styles/user/index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import useTranslateText from "/start/translate";
 import translate from "/translate/user/index_translate";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useEffect,useState,memo } from "react";
 
 
-const HeaderUser = () => {
-    const lang = useTranslateText();
+const HeaderUser = ({lang}) => {
     const [data,setData] = useState(null);
     useEffect(()=>{
         if(typeof window !== "undefined") setData(prev=>prev=JSON.parse(localStorage.getItem('loginParams')));

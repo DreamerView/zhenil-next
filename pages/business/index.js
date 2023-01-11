@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import useTranslateText from "/start/translate";
 import translate from "/translate/constructor/acc/navbar_translate";
 import style from "/styles/constructor/index.module.css";
 import nav_translate from "/translate/services/all_translate";
@@ -11,8 +10,12 @@ import seo from "/translate/business/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 
-const BusinessIndex = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{locale:locale}};
+};
+
+const BusinessIndex = ({locale}) => {
+    const lang = locale;
     return(
         <>
             <Head>
@@ -32,7 +35,7 @@ const BusinessIndex = () => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp to={{href:"/"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
             <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image title={'Microsoft briefcase emoji (Used for informational purposes only)'} priority src={"/emoji-small/briefcase.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>

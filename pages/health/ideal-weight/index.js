@@ -2,14 +2,16 @@
 import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '/start/translate';
 import text from "/translate/health/ideal-weight/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_text from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const IdealWeight = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const IdealWeight = ({lang}) => {
     const [male,setMale] = useState('other');
     const [maleText,setMaleText] = useState(text.other[lang]);
     const [n1,setN1] = useState('');
@@ -55,7 +57,7 @@ const IdealWeight = () => {
                 <title>{nav_text['ideal_weight_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['ideal_weight_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/health"}} choice="alone" with_save="yes" save_name="ideal_weight_calc"/>
+            <NavbarApp lang={lang} to={{href:"/health"}} choice="alone" with_save="yes" save_name="ideal_weight_calc"/>
             <div className="main_app block_animation">
                 <h1>{nav_text['ideal_weight_calc'][lang]}</h1>
                 <p className="sub_content">{text['desc'][lang]}</p>

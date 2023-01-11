@@ -7,7 +7,7 @@ import styles from '/styles/index_main.module.css';
   
 
 const IndexContent = ({lang,service}) => {
-  const locale = lang!==undefined?lang:'en';
+  const locale = lang;
   const serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction'));

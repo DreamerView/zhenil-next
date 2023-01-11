@@ -5,12 +5,10 @@ import SearchResult from "/start/services/all.json";
 import style from "/styles/user/index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 
-const HistoryUser = () => {
-    const lang = useTranslateText();
+const HistoryUser = ({lang}) => {
     const [prev,setPrev] = useState([{}]);
     const [sortItem,setSortItem] = useState('new');
     const [sortItemRes,setSortItemRes] = useState('all');

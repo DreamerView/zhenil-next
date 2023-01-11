@@ -14,7 +14,6 @@ import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const router = useRouter();
-    const [lazy,setLazy] = useState(false);
     const [header,setHeader] = useState(null);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);

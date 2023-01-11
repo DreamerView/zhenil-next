@@ -8,6 +8,7 @@ const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
 export const getServerSideProps = async (context) => {
+    const lang = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -17,7 +18,7 @@ export const getServerSideProps = async (context) => {
     });
     if(data.result==='redirect') {
         return {
-            props: {}
+            props: {lang:lang}
         }; 
     }
     return {
@@ -29,7 +30,7 @@ export const getServerSideProps = async (context) => {
     
 };
 
-const FotgetPassword = () => {
+const FotgetPassword = ({lang}) => {
     const send = useDispatch();
     const [wait,setWait] = useState(false);
     const [change,setChange] = useState(false);
@@ -125,7 +126,7 @@ const FotgetPassword = () => {
     };
     return (
         <>
-            <NavbarApp to={{href:"/signin"}} choice="alone" mode="standalone"/>
+            <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
                 <div className={style.login_form}>
                     {change===false?

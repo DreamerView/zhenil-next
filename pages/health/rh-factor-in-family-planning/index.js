@@ -3,13 +3,15 @@ import Head from "next/head";
 import Image from "next/image";
 import {useState,useEffect} from 'react';
 import style from "/styles/health/rh-factor-in-pregnancy-planning/index.module.css";
-import setTranslateText from '/start/translate';
 import nav_text from "/translate/services/all_translate";
 import text from "/translate/health/rh-factor-in-family-planning/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const RhFactorInPregnancyPlanning = () => {
-    const lang = setTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const RhFactorInPregnancyPlanning = ({lang}) => {
     const [manRh,setManRh] = useState(`I`);
     const [womanRh,setWomanRh] = useState(`I`); 
     const [result,setResult] = useState({con:'',child:'',color:'block'});
@@ -51,7 +53,7 @@ const RhFactorInPregnancyPlanning = () => {
                 <title>{nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>

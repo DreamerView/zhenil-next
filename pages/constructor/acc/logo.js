@@ -5,14 +5,16 @@ import {useEffect, useState} from "react";
 import Link from 'next/link';
 import Head from "next/head";
 import Image from "next/image";
-import useTranslateText from "/start/translate";
 import ux from "/translate/ux/action";
 import translate from "/translate/constructor/acc/navbar_translate";
 import text from "/translate/constructor/acc/logo_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const LogoAcc = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const LogoAcc = ({lang}) => {
     const [logo,setLogo] = useState("/img/logo_round.svg");
     const [c,setC] = useState({logo:'logo',text:text['desc'][lang],div:''});
     const [ready,setReady] = useState(false);
@@ -52,7 +54,7 @@ const LogoAcc = () => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],path:'last'}]}/>
+            <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>

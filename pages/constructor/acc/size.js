@@ -4,14 +4,16 @@ import style from "../../../styles/constructor/acc/index.module.css";
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import useTranslateText from "/start/translate";
 import translate from "/translate/constructor/acc/navbar_translate";
 import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/size_translate";
 import NavbarApp from "/pages/navbar_app/nav";
 
-const SizeAcc = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const SizeAcc = ({lang}) => {
     const [select,setSelect] = useState(false);
     const [checked,setChecked] = useState('');
     const [result,setResult] = useState('Choose-origin');
@@ -124,7 +126,7 @@ const SizeAcc = () => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],path:'last'}]}/>
+            <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>

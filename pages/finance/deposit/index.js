@@ -1,15 +1,17 @@
 /*jshint esversion: 6 */
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '/start/translate';
 import text from "/translate/finance/deposit/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 import {useState,useCallback,useMemo} from 'react';
 
-const Deposit = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const Deposit = ({lang}) => {
     const [bet,setBet] = useState('');
     const [sum,setSum] = useState('');
     const [term,setTerm] = useState('not');
@@ -105,7 +107,7 @@ const Deposit = () => {
                 <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['deposit_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/finance"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/finance"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
                 <p className="sub_content">{text["description"][lang]}</p>

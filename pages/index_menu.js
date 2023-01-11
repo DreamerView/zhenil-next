@@ -6,7 +6,7 @@ import nav_translate from "/translate/services/all_translate";
 import styles from '/styles/index_main.module.css';
 
 const IndexMenu = ({lang,service}) => {
-    const locale = lang!==undefined?lang:'en';
+    const locale =lang;
     const serv = service!==undefined?service:[{}];
     return(
         <>

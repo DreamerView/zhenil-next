@@ -11,6 +11,10 @@ import Search from "/start/header_action/search";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 
+export const getStaticPaths = async ({locale}) => {
+  return {props:{lang:locale}};
+};
+
 const Header = () => {
     const send = useDispatch();
     const router = useRouter();

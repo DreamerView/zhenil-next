@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import useTranslateText from "/start/translate";
 import text from "/translate/constructor/acc/index_translate";
 import nav_translate from "/translate/services/all_translate";
 import translate from "/translate/constructor/acc/navbar_translate";
@@ -11,8 +10,12 @@ import AllService from '/start/services/all.json';
 import type_translate from "/translate/services/type_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const BusinessIndex = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{locale:locale}};
+};
+
+const BusinessIndex = ({locale}) => {
+    const lang = locale;
     return(
         <>
             <Head>
@@ -20,7 +23,7 @@ const BusinessIndex = () => {
                 <meta property="og:title" content={`${nav_translate['calculator'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
-            <NavbarApp to={{href:"/"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
             <h1 className="flex_text">{nav_translate['calculator'][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>

@@ -1,18 +1,17 @@
 /*jshint esversion: 6 */
 import Head from 'next/head';
 import Image from 'next/image';
-import useTranslateText from '/start/translate';
 import translate from "/translate/health/bmi_calculator/index_translate";
 import style from "/styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import NavbarApp from '/pages/navbar_app/nav';
-// import dynamic from 'next/dynamic';
-// const AdsContent = dynamic(()=>import("/start/ads/index"),{ssr:false})
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
 
-const BMICalc = () => {
-    const lang = useTranslateText();
+const BMICalc = ({lang}) => {
     const [anim,setAnim] = useState(false);
     const [n1,setN1] = useState('');
     const [n2,setN2] = useState('');
@@ -72,7 +71,7 @@ const BMICalc = () => {
                 <title>{translate['step1'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p>

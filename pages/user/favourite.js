@@ -8,7 +8,6 @@ import { useMediaQuery } from 'react-responsive';
 import { useEffect,useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
@@ -16,6 +15,7 @@ const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
 export const getServerSideProps = async (context) => {
+    const locale = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -32,13 +32,13 @@ export const getServerSideProps = async (context) => {
         }; 
     }
     return {
-        props: {}
+        props: {locale:locale}
     }; 
 };
 
-const UserInterface = () => {
+const UserInterface = ({locale}) => {
     const [lazy,setLazy] = useState(false);
-    const lang = useTranslateText();
+    const lang = locale;
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     const [prev,setPrev] = useState([{}]);
     const [sortItem,setSortItem] = useState('new');
@@ -98,10 +98,10 @@ const UserInterface = () => {
         <Head>
                 <title>{titleHead}</title>
         </Head>
-        <NavbarApp to={{href:"/user"}} choice="alone" mode="standalone"/>
+        <NavbarApp lang={lang} to={{href:"/user"}} choice="alone" mode="standalone"/>
         <div className="main_app">
             <div className={style.user__main}>
-                {lazy===true&&isTabletOrMobile?"":<HeaderUser/>}
+                {lazy===true&&isTabletOrMobile?"":<HeaderUser lang={lang}/>}
                 <div className={style.main__user_action}>
                     <h1>{ux['favorites'][lang]}</h1>
                     <p className='sub_content'>{ux['favorites_text'][lang]}</p>

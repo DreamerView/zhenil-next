@@ -8,12 +8,12 @@ import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption');
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import { getProviders, signIn,getSession,signOut } from "next-auth/react";
 const platform = require('platform');
 
 export const getServerSideProps = async (context) => {
+    const lang = context.locale;
     const session = await getSession(context);
     const data = await ServerJsonFetchReq({
         method:"GET",
@@ -28,6 +28,7 @@ export const getServerSideProps = async (context) => {
             props: {
                 providers: await getProviders(context),
                 ip:ip,
+                lang:lang
             }
         }; 
     };
@@ -41,7 +42,7 @@ export const getServerSideProps = async (context) => {
     };
     const SocialNetwork = async() => {
         return {
-            props: {data:session,ip:ip}
+            props: {data:session,ip:ip,lang:lang}
         }; 
     };
     if(session!==null) return SocialNetwork();
@@ -49,10 +50,9 @@ export const getServerSideProps = async (context) => {
     return ReturnBack();
 };
 
-const LoginForm = ({providers,data,ip}) => {
+const LoginForm = ({providers,data,ip,lang}) => {
     const getIp = ip!==null||ip!==undefined?ip:"::1";
     const send = useDispatch();
-    const router = useRouter();
     const [wait,setWait] = useState(false);
     const [passValue,setPassValue] = useState('password');
     const [verified,setVerify] = useState(false);
@@ -254,7 +254,7 @@ const LoginForm = ({providers,data,ip}) => {
                 <meta property="og:title" content={`Okki ID`} />
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
-            <NavbarApp to={{href:"/"}} choice="alone" mode="standalone"/>
+            <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
                 <h1 className={style.head_center}>Welcome back!</h1>

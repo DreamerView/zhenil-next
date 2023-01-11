@@ -2,14 +2,16 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import {useState,useEffect} from 'react';
-import useTranslateText from '/start/translate';
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import text from "/translate/health/index-of-the-smoking-person/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-const Deposit = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const Deposit = ({lang}) => {
     const [num,setNum] = useState('');
     const [exp,setExp] = useState('');
     const [result,setResult] = useState(0);
@@ -52,7 +54,7 @@ const Deposit = () => {
                 <title>{nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/health"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} width={26} height={26} alt="emoji"/></div></h1>
                 <p className="sub_content">{text['content'][lang]}</p>

@@ -2,14 +2,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import useTranslateText from '/start/translate';
 import translate from "/translate/business/margin-markup-calculator/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import { useEffect, useState } from 'react';
 import NavbarApp from '/pages/navbar_app/nav';
 
-const MarginMarkup = () => {
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const MarginMarkup = ({lang}) => {
     const [n1,setN1] = useState('');
     const [n1Total,setN1Total] = useState(0);
     const [n2, setN2] = useState('');
@@ -21,7 +24,6 @@ const MarginMarkup = () => {
     const [total,setTotal] = useState(0);
     const [nds,setNDS] = useState('not');
     const [nds_total,setNDSTotal] = useState();
-    const lang = useTranslateText();
     useEffect(()=>{
         setN1Total((+n1+Number(delivery==='not'?0:delivery)+Number(marketing==='not'?0:marketing)+Number(other==='not'?0:other)));
         if(n1Total!=''&&n2!='') {
@@ -45,7 +47,7 @@ const MarginMarkup = () => {
                 <title>{nav_translate['margin_markup_calc'][lang]} | Okki.kz</title>
                 <meta property="og:title" content={`${nav_translate['margin_markup_calc'][lang]} | Okki.kz`} />
             </Head>
-            <NavbarApp to={{href:"/business"}} choice="alone"/>
+            <NavbarApp lang={lang} to={{href:"/business"}} choice="alone"/>
             <div className="main_app block_animation">
                 <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
                 <p className="sub_content">{translate['content'][lang]}</p>

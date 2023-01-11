@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
-import useTranslateText from "/start/translate";
 import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
@@ -13,6 +12,7 @@ const HistoryUser =  dynamic(()=>import('/pages/user/historyModule'),{ssr:false}
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
 export const getServerSideProps = async (context) => {
+    const locale = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
@@ -29,14 +29,14 @@ export const getServerSideProps = async (context) => {
         }; 
     }
     return {
-        props: {}
+        props: {locale:locale}
     }; 
 };
 
 
-const UserInterface = () => {
+const UserInterface = ({locale}) => {
     const [lazy,setLazy] = useState(false);
-    const lang  = useTranslateText();
+    const lang  = locale;
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
@@ -50,11 +50,11 @@ const UserInterface = () => {
         <Head>
                 <title>{titleHead}</title>
         </Head>
-        <NavbarApp to={{href:"/"}} choice="alone" mode="standalone"/>
+        <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
         <div className="main_app">
             <div className={style.user__main}>
-                <HeaderUser/>
-                {lazy&&!isTabletOrMobile&&<HistoryUser/>}
+                <HeaderUser lang={lang}/>
+                {lazy&&!isTabletOrMobile&&<HistoryUser lang={lang}/>}
             </div>
         </div>
     </>

@@ -9,14 +9,16 @@ const InfoBlock = dynamic(()=>import('./info_block'));
 import Image from "next/image";
 import useConfirm from "/start/conf";
 import { useDispatch } from 'react-redux';
-import useTranslateText from '/start/translate';
 import ux from "/translate/ux/action";
 import translate from "/translate/constructor/acc/navbar_translate";
 import text from "/translate/constructor/acc/info_translate";
 import NavbarApp from "/pages/navbar_app/nav";
 
-const InfoAcc = () => {
-    const lang = useTranslateText();
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
+const InfoAcc = ({lang}) => {
     const remove = useDispatch();
     const [confirm,setConfirm] = useState(null);
     const [con,setCon] = useState(false);
@@ -72,7 +74,7 @@ const InfoAcc = () => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <NavbarApp to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],location:'/constructor/acc/size'},{text:translate['step4'][lang],path:'last'}]}/>
+            <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],location:'/constructor/acc/size'},{text:translate['step4'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
