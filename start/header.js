@@ -116,7 +116,7 @@ const Header = () => {
                 <p>{translate['search_not'][locale]}</p>:
               <>
                 <p>{translate['search_found'][locale]}</p>
-                <div>{search.map((v,i)=><SearchBlocks item={v} key={i+1} send={GetList}/>)}</div>
+                <div>{search.slice(0,5).map((v,i)=><SearchBlocks item={v} key={i+1} send={GetList}/>)}</div>
               </>}
             </div>
             :""}

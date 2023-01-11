@@ -17,7 +17,7 @@ const BusinessIndex = () => {
                 <meta property="og:title" content={`${nav_translate['tech'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
-            <NavbarApp to={[{key:'tech',path:'last'}]} />
+            <NavbarApp lang={lang} to={[{key:'tech',path:'last'}]} />
             <div className="page_not_found">
                 <div className="page_not_found_block">
                     <div className="page_not_found_block_img">
