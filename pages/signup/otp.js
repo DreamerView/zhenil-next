@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",

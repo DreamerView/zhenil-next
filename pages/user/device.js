@@ -13,7 +13,7 @@ const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-devices",

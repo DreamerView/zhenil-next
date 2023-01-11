@@ -9,7 +9,7 @@ import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 const platform = require('platform');
 import { useDispatch } from "react-redux";
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
     const data = await ServerJsonFetchReq({
         method:"GET",

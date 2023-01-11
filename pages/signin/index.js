@@ -13,7 +13,7 @@ import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import { getProviders, signIn,getSession,signOut } from "next-auth/react";
 const platform = require('platform');
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const session = await getSession(context);
     const data = await ServerJsonFetchReq({
         method:"GET",

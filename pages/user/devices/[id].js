@@ -14,7 +14,7 @@ import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const id = context.params.id;
     const data = await ServerJsonFetchReq({
         method:"GET",

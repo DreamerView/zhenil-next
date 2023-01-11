@@ -15,7 +15,7 @@ import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",

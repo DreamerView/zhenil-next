@@ -6,7 +6,7 @@ import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
     const data = await ServerJsonFetchReq({
         method:"GET",
         path:"/get-data",
