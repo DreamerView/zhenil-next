@@ -5,7 +5,7 @@ import Link from 'next/link';
 import useTranslateText from "/start/translate";
 import translate from "/translate/user/index_translate";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
-import { useEffect,useState } from "react";
+import { useEffect,useState,memo } from "react";
 
 
 const HeaderUser = () => {
@@ -88,4 +88,4 @@ const HeaderUser = () => {
             </div>
     );
 };
-export default HeaderUser; 
+export default memo(HeaderUser); 
