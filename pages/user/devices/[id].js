@@ -105,7 +105,7 @@ const UserInterface = ({getId,data}) => {
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
                             <div className={`${style.standalone_device_block_1_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}>
-                                <Image src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} width={40} height={40} alt="icon" />
+                                <Image priority src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} width={40} height={40} alt="icon" />
                             </div>
                         </div>
                         <div className={style.standalone_device_block_2}>
