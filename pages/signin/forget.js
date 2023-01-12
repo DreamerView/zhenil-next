@@ -56,6 +56,7 @@ const FotgetPassword = ({lang}) => {
                 "Accept":"application/json; charset=utf-8",
                 "Content-Type": "application/json; charset=utf-8"
             },
+            cache: "no-store",
             body: JSON.stringify({otp:res,email:email})
         };
         const login = await fetch(process.env.backend+"/reset-password-otp", requestOptions);
@@ -93,6 +94,7 @@ const FotgetPassword = ({lang}) => {
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
+                    cache: "no-store",
                     body: JSON.stringify({email:email})
                 };
                 const login = await fetch(process.env.backend+"/forget", requestOptions);

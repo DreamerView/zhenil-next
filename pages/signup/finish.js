@@ -87,6 +87,7 @@ const SignUp = ({ip,lang}) => {
                 "Accept":"application/json; charset=utf-8",
                 "Content-Type": "application/json; charset=utf-8"
             },
+            cache: "no-store",
             body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki"),clientInfo:aes.encrypt(clienInfo),getIp:aes.encrypt(getIp)})
         };
         const login = await fetch(process.env.backend+"/register-id", requestOptions);

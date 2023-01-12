@@ -11,6 +11,7 @@ import Link from "next/link";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import { getProviders, signIn,getSession,signOut } from "next-auth/react";
 const platform = require('platform');
+import text from "/translate/signin/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -95,6 +96,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
+                        cache: "no-store",
                         body: JSON.stringify({email:email,name:name,image:image,client:client,clientInfo:clienInfo,getIp:ipSend})
                     };
                     const login = await fetch(process.env.backend+"/signin-with-socialnetwork", requestOptions);
@@ -156,6 +158,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
+                        cache: "no-store",
                         body: JSON.stringify({email:email,client:client})
                     };
                     const login = await fetch(process.env.backend+"/verify-email", requestOptions);
@@ -209,6 +212,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
+                        cache: "no-store",
                         body: JSON.stringify({email:email,password:password,client:client,clientInfo:clienInfo,getIp:ipSend})
                     };
                     const login = await fetch(process.env.backend+"/signin", requestOptions);
@@ -257,8 +261,8 @@ const LoginForm = ({providers,data,ip,lang}) => {
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center}>Welcome back!</h1>
-                <p className={style.text_center}>Please enter your log in details below</p>
+                <h1 className={style.head_center}>{text['welcome_back'][lang]}</h1>
+                <p className={style.text_center}>{text['signin_text'][lang]}</p>
                 {data!==undefined&&data!==null?
                 <>
                 <div className={style.signin_auth_form}>
@@ -278,25 +282,25 @@ const LoginForm = ({providers,data,ip,lang}) => {
                 <form onSubmit={(e) => handlerEmail(e)}>
                     <div className={style.login_row}>
                         <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
-                        <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:"Continue"}</button>
+                        <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{wait===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:text['continue'][lang]}</button>
                     </div>
                 </form>
-                <p className="text_center">Другие способы входа</p>
+                <p className="text_center">{text['other_method'][lang]}</p>
                 <div>
                     {providers!==null&&providers!==undefined  && Object.values(providers).map((provider) => {
                         return (
                         <div className={style.login_sn} key={provider.name}>
                             <button className={`${style.login_sn_row} anim_hover`} onClick={() => SignInWithSN(provider.id,provider.name)}>
                                 <div className={style.login_sn_row_img_row}>
-                                <Image priority className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/${provider.name}.webp`}/></div>Sign in with {provider.name}
+                                <Image priority className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/${provider.name}.webp`}/></div>{text['signin_with'][lang]} {provider.name}
                             </button>
                         </div>
                         );
                     })}
                 </div>
                 <div className={style.flex}>
-                    <p className={style.sub}>У вас ещё нет аккаунта?</p>
-                    <Link href="/signup" className={`${style.next_button} brand_background anim_hover`}>Зарегистрироваться</Link>
+                    <p className={style.sub}>{text['not_account'][lang]}</p>
+                    <Link href="/signup" className={`${style.next_button} brand_background anim_hover`}>{text['register'][lang]}</Link>
                     </div>
                 </>:
                 <form onSubmit={(e) => handlerLogin(e)}>
