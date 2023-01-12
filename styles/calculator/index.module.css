@@ -29,10 +29,7 @@
                 -webkit-order:2;
                    -moz-box-ordinal-group:3;
                 order:2;
-    }
-    div.main__calculator_m {
-        width:87.5%;
-        margin: 8px auto;
+                border: 0.5px solid var(--border-color);
     }
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
@@ -59,11 +56,9 @@
                 -webkit-order:2;
                    -moz-box-ordinal-group:3;
                 order:2;
+                border: 0.5px solid var(--border-color);
     }
-    div.main__calculator_m {
-        width:75%;
-        margin: 8px auto;
-    }
+    
 }
 @media (min-width:601px) and (max-width:1160px) {
     div.main__calc {
@@ -89,6 +84,7 @@
                 -webkit-order:2;
                    -moz-box-ordinal-group:3;
                 order:2;
+                border: 0.5px solid var(--border-color);
     }
     div.main__calculator_m {
         width:75%;
@@ -122,10 +118,6 @@
                    -moz-box-ordinal-group:3;
                 order:2;
     }
-    div.main__calculator_m {
-        width:87.5%;
-        margin: 8px auto;
-    }
 }
 div.main__calculator {
     display: -webkit-box;
@@ -155,7 +147,8 @@ div.main__calculator {
        -moz-border-radius: 24px;
             border-radius: 24px;
     margin-top:32px;
-    padding-bottom:48px;
+    padding:var(--m-p);
+    box-sizing: border-box;
 }
 div.main__result {
     display: -webkit-box;
@@ -180,21 +173,24 @@ div.main__result {
                -moz-box-orient: vertical;
                -moz-box-direction: normal;
             flex-direction: column;
-    border: 1.5px solid var(--border-color);
     -webkit-border-radius: 24px;
        -moz-border-radius: 24px;
             border-radius: 24px;
     margin-top:32px;
-    padding:48px 0;
+    padding:var(--m-p);
+    box-sizing: border-box;
 }
 div.main__calculator > h2 {
     min-width:250px;
     max-width: 400px;
     width: 100%;
     text-align: center;
-    margin:64px auto 0 auto;
+    margin-top:24px;
 }
 div.main__calculator_module {
+    max-width:450px;
+    width:100%;
+    min-width: 50px;
     height: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -210,6 +206,7 @@ div.main__calculator_module {
                -moz-box-align: center;
             align-items: center;
     background-color: var(--header-color);
+    margin: 0 auto;
 }
 
 div.main__calculator_module_pic {
@@ -281,7 +278,9 @@ div.module_result_row_block {
 }
 div.module_result_block {
     position: relative;
-    width:87.5%;
+    max-width:450px;
+    width:100%;
+    min-width: 50px;
     height:70px;
     background-color: var(--block-color);
     -webkit-border-radius: 24px;
