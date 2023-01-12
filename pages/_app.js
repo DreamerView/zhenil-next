@@ -57,13 +57,14 @@ const MyApp = ({ Component, pageProps, session }) => {
         };
     },[]);
     useEffect(() => {
-        if (typeof window !== 'undefined') {
+        if (typeof Window !== 'undefined') {
             let timer;
             const loader = document.getElementById('globalLoader');
             if (loader)
                 timer = setTimeout(()=>{
-                    loader.remove();
+                    loader.style.cssText = "display:none;";
                 },[1500]);
+            console.log(loader)
             return ()=>clearTimeout(timer);
         
         }
