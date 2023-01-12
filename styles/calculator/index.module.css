@@ -281,7 +281,8 @@ input.main__calculator_module_input {
 input.main__calculator_module_input:placeholder-shown {
     text-overflow: ellipsis;
     white-space:nowrap;
-    overflow: hidden; 
+    overflow: hidden;
+    color:var(--sub_content)
 }
 p.click_event {
     margin-top:16px;
