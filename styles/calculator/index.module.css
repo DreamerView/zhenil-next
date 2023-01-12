@@ -15,6 +15,8 @@
     }
     div.main__calculator {
         width: 50%;
+        padding:40px 20px;
+        box-sizing: border-box;
         margin-right:32px;
         -webkit-box-ordinal-group:2;
             -ms-flex-order:1;
@@ -42,6 +44,8 @@
     }
     div.main__calculator {
         width: 50%;
+        padding:40px 20px;
+        box-sizing: border-box;
         margin-right:32px;
         -webkit-box-ordinal-group:2;
             -ms-flex-order:1;
@@ -78,6 +82,8 @@
                 order:1;
     }
     div.main__result {
+        padding:40px 20px;
+        box-sizing: border-box;
         width: 50%;
         -webkit-box-ordinal-group:3;
             -ms-flex-order:2;
@@ -177,8 +183,6 @@ div.main__result {
        -moz-border-radius: 24px;
             border-radius: 24px;
     margin-top:32px;
-    padding:40px 20px;
-    box-sizing: border-box;
 }
 div.main__calculator > h2 {
     min-width:250px;
