@@ -34,6 +34,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
+                    cache: "no-store",
                     body: JSON.stringify(body)
                 };
             } else if(method==="GET") {
@@ -46,6 +47,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
+                    cache: "no-store"
                 };
             }
             const login = await fetch(process.env.backend+path, requestOptions);
@@ -58,6 +60,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8"
                     },
+                    cache: "no-store",
                     body: JSON.stringify({accessToken:accessToken,clientId:clientId})
                 };
                 const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
@@ -88,6 +91,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },
+                                cache: "no-store",
                                 body: JSON.stringify(body)
                             };
                         } else if(method==="GET") {
@@ -100,6 +104,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8"
                                 },
+                                cache: "no-store"
                             };
                         }
                         const send = await fetch(process.env.backend+path, sendReqOpt);
