@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 const AesEncryption = require('aes-encryption');
 import { useDispatch } from "react-redux";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -81,7 +82,7 @@ const SignUp = ({lang}) => {
                 };
                 const login = await fetch(process.env.backend+"/verify-email", requestOptions);
                 if (login.status ===404) {
-                    Notification({user:"admin",content:"User email has!"});
+                    Notification({user:"admin",content:text.step3_notification[lang]});
                     setChange(prev=>prev=false);
                     setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 } else if(login.status ===500) {
@@ -89,7 +90,6 @@ const SignUp = ({lang}) => {
                     setTimeout(()=>setWait(prev=>prev=false),[1000]);
                     setChange(prev=>prev=false);
                 }
-                Notification({user:"admin",content:"Email free"});
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
                 setChange(prev=>prev=true);
                 sendOTP();
@@ -115,7 +115,7 @@ const SignUp = ({lang}) => {
             };
             const login = await fetch(process.env.backend+"/verify-email-otp", requestOptions);
             if (login.status ===404) {
-                Notification({user:"admin",content:"User email not found"});
+                Notification({user:"admin",content:text.step3_notification[lang]});
                 setChange(prev=>prev=false);
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
             } else if(login.status ===500) {
@@ -128,13 +128,17 @@ const SignUp = ({lang}) => {
                 const otpKey = result.otp;
                 localStorage.setItem("RegistrationOTP",otpKey);
                 setTimeout(()=>setWait(prev=>prev=false),[1000]);
-                console.log(otpKey);
                 setChange(prev=>prev=true);
                 localStorage.setItem("RegistrationEmail",name);
                 router.push("/signup/otp");
             }
         } catch(e) {
             console.log(e);
+        }
+    };
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(name!=="") return handleEmail();
         }
     };
     return(
@@ -145,13 +149,13 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signup/surname"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
-                    <h1 className={style.head_center}>We need your email, please enter it!</h1>
-                    <p className={style.text_center}>For example, <b className="green_font">andrey.alekseev@okki.kz</b></p>
+                    <h1 className={style.head_center}>{text.step3[lang]}</h1>
+                    <p className={style.text_center}>{text.step3_text[lang]} <b className="green_font">andrey.alekseev@okki.kz</b></p>
                         <div className={style.login_row}>
-                            <input type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder="My name is" required />
-                            <button type="button" onClick={()=>change===false?handleEmail():""} className={style.login_button}>Check</button>
+                            <input onKeyDown={handleKeyDown} type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder={text.step3_input[lang]} required />
+                            <button type="button" onClick={()=>change===false?handleEmail():""} className={style.login_button}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

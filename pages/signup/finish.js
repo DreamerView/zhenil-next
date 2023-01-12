@@ -124,7 +124,7 @@ const SignUp = ({ip,lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
                     <h1 className={style.head_center} onClick={()=>createAcc()}>Creating your account!</h1>
                     <p className={style.text_center}>Please wait a minute!</p>

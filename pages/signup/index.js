@@ -5,6 +5,7 @@ import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -42,6 +43,11 @@ const SignUp = ({lang}) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationName",e);
     };
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(name!=="") return router.push('/signup/surname');
+        }
+    };
     return(
         <>
             <Head>
@@ -50,13 +56,13 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
-                    <h1 className={style.head_center}>Let&apos;s introduce you!</h1>
-                    <p className={style.text_center}>For example, my name is Andrey</p>
+                    <h1 className={style.head_center}>{text.step1[lang]}</h1>
+                    <p className={style.text_center}>{text.step1_text[lang]}</p>
                         <div className={style.login_row}>
-                            <input type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder="My name is" required />
-                            <button type="button" onClick={()=>name!==""?router.push('/signup/surname'):""} className={`${style.login_button} ${name===""?style.disable:"block_animation anim_hover"}`}>Submit</button>
+                            <input onKeyDown={handleKeyDown} type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder={text.step1_input[lang]} required />
+                            <button type="button" onClick={()=>name!==""?router.push('/signup/surname'):""} className={`${style.login_button} ${name===""?style.disable:"block_animation anim_hover"}`}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

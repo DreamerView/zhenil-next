@@ -1385,6 +1385,13 @@ div.main_app {
   background-color: var(--header-color);
   border-radius: 0 0 24px 24px;
 }
+div.main_app_full {
+  padding:var(--m-4);
+  height: 83vh;
+  background-color: var(--header-color);
+  border-radius: 0 0 24px 24px;
+  box-sizing: border-box;
+}
 div.main__nav {
   margin: var(--n-2);
   padding:var(--n-1);

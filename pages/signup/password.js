@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -63,6 +64,11 @@ const SignUp = ({lang}) => {
         setName(prev=>prev=e);
         localStorage.setItem("RegistrationPassword",e);
     };
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(name!=="") return router.push('/signup/finish');
+        }
+    };
     return(
         <>
             <Head>
@@ -71,10 +77,10 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
-                    <h1 className={style.head_center}>Create your password!</h1>
-                    <p className={style.text_center}>Creating more secure password will help to you save your data in our service!</p>
+                    <h1 className={style.head_center}>{text.step5[lang]}</h1>
+                    <p className={style.text_center}>{text.step5_text[lang]}</p>
                         <div className={style.login_row}>
                             <div className={style.password}>
                                 <div className={style.password__show_row}>
@@ -82,9 +88,9 @@ const SignUp = ({lang}) => {
                                         <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                     </div>
                                 </div>
-                                <input type={passValue} value={name} onChange={(e)=>actionState(e.target.value)} name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
+                                <input onKeyDown={handleKeyDown} type={passValue} value={name} onChange={(e)=>actionState(e.target.value)} name="password" className={`${style.password_input} ${style.key}`} placeholder={text.step5_input[lang]} required/>
                             </div>
-                            <button type="button" onClick={()=>name!==""?router.push('/signup/finish'):""} className={`${style.login_button} ${name===""?style.disable:"block_animation"}`}>Submit</button>
+                            <button type="button" onClick={()=>name!==""?router.push('/signup/finish'):""} className={`${style.login_button} ${name===""?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

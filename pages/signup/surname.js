@@ -5,6 +5,7 @@ import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -46,7 +47,11 @@ const SignUp = ({lang}) => {
         setSurname(prev=>prev=e);
         localStorage.setItem("RegistrationSurname",e);
     };
-    
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(surname!=="") return router.push('/signup/email');
+        }
+    };
     return(
         <>
             <Head>
@@ -55,13 +60,13 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signup"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
-                    <h1 className={style.head_center}>Okey {name}!</h1>
-                    <p className={style.text_center}>For example, my surname is Alekseev</p>
+                    <h1 className={style.head_center}>{text.step2[lang]} <u>{name}!</u></h1>
+                    <p className={style.text_center}>{text.step2_text[lang]}</p>
                         <div className={style.login_row}>
-                            <input type="text" name="surname" value={surname} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder="My name is" required />
-                            <button type="button" onClick={()=>surname!==""?router.push('/signup/email'):""} className={`${style.login_button} ${surname===""?style.disable:"block_animation"}`}>Submit</button>
+                            <input onKeyDown={handleKeyDown} type="text" name="surname" value={surname} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder={text.step2_input[lang]} required />
+                            <button type="button" onClick={()=>surname!==""?router.push('/signup/email'):""} className={`${style.login_button} ${surname===""?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

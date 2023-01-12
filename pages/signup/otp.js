@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from 'react-redux';
 const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
     const lang = context.locale;
@@ -51,7 +52,7 @@ const SignUp = ({lang}) => {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const otpKey = aes.decrypt(localStorage.getItem("RegistrationOTP"));
-        if(otpKey===res) {Notification({user:"admin",content:"OTP Right!"});setOtpContinue(prev=>prev=true);}
+        if(otpKey===res) return setOtpContinue(prev=>prev=true);
         else setOtpContinue(prev=>prev=false);
     },[Notification]);
     useEffect(()=>{
@@ -103,10 +104,10 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signup/email"}} choice="alone" mode="standalone"/>
-            <div className="main_app block_animation">
+            <div className="main_app_full block_animation">
                 <div className={style.login_form}>
-                    <h1 className={style.head_center}>Verify your email</h1>
-                    <p className={style.text_center}>We send for <b className="green_font">{name}</b> your otp code, please enter this!</p>
+                    <h1 className={style.head_center}>{text.step4[lang]}</h1>
+                    <p className={style.text_center}>{text.step4_text_1[lang]} <b className="green_font">{name}</b> {text.step4_text_2[lang]}</p>
                         <div className={style.login_row}>
                             <div className={style.otp}>
                                 {OTP.map((result,index)=>{
@@ -124,7 +125,7 @@ const SignUp = ({lang}) => {
                                     )
                                 })}
                             </div>
-                            <button type={OtpContinue===false?"button":"submit"} onClick={()=>OtpContinue===false?"":OTPVerified()} className={`${style.login_button} ${OtpContinue===false?style.disable:"block_animation"}`}>Submit</button>
+                            <button type={OtpContinue===false?"button":"submit"} onClick={()=>OtpContinue===false?"":OTPVerified()} className={`${style.login_button} ${OtpContinue===false?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

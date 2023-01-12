@@ -24,7 +24,7 @@ const Preloader = () => {
     useEffect(()=>{
         const timer = setTimeout(()=>{
             setTimer((prev)=>prev=true);
-        },[500]);
+        },[150]);
         return ()=>clearTimeout(timer);
     },[]);
     return(
@@ -110,7 +110,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <DocumentResult>
-                    {result ? <Preloader/>:<Component {...pageProps} />}
+                    {result===true ? <Preloader/>:<Component {...pageProps} />}
                     </DocumentResult>
                 </Provider>
             </SessionProvider>
