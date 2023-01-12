@@ -147,7 +147,7 @@ div.main__calculator {
        -moz-border-radius: 24px;
             border-radius: 24px;
     margin-top:32px;
-    padding:var(--m-p);
+    padding:40px 20px;
     box-sizing: border-box;
 }
 div.main__result {
@@ -177,7 +177,7 @@ div.main__result {
        -moz-border-radius: 24px;
             border-radius: 24px;
     margin-top:32px;
-    padding:var(--m-p);
+    padding:40px 20px;
     box-sizing: border-box;
 }
 div.main__calculator > h2 {
