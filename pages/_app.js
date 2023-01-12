@@ -64,7 +64,6 @@ const MyApp = ({ Component, pageProps, session }) => {
                 timer = setTimeout(()=>{
                     loader.style.cssText = "display:none;";
                 },[1500]);
-            console.log(loader)
             return ()=>clearTimeout(timer);
         
         }
