@@ -14,7 +14,7 @@
         display: flex;
     }
     div.main__calculator {
-        margin-top:40px;
+        margin-top:64px;
         width: 50%;
         padding:40px 20px;
         box-sizing: border-box;
@@ -26,7 +26,7 @@
                 order:1;
     }
     div.main__result {
-        margin-top:40px;
+        margin-top:64px;
         width: 50%;
         padding:40px 20px;
         box-sizing: border-box;
@@ -47,7 +47,7 @@
         display: flex;
     }
     div.main__calculator {
-        margin-top:40px;
+        margin-top:64px;
         width: 50%;
         padding:40px 20px;
         box-sizing: border-box;
@@ -59,7 +59,7 @@
                 order:1;
     }
     div.main__result {
-        margin-top:40px;
+        margin-top:64px;
         width: 50%;
         padding:40px 20px;
         box-sizing: border-box;
