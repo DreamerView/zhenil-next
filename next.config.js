@@ -1,6 +1,5 @@
 /*jshint esversion: 8 */
 /** @type {import('next').NextConfig} */
-// const {v4} = require('uuid');
 
 const key_pass = "4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=";
 
@@ -9,7 +8,6 @@ const production = process.env.NODE_ENV === 'production';
 const src = 'https://cdnjs.cloudflare.com';
 const backend = production?"https://app.okki.kz":"http://localhost:3001";
 const images = production?"app.okki.kz":"localhost";
-let build_id;
 const withPWA = require('next-pwa')({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',

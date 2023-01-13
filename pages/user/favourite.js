@@ -14,9 +14,6 @@ import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
-// export const config = {
-//     runtime: 'experimental-edge',
-// };
 
 export const getServerSideProps = async (context) => {
     context.res.setHeader(
