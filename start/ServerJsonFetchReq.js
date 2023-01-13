@@ -32,7 +32,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Origin":originReq,
                         "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Accept-Encoding":"gzip"
                     },
                     cache: "no-store",
                     body: JSON.stringify(body)
@@ -45,7 +46,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "Origin":originReq,
                         "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Accept-Encoding":"gzip"
                     },
                     cache: "no-store"
                 };
@@ -58,7 +60,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                         "WWW-Authenticate": process.env.authHeader,
                         "Origin":originReq,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Accept-Encoding":"gzip"
                     },
                     cache: "no-store",
                     body: JSON.stringify({accessToken:accessToken,clientId:clientId})
@@ -89,7 +92,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                     "Origin":originReq,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
-                                    "Content-Type": "application/json; charset=utf-8"
+                                    "Content-Type": "application/json; charset=utf-8",
+                                    "Accept-Encoding":"gzip"
                                 },
                                 cache: "no-store",
                                 body: JSON.stringify(body)
@@ -102,7 +106,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                                     "Origin":originReq,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
-                                    "Content-Type": "application/json; charset=utf-8"
+                                    "Content-Type": "application/json; charset=utf-8",
+                                    "Accept-Encoding":"gzip"
                                 },
                                 cache: "no-store"
                             };

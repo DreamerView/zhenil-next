@@ -31,7 +31,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                         "WWW-Authenticate": process.env.authHeader,
                         "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Accept-Encoding":"gzip"
                     },
                     cache: "no-store",
                     body: JSON.stringify(body)
@@ -43,7 +44,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                         "WWW-Authenticate": process.env.authHeader,
                         "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
-                        "Content-Type": "application/json; charset=utf-8"
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Accept-Encoding":"gzip"
                     },
                     cache: "no-store"
                 };
@@ -86,7 +88,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                                     "WWW-Authenticate": process.env.authHeader,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
-                                    "Content-Type": "application/json; charset=utf-8"
+                                    "Content-Type": "application/json; charset=utf-8",
+                                    "Accept-Encoding":"gzip"
                                 },
                                 cache: "no-store",
                                 body: JSON.stringify(body)
@@ -98,7 +101,8 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                                     "WWW-Authenticate": process.env.authHeader,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
-                                    "Content-Type": "application/json; charset=utf-8"
+                                    "Content-Type": "application/json; charset=utf-8",
+                                    "Accept-Encoding":"gzip"
                                 },
                                 cache: "no-store"
                             };
