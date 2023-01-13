@@ -68,7 +68,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                     window.location.href="/signin";
                     return undefined
                 } else {
-                    const result = send.json();
+                    const result = await send.json();
                     if(result.accessToken!==undefined) {
                         const response = aes.decrypt(result.accessToken);
                         const getClientId = aes.decrypt(result.clientId);
@@ -104,7 +104,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                             };
                         }
                         const send = await fetch(process.env.backend+path, sendReqOpt);
-                        const res = send.json();
+                        const res = await send.json();
                         return res;
                     }
                 }
@@ -116,7 +116,7 @@ const jsonFetchReq = async({method,body,path,cookie}) =>{
                 return undefined;
             }
             else {
-                const result = login.json();
+                const result = await login.json();
                 return result;
             }
         }

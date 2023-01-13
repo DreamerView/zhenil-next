@@ -19,6 +19,7 @@ const HeaderUser = ({lang}) => {
         const send = await ClientJsonFetchReq({method:"GET",path:'/signout',cookie:document.cookie})
             if(send.accept===true) {
                 document.cookie = 'accessToken' + '=;Max-Age=0;path=/';
+                document.cookie = 'clientId' + '=;Max-Age=0;path=/';
                 window.location.href="/";
             }
     };

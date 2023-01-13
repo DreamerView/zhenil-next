@@ -44,8 +44,12 @@ const ContentSecurityPolicy = `
 
 const secure = production?[
       {
-        key: 'X-DNS-Prefetch-Control',
-        value: 'on'
+        key: 'Cache-Control',
+        value: 'public, max-age=31536000, immutable'
+    },
+    {
+      key: 'X-DNS-Prefetch-Control',
+      value: 'on'
     },
     {
         key: 'Strict-Transport-Security',
@@ -94,7 +98,12 @@ const secure = production?[
     ]:[{
       key: 'Permissions-Policy',
       value: 'microphone=(), geolocation=()'
-  }];
+      },
+      {
+        key: 'Cache-Control',
+        value: 'no-cache, no-store, max-age=0, must-revalidate'
+      }
+];
 
 module.exports = withPWA({
   images: {

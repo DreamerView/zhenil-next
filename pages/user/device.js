@@ -13,6 +13,10 @@ import { useRouter } from 'next/router';
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+    );
     const locale = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",

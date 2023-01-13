@@ -70,7 +70,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                     server.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/"]);
                     return {result:'redirect',location:"/signin"};
                 } else {
-                    const result = send.json();
+                    const result = await send.json();
                     if(result.accessToken!==undefined) {
                         const response = aes.decrypt(result.accessToken);
                         const getClientId = aes.decrypt(result.clientId);
@@ -108,7 +108,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                             };
                         }
                         const send = await fetch(process.env.backend+path, sendReqOpt);
-                        const res = send.json();
+                        const res = await send.json();
                         return res;
                         // window.location.reload();
                     }
@@ -120,7 +120,7 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                 return {result:'redirect',location:"/signin"};
             } 
             else {
-                const result = login.json();
+                const result = await login.json();
                 return result;
             }
         } else {
