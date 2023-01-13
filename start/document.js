@@ -22,18 +22,18 @@ const DocumentResult = ({children}) => {
     const main = useSelector(state=>state.main);
     const notification = useSelector(state=>state.notification);
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
-    // useEffect(()=>{
-    //     if(typeof Window !== 'undefined') {
-    //         const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
-    //         const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
-    //         const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
-    //         const result = !headerHide.includes(router.pathname);
-    //         setHeader((prev)=>prev=result);
-    //     }
-    //     return () => {
-    //         return false;
-    //     }
-    // },[router,isTabletOrMobile])
+    useEffect(()=>{
+        if(typeof Window !== 'undefined') {
+            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
+            const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
+            const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
+            const result = !headerHide.includes(router.pathname);
+            setHeader((prev)=>prev=result);
+        }
+        return () => {
+            return false;
+        }
+    },[router,isTabletOrMobile])
     useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
@@ -62,8 +62,7 @@ const DocumentResult = ({children}) => {
             {frame&&<FullFrame item={url} key={Date.now()}/>}
             {action&&<ConfirmMode item={action} key={Date.now}/>}
             {image&&<ResizeImage item={image} key={Date.now}/>}
-            {/* {header===true&&<Header/>} */}
-            <Header/>
+            {header===true&&<Header/>}
             {main&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>
