@@ -42,9 +42,13 @@ const ContentSecurityPolicy = `
 
 const secure = production?[
       {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
+        key: 'Link',
+        value: `<${backend}>; rel=preconnect`
     },
+    {
+      key: 'Cache-Control',
+      value: 'public, max-age=31536000, immutable'
+  },
     {
       key: 'X-DNS-Prefetch-Control',
       value: 'on'
@@ -94,6 +98,9 @@ const secure = production?[
         value:ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
     }
     ]:[{
+      key: 'Link',
+      value: `<${backend}>; rel=preconnect`
+  },{
       key: 'Permissions-Policy',
       value: 'microphone=(), geolocation=()'
       },
