@@ -36,29 +36,17 @@ export const getServerSideProps = async (context) => {
 };
 
 const SignUp = ({lang}) => {
-    const send = useDispatch();
     const [name,setName] = useState("");
     const router = useRouter();
     const [OTP, setOTP] = useState(new Array(4).fill(""));
     const [OtpContinue,setOtpContinue] = useState(false);
-    const Notification = useCallback(({user,content,title,image}) => {
-        send({
-            type:"setNotification",
-            set:{
-                user:user,
-                title:title,
-                content:content,
-                image:image
-            }
-        });
-    },[send]);
     const checkOTP = useCallback((res) => {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const otpKey = aes.decrypt(localStorage.getItem("RegistrationOTP"));
         if(otpKey===res) return setOtpContinue(prev=>prev=true);
         else setOtpContinue(prev=>prev=false);
-    },[Notification]);
+    },[]);
     useEffect(()=>{
         const res = OTP.join("");
         if(res.length===4) checkOTP(res);
