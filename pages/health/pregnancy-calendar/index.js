@@ -7,10 +7,6 @@ import style from "/styles/health/index.module.css";
 import text from "/translate/health/pregnancy-calendar/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
-
 const PregnancyCalendar = ({lang})=>{
     const [date,setDate] = useState(0);
     const [result,setResult] = useState({date:text.waiting[lang],month:'',year:''});
@@ -231,5 +227,10 @@ const PregnancyCalendar = ({lang})=>{
             </div>
         </>
     )
-}
+};
+
+PregnancyCalendar.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
+
 export default PregnancyCalendar;

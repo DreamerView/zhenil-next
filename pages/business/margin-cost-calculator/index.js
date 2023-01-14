@@ -40,11 +40,12 @@ const MarginMarkup = ({lang}) => {
             return 0;
         };
     },[n1,n2,markUp,delivery,marketing,other,n1Total,nds]);
+    const titleText = `${translate['margin_cost_calc'][lang]} | Okki.kz`;
     return(
         <>
             <Head>
-                <title>{translate['margin_cost_calc'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${translate['margin_cost_calc'][lang]} | Okki.kz`} />
+                <title>{titleText}</title>
+                <meta property="og:title" content={titleText} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/business"}} choice="alone"/>
             <div className="main_app block_animation">

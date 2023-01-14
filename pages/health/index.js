@@ -10,12 +10,8 @@ import seo from "/translate/health/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
-};
 
-const HealthIndex = ({locale}) => {
-    const lang = locale;
+const HealthIndex = ({lang}) => {
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('historyAction'));
         const action = history?history:[];
@@ -70,6 +66,10 @@ const HealthIndex = ({locale}) => {
         </div>
       </>
     );
+};
+
+HealthIndex.getInitialProps = async ({locale}) => {
+    return { lang:locale };
 };
 
 export default HealthIndex;

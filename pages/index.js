@@ -7,9 +7,9 @@ const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
 
 
-export const getStaticProps = async ({locale}) => {
-  return {props:{locale:locale}};
-};
+// export const getStaticProps = async ({locale}) => {
+//   return {props:{locale:locale}};
+// };
 
 const Home = ({locale}) => {
   return(
@@ -35,6 +35,10 @@ const Home = ({locale}) => {
       <IndexContent lang={locale} service={AllService}/>
     </>
   )
+};
+
+Home.getInitialProps = async ({locale}) => {
+  return { locale };
 };
 
 export default Home;

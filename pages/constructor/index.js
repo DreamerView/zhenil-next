@@ -10,12 +10,7 @@ import seo from "/translate/constructor/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
-};
-
-const ConstructorIndex = ({locale}) => {
-    const lang = locale;
+const ConstructorIndex = ({lang}) => {
     return(
         <>
             <Head>
@@ -62,5 +57,9 @@ const ConstructorIndex = ({locale}) => {
       </>
     );
 };
+
+ConstructorIndex.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default ConstructorIndex;

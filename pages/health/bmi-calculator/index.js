@@ -7,9 +7,9 @@ import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
+// export const getStaticProps = async ({locale}) => {
+//     return {props:{lang:locale}};
+// };
 
 const BMICalc = ({lang}) => {
     const [anim,setAnim] = useState(false);
@@ -65,11 +65,12 @@ const BMICalc = ({lang}) => {
     //       } catch (e) { }
     //     }
     // }, []);
+    const titleText = `${translate['step1'][lang]} | Okki.kz`;
     return(
         <>
             <Head>
-                <title>{translate['step1'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${translate['step1'][lang]} | Okki.kz`} />
+                <title>{titleText}</title>
+                <meta property="og:title" content={titleText} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
@@ -199,6 +200,10 @@ const BMICalc = ({lang}) => {
             </div>
         </>
     );
-}
+};
+
+BMICalc.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default BMICalc;

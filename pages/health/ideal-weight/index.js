@@ -7,10 +7,6 @@ import style from "/styles/calculator/index.module.css";
 import nav_text from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
-
 const IdealWeight = ({lang}) => {
     const [male,setMale] = useState('other');
     const [maleText,setMaleText] = useState(text.other[lang]);
@@ -139,6 +135,10 @@ const IdealWeight = ({lang}) => {
             </div>
         </>
     );
-}
+};
+
+IdealWeight.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default IdealWeight;

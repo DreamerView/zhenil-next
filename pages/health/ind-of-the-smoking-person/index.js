@@ -7,10 +7,6 @@ import nav_translate from "/translate/services/all_translate";
 import text from "/translate/health/index-of-the-smoking-person/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
-
 const Deposit = ({lang}) => {
     const [num,setNum] = useState('');
     const [exp,setExp] = useState('');
@@ -138,6 +134,9 @@ const Deposit = ({lang}) => {
             </div>
         </>
     );
-}
+};
+Deposit.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default Deposit;

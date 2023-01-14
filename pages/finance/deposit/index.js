@@ -7,10 +7,6 @@ import nav_translate from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 import {useState,useCallback,useMemo} from 'react';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
-
 const Deposit = ({lang}) => {
     const [bet,setBet] = useState('');
     const [sum,setSum] = useState('');
@@ -101,11 +97,12 @@ const Deposit = ({lang}) => {
                 return 0;
             }
     },[bet,term,sum,percent,every,own,getMonthName]);
+    const titleText = `${nav_translate['deposit_calc'][lang]} | Okki.kz`;
     return(
         <>
             <Head>
-                <title>{nav_translate['deposit_calc'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${nav_translate['deposit_calc'][lang]} | Okki.kz`} />
+                <title>{titleText}</title>
+                <meta property="og:title" content={titleText} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/finance"}} choice="alone"/>
             <div className="main_app block_animation">
@@ -236,6 +233,10 @@ const Deposit = ({lang}) => {
             </div>
         </>
     );
-}
+};
+
+Deposit.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default Deposit;

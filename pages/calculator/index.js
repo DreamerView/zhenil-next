@@ -10,12 +10,7 @@ import AllService from '/start/services/all.json';
 import type_translate from "/translate/services/type_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
-};
-
-const BusinessIndex = ({locale}) => {
-    const lang = locale;
+const BusinessIndex = ({lang}) => {
     return(
         <>
             <Head>
@@ -50,5 +45,9 @@ const BusinessIndex = ({locale}) => {
       </>
     );
 };
+
+BusinessIndex.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default BusinessIndex;

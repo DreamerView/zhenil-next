@@ -7,10 +7,6 @@ import nav_text from "/translate/services/all_translate";
 import text from "/translate/health/rh-factor-in-family-planning/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{lang:locale}};
-};
-
 const RhFactorInPregnancyPlanning = ({lang}) => {
     const [manRh,setManRh] = useState(`I`);
     const [womanRh,setWomanRh] = useState(`I`); 
@@ -133,6 +129,10 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
             </div>
         </>
     )
-}
+};
+
+RhFactorInPregnancyPlanning.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 
 export default RhFactorInPregnancyPlanning;

@@ -10,12 +10,7 @@ import seo from "/translate/finance/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
-};
-
-const FinanceIndex = ({locale}) => {
-    const lang = locale;
+const FinanceIndex = ({lang}) => {
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('historyAction'));
         const action = history?history:[];
@@ -69,6 +64,10 @@ const FinanceIndex = ({locale}) => {
         </div>
       </>
     );
+};
+
+FinanceIndex.getInitialProps = async ({locale}) => {
+    return { lang:locale };
 };
 
 export default FinanceIndex;
