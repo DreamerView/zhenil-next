@@ -46,7 +46,7 @@ const UserInterface = ({locale}) => {
             return false;
         }
     },[]);
-    const titleHead = `${ux['recent'][lang]} | Okki.kz`;
+    const titleHead = `${ux['recent'][lang]} | Zhenil.kz`;
     return(
     <>
         <Head>

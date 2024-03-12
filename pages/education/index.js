@@ -16,8 +16,8 @@ const BusinessIndex = ({locale}) => {
     return(
         <>
             <Head>
-                <title>{nav_translate['education'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${nav_translate['education'][lang]} | Okki.kz`} />
+                <title>{nav_translate['education'][lang]} | Zhenil.kz</title>
+                <meta property="og:title" content={`${nav_translate['education'][lang]} | Zhenil.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
             <NavbarApp lang={lang} to={[{key:'education',path:'last'}]}/>

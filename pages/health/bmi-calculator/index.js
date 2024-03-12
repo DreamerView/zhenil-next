@@ -65,7 +65,7 @@ const BMICalc = ({lang}) => {
     //       } catch (e) { }
     //     }
     // }, []);
-    const titleText = `${translate['step1'][lang]} | Okki.kz`;
+    const titleText = `${translate['step1'][lang]} | Zhenil.kz`;
     return(
         <>
             <Head>

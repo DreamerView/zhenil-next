@@ -41,7 +41,7 @@ const MarginMarkup = ({lang}) => {
             return 0;
         };
     },[n1,n2,delivery,marketing,other,n1Total,nds]);
-    const titleText = `${nav_translate['margin_markup_calc'][lang]} | Okki.kz`;
+    const titleText = `${nav_translate['margin_markup_calc'][lang]} | Zhenil.kz`;
     return(
         <>
             <Head>

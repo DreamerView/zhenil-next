@@ -48,7 +48,7 @@ const UserInterface = ({locale}) => {
             setLazy((lazy)=>lazy=false);
         }
     },[]);
-    const titleHead = `${ux['recent'][lang]} | Okki.kz`;
+    const titleHead = `${ux['recent'][lang]} | Zhenil.kz`;
     return(
     <>
         <Head>

@@ -18,10 +18,10 @@ const Quizy = () => {
         <>
         {/* <NavbarApp to={{href:"/"}} choice="alone"/> */}
         <div className="main block_animation">
-            <h1 className="flex_text">Okki Quizy</h1>
-            <p className="sub_content">Welcome to Okki Quizy</p>
+            <h1 className="flex_text">Zhenil Quizy</h1>
+            <p className="sub_content">Welcome to Zhenil Quizy</p>
             <div className={style.quiz}>
-                <h1 className={style.header}>Okki Quizy</h1>
+                <h1 className={style.header}>Zhenil Quizy</h1>
                 <p className={style.main_text}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 <div className={style.main_test}>
                     <div className={style.main_test_block}></div>

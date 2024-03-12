@@ -99,7 +99,7 @@ const UserInterface = ({data,locale}) => {
         }
         return color;
     };
-    const titleHead = `${ux['devices'][lang]} | Okki.kz`;
+    const titleHead = `${ux['devices'][lang]} | Zhenil.kz`;
     return(
     <>
         <Head>

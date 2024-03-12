@@ -13,7 +13,7 @@ export async function getServerSideProps({params}) {
 const Quizy = ({getId}) => {
     const send = useDispatch();
     const [q,setQ] = useState('');
-    const [socket] = useState(io("https://app.okki.kz/ws", {
+    const [socket] = useState(io("https://app.Zhenil.kz/ws", {
         transports: ['websocket'],
         query: {
           "c": getId

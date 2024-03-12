@@ -134,8 +134,8 @@ const QR = ({data}) => {
         <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
         <div className="main_app block_animation">
             {data!==undefined?<h1>{data.name} {data.surname}</h1>:""}
-            <h1 className="flex_text">Okki QR</h1>
-            <p className="sub_content">Welcome to Okki QR</p>
+            <h1 className="flex_text">Zhenil QR</h1>
+            <p className="sub_content">Welcome to Zhenil QR</p>
             {hide===true?"":
             <div className={style.qr_row}>
                 <div onClick={()=>startQR(width<=768?"environment":"")}>

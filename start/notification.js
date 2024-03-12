@@ -18,7 +18,7 @@ const setNotification = () => {
                             </div>
                         </div>
                         <div className="notification__block_1_row">
-                            <h3>{status==='admin'?`Support Service Okki.kz`:notification.title}</h3>
+                            <h3>{status==='admin'?`Support Service Zhenil.kz`:notification.title}</h3>
                             <p className="small">{notification.content}</p>
                         </div>
                     </div>

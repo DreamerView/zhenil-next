@@ -12,11 +12,11 @@ export async function getServerSideProps({params}) {
 
 const Quizy = ({getId}) => {
     const [question] = useState([{
-        title:"Okki Quizy 111",
+        title:"Zhenil Quizy 111",
         question:"Кто такой Даниель?",
-        answer:['Lorem Ipsum is simply dummy text of the printing and typesetting industry.','абобус','Okki','Okki']
+        answer:['Lorem Ipsum is simply dummy text of the printing and typesetting industry.','абобус','Zhenil','Zhenil']
     }]);
-    const [socket] = useState(io("https://app.okki.kz/ws", {
+    const [socket] = useState(io("https://app.Zhenil.kz/ws", {
         transports: ['websocket'],
         query: {
           "c": getId
@@ -56,8 +56,8 @@ const Quizy = ({getId}) => {
         <>
         <NavbarApp to={{href:"/education"}} choice="alone"/>
         <div className="main_app block_animation">
-            <h1 className="flex_text">Okki Quizy [{getId}]</h1>
-            <p className="sub_content">Welcome to Okki Quizy</p>
+            <h1 className="flex_text">Zhenil Quizy [{getId}]</h1>
+            <p className="sub_content">Welcome to Zhenil Quizy</p>
             <div className={style.quiz}>
                 {/* <h1 className={style.header}>{question[0].title}</h1> */}
                 <div className={style.quiz_timer}>

@@ -92,7 +92,7 @@ const UserInterface = ({getId,data,locale}) => {
         const send = await ClientJsonFetchReq({method:"POST",path:'/signout-device',cookie:document.cookie,body:{clientId:getId}});
         if(send.accept===true) return router.push("/user/device");
     }
-    const titleHead = `${ux['devices'][lang]} | Okki.kz`;
+    const titleHead = `${ux['devices'][lang]} | Zhenil.kz`;
     return(
     <>
         <Head>

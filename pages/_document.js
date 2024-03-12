@@ -21,8 +21,8 @@ const Document = () => {
                 <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
                 <link rel="manifest" href="/manifest.json" />
-                <meta name="apple-mobile-web-app-title" content="Okki.kz" />
-                <meta name="application-name" content="Okki.kz" />
+                <meta name="apple-mobile-web-app-title" content="Zhenil.kz" />
+                <meta name="application-name" content="Zhenil.kz" />
                 <meta name="apple-touch-fullscreen" content="yes" />
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />

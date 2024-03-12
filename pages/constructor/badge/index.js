@@ -41,7 +41,7 @@ const Acc = ({lang}) => {
             <Link title={text['title1'][lang]} href="/constructor/acc/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Zhenil.kz" src="/img/person.svg" alt="icon" priority />
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
@@ -60,7 +60,7 @@ const Acc = ({lang}) => {
             <Link title={text['title2'][lang]} href="/constructor/acc/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Zhenil.kz" src="/img/group.svg" alt="icon" priority/>
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>
@@ -79,7 +79,7 @@ const Acc = ({lang}) => {
             <Link href="/constructor/acc/logosd" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
+                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Zhenil.kz" src="/img/help.svg" alt="icon" priority/>
                 </div>
             </div>
             <div className={style.main__block_menu_select_main}>

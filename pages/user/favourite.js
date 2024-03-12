@@ -97,7 +97,7 @@ const UserInterface = ({locale}) => {
         const minutes = String(date.getMinutes()).length===1?"0"+String(date.getMinutes()):date.getMinutes();
         return day+"."+month+"."+year+" "+hours+":"+minutes;
     };
-    const titleHead = `${ux['favorites'][lang]} | Okki.kz`;
+    const titleHead = `${ux['favorites'][lang]} | Zhenil.kz`;
     return(
     <>
         <Head>

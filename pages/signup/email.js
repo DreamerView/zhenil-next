@@ -72,7 +72,7 @@ const SignUp = ({lang}) => {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(name);
-            const client = aes.encrypt('okki');
+            const client = aes.encrypt('Zhenil');
             // setWait(true);
             try {
                 const requestOptions = {
@@ -106,7 +106,7 @@ const SignUp = ({lang}) => {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
         const email = aes.encrypt(name);
-        const client = aes.encrypt('okki');
+        const client = aes.encrypt('Zhenil');
         try {
             const requestOptions = {
                 method: 'POST',
@@ -148,15 +148,15 @@ const SignUp = ({lang}) => {
     return(
         <>
             <Head>
-                <title>Okki ID</title>
-                <meta property="og:title" content={`Okki ID`} />
-                <meta name="description" content={`Welcome to Okki ID`} />
+                <title>Zhenil ID</title>
+                <meta property="og:title" content={`Zhenil ID`} />
+                <meta name="description" content={`Welcome to Zhenil ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signup/surname"}} choice="alone" mode="standalone"/>
             <div className="main_app_full block_animation">
                 <div className={style.login_form}>
                     <h1 className={style.head_center}>{text.step3[lang]}</h1>
-                    <p className={style.text_center}>{text.step3_text[lang]} <b className="green_font">andrey.alekseev@okki.kz</b></p>
+                    <p className={style.text_center}>{text.step3_text[lang]} <b className="green_font">andrey.alekseev@Zhenil.kz</b></p>
                         <div className={style.login_row}>
                             <input onKeyDown={handleKeyDown} type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder={text.step3_input[lang]} required />
                             <button type="button" onClick={()=>change===false?handleEmail():""} className={style.login_button}>{text.continue[lang]}</button>

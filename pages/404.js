@@ -13,7 +13,7 @@ const NotFound = ({locale}) => {
         <>
             <Head>
                 <title>{translate['title'][locale]}</title>
-                <meta property="og:title" content={`${translate['title'][locale]} | Okki.kz`} />
+                <meta property="og:title" content={`${translate['title'][locale]} | Zhenil.kz`} />
             </Head>
             <div className="page_not_found">
                 <div className="page_not_found_block">

@@ -91,9 +91,9 @@ const SignUp = ({lang}) => {
     return(
         <>
             <Head>
-                <title>Okki ID</title>
-                <meta property="og:title" content={`Okki ID`} />
-                <meta name="description" content={`Welcome to Okki ID`} />
+                <title>Zhenil ID</title>
+                <meta property="og:title" content={`Zhenil ID`} />
+                <meta name="description" content={`Welcome to Zhenil ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signup/email"}} choice="alone" mode="standalone"/>
             <div className="main_app_full block_animation">

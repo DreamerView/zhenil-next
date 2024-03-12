@@ -32,7 +32,7 @@ const UserInterface = () => {
                             <p className={style.small_text}>Following</p>
                         </div>
                     </div>
-                    {/* <p>Founder @okki.kz</p> */}
+                    {/* <p>Founder @Zhenil.kz</p> */}
                     <div className={style.user__main_action}>
                         <button className={`${style.button_follow} anim_hover`}>Подписаться</button>
                         <button className={`${style.button_more} anim_hover`}>Подробнее</button>

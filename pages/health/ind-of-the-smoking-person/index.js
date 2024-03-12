@@ -47,8 +47,8 @@ const Deposit = ({lang}) => {
     return(
         <>
             <Head>
-                <title>{nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
+                <title>{nav_translate['index_of_the_smoking_person'][lang]} | Zhenil.kz</title>
+                <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Zhenil.kz`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">

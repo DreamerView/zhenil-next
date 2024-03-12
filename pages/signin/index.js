@@ -149,7 +149,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(e.target[0].value);
-            const client = aes.encrypt("okki");
+            const client = aes.encrypt("Zhenil");
             setWait(true);
             try {
                 if (typeof window !== 'undefined') {
@@ -196,7 +196,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(e.target[0].value);
             const password = aes.encrypt(e.target[1].value);
-            const client = aes.encrypt("okki");
+            const client = aes.encrypt("Zhenil");
             const ipSend = aes.encrypt(getIp);
             const checkVar = (result) =>{
                 if(result===null) return null;
@@ -258,9 +258,9 @@ const LoginForm = ({providers,data,ip,lang}) => {
     return(
         <>
             <Head>
-                <title>Okki ID</title>
-                <meta property="og:title" content={`Okki ID`} />
-                <meta name="description" content={`Welcome to Okki ID`} />
+                <title>Zhenil ID</title>
+                <meta property="og:title" content={`Zhenil ID`} />
+                <meta name="description" content={`Welcome to Zhenil ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">

@@ -97,7 +97,7 @@ const Deposit = ({lang}) => {
                 return 0;
             }
     },[bet,term,sum,percent,every,own,getMonthName]);
-    const titleText = `${nav_translate['deposit_calc'][lang]} | Okki.kz`;
+    const titleText = `${nav_translate['deposit_calc'][lang]} | Zhenil.kz`;
     return(
         <>
             <Head>

@@ -88,7 +88,7 @@ const Header = () => {
           <div className="header__logo">
             <Link title={text['title'][locale]} href='/' prefetch={false}>
                 <div className='header__logo_p'>
-                  <div className="header__logo_pic anim_hover"></div>
+                  <h1>Zhenil</h1>
                 </div>
             </Link>
           </div>

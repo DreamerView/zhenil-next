@@ -120,8 +120,8 @@ const PregnancyCalendar = ({lang})=>{
     return(
         <>
             <Head>
-                <title>{nav_text['pregnancy_calendar'][lang]} | Okki.kz</title>
-                <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Okki.kz`} />
+                <title>{nav_text['pregnancy_calendar'][lang]} | Zhenil.kz</title>
+                <meta property="og:title" content={`${nav_text['pregnancy_calendar'][lang]} | Zhenil.kz`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">

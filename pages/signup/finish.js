@@ -92,7 +92,7 @@ const SignUp = ({ip,lang}) => {
                 "Content-Type": "application/json; charset=utf-8"
             },
             cache: "no-store",
-            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("okki"),clientInfo:aes.encrypt(clienInfo),getIp:aes.encrypt(getIp)})
+            body: JSON.stringify({name:aes.encrypt(nameUser),surname:aes.encrypt(surnameUser),email:aes.encrypt(emailUser),password:aes.encrypt(passwordUser),client:aes.encrypt("Zhenil"),clientInfo:aes.encrypt(clienInfo),getIp:aes.encrypt(getIp)})
         };
         const login = await fetch(process.env.backend+"/register-id", requestOptions);
         const result = await login.json();
@@ -123,9 +123,9 @@ const SignUp = ({ip,lang}) => {
     return(
         <>
             <Head>
-                <title>Okki ID</title>
-                <meta property="og:title" content={`Okki ID`} />
-                <meta name="description" content={`Welcome to Okki ID`} />
+                <title>Zhenil ID</title>
+                <meta property="og:title" content={`Zhenil ID`} />
+                <meta name="description" content={`Welcome to Zhenil ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
             <div className="main_app_full block_animation">

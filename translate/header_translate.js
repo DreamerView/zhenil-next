@@ -1,8 +1,8 @@
 export default {
     search: {
-        kk: "Okki.kz бойынша іздеу",
-        ru: "Поиск по Okki.kz",
-        en: "Search by Okki.kz"
+        kk: "Zhenil.kz бойынша іздеу",
+        ru: "Поиск по Zhenil.kz",
+        en: "Search by Zhenil.kz"
     },
     search_not: {
         kk: "Еш нәрсе табылмады",

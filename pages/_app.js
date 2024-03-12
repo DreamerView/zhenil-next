@@ -106,7 +106,7 @@ const MyApp = ({ Component, pageProps, session }) => {
 
     return(
         <>
-            <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
+            <div id="globalLoader"><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <DocumentResult>

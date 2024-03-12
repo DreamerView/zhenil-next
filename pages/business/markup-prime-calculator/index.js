@@ -42,7 +42,7 @@ const MarginMarkup = ({lang}) => {
             return 0;
         };
     },[n1,n2,markUp,delivery,marketing,other,n1Total,nds]);
-    const titleText = `${translate['markup_prime_calc'][lang]} | Okki.kz`;
+    const titleText = `${translate['markup_prime_calc'][lang]} | Zhenil.kz`;
     return(
         <>
             <Head>
